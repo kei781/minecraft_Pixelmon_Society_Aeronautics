@@ -29,7 +29,17 @@ bash server-control.sh stop
 
 ## 새 장비에 준비하는 개발 절차
 
-`tools/stage_forge_candidate.py`로 새 프로필을 만들고 `server-control.sh`, `.psa-mods.sha256`, 두 소유/구성 마커가 있는지 확인한다. 런타임 설치 도구와 `forge-runtime-lock.json`을 해당 프로필에 복사한 뒤 Linux x64에서 실행한다.
+저장소 루트에서 검증한 입력으로 접속용 새 프로필을 만든다. `--mode player`는 `server-ip=0.0.0.0`, `level-name=world`를 설정한다. 생략하거나 `--mode smoke`를 쓰면 `127.0.0.1`과 별도 시험 월드 `world-psa-new`를 사용한다. 두 모드 모두 온라인 인증을 사용하고 EULA는 동의 전 상태다.
+
+```bash
+python3 tools/stage_forge_candidate.py \
+  --server-pack /path/to/SERVER-PACK-Society-Sunlit-Valley-4.1.5A.zip \
+  --pixelmon /path/to/Pixelmon-1.20.1-9.2.3-universal.jar \
+  --port /path/to/verified-canonical-port.jar \
+  --destination /path/to/new-player-profile --mode player
+```
+
+`server-control.sh`, `.psa-mods.sha256`, 두 소유/구성 마커가 있는지 확인한다. Linux x64 장비의 전용 폴더로 프로필을 옮기고, `tools/install_forge_runtime.py`와 `forge-runtime-lock.json`도 상대 경로를 유지해 복사한 뒤 해당 프로필 폴더에서 실행한다.
 
 ```bash
 python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.json
@@ -37,7 +47,7 @@ python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.jso
 
 설치 도구는 공식 Java·Forge 파일을 고정 해시·크기로 확인한다. 검증한 캐시가 있으면 재사용한다. Temurin 배포 URL의 504 오류 때문에 이 장비에는 공식 Corretto 17로 공급자를 변경해 고정했다. 설치 아카이브도 시스템 밖의 전용 캐시에 보존한다. 기존 캐시가 손상됐으면 덮어쓰지 않고 중단한다.
 
-시험용 `world-psa-new`는 저장·재시작 검사 후 보존한다. 실제 접속용 월드는 별도 `world`로 선택하며 기존 월드를 삭제하거나 덮어쓰지 않는다. 접속용 서버는 전체 인터페이스에 바인딩한다. 원격 인터넷 회선의 공유기 포트 전달은 별도 네트워크 조건이며 접속 검사로 확인해야 한다.
+이미 만든 시험 프로필을 접속용으로 전환하려면 정상 `stop` 완료 후 `server.properties`의 `server-ip=0.0.0.0`, `level-name=world`, `allow-flight=true`, `online-mode=true`, `max-players=6`을 확인하고 다시 시작한다. 시험용 `world-psa-new`는 보존하며 월드를 삭제하거나 덮어쓰지 않는다. 실제 장비는 이 전환 후 별도 `world`에서 실행 중이다. 원격 인터넷 회선의 공유기 포트 전달은 별도 네트워크 조건이며, 현재 직접 상태 핑 성공을 인터넷 공개 접속 성공으로 간주하지 않는다.
 
 ## 확인 범위
 

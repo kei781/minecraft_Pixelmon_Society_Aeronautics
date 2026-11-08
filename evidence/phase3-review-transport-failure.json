@@ -1,0 +1,11 @@
+{
+  "phase": 3,
+  "round": 1,
+  "head_sha": "2c2d2853aa6344e46b7607439a199b7577193d60",
+  "status": "rejected-transport-validation",
+  "accepted_independent_verdict": false,
+  "posted_to_github": false,
+  "error": "review finding is outside the supplied RIGHT-side diff: docs/n100-server.md",
+  "raw_output_sha256": "d2dbedd4b498965cde4fd0d3ff7e80ae07018b1b6bb0538ea5d76c5d7bb210a7",
+  "controller_response": "Preserved invalid output without editing it. Added fixture build regression coverage and explicit player staging mode; controller will request a fresh full phase review."
+}

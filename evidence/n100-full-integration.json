@@ -4,7 +4,7 @@
   "forge": "47.4.20",
   "society": "4.1.5A",
   "pixelmon": "9.2.3 beta",
-  "aeronautics": "unofficial Forge port, canonical SHA256 0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
+  "aeronautics": "unofficial Forge port, current canonical SHA256 cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de",
   "top_level_mod_jars": 313,
   "heap_max_gib": 6,
   "authenticated_players": 0,
@@ -41,7 +41,8 @@
       "Overall: Mean tick time: 1.084 ms. Mean TPS: 20.000",
       "Overall: Mean tick time: 2.963 ms. Mean TPS: 20.000"
     ],
-    "raw_log_sha256": "5eea3e42d4e7d9bcb2247a08d85ef3c865e9c638c6f5a50f25c1790f6560cdc7"
+    "raw_log_sha256": "5eea3e42d4e7d9bcb2247a08d85ef3c865e9c638c6f5a50f25c1790f6560cdc7",
+    "tested_port_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08"
   },
   "saved_world_restart": {
     "done": true,
@@ -107,5 +108,28 @@
     "Society farming/economy/progression",
     "piloted vehicle/flight",
     "actual six-player load"
-  ]
+  ],
+  "current_client_fixes_upgrade": {
+    "done": true,
+    "port_sha256": "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de",
+    "mods": 313,
+    "online_mode": "true",
+    "level": "world",
+    "max_players": "6",
+    "backup_created": true,
+    "pre_restart_players": 0,
+    "worlds_deleted": false,
+    "runtime_hash_manifest_verified": true,
+    "quests_1142": true,
+    "loaded_script_summaries": [
+      "Loaded 97/97 KubeJS startup scripts in 2.307 s with 0 errors and 0 warnings",
+      "Loaded 188/188 KubeJS server scripts in 0.205 s with 0 errors and 0 warnings"
+    ],
+    "done_line": "[11:56:36] [Server thread/INFO] [minecraft/DedicatedServer]: Done (2.506s)! For help, type \"help\"",
+    "overall_tps_lines": [
+      "[11:57:11] [Server thread/INFO] [minecraft/MinecraftServer]: Overall: Mean tick time: 2.331 ms. Mean TPS: 20.000"
+    ],
+    "raw_log_sha256": "929c731de07f05dbac7f03e4c229a1b2b6c292d2ce61dc8013265a761ec02f4c",
+    "authenticated_gameplay_validated": false
+  }
 }

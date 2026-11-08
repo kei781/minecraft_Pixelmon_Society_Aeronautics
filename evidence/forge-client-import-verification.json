@@ -9,20 +9,24 @@
   "indexed_shaderpacks_verified": 1,
   "resource_zips_in_mods_folder": 0,
   "all_three_projects_included": true,
-  "payload_files_verified": 7921,
+  "payload_files_verified": 7923,
   "all_sha256_matched": true,
-  "game_launched": false,
+  "game_launched": true,
   "authenticated_connection_tested": false,
   "artifact": {
-    "filename": "PSA-Forge-Full-Experimental-v2.mrpack",
-    "sha256": "59d8a8348e7724685293921fcf3c49bd51ecce6df1d344233e5b371787ab0897",
-    "size": 1137585910,
-    "version_id": "psa-forge-26ea5ee62203",
+    "filename": "PSA-Forge-Full-Experimental-v4.mrpack",
+    "sha256": "753076589fd5c320c8d0d935ce13e0e437dbaa27313acf047b75d601b02f5e48",
+    "size": 1137764777,
+    "version_id": "psa-forge-7db77bf55074",
     "mod_jars": 353,
     "indexed_resourcepacks": 15,
     "indexed_shaderpacks": 1,
-    "override_files": 7922,
+    "override_files": 7924,
     "longest_relative_path": 108,
     "full_gameplay_validated": false
-  }
+  },
+  "shoulder_surfing_version": "5.0.4",
+  "game_launch_attempted": true,
+  "game_launch_state": "Same client JAR inventory tested in isolated official demo; both earlier crashes resolved; see startup verification.",
+  "game_launch_scope": "official demo startup on macOS, not authenticated play or Windows"
 }

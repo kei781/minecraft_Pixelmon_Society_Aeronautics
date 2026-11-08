@@ -11,7 +11,7 @@ import zipfile
 
 SERVER_SHA1 = "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
 PIXELMON_SHA256 = "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a"
-PORT_SHA256 = "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08"
+PORT_SHA256 = "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de"
 FOLDERS = {"mods", "config", "defaultconfigs", "kubejs", "patchouli_books"}
 LOCK = Path(__file__).resolve().parents[1] / "forge-candidate-lock.json"
 
@@ -62,8 +62,10 @@ def selected_entries(archive):
     return entries
 
 
-def stage(server_pack, pixelmon, port, destination):
+def stage(server_pack, pixelmon, port, destination, mode="smoke"):
     destination = Path(destination)
+    if mode not in {"smoke", "player"}:
+        raise ValueError("Unknown server profile mode")
     if destination.exists() or destination.is_symlink():
         raise ValueError("A fresh destination is required")
     for path, algorithm, expected in [(server_pack, "sha1", SERVER_SHA1),
@@ -104,10 +106,11 @@ def stage(server_pack, pixelmon, port, destination):
     if (config / "config.yml").exists():
         raise ValueError("Unexpected existing Pixelmon configuration")
     (config / "config.yml").write_text("allow-vanilla-mobs: true\n")
+    bind, world = ("127.0.0.1", "world-psa-new") if mode == "smoke" else ("0.0.0.0", "world")
     (destination / "server.properties").write_text(
-        "server-ip=127.0.0.1\nserver-port=25573\nonline-mode=true\n"
+        "server-ip=" + bind + "\nserver-port=25573\nonline-mode=true\n"
         "enable-query=false\nenable-rcon=false\nallow-flight=true\nmax-players=6\nview-distance=4\nsimulation-distance=4\n"
-        "level-name=world-psa-new\nspawn-protection=0\nmotd=PSA experimental full Forge candidate\n")
+        "level-name=" + world + "\nspawn-protection=0\nmotd=PSA experimental full Forge candidate\n")
     (destination / "user_jvm_args.txt").write_text("-Xms1G\n-Xmx6G\n-XX:+UseG1GC\n")
     # Acceptance is explicit at runtime via server-control.sh start --accept-eula.
     (destination / "eula.txt").write_text("eula=false\n")
@@ -121,6 +124,7 @@ def stage(server_pack, pixelmon, port, destination):
                "port_sha256": PORT_SHA256, "top_level_mod_jars": 313,
                "official_inputs": official_inputs, "lock_sha256": digest(LOCK),
                "neutral_replacement_files": 68, "final_gameplay_validated": False}
+    receipt["mode"] = mode
     (destination / ".psa-forge-candidate.json").write_text(json.dumps(receipt, indent=2) + "\n")
     return receipt
 
@@ -131,5 +135,6 @@ if __name__ == "__main__":
     parser.add_argument("--pixelmon", type=Path, required=True)
     parser.add_argument("--port", type=Path, required=True)
     parser.add_argument("--destination", type=Path, required=True)
+    parser.add_argument("--mode", choices=["smoke", "player"], default="smoke")
     args = parser.parse_args()
-    print(json.dumps(stage(args.server_pack, args.pixelmon, args.port, args.destination), indent=2))
+    print(json.dumps(stage(args.server_pack, args.pixelmon, args.port, args.destination, args.mode), indent=2))

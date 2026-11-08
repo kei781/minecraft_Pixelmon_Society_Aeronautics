@@ -13,6 +13,9 @@ from export_client import safe_path, add_zip_file, data_bytes
 from stage_forge_candidate import PORT_SHA256, PIXELMON_SHA256, digest
 
 ROOT = Path(__file__).resolve().parents[1]
+EXPECTED_FILES = 367
+EXPECTED_SHARED = 311
+EXPECTED_REPLACEMENTS = 68
 OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
 
 
@@ -54,6 +57,33 @@ def verify_mod(path, entry):
             raise ValueError("Client mod hash mismatch: " + entry["path"])
 
 
+def apply_client_overrides(files, lock, extras):
+    originals = {f["path"]: f for f in lock["files"]}
+    for entry in lock.get("client_overrides", []):
+        old = entry["replaces_path"]
+        original = originals.get(old, {})
+        if original.get("side") != "client" or original.get("kind") != "mod" or old not in files:
+            raise ValueError("Compatibility overrides may replace only client-only mod JARs")
+        name = target_path(entry["kind"], Path(entry["path"]).name)
+        if entry.get("side") != "client" or entry.get("kind") != "mod" or name != entry["path"] or name in files:
+            raise ValueError("Invalid client compatibility override")
+        source = extras / Path(name).name
+        verify_mod(source, entry)
+        classes = entry.get("required_classes")
+        if not isinstance(classes, list) or not classes or not all(isinstance(n, str) and n.endswith('.class') for n in classes):
+            raise ValueError("Explicit compatibility target classes are required")
+        with zipfile.ZipFile(source) as archive:
+            for required in classes:
+                safe_path(required)
+                if required not in archive.namelist():
+                    raise ValueError("Missing client compatibility class: " + required)
+                data = archive.read(required)
+                if len(data) < 8 or data[:4] != b'\xca\xfe\xba\xbe' or not 45 <= int.from_bytes(data[6:8], 'big') <= 61:
+                    raise ValueError("Client compatibility class requires a different Java version")
+        del files[old]
+        files[name] = source
+
+
 def build(server, extras, society_zip, output):
     server, extras, society_zip, output = map(Path, [server, extras, society_zip, output])
     if output.exists() or output.is_symlink() or output.suffix.lower() != ".mrpack":
@@ -65,7 +95,7 @@ def build(server, extras, society_zip, output):
     base = lock["base_pack"]
     if society_zip.stat().st_size != base["size"] or digest(society_zip, "sha1") != base["sha1"]:
         raise ValueError("Official Society client archive hash mismatch")
-    if len(lock["files"]) != 367 or sum(f["side"] == "both" for f in lock["files"]) != 311:
+    if len(lock["files"]) != EXPECTED_FILES or sum(f["side"] == "both" for f in lock["files"]) != EXPECTED_SHARED:
         raise ValueError("Incomplete frozen Society client inventory")
     files = {}
     for entry in lock["files"]:
@@ -90,6 +120,7 @@ def build(server, extras, society_zip, output):
     actual_server = {p.relative_to(server).as_posix() for p in (server / "mods").rglob("*") if p.is_file()}
     if actual_server != expected_server:
         raise ValueError("Unexpected or missing server mod files")
+    apply_client_overrides(files, lock, extras)
     with zipfile.ZipFile(society_zip) as archive:
         manifest = json.loads(archive.read("manifest.json"))
         if {(f["projectID"], f["fileID"]) for f in manifest["files"]} != {(f["project_id"], f["file_id"]) for f in lock["files"]}:
@@ -104,7 +135,7 @@ def build(server, extras, society_zip, output):
                           "replacement_logic": "simple", "specs": []}, indent=2) + "\n").encode()
     with zipfile.ZipFile(server / "mods/Pixelmon-1.20.1-9.2.3-universal.jar") as pokemon:
         replacements = [n for n in pokemon.namelist() if n.startswith("data/pixelmon/spawn_replacement/") and n.endswith(".json")]
-    if len(replacements) != 68:
+    if len(replacements) != EXPECTED_REPLACEMENTS:
         raise ValueError("Unexpected legacy Pixelmon replacement inventory")
     for name in replacements:
         target = "kubejs/" + safe_path(name)
@@ -121,6 +152,8 @@ def build(server, extras, society_zip, output):
         if data_bytes(payload[name]) != data_bytes(files[name]):
             raise ValueError("Indexed client file differs from a bundled override: " + name)
     payload.update(files)
+    payload["psa-forge-client-lock.json"] = lock_path.read_bytes()
+    payload["psa-forge-integration-lock.json"] = (ROOT / "forge-candidate-lock.json").read_bytes()
     names = list(payload)
     for name in names:
         safe_path(name)
@@ -133,7 +166,9 @@ def build(server, extras, society_zip, output):
                 "indexed_resourcepacks": sum(f["kind"] == "resourcepack" for f in lock["files"]),
                 "indexed_shaderpacks": sum(f["kind"] == "shaderpack" for f in lock["files"]),
                 "all_three_projects_included": True,
-                "shared_society_mods": 311, "lock_sha256": digest(lock_path),
+                "shared_society_mods": EXPECTED_SHARED, "lock_sha256": digest(lock_path),
+                "client_compatibility_overrides": [{k: item[k] for k in ["replaces_path", "path", "reason"]}
+                                                   for item in lock.get("client_overrides", [])],
                 "port_sha256": PORT_SHA256, "overrides": checks}
     fingerprint = hashlib.sha256(json.dumps(metadata, sort_keys=True).encode()).hexdigest()
     payload["psa-forge-client-profile.json"] = (json.dumps(metadata, indent=2) + "\n").encode()

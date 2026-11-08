@@ -1,0 +1,11 @@
+{
+  "mode": "player",
+  "server_ip": "0.0.0.0",
+  "level_name": "world",
+  "online_mode": "true",
+  "eula": "false",
+  "mod_jars": 313,
+  "server_started": false,
+  "original_inputs_verified": true,
+  "port_sha256": "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de"
+}

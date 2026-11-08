@@ -1,0 +1,58 @@
+--- a/src/main/java/dev/ryanhcode/sable/forge/mixin/block_outline_render/LevelRendererMixin.java
++++ b/src/main/java/dev/ryanhcode/sable/forge/mixin/block_outline_render/LevelRendererMixin.java
+@@ -6,6 +6,7 @@
+ import com.llamalad7.mixinextras.sugar.Share;
+ import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
+ import com.mojang.blaze3d.vertex.PoseStack;
++import com.mojang.blaze3d.vertex.VertexConsumer;
+ import dev.ryanhcode.sable.Sable;
+ import dev.ryanhcode.sable.companion.math.Pose3dc;
+ import dev.ryanhcode.sable.mixinhelpers.block_outline_render.SubLevelCamera;
+@@ -15,6 +16,8 @@
+ import net.minecraft.client.renderer.LevelRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.core.BlockPos;
++import net.minecraft.world.entity.Entity;
++import net.minecraft.world.level.block.state.BlockState;
+ import net.minecraft.world.phys.BlockHitResult;
+ import net.minecraft.world.phys.HitResult;
+ import net.minecraft.world.phys.Vec3;
+@@ -27,7 +30,6 @@
+ import org.spongepowered.asm.mixin.Unique;
+ import org.spongepowered.asm.mixin.injection.At;
+ import org.spongepowered.asm.mixin.injection.Inject;
+-import org.spongepowered.asm.mixin.injection.ModifyArg;
+ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+ 
+ /**
+@@ -96,18 +98,17 @@
+         }
+     }
+ 
+-    @ModifyArg(method = "renderLevel(Lcom/mojang/blaze3d/vertex/PoseStack;FJZLnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/GameRenderer;Lnet/minecraft/client/renderer/LightTexture;Lorg/joml/Matrix4f;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/LevelRenderer;renderHitOutline(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V"), index = 3)
+-    public double modifyX(final double original, @Share("drawn") final LocalBooleanRef drawnRef) {
+-        return drawnRef.get() ? this.sable$sublevelCamera.getPosition().x : original;
+-    }
+-
+-    @ModifyArg(method = "renderLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/LevelRenderer;renderHitOutline(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V"), index = 4)
+-    public double modifyY(final double original, @Share("drawn") final LocalBooleanRef drawnRef) {
+-        return drawnRef.get() ? this.sable$sublevelCamera.getPosition().y : original;
+-    }
+-
+-    @ModifyArg(method = "renderLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/LevelRenderer;renderHitOutline(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V"), index = 5)
+-    public double modifyZ(final double original, @Share("drawn") final LocalBooleanRef drawnRef) {
+-        return drawnRef.get() ? this.sable$sublevelCamera.getPosition().z : original;
++    // A single wrapper avoids Mixin 0.8.5's sparse two-slot argument temporaries,
++    // which overwrite Oculus's cached CallbackInfo local when ModifyArg is used.
++    @WrapOperation(method = "renderLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/LevelRenderer;renderHitOutline(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V"))
++    private void sable$renderHitOutline(final LevelRenderer renderer, final PoseStack poseStack,
++            final VertexConsumer vertices, final Entity entity, final double x, final double y,
++            final double z, final BlockPos pos, final BlockState state, final Operation<Void> original,
++            @Share("drawn") final LocalBooleanRef drawnRef) {
++        final Vec3 camera = drawnRef.get() ? this.sable$sublevelCamera.getPosition() : null;
++        original.call(renderer, poseStack, vertices, entity,
++                camera == null ? x : camera.x,
++                camera == null ? y : camera.y,
++                camera == null ? z : camera.z, pos, state);
+     }
+ }

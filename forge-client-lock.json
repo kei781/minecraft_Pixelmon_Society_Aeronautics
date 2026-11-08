@@ -4830,5 +4830,25 @@
       "project_metadata_url": "https://api.curse.tools/v1/cf/mods/627557",
       "kind": "shaderpack"
     }
+  ],
+  "client_overrides": [
+    {
+      "replaces_path": "mods/ShoulderSurfing-Forge-1.20.1-4.16.0.jar",
+      "path": "mods/ShoulderSurfing-Forge-1.20.1-5.0.4.jar",
+      "kind": "mod",
+      "side": "client",
+      "size": 402969,
+      "hashes": {
+        "sha1": "18d9c31cd3412bee1ea01d053b242319fab5551b",
+        "sha512": "447fbf26ac9578c6c76af9064b19ee680f6b76d5e342ab914f96050e4a0fa6e229f1a34e3becf47f0d5dc70561453998a2376953f8e582c8f5acad457c3fee5f"
+      },
+      "url": "https://cdn.modrinth.com/data/kepjj2sy/versions/3GtgLS8j/ShoulderSurfing-Forge-1.20.1-5.0.4.jar",
+      "metadata_url": "https://api.modrinth.com/v2/version/3GtgLS8j",
+      "reason": "The port enables mixins targeting Shoulder Surfing 5.x class names absent from 4.16.0.",
+      "required_classes": [
+        "com/github/exopandora/shouldersurfing/client/ShoulderSurfing.class",
+        "com/github/exopandora/shouldersurfing/api/client/Perspective.class"
+      ]
+    }
   ]
 }
