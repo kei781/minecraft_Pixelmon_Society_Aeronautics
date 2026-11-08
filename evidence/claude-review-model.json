@@ -1,6 +1,6 @@
 {
-  "scope": "Local development prototype and evidence only; not a playable combined modpack or a Windows installer",
-  "reviewed_commit": "a772341401f044f2cba2a6e4c6571f69ea7f7fda",
+  "scope": "Pinned public source-candidate acquisition, preflight/staging provenance and server library selection; not a playable combined modpack or Windows installer",
+  "reviewed_commit": "4888c727f9f400b4554c0d635d02fd12ff7e8a96",
   "verdict": "CLEAN",
   "requested_model": "claude-opus-5-5",
   "reported_models": [
@@ -10,11 +10,13 @@
     "policy": "latest-opus",
     "source": "https://www.anthropic.com/claude/opus",
     "source_sha256": "829e4b158e365c1da7bdb8335f9352ba43c96db9a564264783f2c2ec43dd9eb9",
-    "checked_at": "2026-11-08T06:22:06.620958+00:00"
+    "checked_at": "2026-11-08T06:45:54.590391+00:00"
   },
-  "review_result_sha256": "75c9daa11434f6c2a3b523a0793d4054f5e580dd8a18ab519b1f429d75c6ee3c",
-  "verified_source_lock_sha256": "0675c1e67a3e23187862046cb2bedb7b08378052f0898644a2d075585cced46a",
-  "integration_status": "blocked on four unavailable upstream Society development artifacts",
+  "review_result_sha256": "30a18f750cd22eeafe0b284eb1b99abe5bc7c158dd2dab575e1c9edd0c563f37",
+  "verified_source_lock_sha256": "0ebbc767bf6fa6bb5acd7d6a4c7b7e43911c94bce16fdc51376c895a2eb365c5",
+  "resolved_local_findings": 1,
+  "remaining_local_findings": 0,
+  "integration_status": "blocked on two unlocated upstream artifacts: Society 2.0 for 1.21.1 and Sunrise Gardening",
   "windows_installer_implemented": false,
-  "note": "Non-sensitive model provenance extracted from the local review receipt; complete CLI logs and receipt remain local."
+  "note": "Exact unmodified review result in claude-review-latest.json. CLI logs and complete receipt remain local. Codex executed tests; Claude reviewed tracked source read-only."
 }

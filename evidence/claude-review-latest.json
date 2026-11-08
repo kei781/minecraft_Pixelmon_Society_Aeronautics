@@ -1,20 +1,23 @@
 {
-  "head_sha": "a772341401f044f2cba2a6e4c6571f69ea7f7fda",
+  "head_sha": "4888c727f9f400b4554c0d635d02fd12ff7e8a96",
   "verdict": "CLEAN",
-  "summary": "라운드 5 범위(9b0f477→a772341)는 README 설명 한 단락, evidence/download-client.json 메타데이터, evidence/verification.txt 라벨만 바뀌었다. 소스 코드는 바뀌지 않았다. 이전 지적 local-r4-1은 해소됐다고 본다.\n\n근거:\n1) 재현 불가로 지적된 1·2·4·5행은 이제 PASS가 아니다. 'MANUAL CHECK (one-off command; runner/fixture not tracked)'로 바뀌었고, 실행기와 픽스처가 저장소에 없다는 점도 행마다 밝혔다. README.md:50은 추적 도구로 재현할 수 있는 검사와 수동 검사를 나누고, 수동 검사를 자동 테스트로 주장하지 않는다고 밝힌다. 추적 도구로 재현할 수 있는 코덱 프로필 PASS(6·7행)는 tools/build_probe.py와 README.md:46 절차로 따로 남아 있다.\n2) download-client.json에 이제 `side: client`와 `lock_sha256`이 있다. 이는 tools/prepare.py:156-158의 현재 fetch() 출력 형식과 맞는다. lock_sha256 값(0675c1e6…ed46a)은 download-server.json과 같다.\n3) 개수는 lock과 맞는다. Grep으로 세어 보니 integration-lock.json의 `\"side\"` 항목은 277개다. 그중 both/client는 277개라 client 선택 277(verification.txt:3, README.md:19)과 같다. both/server는 228개라 download-server.json의 selected 228과 같다.\n4) verification.txt:8의 0644 주장은 tools/build_compat.py:29의 os.chmod(temporary, 0o644)가 뒷받침한다.\n\n새로 찾은 결함은 없다. 다만 Read/Grep만 쓸 수 있어 integration-lock.json의 SHA256을 직접 계산하지는 못했다. 테스트나 다운로드도 실행하지 않았으므로 277/228 검증이 통과했다고 확인한 것은 아니다. 실행 검증 요청: `shasum -a 256 integration-lock.json` 결과가 0675c1e67a3e23187862046cb2bedb7b08378052f0898644a2d075585cced46a인지 확인해 달라.\n\n참고: plan mode 지시가 있었지만 이 세션에는 Write/ExitPlanMode 도구가 없어 plan 파일을 만들지 않았다. 리뷰는 읽기 전용으로만 했다.",
+  "summary": "리뷰 범위는 1a87321..4888c72입니다. requirements.md, pr.json, pr.diff, threads.json을 읽고 스냅샷의 tools/prepare.py, tools/build_external.py, tests/test_external_artifacts.py, integration-lock.json, .gitignore, README.md와 대조했습니다.\n\n요구사항 대조 결과:\n- external-artifacts.json의 Orchard와 Plentiful Ponds 항목은 원본 sha1을 그대로 둡니다. 소스 후보의 커밋, size, sha256, license_sha256은 source_build에 따로 기록합니다.\n- prepare.external_artifacts()는 각 파일을 원본 SHA1 또는 (size, SHA256) 후보 조건으로만 받아들입니다. 둘 다 아니거나 파일이 없으면 모두 missing으로 모아 예외를 냅니다. source_build가 없는 Society와 Sunrise Gardening에서는 build.get(\"size\")가 None이라 후보 조건이 항상 거짓이므로, 원본 SHA1 외의 우회 경로가 없습니다.\n- stage()는 external_artifacts()를 대상 디렉터리 생성 전에 호출합니다. 따라서 누락된 파일이 있으면 아무것도 쓰기 전에 중단되는 동작이 유지됩니다.\n- SERVER_REQUIRED는 lock 생성 시 fancy-tab-sections와 libtooltips의 side만 both로 바꿉니다. URL, 해시, 버전은 그대로이며 side_override_reason을 남깁니다. 커밋된 lock의 1296행과 1908행 항목과 일치합니다.\n- build_external.py의 동작:\n  - 소스는 임시 디렉터리에서 받아 고정 커밋, clean 상태(--untracked-files=all), LICENSE 해시를 모두 확인한 뒤에만 rename으로 게시합니다.\n  - 빌드 전후에 clean 검증을 합니다.\n  - 산출물의 size와 SHA256이 기록값과 다르면 inputs/를 바꾸지 않습니다.\n  - inputs/에 내용이 다른 파일이나 symlink가 이미 있으면 덮어쓰지 않습니다.\n  - JDK 버전이나 빌드 재현성이 달라도 최종 SHA256 검사에서 실패하므로 fail-closed입니다.\n- 이전 스레드 source-r1-1의 지적은 실제로 고쳐졌습니다. 자세한 근거는 해제 답글에 적었습니다.\n\n새로 지적할 결함은 찾지 못했습니다.\n\n실행 검증 요청: 저는 실행 권한이 없어 아래 명령을 하나도 실행하지 않았습니다. 5개 테스트가 통과했다는 것은 작성자 증거(source-build-verification.json)에 적힌 내용일 뿐이고, 제가 확인하지 않았습니다. 다음을 실제로 실행해 주십시오.\n1. python3 -m unittest discover -s tests -p 'test_external_artifacts.py' -v 를 실행해 5개 통과를 확인합니다.\n2. inputs/에 두 후보만 있는 상태에서 python3 tools/prepare.py preflight 를 실행해, society-2.0-1.21.1.jar와 sunrisegardening-1.0.jar만 누락으로 보고되는지 확인합니다.\n3. python3 tools/prepare.py lock 을 다시 실행해 integration-lock.json의 SHA256이 0ebbc767…와 같은지 확인합니다.",
   "resolve_thread_ids": [
-    "local-r4-1"
+    "source-r1-1"
   ],
   "replies": [
     {
-      "thread_id": "local-r4-1",
-      "body": "해소됐다고 본다. 지적한 1·2·4·5행은 PASS에서 'MANUAL CHECK (one-off command; runner/fixture not tracked)'로 바뀌었다. 실행기와 픽스처가 저장소에 없다는 점도 행마다 밝혔고, README.md:50에 수동 검사와 재현 가능한 검사의 구분을 적었다. 3행의 근거 파일 evidence/download-client.json에는 이제 현재 fetch()(tools/prepare.py:156-158)가 쓰는 `side`와 `lock_sha256`이 있고, 그 값은 download-server.json의 lock_sha256과 같다. Grep으로 세어 보니 integration-lock.json의 both/client 항목은 277개, both/server 항목은 228개로 두 보고서의 selected 값과 맞는다. 한계: 이 리뷰에서는 해시를 계산할 수 없었다. 그래서 `shasum -a 256 integration-lock.json`이 0675c1e67a3e23187862046cb2bedb7b08378052f0898644a2d075585cced46a와 같은지는 따로 실행해 확인해 주기 바란다."
+      "thread_id": "source-r1-1",
+      "body": "독립 확인 결과 해소됐습니다. 근거는 다음과 같습니다.\n(1) tools/prepare.py:54-55에서 검증을 통과한 항목에 accepted_as(original/source_candidate)와 verified_sha256을 붙여 반환합니다. 매니페스트의 원본 sha1은 바꾸지 않습니다.\n(2) artifact_receipts()(61-65행)는 filename, mod_id, accepted_as, sha256과 함께, 후보인 경우에만 source_build.commit을 source_commit으로 기록합니다.\n(3) preflight 출력(243-245행)이 파일마다 분류와 sha256을 출력합니다.\n(4) stage()의 .integration-staging.json(226-227행)에 external_artifacts 영수증 목록이 기록됩니다.\n(5) 테스트 test_pinned_candidates_are_accepted_without_changing_original_hashes는 분류 순서를 단언합니다. test_stage_records_actual_candidate_hash_and_commit은 실제 stage('server')를 실행한 뒤 영수증의 sha256이 staging된 mods/orchard.jar의 실제 해시와 같은지, source_commit이 맞는지, 원본 항목의 source_commit이 None인지를 단언합니다.\n다만 이 테스트들은 제가 실행하지 않았습니다. 통과 여부는 별도 실행으로 확인해야 합니다."
     }
   ],
   "new_comments": [],
   "out_of_scope": [
-    "요구사항의 수용 조건은 아직 충족되지 않았다. verification.txt:9-10과 README에 적힌 대로 전체 기동이 Sunrise Gardening 레지스트리 항목 누락으로 막혀 있다. Windows 더블클릭 설치기, 클라이언트 접속, Pixelmon 포획/전투, Society 농사/경제, Aeronautics 조립/비행, N100 6인 부하 측정도 하지 않았다. 이번 로컬 리뷰는 프로토타입과 증거 정리만 대상으로 했고, 완성된 통합을 승인하는 것이 아니다.",
-    "Society 개발 산출물 4개(society-2.0, sunrisegardening-1.0, orchard, plentifulponds)를 공개 경로에서 구할 수 없는 문제는 코드 밖의 upstream 의존성 문제다."
+    "전체 서버 기동, Windows 더블클릭 설치기, Windows 클라이언트 접속, Pixelmon·Society·Aeronautics 게임플레이, N100에서의 6인 부하 측정은 이 변경 범위 밖이며 아직 완료되지 않았습니다. 작성자도 complete_integration=false로 명시했습니다.",
+    "society-2.0-1.21.1.jar와 sunrisegardening-1.0.jar는 아직 확보되지 않았습니다. 코드 밖의 외부 의존성이므로 upstream 확보나 문의가 필요합니다.",
+    "Orchard 저장소의 LICENSE(GPL-3.0)와 mod 메타데이터(LGPL)가 서로 다릅니다. 바이너리를 재배포하지 않으므로 현재는 문제가 아니지만, 향후 Windows 설치기로 배포할 때는 라이선스 표기를 검토해야 합니다.",
+    "Gradle 빌드는 고정 커밋의 upstream 빌드 스크립트와 래퍼를 그대로 실행하며, 의존성 다운로드에 네트워크가 필요합니다. 최종 SHA256 검사로 산출물은 보호되지만, 빌드 중 실행되는 코드 자체는 신뢰 경계 밖입니다.",
+    "증거 파일의 부분 로더 시험과 fresh checkout 반복 빌드는 MANUAL CHECK로 표시돼 있고 추적된 실행기가 없습니다. 이 리뷰에서는 재현하지 못했습니다."
   ],
   "blocked_reasons": []
 }
