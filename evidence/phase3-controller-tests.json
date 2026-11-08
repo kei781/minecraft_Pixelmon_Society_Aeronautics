@@ -1,18 +1,19 @@
 {
   "macos": {
-    "discovered": 41,
+    "discovered": 42,
     "passed": 39,
-    "skipped_linux_only": 2
+    "skipped_linux_only": 3
   },
   "n100_ubuntu": {
-    "discovered": 41,
-    "passed": 41,
+    "discovered": 42,
+    "passed": 42,
     "skipped": 0
   },
   "forge_client_build_fixture_cases": 8,
   "fixtures_launched_as_game": false,
   "actual_game_server_untouched_by_unit_tests": true,
-  "macos_log_sha256": "656e236f65ccb4b4eeb3c5504501ea638ac1d1a9d43bfb2a8dbb98d06a60b0f2",
-  "n100_log_sha256": "de933c6e07c83eb45ed8a5408bf93bfa9f8e40f625d9f5fdf9d22ac24235af66",
-  "final_source_rechecked_after_client_fixes": true
+  "macos_log_sha256": "af67e34d7857b7fffa0b0cbab77ea90adc7c15a13586439edc7aa1914c90df05",
+  "n100_log_sha256": "5c95c072c2904b275a92ca69e894dad26d3dbdc33c54f59438cc504c93c78ecb",
+  "final_source_rechecked_after_client_fixes": true,
+  "deterministic_concurrent_start_regression_passed": true
 }

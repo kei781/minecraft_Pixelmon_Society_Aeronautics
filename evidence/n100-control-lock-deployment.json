@@ -1,0 +1,19 @@
+{
+  "script_sha256": "88db68a22771f385983c2551b933d97647d880a5999fed1d4a1917c7a31d746c",
+  "concurrent_start_results": [
+    {
+      "exit_code": 0,
+      "already_running": true,
+      "concurrent_lock_rejected": false
+    },
+    {
+      "exit_code": 1,
+      "already_running": false,
+      "concurrent_lock_rejected": true
+    }
+  ],
+  "live_console_inode_unchanged": true,
+  "game_server_running": true,
+  "restart_performed": false,
+  "backup_preserved": true
+}

@@ -12,7 +12,7 @@
 
 ## 시작·정지·상태
 
-해당 서버 폴더에서 실행한다. Python 3, Bash, tmux, sha256sum이 필요하다. 실제 장비에는 준비돼 있었다.
+해당 서버 폴더에서 실행한다. Python 3, Bash, tmux, sha256sum, flock이 필요하다. 실제 장비에는 준비돼 있었다.
 
 ```bash
 bash server-control.sh start
@@ -23,7 +23,7 @@ bash server-control.sh stop
 
 처음 시작할 때 운영자가 Minecraft EULA를 읽고 동의한 경우에만 `start --accept-eula`를 쓴다. staging은 `eula=false`를 만들고, 설치기는 동의하지 않는다.
 
-전용 tmux 소켓을 사용하며 일반 tmux 세션을 건드리지 않는다. 시작할 때 모드 313개의 SHA256·수량·온라인 인증을 확인한다. 정지는 콘솔 `stop`을 보내고 최대 120초 기다린다. 시간 초과 시 강제 종료하지 않고 로그 확인을 요구한다. 재시작 전에는 `stop` 완료를 확인한다.
+전용 tmux 소켓을 사용하며 일반 tmux 세션을 건드리지 않는다. 시작 작업은 프로필별 파일 잠금으로 직렬화하므로 동시 호출이 실행 중인 로그를 옮기지 않는다. 잠금은 Java·tmux에 상속하지 않는다. 시작할 때 모드 313개의 SHA256·수량·온라인 인증을 확인한다. 정지는 콘솔 `stop`을 보내고 최대 120초 기다린다. 시간 초과 시 강제 종료하지 않고 로그 확인을 요구한다. 재시작 전에는 `stop` 완료를 확인한다.
 
 실제 시작 완료는 `console.log`의 새 `Done` 줄로 확인한다. `status`의 Running은 tmux 프로세스 상태다. SSH 연결을 닫아도 실행이 유지된다. OS 재부팅 후 자동 시작 서비스는 등록하지 않았으므로 위 시작 명령을 다시 실행한다.
 
@@ -44,6 +44,8 @@ python3 tools/stage_forge_candidate.py \
 ```bash
 python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.json
 ```
+
+같은 프로필에서 설치기를 다시 실행할 때는 먼저 `server-control.sh stop`이 완료됐는지 확인한다. 설치기는 실행 중인 서버를 자동으로 정지하지 않는다.
 
 설치 도구는 공식 Java·Forge 파일을 고정 해시·크기로 확인한다. 검증한 캐시가 있으면 재사용한다. Temurin 배포 URL의 504 오류 때문에 이 장비에는 공식 Corretto 17로 공급자를 변경해 고정했다. 설치 아카이브도 시스템 밖의 전용 캐시에 보존한다. 기존 캐시가 손상됐으면 덮어쓰지 않고 중단한다.
 
