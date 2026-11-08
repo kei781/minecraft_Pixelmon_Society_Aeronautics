@@ -12,6 +12,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "Personal-Pixelmon-Society-Aeronautics-Integration/0.1"
@@ -63,6 +64,33 @@ def artifact_receipts(artifacts):
              "accepted_as": item["accepted_as"], "sha256": item["verified_sha256"],
              "source_commit": item["source_build"]["commit"] if item["accepted_as"] == "source_candidate" else None}
             for item in artifacts]
+
+
+def mob_overrides(pixelmon_jar):
+    """Preserve Society's mobs while Pixelmon's own spawners remain enabled."""
+    prefix = "data/pixelmon/pixelmon/spawn_replacement/"
+    neutral = (json.dumps({"detection": {"type": "pixelmon:simple", "types": []},
+                           "replacement": {"type": "pixelmon:simple", "replacements": []}}, indent=2) + "\n").encode()
+    with zipfile.ZipFile(pixelmon_jar) as archive:
+        names = sorted(name for name in archive.namelist() if name.startswith(prefix) and name.endswith(".json"))
+    if not names or len(names) != len(set(names)):
+        raise ValueError("Expected unique Pixelmon spawn-replacement records")
+    overrides = {"config/pixelmon/entity.yml": b"# Preserve Society's normal mob spawning.\nallow-vanilla-mobs: true\n"}
+    for name in names:
+        if ".." in Path(name).parts or "\\" in name:
+            raise ValueError("Unsafe Pixelmon replacement resource path")
+        overrides["kubejs/" + name] = neutral
+    return overrides
+
+
+def write_overrides(target, overrides):
+    receipts = []
+    for relative, data in overrides.items():
+        destination = target / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(data)
+        receipts.append({"path": relative, "sha256": hashlib.sha256(data).hexdigest()})
+    return receipts
 
 
 def download(url, dest, hashes, expected_size=None):
@@ -200,11 +228,14 @@ def stage(side):
         raise ValueError("Verified CreativeCore compatibility build required; run tools/build_compat.py first")
     # Validate every input before creating a target or copying configuration.
     sources = []
+    pixelmon_jar = None
     for file in selected:
         hashes = {k: v for k, v in file["hashes"].items() if k in {"sha1", "sha256", "sha512"}}
         key = hashes.get("sha512") or hashes.get("sha256") or hashes["sha1"]
         source = ROOT / "cache" / key / Path(file["path"]).name
         download(file["url"], source, hashes, file["size"])
+        if file["project"] == "pixelmon":
+            pixelmon_jar = source
         rel = Path(file["path"])
         if rel.is_absolute() or ".." in rel.parts or "\\" in str(rel):
             raise ValueError("Unsafe install path")
@@ -214,6 +245,9 @@ def stage(side):
             sources.append((patched_core, target / "mods" / patched_core.name))
         else:
             sources.append((source, target / rel))
+    if pixelmon_jar is None:
+        raise ValueError("Pinned Pixelmon artifact required for integration overrides")
+    overrides = mob_overrides(pixelmon_jar)
     target.mkdir()
     for source, dest in sources:
         dest.parent.mkdir(parents=True, exist_ok=True)
@@ -223,8 +257,10 @@ def stage(side):
     upstream = ROOT / "upstream/society"
     for folder in ["config", "defaultconfigs", "kubejs"]:
         shutil.copytree(upstream / folder, target / folder)
+    override_receipts = write_overrides(target, overrides)
     (target / ".integration-staging.json").write_text(json.dumps(
-        {"society_commit": COMMIT, "side": side, "external_artifacts": artifact_receipts(artifacts)}, indent=2) + "\n")
+        {"society_commit": COMMIT, "side": side, "external_artifacts": artifact_receipts(artifacts),
+         "mob_compatibility_overrides": override_receipts}, indent=2) + "\n")
     print("Staged", len(selected), "verified files in", target, flush=True)
 
 

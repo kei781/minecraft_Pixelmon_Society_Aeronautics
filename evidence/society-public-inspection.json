@@ -1,0 +1,36 @@
+{
+  "scope": "Published 1.20.1 Forge artifact for code inspection only; never accepted as the missing 1.21.1 Society build",
+  "version_id": "U0rmaRrS",
+  "version": "1.22",
+  "minecraft": [
+    "1.20.1"
+  ],
+  "loaders": [
+    "forge"
+  ],
+  "file": {
+    "id": "2WPYPVVS",
+    "hashes": {
+      "sha512": "f8491ba9588f5fb47bc1b6975c39df735708d90e5c4be3b81d3d55c9b51602b8476f506cc2847ef651afcc5cf555124bd7b3ae122f10a4d797d1590ebc6a9556",
+      "sha1": "8a3797329f678a63c707e76f589246b89eabe741"
+    },
+    "url": "https://cdn.modrinth.com/data/gfmrlRGu/versions/U0rmaRrS/society-1.22.jar",
+    "filename": "society-1.22.jar",
+    "primary": true,
+    "size": 69954758,
+    "file_type": null
+  },
+  "observed_sha256": "1fca9851bab5415de3477d5814eb32d2ed3ad5b6ee21a83445b169f75ea31f04",
+  "inspection": {
+    "decompiler": "CFR 0.152",
+    "class_entries": 34,
+    "java_source_entries": 0,
+    "embedded_jars": 0,
+    "sunrisegardening_class_reference_found": false,
+    "minecraft_dependency_range": "[1.20.1,1.21)",
+    "forge_loader_range": "[47,)",
+    "contains_client_entity_serializer_overwrites": true,
+    "installed_in_1_21_1_profile": false,
+    "original_or_recovered_third_party_source_tracked": false
+  }
+}

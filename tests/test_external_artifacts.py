@@ -1,10 +1,12 @@
 """Verify that source candidates never bypass the remaining artifact gates."""
 import hashlib
 import importlib.util
+import io
 import json
 from pathlib import Path
 import tempfile
 import unittest
+import zipfile
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,13 +68,16 @@ class ExternalArtifactsTest(unittest.TestCase):
         for folder in ["config", "defaultconfigs", "kubejs"]:
             (self.root / "upstream/society" / folder).mkdir(parents=True)
         # One already-cached file exercises real staging without network access.
-        data = b"cached example"
+        archive_bytes = io.BytesIO()
+        with zipfile.ZipFile(archive_bytes, "w") as archive:
+            archive.writestr("data/pixelmon/pixelmon/spawn_replacement/cow.json", "{}")
+        data = archive_bytes.getvalue()
         digest = hashlib.sha256(data).hexdigest()
-        cached = self.root / "cache" / digest / "example.jar"
+        cached = self.root / "cache" / digest / "pixelmon.jar"
         cached.parent.mkdir(parents=True)
         cached.write_bytes(data)
         (self.root / "integration-lock.json").write_text(json.dumps({"files": [
-            {"project": "example", "side": "both", "path": "mods/example.jar", "url": "https://example.invalid/example.jar",
+            {"project": "pixelmon", "side": "both", "path": "mods/pixelmon.jar", "url": "https://example.invalid/pixelmon.jar",
              "hashes": {"sha256": digest}, "size": len(data)}]}))
         core = self.root / "compat/creativecore/CreativeCore_NEOFORGE_v2.13.51_mc1.21.1-psa-codec1.jar"
         core.parent.mkdir(parents=True)
@@ -90,6 +95,14 @@ class ExternalArtifactsTest(unittest.TestCase):
         original = next(item for item in receipt["external_artifacts"] if item["mod_id"] == "society")
         self.assertEqual(original["accepted_as"], "original")
         self.assertIsNone(original["source_commit"])
+        overrides = receipt["mob_compatibility_overrides"]
+        self.assertEqual(len(overrides), 2)
+        for override in overrides:
+            staged = self.root / "server" / override["path"]
+            self.assertEqual(override["sha256"], hashlib.sha256(staged.read_bytes()).hexdigest())
+        cow = json.loads((self.root / "server/kubejs/data/pixelmon/pixelmon/spawn_replacement/cow.json").read_text())
+        self.assertEqual(cow["detection"]["types"], [])
+        self.assertIn("allow-vanilla-mobs: true", (self.root / "server/config/pixelmon/entity.yml").read_text())
 
 
 if __name__ == "__main__":

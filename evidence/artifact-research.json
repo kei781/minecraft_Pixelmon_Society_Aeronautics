@@ -98,6 +98,25 @@
     {
       "url": "https://github.com/gasibear/sunlit-valley-pack/releases/tag/mods",
       "observation": "Public mod assets include society-1.22.jar and the 1.20.1 pack files; no requested 1.21.1 Society or Sunrise Gardening filename"
+    },
+    {
+      "url": "https://mod.mcimirror.top/curseforge/v1/fingerprints/432",
+      "observation": {
+        "provider": "Public MCIM cache; not exhaustive primary-source absence proof",
+        "query_fingerprints": [
+          1133031158,
+          2733971424
+        ],
+        "exactMatches": [],
+        "unmatchedFingerprints": [
+          1133031158,
+          2733971424
+        ]
+      }
+    },
+    {
+      "url": "https://mod.mcimirror.top/curseforge/v1/mods/search?gameId=432&searchFilter=Sunrise%20Gardening&pageSize=20",
+      "observation": "Public metadata cache returned zero search results; no download URL acquired."
     }
   ],
   "rejected_substitution": {
@@ -111,5 +130,6 @@
       "https://api.curse.tools/v1/cf/fingerprints/432"
     ],
     "result": "Both public-proxy POST requests returned HTTP 405. No fingerprint matches were obtained; this is not evidence that the files are absent from CurseForge."
-  }
+  },
+  "published_jar_inspection": "Downloaded and upstream-hash-verified Society 1.22 for Minecraft 1.20.1 Forge. Inspected/decompiled locally with CFR; no embedded Sunrise Gardening or Java source entries. Version/dependency metadata excludes the current 1.21.1 target. Not installed as a replacement."
 }

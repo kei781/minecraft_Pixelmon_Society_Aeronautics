@@ -14,3 +14,9 @@ PASS: Dedicated baseline manifest and tools/build_probe.py recreate separate Pix
 PASS: Patched jar has POSIX mode 0644; fresh server summary JSON is not ignored by Git. No separate service-account execution is claimed.
 BLOCKED: Full startup fails on missing Sunrise Gardening registry entries.
 NOT TESTED: Windows install, player connection, farm progression, airship flight, six-player N100 load.
+
+PASS: Pixelmon/KubeJS runtime controls reached Done and exited 0. Config-only rejected five vanilla entity insertions; generated replacement overrides allowed all five. Pixelmon entity insertion passed in both. Tracked probe source and builder reproduce the profiles; see mob-compatibility-verification.json.
+PASS: Minimal Pixelmon entity config preserves other entity defaults at real FML load; generated config and 71 data overrides are recorded with SHA256 in staging receipts.
+PASS: Probe compilation now resolves mapped NeoForge server classes first. Recompiled CodecProbe class bytes match the earlier version.
+MANUAL CHECK (one-off fresh-copy harness not tracked): Full public development profile with no copied existing world passed config probe and 44/44 KubeJS server scripts, then failed on Sunrise Gardening blocks; stopped with SIGINT.
+UNRESOLVED UPSTREAM LOG: Both isolated mob controls report missing pixelmon:spawning/drowned biome tag references; this patch does not hide or fix that error.

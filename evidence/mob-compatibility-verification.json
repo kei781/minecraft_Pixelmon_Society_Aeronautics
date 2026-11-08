@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-11-08T07:22:24.719227+00:00",
+  "scope": "Real NeoForge/KubeJS/Pixelmon entity-insertion controls. Not complete three-project integration, natural spawn rate/breeding, capture/battle, Windows, flight or N100 acceptance.",
+  "versions": {
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.262",
+    "pixelmon": "9.4.1",
+    "kubejs": "2101.7.2-build.377",
+    "rhino": "2101.2.8-build.91",
+    "java": "Temurin 21.0.13+9",
+    "os": "macOS arm64"
+  },
+  "profiles": {
+    "mobs-config-only": {
+      "vanilla_entity_insertion": {
+        "minecraft:cow": "false",
+        "minecraft:chicken": "false",
+        "minecraft:pig": "false",
+        "minecraft:sheep": "false",
+        "minecraft:zombie": "false"
+      },
+      "pixelmon_entity_insertion": true,
+      "config_and_other_entity_defaults_pass": true,
+      "doMobSpawning": true,
+      "server_done": true,
+      "process_exit_code": 0,
+      "graceful_auto_shutdown": true,
+      "probe_class_sha256": "beb3ffbf2c7fc7c8258b5ddeed6ad76f15a5b16aa4b29efc2a4610d23eb6b891",
+      "override_file_count": 1,
+      "log_sha256": "0e6ef37cf4cfa38ec3d586fcc3d6ca1cfe1691de8af7e5ab5f60b6e61abf58fd"
+    },
+    "mobs-preserved": {
+      "vanilla_entity_insertion": {
+        "minecraft:cow": "true",
+        "minecraft:chicken": "true",
+        "minecraft:pig": "true",
+        "minecraft:sheep": "true",
+        "minecraft:zombie": "true"
+      },
+      "pixelmon_entity_insertion": true,
+      "config_and_other_entity_defaults_pass": true,
+      "doMobSpawning": true,
+      "server_done": true,
+      "process_exit_code": 0,
+      "graceful_auto_shutdown": true,
+      "probe_class_sha256": "beb3ffbf2c7fc7c8258b5ddeed6ad76f15a5b16aa4b29efc2a4610d23eb6b891",
+      "override_file_count": 72,
+      "log_sha256": "c3c67aa1428c1c5bb03d2aea20feaff0b1a0486ab648a4af3c72a182314f8f30"
+    }
+  },
+  "generated_resources": {
+    "replacement_records": 71,
+    "total_override_files": 72,
+    "delivery": "KubeJS data pack plus Pixelmon entity config; server and client staging",
+    "source_jar_modified": false
+  },
+  "bytecode_observation": "WorldLoaded uses isAllowVanillaMobs only for doMobSpawning; MobSpawnReplacement processes the entity-join event against registry data without checking that config flag.",
+  "codec_regression": "Recompiling CodecProbe with the corrected mapped-classpath ordering produced identical class bytes. Existing codec runtime evidence is unchanged.",
+  "compile_fix": "Mapped NeoForge server classes must precede the obfuscated slim Minecraft classes on javac classpath.",
+  "control_rebuild": "Tracked control builder succeeds again after KubeJS created an empty data directory; a nonempty control data directory remains rejected.",
+  "full_public_profile": {
+    "label": "MANUAL CHECK; fresh isolated folder, one-off copy/run harness not tracked",
+    "copied_existing_world": false,
+    "existing_world_opened": false,
+    "config_probe_pass": true,
+    "kubejs_server_scripts_loaded": "44/44",
+    "world_data_result": "FAILED: missing sunrisegardening:greenhouse_glass and greenhouse_glass_pane",
+    "entity_insertion_probe_completed": false,
+    "stopped": "SIGINT after diagnosis; exit 130"
+  },
+  "known_baseline_error": "Both isolated controls log missing pixelmon:spawning/drowned biome references. Not fixed or hidden; did not prevent Done or probe completion.",
+  "unit_tests": {
+    "command": "python3 -m unittest discover -s tests -p 'test_external_artifacts.py' -v",
+    "passed": 5,
+    "scope": "Includes real staging fixture with override contents and observed receipt hashes."
+  },
+  "remaining_artifacts": [
+    "society-2.0-1.21.1.jar",
+    "sunrisegardening-1.0.jar"
+  ]
+}

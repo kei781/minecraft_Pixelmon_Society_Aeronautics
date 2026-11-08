@@ -1,6 +1,7 @@
 # Pixelmon + Society + Aeronautics
 
 - Preserve all three requested projects in one playable Minecraft server and world.
+- Work from real artifacts: download, inspect code/bytecode for likely conflicts, launch isolated profiles, diagnose failures, fix, and rerun. The user suggested investigating `npx rea-agents setup` if direct analysis is insufficient; upstream replies are not a prerequisite for independent work.
 - Pixelmon is the official project linked from https://reforged.gg/ko; the earlier DigiDatapack is no longer requested.
 - Server target: Intel N100, Ubuntu, 16 GB physical RAM, up to six concurrent players.
 - Windows players need a repeatable way to install the matching client. Instructions to install prerequisites such as a launcher/Java and then import the prepared modpack are acceptable; a single self-contained executable or fully unattended setup is not required. Each player signs in with their own Microsoft account.
@@ -9,6 +10,7 @@
 - Freeze Society at commit 5e7c8fa9073a86f9ac74c7cbf087551e5872016c. Freeze every downloaded binary and verify its upstream hash.
 - Public unmodified Orchard and Plentiful Ponds source builds are allowed as experimental candidates. Pin their source commits and binary SHA256, retain the original developer SHA1 separately, and do not claim identical binaries or verified gameplay. Missing Society and Sunrise Gardening must still stop staging.
 - Include the pinned Fancy Tab Sections and LibTooltips on the server: the Ponds build embeds older copies, and an actual partial-pack load reproduced NoSuchMethodError until the newer top-level jars were supplied.
+- Preserve Society's vanilla mob progression alongside Pixelmon. Pixelmon 9.4.1's allow-vanilla-mobs flag only restores the world spawning rule; its separate entity-join replacements must also be neutralized. Keep the independent Pixelmon spawners and entity insertion available. Test with config-only and data-override controls.
 - Start by proving the actual development snapshot can load with Pixelmon, Aeronautics, Sable, and the Society configuration. Failed launches and missing upstream artifacts must remain visible and must not be reported as working integration.
 - Do not deploy to an existing server or overwrite worlds during local preparation.
 

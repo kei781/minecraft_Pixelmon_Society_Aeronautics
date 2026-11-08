@@ -26,6 +26,7 @@ Society의 이 개발 브랜치는 정식 1.20.1 모드팩 4.1.5와 동일한 �
 - 이후 월드 생성은 `sunrisegardening:greenhouse_glass` 및 `greenhouse_glass_pane`이 없어서 중단됐습니다.
 - 공개 소스에서 Orchard와 Plentiful Ponds를 직접 빌드했습니다. 고정 커밋의 원본 소스를 수정하지 않았으며, 별도 clean 재빌드도 동일한 SHA256을 생성했습니다. 개발자 설치 기록의 원본 바이너리와는 해시가 다른 후보 빌드입니다.
 - 후보 두 개를 추가한 실제 로더 시험에서 오래된 내장 Fancy Tab Sections 충돌을 재현했습니다. 팩에 이미 고정된 Fancy Tab Sections 6.2.1과 LibTooltips 2.3.2를 서버에도 명시적으로 배치하자 모드 초기화와 KubeJS 서버 스크립트 44/44개 로딩을 통과했습니다. 월드 데이터는 여전히 Sunrise Gardening 블록 누락으로 중단됩니다. 이 부분 시험은 기존 로컬 개발 프로필에서 수행했으며 완성 설치기의 자동 검사로 주장하지 않습니다.
+- Pixelmon의 일반 몹 교체도 코드와 실제 실행으로 확인했습니다. 설정만 바꾸면 소·닭·돼지·양·좀비의 월드 추가가 모두 거부됐고, 설정과 데이터 수정을 함께 적용하면 모두 유지됐습니다. 포켓몬 엔티티 추가는 양쪽에서 통과했습니다. `stage`는 고정 Pixelmon JAR의 교체 데이터 71개에 대응하는 KubeJS 수정 데이터와 설정을 생성하고, 생성 파일의 해시를 기록합니다. [범위와 재현 절차](docs/mob-compatibility.md)를 참고하세요. 전체 Society 게임플레이나 자연 스폰 빈도를 검증한 것은 아닙니다.
 - N100에는 읽기 전용 상태 점검만 수행했습니다. Minecraft 설치, 서비스 등록, 기존 데이터 변경은 하지 않았습니다.
 
 ## 현재 외부 의존성
@@ -64,6 +65,8 @@ Society 개발자의 설치 기록에는 아래 네 파일이 있지만 공개 �
 `evidence/verification.txt`는 추적된 도구로 재현할 수 있는 검사와, 일회성 명령으로 실행한 수동 검사를 구분합니다. 수동 staging 픽스처와 일부 회귀 검사 실행기는 저장소에 포함하지 않았으며, 이를 자동 테스트로 주장하지 않습니다.
 
 소스 후보 허용과 나머지 필수 파일 차단 회귀 검사는 `python3 -m unittest discover -s tests -p 'test_external_artifacts.py' -v`로 실행합니다.
+
+몹 공존 검사는 `python3 tools/build_probe.py mobs-config-only` 및 `python3 tools/build_probe.py mobs-preserved`로 별도 로컬 프로필을 만듭니다. 각 명령이 출력한 실행 명령으로 시작하면 실제 엔티티 추가 결과를 검사한 뒤 자동 종료합니다. 검사 모드는 실제 서버나 클라이언트 배포에 포함하지 않습니다.
 
 ## 원본
 

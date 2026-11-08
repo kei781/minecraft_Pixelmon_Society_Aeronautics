@@ -1,0 +1,30 @@
+{
+  "pixelmon_version": "9.4.1",
+  "matches": [
+    {
+      "class": "com/pixelmonmod/pixelmon/CommonProxy.class",
+      "references": [
+        "listener/MobSpawnReplacement"
+      ]
+    },
+    {
+      "class": "com/pixelmonmod/pixelmon/api/config/EntityConfig.class",
+      "references": [
+        "isAllowVanillaMobs"
+      ]
+    },
+    {
+      "class": "com/pixelmonmod/pixelmon/listener/MobSpawnReplacement.class",
+      "references": [
+        "listener/MobSpawnReplacement"
+      ]
+    },
+    {
+      "class": "com/pixelmonmod/pixelmon/listener/WorldLoaded.class",
+      "references": [
+        "isAllowVanillaMobs"
+      ]
+    }
+  ],
+  "scope": "Static constant-pool references only; not proof of gameplay behavior"
+}
