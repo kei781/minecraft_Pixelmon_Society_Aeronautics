@@ -18,6 +18,8 @@ EXPECTED_FILES = 367
 EXPECTED_SHARED = 311
 EXPECTED_REPLACEMENTS = 68
 EXPECTED_MODEL_OVERRIDES = 17
+MENU_PATCH_NAME = "PSA-Client-Menu-Compat-1.0.jar"
+MENU_PATCH_SHA256 = "564a56649c825a74fd8378b96fc084df03c07b7c5ee8944fa5bf2949bf09f5fa"
 OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
 
 
@@ -86,10 +88,15 @@ def apply_client_overrides(files, lock, extras):
         files[name] = source
 
 
-def build(server, extras, society_zip, output):
+def build(server, extras, society_zip, output, menu_fix=None):
     server, extras, society_zip, output = map(Path, [server, extras, society_zip, output])
     if output.exists() or output.is_symlink() or output.suffix.lower() != ".mrpack":
         raise ValueError("A fresh .mrpack output is required")
+    if menu_fix is not None:
+        menu_fix = Path(menu_fix)
+        if (menu_fix.is_symlink() or menu_fix.parent.is_symlink() or not menu_fix.is_file()
+                or digest(menu_fix) != MENU_PATCH_SHA256):
+            raise ValueError("Client menu compatibility hash mismatch")
     if not (server / ".psa-forge-candidate.json").is_file():
         raise ValueError("An owned full candidate is required")
     lock_path = ROOT / "forge-client-lock.json"
@@ -123,6 +130,11 @@ def build(server, extras, society_zip, output):
     if actual_server != expected_server:
         raise ValueError("Unexpected or missing server mod files")
     apply_client_overrides(files, lock, extras)
+    if menu_fix is not None:
+        name = "mods/" + MENU_PATCH_NAME
+        if name in files:
+            raise ValueError("Duplicate client menu compatibility mod")
+        files[name] = menu_fix
     with zipfile.ZipFile(society_zip) as archive:
         manifest = json.loads(archive.read("manifest.json"))
         if {(f["projectID"], f["fileID"]) for f in manifest["files"]} != {(f["project_id"], f["file_id"]) for f in lock["files"]}:
@@ -176,6 +188,10 @@ def build(server, extras, society_zip, output):
                                                    for item in lock.get("client_overrides", [])],
                 "port_sha256": PORT_SHA256, "overrides": checks}
     metadata["forge_model_compatibility"] = model_receipt
+    if menu_fix is not None:
+        metadata["client_menu_compatibility"] = {
+            "path": "mods/" + MENU_PATCH_NAME, "sha256": MENU_PATCH_SHA256,
+            "client_only": True, "source": "compat/client-menu"}
     fingerprint = hashlib.sha256(json.dumps(metadata, sort_keys=True).encode()).hexdigest()
     payload["psa-forge-client-profile.json"] = (json.dumps(metadata, indent=2) + "\n").encode()
     index = {"formatVersion": 1, "game": "minecraft", "versionId": "psa-forge-" + fingerprint[:12],
@@ -206,5 +222,6 @@ if __name__ == "__main__":
     parser.add_argument("--extras", type=Path, required=True)
     parser.add_argument("--society-client", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--menu-fix", type=Path, help="Pinned client-only pause menu fix (v7)")
     args = parser.parse_args()
-    print(json.dumps(build(args.server, args.extras, args.society_client, args.output), indent=2))
+    print(json.dumps(build(args.server, args.extras, args.society_client, args.output, args.menu_fix), indent=2))

@@ -130,5 +130,29 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.lock['client_overrides']=[{'replaces_path':'mods/shared.jar'}];self.write_lock()
         self.assert_no_export()
 
+    def test_menu_fix_is_client_only_and_recorded_in_payload(self):
+        menu = self.root/'menu-fixture.jar'
+        menu.write_bytes(b'archive fixture, never executed')
+        before = {p.name: p.read_bytes() for p in (self.server/'mods').iterdir()}
+        with patch.object(client, 'MENU_PATCH_SHA256', client.digest(menu)):
+            report = client.build(self.server, self.extras, self.society, self.output, menu)
+        self.assertEqual(report['mod_jars'], 5)
+        self.assertEqual(before, {p.name: p.read_bytes() for p in (self.server/'mods').iterdir()})
+        with zipfile.ZipFile(self.output) as archive:
+            name = 'mods/' + client.MENU_PATCH_NAME
+            self.assertEqual(archive.read('overrides/' + name), menu.read_bytes())
+            profile = json.loads(archive.read('overrides/psa-forge-client-profile.json'))
+            self.assertTrue(profile['client_menu_compatibility']['client_only'])
+            self.assertEqual(profile['overrides'][name], client.digest(menu))
+
+    def test_invalid_menu_fix_preserves_output_state(self):
+        menu = self.root/'menu-fixture.jar'
+        menu.write_bytes(b'unverified file')
+        for source in [menu, self.root/'missing.jar']:
+            with self.subTest(source=source), self.assertRaisesRegex(ValueError, 'menu compatibility'):
+                client.build(self.server, self.extras, self.society, self.output, source)
+        self.assertFalse(self.output.exists())
+        self.assertFalse(self.output.parent.exists())
+
 
 if __name__=='__main__':unittest.main()

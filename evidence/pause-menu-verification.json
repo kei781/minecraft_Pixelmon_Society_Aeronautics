@@ -1,0 +1,1535 @@
+{
+  "scope": "Actual full Forge client pause-menu fixture; no authenticated gameplay",
+  "baseline": {
+    "log_sha256": "0da55b6f2265af30528f926e500cdb395b57467531233e951a851920346e2232",
+    "started_from_actual_title_screen": true,
+    "complete_marker": true,
+    "snapshots": [
+      {
+        "gui_scale": 2,
+        "width": 854,
+        "height": 480,
+        "visible_widgets": 15,
+        "active_button_overlaps": 2
+      },
+      {
+        "gui_scale": 3,
+        "width": 570,
+        "height": 320,
+        "visible_widgets": 15,
+        "active_button_overlaps": 2
+      },
+      {
+        "gui_scale": 4,
+        "width": 427,
+        "height": 240,
+        "visible_widgets": 15,
+        "active_button_overlaps": 2
+      }
+    ],
+    "widgets": [
+      {
+        "scale": 2,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Credits",
+        "bounds": [
+          431,
+          170,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          325,
+          170,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.returnToGame",
+        "label": "Back to Game",
+        "bounds": [
+          325,
+          122,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.advancements",
+        "label": "Advancements",
+        "bounds": [
+          325,
+          146,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.stats",
+        "label": "Statistics",
+        "bounds": [
+          431,
+          146,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          325,
+          170,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          431,
+          170,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.options",
+        "label": "Options...",
+        "bounds": [
+          325,
+          194,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.playerReporting",
+        "label": "Player Reporting",
+        "bounds": [
+          431,
+          194,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "fml.menu.mods",
+        "label": "Mods",
+        "bounds": [
+          325,
+          243,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.disconnect",
+        "label": "Disconnect",
+        "bounds": [
+          325,
+          267,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.StringWidget",
+        "key": "menu.game",
+        "label": "Game Menu",
+        "bounds": [
+          0,
+          40,
+          854,
+          9
+        ],
+        "visible": true,
+        "active": false
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.sendFeedback",
+        "label": "Give Feedback",
+        "bounds": [
+          325,
+          170,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          431,
+          170,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.DiscordButton",
+        "key": "menu.discord",
+        "label": "Discord",
+        "bounds": [
+          431,
+          218,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.ButtonWithIcon",
+        "key": "menu.pixelmon",
+        "label": "Pixelmon",
+        "bounds": [
+          325,
+          218,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "com.simibubi.create.infrastructure.gui.OpenCreateMenuButton",
+        "key": "literal",
+        "label": "",
+        "bounds": [
+          301,
+          170,
+          20,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Credits",
+        "bounds": [
+          289,
+          130,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          183,
+          130,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.returnToGame",
+        "label": "Back to Game",
+        "bounds": [
+          183,
+          82,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.advancements",
+        "label": "Advancements",
+        "bounds": [
+          183,
+          106,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.stats",
+        "label": "Statistics",
+        "bounds": [
+          289,
+          106,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          183,
+          130,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          289,
+          130,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.options",
+        "label": "Options...",
+        "bounds": [
+          183,
+          154,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.playerReporting",
+        "label": "Player Reporting",
+        "bounds": [
+          289,
+          154,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "fml.menu.mods",
+        "label": "Mods",
+        "bounds": [
+          183,
+          203,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.disconnect",
+        "label": "Disconnect",
+        "bounds": [
+          183,
+          227,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.StringWidget",
+        "key": "menu.game",
+        "label": "Game Menu",
+        "bounds": [
+          0,
+          40,
+          570,
+          9
+        ],
+        "visible": true,
+        "active": false
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.sendFeedback",
+        "label": "Give Feedback",
+        "bounds": [
+          183,
+          130,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          289,
+          130,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.DiscordButton",
+        "key": "menu.discord",
+        "label": "Discord",
+        "bounds": [
+          289,
+          178,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.ButtonWithIcon",
+        "key": "menu.pixelmon",
+        "label": "Pixelmon",
+        "bounds": [
+          183,
+          178,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "com.simibubi.create.infrastructure.gui.OpenCreateMenuButton",
+        "key": "literal",
+        "label": "",
+        "bounds": [
+          159,
+          130,
+          20,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Credits",
+        "bounds": [
+          217,
+          110,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          111,
+          110,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.returnToGame",
+        "label": "Back to Game",
+        "bounds": [
+          111,
+          62,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.advancements",
+        "label": "Advancements",
+        "bounds": [
+          111,
+          86,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.stats",
+        "label": "Statistics",
+        "bounds": [
+          217,
+          86,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          111,
+          110,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          217,
+          110,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.options",
+        "label": "Options...",
+        "bounds": [
+          111,
+          134,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.playerReporting",
+        "label": "Player Reporting",
+        "bounds": [
+          217,
+          134,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "fml.menu.mods",
+        "label": "Mods",
+        "bounds": [
+          111,
+          183,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.disconnect",
+        "label": "Disconnect",
+        "bounds": [
+          111,
+          207,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.StringWidget",
+        "key": "menu.game",
+        "label": "Game Menu",
+        "bounds": [
+          0,
+          40,
+          427,
+          9
+        ],
+        "visible": true,
+        "active": false
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.sendFeedback",
+        "label": "Give Feedback",
+        "bounds": [
+          111,
+          110,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          217,
+          110,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.DiscordButton",
+        "key": "menu.discord",
+        "label": "Discord",
+        "bounds": [
+          217,
+          158,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.ButtonWithIcon",
+        "key": "menu.pixelmon",
+        "label": "Pixelmon",
+        "bounds": [
+          111,
+          158,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "com.simibubi.create.infrastructure.gui.OpenCreateMenuButton",
+        "key": "literal",
+        "label": "",
+        "bounds": [
+          87,
+          110,
+          20,
+          20
+        ],
+        "visible": true,
+        "active": true
+      }
+    ]
+  },
+  "fixed": {
+    "log_sha256": "19c197aead9800cd09a0adc5764c39d3722682ab3b7972c5b640efe7a0d99543",
+    "started_from_actual_title_screen": true,
+    "complete_marker": true,
+    "snapshots": [
+      {
+        "gui_scale": 2,
+        "width": 854,
+        "height": 480,
+        "visible_widgets": 13,
+        "active_button_overlaps": 0
+      },
+      {
+        "gui_scale": 3,
+        "width": 570,
+        "height": 320,
+        "visible_widgets": 13,
+        "active_button_overlaps": 0
+      },
+      {
+        "gui_scale": 4,
+        "width": 427,
+        "height": 240,
+        "visible_widgets": 13,
+        "active_button_overlaps": 0
+      }
+    ],
+    "widgets": [
+      {
+        "scale": 2,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Credits",
+        "bounds": [
+          431,
+          170,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          325,
+          170,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.returnToGame",
+        "label": "Back to Game",
+        "bounds": [
+          325,
+          122,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.advancements",
+        "label": "Advancements",
+        "bounds": [
+          325,
+          146,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.stats",
+        "label": "Statistics",
+        "bounds": [
+          431,
+          146,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          325,
+          170,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          431,
+          170,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.options",
+        "label": "Options...",
+        "bounds": [
+          325,
+          194,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.playerReporting",
+        "label": "Player Reporting",
+        "bounds": [
+          431,
+          194,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "fml.menu.mods",
+        "label": "Mods",
+        "bounds": [
+          325,
+          243,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.disconnect",
+        "label": "Disconnect",
+        "bounds": [
+          325,
+          267,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.StringWidget",
+        "key": "menu.game",
+        "label": "Game Menu",
+        "bounds": [
+          0,
+          40,
+          854,
+          9
+        ],
+        "visible": true,
+        "active": false
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.sendFeedback",
+        "label": "Give Feedback",
+        "bounds": [
+          325,
+          170,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 2,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          431,
+          170,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 2,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.DiscordButton",
+        "key": "menu.discord",
+        "label": "Discord",
+        "bounds": [
+          431,
+          218,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.ButtonWithIcon",
+        "key": "menu.pixelmon",
+        "label": "Pixelmon",
+        "bounds": [
+          325,
+          218,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 2,
+        "class": "com.simibubi.create.infrastructure.gui.OpenCreateMenuButton",
+        "key": "literal",
+        "label": "",
+        "bounds": [
+          301,
+          170,
+          20,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Credits",
+        "bounds": [
+          289,
+          130,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          183,
+          130,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.returnToGame",
+        "label": "Back to Game",
+        "bounds": [
+          183,
+          82,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.advancements",
+        "label": "Advancements",
+        "bounds": [
+          183,
+          106,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.stats",
+        "label": "Statistics",
+        "bounds": [
+          289,
+          106,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          183,
+          130,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          289,
+          130,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.options",
+        "label": "Options...",
+        "bounds": [
+          183,
+          154,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.playerReporting",
+        "label": "Player Reporting",
+        "bounds": [
+          289,
+          154,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "fml.menu.mods",
+        "label": "Mods",
+        "bounds": [
+          183,
+          203,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.disconnect",
+        "label": "Disconnect",
+        "bounds": [
+          183,
+          227,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.StringWidget",
+        "key": "menu.game",
+        "label": "Game Menu",
+        "bounds": [
+          0,
+          40,
+          570,
+          9
+        ],
+        "visible": true,
+        "active": false
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.sendFeedback",
+        "label": "Give Feedback",
+        "bounds": [
+          183,
+          130,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 3,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          289,
+          130,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 3,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.DiscordButton",
+        "key": "menu.discord",
+        "label": "Discord",
+        "bounds": [
+          289,
+          178,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.ButtonWithIcon",
+        "key": "menu.pixelmon",
+        "label": "Pixelmon",
+        "bounds": [
+          183,
+          178,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 3,
+        "class": "com.simibubi.create.infrastructure.gui.OpenCreateMenuButton",
+        "key": "literal",
+        "label": "",
+        "bounds": [
+          159,
+          130,
+          20,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Credits",
+        "bounds": [
+          217,
+          110,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "de.keksuccino.fancymenu.util.rendering.ui.widget.button.ExtendedButton",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          111,
+          110,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.returnToGame",
+        "label": "Back to Game",
+        "bounds": [
+          111,
+          62,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.advancements",
+        "label": "Advancements",
+        "bounds": [
+          111,
+          86,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "gui.stats",
+        "label": "Statistics",
+        "bounds": [
+          217,
+          86,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "literal",
+        "label": "Sunlit Valley Wiki",
+        "bounds": [
+          111,
+          110,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          217,
+          110,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.options",
+        "label": "Options...",
+        "bounds": [
+          111,
+          134,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.playerReporting",
+        "label": "Player Reporting",
+        "bounds": [
+          217,
+          134,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "fml.menu.mods",
+        "label": "Mods",
+        "bounds": [
+          111,
+          183,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.disconnect",
+        "label": "Disconnect",
+        "bounds": [
+          111,
+          207,
+          204,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.StringWidget",
+        "key": "menu.game",
+        "label": "Game Menu",
+        "bounds": [
+          0,
+          40,
+          427,
+          9
+        ],
+        "visible": true,
+        "active": false
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.sendFeedback",
+        "label": "Give Feedback",
+        "bounds": [
+          111,
+          110,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 4,
+        "class": "net.minecraft.client.gui.components.Button",
+        "key": "menu.reportBugs",
+        "label": "Report Bugs",
+        "bounds": [
+          217,
+          110,
+          98,
+          20
+        ],
+        "visible": false,
+        "active": false
+      },
+      {
+        "scale": 4,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.DiscordButton",
+        "key": "menu.discord",
+        "label": "Discord",
+        "bounds": [
+          217,
+          158,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "com.pixelmonmod.pixelmon.client.gui.widgets.ButtonWithIcon",
+        "key": "menu.pixelmon",
+        "label": "Pixelmon",
+        "bounds": [
+          111,
+          158,
+          98,
+          20
+        ],
+        "visible": true,
+        "active": true
+      },
+      {
+        "scale": 4,
+        "class": "com.simibubi.create.infrastructure.gui.OpenCreateMenuButton",
+        "key": "literal",
+        "label": "",
+        "bounds": [
+          87,
+          110,
+          20,
+          20
+        ],
+        "visible": true,
+        "active": true
+      }
+    ]
+  },
+  "client_menu_mod": {
+    "filename": "PSA-Client-Menu-Compat-1.0.jar",
+    "size": 3608,
+    "sha256": "564a56649c825a74fd8378b96fc084df03c07b7c5ee8944fa5bf2949bf09f5fa",
+    "independent_normalized_builds_match": true,
+    "file_bytes_equal_before_zip_normalization": true,
+    "registered_network_channels": 0,
+    "client_only_mixins": true
+  },
+  "layout_sha256": "9ff6fe3965bc9b74aa1034f0588aeb337ae159529c118444d5d9cb5c30a6b30e",
+  "artifact": {
+    "filename": "PSA-Forge-Full-Experimental-v7.mrpack",
+    "sha256": "8b663c7770f8f2141367a76c0b89a152fd23ddf4fb38b7c98afe9c4dee65f7cf",
+    "size": 1137777650,
+    "version_id": "psa-forge-27b57bc7fe6f",
+    "mod_jars": 354,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7926,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "v6_payload_delta": {
+    "added": [
+      "mods/PSA-Client-Menu-Compat-1.0.jar"
+    ],
+    "removed": [],
+    "changed": []
+  },
+  "python_tests": {
+    "discovered": 49,
+    "passed": 46,
+    "linux_only_skipped_on_macos": 3
+  },
+  "n100_server_files_changed": false,
+  "windows_after_fix_verified": false,
+  "initial_private_candidate_failed": "Mod entry point shared the Mixin package; actual launch exposed IllegalClassLoadError. Fixed by placing mixins in a dedicated subpackage; final runtime above uses rebuilt hash. Initial candidate was not sent to Windows.",
+  "remaining": [
+    "Final exact v7 GUI import check",
+    "Independent latest Claude review",
+    "Windows same-screen retest",
+    "Full gameplay and six-player acceptance"
+  ],
+  "checked_at": "2026-11-08T15:36:44.136180+00:00"
+}

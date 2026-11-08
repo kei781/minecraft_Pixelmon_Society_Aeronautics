@@ -86,3 +86,8 @@ Shader R3는 실제 Opus 5.5로 `eeb70b8`을 검토했고 코드 자체의 지�
 Shader R4: 실제 최신 Claude Opus 5.5가 `d9c4de0`을 CLEAN으로 판정했고 R3의 실제 엔티티 검사 지적을 해소했다. 검증된 브리지 적용 후 PR #2의 실제 미해결 스레드는 0건이다. CI 체크는 설정돼 있지 않다. 운영 믹신·내보내기 코드는 이 회차에서 바꾸지 않았다. 추가 바이트코드 검사에서 보스 외 다이맥스·진화 경로도 모두 FLOAT·FLOAT.listOf를 사용함을 확인했다. [정적 검사 범위](../evidence/pixelmon-shader-callsite-inspection.json).
 
 2026-11-09 00:12 KST: N100 실제 접속자 0명을 새 콘솔 명령으로 확인한 뒤 정상 저장·종료했다. 기존 월드 373개 항목의 압축 백업과 이전 JAR·구성·검증 목록을 보존하고 검토 완료한 v6 포팅 JAR를 배치했다. 전체 313개 해시 대조, 재기동 Done·온라인 인증 유지, 실제 콘솔0/6명·TPS20·평균1.251ms를 확인했다. v6 패키지와 기동 완료 요청서·접속 파일은 Windows PC에 Taildrop 전송 성공했다. Windows 채팅 API의 durable 오류는 지속되며 수신 에이전트 실행·파일 해시·실제 v6 재접속은 아직 확인하지 못했다. [하위 작업 수락 범위](../evidence/phase4-shader-review-acceptance.json). 두 최종 목표는 여전히 미완료다.
+
+
+### Task 5 — 일시정지 메뉴 겹침 수정
+
+사용자가 Windows 화면의 Wiki 줄 글자 겹침을 보고했다. BASE `b87bfc6`. 실제 전체 클라이언트에서 Society의 Wiki·Credits와 Pixelmon이 새로 추가한 피드백·버그 신고 버튼이 같은 위치에 있는 것을 재현했다. 원본 배율2/3/4 모두 겹침2쌍, 클라이언트 전용 패치 후 모두0쌍이다. Wiki·Credits·Pixelmon·Discord가 표시·활성 상태로 보존됐다. 원본 Society 메뉴 설정 해시가 맞는 경우에만 보정한다. N100은 변경하지 않았다. 두 트리의 정규화 빌드가 같고 Python49개 중46개 통과·Linux전용3개 제외다. v7 파일과 v6용 작은 보정 JAR를 준비했으며 독립 리뷰와 최종 가져오기·전달 검증은 이어서 수행한다. [문제·적용 범위](pause-menu-compatibility.md), [측정 증거](../evidence/pause-menu-verification.json). 두 최종 목표는 미완료다.
