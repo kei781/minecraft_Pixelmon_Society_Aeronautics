@@ -20,7 +20,7 @@
 
 ## 개발자가 패키지를 만드는 방법
 
-검증된 다운로드 캐시와 Python 3.9+가 있는 개발 체크아웃에서:
+검증된 다운로드 캐시와 Python 3.9+가 있는 macOS/Linux(POSIX) 개발 체크아웃에서:
 
 ```sh
 python3 tools/export_client.py diagnostic --bundle-downloads

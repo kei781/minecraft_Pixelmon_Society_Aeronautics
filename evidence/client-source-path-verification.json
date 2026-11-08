@@ -18,5 +18,16 @@
     "Parent directory symlink is rejected",
     "Real git-index fixture contains original tracked configuration"
   ],
-  "unit_tests_passed": 14
+  "unit_tests_passed": 14,
+  "real_ignored_marker_check": {
+    "path": "config/.psa-export-probe.bak",
+    "git_check_ignore": true,
+    "verify_upstream_clean_with_marker": true,
+    "tracked_selection_excluded_marker": true,
+    "tracked_configuration_copy_excluded_marker": true,
+    "diagnostic_export_excluded_marker": true,
+    "marker_removed_and_upstream_clean": true,
+    "full_staging_not_executed": "Two real mandatory artifacts remain missing; test did not bypass their gate."
+  },
+  "test_log_sha256": "00db2898ac22c9f33d7f32021534ca33bf6a27a336e80ea070c53f6f418ed4de"
 }
