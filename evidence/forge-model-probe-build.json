@@ -1,10 +1,12 @@
 {
-  "test_only_probe_sha256": "06b57c25aa687bfe94fc5264aded17c18049cbfe9d17b446b49d9e7e63e491fc",
-  "build_log_sha256": "26ad553656adfef0dfd6ee0aff7b3cb4649c68a84b3919650dff9e7d03f570de",
+  "test_only_probe_sha256": "4c6f1e805f63a114097afba28a074a5af1f5d766a430a5e08c7a86d11f4b9dc1",
+  "build_log_sha256": "85f77e020b96c1188171ab9755179f096d5e933994867cc2ec7168363ec98bf6",
   "java": 17,
   "pinned_forge_source_commit": "c026749ab4d2c7a29693d8f67617be76bac73601",
   "task": "reobfPsaModelProbeJar",
   "success": true,
   "included_in_client_export": false,
-  "deployed_to_server": false
+  "deployed_to_server": false,
+  "initial_probe_sha256": "06b57c25aa687bfe94fc5264aded17c18049cbfe9d17b446b49d9e7e63e491fc",
+  "missing_geometry_comparison": true
 }

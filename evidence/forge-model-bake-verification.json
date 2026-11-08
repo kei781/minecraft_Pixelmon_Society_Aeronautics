@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-08T12:30:35.822286+00:00",
+  "checked_at": "2026-11-08T12:41:45.195198+00:00",
   "environment": {
     "os": "macOS",
     "prism": "11.1.1",
@@ -17,6 +17,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -24,6 +25,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -31,6 +33,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -38,6 +41,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -45,6 +49,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -52,6 +57,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -59,6 +65,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -66,6 +73,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -73,6 +81,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -80,6 +89,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -87,6 +97,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -94,6 +105,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -101,6 +113,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -108,6 +121,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -115,6 +129,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -122,6 +137,7 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       },
       {
@@ -129,13 +145,14 @@
         "loader": "neoforge:obj",
         "not_direct_missing_model": true,
         "quads": 6,
+        "matches_missing_geometry": true,
         "passed": false
       }
     ],
     "passed": 0,
     "total": 17,
     "compatibility_pack_selected": false,
-    "log_sha256": "b5386d15b15e4fc22c7ae9efd7c2a1371b844a76fdcb71533b05428b6d87918c"
+    "log_sha256": "db99bc735a4dcbe2ba59240a4ac00ba769ea54616e21d1bde31255b372f847d4"
   },
   "fixed": {
     "models": [
@@ -144,6 +161,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 70,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -151,6 +169,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 46,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -158,6 +177,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 188,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -165,6 +185,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 182,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -172,6 +193,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 300,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -179,6 +201,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 294,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -186,6 +209,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 76,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -193,6 +217,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 70,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -200,6 +225,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 188,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -207,6 +233,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 182,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -214,6 +241,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 206,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -221,6 +249,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 203,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -228,6 +257,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 209,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -235,6 +265,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 206,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -242,6 +273,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 212,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -249,6 +281,7 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 236,
+        "matches_missing_geometry": false,
         "passed": true
       },
       {
@@ -256,13 +289,14 @@
         "loader": "forge:obj",
         "not_direct_missing_model": true,
         "quads": 230,
+        "matches_missing_geometry": false,
         "passed": true
       }
     ],
     "passed": 17,
     "total": 17,
     "compatibility_pack_selected": true,
-    "log_sha256": "a125dfee8b9e6785c1a3b289ad348e063735ae949cabccf0eafc423f0bc7fafb"
+    "log_sha256": "239f199be4218f221b82a167db3de88ebe6637f8bd32362cf46e00d5e692e60d"
   },
   "test_probe_in_player_artifact": false,
   "server_port_jar_changed": false,
@@ -376,7 +410,7 @@
       }
     ]
   },
-  "direct_missing_model_identity_limit": "ModernFix can wrap a missing model. Baseline wrappers return six cube quads and pass direct identity; acceptance also requires forge:obj and positive geometry. Corrected quads range46..300. This is a resource bake test, not visual/gameplay validation.",
+  "direct_missing_model_identity_limit": "ModernFix wraps missing models. Direct identity alone is insufficient; revised probe compares all baked quad signatures to the canonical missing model. The intentional broken OBJ is correctly rejected even with forge:obj and selected compatibility pack. Visual texture/shape/gameplay remain unverified.",
   "all_final_goals_complete": false,
   "remaining": [
     "Windows authenticated connection",
@@ -385,5 +419,162 @@
     "Piloted Aeronautics flight and active shader outline validation",
     "Actual six-player N100 load",
     "Final overall review"
-  ]
+  ],
+  "negative_obj_control": {
+    "models": [
+      {
+        "model": "offroad:block/rockcutting_wheel/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 70,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:block/rockcutting_wheel/wheel",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 46,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/large_tire/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 188,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/large_tire/large_tire",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 182,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/monstrous_tire/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 300,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/monstrous_tire/monstrous_tire",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 294,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/small_tire/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 76,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/small_tire/small_tire",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 70,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/tire/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 188,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/tire/tire",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 182,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/block",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 206,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/block_flipped",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 203,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 209,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/plunger_wheel/block",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 206,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/plunger_wheel/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 212,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/steering_wheel/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 236,
+        "matches_missing_geometry": false,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/steering_wheel/wheel",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "matches_missing_geometry": true,
+        "passed": false
+      }
+    ],
+    "passed": 16,
+    "total": 17,
+    "compatibility_pack_selected": true,
+    "log_sha256": "eabe8b33deb03cadb94cb2447014b4c6b410bc2aa35b75575b9a16c9e485093b",
+    "overridden_obj": "assets/simulated/models/block/steering_wheel/wheel.obj",
+    "corrupt_obj_sha256": "f91e9ab0e31c6fb889304088a8e4fc3e93795c777b8f928549d3fce190a83333",
+    "diagnostic_resourcepack_sha256": "436980a5e7543a8d38841ffe7ac083d72953737d4c808c4a9d4e9c556a5dfb13",
+    "all_top_level_json_loaders_unchanged": true,
+    "player_artifact_modified": false
+  },
+  "probe_revision": 2,
+  "pass_conditions": [
+    "not direct missing-model identity",
+    "nonempty baked geometry",
+    "sorted vertex/texture/tint/direction/shade quad signatures differ from canonical missing model",
+    "active source JSON loader forge:obj"
+  ],
+  "initial_probe_evidence_commit": "4b637b72af8d905428670fe47910ec99c75f5cb9"
 }

@@ -1,0 +1,22 @@
+{
+  "head_sha": "4b637b72af8d905428670fe47910ec99c75f5cb9",
+  "verdict": "FINDINGS",
+  "summary": "대상 커밋 4b637b7(PR #2, BASE 303935e)의 Forge OBJ 호환 리소스팩 생성·자동 활성화·진단 프로브를 요구사항과 대조했다. threads.json이 비어 있어 미해결 스레드는 없다.\n\n확인한 점:\n- tools/forge_model_pack.py:build는 고정 포트 JAR의 SHA256을 확인한다. 대상 네임스페이스 4개의 `neoforge:` 최상위 loader만 고르고, `neoforge:obj`가 아닌 loader는 거부한다. OBJ 경로는 safe_path와 JAR 내부 존재 여부로 확인하고, 변환 개수가 17개가 아니면 중단한다. 바꾸는 값은 최상위 `loader` 하나뿐이다. ZIP 날짜를 고정하고 파일을 정렬해 출력이 결정적이다. safe_path는 값을 바꾸지 않고 반환하므로 `files[safe_path(name)]`와 `files[name]`이 같은 키를 가리킨다.\n- enable은 스키마 2와 목록 타입을 확인하고, 기존 항목과 중복되거나 `resourcePacks:` 줄이 정확히 하나가 아니면 거부한다. overrides에는 모든 검증이 끝난 뒤에만 기록하므로 실패해도 입력이 바뀌지 않는다. 이 보장은 test_invalid_selections_do_not_mutate_input의 단언(`overrides == original`)이 실제로 확인한다. 기존 기본 팩과 pack_overrides, 그 밖의 옵션 줄도 유지된다. `incompatibleResourcePacks:`는 startswith 조건에 걸리지 않는다.\n- 내보내기 쪽의 기존 검사가 그대로 남아 있다. 서버 mods 집합 비교, 새 출력 파일 요구, 대소문자 충돌 검사다. 서버 mods 집합 비교 때문에 프로브 JAR가 서버나 공유 mods에 섞이면 내보내기가 실패한다.\n- 해시 수치가 서로 맞는다. Phase 3의 7,923개에 호환 팩 1개를 더해 7,924개이고, 프로필 JSON을 포함한 override_files는 7,925개다.\n\n새 지적(P2) 1건: 진단 프로브의 통과 조건(`quads > 0`)은 ModernFix가 감싼 누락 모델의 6면 큐브도 통과시킨다. loader 값도 베이크된 모델이 아니라 최상위 리소스 JSON에서 읽는다. 그래서 JSON은 `forge:obj`인데 OBJ 베이킹이 실패한 경우를 거짓 통과로 보고할 수 있다. 이번 증거의 v5 면 수는 46~300이라 실제 결론은 유지된다. 다만 SUMMARY 행으로 재현하라는 문서상 절차의 판정 근거로는 부족하다.\n\n실행 검증 요청(리뷰어는 실행하지 않았다): (1) 프로브 수정 후 v4/v5에서 재측정. 추가로 v5 사본에서 OBJ 하나를 의도적으로 깨뜨린 음성 대조군이 passed=false가 되는지 확인. (2) Ubuntu와 macOS에서 tests/test_forge_model_pack.py와 tests/test_forge_client_build.py 재실행. 테스트 통과 여부는 작성자 보고(Ubuntu 47/47, macOS 44+3 skip)만 있고 이 리뷰에서 확인하지 않았다.",
+  "resolve_thread_ids": [],
+  "replies": [],
+  "new_comments": [
+    {
+      "path": "tests/forge-model-probe/ModelProbe.java",
+      "line": 66,
+      "priority": "P2",
+      "title": "프로브 통과 조건이 ModernFix 누락 모델 큐브(6면)를 걸러내지 못함",
+      "body": "`ok = real && quads > 0 && loader.equals(\"forge:obj\")`는 누락 모델을 판별하지 못한다. 증거 파일(forge-model-bake-verification.json)의 baseline을 보면 ModernFix 래퍼는 `real=true`(not_direct_missing_model)이고 `quads=6`이다. 따라서 `real && quads > 0`은 누락 모델에서도 항상 참이다.\n\n남은 판별 조건은 `loader`인데, 이 값은 베이크된 모델에서 오지 않는다. `resources.getResource(...)`로 최상위 리소스 JSON을 읽은 값이다. 호환 팩이 선택돼 JSON이 `forge:obj`가 되기만 하면 조건이 참이 된다. 이후 OBJ/MTL 파싱이나 베이킹이 실패해 ModernFix가 누락 모델 큐브로 대체해도 마찬가지다.\n\n재현 흐름: v5 사본에서 대상 .obj 하나를 지우거나 손상시키고 실행한다. JSON loader는 `forge:obj`이고, Forge ObjLoader 예외가 나면 모델은 누락 모델 래퍼가 된다. 래퍼는 real=true, quads=6이므로 `passed=true`가 되고 SUMMARY에 17/17이 찍힌다.\n\n이번 증거는 v5 면 수가 46~300이라 사람이 읽으면 구분된다. 하지만 docs/forge-model-compatibility.md는 이 프로브의 `PSA_MODEL_PROBE SUMMARY`로 재현하라고 안내한다. 또 문서는 '로더·기하 데이터 조건'을 판정 근거라고 설명하는데, 자동 판정은 그 설명보다 약하다.\n\n수정 제안: `event.getModelManager().getMissingModel()`의 quad 수·quad 데이터와 같으면 실패로 처리한다. 또는 대상 모델의 quad 목록이 누락 모델과 같은지 직접 비교하거나, 베이크된 모델 클래스나 언랩한 결과로 OBJ 기하인지 확인한다. 아울러 OBJ를 고의로 깨뜨린 음성 대조군에서 passed=false가 나오는지 기록한다."
+    }
+  ],
+  "out_of_scope": [
+    "Windows 정품 로그인·접속, Pixelmon 포획/전투, Society 농사·경제·진행, Aeronautics 조종 비행·셰이더 외곽선, N100 실제 6인 부하, 최종 전체 리뷰는 이 변경 범위 밖이다. 작성자와 문서 모두 미완료로 명시했다.",
+    "Society 공식 zip에 최상위 overrides/options.txt가 있으면 configureddefaults/options.txt보다 우선할 수 있다. enable()은 그 파일을 갱신하지 않는다. 실제 v5 가져오기 실행에서 compatibility_pack_selected=true로 기록됐지만, 리뷰어는 고정된 Society zip 내용을 볼 수 없어 직접 확인하지 못했다.",
+    "호환 팩의 텍스처·모양·조종 시 시각 결과는 이번 베이크 검사로 확인되지 않는다. 문서도 그렇게 명시한다. 실제 화면 확인은 이후 phase에서 필요하다."
+  ],
+  "blocked_reasons": []
+}

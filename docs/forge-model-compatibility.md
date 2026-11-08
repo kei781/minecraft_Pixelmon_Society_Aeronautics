@@ -17,7 +17,9 @@ v5는 검증된 포팅 JAR에서 해당 JSON 17개만 읽어 최상위 `loader` 
 | 모델별 생성 면 수 | 누락 모델 래퍼의 큐브 6면 | 46~300면 |
 | 호환 팩 실제 선택 | false | true |
 
-ModernFix는 누락 모델을 래핑하므로 missing-model 객체와 직접 비교하는 검사만으로는 판별할 수 없다. 로더와 면 생성도 함께 검사했다. 조종간의 item/wheel은 각각 236면/230면이었다. 이는 실제 모델 리소스 생성 검사이며 화면의 모양·텍스처·조종·셰이더 렌더링을 눈으로 확인한 결과는 아니다. 다른 모드의 경고와 리소스 오류도 남아 있으므로 전체 로그가 오류 없다고 주장하지 않는다. [17개별 결과·로그 해시](../evidence/forge-model-bake-verification.json).
+추가 음성 대조군은 v5의 별도 복사본에서 조종간 wheel OBJ 하나만 숫자로 파싱할 수 없는 내용으로 덮었다. JSON의 `forge:obj`와 호환 팩 선택은 유지했다. 보강한 프로브는 해당 모델의 누락 큐브를 검출해 `missing_geometry=true`, `passed=false`, 전체 16/17로 보고했다. 원본 플레이어 패키지는 바꾸지 않았다.
+
+ModernFix는 누락 모델을 래핑하므로 missing-model 객체와 직접 비교하는 검사만으로는 판별할 수 없다. Claude R1의 지적을 반영해 각 면의 꼭짓점·텍스처 ID·색인·방향·음영을 정렬한 서명도 기준 누락 모델과 비교한다. 누락 모델과 같거나 면이 비어 있으면 로더 이름이 맞아도 실패다. 조종간의 item/wheel은 각각 236면/230면이었다. 이는 실제 모델 리소스 생성 검사이며 화면의 모양·텍스처·조종·셰이더 렌더링을 눈으로 확인한 결과는 아니다. 다른 모드의 경고와 리소스 오류도 남아 있으므로 전체 로그가 오류 없다고 주장하지 않는다. [17개별 결과·로그 해시](../evidence/forge-model-bake-verification.json).
 
 v5의 실제 가져오기 후 payload 7,924개 SHA256과 JAR 353개 및 필수 선택 설정을 확인했다. 자동 검사 47개는 Ubuntu에서 모두 통과했고 macOS에서는 44개 통과·Linux 전용 3개 제외였다. [가져오기 검사](../evidence/forge-client-import-v5.json), [컨트롤러 검사](../evidence/phase4-model-controller-tests.json).
 

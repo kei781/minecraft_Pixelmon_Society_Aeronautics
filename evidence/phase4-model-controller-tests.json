@@ -13,5 +13,13 @@
   "new_model_pack_regressions": 5,
   "fixtures_launched_as_game": false,
   "macos_log_sha256": "60ab0a1bc0417320e7d652398897cbbc668f0801d5ea078eec3223e503012d5f",
-  "n100_log_sha256": "f43c28652239607a7106d82c6c9521164edf38658c36968058cd7e51e8df7e4d"
+  "n100_log_sha256": "f43c28652239607a7106d82c6c9521164edf38658c36968058cd7e51e8df7e4d",
+  "claude_r1_requested_recheck": {
+    "macos_focused_cases": 13,
+    "ubuntu_focused_cases": 13,
+    "passed": true,
+    "scope": "test_forge_model_pack.py and test_forge_client_build.py",
+    "mac_log_sha256": "37d8408307c9798519c3e443278dcdb4cc751b881b026934a7ac73418de1fbea",
+    "n100_log_sha256": "6718db5a9d3a41950d73d7d0a29f9ac091a28aa83f235f26f20e03fd113c094d"
+  }
 }
