@@ -153,7 +153,9 @@ def fetch(side):
             except Exception as exc:
                 failures.append({"project": file["project"], "error": str(exc)})
                 print("FAILED", file["project"], str(exc), flush=True)
-    (ROOT / "evidence" / ("download-" + side + ".json")).write_text(json.dumps({"selected": len(selected), "failures": failures}, indent=2) + "\n")
+    report = {"side": side, "lock_sha256": hashlib.sha256((ROOT / "integration-lock.json").read_bytes()).hexdigest(),
+              "selected": len(selected), "failures": failures}
+    (ROOT / "evidence" / ("download-" + side + ".json")).write_text(json.dumps(report, indent=2) + "\n")
     if failures:
         raise RuntimeError(str(len(failures)) + " required downloads failed; no files were silently omitted")
 

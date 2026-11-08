@@ -1,4 +1,6 @@
 {
+  "side": "server",
+  "lock_sha256": "0675c1e67a3e23187862046cb2bedb7b08378052f0898644a2d075585cced46a",
   "selected": 228,
   "failures": []
 }

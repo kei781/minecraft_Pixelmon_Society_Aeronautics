@@ -9,5 +9,93 @@
       "project": "oreganized",
       "error": "URL can't contain control characters. '/data/2FJutzEL/versions/4LJyawKL/Oreganized 1.21.1-5.3.0+mc1.21.1.jar' (found at least ' ')"
     }
-  ]
+  ],
+  "provenance": {
+    "society_commit": "5e7c8fa9073a86f9ac74c7cbf087551e5872016c",
+    "initial_selection": "Frozen upstream pakku side settings only. The initial generated lock file was not preserved.",
+    "comparison": "Reconstructed initial 244-project selection from that frozen pakku configuration; current selection is 228 after applying official server_side=unsupported metadata. All 277 files remain in the client selection.",
+    "reclassified_client_only": [
+      {
+        "project": "cherished-worlds",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/3azQ6p0W"
+      },
+      {
+        "project": "ears",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/mfzaZK3Z"
+      },
+      {
+        "project": "fancy-tab-sections",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/K0NYarUG"
+      },
+      {
+        "project": "faster-ladder-climbing",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/ylYAPOKe"
+      },
+      {
+        "project": "fusion-connected-textures",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/p19vrgc2"
+      },
+      {
+        "project": "gui-clock",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/g1yXisD2"
+      },
+      {
+        "project": "irisshaders",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/YL57xq9U"
+      },
+      {
+        "project": "libtooltips",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/L95W3cqk"
+      },
+      {
+        "project": "loot-journal-neoforge",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/OJ6ZYz5L"
+      },
+      {
+        "project": "neoauth",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/zeZhoBhv"
+      },
+      {
+        "project": "ponder",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/5A34Stj8"
+      },
+      {
+        "project": "reliable-emi",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/N9WucjHL"
+      },
+      {
+        "project": "resource-pack-overrides",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/YsFycamt"
+      },
+      {
+        "project": "searchables",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/fuuu3xnx"
+      },
+      {
+        "project": "simple-discord-rich-presence",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/SCAopByd"
+      },
+      {
+        "project": "sodium",
+        "server_side": "unsupported",
+        "source": "https://api.modrinth.com/v2/project/AANobbMI"
+      }
+    ],
+    "url_failures": "The two failed URL paths were subsequently percent-encoded correctly. Both projects remain in the current server selection; the current download-server.json has zero failures."
+  }
 }
