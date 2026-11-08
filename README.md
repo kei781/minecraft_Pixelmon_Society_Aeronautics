@@ -47,6 +47,8 @@ Society 개발자의 실제 설치 기록에는 아래 네 파일이 있지만, 
 
 이 개발 검사는 macOS/POSIX 환경용이며 Java 경로는 `--java-home /path/to/jdk-21`로 지정할 수 있습니다. 기본값은 `JAVA_HOME`, 없으면 이 작업에서 사용한 번들 JDK 경로입니다. 원시 게임 로그·역어셈블 덤프는 로컬에 보관하고, 검증 요약과 다운로드 실패 기록은 Git에 남깁니다.
 
+`evidence/verification.txt`는 추적된 도구로 재현할 수 있는 검사와, 일회성 명령으로 실행한 수동 검사를 구분합니다. 수동 staging 픽스처와 일부 회귀 검사 실행기는 저장소에 포함하지 않았으며, 이를 자동 테스트로 주장하지 않습니다.
+
 ## 원본
 
 - Pixelmon: https://reforged.gg/ko

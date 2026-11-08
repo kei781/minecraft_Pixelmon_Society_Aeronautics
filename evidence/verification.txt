@@ -1,8 +1,8 @@
-PASS: Non-component generic codec matcher tables are returned unchanged (compiled Java regression).
-PASS: Missing Society inputs stop client staging before directory creation.
+MANUAL CHECK (one-off command; runner not tracked): Non-component generic codec matcher tables are returned unchanged. The Java test source is tests/CodecMatcherRegression.java; its classpath/compilation command is not packaged as a runner.
+MANUAL CHECK (one-off command; fixture not tracked): Missing Society inputs stop client staging before directory creation.
 PASS: 277 original downloads verified against upstream sizes and hashes.
-PASS: Both staging paths select exactly one patched CreativeCore; tampering stops staging before writes (isolated staging fixtures).
-PASS: Invalid patch input preserves existing output jar (invalid-entry regression).
+MANUAL CHECK (one-off command; fixture not tracked): Both staging paths select exactly one patched CreativeCore; tampering stops staging before writes (isolated staging fixtures).
+MANUAL CHECK (one-off command; fixture not tracked): Invalid patch input preserves existing output jar (invalid-entry regression).
 PASS: Real NeoForge test mod verifies component-array extension and idempotence, CreativeCore item-stack encode/decode, Pixelmon legacy behavior against a Pixelmon-only control, and explicit Pixelmon component type decoding. See codec-probe-results.txt and pixelmon-codec-control.txt.
 PASS: Dedicated baseline manifest and tools/build_probe.py recreate separate Pixelmon-only and patched codec profiles; both were run and produced matching pass/control observations. See codec-baseline-repro-summary.txt and codec-patched-repro-summary.txt.
 PASS: Patched jar has POSIX mode 0644; fresh server summary JSON is not ignored by Git. No separate service-account execution is claimed.
