@@ -1,0 +1,20 @@
+{
+  "head_sha": "a772341401f044f2cba2a6e4c6571f69ea7f7fda",
+  "verdict": "CLEAN",
+  "summary": "라운드 5 범위(9b0f477→a772341)는 README 설명 한 단락, evidence/download-client.json 메타데이터, evidence/verification.txt 라벨만 바뀌었다. 소스 코드는 바뀌지 않았다. 이전 지적 local-r4-1은 해소됐다고 본다.\n\n근거:\n1) 재현 불가로 지적된 1·2·4·5행은 이제 PASS가 아니다. 'MANUAL CHECK (one-off command; runner/fixture not tracked)'로 바뀌었고, 실행기와 픽스처가 저장소에 없다는 점도 행마다 밝혔다. README.md:50은 추적 도구로 재현할 수 있는 검사와 수동 검사를 나누고, 수동 검사를 자동 테스트로 주장하지 않는다고 밝힌다. 추적 도구로 재현할 수 있는 코덱 프로필 PASS(6·7행)는 tools/build_probe.py와 README.md:46 절차로 따로 남아 있다.\n2) download-client.json에 이제 `side: client`와 `lock_sha256`이 있다. 이는 tools/prepare.py:156-158의 현재 fetch() 출력 형식과 맞는다. lock_sha256 값(0675c1e6…ed46a)은 download-server.json과 같다.\n3) 개수는 lock과 맞는다. Grep으로 세어 보니 integration-lock.json의 `\"side\"` 항목은 277개다. 그중 both/client는 277개라 client 선택 277(verification.txt:3, README.md:19)과 같다. both/server는 228개라 download-server.json의 selected 228과 같다.\n4) verification.txt:8의 0644 주장은 tools/build_compat.py:29의 os.chmod(temporary, 0o644)가 뒷받침한다.\n\n새로 찾은 결함은 없다. 다만 Read/Grep만 쓸 수 있어 integration-lock.json의 SHA256을 직접 계산하지는 못했다. 테스트나 다운로드도 실행하지 않았으므로 277/228 검증이 통과했다고 확인한 것은 아니다. 실행 검증 요청: `shasum -a 256 integration-lock.json` 결과가 0675c1e67a3e23187862046cb2bedb7b08378052f0898644a2d075585cced46a인지 확인해 달라.\n\n참고: plan mode 지시가 있었지만 이 세션에는 Write/ExitPlanMode 도구가 없어 plan 파일을 만들지 않았다. 리뷰는 읽기 전용으로만 했다.",
+  "resolve_thread_ids": [
+    "local-r4-1"
+  ],
+  "replies": [
+    {
+      "thread_id": "local-r4-1",
+      "body": "해소됐다고 본다. 지적한 1·2·4·5행은 PASS에서 'MANUAL CHECK (one-off command; runner/fixture not tracked)'로 바뀌었다. 실행기와 픽스처가 저장소에 없다는 점도 행마다 밝혔고, README.md:50에 수동 검사와 재현 가능한 검사의 구분을 적었다. 3행의 근거 파일 evidence/download-client.json에는 이제 현재 fetch()(tools/prepare.py:156-158)가 쓰는 `side`와 `lock_sha256`이 있고, 그 값은 download-server.json의 lock_sha256과 같다. Grep으로 세어 보니 integration-lock.json의 both/client 항목은 277개, both/server 항목은 228개로 두 보고서의 selected 값과 맞는다. 한계: 이 리뷰에서는 해시를 계산할 수 없었다. 그래서 `shasum -a 256 integration-lock.json`이 0675c1e67a3e23187862046cb2bedb7b08378052f0898644a2d075585cced46a와 같은지는 따로 실행해 확인해 주기 바란다."
+    }
+  ],
+  "new_comments": [],
+  "out_of_scope": [
+    "요구사항의 수용 조건은 아직 충족되지 않았다. verification.txt:9-10과 README에 적힌 대로 전체 기동이 Sunrise Gardening 레지스트리 항목 누락으로 막혀 있다. Windows 더블클릭 설치기, 클라이언트 접속, Pixelmon 포획/전투, Society 농사/경제, Aeronautics 조립/비행, N100 6인 부하 측정도 하지 않았다. 이번 로컬 리뷰는 프로토타입과 증거 정리만 대상으로 했고, 완성된 통합을 승인하는 것이 아니다.",
+    "Society 개발 산출물 4개(society-2.0, sunrisegardening-1.0, orchard, plentifulponds)를 공개 경로에서 구할 수 없는 문제는 코드 밖의 upstream 의존성 문제다."
+  ],
+  "blocked_reasons": []
+}
