@@ -11,11 +11,13 @@ import zipfile
 
 from export_client import safe_path, add_zip_file, data_bytes
 from stage_forge_candidate import PORT_SHA256, PIXELMON_SHA256, digest
+import forge_model_pack
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_FILES = 367
 EXPECTED_SHARED = 311
 EXPECTED_REPLACEMENTS = 68
+EXPECTED_MODEL_OVERRIDES = 17
 OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
 
 
@@ -147,6 +149,9 @@ def build(server, extras, society_zip, output):
     if actual_scripts != expected_scripts:
         raise ValueError("Unrecognized or missing server KubeJS content")
     overrides["config/pixelmon/config.yml"] = b"allow-vanilla-mobs: true\n"
+    model_data, model_receipt = forge_model_pack.build(
+        server / "mods/psa-aeronautics-experimental-forge-1.20.1.jar", PORT_SHA256, EXPECTED_MODEL_OVERRIDES)
+    forge_model_pack.enable(overrides, model_data)
     payload = dict(overrides)
     for name in set(payload) & set(files):
         if data_bytes(payload[name]) != data_bytes(files[name]):
@@ -170,6 +175,7 @@ def build(server, extras, society_zip, output):
                 "client_compatibility_overrides": [{k: item[k] for k in ["replaces_path", "path", "reason"]}
                                                    for item in lock.get("client_overrides", [])],
                 "port_sha256": PORT_SHA256, "overrides": checks}
+    metadata["forge_model_compatibility"] = model_receipt
     fingerprint = hashlib.sha256(json.dumps(metadata, sort_keys=True).encode()).hexdigest()
     payload["psa-forge-client-profile.json"] = (json.dumps(metadata, indent=2) + "\n").encode()
     index = {"formatVersion": 1, "game": "minecraft", "versionId": "psa-forge-" + fingerprint[:12],

@@ -1,6 +1,6 @@
 # Windows 플레이어 설치
 
-현재 시험 파일은 **`PSA-Forge-Full-Experimental-v4.mrpack`**이다. 세 프로젝트, 모드 JAR 353개, 리소스팩·셰이더·Society 설정을 포함한 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다.
+현재 시험 파일은 **`PSA-Forge-Full-Experimental-v5.mrpack`**이다. 세 프로젝트, 모드 JAR 353개, 리소스팩·셰이더·Society 설정을 포함한 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다.
 
 구성은 Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본이다. 현재 공식 1.21.1 배포본과 구분한다. [구성과 검증 범위](forge-candidate.md).
 
@@ -12,7 +12,7 @@
 
 ## 파일 하나 가져오기
 
-1. 전달받은 위 v4 파일을 저장한다. 예전 `NO-SOCIETY` 진단 파일과 v1~v3 시험 파일은 이 서버에 사용하지 않는다.
+1. 전달받은 위 v5 파일을 저장한다. 예전 `NO-SOCIETY` 진단 파일과 v1~v4 시험 파일은 이 서버에 사용하지 않는다.
 2. **Add Instance → Import → 파일 선택 → OK**를 누른다. [공식 가져오기 안내](https://prismlauncher.org/wiki/getting-started/download-modpacks/).
 3. 외부 모드 확인창이 나오면 이 프로젝트가 구성한 파일인지 아래 SHA256으로 확인한 뒤 신뢰 체크를 하고 진행한다.
 4. 새 인스턴스가 Minecraft **1.20.1**, Forge **47.4.20**인지 확인한다. 첫 설치에는 Minecraft·로더·Java 다운로드용 인터넷이 필요하다.
@@ -22,24 +22,26 @@
 현재 파일 SHA256:
 
 ```text
-753076589fd5c320c8d0d935ce13e0e437dbaa27313acf047b75d601b02f5e48
+aea6ca8ed34a1b1809367c1f1b1caed13b30b842f989af30f7ad5db56d2fba4d
 ```
 
 Windows PowerShell 확인 명령:
 
 ```powershell
-Get-FileHash ".\PSA-Forge-Full-Experimental-v4.mrpack" -Algorithm SHA256
+Get-FileHash ".\PSA-Forge-Full-Experimental-v5.mrpack" -Algorithm SHA256
 ```
 
 설치 경로와 인스턴스 이름은 짧게 쓴다. 가장 긴 상대 경로는 108자다. 다른 버전 모드를 추가하거나 원본 Society 팩 위에 수동으로 겹쳐 넣지 말고 새 인스턴스로 가져온다.
 
 ## 실제 확인한 범위
 
-macOS Prism 11.1.1의 실제 GUI 가져오기를 통과했다. 설치 파일 7,923개의 SHA256, JAR 353개, Minecraft/Forge 버전과 리소스·셰이더 위치를 확인했다. v1의 ZIP 오분류를 수정했고 v4의 mods 폴더에는 ZIP이 없다. [검증 기록](../evidence/forge-client-import-verification.json).
+macOS Prism 11.1.1의 실제 GUI 가져오기를 통과했다. 설치 파일 7,924개의 SHA256, JAR 353개, Minecraft/Forge 버전과 리소스·셰이더 위치를 확인했다. v1의 ZIP 오분류를 수정했고 v5의 mods 폴더에는 ZIP이 없다. [검증 기록](../evidence/forge-client-import-v5.json).
 
 v3는 클라이언트 전용 Shoulder Surfing을 공식 4.16.0에서 5.0.4로 변경했다. Aeronautics 포팅본이 참조하는 클래스와 메서드가 4.16.0에는 없고 5.0.4에 있는 것을 확인한 수정이다. 서버 공통 모드 311개는 동일하다. 원본 manifest와 교체 파일의 공식 URL·해시는 팩 안의 두 lock 파일에도 보존한다. [정적 API 검사](../evidence/shoulder-camera-linkage.json).
 
 v4는 실제 클라이언트에서 재현한 렌더러 `VerifyError`와 Pixelmon 메뉴의 없는 버튼 참조를 수정했다. Oculus·셰이더 모드를 제거하지 않고 포팅본의 인수 변환을 바꿨으며, 필수 기본 버튼이 없는 사용자 지정/데모 화면에서는 Pixelmon의 메뉴 꾸미기만 건너뛴다. 공식 데모로 두 종료 지점을 통과하고 late 메뉴 초기화에 도달한 로그를 확인했다. 게임 창의 시각 확인과 실제 플레이 완료는 아직 아니다. 인증·데모 제한을 바꾸지 않았다. [실행 검사](../evidence/forge-client-startup-verification.json).
+
+v5는 조종간·바퀴 등 17개 모델의 로더 이름을 Forge에 맞춘 호환 리소스팩을 포함하며 처음 실행할 때 자동 선택한다. 서버 공통 JAR는 v4와 동일하다. [모델 수정과 실제 검사](forge-model-compatibility.md).
 
 Windows 게임 실행·인증 접속·포획/전투·농사/경제·조종 비행·6인 부하는 아직 검증하지 않았다. 가져오기 성공을 플레이 완료로 표현하지 않는다. [이전 1.21.1 진단 절차](windows-client-1.21-diagnostic.md)는 별도로 보존한다.
 

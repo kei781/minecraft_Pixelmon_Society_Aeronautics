@@ -1,0 +1,389 @@
+{
+  "checked_at": "2026-11-08T12:30:35.822286+00:00",
+  "environment": {
+    "os": "macOS",
+    "prism": "11.1.1",
+    "minecraft": "1.20.1",
+    "forge": "47.4.20",
+    "java": "17.0.21",
+    "launch": "official launcher demo, not authenticated multiplayer",
+    "real_pack_mods": 353,
+    "extra_test_only_mods": 1
+  },
+  "baseline": {
+    "models": [
+      {
+        "model": "offroad:block/rockcutting_wheel/item",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:block/rockcutting_wheel/wheel",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:item/large_tire/item",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:item/large_tire/large_tire",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:item/monstrous_tire/item",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:item/monstrous_tire/monstrous_tire",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:item/small_tire/item",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:item/small_tire/small_tire",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:item/tire/item",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "offroad:item/tire/tire",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/block",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/block_flipped",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/item",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "simulated:block/plunger_wheel/block",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "simulated:block/plunger_wheel/item",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "simulated:block/steering_wheel/item",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      },
+      {
+        "model": "simulated:block/steering_wheel/wheel",
+        "loader": "neoforge:obj",
+        "not_direct_missing_model": true,
+        "quads": 6,
+        "passed": false
+      }
+    ],
+    "passed": 0,
+    "total": 17,
+    "compatibility_pack_selected": false,
+    "log_sha256": "b5386d15b15e4fc22c7ae9efd7c2a1371b844a76fdcb71533b05428b6d87918c"
+  },
+  "fixed": {
+    "models": [
+      {
+        "model": "offroad:block/rockcutting_wheel/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 70,
+        "passed": true
+      },
+      {
+        "model": "offroad:block/rockcutting_wheel/wheel",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 46,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/large_tire/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 188,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/large_tire/large_tire",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 182,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/monstrous_tire/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 300,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/monstrous_tire/monstrous_tire",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 294,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/small_tire/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 76,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/small_tire/small_tire",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 70,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/tire/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 188,
+        "passed": true
+      },
+      {
+        "model": "offroad:item/tire/tire",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 182,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/block",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 206,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/block_flipped",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 203,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/mecanum_wheel/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 209,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/plunger_wheel/block",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 206,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/plunger_wheel/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 212,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/steering_wheel/item",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 236,
+        "passed": true
+      },
+      {
+        "model": "simulated:block/steering_wheel/wheel",
+        "loader": "forge:obj",
+        "not_direct_missing_model": true,
+        "quads": 230,
+        "passed": true
+      }
+    ],
+    "passed": 17,
+    "total": 17,
+    "compatibility_pack_selected": true,
+    "log_sha256": "a125dfee8b9e6785c1a3b289ad348e063735ae949cabccf0eafc423f0bc7fafb"
+  },
+  "test_probe_in_player_artifact": false,
+  "server_port_jar_changed": false,
+  "pack": {
+    "filename": "PSA-Forge-Model-Compat.zip",
+    "pack_id": "file/PSA-Forge-Model-Compat.zip",
+    "port_sha256": "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de",
+    "sha256": "b948455e04afce7fb0d067486bfc67684a67868b5272c46c87708c958ff228c1",
+    "models": [
+      {
+        "path": "assets/offroad/models/block/rockcutting_wheel/item.json",
+        "model": "offroad:models/block/rockcutting_wheel/item.obj",
+        "original_sha256": "91cfcc45e452ca89b2f38e65f8bd65be6aa82c4244314e2883bee5e5bb78b55b",
+        "override_sha256": "7a8e2b4ce805ed10271cac8097a7615c0c300a814d35fd97c9bfc66b1864441d"
+      },
+      {
+        "path": "assets/offroad/models/block/rockcutting_wheel/wheel.json",
+        "model": "offroad:models/block/rockcutting_wheel/rockcutting_wheel.obj",
+        "original_sha256": "fefc931d4f355e2c4624d720dc2a8c4fdcacd1262e257f91757939223925a6fa",
+        "override_sha256": "22809d9612db5612abdb4a99a67f848c996b677edb3793ffd976813c94a0ed09"
+      },
+      {
+        "path": "assets/offroad/models/item/large_tire/item.json",
+        "model": "offroad:models/item/large_tire/item.obj",
+        "original_sha256": "17aadf3cd9d48900200f45068908a0453526fa720ff983a0442af77a945944d4",
+        "override_sha256": "0576a62ecfb975ba34102aa1d1b5542a0a4fa51a58829dba123229a5ee79c3d9"
+      },
+      {
+        "path": "assets/offroad/models/item/large_tire/large_tire.json",
+        "model": "offroad:models/item/large_tire/block.obj",
+        "original_sha256": "3a61936f144e3c28c92524bb7163e3126c4321dd9279c0b965d2c3a88b725e81",
+        "override_sha256": "36045cf4d4cd7d7a0fbf936a8682f925e06dec5d0341f7cb0c3444fb24e1d5f6"
+      },
+      {
+        "path": "assets/offroad/models/item/monstrous_tire/item.json",
+        "model": "offroad:models/item/monstrous_tire/item.obj",
+        "original_sha256": "e446582db9581ea32167255580d2f193b2f4aad60004ab5e31ea62941e03080a",
+        "override_sha256": "78c2bcfb6eed9d7e94783d78a5eee9adee72e09e38da8fbfd9b8b46d5af0bc5e"
+      },
+      {
+        "path": "assets/offroad/models/item/monstrous_tire/monstrous_tire.json",
+        "model": "offroad:models/item/monstrous_tire/block.obj",
+        "original_sha256": "95e34133601a92c2aa4e94e447a9136c8a12b1f7a52ae8b684b8fdb74b51e26a",
+        "override_sha256": "9c749336b997514dc6b974322c74674835112051b660c09659a20a0a96c87c73"
+      },
+      {
+        "path": "assets/offroad/models/item/small_tire/item.json",
+        "model": "offroad:models/item/small_tire/item.obj",
+        "original_sha256": "9100ce6deb921d846162e8244c2a28231b62cff836161f8de7788ae55a48ec18",
+        "override_sha256": "b084baa2c2427955e940b98865ae653efc05c6a33eca3b0d592c52200f9de4e8"
+      },
+      {
+        "path": "assets/offroad/models/item/small_tire/small_tire.json",
+        "model": "offroad:models/item/small_tire/block.obj",
+        "original_sha256": "11ba7288477e408444ad906ea078397d513f1a59979fea771f3acfe12ef4cd94",
+        "override_sha256": "ceb742be2afb574e25b8982e57bcccfec6fe28f9f3d478cc97dc4912d489526d"
+      },
+      {
+        "path": "assets/offroad/models/item/tire/item.json",
+        "model": "offroad:models/item/tire/item.obj",
+        "original_sha256": "aa8fe9d5e0ab565af10b0ff2a472d1590dd25b39fd14c8931b2bc702b6bc156c",
+        "override_sha256": "176b3b99e5bc3380b0f8b65e7782bcba1b784f77a4feac8ed353f566e4159611"
+      },
+      {
+        "path": "assets/offroad/models/item/tire/tire.json",
+        "model": "offroad:models/item/tire/block.obj",
+        "original_sha256": "313c7ffee99cb362ffdfca1bec73b978c7aae58ff0b65a5a1571f9bf7199c238",
+        "override_sha256": "147a4f3b2a3c2a4225428559a79b883d745ddf4f20ca2d2730ce8594503a46e7"
+      },
+      {
+        "path": "assets/simulated/models/block/mecanum_wheel/block.json",
+        "model": "simulated:models/block/mecanum_wheel/block.obj",
+        "original_sha256": "389281afb50b021c867d43935a9a5647ab1f7b8af240b1fe195819cf203d9953",
+        "override_sha256": "bbfd9a64b80310c47c74aae6fc66c64a9f6dcb5c8e0014fcfb6d92c358ed55eb"
+      },
+      {
+        "path": "assets/simulated/models/block/mecanum_wheel/block_flipped.json",
+        "model": "simulated:models/block/mecanum_wheel/block_flipped.obj",
+        "original_sha256": "6e8aca6a37f4bdcc86f70d2b6cba43e2726c598c4a48ea101f17fecec76133c3",
+        "override_sha256": "d5b854cc9e63c33e9606649a75b5ab6f86c26df941c57ecd91ab82a3e37c5ace"
+      },
+      {
+        "path": "assets/simulated/models/block/mecanum_wheel/item.json",
+        "model": "simulated:models/block/mecanum_wheel/item.obj",
+        "original_sha256": "42a6b1bad122944b71a52778523a8fad24e49a670da8aa6872d492395a43f423",
+        "override_sha256": "4c8403889741f64a81aac198f616e4b07b1d6009b7a0e9c63540ea4e2008f36b"
+      },
+      {
+        "path": "assets/simulated/models/block/plunger_wheel/block.json",
+        "model": "simulated:models/block/plunger_wheel/block.obj",
+        "original_sha256": "80f50766496765d99c030c13fd636d277eeebb483ef89393e5ff3de46338283d",
+        "override_sha256": "7f14c25b26927705bae8138aa72a5156cc54dde3d7e3b7987b82f0ac3e2f66d2"
+      },
+      {
+        "path": "assets/simulated/models/block/plunger_wheel/item.json",
+        "model": "simulated:models/block/plunger_wheel/item.obj",
+        "original_sha256": "93263fa2412698f41684bc657dbb3581a60a564eb0394c39fb2910dd678ba624",
+        "override_sha256": "654168e94ce0391bd3a164d983eac72c0b0772d387e2b9458549ca92e005c877"
+      },
+      {
+        "path": "assets/simulated/models/block/steering_wheel/item.json",
+        "model": "simulated:models/block/steering_wheel/item.obj",
+        "original_sha256": "37dfd7366d458f61e5545f676fcbaa9135e7b5ae4bf3fdb984df631da057760b",
+        "override_sha256": "d68c146c2dbdc218a9e105aa056da4f09a289103be73ebc30b80e88c6f3b4a0a"
+      },
+      {
+        "path": "assets/simulated/models/block/steering_wheel/wheel.json",
+        "model": "simulated:models/block/steering_wheel/wheel.obj",
+        "original_sha256": "63c5cb0239c6726392932f2d62ec5e4f222d162dd1557e35d2001d10a1816052",
+        "override_sha256": "32c867a9dccbf7121bac7e2462cae7424a9bb0f13830363202b02483aa90a8ea"
+      }
+    ]
+  },
+  "direct_missing_model_identity_limit": "ModernFix can wrap a missing model. Baseline wrappers return six cube quads and pass direct identity; acceptance also requires forge:obj and positive geometry. Corrected quads range46..300. This is a resource bake test, not visual/gameplay validation.",
+  "all_final_goals_complete": false,
+  "remaining": [
+    "Windows authenticated connection",
+    "Pixelmon capture/battle",
+    "Society farming/economy/progression",
+    "Piloted Aeronautics flight and active shader outline validation",
+    "Actual six-player N100 load",
+    "Final overall review"
+  ]
+}

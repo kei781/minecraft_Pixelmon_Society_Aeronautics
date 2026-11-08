@@ -36,17 +36,24 @@ class ForgeClientBuildTest(unittest.TestCase):
         with zipfile.ZipFile(self.pixel,'w') as z:
             z.writestr(self.replacement,'{}')
         self.port = self.server/'mods/psa-aeronautics-experimental-forge-1.20.1.jar'
-        self.port.write_bytes(b'port archive fixture')
+        with zipfile.ZipFile(self.port, 'w') as z:
+            z.writestr('assets/aeronautics/models/block/fixture.json', json.dumps({
+                'loader':'neoforge:obj','model':'aeronautics:models/block/fixture.obj','flip_v':True}))
+            z.writestr('assets/aeronautics/models/block/fixture.obj', 'mtllib fixture.mtl\n')
+            z.writestr('assets/aeronautics/models/block/fixture.mtl', 'newmtl fixture\n')
         neutral = (json.dumps({'enabled':False,'detection_logic':'simple','replaced_mobs':[],
             'replacement_logic':'simple','specs':[]},indent=2)+'\n').encode()
         target=self.server/'kubejs'/self.replacement;target.parent.mkdir(parents=True);target.write_bytes(neutral)
         (self.server/'kubejs/server_scripts/init.js').write_bytes(b'// fixture')
-        self.overrides={'kubejs/server_scripts/init.js':b'// fixture','shaderpacks/shader.zip':b'shader fixture'}
+        self.overrides={'kubejs/server_scripts/init.js':b'// fixture','shaderpacks/shader.zip':b'shader fixture',
+            'config/resourcepackoverrides.json':json.dumps({'schema_version':2,'default_packs':['vanilla'],
+                'pack_overrides':{}}).encode(),
+            'configureddefaults/options.txt':b'lang:en_us\nresourcePacks:["vanilla"]\n'}
         self.society=self.root/'society.zip';self.output=self.root/'out/full.mrpack'
         self.lock={'minecraft':'1.20.1','forge':'47.4.20','society':'fixture','files':self.files}
         self.write_base()
         (self.root/'forge-candidate-lock.json').write_text('{}')
-        for name,value in [('ROOT',self.root),('EXPECTED_FILES',4),('EXPECTED_SHARED',1),('EXPECTED_REPLACEMENTS',1),
+        for name,value in [('ROOT',self.root),('EXPECTED_FILES',4),('EXPECTED_SHARED',1),('EXPECTED_REPLACEMENTS',1),('EXPECTED_MODEL_OVERRIDES',1),
                 ('PIXELMON_SHA256',client.digest(self.pixel)),('PORT_SHA256',client.digest(self.port))]:
             context=patch.object(client,name,value);context.start();self.addCleanup(context.stop)
 
@@ -81,6 +88,10 @@ class ForgeClientBuildTest(unittest.TestCase):
             self.assertEqual(z.read('overrides/shaderpacks/shader.zip'),b'shader fixture')
             self.assertNotIn('overrides/mods/resource.zip',z.namelist())
             self.assertEqual(z.namelist().count('overrides/shaderpacks/shader.zip'),1)
+            self.assertIn('overrides/resourcepacks/PSA-Forge-Model-Compat.zip',z.namelist())
+            config=json.loads(z.read('overrides/config/resourcepackoverrides.json'))
+            self.assertEqual(config['default_packs'],['vanilla','file/PSA-Forge-Model-Compat.zip'])
+            self.assertTrue(config['pack_overrides']['file/PSA-Forge-Model-Compat.zip']['required'])
 
     def test_kubejs_mismatch_fails_before_output(self):
         (self.server/'kubejs/server_scripts/init.js').write_bytes(b'changed')

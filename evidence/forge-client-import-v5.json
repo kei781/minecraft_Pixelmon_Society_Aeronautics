@@ -1,0 +1,51 @@
+{
+  "artifact": {
+    "filename": "PSA-Forge-Full-Experimental-v5.mrpack",
+    "sha256": "aea6ca8ed34a1b1809367c1f1b1caed13b30b842f989af30f7ad5db56d2fba4d",
+    "size": 1137772349,
+    "version_id": "psa-forge-fb102f6790df",
+    "mod_jars": 353,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7925,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "actual_gui_import": true,
+  "payload_hashes_checked": 7924,
+  "payload_mismatches": [],
+  "jars": 353,
+  "accidental_probe_jars": 0,
+  "components": [
+    {
+      "cachedName": "Minecraft",
+      "cachedRequires": [
+        {
+          "suggests": "3.3.1",
+          "uid": "org.lwjgl3"
+        }
+      ],
+      "cachedVersion": "1.20.1",
+      "important": true,
+      "uid": "net.minecraft",
+      "version": "1.20.1"
+    },
+    {
+      "cachedName": "Forge",
+      "cachedRequires": [
+        {
+          "equals": "1.20.1",
+          "uid": "net.minecraft"
+        }
+      ],
+      "cachedVersion": "47.4.20",
+      "uid": "net.minecraftforge",
+      "version": "47.4.20"
+    }
+  ],
+  "model_pack_sha256": "b948455e04afce7fb0d067486bfc67684a67868b5272c46c87708c958ff228c1",
+  "model_pack_models": 17,
+  "selected_in_default_options": true,
+  "required_by_resource_pack_overrides": true,
+  "authenticated_gameplay_validated": false
+}
