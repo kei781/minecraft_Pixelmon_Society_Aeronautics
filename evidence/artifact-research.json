@@ -104,5 +104,12 @@
     "url": "https://github.com/pouffy/Sunrise-Harvest",
     "reason": "Different mod ID sunrise_harvest; not accepted as Sunrise Gardening."
   },
-  "contacted_upstream": false
+  "contacted_upstream": false,
+  "inconclusive_lookup": {
+    "urls": [
+      "https://api.curse.tools/v1/cf/fingerprints",
+      "https://api.curse.tools/v1/cf/fingerprints/432"
+    ],
+    "result": "Both public-proxy POST requests returned HTTP 405. No fingerprint matches were obtained; this is not evidence that the files are absent from CurseForge."
+  }
 }

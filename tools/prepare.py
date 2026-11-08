@@ -37,6 +37,7 @@ def verify_upstream():
 def external_artifacts():
     artifacts = read_json(ROOT / "external-artifacts.json")["artifacts"]
     missing = []
+    verified = []
     for item in artifacts:
         path = ROOT / "inputs" / item["filename"]
         if not path.is_file():
@@ -49,9 +50,19 @@ def external_artifacts():
                      and hashlib.sha256(data).hexdigest() == build.get("sha256"))
         if not (original or candidate):
             missing.append(item["filename"])
+        else:
+            verified.append(dict(item, accepted_as="original" if original else "source_candidate",
+                                 verified_sha256=hashlib.sha256(data).hexdigest()))
     if missing:
         raise ValueError("Society development artifacts missing or hash mismatch: " + ", ".join(missing))
-    return artifacts
+    return verified
+
+
+def artifact_receipts(artifacts):
+    return [{"filename": item["filename"], "mod_id": item["mod_id"],
+             "accepted_as": item["accepted_as"], "sha256": item["verified_sha256"],
+             "source_commit": item["source_build"]["commit"] if item["accepted_as"] == "source_candidate" else None}
+            for item in artifacts]
 
 
 def download(url, dest, hashes, expected_size=None):
@@ -212,7 +223,8 @@ def stage(side):
     upstream = ROOT / "upstream/society"
     for folder in ["config", "defaultconfigs", "kubejs"]:
         shutil.copytree(upstream / folder, target / folder)
-    (target / ".integration-staging.json").write_text(json.dumps({"society_commit": COMMIT, "side": side}) + "\n")
+    (target / ".integration-staging.json").write_text(json.dumps(
+        {"society_commit": COMMIT, "side": side, "external_artifacts": artifact_receipts(artifacts)}, indent=2) + "\n")
     print("Staged", len(selected), "verified files in", target, flush=True)
 
 
@@ -228,7 +240,8 @@ def main():
     elif args.command == "stage":
         stage(args.side)
     else:
-        external_artifacts()
+        for item in artifact_receipts(external_artifacts()):
+            print(item["filename"], item["accepted_as"], "sha256=" + item["sha256"])
         print("Required Society development artifacts verified")
 
 

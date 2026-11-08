@@ -43,7 +43,8 @@
   "acquisition_observation": "MANUAL CHECK: acquire() was run against a fresh isolated temporary root; both pinned commits and license hashes verified. The one-off invocation is not a packaged runner.",
   "regression_tests": {
     "command": "python3 -m unittest discover -s tests -p 'test_external_artifacts.py' -v",
-    "passed": 4
+    "passed": 5,
+    "coverage_note": "Original/candidate classification, tamper rejection, missing-Society gate, and real staging fixture receipt with observed SHA256 and source commit."
   },
   "partial_pack_runs": [
     {
@@ -74,5 +75,7 @@
   "preflight_result": "Correctly rejects exactly society-2.0-1.21.1.jar and sunrisegardening-1.0.jar; both built candidates are accepted by their separate pinned SHA256.",
   "complete_integration": false,
   "windows_installer_implemented": false,
-  "n100_deployed": false
+  "n100_deployed": false,
+  "lock_regeneration": "python3 tools/prepare.py lock reproduced integration-lock.json byte-for-byte; SHA256 0ebbc767bf6fa6bb5acd7d6a4c7b7e43911c94bce16fdc51376c895a2eb365c5.",
+  "fresh_checkout_build": "MANUAL HARNESS: the tracked build_external.py CLI was copied to an isolated root with independently acquired pinned checkouts and invoked twice consecutively. Both runs built both artifacts, passed post-build clean-source checks, and matched pinned hashes. Existing Gradle dependency caches were reused; this is not a cold-cache or cross-platform test."
 }
