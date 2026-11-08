@@ -1,0 +1,25 @@
+{
+  "head_sha": "7b8876d0727f248cc1929eb319a9449f035ffd28",
+  "verdict": "CLEAN",
+  "summary": "대상 커밋 7b8876d(diff 2c2a82a..7b8876d)를 requirements.md, threads.json, 스냅샷의 실제 코드와 대조했다. 미해결 스레드 2건은 모두 실제 수정으로 해소된 것을 확인해 resolve한다. 새 지적은 없다.\n\n해소 확인:\n- verify_published 빈 해시(P3): `tools/stage_forge_candidate.py:31-36`에 검사가 추가됐다. 해시가 dict가 아니면(None 포함) 거부한다. sha1/sha512 중 하나가 없거나, sha1/sha256/sha512 외의 알고리즘이 있거나, 값이 문자열이 아니거나, 길이에 맞는 소문자 16진수가 아니어도 `ValueError`를 낸다. 이 검사는 크기·다이제스트 비교 전에 실행된다. 따라서 해시 루프가 한 번도 돌지 않고 통과하는 경로가 사라졌다. 새 테스트는 임시 lock으로 `LOCK`을 patch해 함수를 직접 호출한다. `upstream_hashes`와 `file.hashes` 두 형태의 성공을 단언하고, 크기 불일치·해시 불일치·빈 dict·None·형식 오류 해시 다섯 경우가 각각 `ValueError`인지 subTest로 단언한다. 현재 lock의 세 항목(pixelmon, aeronautics_resources는 sha1+sha512, society_server는 sha1)은 모두 강화된 검사를 통과하는 형식이다. 같은 함수를 쓰는 `restore_forge_assets.py`의 aeronautics_resources 항목도 마찬가지다.\n- 최초 JAR과 정규화 JAR 연결(P3): `evidence/forge-clean-rebuild.json`에 `first_build_raw_sha256`/`canonical_first_input_sha256`=5ac3cda9…와 `canonical_identity_recheck`(input 5ac3cda9… → output 0f7d5724…, 4166 files)가 기록됐다. `canonical-jar`는 파일 내용을 보존하고 ZIP 메타데이터만 고정한다. 따라서 이 기록은 전체 기동 증거(`forge-full-startup.json`, `forge-build-verification.json`의 5ac3cda9…)와 현재 스테이저 핀 `PORT_SHA256`(0f7d5724…)의 내용이 같다는 근거가 된다. 저장소 안의 해시 참조(staging, saved-world, docs)도 서로 일치한다.\n\n한계: 이번 리뷰에서는 테스트, 빌드, canonical-jar를 실행하지 않았다. 27개 테스트 통과와 실제 재정규화 결과는 작성자(Codex)의 실행 기록과 evidence에 근거한다. 확인을 원하면 다음을 직접 실행해 달라. (1) `python -m unittest tests.test_stage_forge_candidate` (2) 보관 중인 5ac3cda9… JAR에 `forge_resources.py canonical-jar`를 다시 적용해 출력 SHA256을 확인.",
+  "resolve_thread_ids": [
+    "PRRT_kwDOVm1ZLc60_zPc",
+    "PRRT_kwDOVm1ZLc60_zPf"
+  ],
+  "replies": [
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc60_zPc",
+      "body": "7b8876d에서 해소된 것을 확인했다. `verify_published`는 크기·해시를 비교하기 전에 다음 경우를 `ValueError`로 거부한다. 해시가 dict가 아닌 경우(None 포함), sha1/sha512가 없는 경우, 지원하지 않는 알고리즘, 길이·형식이 맞지 않는 값이다. 새 단위 테스트는 임시 lock으로 `LOCK`을 patch해 함수를 직접 호출한다. 두 메타데이터 형태의 성공을 단언하고, 크기 불일치·해시 불일치·빈 해시·None·형식 오류 해시의 실패를 단언한다. 현재 lock 세 항목도 새 검사를 통과하는 형식이다. 테스트는 리뷰어가 실행하지 않았다."
+    },
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc60_zPf",
+      "body": "7b8876d에서 해소된 것을 확인했다. `forge-clean-rebuild.json`에 `first_build_raw_sha256`=5ac3cda9…와 `canonical_identity_recheck`(5ac3cda9… → 0f7d5724…, 4166 files)가 기록됐다. `canonical-jar`는 내용을 보존하고 ZIP 메타데이터만 정규화하므로, 이 기록이 기동 증거 JAR과 현재 `PORT_SHA256` 핀의 내용 동일성을 연결한다. 재정규화 실행 결과는 리뷰어가 재현하지 않았고 evidence 기록을 근거로 했다."
+    }
+  ],
+  "new_comments": [],
+  "out_of_scope": [
+    "R2 out_of_scope 항목은 이번 커밋에서도 그대로다. 남은 항목: society_server 메타데이터 출처가 서드파티 프록시 api.curse.tools라 공식 CurseForge 값과 대조한 기록이 없음, 격리 시험의 eula.txt 자동 기록을 N100 배포 경로에서 분리해야 함, `/sable` 외 권한 0 포팅 명령 존재 여부 미확인.",
+    "최초 JAR(5ac3cda9…)에 PSA_PROVENANCE.txt와 MIT 고지가 이미 들어 있었다는 작성자 설명은 서드파티 바이너리가 스냅샷에 없어 직접 확인하지 못했다. 다만 canonical 재정규화 결과가 같은 해시로 기록돼 있어 내용 동일성은 뒷받침된다."
+  ],
+  "blocked_reasons": []
+}
