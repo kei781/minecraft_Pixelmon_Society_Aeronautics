@@ -30,7 +30,7 @@ Society 4.1.5A의 공개 Modrinth 클라이언트팩과 CurseForge 서버팩도 
 고정 소스의 새 복사본을 `PORT`, 이 저장소의 절대 경로를 `PSA`, JDK 17 경로를 `JDK17`, Gradle 7.6.4 실행 파일을 `GRADLE`로 준비한다. 전역 Maven 대신 개인 작업 폴더 Maven 저장소에 Create 6.0.8, Flywheel 1.0.5, Ponder 1.0.91, Registrate 1.3.3, MixinExtras Forge/common 0.4.1의 JAR/POM이 있어야 한다. 좌표는 포팅 소스의 build.gradle에 고정돼 있다. 이들은 확인한 공식 Create와 내장 라이브러리에서 준비했다. 해당 경로로 패치의 자리표시자를 바꾼 뒤 다음 순서를 따른다.
 
 1. 고정 커밋의 깨끗한 소스에 `candidate-build.patch`와 `renderer-locals.patch`를 차례로 적용한다. `META-INF/mods.toml` 수정도 이때 적용된다.
-2. 이 저장소의 `compat/forge-port/LeavesBeGoneChunkMixin.java`와 `PixelmonMenuCompatMixin.java`를 `PORT/src/main/java/dev/psa/compat/`에 복사한다. 같은 디렉터리의 `psa-forge.mixins.json`, `PSA_PROVENANCE.txt`, `licenses/`는 `PORT/src/main/resources/`에 복사한다.
+2. 이 저장소의 `compat/forge-port/LeavesBeGoneChunkMixin.java`, `PixelmonMenuCompatMixin.java`, `PixelmonShaderCodecMixin.java`, `PixelmonShaderColorMixin.java`를 `PORT/src/main/java/dev/psa/compat/`에 복사한다. 같은 디렉터리의 `psa-forge.mixins.json`, `PSA_PROVENANCE.txt`, `licenses/`는 `PORT/src/main/resources/`에 복사한다.
 3. 공식 아트 파일을 검증·복원한다. 새 소스에서 실제 신규 파일 1,291개를 쓰고, 같은 내용 103개와 수작업 번역 43개를 보존했다.
 4. 아래 데이터 생성·평탄화·결합·빌드를 차례로 실행한다. 모든 명령이 성공했을 때만 다음 명령으로 진행한다. 출력 디렉터리는 새 경로여야 한다.
 
@@ -61,6 +61,8 @@ python3 "$PSA/tools/forge_resources.py" canonical-jar \
 현재 배치용 정규화 JAR SHA256은 `cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de`다. 준비된 독립 소스 트리 두 개에 같은 수정과 메타데이터를 적용해 build/reobfJar 및 정규화 결과가 일치했다. 데이터 내용은 바뀌지 않아 데이터 생성기는 이 수정에서 다시 실행하지 않았다. 기존 JAR와 비교해 클라이언트 클래스·refmap·호환 설정·출처 기록만 바뀌었다. [재빌드 기록](../evidence/forge-client-fixes-rebuild.json).
 
 ## 격리 서버 준비
+
+Phase 4의 새 v6 준비 도구는 실제 플레이어 접속에서 발견한 Pixelmon 셰이더 패킷 보정을 포함한 `a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74`를 고정한다. 위 `cc31e4…`는 v5 및 현재 N100 운영본의 보존 기록이다. 새 후보는 클라이언트와 서버를 함께 교체하기 전이며, [변경과 검사 범위](pixelmon-shader-compatibility.md)에 설명했다.
 
 해시를 고정한 세 입력이 로컬에 있을 때 다음 도구로 새로운 프로필을 준비한다. `forge-candidate-lock.json`의 실제 공식 다운로드 URL·배포처 SHA1/SHA512·크기도 확인하고 입력 검증 결과를 프로필 영수증에 남긴다. 원본 311개 JAR, Pixelmon 교체 데이터 68개를 확인한다. 기존 경로를 덮어쓰지 않는다.
 

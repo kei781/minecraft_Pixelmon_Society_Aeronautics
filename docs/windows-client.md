@@ -1,5 +1,7 @@
 # Windows 플레이어 설치
 
+v5 실행 중 발견한 Pixelmon 셰이더 패킷 오류의 [v6 보정 후보](pixelmon-shader-compatibility.md)를 준비했다. 현재 N100은 v5 포팅 JAR를 유지하고 있으며, v6는 클라이언트·서버를 함께 교체하는 검증 단계다. 아래는 현재 전달한 v5 설치 안내다.
+
 현재 시험 파일은 **`PSA-Forge-Full-Experimental-v5.mrpack`**이다. 세 프로젝트, 모드 JAR 353개, 리소스팩·셰이더·Society 설정을 포함한 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다.
 
 구성은 Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본이다. 현재 공식 1.21.1 배포본과 구분한다. [구성과 검증 범위](forge-candidate.md).

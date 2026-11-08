@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "aeronautics.refmap.json",
   "mixins": [
-    "LeavesBeGoneChunkMixin"
+    "LeavesBeGoneChunkMixin",
+    "PixelmonShaderCodecMixin",
+    "PixelmonShaderColorMixin"
   ],
   "injectors": {
     "defaultRequire": 1

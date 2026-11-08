@@ -1,0 +1,25 @@
+{
+  "sha256": "a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74",
+  "added": [
+    "dev/psa/compat/PixelmonShaderCodecMixin.class",
+    "dev/psa/compat/PixelmonShaderColorMixin.class"
+  ],
+  "removed": [],
+  "changed": [
+    "PSA_PROVENANCE.txt",
+    "psa-forge.mixins.json"
+  ],
+  "independent_builds_match": true,
+  "data_generation_rerun": false,
+  "tested_mixin_classes_identical": true,
+  "build_logs_sha256": {
+    "forge-shader-port-build.log": "a600626a52069b8f840324c46bcb2d08e1a5b8e9a9ecf9b0c11e45b2abdc3a83",
+    "forge-shader-port-build-repro.log": "69e441c19aa66064a17755928ecdec55a16109c64c63e5550625cbf4cde0bced"
+  },
+  "all_13_build_tasks_executed_each": true,
+  "probe_build_log_sha256": "cd5fc793ceabb33a93ed5c49a2dbbba9aa19e054dfbfa0076af11f5f1ac2418c",
+  "tested_mixin_class_sha256": {
+    "dev/psa/compat/PixelmonShaderCodecMixin.class": "12becddcfcdd1e16a637c229ecd7c8c6fbcddd77815e1025b7773756bcd1751f",
+    "dev/psa/compat/PixelmonShaderColorMixin.class": "a413f1f5d2c353efdac4779e9d16793aeea2cfce42338e9721a1d778a9946e91"
+  }
+}

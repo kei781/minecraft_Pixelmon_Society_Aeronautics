@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-11-08T14:26:49.188085+00:00",
+  "actual_runtime": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.20",
+    "pixelmon": "9.2.3 beta",
+    "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "java": "17.0.21+9",
+    "os": "macOS",
+    "bindings": [
+      "127.0.0.1:25583",
+      "127.0.0.1:25584",
+      "127.0.0.1:25585"
+    ]
+  },
+  "baseline_failures": [
+    "Uninitialized Pixelmon shader codec registry causes null codec name in writeUtf",
+    "After calling upstream init in isolated control, original RGBA byte magnitudes fail the existing normalized Color(float...) reader"
+  ],
+  "patched_checks": [
+    "Existing int,float,float_array codec names automatically populated",
+    "Upstream init remains idempotent with structural list-codec equality",
+    "Four RGBA colors including alpha0 roundtrip exactly with all scalar/array values and flags",
+    "Present and empty optional shader values roundtrip with no unread bytes",
+    "Unsupported Codec.STRING still rejected rather than silently changing payload"
+  ],
+  "patched_roundtrip_and_negative_cases_per_environment": 7,
+  "probes": {
+    "baseline": {
+      "log_sha256": "6d1eb50e2e21975e26f099c87c828d6fe2d9504d514a9cd0b7a9072ff5ecb3b9",
+      "markers": [
+        "PSA_SHADER_PROBE baseline_missing_codec_npe=true",
+        "PSA_SHADER_PROBE baseline_color_range_failure=true",
+        "PSA_SHADER_PROBE BASELINE_REPRODUCED"
+      ],
+      "normal_shutdown_logged": true
+    },
+    "minimal_patched": {
+      "log_sha256": "c5fbc17f41a86183e1a5436e04ed0ee1d45d2ff92662582a903ca89a18fd1043",
+      "markers": [
+        "PSA_SHADER_PROBE unsupported_codec_rejected=true",
+        "PSA_SHADER_PROBE PATCHED_PASS cases=7 codecs=int,float,float_array"
+      ],
+      "normal_shutdown_logged": true
+    },
+    "full_patched": {
+      "log_sha256": "8bed952f92c9ad9fa52e1e0cca0a71798b1dcd36350b8acbe2f4ff3175c90180",
+      "markers": [
+        "PSA_SHADER_PROBE unsupported_codec_rejected=true",
+        "PSA_SHADER_PROBE PATCHED_PASS cases=7 codecs=int,float,float_array"
+      ],
+      "normal_shutdown_logged": true,
+      "production_mod_jars": 313,
+      "additional_test_only_jar": 1,
+      "startup_scripts": "97/97, 0 errors, 0 warnings",
+      "server_scripts": "188/188, 0 errors, 0 warnings",
+      "quests": 1142,
+      "recipe_parse_fallback_warning_count": 10,
+      "all_logs_claimed_error_free": false
+    }
+  },
+  "production_mixins_byte_identical_to_runtime_tested_classes": true,
+  "n100_modified_or_restarted": false,
+  "windows_client_retest_pending": true,
+  "full_gameplay_or_six_player_validated": false
+}

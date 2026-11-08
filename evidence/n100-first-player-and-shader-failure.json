@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-11-08T14:26:49.190001+00:00",
+  "source": "actual existing N100 dedicated server log and console commands",
+  "authenticated_joins": 2,
+  "join_utc": [
+    "2026-11-08T13:55:57.077Z",
+    "2026-11-08T14:02:31.605Z"
+  ],
+  "packet_disconnect_utc": "2026-11-08T13:58:34.340Z",
+  "error": "Pixelmon ShaderParameters$Value.write:223 -> FriendlyByteBuf.writeUtf null codec name",
+  "actual_console_list": {
+    "online": 1,
+    "maximum": 6,
+    "at_utc": "2026-11-08T14:05:03.351Z"
+  },
+  "actual_console_tps": {
+    "tps": 20.0,
+    "overall_mean_tick_ms": 8.141,
+    "at_utc": "2026-11-08T14:05:03.390Z"
+  },
+  "status_ping_online_disagreed": 0,
+  "authoritative_player_count_for_measurement": "actual console list; do not use stale status0",
+  "windows_file_hash_and_visual_playback_independently_verified": false,
+  "actual_six_player_test": false,
+  "player_names_uuids_addresses_included": false,
+  "error_and_join_log_sha256": "d5df799f122c38f6a2934d1eed6ae813c54fc321a81ffc5eaf8ca1094dedb04a",
+  "console_measurement_log_sha256": "b9a6dd12c64fc0b304ee973b1da3292f5265e475d17716a2960bea4f56671c66"
+}

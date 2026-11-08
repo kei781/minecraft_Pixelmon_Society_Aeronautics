@@ -1,0 +1,14 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psashaderprobe"
+version="1.0"
+displayName="PSA shader serializer diagnostic probe"
+description="Test-only real Pixelmon shader wire roundtrip assertions; never export to players."
+[[dependencies.psashaderprobe]]
+modId="pixelmon"
+mandatory=true
+versionRange="[9.2,9.3)"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,24 @@
+{
+  "artifact": {
+    "filename": "PSA-Forge-Full-Experimental-v6.mrpack",
+    "sha256": "3b452f8068d4d02aeae89e293367540f3691c4c1134e3883b7691d5c6c979d2a",
+    "size": 1137774105,
+    "version_id": "psa-forge-abda0e01ecef",
+    "mod_jars": 353,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7925,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "actual_macos_prism_gui_import": true,
+  "payload_sha256_checked": 7924,
+  "mismatches": [],
+  "mod_jars": 353,
+  "test_probe_jars": 0,
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "port_sha256": "a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74",
+  "windows_import_or_gameplay_proven_by_this_test": false,
+  "n100_deployed": false
+}

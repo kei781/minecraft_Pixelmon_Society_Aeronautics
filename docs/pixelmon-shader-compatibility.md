@@ -1,0 +1,50 @@
+# Pixelmon 셰이더 패킷 호환 후보
+
+Windows 게임을 켰다는 사용자 안내 뒤 N100 원문 로그에서 정품 인증과 월드 진입 2건을 확인했다. 첫 연결은 Pixelmon의 셰이더 매개변수를 엔티티 패킷에 기록하다 종료됐다. `ShaderParameters$Value.write:223`이 코덱 이름으로 null을 반환받아 `FriendlyByteBuf.writeUtf`에 전달한 오류다. [서버 관찰 기록](../evidence/n100-first-player-and-shader-failure.json).
+
+이 기록의 실제 콘솔 `list`는 1/6명, `forge tps`는 TPS 20·전체 평균 8.141ms였다. 같은 시기의 TCP 상태 응답은 0명으로 달랐다. 실제 인원은 콘솔 결과를 기준으로 기록하며 이 수치를 6인 성능으로 환산하지 않는다. Windows 파일 해시와 게임 화면은 상대 세션에서 아직 직접 대조하지 못했다.
+
+## 확인한 원인과 수정
+
+고정 [Pixelmon 9.2.3 원본](https://modrinth.com/mod/pixelmon/version/KjmzoXMR)의 셰이더 코덱 표는 기본값을 등록하는 메서드가 호출되지 않은 상태였다. 새 `PixelmonShaderCodecMixin`은 클래스 초기화 뒤 기존 이름 `int`, `float`, `float_array`와 대응하는 표준 코덱을 등록한다. 원래 초기화 메서드를 다시 호출해도 값과 이름이 유지되는 것을 검사했다. 임의 이름이나 대체 코덱을 만들지 않는다.
+
+첫 문제를 해결한 뒤에는 색상 읽기 오류가 재현됐다. 원본 작성기는 RGBA의 0~255 값을 float로 쓰지만 원본 읽기는 0~1 float를 받는다. `PixelmonShaderColorMixin`은 해당 작성기 안의 정확히 네 `writeFloat` 인수만 255로 나눈다. 주입 개수가 다르면 로딩에 실패한다. 다른 숫자·셰이더 매개변수·플래그는 바꾸지 않는다. Pixelmon 원본 JAR도 수정하지 않는다.
+
+## 실제 실행 검사
+
+별도 루프백 Forge 47.4.20 / Java 17.0.21 서버에서 다음을 직접 실행했다. 검사 모드는 정상 종료되며 플레이어 설치 파일에 포함하지 않는다.
+
+| 환경 | 결과 |
+| --- | --- |
+| 원본 Pixelmon + 자체 검사 모드 | 빈 코덱 표의 NPE 재현. 원래 초기화를 수동 호출한 대조에서도 색상 범위 오류 재현 |
+| 같은 Pixelmon + 보정 믹신 + 검사 모드 | RGBA 4개, optional 2개 왕복 및 미지원 코덱 거부 1개, 총 7개 통과 |
+| Society·Pixelmon·Aeronautics 전체 313 JAR + 검사 모드 1개 | 운영용 포팅 JAR의 믹신으로 같은 7개 통과. 퀘스트 1,142개, startup 97/97·server 188/188 스크립트 로딩 확인 |
+
+왕복 검사는 코덱·int/float/float 배열 값·색상·플래그와 버퍼를 끝까지 소비했는지 비교한다. 지원하지 않는 문자열 코덱은 원래처럼 거부한다. 전체 팩에는 별도의 기존 레시피 fallback 경고가 남아 있으므로 전체 로그가 오류 없다고 주장하지 않는다. [검사·원문 로그 해시](../evidence/pixelmon-shader-wire-verification.json).
+
+독립된 두 소스 트리에서 13개 빌드 작업을 모두 다시 실행했다. 정규화 결과는 동일하며, 실제 검사에 사용한 믹신 클래스와 전체 포팅 JAR의 해당 클래스도 바이트가 같았다. 이전 JAR에서 클래스 2개가 추가되고 호환 설정·출처 기록만 바뀌었다. 데이터 생성·리소스 내용은 그대로다. [재빌드 기록](../evidence/pixelmon-shader-port-rebuild.json).
+
+## 준비된 v6 후보
+
+현재 N100 운영 서버와 전달했던 v5는 이전 포팅 JAR를 사용한다. 아래 v6는 클라이언트·서버를 함께 교체하기 위해 준비한 후보이며, 아직 N100에 배치하지 않았다. Windows 쪽 확인과 독립 리뷰를 거쳐 교체 시점을 맞춘다.
+
+- 파일: `PSA-Forge-Full-Experimental-v6.mrpack`, 1,137,774,105바이트.
+- SHA256: `3b452f8068d4d02aeae89e293367540f3691c4c1134e3883b7691d5c6c979d2a`.
+- 새 포팅 JAR SHA256: `a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74`.
+- 실제 macOS Prism 가져오기 후 payload 7,924개 해시·JAR 353개를 확인했다. 진단 모드는 포함되지 않았다. [가져오기 기록](../evidence/forge-client-import-v6.json).
+- Python 회귀 검사: Ubuntu 47개 통과, macOS 44개 통과·Linux 전용 3개 제외. [검사 기록](../evidence/phase4-shader-controller-tests.json).
+
+실제 Windows에서 보스 포켓몬을 추적해 같은 패킷 오류가 사라지는지, 포획·전투·Society 진행·조종 비행이 동작하는지는 별도 확인해야 한다. 실제 6인 부하와 최종 전체 리뷰도 남아 있다.
+
+## 진단 재현
+
+기존 고정 Forge 빌드 트리와 Java 17로 두 진단 JAR를 만든다.
+
+```bash
+gradle -p /path/to/pinned-forge-build \
+  -I "$PWD/tools/forge-shader-probe.gradle" \
+  -PpsaShaderProbeSource="$PWD/tests/forge-shader-probe" \
+  reobfPsaShaderBaselineJar reobfPsaShaderPatchedJar
+```
+
+새 루프백 시험 서버의 원본 대조에는 baseline JAR와 `-Dpsa.shader.baseline=true`를 쓴다. patched JAR에는 보정 믹신이 들어 있다. 전체 포팅 JAR를 검사할 때는 믹신이 중복되지 않도록 진단 클래스만 있는 baseline JAR를 쓰고 `-Dpsa.shader.baseline=false`로 실행한다. 로그의 `BASELINE_REPRODUCED` 또는 `PATCHED_PASS cases=7`과 `FAILED` 부재를 함께 확인한다. 정상 서버 종료와 실제 입력 해시도 확인한다.
