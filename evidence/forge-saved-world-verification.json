@@ -1,0 +1,23 @@
+{
+  "candidate_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
+  "test": "full candidate saved-world restart and leaf tick queue preservation",
+  "host": "isolated local macOS; not Windows or N100",
+  "authenticated_players": 0,
+  "seed_run": {
+    "seeded": true,
+    "saved": true,
+    "process_exit_code": 0,
+    "raw_log_sha256": "dbd2792fff21e94933cf35beae72cb41346b16539d53315b8249b7d08bd7e8bf"
+  },
+  "restart_done_seconds": 1.224,
+  "saved_leaf_tick_retained": true,
+  "normal_full_chunk_ticker_non_null": true,
+  "registered_command_permissions_passed": true,
+  "stored_physics_structures_loaded": true,
+  "new_one_block_assembly_after_restart_passed": true,
+  "null_ticker_exception": false,
+  "saved_all_dimensions": true,
+  "process_exit_code": 0,
+  "raw_log_sha256": "16adf101b847c7f09e0f731f48a39a45d1586c2628ac4aa665f50574d8a25e19",
+  "scope": "Synthetic tick and console structure tests only; no piloted vehicle, farming, capture/battle or six-player claim."
+}

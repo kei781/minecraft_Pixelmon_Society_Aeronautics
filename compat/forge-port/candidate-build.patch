@@ -33,7 +33,7 @@
  
  sourceSets.main {
 -    resources { srcDir 'src/generated/resources' }
-+    resources { setSrcDirs(['src/generated/complete-resources']) }
++    resources { setSrcDirs([project.hasProperty('psaDataRecipe') ? 'src/main/resources' : 'src/generated/complete-resources']) }
      java {
          // Exclude render paths that depend on Veil 4.x / Sodium (no Forge 1.20.1 equivalent).
          // These are deferred to phase 2 (Embeddium-native rewrite). The vanilla fallback remains.

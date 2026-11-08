@@ -2,7 +2,10 @@ import importlib.util
 import json
 from pathlib import Path
 import tempfile
+import subprocess
+import sys
 import unittest
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("forge_resources", ROOT / "tools/forge_resources.py")
@@ -93,6 +96,36 @@ class GeneratedResourceTest(unittest.TestCase):
                          {"old": "authored", "new": "generated", "shared": "authored"})
         self.assertEqual(json.loads((self.destination / "assets/aeronautics/sounds.json").read_text())["gust"]["name"],
                          "minecraft:entity.generic.explode")
+
+    def test_cli_supports_flatten_then_combine(self):
+        self.write("aeronautics/data/aeronautics/tags/blocks/test.json", {"values": ["aeronautics:a"]})
+        script = str(ROOT / "tools/forge_resources.py")
+        flattened = subprocess.run([sys.executable, script, "flatten", str(self.source), str(self.destination)],
+                                   check=True, text=True, capture_output=True)
+        self.assertEqual(json.loads(flattened.stdout)["files"], 1)
+        main, complete = self.root / "authored", self.root / "complete"
+        main.mkdir()
+        (main / "notice.txt").write_text("authored")
+        combined = subprocess.run([sys.executable, script, "combine", str(main), str(self.destination), str(complete)],
+                                  check=True, text=True, capture_output=True)
+        self.assertEqual(json.loads(combined.stdout)["files"], 2)
+        self.assertEqual((complete / "notice.txt").read_text(), "authored")
+
+    def test_jar_normalization_preserves_bytes_and_removes_metadata_variation(self):
+        outputs = []
+        for number, year in enumerate([2025, 2026]):
+            source, output = self.root / (str(number) + '.jar'), self.root / (str(number) + '-out.jar')
+            with zipfile.ZipFile(source, 'w') as archive:
+                for name, data in [('META-INF/MANIFEST.MF', b'Manifest-Version: 1.0\n'), ('a.class', b'class bytes')]:
+                    info = zipfile.ZipInfo(name, (year, 1, 1, 0, 0, 0))
+                    archive.writestr(info, data)
+            resources.canonical_jar(source, output)
+            with zipfile.ZipFile(output) as archive:
+                self.assertEqual(archive.read('a.class'), b'class bytes')
+            outputs.append(output.read_bytes())
+            with self.assertRaises(FileExistsError):
+                resources.canonical_jar(source, output)
+        self.assertEqual(*outputs)
 
 
 if __name__ == "__main__":

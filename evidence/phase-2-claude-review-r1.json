@@ -1,0 +1,29 @@
+{
+  "head_sha": "65600fb46e201dc3925f73754da9d8d6953160e9",
+  "verdict": "FINDINGS",
+  "summary": "대상 커밋 65600fb(Task 2 diff, BASE 5709d84)을 requirements.md와 대조했다. 미해결 스레드는 없다(threads.json이 빈 배열). 리뷰 범위는 stage_forge_candidate.py, forge_resources.py, run_forge_datagen.py와 그 Gradle 내보내기 스크립트, LeavesBeGoneChunkMixin, psa-forge.mixins.json, candidate-build.patch, KubeJS 권한 검사 스크립트, 새 단위 테스트, 문서와 evidence다.\n\n문제없이 확인된 점:\n- 기존 1.21.1 누락 파일 차단은 이번 diff에서 바뀌지 않았다.\n- 스테이저는 해시를 먼저 확인한 뒤 새 디렉터리에만 쓴다. ZIP의 절대 경로, `..`, 역슬래시, 심볼릭 링크, 대소문자만 다른 중복 항목을 거부하고, 서버팩 JAR 311개와 Pixelmon 교체 데이터 68개 수량을 확인하며, 파일은 `xb` 모드로 써서 기존 파일을 덮지 않는다. 테스트도 잘못된 입력과 기존 대상 디렉터리를 보존하는지 실제로 단언한다.\n- 리소스 병합기는 `replace:true` 태그와 알 수 없는 충돌을 중단 처리한다. Forge `remove` 항목을 합집합으로 보존하고, `.cache`를 제외하며, 심볼릭 링크와 기존 출력이 있으면 거부한다.\n- 데이터 생성 실행기는 준비 단계와 생성기 JVM의 0이 아닌 종료 코드를 그대로 실패로 보고하고, 실행 명령의 Java 경로, 메인 클래스, 작업 디렉터리, 환경 변수를 검증한다.\n- Sable 루트 명령 권한을 0에서 2로 올린 변경과 그 검사 스크립트의 단언(권한 0 거부, 권한 2 허용)이 맞다.\n- LevelChunk 짧은 생성자 두 개는 `this(...)`로 긴 생성자에 위임한다. 그래서 이 mixin이 RETURN에서 큐를 먼저 초기화하고, 그 뒤 Leaves Be Gone의 원래 초기화가 덮어쓰는 순서가 되어 기존 동작을 망가뜨리지 않는다.\n\n새 지적은 두 건이다.\n- P2: Forge 후보 입력(Pixelmon 9.2.3, Society 서버팩)이 '공식' 파일이라는 근거가 저장소에 없다. 로컬에서 계산한 해시만 고정되어 있고, 공식 배포처 URL이나 배포처가 공개한 해시가 기록되어 있지 않다.\n- P3: 리소스 결합(`combine`)을 실행할 CLI가 없고, 빌드 패치 이후 데이터 생성과 결합을 어떤 순서로 돌려야 하는지 문서에 없어 재현이 불확실하다.\n\n실행이 필요한 검증 요청(Codex에게):\n1. 전체 후보 월드를 저장·종료한 뒤 다시 시작하고, 이미 저장된 FULL 청크(바닐라도 긴 생성자로 직접 만든다)의 Leaves Be Gone 랜덤 틱 큐가 정상적으로 다시 읽히는지, null 예외나 큐 초기화가 없는지 로그로 확인해 달라.\n2. 최종 개인 JAR 안의 `META-INF/mods.toml`(수정된 displayName/license)과 `psa-forge.mixins.json`이 실제로 포함됐는지 목록과 해시로 확인해 달라.\n3. 패치를 적용한 깨끗한 소스에서 complete-resources 없이 데이터 생성 준비가 되는지, 아니면 결합을 먼저 해 두어야 하는지 재현해 달라.\n\n이 리뷰에서는 테스트를 실행하지 않았으므로 23개 테스트 통과 여부는 확인하지 않았다.",
+  "resolve_thread_ids": [],
+  "replies": [],
+  "new_comments": [
+    {
+      "path": "tools/stage_forge_candidate.py",
+      "line": 12,
+      "priority": "P2",
+      "title": "공식 Pixelmon/Society 서버팩이라는 근거가 로컬 해시뿐임",
+      "body": "문서와 보고서는 이 후보를 '공식 Modrinth Pixelmon 9.2.3 베타'와 'CurseForge 공식 서버팩 4.1.5A(파일 8980858)'로 소개한다. 그런데 저장소에 고정된 값은 `PIXELMON_SHA256 = 8f2777…`와 `SERVER_SHA1 = fe4ed6…` 두 개뿐이다. 저장소 전체에서 이 값들을 검색하면 이 스테이저와 evidence/forge-full-startup.json에만 나온다. 다운로드 URL도, 배포처가 공개한 해시(Modrinth의 sha1/sha512, CurseForge 파일의 sha1)도, 받은 파일과 그 값을 대조한 기록도 없다.\n\n기존 1.21.1 기준선은 integration-lock.json에 Pixelmon 9.4.1의 Modrinth CDN URL과 sha1/sha512를 함께 고정한다(3573–3580행). 이번 후보는 이 관례를 따르지 않는다. 게다가 requirements.md에서 'verify its upstream hash' 문장이 빠지고 'Pin each candidate's actual sources, artifacts'로 바뀌었다.\n\n지금 스테이저는 '작성자가 갖고 있던 그 파일과 같은지'만 보장하고, '공식 배포 파일과 같은지'는 보장하지 않는다. 그래서 '공식 Pixelmon/Society' 표기와 작업 요구의 'Preserve actual binary identity'를 저장소 자료만으로는 검증할 수 없다.\n\n수정 제안: Modrinth 버전 KjmzoXMR의 파일 URL과 sha512, CurseForge 파일 8980858의 URL과 공개 sha1을 tracked 파일(lock 또는 evidence)에 남긴다. 그리고 스테이저나 evidence에서 배포처 해시와 실제로 대조한 결과를 기록한다."
+    },
+    {
+      "path": "compat/forge-port/candidate-build.patch",
+      "line": 36,
+      "priority": "P3",
+      "title": "complete-resources 생성 경로와 실행 순서가 재현 불가",
+      "body": "이 줄은 main 리소스 디렉터리를 `src/generated/complete-resources` 하나로 대체한다. 그래서 `src/main/resources`의 META-INF/mods.toml(이 패치가 수정하는 파일)과 별도로 복사해야 하는 `psa-forge.mixins.json`은 `forge_resources.combine()`이 이 디렉터리로 복사해야만 JAR에 들어간다.\n\n문제는 세 가지다.\n(1) `tools/forge_resources.py`의 CLI(`main`, 124–130행)는 `flatten`만 노출한다. 문서가 설명하는 `combine` 단계(2,113개 결합)는 도구로 실행할 수 없다.\n(2) runData의 MOD_CLASSES는 `sourceSets.main`의 출력 리소스를 쓴다. 패치를 적용한 뒤 complete-resources가 아직 없으면 데이터 생성 시 mods.toml이 없어 모드를 찾지 못할 가능성이 크다. 데이터 생성 → flatten → combine 순서가 순환하는데, 먼저 combine으로 초기 디렉터리를 만들었다가 지우고 다시 결합했는지 같은 단계가 문서에 없다.\n(3) mods.toml 패치를 combine 전에 적용해야 한다는 순서도 적혀 있지 않다.\n\n문서도 '완성된 자동 소스 빌더는 아니다'라고 밝히지만, 고정 해시 5ac3cda9…를 다시 만들 수 있는 최소 절차(실행 순서와 `combine` 호출 방법)가 tracked 자료에 없다. `combine` 서브커맨드를 추가하고 forge-candidate.md에 패치 적용 → 초기 결합 → 데이터 생성 → flatten → 최종 결합 → build/reobfJar 순서를 명시하기를 권한다."
+    }
+  ],
+  "out_of_scope": [
+    "stage_forge_candidate.py가 생성하는 시험 프로필에 eula.txt를 eula=true로 자동 기록한다. 격리 시험은 사용자가 승인했지만, 이후 N100 배포 경로에서 이 스테이저를 재사용한다면 EULA 동의는 운영자가 명시적으로 하도록 분리하는 편이 바람직하다.",
+    "포팅 소스에 `/sable` 외에 권한 0으로 등록된 다른 관리 명령(예: simulated/aeronautics/offroad 명령이나 redirect 별칭)이 있는지는 제삼자 소스가 스냅샷에 없어 확인하지 못했다. 등록된 명령 트리 전체를 권한 0 소스로 순회해 보는 실행 검증을 권한다.",
+    "evidence의 ERROR 481건은 공식 서버팩만 기동한 대조 실행과 비교해 분류되지 않았다. 이 후보가 새로 만든 오류인지 판정하려면 대조 실행이 필요하다."
+  ],
+  "blocked_reasons": []
+}

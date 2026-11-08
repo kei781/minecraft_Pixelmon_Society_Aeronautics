@@ -4,8 +4,26 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import zipfile
 
 MODS = {"aeronautics", "offroad", "simulated", "sable"}
+
+
+def canonical_jar(source, destination):
+    """Normalize ZIP metadata after reobfJar, preserving every file byte."""
+    with zipfile.ZipFile(source) as archive:
+        names = [i.filename for i in archive.infolist() if not i.is_dir()]
+        if len(names) != len(set(names)) or "META-INF/MANIFEST.MF" not in names:
+            raise ValueError("Expected a JAR without duplicate entries")
+        files = {name: archive.read(name) for name in sorted(names)}
+    with Path(destination).open("xb") as stream, zipfile.ZipFile(stream, "w") as output:
+        for name, data in files.items():
+            entry = zipfile.ZipInfo(name, (1980, 1, 1, 0, 0, 0))
+            entry.create_system = 3
+            entry.external_attr = 0o100644 << 16
+            entry.compress_type = zipfile.ZIP_DEFLATED
+            output.writestr(entry, data, compresslevel=9)
+    return {"files": len(files), "sha256": hashlib.sha256(Path(destination).read_bytes()).hexdigest()}
 
 
 def write_files(destination, files):
@@ -123,11 +141,28 @@ def flatten(source, destination):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("source", type=Path)
-    parser.add_argument("destination", type=Path)
+    commands = parser.add_subparsers(dest="command", required=True)
+    flat = commands.add_parser("flatten")
+    flat.add_argument("source", type=Path)
+    flat.add_argument("destination", type=Path)
+    combined = commands.add_parser("combine")
+    combined.add_argument("main", type=Path)
+    combined.add_argument("generated", type=Path)
+    combined.add_argument("destination", type=Path)
+    jar = commands.add_parser("canonical-jar")
+    jar.add_argument("source", type=Path)
+    jar.add_argument("destination", type=Path)
     args = parser.parse_args()
-    report = flatten(args.source, args.destination)
-    print(json.dumps({"files": len(report["files"]), "merged_tags": report["merged_tags"]}, indent=2))
+    if args.command == "canonical-jar":
+        print(json.dumps(canonical_jar(args.source, args.destination), indent=2))
+        return
+    if args.command == "flatten":
+        report = flatten(args.source, args.destination)
+        details = {"merged_tags": report["merged_tags"]}
+    else:
+        report = combine(args.main, args.generated, args.destination)
+        details = {"merged_resources": report["merged_resources"]}
+    print(json.dumps(dict(details, files=len(report["files"])), indent=2))
 
 
 if __name__ == "__main__":

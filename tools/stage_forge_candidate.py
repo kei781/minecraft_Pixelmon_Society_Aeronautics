@@ -10,8 +10,9 @@ import zipfile
 
 SERVER_SHA1 = "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
 PIXELMON_SHA256 = "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a"
-PORT_SHA256 = "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367"
+PORT_SHA256 = "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08"
 FOLDERS = {"mods", "config", "defaultconfigs", "kubejs", "patchouli_books"}
+LOCK = Path(__file__).resolve().parents[1] / "forge-candidate-lock.json"
 
 
 def digest(path, algorithm="sha256"):
@@ -20,6 +21,19 @@ def digest(path, algorithm="sha256"):
         for data in iter(lambda: stream.read(1024 * 1024), b""):
             value.update(data)
     return value.hexdigest()
+
+
+def verify_published(path, role):
+    item = json.loads(LOCK.read_text())["artifacts"][role]
+    file = item.get("file", item)
+    hashes = file.get("hashes", file.get("upstream_hashes"))
+    if Path(path).stat().st_size != file["size"]:
+        raise ValueError("Published size/hash mismatch: " + str(path))
+    for algorithm, expected in hashes.items():
+        if digest(path, algorithm) != expected:
+            raise ValueError("Published hash mismatch: " + str(path))
+    return {"source_page": item["source_page"], "download_url": file.get("url"),
+            "size": file["size"], "upstream_hashes": hashes, "verified": True}
 
 
 def selected_entries(archive):
@@ -49,6 +63,8 @@ def stage(server_pack, pixelmon, port, destination):
             (pixelmon, "sha256", PIXELMON_SHA256), (port, "sha256", PORT_SHA256)]:
         if digest(path, algorithm) != expected:
             raise ValueError("Input hash mismatch: " + str(path))
+    official_inputs = {"society_server": verify_published(server_pack, "society_server"),
+                       "pixelmon": verify_published(pixelmon, "pixelmon")}
     with zipfile.ZipFile(pixelmon) as pokemon:
         replacements = sorted(n for n in pokemon.namelist()
                               if n.startswith("data/pixelmon/spawn_replacement/") and n.endswith(".json"))
@@ -92,6 +108,7 @@ def stage(server_pack, pixelmon, port, destination):
                "pixelmon": "9.2.3 beta", "aeronautics": "unofficial Forge port 1.3.0",
                "server_pack_sha1": SERVER_SHA1, "pixelmon_sha256": PIXELMON_SHA256,
                "port_sha256": PORT_SHA256, "top_level_mod_jars": 313,
+               "official_inputs": official_inputs, "lock_sha256": digest(LOCK),
                "neutral_replacement_files": 68, "final_gameplay_validated": False}
     (destination / ".psa-forge-candidate.json").write_text(json.dumps(receipt, indent=2) + "\n")
     return receipt
