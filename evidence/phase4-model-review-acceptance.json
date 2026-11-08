@@ -1,0 +1,61 @@
+{
+  "phase": 4,
+  "scope": "client model compatibility substep only",
+  "status": "complete-resource-bake-verification-only",
+  "reviewed_code_sha": "da039597a890a0e87e8f15b8c091f03cf82fd9e7",
+  "review_model": "claude-opus-5-5",
+  "review_round": 2,
+  "verdict": "CLEAN",
+  "actual_unresolved_pr_threads": 0,
+  "pr": 2,
+  "ci_checks_configured": false,
+  "ci_observation": "gh pr checks: no checks reported; not claimed as CI pass",
+  "controller_tests": {
+    "ubuntu_full_passed": 47,
+    "macos_full_passed": 44,
+    "macos_linux_only_skips": 3,
+    "r1_requested_focused_passed_each_os": 13
+  },
+  "actual_model_runs": {
+    "baseline_v4": {
+      "passed": 0,
+      "total": 17
+    },
+    "fixed_v5": {
+      "passed": 17,
+      "total": 17
+    },
+    "intentional_broken_obj_v5": {
+      "passed": 16,
+      "total": 17,
+      "damaged_model_correctly_rejected": true
+    }
+  },
+  "raw_logs_and_summary_markers_rechecked": true,
+  "v5_player_artifact_unchanged_after_probe_fix": true,
+  "client_artifact": {
+    "filename": "PSA-Forge-Full-Experimental-v5.mrpack",
+    "sha256": "aea6ca8ed34a1b1809367c1f1b1caed13b30b842f989af30f7ad5db56d2fba4d",
+    "size": 1137772349,
+    "version_id": "psa-forge-fb102f6790df",
+    "mod_jars": 353,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7925,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "n100_game_profile_changed_for_model_fix": false,
+  "phase4_complete": false,
+  "all_final_goals_complete": false,
+  "remaining": [
+    "Windows authenticated connection",
+    "Pixelmon capture/battle",
+    "Society farming/economy/progression",
+    "Piloted Aeronautics flight and active shader outline validation",
+    "Actual six-player N100 load",
+    "Final overall review"
+  ],
+  "upstream_inquiry_posted": false,
+  "checked_at": "2026-11-08T12:45:39.255402+00:00"
+}

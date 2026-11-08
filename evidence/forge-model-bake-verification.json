@@ -5,10 +5,11 @@
     "prism": "11.1.1",
     "minecraft": "1.20.1",
     "forge": "47.4.20",
-    "java": "17.0.21",
+    "java": "17.0.15",
     "launch": "official launcher demo, not authenticated multiplayer",
     "real_pack_mods": 353,
-    "extra_test_only_mods": 1
+    "extra_test_only_mods": 1,
+    "java_vendor": "Microsoft"
   },
   "baseline": {
     "models": [
@@ -576,5 +577,6 @@
     "sorted vertex/texture/tint/direction/shade quad signatures differ from canonical missing model",
     "active source JSON loader forge:obj"
   ],
-  "initial_probe_evidence_commit": "4b637b72af8d905428670fe47910ec99c75f5cb9"
+  "initial_probe_evidence_commit": "4b637b72af8d905428670fe47910ec99c75f5cb9",
+  "environment_correction": "Initial record used the build JDK patch version. All three actual ModLauncher logs identify Microsoft17.0.15. Probe compilation used separate JDK17.0.21. Corrected as metadata only after review."
 }
