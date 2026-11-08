@@ -24,5 +24,13 @@
   "actual_six_player_test": false,
   "player_names_uuids_addresses_included": false,
   "error_and_join_log_sha256": "d5df799f122c38f6a2934d1eed6ae813c54fc321a81ffc5eaf8ca1094dedb04a",
-  "console_measurement_log_sha256": "b9a6dd12c64fc0b304ee973b1da3292f5265e475d17716a2960bea4f56671c66"
+  "console_measurement_log_sha256": "b9a6dd12c64fc0b304ee973b1da3292f5265e475d17716a2960bea4f56671c66",
+  "windows_source_correlation": {
+    "parsed_authenticated_join_source_count": 2,
+    "all_join_sources_match_known_windows_device": true,
+    "known_peer_os": "windows",
+    "known_peer_same_owner": true,
+    "source_status_sha256": "7b7de81a8b5a990b049afd80c00a24655914175f8bb3dfbb24c13968bcad0622",
+    "actual_addresses_included": false
+  }
 }

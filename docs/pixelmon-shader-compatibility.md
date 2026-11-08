@@ -2,7 +2,7 @@
 
 Windows 게임을 켰다는 사용자 안내 뒤 N100 원문 로그에서 정품 인증과 월드 진입 2건을 확인했다. 첫 연결은 Pixelmon의 셰이더 매개변수를 엔티티 패킷에 기록하다 종료됐다. `ShaderParameters$Value.write:223`이 코덱 이름으로 null을 반환받아 `FriendlyByteBuf.writeUtf`에 전달한 오류다. [서버 관찰 기록](../evidence/n100-first-player-and-shader-failure.json).
 
-이 기록의 실제 콘솔 `list`는 1/6명, `forge tps`는 TPS 20·전체 평균 8.141ms였다. 같은 시기의 TCP 상태 응답은 0명으로 달랐다. 실제 인원은 콘솔 결과를 기준으로 기록하며 이 수치를 6인 성능으로 환산하지 않는다. Windows 파일 해시와 게임 화면은 상대 세션에서 아직 직접 대조하지 못했다.
+이 기록의 실제 콘솔 `list`는 1/6명, `forge tps`는 TPS 20·전체 평균 8.141ms였다. 같은 시기의 TCP 상태 응답은 0명으로 달랐다. 실제 인원은 콘솔 결과를 기준으로 기록하며 이 수치를 6인 성능으로 환산하지 않는다. 두 인증 접속의 출발지가 지정된 같은 소유자 Windows 장치와 일치하는 것도 대조했다. Windows 파일 해시와 게임 화면은 상대 세션에서 아직 직접 대조하지 못했다.
 
 ## 확인한 원인과 수정
 
@@ -21,6 +21,8 @@ Windows 게임을 켰다는 사용자 안내 뒤 N100 원문 로그에서 정품
 | Society·Pixelmon·Aeronautics 전체 313 JAR + 검사 모드 1개 | 운영용 포팅 JAR의 믹신으로 같은 7개 통과. 퀘스트 1,142개, startup 97/97·server 188/188 스크립트 로딩 확인 |
 
 왕복 검사는 코덱·int/float/float 배열 값·색상·플래그와 버퍼를 끝까지 소비했는지 비교한다. 지원하지 않는 문자열 코덱은 원래처럼 거부한다. 전체 팩에는 별도의 기존 레시피 fallback 경고가 남아 있으므로 전체 로그가 오류 없다고 주장하지 않는다. [검사·원문 로그 해시](../evidence/pixelmon-shader-wire-verification.json).
+
+Claude R3는 합성 매개변수뿐 아니라 실제 Pixelmon이 만든 값을 확인하도록 P3를 지적했다. 이를 반영해 Pixelmon API로 Pikachu 엔티티를 만들고 내장 보스 등급을 설정해 시험 월드에 실제 추가했다. 실제 `SynchedEntityData`의 셰이더 값과 메타데이터 전체로 `ClientboundSetEntityDataPacket`을 구성하고 쓰기·읽기를 수행했다. 원본 보스에서도 두 오류가 재현됐으며, 보정 후에는 최소 구성과 전체 팩 각각 등록된 보스 9종 전부가 통과했다. 이 검사는 코덱을 고르거나 셰이더 매개변수를 직접 구성하지 않는다. 엔티티 ID와 셰이더의 코덱·값·색상·플래그 보존을 확인하고 생성한 시험 엔티티는 제거한다. 운영 패치는 이 재검사에서 바꾸지 않았다.
 
 독립된 두 소스 트리에서 13개 빌드 작업을 모두 다시 실행했다. 정규화 결과는 동일하며, 실제 검사에 사용한 믹신 클래스와 전체 포팅 JAR의 해당 클래스도 바이트가 같았다. 이전 JAR에서 클래스 2개가 추가되고 호환 설정·출처 기록만 바뀌었다. 데이터 생성·리소스 내용은 그대로다. [재빌드 기록](../evidence/pixelmon-shader-port-rebuild.json).
 
@@ -44,7 +46,8 @@ Windows 게임을 켰다는 사용자 안내 뒤 N100 원문 로그에서 정품
 gradle -p /path/to/pinned-forge-build \
   -I "$PWD/tools/forge-shader-probe.gradle" \
   -PpsaShaderProbeSource="$PWD/tests/forge-shader-probe" \
+  -PpsaShaderPixelmonJar=/path/to/verified/Pixelmon-1.20.1-9.2.3-universal.jar \
   reobfPsaShaderBaselineJar reobfPsaShaderPatchedJar
 ```
 
-새 루프백 시험 서버의 원본 대조에는 baseline JAR와 `-Dpsa.shader.baseline=true`를 쓴다. patched JAR에는 보정 믹신이 들어 있다. 전체 포팅 JAR를 검사할 때는 믹신이 중복되지 않도록 진단 클래스만 있는 baseline JAR를 쓰고 `-Dpsa.shader.baseline=false`로 실행한다. 로그의 `BASELINE_REPRODUCED` 또는 `PATCHED_PASS cases=7`과 `FAILED` 부재를 함께 확인한다. 정상 서버 종료와 실제 입력 해시도 확인한다.
+입력 Pixelmon JAR는 원래 고정 SHA256과 맞아야 빌드한다. 새 루프백 시험 서버의 원본 대조에는 baseline JAR와 `-Dpsa.shader.baseline=true`를 쓴다. patched JAR에는 보정 믹신이 들어 있다. 전체 포팅 JAR를 검사할 때는 믹신이 중복되지 않도록 진단 클래스만 있는 baseline JAR를 쓰고 `-Dpsa.shader.baseline=false`로 실행한다. 원본은 실제 보스의 두 실패와 `BASELINE_REPRODUCED`, 보정본은 `REAL_BOSS_PASS tiers=9`와 마지막 `PATCHED_PASS cases=7`을 확인한다. 모든 경우 `FAILED` 부재·정상 종료·실제 입력 해시도 확인한다.

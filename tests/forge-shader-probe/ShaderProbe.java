@@ -1,10 +1,19 @@
 package dev.psa.shaderprobe;
 
 import com.mojang.serialization.Codec;
+import com.pixelmonmod.pixelmon.api.pokemon.PokemonFactory;
+import com.pixelmonmod.pixelmon.api.pokemon.boss.BossTier;
+import com.pixelmonmod.pixelmon.api.pokemon.boss.BossTierRegistry;
+import com.pixelmonmod.pixelmon.api.registries.PixelmonSpecies;
+import com.pixelmonmod.pixelmon.entities.pixelmon.AbstractClientEntity;
+import com.pixelmonmod.pixelmon.entities.pixelmon.PixelmonEntity;
 import io.netty.buffer.Unpooled;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket;
 import net.minecraft.network.syncher.EntityDataSerializer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.Arrays;
 
 /** Test-only: exercise real Pixelmon serializers in a real dedicated Forge JVM. */
 @Mod("psashaderprobe")
@@ -26,7 +36,7 @@ public final class ShaderProbe {
 
     private void started(ServerStartedEvent event) {
         try {
-            run(Boolean.getBoolean("psa.shader.baseline"));
+            run(event.getServer().overworld(), Boolean.getBoolean("psa.shader.baseline"));
         } catch (Throwable failure) {
             System.err.println("PSA_SHADER_PROBE FAILED");
             failure.printStackTrace();
@@ -36,7 +46,7 @@ public final class ShaderProbe {
     }
 
     @SuppressWarnings("unchecked")
-    private static void run(boolean baseline) throws Exception {
+    private static void run(ServerLevel level, boolean baseline) throws Exception {
         Class<?> registry = Class.forName("com.pixelmonmod.pixelmon.client.render.shader.PixelmonCodecs");
         Map<String, Codec<?>> codecs = (Map<String, Codec<?>>) registry.getField("CODECS").get(null);
         Class<?> shader = Class.forName("com.pixelmonmod.pixelmon.client.render.shader.ShaderParameters");
@@ -54,22 +64,37 @@ public final class ShaderProbe {
                 parameters, new Color(12, 34, 56, 78), true, false, true, false);
         if (baseline) {
             require(codecs.isEmpty(), "Unexpected pre-initialized baseline registry");
-            FriendlyByteBuf buffer = new FriendlyByteBuf(Unpooled.buffer());
+            var tier = BossTierRegistry.getBossTiers().stream().filter(BossTier::isBoss).findFirst().orElseThrow();
+            PixelmonEntity realBoss = realBoss(level, tier);
             try {
-                try { serializer.write(buffer, sample); throw new AssertionError("Expected missing-codec NPE"); }
-                catch (NullPointerException expected) { System.out.println("PSA_SHADER_PROBE baseline_missing_codec_npe=true"); }
-            } finally { buffer.release(); }
-            registry.getMethod("init").invoke(null);
-            require(codecs.keySet().equals(Set.of("int", "float", "float_array")), "Unexpected default wire registry");
-            buffer = new FriendlyByteBuf(Unpooled.buffer());
-            try {
-                serializer.write(buffer, sample);
-                try { serializer.read(buffer); throw new AssertionError("Expected invalid color range"); }
-                catch (IllegalArgumentException expected) {
-                    require(expected.getMessage().contains("Color parameter outside"), "Unexpected baseline read failure");
-                    System.out.println("PSA_SHADER_PROBE baseline_color_range_failure=true");
+                FriendlyByteBuf buffer = new FriendlyByteBuf(Unpooled.buffer());
+                try {
+                    try { serializer.write(buffer, sample); throw new AssertionError("Expected missing-codec NPE"); }
+                    catch (NullPointerException expected) { System.out.println("PSA_SHADER_PROBE baseline_missing_codec_npe=true"); }
+                } finally { buffer.release(); }
+                try { bossPacket(realBoss, codecs, false); throw new AssertionError("Expected real boss codec failure"); }
+                catch (NullPointerException expected) {
+                    require(Arrays.stream(expected.getStackTrace()).anyMatch(frame -> frame.getClassName().endsWith("ShaderParameters$Value")
+                            && frame.getMethodName().equals("write")), "NPE was not the real shader writer");
+                    System.out.println("PSA_SHADER_PROBE baseline_real_boss_codec_failure=true");
                 }
-            } finally { buffer.release(); }
+                registry.getMethod("init").invoke(null);
+                require(codecs.keySet().equals(Set.of("int", "float", "float_array")), "Unexpected default wire registry");
+                buffer = new FriendlyByteBuf(Unpooled.buffer());
+                try {
+                    serializer.write(buffer, sample);
+                    try { serializer.read(buffer); throw new AssertionError("Expected invalid color range"); }
+                    catch (IllegalArgumentException expected) {
+                        require(expected.getMessage().contains("Color parameter outside"), "Unexpected baseline read failure");
+                        System.out.println("PSA_SHADER_PROBE baseline_color_range_failure=true");
+                    }
+                } finally { buffer.release(); }
+                try { bossPacket(realBoss, codecs, false); throw new AssertionError("Expected real boss color failure"); }
+                catch (IllegalArgumentException expected) {
+                    require(expected.getMessage().contains("Color parameter outside"), "Unexpected real boss read failure");
+                    System.out.println("PSA_SHADER_PROBE baseline_real_boss_color_failure=true");
+                }
+            } finally { ((Entity) realBoss).discard(); }
             System.out.println("PSA_SHADER_PROBE BASELINE_REPRODUCED");
             return;
         }
@@ -104,7 +129,56 @@ public final class ShaderProbe {
             try { serializer.write(buffer, bad); throw new AssertionError("Unsupported codec silently accepted"); }
             catch (NullPointerException expected) { System.out.println("PSA_SHADER_PROBE unsupported_codec_rejected=true"); }
         } finally { buffer.release(); }
+        int bosses = 0;
+        for (BossTier tier : BossTierRegistry.getBossTiers()) {
+            if (!tier.isBoss()) continue;
+            PixelmonEntity boss = realBoss(level, tier);
+            try {
+                bossPacket(boss, codecs, true);
+                bosses++;
+                System.out.println("PSA_SHADER_PROBE real_boss=" + tier.getName() + " entity_packet_roundtrip=true");
+            } finally { ((Entity) boss).discard(); }
+        }
+        require(bosses > 0, "No actual Pixelmon bosses tested");
+        System.out.println("PSA_SHADER_PROBE REAL_BOSS_PASS tiers=" + bosses);
         System.out.println("PSA_SHADER_PROBE PATCHED_PASS cases=7 codecs=int,float,float_array");
+    }
+
+    private static PixelmonEntity realBoss(ServerLevel level, BossTier tier) {
+        PixelmonEntity boss = new PixelmonEntity(level, PokemonFactory.create(PixelmonSpecies.PIKACHU.getValue().orElseThrow()));
+        Entity entity = boss;
+        var spawn = level.getSharedSpawnPos();
+        entity.setPos(spawn.getX() + 2.5, spawn.getY() + 1.0, spawn.getZ() + 2.5);
+        boss.setBossTier(tier);
+        require(level.addFreshEntity(entity), "Actual boss could not be added to test world");
+        return boss;
+    }
+
+    private static void bossPacket(PixelmonEntity boss, Map<String, Codec<?>> codecs, boolean checkRegistry) throws Exception {
+        Entity entity = boss;
+        var accessor = AbstractClientEntity.SYNC_SHADER_PARAMETERS.getEntityDataAccessor();
+        Optional<?> actual = entity.getEntityData().get(accessor);
+        require(actual.isPresent(), "Actual boss has no synchronized shader parameters");
+        if (checkRegistry) {
+            Map<?, ?> generated = (Map<?, ?>) field(actual.orElseThrow(), "parameters");
+            require(!generated.isEmpty(), "Actual boss shader has no parameters");
+            for (Object value : generated.values())
+                require(codecs.containsValue(field(value, "codec")), "Actual boss uses an unregistered shader codec");
+        }
+        var values = entity.getEntityData().getNonDefaultValues();
+        require(values != null, "No actual synchronized entity metadata");
+        FriendlyByteBuf buffer = new FriendlyByteBuf(Unpooled.buffer());
+        try {
+            new ClientboundSetEntityDataPacket(entity.getId(), values).write(buffer);
+            var decoded = new ClientboundSetEntityDataPacket(buffer);
+            require(decoded.id() == entity.getId(), "Entity packet ID changed");
+            var data = decoded.packedItems().stream().filter(item -> item.id() == accessor.getId()).findFirst().orElseThrow();
+            require(data.value() instanceof Optional<?>, "Shader data is no longer optional");
+            Optional<?> result = (Optional<?>) data.value();
+            require(result.isPresent(), "Actual boss shader was dropped");
+            sameShader(actual.orElseThrow(), result.orElseThrow());
+            require(buffer.readableBytes() == 0, "Unread actual entity packet bytes");
+        } finally { buffer.release(); }
     }
 
     private static void sameShader(Object original, Object decoded) throws Exception {

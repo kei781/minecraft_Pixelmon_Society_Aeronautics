@@ -21,5 +21,7 @@
   "tested_mixin_class_sha256": {
     "dev/psa/compat/PixelmonShaderCodecMixin.class": "12becddcfcdd1e16a637c229ecd7c8c6fbcddd77815e1025b7773756bcd1751f",
     "dev/psa/compat/PixelmonShaderColorMixin.class": "a413f1f5d2c353efdac4779e9d16793aeea2cfce42338e9721a1d778a9946e91"
-  }
+  },
+  "real_boss_probe_build_log_sha256": "acaa81e545e8fa440347eb48e4b0c1e336d96a755d6c27ab855e60325c11b9d3",
+  "real_boss_retest_mixins_still_byte_identical": true
 }

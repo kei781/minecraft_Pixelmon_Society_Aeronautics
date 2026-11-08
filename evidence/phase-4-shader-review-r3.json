@@ -1,0 +1,23 @@
+{
+  "head_sha": "eeb70b8375d341e8407f62e88dc50ec1378690b9",
+  "verdict": "FINDINGS",
+  "summary": "대상 커밋 eeb70b8의 Task 4 증분(BASE 3f5c33c)을 pr.diff·requirements.md와 대조했다. threads.json은 비어 있어 판정할 기존 스레드가 없다.\n\n확인한 사항:\n- PixelmonShaderCodecMixin은 `<clinit>` RETURN에서 기존 이름 int/float/float_array만 `putIfAbsent`로 등록한다. 기존 항목을 제거하거나 대체하지 않는다. 미등록 코덱은 여전히 writeUtf(null)로 실패하므로 오류를 삼키지 않는다. 상류 `init()`를 다시 호출해도 안전하다는 점은 프로브 단언으로 다룬다.\n- PixelmonShaderColorMixin은 `lambda$static$1` 안의 `writeFloat` 4개 인수만 /255로 바꾼다. `require=4, allow=4`이므로 대상 형태가 바뀌면 로딩 단계에서 실패한다. c/255f를 읽기 쪽 `Color(float…)`가 `(int)(x*255+0.5)`로 되돌리므로 0~255 전 범위가 정확히 왕복한다. 다만 v5 클라이언트는 레지스트리가 비어 있어 읽기에서 실패하므로 클라이언트와 서버를 함께 교체해야 한다. 이 점은 문서에 명시돼 있다.\n- `@Pseudo`와 `remap=false` 패턴은 기존 PixelmonMenuCompatMixin과 같다. 공통 mixins 목록 등록도 맞다.\n- stage_forge_candidate.PORT_SHA256 변경은 export_forge_client.py가 import해 함께 사용한다(포트 확인, 모델 팩 입력). forge_model_pack.build는 pack 바이트에 포트 해시를 넣지 않는다. 리소스도 바뀌지 않았으므로 v6 모델 팩이 v5와 같다는 서술과 맞는다. cc31은 문서에서 v5와 운영본 기록으로만 남아 있다.\n- forge-shader-probe.gradle: Baseline JAR는 `dev/psa/shaderprobe/**`만 담고 mixin 설정을 제외한다. Patched JAR에만 MixinConfigs가 있다. 전체 313 JAR 검사가 baseline JAR와 `baseline=false`를 쓰는 이유(믹신 중복 방지)와 맞는다.\n- ShaderProbe: 비교 필드는 renderColor(Color.equals이므로 alpha 포함), 플래그 4개, 파라미터별 codec·value다. 버퍼를 끝까지 읽었는지와 Optional의 empty/present도 단언한다. 실패하면 FAILED를 출력한 뒤 halt한다.\n\n새 지적은 P3 1건이다. 프로브는 등록한 세 코덱으로 직접 만든 합성 파라미터만 왕복한다. 따라서 실제 N100에서 연결을 끊은 엔티티의 셰이더 값이 이 세 코덱을 쓰는지는 증명하지 않는다.\n\n추가 실행 검증 요청(Codex):\n(1) 위 P3대로 Pixelmon이 실제로 만드는 ShaderParameters 값을 열거해 왕복하거나, 바이트코드에서 `Value` 생성 호출부의 코덱 인수를 조사한다.\n(2) v6 서버와 v6 클라이언트를 함께 교체한 뒤 실제 Windows에서 같은 엔티티를 추적해 PacketEncoder 오류가 사라졌는지 확인한다.\n\n나는 테스트나 빌드를 실행하지 않았다. 증거 JSON의 실행 결과는 작성자 보고이며 내가 재현하지 않았다.",
+  "resolve_thread_ids": [],
+  "replies": [],
+  "new_comments": [
+    {
+      "path": "tests/forge-shader-probe/ShaderProbe.java",
+      "line": 50,
+      "priority": "P3",
+      "title": "합성 파라미터만 검사해 실제 끊김을 일으킨 셰이더 코덱이 등록 대상인지 증명하지 못함",
+      "body": "프로브의 왕복 대상은 50~54행에서 직접 만든 `Value(Codec.INT, 42)`, `Value(Codec.FLOAT, …)`, `Value(Codec.FLOAT.listOf(), …)`뿐이다. 즉 믹신이 등록한 세 코덱을 골라서 넣고 그 세 코덱이 왕복하는지 확인하는 순환 검사다. 반면 같은 프로브의 `unsupported_codec_rejected` 사례(Codec.STRING → NullPointerException)가 보여 주듯, 패치 후에도 레지스트리에 없는 코덱(예: `ExtraCodecs`의 벡터 코덱, `Codec.BOOL`, `Codec.floatRange` 등)을 쓰는 값은 원래 N100 스택과 같은 `Value.write → writeUtf(null)` NPE로 연결을 끊는다.\n\n실제 장애(2026-11-08T13:58:34Z, ClientboundSetEntityDataPacket)를 일으킨 엔티티의 셰이더 값이 이 세 코덱만 쓰는지는 현재 증거로 확인되지 않는다. 문서도 이를 Windows 재시험으로 미루고 있다.\n\n제안: (a) 실제 Pixelmon이 만드는 셰이더 값을 직렬화해 왕복시킨다. 예를 들어 시험 월드에서 보스/셰이더 엔티티를 소환해 그 SynchedEntityData의 SHADER 값을 직접 직렬화한다. (b) 또는 고정 Pixelmon JAR 바이트코드에서 `ShaderParameters$Value.<init>(Codec, Object)` 호출부의 코덱 인수를 정적으로 열거해, 모두 `CODECS`의 세 값과 equals인지 단언한다. 이렇게 해야 '실제 셰이더 값 보존' 요구를 서버 측에서 Windows 재시험 전에 닫을 수 있다."
+    }
+  ],
+  "out_of_scope": [
+    "v6 후보는 아직 N100이나 Windows에 배치되지 않았다. 클라이언트와 서버를 함께 교체한 뒤 실제 인증 접속에서 셰이더 패킷 오류가 사라졌는지 재시험해야 한다.",
+    "requirements에 남은 Phase 4 조건이 아직 증명되지 않았다: Windows 화면/파일 해시 직접 대조, Pixelmon 포획·전투, Society 농사·경제·진행, Aeronautics 조립·조종 비행, 실제 6인 부하, 최종 전체 리뷰.",
+    "TCP 상태 핑이 0명을 보고하고 콘솔 list는 1/6명을 보고하는 불일치의 원인은 조사되지 않았다. 증거는 콘솔을 기준으로 삼는다고만 적었다.",
+    "stage_forge_candidate.py가 이제 a59 포트만 받으므로, 현재 운영 중인 cc31/v5 조합을 이 도구로 다시 준비할 수 없다. 문서상 의도된 변경이지만, 운영본을 롤백·재현할 경로가 필요한지 운영 측에서 판단해야 한다."
+  ],
+  "blocked_reasons": []
+}

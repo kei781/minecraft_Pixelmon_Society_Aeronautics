@@ -62,5 +62,87 @@
   "production_mixins_byte_identical_to_runtime_tested_classes": true,
   "n100_modified_or_restarted": false,
   "windows_client_retest_pending": true,
-  "full_gameplay_or_six_player_validated": false
+  "full_gameplay_or_six_player_validated": false,
+  "r3_requested_actual_entity_retest": {
+    "baseline_real_entity_both_failures_reproduced": true,
+    "source_of_parameters": "PixelmonEntity created with PokemonFactory and built-in Pikachu species, setBossTier for every registered isBoss tier, actually added to isolated test world; no constructed shader/codec selection for these entity cases",
+    "packet_source": "actual SynchedEntityData SYNC_SHADER_PARAMETERS and getNonDefaultValues",
+    "packet_type": "ClientboundSetEntityDataPacket full write/read; original entity ID, synchronized shader, codec/value/color/flags and consumed buffer checked",
+    "actual_boss_cases_per_patched_environment": 9,
+    "existing_synthetic_cases_retained": 7,
+    "runs": {
+      "baseline": {
+        "log_sha256": "c2cda88add13a476019c8055465e8596ee5f18d53fec22c86971d39d59e6bbdb",
+        "markers": [
+          "PSA_SHADER_PROBE baseline_missing_codec_npe=true",
+          "PSA_SHADER_PROBE baseline_real_boss_codec_failure=true",
+          "PSA_SHADER_PROBE baseline_color_range_failure=true",
+          "PSA_SHADER_PROBE baseline_real_boss_color_failure=true",
+          "PSA_SHADER_PROBE BASELINE_REPRODUCED"
+        ],
+        "real_boss_tiers": [],
+        "normal_shutdown_logged": true
+      },
+      "minimal_patched": {
+        "log_sha256": "e3faf6ffca1c2f0ef671e594b99b5eb6deea31b5b383490c4a5e5758d5a63a93",
+        "markers": [
+          "PSA_SHADER_PROBE unsupported_codec_rejected=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.common entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.drowned entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.legendary entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.uncommon entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.spooky entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.equal entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.ultimate entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.rare entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.epic entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE REAL_BOSS_PASS tiers=9",
+          "PSA_SHADER_PROBE PATCHED_PASS cases=7 codecs=int,float,float_array"
+        ],
+        "real_boss_tiers": [
+          "enum.trainerBoss.common",
+          "enum.trainerBoss.drowned",
+          "enum.trainerBoss.legendary",
+          "enum.trainerBoss.uncommon",
+          "enum.trainerBoss.spooky",
+          "enum.trainerBoss.equal",
+          "enum.trainerBoss.ultimate",
+          "enum.trainerBoss.rare",
+          "enum.trainerBoss.epic"
+        ],
+        "normal_shutdown_logged": true
+      },
+      "full_patched": {
+        "log_sha256": "6ccd7a14fdb9731713fa7f2555248b89e9f8cb7ac39a0769f8043fb3669d58bf",
+        "markers": [
+          "PSA_SHADER_PROBE unsupported_codec_rejected=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.common entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.drowned entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.legendary entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.uncommon entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.spooky entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.equal entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.ultimate entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.rare entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE real_boss=enum.trainerBoss.epic entity_packet_roundtrip=true",
+          "PSA_SHADER_PROBE REAL_BOSS_PASS tiers=9",
+          "PSA_SHADER_PROBE PATCHED_PASS cases=7 codecs=int,float,float_array"
+        ],
+        "real_boss_tiers": [
+          "enum.trainerBoss.common",
+          "enum.trainerBoss.drowned",
+          "enum.trainerBoss.legendary",
+          "enum.trainerBoss.uncommon",
+          "enum.trainerBoss.spooky",
+          "enum.trainerBoss.equal",
+          "enum.trainerBoss.ultimate",
+          "enum.trainerBoss.rare",
+          "enum.trainerBoss.epic"
+        ],
+        "normal_shutdown_logged": true
+      }
+    },
+    "production_patch_changed_for_retest": false
+  },
+  "initial_shader_review_commit": "eeb70b8375d341e8407f62e88dc50ec1378690b9"
 }
