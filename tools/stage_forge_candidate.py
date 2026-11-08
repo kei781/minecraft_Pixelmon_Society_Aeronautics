@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
+import re
 import shutil
 import stat
 import zipfile
@@ -27,6 +28,12 @@ def verify_published(path, role):
     item = json.loads(LOCK.read_text())["artifacts"][role]
     file = item.get("file", item)
     hashes = file.get("hashes", file.get("upstream_hashes"))
+    lengths = {"sha1": 40, "sha256": 64, "sha512": 128}
+    if (not isinstance(hashes, dict) or not set(hashes) & {"sha1", "sha512"}
+            or any(algorithm not in lengths or not isinstance(expected, str)
+                   or not re.fullmatch("[0-9a-f]{%d}" % lengths[algorithm], expected)
+                   for algorithm, expected in hashes.items())):
+        raise ValueError("Published hashes must include a valid SHA1 or SHA512")
     if Path(path).stat().st_size != file["size"]:
         raise ValueError("Published size/hash mismatch: " + str(path))
     for algorithm, expected in hashes.items():

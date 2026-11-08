@@ -17,5 +17,12 @@
   "zip_metadata_differed": true,
   "canonical_first_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
   "canonical_rebuild_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
-  "canonical_byte_identical": true
+  "canonical_byte_identical": true,
+  "first_build_raw_sha256": "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367",
+  "canonical_first_input_sha256": "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367",
+  "canonical_identity_recheck": {
+    "input_sha256": "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367",
+    "output_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
+    "files": 4166
+  }
 }

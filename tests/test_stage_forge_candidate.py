@@ -1,9 +1,12 @@
 import importlib.util
+import hashlib
 import io
+import json
 from pathlib import Path
 import stat
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,6 +16,36 @@ spec.loader.exec_module(stage_forge)
 
 
 class StageForgeTest(unittest.TestCase):
+    def test_published_hashes_verify_both_metadata_shapes(self):
+        with tempfile.TemporaryDirectory() as scratch:
+            root = Path(scratch)
+            source, lock = root / "mod.jar", root / "lock.json"
+            source.write_bytes(b"upstream mod")
+            hashes = {"sha1": hashlib.sha1(source.read_bytes()).hexdigest(),
+                      "sha512": hashlib.sha512(source.read_bytes()).hexdigest()}
+            for metadata in [{"size": source.stat().st_size, "upstream_hashes": hashes},
+                             {"file": {"size": source.stat().st_size, "hashes": hashes}}]:
+                metadata["source_page"] = "https://example.test/official"
+                lock.write_text(json.dumps({"artifacts": {"test": metadata}}))
+                with patch.object(stage_forge, "LOCK", lock):
+                    self.assertTrue(stage_forge.verify_published(source, "test")["verified"])
+
+    def test_published_verification_rejects_missing_hashes_and_tampering(self):
+        with tempfile.TemporaryDirectory() as scratch:
+            root = Path(scratch)
+            source, lock = root / "mod.jar", root / "lock.json"
+            source.write_bytes(b"upstream mod")
+            correct = hashlib.sha1(source.read_bytes()).hexdigest()
+            cases = [(999, {"sha1": correct}), (source.stat().st_size, {"sha1": "0" * 40}),
+                     (source.stat().st_size, {}), (source.stat().st_size, None),
+                     (source.stat().st_size, {"sha1": "wrong"})]
+            for size, hashes in cases:
+                lock.write_text(json.dumps({"artifacts": {"test": {"source_page": "https://example.test/official",
+                    "size": size, "upstream_hashes": hashes}}}))
+                with self.subTest(size=size, hashes=hashes), patch.object(stage_forge, "LOCK", lock):
+                    with self.assertRaises(ValueError):
+                        stage_forge.verify_published(source, "test")
+
     def archive(self, extra):
         data = io.BytesIO()
         with zipfile.ZipFile(data, "w") as archive:
