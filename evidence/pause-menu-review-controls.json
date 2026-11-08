@@ -1,0 +1,607 @@
+{
+  "scope": "Task5 R1 requested actual full-client guard controls",
+  "helper_sha256": "512ca9eaedd2120a01e40a1cdbcf9550a986aeb46c4c3808ff414032071f924e",
+  "independent_normalized_helper_builds_match": true,
+  "runtime_helper_is_same_as_dist": true,
+  "baseline": {
+    "log_sha256": "046329bc034ae8978c1bd2cb4b7810a7895b42ada1b7de97735aa94d14f6eb1d",
+    "official_demo_flag_present": true,
+    "started_from_actual_title_screen": true,
+    "scenarios": [
+      {
+        "name": "default",
+        "screen_customization_enabled": true,
+        "layout_sha256": "9ff6fe3965bc9b74aa1034f0588aeb337ae159529c118444d5d9cb5c30a6b30e"
+      },
+      {
+        "name": "changed-layout",
+        "screen_customization_enabled": true,
+        "layout_sha256": "edf2988ee04781f348c5fd5f594b1c78d3231b74a55964d24a013aaf1f5e23ce"
+      },
+      {
+        "name": "disabled-layout",
+        "screen_customization_enabled": true,
+        "layout_sha256": "599566399764db8f9d902e2d8cbae28221f6562f7f1eac67441c74ce0f76bfe3"
+      },
+      {
+        "name": "disabled-screen",
+        "screen_customization_enabled": false,
+        "layout_sha256": "9ff6fe3965bc9b74aa1034f0588aeb337ae159529c118444d5d9cb5c30a6b30e"
+      }
+    ],
+    "snapshots": [
+      {
+        "scenario": "default",
+        "gui_scale": 2,
+        "dimensions": [
+          854,
+          480
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "97391d26c9119ef389687f155b829bf1aef7a497643cd586f0f52c934a51fc62"
+      },
+      {
+        "scenario": "default",
+        "gui_scale": 3,
+        "dimensions": [
+          570,
+          320
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "b372ab7b37e00f5c8863095a285622d84ee93f831b3b07621806917610ada7c1"
+      },
+      {
+        "scenario": "default",
+        "gui_scale": 4,
+        "dimensions": [
+          427,
+          240
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "25b33a56dafe27727282d95bfb36dddc440774ab9ccddc9abeb6ced4253b2cee"
+      },
+      {
+        "scenario": "changed-layout",
+        "gui_scale": 2,
+        "dimensions": [
+          854,
+          480
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "97391d26c9119ef389687f155b829bf1aef7a497643cd586f0f52c934a51fc62"
+      },
+      {
+        "scenario": "changed-layout",
+        "gui_scale": 3,
+        "dimensions": [
+          570,
+          320
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "b372ab7b37e00f5c8863095a285622d84ee93f831b3b07621806917610ada7c1"
+      },
+      {
+        "scenario": "changed-layout",
+        "gui_scale": 4,
+        "dimensions": [
+          427,
+          240
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "25b33a56dafe27727282d95bfb36dddc440774ab9ccddc9abeb6ced4253b2cee"
+      },
+      {
+        "scenario": "disabled-layout",
+        "gui_scale": 2,
+        "dimensions": [
+          854,
+          480
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "c70ad221133bb50462b7adc27cd36048624ab087dc9f9d3a42697d973963a84c"
+      },
+      {
+        "scenario": "disabled-layout",
+        "gui_scale": 3,
+        "dimensions": [
+          570,
+          320
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "7d641b71ba5c47275ce69d70fbcd56cca7b975116675c64e99c8c866091cf012"
+      },
+      {
+        "scenario": "disabled-layout",
+        "gui_scale": 4,
+        "dimensions": [
+          427,
+          240
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "6fb125680ea5a5d80f1855f032c0270e1f568867023377707986d0c532e28dc7"
+      },
+      {
+        "scenario": "disabled-screen",
+        "gui_scale": 2,
+        "dimensions": [
+          854,
+          480
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "c70ad221133bb50462b7adc27cd36048624ab087dc9f9d3a42697d973963a84c"
+      },
+      {
+        "scenario": "disabled-screen",
+        "gui_scale": 3,
+        "dimensions": [
+          570,
+          320
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "7d641b71ba5c47275ce69d70fbcd56cca7b975116675c64e99c8c866091cf012"
+      },
+      {
+        "scenario": "disabled-screen",
+        "gui_scale": 4,
+        "dimensions": [
+          427,
+          240
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "6fb125680ea5a5d80f1855f032c0270e1f568867023377707986d0c532e28dc7"
+      }
+    ],
+    "configs_restored": true
+  },
+  "fixed": {
+    "log_sha256": "c2d45d5a4f14c092f9832ce2e623954b0de4aa841d716ff426a1c929bacbae2f",
+    "official_demo_flag_present": true,
+    "started_from_actual_title_screen": true,
+    "scenarios": [
+      {
+        "name": "default",
+        "screen_customization_enabled": true,
+        "layout_sha256": "9ff6fe3965bc9b74aa1034f0588aeb337ae159529c118444d5d9cb5c30a6b30e"
+      },
+      {
+        "name": "changed-layout",
+        "screen_customization_enabled": true,
+        "layout_sha256": "edf2988ee04781f348c5fd5f594b1c78d3231b74a55964d24a013aaf1f5e23ce"
+      },
+      {
+        "name": "disabled-layout",
+        "screen_customization_enabled": true,
+        "layout_sha256": "599566399764db8f9d902e2d8cbae28221f6562f7f1eac67441c74ce0f76bfe3"
+      },
+      {
+        "name": "disabled-screen",
+        "screen_customization_enabled": false,
+        "layout_sha256": "9ff6fe3965bc9b74aa1034f0588aeb337ae159529c118444d5d9cb5c30a6b30e"
+      }
+    ],
+    "snapshots": [
+      {
+        "scenario": "default",
+        "gui_scale": 2,
+        "dimensions": [
+          854,
+          480
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 0,
+          "Report Bugs": 0
+        },
+        "widget_state_sha256": "ea2c3ec7b96e1531dbe21810c7255ffa3ed58a073215f0c2c4912304ee80ef8e"
+      },
+      {
+        "scenario": "default",
+        "gui_scale": 3,
+        "dimensions": [
+          570,
+          320
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 0,
+          "Report Bugs": 0
+        },
+        "widget_state_sha256": "b062df0c29e81449886d27d6e66ab3b3c6a6638ac54a69d7fe726a015f86eb6f"
+      },
+      {
+        "scenario": "default",
+        "gui_scale": 4,
+        "dimensions": [
+          427,
+          240
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 0,
+          "Report Bugs": 0
+        },
+        "widget_state_sha256": "a338e403fe76f6ebd53f00c9c158f01fbe8391026ab62889df2160e3142604fe"
+      },
+      {
+        "scenario": "changed-layout",
+        "gui_scale": 2,
+        "dimensions": [
+          854,
+          480
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "97391d26c9119ef389687f155b829bf1aef7a497643cd586f0f52c934a51fc62"
+      },
+      {
+        "scenario": "changed-layout",
+        "gui_scale": 3,
+        "dimensions": [
+          570,
+          320
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "b372ab7b37e00f5c8863095a285622d84ee93f831b3b07621806917610ada7c1"
+      },
+      {
+        "scenario": "changed-layout",
+        "gui_scale": 4,
+        "dimensions": [
+          427,
+          240
+        ],
+        "visible_widgets": 15,
+        "active_button_overlaps": 2,
+        "all_visible_widget_overlaps": 2,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 1,
+          "Credits": 1,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "25b33a56dafe27727282d95bfb36dddc440774ab9ccddc9abeb6ced4253b2cee"
+      },
+      {
+        "scenario": "disabled-layout",
+        "gui_scale": 2,
+        "dimensions": [
+          854,
+          480
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "c70ad221133bb50462b7adc27cd36048624ab087dc9f9d3a42697d973963a84c"
+      },
+      {
+        "scenario": "disabled-layout",
+        "gui_scale": 3,
+        "dimensions": [
+          570,
+          320
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "7d641b71ba5c47275ce69d70fbcd56cca7b975116675c64e99c8c866091cf012"
+      },
+      {
+        "scenario": "disabled-layout",
+        "gui_scale": 4,
+        "dimensions": [
+          427,
+          240
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "6fb125680ea5a5d80f1855f032c0270e1f568867023377707986d0c532e28dc7"
+      },
+      {
+        "scenario": "disabled-screen",
+        "gui_scale": 2,
+        "dimensions": [
+          854,
+          480
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "c70ad221133bb50462b7adc27cd36048624ab087dc9f9d3a42697d973963a84c"
+      },
+      {
+        "scenario": "disabled-screen",
+        "gui_scale": 3,
+        "dimensions": [
+          570,
+          320
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "7d641b71ba5c47275ce69d70fbcd56cca7b975116675c64e99c8c866091cf012"
+      },
+      {
+        "scenario": "disabled-screen",
+        "gui_scale": 4,
+        "dimensions": [
+          427,
+          240
+        ],
+        "visible_widgets": 13,
+        "active_button_overlaps": 0,
+        "all_visible_widget_overlaps": 0,
+        "visible_active_actions": {
+          "Sunlit Valley Wiki": 0,
+          "Credits": 0,
+          "Pixelmon": 1,
+          "Discord": 1,
+          "Give Feedback": 1,
+          "Report Bugs": 1
+        },
+        "widget_state_sha256": "6fb125680ea5a5d80f1855f032c0270e1f568867023377707986d0c532e28dc7"
+      }
+    ],
+    "configs_restored": true
+  },
+  "control_comparisons": [
+    {
+      "scenario": "changed-layout",
+      "gui_scale": 2,
+      "all_widget_states_match_unpatched_reference": true
+    },
+    {
+      "scenario": "changed-layout",
+      "gui_scale": 3,
+      "all_widget_states_match_unpatched_reference": true
+    },
+    {
+      "scenario": "changed-layout",
+      "gui_scale": 4,
+      "all_widget_states_match_unpatched_reference": true
+    },
+    {
+      "scenario": "disabled-layout",
+      "gui_scale": 2,
+      "all_widget_states_match_unpatched_reference": true
+    },
+    {
+      "scenario": "disabled-layout",
+      "gui_scale": 3,
+      "all_widget_states_match_unpatched_reference": true
+    },
+    {
+      "scenario": "disabled-layout",
+      "gui_scale": 4,
+      "all_widget_states_match_unpatched_reference": true
+    },
+    {
+      "scenario": "disabled-screen",
+      "gui_scale": 2,
+      "all_widget_states_match_unpatched_reference": true
+    },
+    {
+      "scenario": "disabled-screen",
+      "gui_scale": 3,
+      "all_widget_states_match_unpatched_reference": true
+    },
+    {
+      "scenario": "disabled-screen",
+      "gui_scale": 4,
+      "all_widget_states_match_unpatched_reference": true
+    }
+  ],
+  "all_nine_control_snapshots_exactly_match": true,
+  "default_visible_overlaps_baseline": [
+    2,
+    2,
+    2
+  ],
+  "default_visible_overlaps_fixed": [
+    0,
+    0,
+    0
+  ],
+  "windows_visual_retest_done": false,
+  "n100_server_changed": false,
+  "checked_at": "2026-11-08T15:51:44.675392+00:00"
+}

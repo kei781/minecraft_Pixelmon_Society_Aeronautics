@@ -19,7 +19,7 @@ EXPECTED_SHARED = 311
 EXPECTED_REPLACEMENTS = 68
 EXPECTED_MODEL_OVERRIDES = 17
 MENU_PATCH_NAME = "PSA-Client-Menu-Compat-1.0.jar"
-MENU_PATCH_SHA256 = "564a56649c825a74fd8378b96fc084df03c07b7c5ee8944fa5bf2949bf09f5fa"
+MENU_PATCH_SHA256 = "512ca9eaedd2120a01e40a1cdbcf9550a986aeb46c4c3808ff414032071f924e"
 OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
 
 

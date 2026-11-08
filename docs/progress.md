@@ -91,3 +91,5 @@ Shader R4: 실제 최신 Claude Opus 5.5가 `d9c4de0`을 CLEAN으로 판정했�
 ### Task 5 — 일시정지 메뉴 겹침 수정
 
 사용자가 Windows 화면의 Wiki 줄 글자 겹침을 보고했다. BASE `b87bfc6`. 실제 전체 클라이언트에서 Society의 Wiki·Credits와 Pixelmon이 새로 추가한 피드백·버그 신고 버튼이 같은 위치에 있는 것을 재현했다. 원본 배율2/3/4 모두 겹침2쌍, 클라이언트 전용 패치 후 모두0쌍이다. Wiki·Credits·Pixelmon·Discord가 표시·활성 상태로 보존됐다. 원본 Society 메뉴 설정 해시가 맞는 경우에만 보정한다. N100은 변경하지 않았다. 두 트리의 정규화 빌드가 같고 Python49개 중46개 통과·Linux전용3개 제외다. v7 파일과 v6용 작은 보정 JAR를 준비했으며 독립 리뷰와 최종 가져오기·전달 검증은 이어서 수행한다. [문제·적용 범위](pause-menu-compatibility.md), [측정 증거](../evidence/pause-menu-verification.json). 두 최종 목표는 미완료다.
+
+Task 5 R1은 실제 최신 Opus5.5로 `762d002`를 검토해 P2(화면 사용자 지정 별도 스위치)와 P3(명시적 PauseScreen 범위)를 제시했다. 브리지로 게시했고 작성자는 해소하지 않았다. 실제 FancyMenu 활성 API와 화면 종류 조건을 보강했다. 동일한 진단으로 원본/보정본 각각4상태×3배율=12개, 합계24개 스냅샷을 실행했다. 기본 메뉴는 겹침2/2/2→0/0/0, 사용자 설정 관련9조건은 모든 위젯 상태가 원본과 같았다. 두 설정 파일도 복원됐다. 새 작은 JAR의 독립 빌드 해시는512ca9ea…로 일치한다. Python49개 중46개 통과·Linux전용3개 제외다. [R1 요청 대조 검사](../evidence/pause-menu-review-controls.json). 재리뷰와 갱신 파일 가져오기·전달은 이어서 진행한다.

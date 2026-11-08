@@ -5,6 +5,8 @@ import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.util.HexFormat;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.screens.PauseScreen;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.fml.ModList;
@@ -25,9 +27,13 @@ public abstract class PixelmonPauseMenuMixin {
 
     @Inject(method = "onPreRender", at = @At("RETURN"), require = 1)
     private void psa$preserveSocietyLinks(ScreenEvent.Init.Post event, CallbackInfo ci) {
+        if (!(event.getScreen() instanceof PauseScreen)) return;
         if (!ModList.get().isLoaded("society") || !ModList.get().isLoaded("fancymenu")) return;
         Path layout = FMLPaths.CONFIGDIR.get().resolve("fancymenu/customization/pause_screen_layout.txt");
         try {
+            Class<?> customization = Class.forName("de.keksuccino.fancymenu.customization.ScreenCustomization");
+            if (!Boolean.TRUE.equals(customization.getMethod("isCustomizationEnabledForScreen", Screen.class)
+                    .invoke(null, event.getScreen()))) return;
             if (!Files.isRegularFile(layout) || Files.size(layout) > 65536) return;
             String hash = HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256")
                     .digest(Files.readAllBytes(layout)));
