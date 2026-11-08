@@ -1,0 +1,81 @@
+{
+  "candidate": "experimental Forge 1.20.1; not official Aeronautics release",
+  "runtime": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.20",
+    "society": "4.1.5A",
+    "pixelmon": "9.2.3 beta",
+    "aeronautics": "unofficial Forge port 1.3.0",
+    "server_pack_sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495",
+    "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "port_sha256": "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367",
+    "top_level_mod_jars": 313,
+    "neutral_replacement_files": 68,
+    "final_gameplay_validated": false
+  },
+  "host": "isolated local macOS ARM64; not N100 or Windows",
+  "authenticated_players": 0,
+  "done_seconds": 9.603,
+  "society_startup_scripts": 97,
+  "society_server_scripts": 188,
+  "own_test_scripts": 1,
+  "quests": 1142,
+  "chapter_groups": 5,
+  "chapters": 29,
+  "reward_tables": 20,
+  "normal_mobs_retained": [
+    "cow",
+    "chicken",
+    "pig",
+    "sheep",
+    "zombie"
+  ],
+  "vanilla_spawning_gamerule": true,
+  "physics_tags": [
+    "aeronautics:airtight",
+    "aeronautics:levitite"
+  ],
+  "permission_test": {
+    "ordinary_denied": true,
+    "operator_allowed": true
+  },
+  "assembly": {
+    "baseline": "Leaves Be Gone uninitialized ticker exception",
+    "baseline_exception_reproduced": true,
+    "patched_result": "one-block levitite sub-level assembled",
+    "patched_command_exception": false,
+    "impulse_command": true,
+    "positions": [
+      [
+        0.5,
+        121.5,
+        0.5
+      ],
+      [
+        0.5000000596046448,
+        121.50048828125,
+        0.499982088804245
+      ],
+      [
+        0.5000000596046448,
+        122.55519104003906,
+        0.499982088804245
+      ]
+    ],
+    "scope": "console assembly and impulse response, not a piloted vehicle"
+  },
+  "pikachu_command_spawn_reported_success": true,
+  "remaining_errors": 481,
+  "full_goals_complete": false,
+  "not_tested": [
+    "Windows",
+    "authenticated player connection",
+    "capture/battle",
+    "Society farming/economy gameplay",
+    "piloted vehicle/flight",
+    "N100 full pack",
+    "6-player load"
+  ],
+  "raw_log_sha256": "25058315c9c3c5999fb1f930384bdb06028213620e09a7177b6ceda4dcfadecf",
+  "stopped_gracefully": true
+}

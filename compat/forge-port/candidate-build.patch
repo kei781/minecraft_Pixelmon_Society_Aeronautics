@@ -1,0 +1,113 @@
+--- a/build.gradle
++++ b/build.gradle
+@@ -7,8 +7,8 @@
+         mavenCentral()
+     }
+     dependencies {
+-        classpath 'net.minecraftforge.gradle:ForgeGradle:5.1.+'
+-        classpath 'org.spongepowered:mixingradle:0.7.+'
++        classpath 'net.minecraftforge.gradle:ForgeGradle:5.1.77'
++        classpath 'org.spongepowered:mixingradle:0.7.38'
+     }
+ }
+ 
+@@ -48,6 +48,7 @@
+             }
+         }
+         data {
++            jvmArg '-Xmx2G'
+             workingDirectory project.file('run')
+             property 'forge.logging.console.level', 'debug'
+             // 合并 jar 含四个模组，数据生成必须覆盖全部，否则其余模组的
+@@ -56,7 +57,7 @@
+             // 的 GatherDataEvent 不触发、数据缺失）。Forge 多模组会把每个模组
+             // 输出再套一层 <modId>/ 目录，由 build_mod.bat 的 :flatten_gen
+             // 子程序拍平成 assets/<modId>/... （jar 正确路径）。
+-            args '--mod', 'aeronautics', '--mod', 'offroad', '--mod', 'simulated', '--mod', 'sable', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
++            args '--mod', 'aeronautics', '--mod', 'offroad', '--mod', 'simulated', '--mod', 'sable', '--existing-mod', 'create', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+             mods {
+                 aeronautics { sources sourceSets.main }
+                 offroad { sources sourceSets.main }
+@@ -68,7 +69,7 @@
+ }
+ 
+ sourceSets.main {
+-    resources { srcDir 'src/generated/resources' }
++    resources { setSrcDirs(['src/generated/complete-resources']) }
+     java {
+         // Exclude render paths that depend on Veil 4.x / Sodium (no Forge 1.20.1 equivalent).
+         // These are deferred to phase 2 (Embeddium-native rewrite). The vanilla fallback remains.
+@@ -140,7 +141,7 @@
+ repositories {
+     maven { url = uri('https://maven.minecraftforge.net') }
+     mavenCentral()
+-    mavenLocal()
++    maven { url = uri('file://@PSA_LOCAL_MAVEN@') }
+ }
+ 
+ dependencies {
+@@ -149,7 +150,7 @@
+     // Create 6.0.8 for Forge 1.20.1 + bundled helpers.
+     // 根因：libs/ 下原始 jar 为 SRG 混淆态，flat files() 不会被重映射，
+     //   导致几百个「未覆盖/找不到符号」（尤其是 Create 系调用对不上官方名）。
+-    // 修复：改用 Maven 坐标 + fg.deobf() 包裹。fg.deobf 会从 mavenLocal()
++    // 修复：改用 Maven 坐标 + fg.deobf() 包裹。fg.deobf 会从 maven { url = uri('file://@PSA_LOCAL_MAVEN@') }
+     //   （_setup_mavenlocal.py 已从 libs/ 发布的本地仓）解析 jar，并自动 SRG->official 重映射。
+     //   fg.deobf 对已是官方名的库( registrate / mixinextras )无害。
+     // libs/ 原 jar 保留作备份，未删除。
+@@ -194,7 +195,7 @@
+ jar {
+     manifest {
+         attributes([
+-            'MixinConfigs'         : 'sable.mixins.json,sable-forge.mixins.json,aeronautics.mixins.json,aeronautics.neoforge.mixins.json,offroad.mixins.json,offroad.neoforge.mixins.json,simulated.mixins.json,simulated-neoforge.mixins.json',
++            'MixinConfigs'         : 'psa-forge.mixins.json,sable.mixins.json,sable-forge.mixins.json,aeronautics.mixins.json,aeronautics.neoforge.mixins.json,offroad.mixins.json,offroad.neoforge.mixins.json,simulated.mixins.json,simulated-neoforge.mixins.json',
+             'Implementation-Title'  : project.name,
+             'Implementation-Version': project.version,
+             'Implementation-Vendor' : 'dev.eriksonn.aeronautics',
+@@ -216,3 +217,9 @@
+     options.encoding = 'UTF-8'
+     options.compilerArgs += ['-Xmaxerrs', '3000', '-Xlint:none']
+ }
++
++tasks.withType(AbstractArchiveTask).configureEach {
++    includeEmptyDirs = false
++    preserveFileTimestamps = false
++    reproducibleFileOrder = true
++}
+--- a/gradle.properties
++++ b/gradle.properties
+@@ -4,6 +4,6 @@
+ mod_archivesBaseName=create-aeronautics
+ 
+ # Forge 1.20.1 requires JDK 17
+-org.gradle.jvmargs=-Xmx6G -XX:MaxMetaspaceSize=1G
++org.gradle.jvmargs=-Xmx2G -XX:MaxMetaspaceSize=512M
+ org.gradle.java.installations.auto-download=false
+ org.gradle.warning.mode=summary
+--- a/src/main/resources/META-INF/mods.toml
++++ b/src/main/resources/META-INF/mods.toml
+@@ -1,11 +1,11 @@
+ modLoader = "javafml"
+ loaderVersion = "[47,)"
+-license = "MIT"
++license = "MIT (Aeronautics code); PolyForm Shield 1.0.0 (Sable); All Rights Reserved (art)"
+ 
+ [[mods]]
+ modId = "aeronautics"
+ version = "1.3.0"
+-displayName = "Create Aeronautics"
++displayName = "Create Aeronautics (Experimental Forge Port)"
+ authors = "Simulated Team"
+ credits = "RyanHCode, Eriksonn, Cyvack, Bee, Kyan, Cake, Rhyguy1"
+ description = '''Enables all manner of flying contraptions with hot air, propellers, and magic floating rocks. Sable is bundled in.'''
+--- a/src/main/java/dev/ryanhcode/sable/command/SableCommand.java
++++ b/src/main/java/dev/ryanhcode/sable/command/SableCommand.java
+@@ -39,7 +39,7 @@
+ 
+     public static void register(final CommandDispatcher<CommandSourceStack> dispatcher, final CommandBuildContext buildContext) {
+         final LiteralArgumentBuilder<CommandSourceStack> sableBuilder = Commands.literal("sable")
+-                .requires(commandSourceStack -> commandSourceStack.hasPermission(0));
++                .requires(commandSourceStack -> commandSourceStack.hasPermission(2));
+ 
+         SablePhysicsCommands.register(sableBuilder, buildContext);
+         SableSpawnCommands.register(sableBuilder, buildContext);

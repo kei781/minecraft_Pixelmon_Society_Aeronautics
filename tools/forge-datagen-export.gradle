@@ -1,0 +1,28 @@
+import groovy.json.JsonOutput
+import org.gradle.api.tasks.JavaExec
+
+// Prepare Forge's real launch configuration, then run the generator separately.
+// Do not serialize the inherited environment: only Forge's mod-root variable.
+gradle.taskGraph.whenReady { graph ->
+    def launchers = graph.allTasks.findAll { it.name == 'runData' }
+    if (launchers.size() != 1 || !(launchers[0] instanceof JavaExec)) {
+        throw new GradleException('Exactly one Forge JavaExec runData task is required')
+    }
+    def launcher = launchers[0]
+    def output = new File(launcher.project.property('psaDataRecipe').toString())
+    if (!output.absolute || output.exists()) throw new GradleException('Fresh absolute recipe path required')
+    launcher.enabled = false
+    gradle.buildFinished { result ->
+        if (result.failure == null) {
+            if (launcher.mainModule.present) throw new GradleException('Unexpected modular main')
+            def java = launcher.javaLauncher.get().executablePath.asFile.absolutePath
+            def recipe = [
+                command: ([java] + launcher.allJvmArgs + ['-cp', launcher.classpath.asPath, launcher.mainClass.get()] + launcher.args)
+                    .collect { it.toString() },
+                cwd: launcher.workingDir.absolutePath,
+                environment: [MOD_CLASSES: launcher.environment.get('MOD_CLASSES')]
+            ]
+            output.setText(JsonOutput.prettyPrint(JsonOutput.toJson(recipe)), 'UTF-8')
+        }
+    }
+}
