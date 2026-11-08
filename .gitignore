@@ -1,0 +1,17 @@
+upstream/
+cache/
+runtime/
+server/
+dist/
+review/
+inputs/
+client-test/
+compat/creativecore/classes/
+compat/creativecore/*.jar
+tests/classes/
+tests/generated/
+evidence/*.raw.json
+evidence/*-bytecode.txt
+evidence/*-mods.toml
+*.log
+__pycache__/

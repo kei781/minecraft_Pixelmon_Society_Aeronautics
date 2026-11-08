@@ -1,0 +1,152 @@
+[
+  {
+    "id": "8HJCKtqZ",
+    "version_number": "4.1.5B",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "YbSKGvHk",
+    "version_number": "4.1.5A",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "NGTq0O9V",
+    "version_number": "4.1.5a",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "XfLapBFb",
+    "version_number": "4.1.4",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "PzvhxChH",
+    "version_number": "4.1.3",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "VEhSEmgI",
+    "version_number": "4.1.2",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "Gd8qNaSn",
+    "version_number": "4.1.1",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "1yQVMW0w",
+    "version_number": "4.1.0",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "Xcq3N9FI",
+    "version_number": "4.0.9-MRFixed",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "OFRxK8FE",
+    "version_number": "4.0.9",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "aTsHaolH",
+    "version_number": "4.0.8",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "jwfAIqmi",
+    "version_number": "4.0.7",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "bRrDLWFx",
+    "version_number": "4.0.6",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "LZOH39Mo",
+    "version_number": "4.0.5",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "5cdjzdGv",
+    "version_number": "4.0.4",
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ]
+  }
+]

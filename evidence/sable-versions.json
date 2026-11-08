@@ -1,0 +1,49 @@
+[
+  {
+    "id": "fg9dTRz9",
+    "version_number": "2.0.6+mc1.21.1",
+    "version_type": "release",
+    "date_published": "2026-10-03T04:17:59.727160Z",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "3KUWeVhG",
+        "file_name": null,
+        "dependency_type": "embedded"
+      },
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "qy8EtCnG",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "files": [
+      {
+        "id": "oCoLBnBu",
+        "hashes": {
+          "sha1": "cf46f7e8c1511f170abcdbee739944f0540549bf",
+          "sha512": "76d293ce751a01cb9c095a3659b0a41e03e005480bc9d76dfdc73ec7c2eabf7923740c7b077921d42616673c496cd5143569f2085ddcebe174fd91d81e2a04b8"
+        },
+        "url": "https://cdn.modrinth.com/data/T9PomCSv/versions/fg9dTRz9/sable-neoforge-1.21.1-2.0.6.jar",
+        "filename": "sable-neoforge-1.21.1-2.0.6.jar",
+        "primary": true,
+        "size": 12986135,
+        "file_type": null
+      }
+    ],
+    "_source": "https://api.modrinth.com/v2/version/fg9dTRz9"
+  }
+]

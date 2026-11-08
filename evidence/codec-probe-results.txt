@@ -1,0 +1,3 @@
+PSA_CODEC_PROBE PASS: component append, idempotence, CreativeCore roundtrip, Pixelmon legacy baseline and explicit type
+PSA_CODEC_PROBE CreativeCore JSON: {"stack":{"id":"minecraft:stone","count":1},"extra":[" tail"]}
+PSA_CODEC_PROBE Pixelmon JSON: {"translate":"psa.compat.test","fallback":"PSA test"}

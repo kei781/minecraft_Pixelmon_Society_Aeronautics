@@ -1,0 +1,13 @@
+{
+  "selected": 244,
+  "failures": [
+    {
+      "project": "notenoughrecipebook",
+      "error": "URL can't contain control characters. '/data/bQh7xzFq/versions/8SBaRv1t/Not Enough Recipe Book-NEOFORGE-0.4.3+1.21.jar' (found at least ' ')"
+    },
+    {
+      "project": "oreganized",
+      "error": "URL can't contain control characters. '/data/2FJutzEL/versions/4LJyawKL/Oreganized 1.21.1-5.3.0+mc1.21.1.jar' (found at least ' ')"
+    }
+  ]
+}

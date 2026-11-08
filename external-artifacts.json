@@ -1,0 +1,9 @@
+{
+  "source": "Society project-honey config/crash_assistant/modlist.json at 5e7c8fa9073a86f9ac74c7cbf087551e5872016c",
+  "artifacts": [
+    {"filename": "society-2.0-1.21.1.jar", "mod_id": "society", "sha1": "a9e70b6f893beaba7f4b1e6c53148e529c59bf70"},
+    {"filename": "sunrisegardening-1.0.jar", "mod_id": "sunrisegardening", "sha1": "a7c43d4d0e44fd9f98565b2eafa1956f6b11f7d2"},
+    {"filename": "orchard-1.21.1-1.0.0.jar", "mod_id": "orchard", "sha1": "fc2eebc32d6f6c93a339b5d1583219b6d8b4da75"},
+    {"filename": "plentifulponds-1.0.0-Beta.jar", "mod_id": "plentifulponds", "sha1": "616eb2a0d9bc969fc8e7a943ceeae6babb96ae38"}
+  ]
+}

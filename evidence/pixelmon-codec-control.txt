@@ -1,0 +1,2 @@
+PSA_PIXELMON_BASELINE JSON: {"translate":"psa.compat.test","fallback":"PSA test"}
+PSA_PIXELMON_BASELINE class: net.minecraft.network.chat.contents.TranslatableContents

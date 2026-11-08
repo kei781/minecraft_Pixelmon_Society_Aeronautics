@@ -1,0 +1,7 @@
+{
+  "original_sha512": "864301fa1229511203fc291e9b683db5af3cb4aa4faed0ef1eb54112491b3c97f9b5006b42d41fb2c169f7fc93ad13459f5079c6ffc73dc4b145ee61b7687997",
+  "entry": "team/creative/creativecore/mixin/ComponentSerializationMixin.class",
+  "replacement_sha256": "4b3a2b76a805c2cd4af7c828c58b98e9516ce33859f187b52d9127ddeb8bb01f",
+  "patched_sha256": "41f3e42d60394eaf612b00336168380143bc1de1d3e85c2ca8fe08980b525fb0",
+  "reason": "Preserve both Pixelmon and CreativeCore component types without injecting into Pixelmon's overwritten codec method"
+}

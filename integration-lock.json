@@ -1,0 +1,3610 @@
+{
+  "schema": 1,
+  "status": "experimental-unverified",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.262",
+  "society_commit": "5e7c8fa9073a86f9ac74c7cbf087551e5872016c",
+  "files": [
+    {
+      "project": "advanced-core-info",
+      "name": "Advanced Core Info (ACI)",
+      "path": "mods/AdvancedCoreInfo-neoforge-1.21.1-1.3.0.jar",
+      "url": "https://cdn.modrinth.com/data/BaR4ijFC/versions/XpK6TnmI/AdvancedCoreInfo-neoforge-1.21.1-1.3.0.jar",
+      "hashes": {
+        "sha512": "aeb82724908ebb668574785e19bdd147eb638b777dda34f6c043c777c567cc597dd185f93afaf2ac83de6f9a7803cbb406b042d7b3c3613f8dbaedd90b0272ff",
+        "sha1": "2c7c2b07dfb69fcf244612408dcb6c166a9acb02"
+      },
+      "size": 120829,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "advanced-loot-info",
+      "name": "Advanced Loot Info (ALI)",
+      "path": "mods/AdvancedLootInfo-neoforge-1.21.1-2.3.0.jar",
+      "url": "https://cdn.modrinth.com/data/PEPVViac/versions/nmQAgzDw/AdvancedLootInfo-neoforge-1.21.1-2.3.0.jar",
+      "hashes": {
+        "sha512": "c3f706384f9ad68d85ec455c240860b3c57571bec15171573ea57b218a1246594ee79ae5520307f1052d44c9337b3d25fef2b7a90edab708aabb996bb9cbd8c8",
+        "sha1": "e996aa680ac8e45a183689e01a9306eb77be8700"
+      },
+      "size": 686959,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "alfinolib",
+      "name": "AlfinoLib",
+      "path": "mods/alfinolib-1.2.0-neoforge-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/I7x1hGed/versions/T3iUMjhn/alfinolib-1.2.0-neoforge-1.21.1.jar",
+      "hashes": {
+        "sha512": "3ef7500c35d7d8115bf555b0e5ef73ea077ce29a27b689f901022d2205c982dae24ea61eb0414e9013d208ab1937c782f92f8e3fb681f2aa3bebbf8a9958e75f",
+        "sha1": "534ec2d4319f7aed36809e60430b501f7451ac39"
+      },
+      "size": 273188,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "alltheleaks",
+      "name": "AllTheLeaks (Memory Leak Fix)",
+      "path": "mods/alltheleaks-1.1.13+1.21.1-neoforge.jar",
+      "url": "https://edge.forgecdn.net/files/8943/912/alltheleaks-1.1.13+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha1": "ea11d23e0f8c48544a269dc7c56f6593cb1cafe2",
+        "md5": "00af273671fee07bed717ad84cd86dfb"
+      },
+      "size": 565062,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "alternate-current",
+      "name": "Alternate Current",
+      "path": "mods/alternate_current-mc1.21-1.9.0.jar",
+      "url": "https://cdn.modrinth.com/data/r0v8vy1s/versions/PCNyL6v4/alternate_current-mc1.21-1.9.0.jar",
+      "hashes": {
+        "sha512": "e7715d92987ad902f316ae657558a58e647b4f076d6962e6ac5b6bdb802755f1a37c2380b69002ce930b29dc02fe96989d41818462f7bc236c4ad709b0842480",
+        "sha1": "1201c14362f2bad7062d315f8a9b26afbabd2c9c"
+      },
+      "size": 50425,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ambientsounds",
+      "name": "AmbientSounds 6",
+      "path": "mods/AmbientSounds_NEOFORGE_v6.3.8_mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/fM515JnW/versions/RZyxhsqY/AmbientSounds_NEOFORGE_v6.3.8_mc1.21.1.jar",
+      "hashes": {
+        "sha512": "292a7a61836eb6db31ec225ae4a0dc838416638618635ff60c07740bdc327df44ac0be7788c0ed44912935eb4d85b987fb6c594d11e4604f2d24fa21eabc672a",
+        "sha1": "c79ab328b2c46068effebdcb3f26e98dc4404cb0"
+      },
+      "size": 84811632,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "amendments",
+      "name": "Amendments",
+      "path": "mods/amendments-1.21-2.2.0-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/6iTJugQR/versions/FofnjBi7/amendments-1.21-2.2.0-neoforge.jar",
+      "hashes": {
+        "sha512": "0766a8c6c00a67c879f102f93f21b985c2969cf286cc323579040d033a465e473d1c06f71bd4ca1184dc3052dbdb27bbee9529b1fa722829377d658583df34a4",
+        "sha1": "3bc420bce11ebd51d57eef956ab211696dd0ecbd"
+      },
+      "size": 1179436,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "appleskin",
+      "name": "AppleSkin",
+      "path": "mods/appleskin-neoforge-mc1.21-3.0.9.jar",
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/uAKA6Laj/appleskin-neoforge-mc1.21-3.0.9.jar",
+      "hashes": {
+        "sha512": "f4ea46273e407334b63e262e2555c9a8204f7b5e60f23f272fbaa83ad9e88800e0ee186aca840710df2dbe0a18b37758695fef2ae1a902c10b3706e3de772937",
+        "sha1": "81cf0e668f991f83ac8820c386fbd6c9c3602246"
+      },
+      "size": 75804,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "applied-energistics-2",
+      "name": "Applied Energistics 2",
+      "path": "mods/appliedenergistics2-19.2.18.jar",
+      "url": "https://cdn.modrinth.com/data/XxWD5pD3/versions/KDnFUmMm/appliedenergistics2-19.2.18.jar",
+      "hashes": {
+        "sha512": "39bc4cf733a4321631e2637a1a6dfd3527135fdac1b572534e6fd1f9eab7a6dd92d56c5fa066263c95149c9b20cabdd1fd3dff80bea515381b1d2d754cad26c3",
+        "sha1": "bcd04bc7f181b2ffa314625f284c8eca6fee7fe4"
+      },
+      "size": 8236552,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "architectury-api",
+      "name": "Architectury API",
+      "path": "mods/architectury-13.0.11-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1IiqEQGl/architectury-13.0.11-neoforge.jar",
+      "hashes": {
+        "sha512": "d9f7c3bb8162577dfb461ffdf04bd6a3563c7586934a0e2a744c14421beffb8286f0d88d4c758317003f20f99fe8072a39b9d675af061e036970d36db36027f0",
+        "sha1": "008656a0702801174b8ec245ed7aad1921d6e9f1"
+      },
+      "size": 584734,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "armor-statues",
+      "name": "Armor Statues",
+      "path": "mods/ArmorStatues-v21.1.0-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/bbGCtEvb/versions/SGpwIu7v/ArmorStatues-v21.1.0-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "4160dd026b9dc03fb9c24cf8b1cac421f4393e2360862fe482ca182a3f379b70f92c0bc16bd5d8abdea826388a507fe9c9b2cd014e983ef4b2f97f276f3adc1a",
+        "sha1": "ea74e8434f23b618d3298afda8cad1ccb76f0a94"
+      },
+      "size": 263404,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "atlas-api",
+      "name": "Atlas API",
+      "path": "mods/atlas_api-1.21.1-1.2.0.jar",
+      "url": "https://cdn.modrinth.com/data/7e9kzq9t/versions/IkS0pyUg/atlas_api-1.21.1-1.2.0.jar",
+      "hashes": {
+        "sha512": "90a9946a544bf97932bb48bc1cc757ad698b71008da780ee0113a1896c19cb2811d0fb705756c8df5d8a792f31ba97f00e3988ac04bb71c70b8837a0baa275a3",
+        "sha1": "79487e97bd6dbbd6cfbdbcd4fbf1a7ac34fb8998"
+      },
+      "size": 28419,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "atmospheric",
+      "name": "Atmospheric",
+      "path": "mods/atmospheric-1.21.1-7.0.1.jar",
+      "url": "https://cdn.modrinth.com/data/U9sJOFmJ/versions/XIvPRE4O/atmospheric-1.21.1-7.0.1.jar",
+      "hashes": {
+        "sha512": "137a56f031a303116dd9245cde3b20047a523fa3215df3e8ab51590249a469a60b1e57536fdb578b6feafc89f4075f85ccd76af52dcf181b6b2df032dec7aafb",
+        "sha1": "522bbf4f8e0dcb1754c464e66ab301d8235ea315"
+      },
+      "size": 5268454,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "attributefix",
+      "name": "AttributeFix",
+      "path": "mods/attributefix-neoforge-1.21.1-21.1.3.jar",
+      "url": "https://cdn.modrinth.com/data/lOOpEntO/versions/TyNITLDY/attributefix-neoforge-1.21.1-21.1.3.jar",
+      "hashes": {
+        "sha512": "09e1ff6012d5b7bef7bb701d38feaaab41db4f2fc8b9f669b820fc2c91e53098e093e401062ad80a0ce249c68aa7a6209ac9ee341518b8f640bae2393b1595ae",
+        "sha1": "7aae849f6d2a6cb1368227407ea5deb552e100ba"
+      },
+      "size": 19809,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "autowork",
+      "name": "Autowork",
+      "path": "mods/autowork-0.4s2.jar",
+      "url": "https://cdn.modrinth.com/data/MDIFP2NE/versions/YrEErH5f/autowork-0.4s2.jar",
+      "hashes": {
+        "sha512": "739fdf8e4010d532d0f66f9b95c0077d67759f88e4f5f9b27fe73dc67726e47e08823ed5aca7a35c9371f673658465e1ad087335b69c677f580529fe79b694ed",
+        "sha1": "5df1eb5a8db5360f2a4332d1a493a341236cfaac"
+      },
+      "size": 2771917,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "azurelib",
+      "name": "AzureLib",
+      "path": "mods/azurelib-neo-1.21.1-3.1.14.jar",
+      "url": "https://cdn.modrinth.com/data/7zlUOZvb/versions/XFIIUdPG/azurelib-neo-1.21.1-3.1.14.jar",
+      "hashes": {
+        "sha512": "7869ddd2bb62a520e63c459b7515cace8fb5143cbddd19025d9bfe565a2f0173c395d50a7d54200fb9c1e6f065cc9080404ae92a184327e504232c60019ac0f4",
+        "sha1": "7393be3604ad870c89f47e3ef765fd3d5d7a0530"
+      },
+      "size": 913008,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "bad-wither-no-cookie-reloaded",
+      "name": "Bad Wither No Cookie - Reloaded",
+      "path": "mods/bwncr-neoforge-1.21.1-3.20.4.jar",
+      "url": "https://edge.forgecdn.net/files/8135/209/bwncr-neoforge-1.21.1-3.20.4.jar",
+      "hashes": {
+        "sha1": "dd7920e114fbd066986ea1028aa201a5e0742875",
+        "md5": "74333232bca9d411d0f1f8a416933361"
+      },
+      "size": 28573,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "balm",
+      "name": "Balm",
+      "path": "mods/balm-neoforge-1.21.1-21.0.66.jar",
+      "url": "https://cdn.modrinth.com/data/MBAkmtvl/versions/CquiaiDj/balm-neoforge-1.21.1-21.0.66.jar",
+      "hashes": {
+        "sha512": "0262d51c0e931d10c3dccefb3b5426a1622edecab243d4b15dce07a23309641370184776739765067d292d808242d088c6fbf249762689824eff9ba42c2d1e63",
+        "sha1": "dd3606a349f4a3c8fb5bd0ab22905675c02b0d74"
+      },
+      "size": 783793,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "beautify-decorate",
+      "name": "Beautify!",
+      "path": "mods/beautify-neoforge-1.21.1-2.0.2.jar",
+      "url": "https://cdn.modrinth.com/data/9BPuv4vL/versions/xVfv1ket/beautify-neoforge-1.21.1-2.0.2.jar",
+      "hashes": {
+        "sha512": "e48161fc0c3a7ef916154a9885fcae7f6666a4aa14e75b874e3f0d1b3afef6a298413a51f25ec7c63c3692ffb15ad4885b210e26f9f1a7d4b701e6f912495c09",
+        "sha1": "936dc981f243c4606376ba7d6f03798e0b5a6871"
+      },
+      "size": 932199,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "better-advanced-tooltips",
+      "name": "Better Advanced Tooltips",
+      "path": "mods/better-advanced-tooltips-2101.1.0-build.5.jar",
+      "url": "https://cdn.modrinth.com/data/iHLDc0eo/versions/uPFbnD32/better-advanced-tooltips-2101.1.0-build.5.jar",
+      "hashes": {
+        "sha512": "05b5cdad948d1735eab7a67a16aaf32814678c392014ec2ada61b8341c0ed1c1ac181cab1de9da3f2c4632592f4a1a5db254bd0543e6778897c8ccd260894142",
+        "sha1": "5b73537b908764f2d3fd593a0f56a8b1b034bc50"
+      },
+      "size": 37653,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "better-advancements",
+      "name": "Better Advancements",
+      "path": "mods/BetterAdvancements-NeoForge-1.21.1-0.4.3.21.jar",
+      "url": "https://cdn.modrinth.com/data/Q2OqKxDG/versions/FjTYILOi/BetterAdvancements-NeoForge-1.21.1-0.4.3.21.jar",
+      "hashes": {
+        "sha512": "b3deafd146dc3ea6e879fbc92f00de5797319a1aa620fb3b39be64c19271dab2efa07f824cda7139f8c22f2524ea413949357f5469bb6de584d1386de069c6b7",
+        "sha1": "870521cfaa1a4cb6c830e2409e8b9e4cf179aff2"
+      },
+      "size": 98641,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "better-compatibility-checker",
+      "name": "Better Compatibility Checker",
+      "path": "mods/better-compatability-checker-neoforge-21.1.8.jar",
+      "url": "https://cdn.modrinth.com/data/KJhXPbHQ/versions/NYkU1ldY/better-compatability-checker-neoforge-21.1.8.jar",
+      "hashes": {
+        "sha512": "43f8817abd4c48f2cf2087332a84e9840bde232bc62f838badb241f31bbabaa68ebb0b6403875ea66338cf76c0e394f13fafdee3804a37462c04f0acc7dfcd81",
+        "sha1": "186ba3fbacacb0ce93b9c5a5ddca28799c1577cb"
+      },
+      "size": 25085,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "biolith",
+      "name": "Biolith",
+      "path": "mods/biolith-neoforge-3.0.14.jar",
+      "url": "https://cdn.modrinth.com/data/iGEl6Crx/versions/EAjbdreT/biolith-neoforge-3.0.14.jar",
+      "hashes": {
+        "sha512": "49d225425627eca3b52514752ad297d39c571853a72f4e539c6e233a1289126fbb50593b01af2a782369e1aca55654e225ae25d494c3885baf6ed9fe212887ad",
+        "sha1": "8b041bce1cd0c5f5223c285784a3e8498273d6ea"
+      },
+      "size": 218062,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "biome-spawn-point",
+      "name": "Biome Spawn Point",
+      "path": "mods/biomespawnpoint-1.21.1-2.4.jar",
+      "url": "https://cdn.modrinth.com/data/mtfbtanr/versions/WCzp4bMK/biomespawnpoint-1.21.1-2.4.jar",
+      "hashes": {
+        "sha512": "da8fd49be669c68636372ad1d7546eab2342e15f9b645224ac341ef4600ad40546d39e81f3ff3f3a47063cd433742a588f17a27fc256753308fe1a4db9fa5fbb",
+        "sha1": "7e0b120679be73711eac3330dad5ec20f79356f4"
+      },
+      "size": 48170,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "blueprint",
+      "name": "Blueprint",
+      "path": "mods/blueprint-1.21.1-8.2.0.jar",
+      "url": "https://cdn.modrinth.com/data/VsM5EDoI/versions/FHOjk8Ez/blueprint-1.21.1-8.2.0.jar",
+      "hashes": {
+        "sha512": "0b523c2d53a56676286ddd13adbe65b1a24f5af6040dbec6af9a38cc535b7ba2531a1879afb7a496c407683eacbfbed22701053861a5fd12271b08ac93239db4",
+        "sha1": "b947d5faef872a3f4c856a814c994d70f2065666"
+      },
+      "size": 1214507,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "bookshelf",
+      "name": "Bookshelf",
+      "path": "mods/bookshelf-neoforge-1.21.1-21.1.81.jar",
+      "url": "https://cdn.modrinth.com/data/uy4Cnpcm/versions/1sdJl7J1/bookshelf-neoforge-1.21.1-21.1.81.jar",
+      "hashes": {
+        "sha512": "78d4577a8e8fbb241216968475dd73f5b9e5efeb7da802b18a4e6c290e49af6cb4a5676e9855d0d8ff3613f967812e4bd363bbb9196c17c954d19454f84b2214",
+        "sha1": "efc4cda6da4dd879f24d057ed0a6413764c9ba40"
+      },
+      "size": 328813,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "bots-lib",
+      "name": "Bot's Lib",
+      "path": "mods/bots_lib-4.1.1-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/Oeb74GyG/versions/8v4XW7mV/bots_lib-4.1.1-1.21.1.jar",
+      "hashes": {
+        "sha512": "4c3046a14ced48e385c3d307e2e67e19b3e1f4357ab055ab5efb98d2c4d412b42d87597b8bb772e9dda09e04a6f37bc952b948e5de1879d27e6f5ec720c100d5",
+        "sha1": "e0dde69f59fa283e8a727c1cbf4dd9c8f6c8d17c"
+      },
+      "size": 23524,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "building-gadgets",
+      "name": "Building Gadgets",
+      "path": "mods/buildinggadgets2-1.3.9.jar",
+      "url": "https://edge.forgecdn.net/files/6850/515/buildinggadgets2-1.3.9.jar",
+      "hashes": {
+        "sha1": "666a155981e3cd231f67809b9e2a0238377bbbfc",
+        "md5": "0075f857291a8dd0a58a1bebbaef4f51"
+      },
+      "size": 3858597,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "buzzier-bees",
+      "name": "Buzzier Bees",
+      "path": "mods/buzzier_bees-1.21.1-7.0.1.jar",
+      "url": "https://cdn.modrinth.com/data/b7vOFSIp/versions/Y12rtT96/buzzier_bees-1.21.1-7.0.1.jar",
+      "hashes": {
+        "sha512": "eac6e3ab7b25d23f6dd4676a35a68912e89ad03fe2cac1688065747a05bf04d08466fc9013131478ec0824600c6738b652dc269125c16a0d22e057d15c3fd2cf",
+        "sha1": "4f81fb00557fa5bcca5fb732b02b7921b9e11731"
+      },
+      "size": 592651,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "carry-on",
+      "name": "Carry On",
+      "path": "mods/carryon-neoforge-1.21.1-2.2.6.13.jar",
+      "url": "https://cdn.modrinth.com/data/joEfVgkn/versions/PV8oLZ1q/carryon-neoforge-1.21.1-2.2.6.13.jar",
+      "hashes": {
+        "sha512": "e097b11d6f14e0957bab6c0276b81542e786cb86b9c31d9f25975f8c9fb04a734188b8790683298bbc5c695dc3de7d6e947616a20ad26d4a728a3beb0bb78667",
+        "sha1": "2ceb0d9284525b6cb2a214c88cf6511cab91f601"
+      },
+      "size": 361486,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "certain-questing-additions",
+      "name": "Certain Questing Additions",
+      "path": "mods/certain_questing_additions-neoforge-1.2.0.4+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/5BPpCYUe/versions/P6og8Sjk/certain_questing_additions-neoforge-1.2.0.4+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "1b150dda691c8a889eb1add40e63f4e240d3139fd3261fcd5a3f00314f67514c32e03bf8429c338374fd8ee5df43eb8799914e05d62dd7f2d8868a8f39294127",
+        "sha1": "afa0dc36e96b1838d6bebfd26aedda993663075d"
+      },
+      "size": 589716,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "chat-heads",
+      "name": "Chat Heads",
+      "path": "mods/chat_heads-0.15.7-neoforge-1.21.jar",
+      "url": "https://cdn.modrinth.com/data/Wb5oqrBJ/versions/ZPylso9i/chat_heads-0.15.7-neoforge-1.21.jar",
+      "hashes": {
+        "sha512": "97ec4a08ffe54917591e7e05ba5ed9359e591719e4f3246745de36923a8080e68332aff28be437997c40a215b7aebc3537df892c99db4de6a5348ac7b4995144",
+        "sha1": "536b2af675229d2a33eb4cf5afbe7148a62d5f3f"
+      },
+      "size": 91948,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "cherished-worlds",
+      "name": "Cherished Worlds",
+      "path": "mods/cherishedworlds-neoforge-10.1.1+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/3azQ6p0W/versions/o5lwJaRU/cherishedworlds-neoforge-10.1.1+1.21.1.jar",
+      "hashes": {
+        "sha512": "b8872d92472417c15ebf91bc9772223653b5d2f5b1f4b9a5d43f4a400cd711204e5a7c07d06721c10d0f527f937e9a8f36684dd986af4a6d6dcc9fda76b3ade7",
+        "sha1": "aefc8c79ba62606a71f509a9b3c881f3fc4cad5c"
+      },
+      "size": 61728,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "chimes",
+      "name": "Chimes",
+      "path": "mods/Chimes-v2.1.1-1.21.1-NeoForge.jar",
+      "url": "https://edge.forgecdn.net/files/7573/270/Chimes-v2.1.1-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha1": "991e81741231b73b2cd3cbe9ab41e73cbe99d7be",
+        "md5": "eeec4408850a4dfb0c8a03c419e3f3b7"
+      },
+      "size": 12478373,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "chunky-pregenerator-forge",
+      "name": "Chunky (Forge/NeoForge)",
+      "path": "mods/Chunky-NeoForge-1.4.23.jar",
+      "url": "https://cdn.modrinth.com/data/fALzjamp/versions/LuFhm4eU/Chunky-NeoForge-1.4.23.jar",
+      "hashes": {
+        "sha512": "2db769dd723f243a21e1881e7c9f825e9c193da6f2bed454b70cb6fa9e51c57f63fdcf017c0657bbd26f7bba30815413e27c74d3c7be0783390a96ee9baa4bf7",
+        "sha1": "ab0c74743a653020fe2dfc4986b43e893947f3e9"
+      },
+      "size": 340572,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "classic-pipes",
+      "name": "Classic Pipes",
+      "path": "mods/classicpipes-neoforge-1.21.1-1.1.7.jar",
+      "url": "https://cdn.modrinth.com/data/xX5VOqpH/versions/MEmqHmJZ/classicpipes-neoforge-1.21.1-1.1.7.jar",
+      "hashes": {
+        "sha512": "3dee5eae85bf7c10acc96db26a51f0592eb83157a64df2983704c2cecef132b6dd9c97cf4646b1e5e73bf9d262741a0a1e747d1005336d31ec5958b049dec4a7",
+        "sha1": "99730cecd80be3ebe6ba79b169fd69ddd122ba22"
+      },
+      "size": 740803,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "clayworks",
+      "name": "Clayworks",
+      "path": "mods/clayworks-1.21.1-4.0.3.jar",
+      "url": "https://cdn.modrinth.com/data/1iicrEO3/versions/SpFNxWZa/clayworks-1.21.1-4.0.3.jar",
+      "hashes": {
+        "sha512": "e98006b95823377ec409ef352242b6d814f2a7cd7cfb42bfbb555aeb2d2a16b6d3bf3cdeaa14e9f7a32b3d1d3b59b1f2035ee2505aaf5d187c144124a3460074",
+        "sha1": "e57792898117777a09b04cb29bbceb2d88fbc7f6"
+      },
+      "size": 1436093,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "cleanview",
+      "name": "CleanView",
+      "path": "mods/cleanview-1.21.1-v1-neoforge.jar",
+      "url": "https://edge.forgecdn.net/files/5610/807/cleanview-1.21.1-v1-neoforge.jar",
+      "hashes": {
+        "sha1": "d31dd73726996188493d95777f5eeb48b432c0df",
+        "md5": "8528f7c88d8c1251be5fd7a5457b3b77"
+      },
+      "size": 11488,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "cloth-config",
+      "name": "Cloth Config API (Fabric/Forge/NeoForge)",
+      "path": "mods/cloth-config-15.0.140-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/izKINKFg/cloth-config-15.0.140-neoforge.jar",
+      "hashes": {
+        "sha512": "aaf9b010955b8cd294e5a92f069985b18729fd5e2cf22d351f1dff9680f15488688803ec41e77e941cbde130ceb535014ca4c868047d80ab69c2d508e216654d",
+        "sha1": "c3e5733ba4503b102589a026000fd5ce0212f6f2"
+      },
+      "size": 1163890,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "cluttered",
+      "name": "Cluttered",
+      "path": "mods/cluttered-[NeoForge]-3.0.3-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/UnAEo77V/versions/xzERbfOO/cluttered-[NeoForge]-3.0.3-1.21.1.jar",
+      "hashes": {
+        "sha512": "90f88b9fe70bc37d6d36b574fc5bd90d13e3b440717c1a468104bc8d6a3b55a221e117a8273620ecfc3d90dd5f2f9fc182acb1021995bb5cb54e47217919d32e",
+        "sha1": "ae644104c83cdce103f536fb42d500c282cf1b35"
+      },
+      "size": 5404861,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "collective",
+      "name": "Collective",
+      "path": "mods/collective-1.21.1-8.40.jar",
+      "url": "https://cdn.modrinth.com/data/e0M1UDsY/versions/aP0sKWst/collective-1.21.1-8.40.jar",
+      "hashes": {
+        "sha512": "e3048f5dcd8047cbd2b0651e6ed1197b25536c271111f1b80f9a6b5f34c6098a9262f3401a35f82828922c0387351210d513abe0466eae159225400ce011dbe9",
+        "sha1": "f32e8ccf56cbd8f9f64f265364fd3d255489d2e9"
+      },
+      "size": 1061918,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "colorful-hearts",
+      "name": "Colorful Hearts",
+      "path": "mods/colorfulhearts-neoforge-1.21.1-10.5.9.jar",
+      "url": "https://cdn.modrinth.com/data/wQfMUdZT/versions/us0gze50/colorfulhearts-neoforge-1.21.1-10.5.9.jar",
+      "hashes": {
+        "sha512": "4791dddc6932a74c28a5e58b51865c09a6be0715bf235eb4d95a050a9130b4013cf4883d35f7c7ccea6997534a0e3cd0e5ec59b79acc8ce01f52d230d476a889",
+        "sha1": "ec63110d126cf95dabe220116bd394e701265de7"
+      },
+      "size": 156588,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "colorwheel",
+      "name": "Colorwheel",
+      "path": "mods/colorwheel-neoforge-1.3.0+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/BzHgFoGz/versions/8rq5KP4U/colorwheel-neoforge-1.3.0+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "1d2088d41f57cef08b8b9692a5f95427c34cf218e0e0fe20bc335e7a5cab9e37cea414b786070cc29947fbbe9e9dba1a4134f722c35b9ccbef60e2a075e352aa",
+        "sha1": "350a9476147f00e351745ae1c1446eefe706bd89"
+      },
+      "size": 514376,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "colorwheel-patcher",
+      "name": "Colorwheel Patcher",
+      "path": "mods/colorwheel_patcher-neoforge-1.0.5+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/KPsw5jDu/versions/dQqV3sci/colorwheel_patcher-neoforge-1.0.5+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "902bca40ac980f4aab2564d64cf47a698b18f44234f9757c9125f755f9890d3350ca4e28e25e601ea8031139cab5b6bf897298bc4033e39ef86c9d7054705cb2",
+        "sha1": "0e63780e5b8af294bf58609ac866b9866ab9537b"
+      },
+      "size": 210569,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "comforts",
+      "name": "Comforts",
+      "path": "mods/comforts-neoforge-9.0.5+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/SaCpeal4/versions/3kpPjcTc/comforts-neoforge-9.0.5+1.21.1.jar",
+      "hashes": {
+        "sha512": "e9de2952545e9e773a6e78fc501e8cd231ea19750c30404355b71df9928eb5bd0921a4429aeca9d0fa10e67717f77fcf7a2aae117ac953b8f7de246b0ad685e4",
+        "sha1": "21d6bee3821d62fe3356c51fb1d697871a3087ff"
+      },
+      "size": 422658,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "complementary-reimagined",
+      "name": "Complementary Shaders - Reimagined",
+      "path": "shaderpacks/ComplementaryReimagined_r5.9.3.zip",
+      "url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/Bqen1mJX/ComplementaryReimagined_r5.9.3.zip",
+      "hashes": {
+        "sha512": "45304b1d7862afdb2177b7e6226fc9c6737911d17a4ad46cc9c519ca4deb935f05072cd337cd8b19a15bb8062b57b54eceec7bdee4cd572d94858e2946d37d85",
+        "sha1": "838139b54cddb56b2e83cd260d8efd960ac536d6"
+      },
+      "size": 553397,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "configured-defaults",
+      "name": "Configured Defaults",
+      "path": "mods/ConfiguredDefaults-v21.1.3-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/SISoSFPP/versions/HJxTPhTM/ConfiguredDefaults-v21.1.3-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "3664a18ab0f55ea63664d057f1cea8653daca7bd05ed629c0f3c7ecc091589846617eef568e90eb76e4eed0c3a79ad0c97b86a125d55cd7153d197f49be59c6c",
+        "sha1": "64c6ae1cb0cb37b976bbd0afb2551beae61bcdaa"
+      },
+      "size": 43521,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "construction-wand-kots",
+      "name": "Construction Wand - KOTS",
+      "path": "mods/constructionwand-kots-1.21.1-2.16.12.jar",
+      "url": "https://cdn.modrinth.com/data/76H3XX6b/versions/cFpoCw3t/constructionwand-kots-1.21.1-2.16.12.jar",
+      "hashes": {
+        "sha512": "37a21a3ab8662400a508e2319a21a344976d7f6698b86eac9f6a648619f605626d3e3aca3e65820e35ed8aa73894a463b2cd22d6b94a51cda7b377dc4437522e",
+        "sha1": "25a0c436f6dd081987c9c24deb63644899c3c0d9"
+      },
+      "size": 204794,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "controlling",
+      "name": "Controlling",
+      "path": "mods/Controlling-neoforge-1.21.1-19.0.5.jar",
+      "url": "https://cdn.modrinth.com/data/xv94TkTM/versions/FaNppCJJ/Controlling-neoforge-1.21.1-19.0.5.jar",
+      "hashes": {
+        "sha512": "bd01b2a38a869ea38e5f2a8fcd601e67ea9b132b9883c6ae752bc35dff6e94f6d47b965e31c1ee5c2f6a1221653549680da779fcb5319d199aec261d221d179e",
+        "sha1": "8a34424fc1428778be2fdbfa4da67b21b70bcbfe"
+      },
+      "size": 77555,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "cosmetic-armor-reworked",
+      "name": "Cosmetic Armor Reworked",
+      "path": "mods/cosmeticarmorreworked-1.21.1-v1-neoforge.jar",
+      "url": "https://edge.forgecdn.net/files/5610/814/cosmeticarmorreworked-1.21.1-v1-neoforge.jar",
+      "hashes": {
+        "sha1": "5f1e699cd0888b857ec63f01adaeb3571848bfea",
+        "md5": "881eb025d54ca01165c115a38a8d48c4"
+      },
+      "size": 92722,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "cozy-cafe",
+      "name": "Cozy Cafe",
+      "path": "mods/cozy_cafe-neoforge-1.21.1-2.0.2.jar",
+      "url": "https://cdn.modrinth.com/data/tS4nO5lw/versions/Au7prvWa/cozy_cafe-neoforge-1.21.1-2.0.2.jar",
+      "hashes": {
+        "sha512": "35a88d10c7d9d1b80c28aafaef236ca7fc032601da0882fc3fe3abf03157dde59cb5dfa16405056d9e1bb8202ea0f74459be90780724daba1b8dc6246e891369",
+        "sha1": "546c9e93f3d649a1c6415ee13df39b3a5db2413d"
+      },
+      "size": 1040583,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "crafting-tweaks",
+      "name": "Crafting Tweaks",
+      "path": "mods/craftingtweaks-neoforge-1.21.1-21.1.11.jar",
+      "url": "https://cdn.modrinth.com/data/DMu0oBKf/versions/IhkQpEve/craftingtweaks-neoforge-1.21.1-21.1.11.jar",
+      "hashes": {
+        "sha512": "e1869211c2e037bdaadbe9b9f592d4ccfb7ab94d7ba6803629d6525945edc05db973db6bd7568f2af4550ae4616ae6cbb832e1684412ba439d37f523b564d9a7",
+        "sha1": "b6252039445978a742f439fc398f2a198b86bd4e"
+      },
+      "size": 256086,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "crafting-on-a-stick",
+      "name": "Crafting on a stick",
+      "path": "mods/crafting_on_a_stick-1.21.0.6.jar",
+      "url": "https://cdn.modrinth.com/data/Tg5fXO1x/versions/qDVmBLqp/crafting_on_a_stick-1.21.0.6.jar",
+      "hashes": {
+        "sha512": "cc8c9ab6a3f8ba41787771bbdf3c7610fec7ae4640febb11c5a9b139abbde4e230e19df34543f324e81cb33b4329efac1e7c40dbf467fbd1b51444fb8d681d86",
+        "sha1": "1ba14315b4d13e3720d6317b399426343f9b05cd"
+      },
+      "size": 78732,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "crash-assistant",
+      "name": "Crash Assistant",
+      "path": "mods/CrashAssistant-neoforge-1.20.6-1.21.4-1.11.12.jar",
+      "url": "https://cdn.modrinth.com/data/ix1qq8Ux/versions/18SR4EJw/CrashAssistant-neoforge-1.20.6-1.21.4-1.11.12.jar",
+      "hashes": {
+        "sha512": "43d4f453e346df095e494eac6b2a3adbdaf6c679e32ab88c88294db1414e3d747c0667543a0c9be57f45837504dfeeb2af15fe57ffdf3d0f1c968482ed6b6820",
+        "sha1": "ec9e35065ce3a49ecec6bd6ff7fec6992476f7bb"
+      },
+      "size": 3481341,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "crash-utilities",
+      "name": "Crash Utilities",
+      "path": "mods/crashutilities-9.0.4.jar",
+      "url": "https://edge.forgecdn.net/files/5993/450/crashutilities-9.0.4.jar",
+      "hashes": {
+        "sha1": "5117a448b0611f60fbe743a4a631e431dd31740e",
+        "md5": "8a6dd8e1ebe0e5e8acf3bd377f98361c"
+      },
+      "size": 225310,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "create",
+      "name": "Create",
+      "path": "mods/create-1.21.1-6.0.10.jar",
+      "url": "https://cdn.modrinth.com/data/LNytGWDc/versions/UjX6dr61/create-1.21.1-6.0.10.jar",
+      "hashes": {
+        "sha512": "11cc8fc049d2f67f6548c7abfada6b82a3adb5c7ca410a742de04bbca76e03862c518721b88d806f6e6d768a4d68531fdb903a85859b25d1484d550cc7bafd4b",
+        "sha1": "0e97e49837bed766e6f28a4c95b04885d6acc353"
+      },
+      "size": 19123767,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "create-sophisticated-backpacks",
+      "name": "Create Style Sophisticated Backpacks",
+      "path": "resourcepacks/CreateSophBackpacks.zip",
+      "url": "https://cdn.modrinth.com/data/srJbhHkf/versions/3WMwR0Mh/CreateSophBackpacks.zip",
+      "hashes": {
+        "sha512": "766e3c68aff4bec310daa52f0b0800923c8171b7960f509c7f3fe8dbf8de0375e73bd4a4e5ea2b4ba9cdc77279f4d5ccbc6d3163218aa329052d42e92f0a025c",
+        "sha1": "0c834a3a13d3d597b6d1273375d2bd049fc3d728"
+      },
+      "size": 557473,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "copycats",
+      "name": "Create: Copycats+",
+      "path": "mods/copycats-3.0.9+mc.1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/UT2M39wf/versions/bPYeUWZx/copycats-3.0.9+mc.1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "432b5cde473976476b0729172710d32805576d0c3a5fd66d21f882d96cef0c4eef1b85e4e3a1a316e2adc473784b11e156b0265b0f62bcfd5b035a6ff7dfcc6e",
+        "sha1": "74de17876c43f5f780bac478b9f9eb11e687b8d7"
+      },
+      "size": 1799381,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "create-gears-and-tavern",
+      "name": "Create: Gears and Tavern",
+      "path": "mods/creategearsandtavern-1.1.9-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/ZjAeukl9/versions/smqH5sEQ/creategearsandtavern-1.1.9-1.21.1.jar",
+      "hashes": {
+        "sha512": "a32f69efbc946a0a4bc8e2294d79c3678555506a9f99e4027a3323b26ced3a3aeccdc3c319042ca0ed4bf75c21329286832218d0f46a8b4a1ae95b73f5b0f588",
+        "sha1": "075961116ba11677f23c0a1d1fec4e443ee974bd"
+      },
+      "size": 832438,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "numismatics",
+      "name": "Create: Numismatics",
+      "path": "mods/CreateNumismatics-1.1.0+neoforge-mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/Jdbbtt0i/versions/kVi3TESX/CreateNumismatics-1.1.0+neoforge-mc1.21.1.jar",
+      "hashes": {
+        "sha512": "f0a8e65828f4a36c500f4f2cad99dce89f4899711f3ebe4b8a691bf26a8be9ac8f83386507f87aaead712ab8c5f8a847cd06befb1927cb1f81de95f6cb6b7754",
+        "sha1": "5cd4817442ae95f886a2d31534166e9883ed4bb2"
+      },
+      "size": 1894517,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "create-numismatics-utils",
+      "name": "Create: Numismatics Utils",
+      "path": "mods/numismaticsutils-2.3-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/8kRKVjUw/versions/czX7tcxy/numismaticsutils-2.3-1.21.1.jar",
+      "hashes": {
+        "sha512": "c04b462c54203ec92a1e34777359f6a85e6d128e6b836ad93ac8f1949454b77bffbb1bf37da1be16986cd78541c636ef5c008997486bef8328bb1104162be6d0",
+        "sha1": "1d7b9b4d9abd84355be7a0f18f7a0152e4c3df74"
+      },
+      "size": 42250,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "create-schematicchecker",
+      "name": "Create: Schematic Checker",
+      "path": "mods/createschematicchecker-2.27.47-6.0-neoforge-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/ULzrAD1U/versions/RFQJoh8W/createschematicchecker-2.27.47-6.0-neoforge-1.21.1.jar",
+      "hashes": {
+        "sha512": "0157a5289f0815e3c62a88714ae5112169d067d93640afaf1db65649fdc023b1b08ce17375694f9bf31c702a93851d8a1567ea63ba15ac0bee1b9f3b57f7a502",
+        "sha1": "d280741dcaf1615979b703d7e2f40572311649f5"
+      },
+      "size": 355723,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "create-entitycontroller",
+      "name": "Create:Entity Control",
+      "path": "mods/CreateEntityControl-0.6.16.10-6.0.x-neoforge-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/43gwKokf/versions/usKlLFIe/CreateEntityControl-0.6.16.10-6.0.x-neoforge-1.21.1.jar",
+      "hashes": {
+        "sha512": "38f781b34f9bbcca8ed30fcd38b574e718ced39dcc92c78d92d5428683872eefbbef2d87daff64716da0a47f763d36490c78f2d0fbe422adce9eaab66bba1b83",
+        "sha1": "f486d256d589d56419da2c725b3a8e2d6ebc2714"
+      },
+      "size": 382499,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "creativecore",
+      "name": "CreativeCore",
+      "path": "mods/CreativeCore_NEOFORGE_v2.13.51_mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/OsZiaDHq/versions/vRMtFt35/CreativeCore_NEOFORGE_v2.13.51_mc1.21.1.jar",
+      "hashes": {
+        "sha512": "864301fa1229511203fc291e9b683db5af3cb4aa4faed0ef1eb54112491b3c97f9b5006b42d41fb2c169f7fc93ad13459f5079c6ffc73dc4b145ee61b7687997",
+        "sha1": "eb2242b3d4442ad4017ba0624a7f9588e778b157"
+      },
+      "size": 1236490,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "creature-feature",
+      "name": "Creature Feature",
+      "path": "mods/creaturefeature-1.2.3.3.jar",
+      "url": "https://cdn.modrinth.com/data/7nEkcq0F/versions/eW0CuJzM/creaturefeature-1.2.3.3.jar",
+      "hashes": {
+        "sha512": "57e4be76859b4ebedc6ed04b01080191ba5b14dc759322fd52839290a4bb99cdaa6bb031dba30e20faf65705561e351f6ac2fb21a8e1ee62b355cbd338551684",
+        "sha1": "e8550e1bae25f437fdaa142877027a0b783c074b"
+      },
+      "size": 3213088,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "creeper-firework",
+      "name": "Creeper Firework",
+      "path": "mods/CreeperFirework-neoforge-2.2.0.jar",
+      "url": "https://cdn.modrinth.com/data/owUiXPam/versions/OwxZJkGR/CreeperFirework-neoforge-2.2.0.jar",
+      "hashes": {
+        "sha512": "776ced2fc04d52e2617c1a0cae56acafcb9b61a85ff3793b6a26e55509c5ce309c607447fe8b632ff48e39e281b2b673d58f4093dc2895b3d6f6f524179f2bd7",
+        "sha1": "083d5b56712427691999b798d2749a59a4ff0918"
+      },
+      "size": 41106,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "critters-and-companions",
+      "name": "Critters and Companions",
+      "path": "mods/crittersandcompanions-neoforge-1.21.1-2.7.0.jar",
+      "url": "https://cdn.modrinth.com/data/Yd4wb5wZ/versions/aeDUpTJS/crittersandcompanions-neoforge-1.21.1-2.7.0.jar",
+      "hashes": {
+        "sha512": "f93bb48b07122d1c93cd931169752814c46f2ed964da987ab5ce654e8f70242c57265c3853bbb357f5fd95c412e775bf7b9a2abeb2a2a0858eae95c8d8ba451d",
+        "sha1": "957286bd79fd0b735c2e9619a249dde77292ca06"
+      },
+      "size": 2098079,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "cultural-delights",
+      "name": "Cultural Delights",
+      "path": "mods/culturaldelights-0.17.8.jar",
+      "url": "https://cdn.modrinth.com/data/YttyNOFA/versions/yNIrDVfJ/culturaldelights-0.17.8.jar",
+      "hashes": {
+        "sha512": "661a98c822daf15e50267395f41dcb45d1730b6834ee1accb9a67cb37371a4aee5d71606d03891bb17fb6e88940fa2eaf39f2b01a73d4cdd23038ebb76b97f33",
+        "sha1": "b3ad3bb769e4d35f13b3e1efec87aeb30222da15"
+      },
+      "size": 261247,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "curios",
+      "name": "Curios API",
+      "path": "mods/curios-neoforge-9.5.1+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/vvuO3ImH/versions/yohfFbgD/curios-neoforge-9.5.1+1.21.1.jar",
+      "hashes": {
+        "sha512": "5981a267686b744e7e3c227f78cbcd5267c14ac6979a28e814695f4589273998563147207fef4a5cdb7cdbdc39797cd95d9e4abadb55869f18e02a38d0654ae5",
+        "sha1": "418fcd42e3a7844c9bdc71c9b6401fdb3894e0c4"
+      },
+      "size": 410690,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "cyanide",
+      "name": "Cyanide",
+      "path": "mods/cyanide-neoforge-1.21.1-5.0.0.jar",
+      "url": "https://cdn.modrinth.com/data/fXbvd6mf/versions/v4LiMGGH/cyanide-neoforge-1.21.1-5.0.0.jar",
+      "hashes": {
+        "sha512": "5c28d68909ea2dd0db50d8cb25a2151c78b04dfc12023a25a9c2df2bc63dc2545f5dc417f3fdb3c2d7e74f553772e2b3c36002b4fd8ca3ffe86d8ecac373dcd0",
+        "sha1": "d224ea5adcf1002a07bca4e19f461a9b470b2bb6"
+      },
+      "size": 49610,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "darker-depths",
+      "name": "Darker Depths",
+      "path": "mods/darkerdepths-2.1.6.jar",
+      "url": "https://cdn.modrinth.com/data/wCbFXJKH/versions/yzhGIe6b/darkerdepths-2.1.6.jar",
+      "hashes": {
+        "sha512": "cb9aca36142d3baa1ec948fef4596a31a9324b4bf83e000c3d2b72ba5da98533e04fdb5fe2f2fecbe6063583a0a3b4b99b1b9a673b52e537c5b703e46f2c6db4",
+        "sha1": "748a1c3694df35ae8373dc293725e3aff13e9831"
+      },
+      "size": 2118195,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "data-anchor",
+      "name": "Data Anchor",
+      "path": "mods/Data_Anchor-neoforge-1.21.1-2.0.0.17.jar",
+      "url": "https://cdn.modrinth.com/data/z2XEADmE/versions/Q3J2iejk/Data_Anchor-neoforge-1.21.1-2.0.0.17.jar",
+      "hashes": {
+        "sha512": "f760e127bc3a4701548da6d80012027aaad8b65c6895362b3f42c224bdf3d0083e0a8b94ec42d01c3f8d03a0e1d8123632f364f819882aa00913a2eee7907a5e",
+        "sha1": "8794eb858535764839e1c1299d3f3ba82d275ad0"
+      },
+      "size": 119167,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "decorative-blocks-reborn",
+      "name": "Decorative Blocks Reborn",
+      "path": "mods/DecorativeBlocks-Reborn-neoforge-1.21.1-6.0.2.jar",
+      "url": "https://cdn.modrinth.com/data/hNxmWV9g/versions/NZT1mU70/DecorativeBlocks-Reborn-neoforge-1.21.1-6.0.2.jar",
+      "hashes": {
+        "sha512": "bfd4d6e5cca18805039265e8c655933061a25fb7d029f5714b4b658582b3a2416224003403bfd7fc75d103b1c6b23a45662c794c6c8c37f77dbc85473095f68c",
+        "sha1": "d5f8afffd14aa5b32ae607967f04c772a763267b"
+      },
+      "size": 432992,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "default-options",
+      "name": "Default Options",
+      "path": "mods/defaultoptions-neoforge-1.21.1-21.1.8.jar",
+      "url": "https://cdn.modrinth.com/data/WEg59z5b/versions/1zt17WsC/defaultoptions-neoforge-1.21.1-21.1.8.jar",
+      "hashes": {
+        "sha512": "29f66777068d92b1e149630d569441e5176ac40ec5cb4ee6c63c565aa7d475587a5097f59c433d69a39fd238b64902e2ba742b30c26419de901c86a3300b848e",
+        "sha1": "d682687ec41236092c5206a21e2ed34bdb7f6b79"
+      },
+      "size": 105507,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "diagonal-fences",
+      "name": "Diagonal Fences",
+      "path": "mods/DiagonalFences-v21.1.1-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/IKARgflD/versions/bgR1e0O5/DiagonalFences-v21.1.1-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "856e035193eb99264321e6d971881bad14baeb7196cb3ae75463457802dfb4d967eaec27a046e1290f074721fc1cd85d59adfd773a287b159a7baac1435c09d1",
+        "sha1": "d77da342ec4fcdea694911cba068e310a0230621"
+      },
+      "size": 171557,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "diagonal-walls",
+      "name": "Diagonal Walls",
+      "path": "mods/DiagonalWalls-v21.1.2-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/FQgc8dib/versions/2k3GCxEt/DiagonalWalls-v21.1.2-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "69495235948a9786b6c99eac06cf2a406f478b4425f08699b205da667a3a8a7f9cd3e7ac643199a01487d3a7319b275e014d2a81885008845d2ec798664620f0",
+        "sha1": "f2aed3ac68f5cc5e41ccc9d493f2706b0df53296"
+      },
+      "size": 167853,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "dramatic-doors",
+      "name": "Dramatic Doors",
+      "path": "mods/DramaticDoors-NeoQuiFab-1.21.1-3.3.2.jar",
+      "url": "https://cdn.modrinth.com/data/aQ7h7gal/versions/X5oMCwaA/DramaticDoors-NeoQuiFab-1.21.1-3.3.2.jar",
+      "hashes": {
+        "sha512": "ed5b4b1efb01611cd3f15e883b3ef65e2f6b09c616e7b827d933fffc8252d13c08455ffb918bc6899d20c19c4f91bb3897c662950ab76b4fb84f6a48e4dbc611",
+        "sha1": "548a6af5f638023095f1b2fc6dea456805b6b38b"
+      },
+      "size": 13104042,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "drippy-loading-screen",
+      "name": "Drippy Loading Screen",
+      "path": "mods/drippyloadingscreen_neoforge_3.1.5_MC_1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/v3CYg2V9/versions/MVgsDsSB/drippyloadingscreen_neoforge_3.1.5_MC_1.21.1.jar",
+      "hashes": {
+        "sha512": "3ef65f88cfa42cca781a91a2490efc890fb1865502370f71d0871d5b33a70f53fc80af9ab99650a3b4a82e1c6a13aa62c1de3dd3b2f674ac18f0e9b9dd49f4d5",
+        "sha1": "9d27991a7f5a551265692abf8ed40ece10ea1958"
+      },
+      "size": 168632,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "emi",
+      "name": "EMI",
+      "path": "mods/emi-1.1.24+1.21.1+neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/fRiHVvU7/versions/5sIPA1To/emi-1.1.24+1.21.1+neoforge.jar",
+      "hashes": {
+        "sha512": "f4c45ed686fe617311d6debadcb6ace5963e66f8cfe0cfed398231f081f87407070efc7a73c8b695d158f1d87a97180737b9107a46771e77df2bc9a7dc715ebd",
+        "sha1": "3fd494b37027dfbc7f78414d7cbf251c9eb6738a"
+      },
+      "size": 1111538,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ears",
+      "name": "Ears (+ Snouts/Muzzles, Tails, Horns, Wings, and More)",
+      "path": "mods/ears-buzz-neoforge-2.2.1-c.jar",
+      "url": "https://cdn.modrinth.com/data/mfzaZK3Z/versions/h496H0Wu/ears-buzz-neoforge-2.2.1-c.jar",
+      "hashes": {
+        "sha512": "a38ea27144d254b2aba14dbfd0ddee8325603e7f714222b10103cb6c5da7c7c7dcf83fcf4a415243816dff0cb18ae9f6bfb50c12b952c8aff77f3ecd70517016",
+        "sha1": "fac0c7b1e8c9d8e13b38d93a590c62883fc3ae82"
+      },
+      "size": 253161,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "easy-anvils",
+      "name": "Easy Anvils",
+      "path": "mods/EasyAnvils-v21.1.0-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/OZBR5JT5/versions/fSQSKhdF/EasyAnvils-v21.1.0-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "366eed1f4831e4044566833e07e5f6201ef1d178d0b30938b8a8a34bcac08c904c95ca0afe87bd55ea06b87cce85ee70c95d0cddd0ae053b1302d288252fe98f",
+        "sha1": "376c02e44dfcb44b79a494b1dba87b2ffb24277f"
+      },
+      "size": 152297,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "emmanchantment",
+      "name": "EmmaNchantment",
+      "path": "mods/emmanchantment-1.1-1.21.1.jar",
+      "url": "https://edge.forgecdn.net/files/8252/333/emmanchantment-1.1-1.21.1.jar",
+      "hashes": {
+        "sha1": "852078d13c10e80716b73ad69d68b5830735ea4b",
+        "md5": "28ac831e8d88c409d1b8b00b2f0b4b6d"
+      },
+      "size": 8278,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "emojiful",
+      "name": "Emojiful",
+      "path": "mods/Emojiful-Neoforge-1.21-5.2.4-all.jar",
+      "url": "https://cdn.modrinth.com/data/72GXx2MO/versions/rY17Eh56/Emojiful-Neoforge-1.21-5.2.4-all.jar",
+      "hashes": {
+        "sha512": "eae8c72cab42e423299c12ddcb2eca9c4a523779627af91e45361c54111bc68fd32c5043e182d2a67ce74342b196ebbb3c34d190c5c98270b23d67704be3437c",
+        "sha1": "b5b72bf9a052e7c47f3be7081eec56447e9d2136"
+      },
+      "size": 259509,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "enchantment-descriptions",
+      "name": "Enchantment Descriptions",
+      "path": "mods/enchdesc-neoforge-1.21.1-21.1.11.jar",
+      "url": "https://cdn.modrinth.com/data/UVtY3ZAC/versions/IktklYWh/enchdesc-neoforge-1.21.1-21.1.11.jar",
+      "hashes": {
+        "sha512": "b12eb7f5fe460b865d54c23aee04bb72ea47fd9681d29cf46d96ad672cbe8e5bb5cbce5b87baafc69146aee468c567cf6eeedc42fec08169fb4395c39ef92252",
+        "sha1": "4d453df785ac21e0e7389cba949f4fa460c3e267"
+      },
+      "size": 82648,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "entityjs",
+      "name": "EntityJS",
+      "path": "mods/entityjs-1.5.2.jar",
+      "url": "https://cdn.modrinth.com/data/OvPZ16yX/versions/RGmpSVAm/entityjs-1.5.2.jar",
+      "hashes": {
+        "sha512": "9c82392cd201da8a261107f0fcfe2d58a179f791715d501575df8ec01d7224fed318bad7c9cfed65dae649c9878590152b23dbe80dbdffabb029c4e125c2ccde",
+        "sha1": "a074823b0e207fd0aeff04d2b90055a023e22f94"
+      },
+      "size": 3622962,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "etcetera",
+      "name": "Etcetera",
+      "path": "mods/etcetera-neoforge-1.21.1-2.2.7.jar",
+      "url": "https://cdn.modrinth.com/data/TaRVOwJr/versions/EsBISgeL/etcetera-neoforge-1.21.1-2.2.7.jar",
+      "hashes": {
+        "sha512": "ce42df3bed033980c6c0718b5a077b676ca48c9a0a44cd2207eef2170ec5b08ca6fa268bd2fde712e9a9373b92f5b48e79d025b9c6ff1e0a745c5a488660cbb7",
+        "sha1": "e3e2d8c770e3f7c43f9483a95359aac91e53ad15"
+      },
+      "size": 7117814,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "etched",
+      "name": "Etched",
+      "path": "mods/etched-5.1.0.jar",
+      "url": "https://cdn.modrinth.com/data/zi3Fnfmc/versions/h6eJfwiW/etched-5.1.0.jar",
+      "hashes": {
+        "sha512": "cfbab71feeec3ea14686916349850a640d6ce51e763ac4f2486ed2cacd8c8042c9e457a51b0822fc7c05268370edbf59a322950cd37fbd1cb55c3b2575c3e4b9",
+        "sha1": "0cc1f1d0bc5d9af3f9ffbb8ce166f5cc9b59ec89"
+      },
+      "size": 628299,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "every-compat",
+      "name": "Every Compat (Wood Good)",
+      "path": "mods/everycomp-1.21-2.11.52-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/eiktJyw1/versions/yqVEmpxu/everycomp-1.21-2.11.52-neoforge.jar",
+      "hashes": {
+        "sha512": "27af81ecc75067cad9a2c9c59d19b1c68fd0c8422842639e8c4cb163abcc9c36af80812ff8c1b790a80b24110a8f6b2908ee14c34df875f81526cb4d8cdabf2b",
+        "sha1": "5237a7a4ce50cacf5d601be204e1be9c27e06237"
+      },
+      "size": 2640316,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "experience-obliterator",
+      "name": "Experience Obliterator",
+      "path": "mods/experience_obliterator-neoforge-1.21.1-1.0.1.jar",
+      "url": "https://cdn.modrinth.com/data/TmZqgslV/versions/XYrLjuFc/experience_obliterator-neoforge-1.21.1-1.0.1.jar",
+      "hashes": {
+        "sha512": "bcacd11dc10618db6a7a5e971075ee5bf91e10a2eee7d3ff5c3b09b970f4ca9f5deff1feb2bde45d2adbb35ccadd7486da0b229e918c25243895f11814dc9c64",
+        "sha1": "37cbe6f5bb5b88c67ecac5e31ac1ac328e4e1f25"
+      },
+      "size": 166872,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "exposure",
+      "name": "Exposure",
+      "path": "mods/exposure-neoforge-1.21.1-1.9.19.jar",
+      "url": "https://cdn.modrinth.com/data/hB899VmG/versions/iBvaR6AK/exposure-neoforge-1.21.1-1.9.19.jar",
+      "hashes": {
+        "sha512": "b6b18638d61196c3b579dcb5cd977b125586c848822ffa3bb247b3d34dc019e3ca53629303cbb57c0875f7e29be30ae036e81d90dd8feb5dd87090b2b81c08b7",
+        "sha1": "181d328a0328523fa99dd310937c40d917e91029"
+      },
+      "size": 2206392,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "exposure-catalog",
+      "name": "Exposure Catalog",
+      "path": "mods/exposure_catalog-neoforge-1.1.2.jar",
+      "url": "https://cdn.modrinth.com/data/PWcQ3kcp/versions/WvDm67vr/exposure_catalog-neoforge-1.1.2.jar",
+      "hashes": {
+        "sha512": "06b7a9f4c2debc683952f16f01f4e06744c56947b14baa3a62836f8c2c84431b429e2a4bb511cb10a2d665038fa41cc5cbb34bcc08d0d20d5e3c5c231ee23407",
+        "sha1": "835ead49af2dd38e89ed7a1efa55f29715d4c231"
+      },
+      "size": 149304,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "extreme-sound-muffler",
+      "name": "Extreme sound muffler - (Neo)Forge",
+      "path": "mods/ExtremeSoundMuffler-3.56_NeoForge-1.21.jar",
+      "url": "https://cdn.modrinth.com/data/5IIKsxiL/versions/m5je0Rop/ExtremeSoundMuffler-3.56_NeoForge-1.21.jar",
+      "hashes": {
+        "sha512": "9938bb092ce3e2742281d972da9d509ad39b0c52590d33c4d8dc4759f3494f21bab0e30e3ccc096bf0b7af9cdb17182ad24c20ea20510767208eff14ad9fda93",
+        "sha1": "f8b558f8c464f202f4a88a44332b3a495c0dc727"
+      },
+      "size": 270115,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ftb-backups-3",
+      "name": "FTB Backups 3",
+      "path": "mods/ftb-backups-3-21.1.5.jar",
+      "url": "https://edge.forgecdn.net/files/8078/605/ftb-backups-3-21.1.5.jar",
+      "hashes": {
+        "sha1": "c375dd0e4c673b39297c09211f4bf225bf1141ba",
+        "md5": "db9c137b5db5f1bbf19d33a398996611"
+      },
+      "size": 91354,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ftb-chunks-forge",
+      "name": "FTB Chunks (NeoForge)",
+      "path": "mods/ftb-chunks-neoforge-2101.1.22.jar",
+      "url": "https://edge.forgecdn.net/files/8791/113/ftb-chunks-neoforge-2101.1.22.jar",
+      "hashes": {
+        "sha1": "a53f1bb7965c6954a348d4f321f03d3971ad503f",
+        "md5": "781396912e2df9ed74d183811cb90407"
+      },
+      "size": 655807,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ftbxaerocompat",
+      "name": "FTB Chunks x Xaero's Compat",
+      "path": "mods/ftbxaerocompat-neoforge-1.1.4.jar",
+      "url": "https://edge.forgecdn.net/files/8103/626/ftbxaerocompat-neoforge-1.1.4.jar",
+      "hashes": {
+        "sha1": "6923ae95bdde32d8b504364ea125969cc7d6cb2e",
+        "md5": "bdf3efa52c71bdc7f3f08961bd1339d5"
+      },
+      "size": 109301,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ftb-library-forge",
+      "name": "FTB Library (NeoForge)",
+      "path": "mods/ftb-library-neoforge-2101.1.36.jar",
+      "url": "https://edge.forgecdn.net/files/8858/846/ftb-library-neoforge-2101.1.36.jar",
+      "hashes": {
+        "sha1": "07b5bf1c6ac5160a6cfe1b39ed8c1465dc151b00",
+        "md5": "69ebc0ddc837a23c2ca76bd8cc490937"
+      },
+      "size": 1439427,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ftb-quests-forge",
+      "name": "FTB Quests (NeoForge)",
+      "path": "mods/ftb-quests-neoforge-2101.1.36.jar",
+      "url": "https://edge.forgecdn.net/files/8885/17/ftb-quests-neoforge-2101.1.36.jar",
+      "hashes": {
+        "sha1": "b2ede29b98a3022c22065fbe9b1761e385a28683",
+        "md5": "90798f934aec638e97c595947838f843"
+      },
+      "size": 1609984,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ftb-teams-forge",
+      "name": "FTB Teams (NeoForge)",
+      "path": "mods/ftb-teams-neoforge-2101.1.11.jar",
+      "url": "https://edge.forgecdn.net/files/8724/782/ftb-teams-neoforge-2101.1.11.jar",
+      "hashes": {
+        "sha1": "62b65f752d0326edd13244e58d5f2aec035da4e9",
+        "md5": "ee780bb9fe724f6d1af97547bdab8bff"
+      },
+      "size": 308236,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ftb-xmod-compat",
+      "name": "FTB XMod Compat",
+      "path": "mods/ftb-xmod-compat-neoforge-21.1.12.jar",
+      "url": "https://edge.forgecdn.net/files/8909/889/ftb-xmod-compat-neoforge-21.1.12.jar",
+      "hashes": {
+        "sha1": "1f68bf714cf7ea3e07b23c6b8c1ebe516b325047",
+        "md5": "1cabb5550348a77420405737e344029a"
+      },
+      "size": 148575,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fancy-tab-sections",
+      "name": "Fancy Tab Sections",
+      "path": "mods/fancytabsections-6.2.1-NEOFORGE-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/K0NYarUG/versions/Nfh3zmbE/fancytabsections-6.2.1-NEOFORGE-1.21.1.jar",
+      "hashes": {
+        "sha512": "2a1a33794e7677f9bf259e3ef38bfaa895fbaf86491125628f27d0f3964e70fdc1a10c39829fb0453500f15b328f7a2a3ce4a347d67ceb7ee56ca6f06ef7d6cc",
+        "sha1": "bdc9738d9ea84276569bbd6f7ae7f06143755194"
+      },
+      "size": 89474,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fancymenu",
+      "name": "FancyMenu",
+      "path": "mods/fancymenu_neoforge_3.9.14_MC_1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/Wq5SjeWM/versions/P9dDosz2/fancymenu_neoforge_3.9.14_MC_1.21.1.jar",
+      "hashes": {
+        "sha512": "57ea23ab4424217770025a9447f3990fa39befdb51ac99d7e6bcde4bf7d926b125ceed824f38e7cf504e389bc0d30edb3a7592b47d4763516c9cb0ef4ab2a9c3",
+        "sha1": "cafbef98afb4f60adea426b950c5452655040c40"
+      },
+      "size": 25922080,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "farmers-delight",
+      "name": "Farmer's Delight",
+      "path": "mods/FarmersDelight-1.21.1-1.3.4.jar",
+      "url": "https://cdn.modrinth.com/data/R2OftAxM/versions/XTVZDOol/FarmersDelight-1.21.1-1.3.4.jar",
+      "hashes": {
+        "sha512": "1f6f8796469f747cff36f477b4f589a3d69613882399f9ee7f86db36c7bca9aa4828731f43db15dc6c7f5a4c1bbe3d4092a232e8cef010b09cec0581848fda90",
+        "sha1": "27675ddfcb8cc37e6ea1ab6c15051c7949d94657"
+      },
+      "size": 3160490,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fast-paintings",
+      "name": "Fast Paintings",
+      "path": "mods/fastpaintings-1.21-1.3.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/z3TzcquW/versions/rmMrheaC/fastpaintings-1.21-1.3.1-neoforge.jar",
+      "hashes": {
+        "sha512": "530358ac0a45e3892476447ecc92cdc25c1fc41a0e8b8ecf222148b5cf762444732bda0269f5bd5202952d5e5aa928ed97b355f8350239c4ef64d21c0ef611a5",
+        "sha1": "5cfc24c9b079a624bee0e008ba3cfd10de365412"
+      },
+      "size": 155814,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fastfurnace",
+      "name": "FastFurnace",
+      "path": "mods/FastFurnace-1.21.1-9.0.1.jar",
+      "url": "https://cdn.modrinth.com/data/9X0318ev/versions/pqj92Yco/FastFurnace-1.21.1-9.0.1.jar",
+      "hashes": {
+        "sha512": "f140b7c12528aed92ac1646737c745ffd5e89e91551b6e174d9e999f9f5e8f95225d993fdb862486e79d6577da8571dabffc58085fbfd86cb74c0fa30abd9f00",
+        "sha1": "cb77b3bc40bb598cfc50773d491c9e1af06d3833"
+      },
+      "size": 4622,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fastsuite",
+      "name": "FastSuite",
+      "path": "mods/FastSuite-1.21.1-6.0.7.jar",
+      "url": "https://cdn.modrinth.com/data/roccmqou/versions/OQZRQcDM/FastSuite-1.21.1-6.0.7.jar",
+      "hashes": {
+        "sha512": "16356d513a7569d3b6815c4697b916098e0fdfbe2f2d0189c19099e95569a363d1442607b32666c7028a2c702040bdaf18b4224bcc5a39fe32dc38b00947534f",
+        "sha1": "9dd867fe29642d9e3f2f9059f1abf372936fbabc"
+      },
+      "size": 28192,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fastworkbench",
+      "name": "FastWorkbench",
+      "path": "mods/FastWorkbench-1.21.1-9.1.3.jar",
+      "url": "https://cdn.modrinth.com/data/5NYPwQRn/versions/IwciHwPN/FastWorkbench-1.21.1-9.1.3.jar",
+      "hashes": {
+        "sha512": "73f7cfb713e0d71f9e4f302f4f97d2a62d034a2796428aa59174c58436b015e85e9438a8f7739b113c9ab6e3d160b2cd16e640f6153abe105622f33efc76d22d",
+        "sha1": "cfe55dc815979028d2a2211e26115dbd02273f87"
+      },
+      "size": 28636,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "faster-ladder-climbing",
+      "name": "Faster Ladder Climbing",
+      "path": "mods/fasterladderclimbing-0.2.14.jar",
+      "url": "https://cdn.modrinth.com/data/ylYAPOKe/versions/zid0KBLi/fasterladderclimbing-0.2.14.jar",
+      "hashes": {
+        "sha512": "615e9f7a275b25daaa070bc784f035df5a80a6cc0c7d46b58e465ce72e0324d7d7bcb712596a20e530ecd2d2875cbf224290021b814a823517976a7572a57e65",
+        "sha1": "11c268baadfc3daf31ac91135b4f34cf25217a42"
+      },
+      "size": 18756,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "featurify",
+      "name": "Featurify - WorldGen Control",
+      "path": "mods/featurify-neoforge-2.0.16+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/BXeGCdww/versions/ofWaHk4F/featurify-neoforge-2.0.16+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "23dfdd6717157bdbe0083f55975fc50687ee767993a73a80008f951becea283a56191f698b0cff4fadc482ec5dd557277cda8573a629b8e465c90ebfd77e35ca",
+        "sha1": "1931eceddf61ddd3d267cb94a36c97499cfed592"
+      },
+      "size": 294664,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ferritecore",
+      "name": "FerriteCore ((Neo)Forge)",
+      "path": "mods/ferritecore-7.0.3-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/x7kQWVju/ferritecore-7.0.3-neoforge.jar",
+      "hashes": {
+        "sha512": "19af89a2075bb10a63884fa853ebf84b02c79dc3242430ecdad056fd764fdcde367a7303276b329df01b0736e2ef264c5d80c7dc92c6aebd244f556a230bb417",
+        "sha1": "9563692efb708b6b568df27a01ec52f6311928ef"
+      },
+      "size": 121559,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "field-guide",
+      "name": "Field Guide",
+      "path": "mods/fieldguide-1.22.3+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/72RRCWM6/versions/GCjHvMPM/fieldguide-1.22.3+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "a8e156356f659239fa9bb7ba17302815e5e022460fa50fb4de5284e870100e414bc1e1ee669ce246747628671380e78bcfcd873aecdfd5e997a96775d44f876f",
+        "sha1": "737c554839fb1724d4780dbd01f78cc195e63192"
+      },
+      "size": 1307262,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "findme",
+      "name": "FindMe",
+      "path": "mods/findme-3.3.3-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/rEuzehyH/versions/XqFomM19/findme-3.3.3-neoforge.jar",
+      "hashes": {
+        "sha512": "5884a0ae58a5ec4dad7751697242125a2c96b88fa12edc0714ea60042fa74fa14493ebb735d5d06f74d7237e297d45cc1e17d3abc37d153d6c2304dbdb60ca99",
+        "sha1": "096121af0007724cc8666994d5b5df669475a145"
+      },
+      "size": 40862,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "flerovium",
+      "name": "Flerovium",
+      "path": "mods/flerovium-neoforge-1.21.1-1.2.0-all.jar",
+      "url": "https://cdn.modrinth.com/data/4Rh1Mobu/versions/PHD5rYo3/flerovium-neoforge-1.21.1-1.2.0-all.jar",
+      "hashes": {
+        "sha512": "b19e348d01ab4c059b5a5277b4e7caea828a9e2e7d49871ae3a0c495d76a473865126fa6a10a6044f67742221fb3dd1ff25fffc0c85eacac8a52a95adc37824f",
+        "sha1": "09917774048af0ebf7f4d2293f281bfcd3df2fdb"
+      },
+      "size": 194016,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fragmentum-neoforge",
+      "name": "Fragmentum 🧩 NeoForge",
+      "path": "mods/fragmentum-5.4.0+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/49C5QgTK/versions/kCXNhuIV/fragmentum-5.4.0+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "426b3a7f2085266ae231d7ef81092baabb0409bbf222b9220472dd3ba482840a0850047aabc4b59d20fd65170ec9920559d29df6527d8119ecf02c69cfa78e53",
+        "sha1": "711f46b591cbee203e68cf023277dae9060725f8"
+      },
+      "size": 7815344,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "framework",
+      "name": "Framework",
+      "path": "mods/framework-neoforge-1.21.1-0.13.11.jar",
+      "url": "https://edge.forgecdn.net/files/7530/361/framework-neoforge-1.21.1-0.13.11.jar",
+      "hashes": {
+        "sha1": "e46eb138fbb13a12f37154fb4ec407d64b326475",
+        "md5": "06f94f31d9e0b59c8b42a5b0df7013d6"
+      },
+      "size": 387334,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "functional-storage",
+      "name": "Functional Storage",
+      "path": "mods/functionalstorage-1.21.1-1.5.7.jar",
+      "url": "https://cdn.modrinth.com/data/cO40ZIg3/versions/FWnouoF2/functionalstorage-1.21.1-1.5.7.jar",
+      "hashes": {
+        "sha512": "703292eb514d09ed34fb4cc889fc424a9816be145a931c29069a24ed6d21f5d9b46f4d8b3b1e224dabbdb95ecafe0fad32ad034debccf6545d89dd17cda634ce",
+        "sha1": "19ed7ed8edfddf26c5fc29fe66084b2c3b313981"
+      },
+      "size": 776635,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fusion-connected-textures",
+      "name": "Fusion (Connected Textures)",
+      "path": "mods/fusion-1.3.15b-neoforge-mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/p19vrgc2/versions/n2GBQ4li/fusion-1.3.15b-neoforge-mc1.21.1.jar",
+      "hashes": {
+        "sha512": "e19d0b977118c45c29c577cfbdba4eeead8118334f0a118fb43bd13c6b48d477fa47811d367fc0e6078e340d3474b3f115540f1e0c1d6181eeb518184e98d246",
+        "sha1": "c3284ae904e33ff976ba9dcab79f415a1140fb64"
+      },
+      "size": 947338,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "fzzy-config",
+      "name": "Fzzy Config",
+      "path": "mods/fzzy_config-0.7.7+1.21+neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/hYykXjDp/versions/uG7oHgw6/fzzy_config-0.7.7+1.21+neoforge.jar",
+      "hashes": {
+        "sha512": "ef03b411b0e1b241a9952e1a8fdac61979665953eb5f28116aac06530964e7378eb20a78594a47ba4d942c74dfa20d550c292014b5de8e63c42b882a33aef5a5",
+        "sha1": "518eadc53c065a74a49207769209c116e77d1849"
+      },
+      "size": 2392693,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "gui-clock",
+      "name": "GUI Clock",
+      "path": "mods/guiclock-1.21.1-4.7.jar",
+      "url": "https://cdn.modrinth.com/data/g1yXisD2/versions/XyYypU1P/guiclock-1.21.1-4.7.jar",
+      "hashes": {
+        "sha512": "cd5730b6a3cde9bdd691722b667f268cab5d5e77a724809bc97fc5f7379ae8fb03813161e49d7b32f0bed9d90ba7c39ccb7abf0f0b944bc7f798d72f8b35221b",
+        "sha1": "d3834b97b550ecae3a5f738f4c40e48dca9884fb"
+      },
+      "size": 53615,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "gallery",
+      "name": "Gallery",
+      "path": "mods/gallery-1.21.1-2.0.1.jar",
+      "url": "https://cdn.modrinth.com/data/EOA6vv83/versions/HzOpAks9/gallery-1.21.1-2.0.1.jar",
+      "hashes": {
+        "sha512": "a7a4c8943cb936db53bd385a6aade02b9bc023cf405aac1aab8a829f0019680c3a359de35ba9d9e5b28cd2466e7010caea58823b43262a95eb684686e0aa7b92",
+        "sha1": "e5facb54dccd46c75c938a599f2f9da1ef39f19e"
+      },
+      "size": 391516,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "geckolib",
+      "name": "GeckoLib",
+      "path": "mods/geckolib-neoforge-1.21.1-4.9.3.jar",
+      "url": "https://cdn.modrinth.com/data/8BmcQJ2H/versions/Grwn5rUB/geckolib-neoforge-1.21.1-4.9.3.jar",
+      "hashes": {
+        "sha512": "8dfa5f8c57224a5e34e5098367ea9819ca6dc9c11357cd3062c16da3455c8bd1a483098af7383debc4b9ce8e4d7ab3fdc799b415644eb829da83eb72a7335dfd",
+        "sha1": "5cfe835472a5c5457ae9ac192d9d7b317454d5ac"
+      },
+      "size": 634531,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "glitchcore",
+      "name": "GlitchCore",
+      "path": "mods/GlitchCore-neoforge-1.21.1-2.1.0.2.jar",
+      "url": "https://cdn.modrinth.com/data/s3dmwKy5/versions/S2TfWrZR/GlitchCore-neoforge-1.21.1-2.1.0.2.jar",
+      "hashes": {
+        "sha512": "7a009ed163d03536fdfaee7b37cb1ec3073204dffcb06a683369aa88da8dbc3780b0ac69d466bb32a3ad9394c97b698d0fda676e1b4dd4edfc50ac5aa2283c32",
+        "sha1": "e3d4bb80a06f619be989ab529d0cd4e33e076943"
+      },
+      "size": 90717,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "glow-up",
+      "name": "Glow Up - Emissive Ores",
+      "path": "resourcepacks/glow_up-1.0-1.21.zip",
+      "url": "https://edge.forgecdn.net/files/6194/478/glow_up-1.0-1.21.zip",
+      "hashes": {
+        "sha1": "a1d6af3d5601a14468d985096552d15a2fde7331",
+        "md5": "85755efd1c3a155ec597f5c5939b5492"
+      },
+      "size": 264766,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "golem-overhaul",
+      "name": "Golem Overhaul",
+      "path": "mods/golemoverhaul-neoforge-1.21.1-1.1.1.jar",
+      "url": "https://cdn.modrinth.com/data/qEYs2G9A/versions/V1OtffxB/golemoverhaul-neoforge-1.21.1-1.1.1.jar",
+      "hashes": {
+        "sha512": "a2e3171f708a033a89e2f6417311e42e0773dc95ac27ef1819816cefa7f0e15ff73f8a3ffd168beb9a4a3eeae2d09859badd278bc6bf3bec224d49d3b8dcccaa",
+        "sha1": "797235253e2477822c8b18e3e9f4643dc9d8e634"
+      },
+      "size": 1036924,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "guideme",
+      "name": "GuideME",
+      "path": "mods/guideme-21.1.20.jar",
+      "url": "https://cdn.modrinth.com/data/Ck4E7v7R/versions/mUlgxNj8/guideme-21.1.20.jar",
+      "hashes": {
+        "sha512": "5e87550a56f97a23996b4c2e06a067a985f9dbbb3a79dd07a302fab275ff24637ed875e50eeafce030dd828799d323e50d86cc2509d53011069c895886a1cbdb",
+        "sha1": "3003020c170cc84ea307fa1d212d80268806a9be"
+      },
+      "size": 9325132,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "treechop",
+      "name": "HT's TreeChop",
+      "path": "mods/TreeChop-1.21.1-neoforge-0.19.3.jar",
+      "url": "https://cdn.modrinth.com/data/gHoB7SHO/versions/iLXWmfax/TreeChop-1.21.1-neoforge-0.19.3.jar",
+      "hashes": {
+        "sha512": "f7e2dba5b40d544383048e9cb846977b01eca7f653d6513cf9d2b26abd10ab5d73eefe3956a0759cb342c7ac8af41e61fc338873ca47a8e4899e4407cb44b17d",
+        "sha1": "7bf7c1bde0f574e3fb9077115a2d4f59e534486c"
+      },
+      "size": 517750,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "hominid",
+      "name": "Hominid",
+      "path": "mods/hominid-1.3.4.jar",
+      "url": "https://cdn.modrinth.com/data/4whAQxB5/versions/C6C67bp7/hominid-1.3.4.jar",
+      "hashes": {
+        "sha512": "7d897a3ecf81f43f7345f215f9b2c5b15a4ada6ea2287d2fe647e6c446a026c9edfb89ee7aa59a8e4f573a12af2e3c8bcb4d2a32eaeb0522831bc73ca00ef321",
+        "sha1": "e5c80ccbeb93238fb36f4c1f2ff024224a9e8fbc"
+      },
+      "size": 2219578,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "hooked",
+      "name": "Hooked",
+      "path": "mods/hooked-neoforge-2.0.3.jar",
+      "url": "https://cdn.modrinth.com/data/RoLsCIqN/versions/iciZ2Vbc/hooked-neoforge-2.0.3.jar",
+      "hashes": {
+        "sha512": "e994b9582379b6078ff09e6145833620d4a50b56f3f7d25ecd96f4aa17e43e51dd1dcd3e08469c88969605f04e93a0196006739df32ca08b5d97dd22c22780a6",
+        "sha1": "39ab4d29543576cbc0d8592b8cb086495b0258a3"
+      },
+      "size": 496470,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "horseman",
+      "name": "Horseman",
+      "path": "mods/horseman-neoforge-1.21.1-1.5.13.jar",
+      "url": "https://cdn.modrinth.com/data/qIv5FhAA/versions/jJ93aLVn/horseman-neoforge-1.21.1-1.5.13.jar",
+      "hashes": {
+        "sha512": "3a8aea3f060d4d4978499ad321deae4181b855a4572a3b2b8b3db82f0cb54996c895d95bdfb39dbbfc3584dbd9204c6984bba5f2e7faf895e2984b6e38d81e25",
+        "sha1": "e0a9fc419e471dce480000c3e663d6ccca13edc4"
+      },
+      "size": 453902,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "iceberg",
+      "name": "Iceberg [Neo/Forge]",
+      "path": "mods/Iceberg-1.21.1-neoforge-1.3.2.jar",
+      "url": "https://cdn.modrinth.com/data/5faXoLqX/versions/IMssx9du/Iceberg-1.21.1-neoforge-1.3.2.jar",
+      "hashes": {
+        "sha512": "19d33195cfee0a640f40fb64d82346df7ac970ddb43ed68ba2dacb4793b18d577fd57dd43a4c2e94f731487c024b8d7ebcc52721764ec9d8a87bd68fc7df5c96",
+        "sha1": "f6014d198be9503573cd9cb41cc789d282768ad8"
+      },
+      "size": 213853,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "immediatelyfast",
+      "name": "ImmediatelyFast",
+      "path": "mods/ImmediatelyFast-NeoForge-1.6.14+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/OUpXxw4n/ImmediatelyFast-NeoForge-1.6.14+1.21.1.jar",
+      "hashes": {
+        "sha512": "7d1c2e6ce306f4bb9aa155f64ba87732dc2443d57fde249467a99e0ed90fec89a706252888b97f882efbc55d6044971519db704125f27ae53cd9ae40424f9b2c",
+        "sha1": "fee59af2f39c66d09c4c09f441c799e76af70f97"
+      },
+      "size": 365195,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "immersive-enchanting",
+      "name": "Immersive Enchanting",
+      "path": "mods/beta-immersiveenchanting-6.0.1-neoforge-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/DfWQAvS4/versions/1axWAPS7/beta-immersiveenchanting-6.0.1-neoforge-1.21.1.jar",
+      "hashes": {
+        "sha512": "9c65fcb0544a20e122eeea25bd5d15c706315a236973e42021ab0a67d501dc963f77516014016a45acc77d765f0b6e60f40cd2abb757bcc082ec547b09b923f9",
+        "sha1": "d76ee256cb5d559446d78ded1692def6ae569ae1"
+      },
+      "size": 7266576,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "immersive-paintings",
+      "name": "Immersive Paintings",
+      "path": "mods/immersive_paintings-neoforge-1.21.1-0.7.9.jar",
+      "url": "https://cdn.modrinth.com/data/6txNkua3/versions/ItQ1UJGH/immersive_paintings-neoforge-1.21.1-0.7.9.jar",
+      "hashes": {
+        "sha512": "de3e06f3c9f8ce6f041daff5c2b835ec0f386ccdab7ea7fe2cfec57f808ed25675fe056ff062d5f435f5248aa7f0eb3816ae7d4748da8e53beae2419008cb031",
+        "sha1": "0386ff2db20edfcafc890760adb96073cd38c1a2"
+      },
+      "size": 5506376,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "in-control",
+      "name": "In Control!",
+      "path": "mods/incontrol-1.21-10.3.0.jar",
+      "url": "https://cdn.modrinth.com/data/KpICtuVx/versions/L0dof2WQ/incontrol-1.21-10.3.0.jar",
+      "hashes": {
+        "sha512": "0ae78ea710f8e88668c88d317d8b5b7d078dc69490707d5f2d7dcc092dee472e050044b3fcb383ef655ca6a93acc019243460d240c8643ac9b1e8048fd2fee4c",
+        "sha1": "eb89f724834b393e9a76c404df642d930e50eb19"
+      },
+      "size": 356782,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "irisshaders",
+      "name": "Iris Shaders",
+      "path": "mods/iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/KduFYu4t/iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "33fddb430e16222902eac75b8b3d57c381b0f3cc729f3b56c4628df12ca108f23a0b11e2feb167923d6d14d1fc7e8ee1a977ec421b19d1951bdca74c4092b9c5",
+        "sha1": "1bd129cf7bce65d6b1c0543045f0620c98a0f885"
+      },
+      "size": 2540723,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "irons-jewelry",
+      "name": "Iron's Gems 'n Jewelry",
+      "path": "mods/irons_jewelry-1.21.1-2.0.2.jar",
+      "url": "https://cdn.modrinth.com/data/cTagjDuu/versions/MCWj9fXj/irons_jewelry-1.21.1-2.0.2.jar",
+      "hashes": {
+        "sha512": "d77f5b1e8c72ce7bba7fdf48b3e9de980bdde01db852527f316c0c2800ebe3fd99728cd0ffe86521e7997199cb7db5405856dadd8ca779ddd66b46f9bf1ff9eb",
+        "sha1": "2f8d934d04111037dcf3fe7b04c96aec892da744"
+      },
+      "size": 731614,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "irons-lib",
+      "name": "Iron's Lib",
+      "path": "mods/irons_lib-1.21.1-2.2.0.jar",
+      "url": "https://cdn.modrinth.com/data/9nfaJPtX/versions/lUwUKYPl/irons_lib-1.21.1-2.2.0.jar",
+      "hashes": {
+        "sha512": "2a7c61843b57a93d80f963469c4c4cad027a0bf11bc39112112444a41da2283704547037254cd732f12d781a3b8a3f17f3d0d45c965f3ebc5fe8d63adbe6a1ab",
+        "sha1": "33ca1a58dc0b384a6de26171f34b3bf608aaeeb2"
+      },
+      "size": 462255,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "jade-addons",
+      "name": "Jade Addons (Neo/Forge)",
+      "path": "mods/JadeAddons-1.21.1-NeoForge-6.1.1.jar",
+      "url": "https://cdn.modrinth.com/data/xuDOzCLy/versions/ZHjXkd1n/JadeAddons-1.21.1-NeoForge-6.1.1.jar",
+      "hashes": {
+        "sha512": "febdc3d503da6901ae5b4ed4f12b75abc3cb8b96556964acc2587f5809a7d20cff363f4ec4c0ccee6782d5b4c6dff8791e874a7865c93216484039cc103be362",
+        "sha1": "6c50a845ac3d336fa88e6466c36aa8b3815ca5c5"
+      },
+      "size": 75431,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "jade",
+      "name": "Jade 🔍",
+      "path": "mods/Jade-1.21.1-NeoForge-15.10.6.jar",
+      "url": "https://cdn.modrinth.com/data/nvQzSEkH/versions/eYz2YBGT/Jade-1.21.1-NeoForge-15.10.6.jar",
+      "hashes": {
+        "sha512": "dad9755dce8d85d914fc4df2baa0211f13e5839a71c1925fdd01f69081a95e30a2934e6273f8b01f0169adebe7a9dae57a8d904de0c4cb36dc17369bb474f0f2",
+        "sha1": "88ee316e68900080b017f60c12162e2731924cf8"
+      },
+      "size": 726853,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "just-enough-effect-descriptions-jeed",
+      "name": "Just Enough Effect Descriptions (JEED)",
+      "path": "mods/jeed-1.21-2.3.4-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/EO27GKs1/versions/Rm5m1ASj/jeed-1.21-2.3.4-neoforge.jar",
+      "hashes": {
+        "sha512": "f25d1dac7f9b43ebdee50557c090aad37ab96b44288cb53b6d76d25994c7eacbc687fb815c59469d50958cb2188930a2cfd3c612e3be8b44123801a8e3b256cb",
+        "sha1": "48e3480220811b68a9c8e1bd2d3d0bad82f444ba"
+      },
+      "size": 166820,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "jei",
+      "name": "Just Enough Items (JEI)",
+      "path": "mods/jei-1.21.1-neoforge-19.57.0.450.jar",
+      "url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/Tn0dgwL0/jei-1.21.1-neoforge-19.57.0.450.jar",
+      "hashes": {
+        "sha512": "7d1e6c484d4cb78dd1d784fc7fd6fac18a1e8daff0537c3c4ca18987506cd4bc500dc5c8dbb89e00997798cf0e662d9f5872ff785f847cdc3c108c88dff3171c",
+        "sha1": "129a0aa982cd520ef8a35abddf592dc4d5655bd9"
+      },
+      "size": 2253016,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "kaleidoscope-tavern",
+      "name": "Kaleidoscope Tavern",
+      "path": "mods/kaleidoscopetavern-1.2.0-neoforge+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/r9RZvhiJ/versions/W9ILsQt7/kaleidoscopetavern-1.2.0-neoforge+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "2481f11727ee303004d2e849739651f63bc28493a79d2e6a784f45632fc92e27ce4a43cc3b08b71740aa1f2a1879c15cc097c65d7a95d9d642c4a9958df6c473",
+        "sha1": "bf026cb97921749adf6155181d2f9639d37a7261"
+      },
+      "size": 1708047,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "kiwi",
+      "name": "Kiwi 🥝 (Neo/Forge)",
+      "path": "mods/Kiwi-1.21.1-NeoForge-15.8.7.jar",
+      "url": "https://cdn.modrinth.com/data/ufdDoWPd/versions/tfwJWC8g/Kiwi-1.21.1-NeoForge-15.8.7.jar",
+      "hashes": {
+        "sha512": "d01c347febcb3d77bbfd2f44f38a80afbf4cf0b72a2aaa5d1875a38cbcd78be5a263fae4f63685256ea29c5f5f5d0f1c46892e2c78c4c1204863415dec9f4151",
+        "sha1": "d5c1d9f814bf146459f6e5e169c744c3e5bc184e"
+      },
+      "size": 1539578,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "konkrete",
+      "name": "Konkrete",
+      "path": "mods/konkrete_neoforge_1.9.9_MC_1.21.jar",
+      "url": "https://cdn.modrinth.com/data/J81TRJWm/versions/stJDU839/konkrete_neoforge_1.9.9_MC_1.21.jar",
+      "hashes": {
+        "sha512": "378bd12e3c32329abbae5cd514e1d1cc2a3cc3a45979fedb1d4e4c0a6732bdcf4b7d1bf7f7a112074bf288957edf86152c9c090a27d1d5de84a9a7825d3d6511",
+        "sha1": "97771eb287d5ac7fe667d1df9493d5e54c8ca1fa"
+      },
+      "size": 618842,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "kotlin-for-forge",
+      "name": "Kotlin for Forge",
+      "path": "mods/kotlinforforge-5.12.0-all.jar",
+      "url": "https://cdn.modrinth.com/data/ordsPcFz/versions/uhJhCT7X/kotlinforforge-5.12.0-all.jar",
+      "hashes": {
+        "sha512": "b8c3942f4d33179edf3f102f3d870b99dd436f8b8236dbbd31aa51b888162c692cfd88927295f24dc8b4375232f4c6c17360c5d6c4823f93cbcd7cf4bdc8bd14",
+        "sha1": "d10d062caf1aad9aec82d7852f2fee1781735c1f"
+      },
+      "size": 7279264,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "kubejs",
+      "name": "KubeJS",
+      "path": "mods/kubejs-neoforge-2101.7.2-build.377.jar",
+      "url": "https://cdn.modrinth.com/data/umyGl7zF/versions/THIGFPwf/kubejs-neoforge-2101.7.2-build.377.jar",
+      "hashes": {
+        "sha512": "fcdbee8790f8f39c106ab4bf606808c9c5bf0f13a41e216207a6fe4d15bf4a5722ce57078781e3a1823e7fdd2928e8e042d104d8ae255a36db8f12a9f46d8089",
+        "sha1": "7313fcd99318834c642ee9f3a05ed7fd7bcb6ef4"
+      },
+      "size": 2294111,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "leaves-be-gone",
+      "name": "Leaves Be Gone",
+      "path": "mods/LeavesBeGone-v21.1.1-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/AVq17PqV/versions/kAbmpvF3/LeavesBeGone-v21.1.1-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "4a9103e5c4e8da84a596c9ef70fa4a6a6ef740798d34bda8a707e5ec3ea12e0bcdc57937090b9eb30e2d5221f4033f530d86a250c8e684654728e23f0483d96d",
+        "sha1": "1d8eec39ed44414af14d14c0dfb5abd097e77491"
+      },
+      "size": 55937,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "libtooltips",
+      "name": "LibTooltips",
+      "path": "mods/libtooltips-2.3.2-NEOFORGE-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/L95W3cqk/versions/8WjWgsz8/libtooltips-2.3.2-NEOFORGE-1.21.1.jar",
+      "hashes": {
+        "sha512": "ce359555cc7d3d04dbcb44abb2458dd9602fda72ce3d6f35cebe4647f0f1f1bd3e23257d55d2d178598c63b2592608874a4fbd1c30437cfc7f4ed5e81bc7547e",
+        "sha1": "5ac880fcc02b00d78b543d33471c9b8707b73d85"
+      },
+      "size": 80690,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "librarianlib",
+      "name": "LibrarianLib",
+      "path": "mods/librarianlib-5.0.0-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/9uQhkMe5/versions/cjdV1zT2/librarianlib-5.0.0-neoforge.jar",
+      "hashes": {
+        "sha512": "9ff6622cb509b958c24fba3bc6ca48c0051dd74b63171f225b076f8c9bd664204ff9d9fe9d14bbd284d929b55a0208e2b602fa6e75aa15794315df1d5e67da1b",
+        "sha1": "e729d2a22f3c30a035fc1742b17eb5726d53b706"
+      },
+      "size": 1761501,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lithium",
+      "name": "Lithium (Fabric/NeoForge)",
+      "path": "mods/lithium-neoforge-0.15.4+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/DDUrRVCA/lithium-neoforge-0.15.4+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "2735da2088b88a8bdcd4ad02a2b6fffbfd3925557cefd4fa54b5477dfb9e582ea7f521300c060f57dff1325dd21bff276b7333363ad3371ed6893e3de9eca9cd",
+        "sha1": "97212e45c963730bbfc7c44780df99317814c21b"
+      },
+      "size": 774220,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lithostitched",
+      "name": "Lithostitched",
+      "path": "mods/lithostitched-1.8.0-neoforge-21.1.jar",
+      "url": "https://cdn.modrinth.com/data/XaDC71GB/versions/sPmtDq1X/lithostitched-1.8.0-neoforge-21.1.jar",
+      "hashes": {
+        "sha512": "0ba80383039270dec739f669fe936d091b87027c350972c88085729333e73e723e0c722d734c0592c08ffd6c5a21c16099f2e54cf7cfbcbd3061f5e3cbd62cb4",
+        "sha1": "fe7eb612a0fa0c41ce94d914162d298755bb25a3"
+      },
+      "size": 979783,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "little-joys",
+      "name": "Little Joys",
+      "path": "mods/littlejoys-neoforge-1.21.1-21.1.18.jar",
+      "url": "https://cdn.modrinth.com/data/v0j2ftEp/versions/r4Ul24sj/littlejoys-neoforge-1.21.1-21.1.18.jar",
+      "hashes": {
+        "sha512": "5914203c79d78d72df8c2365c9d7f713138567a6fc1022b491560325f73c3ba7910d5d81b6aa9dbb14561bc4fb727a4672a8f0057efc71ca889c36abe448aa7b",
+        "sha1": "d56811199b8078be9b7ff619a097b8b193a3b1c6"
+      },
+      "size": 1029869,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lmft",
+      "name": "Load My F***ing Tags",
+      "path": "mods/lmft-1.1.1+1.21.9-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/67kVxsaO/versions/poGMd0AE/lmft-1.1.1+1.21.9-neoforge.jar",
+      "hashes": {
+        "sha512": "e8fcbeae565ea05ca78e6aeebe3c1ef539039bcd25b57f9842e3025de2e35d295317af6c842f57d0969918fe5aed80032fb68f0f98a81bbec84450408b3ac0e6",
+        "sha1": "492d597ca216f9d099be112e77a9a5c7ed138770"
+      },
+      "size": 78624,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "log-begone",
+      "name": "Log Begone",
+      "path": "mods/logbegone-neoforge-1.21.1-1.0.3.jar",
+      "url": "https://cdn.modrinth.com/data/9ON3zv6e/versions/1OrkaiPD/logbegone-neoforge-1.21.1-1.0.3.jar",
+      "hashes": {
+        "sha512": "5908033aa96432ff55b9d81bd010172e353997312537f82c25b2ddf4767e8dc0100469cefc7513cf1542a919c79f090f7c74e5f29ccd788422231914335d047d",
+        "sha1": "ee401552a031798993fffb7c9761742bdf6789e8"
+      },
+      "size": 73237,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "longwings",
+      "name": "Longwings",
+      "path": "mods/Longwings-v0.9.5-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/YXWD6pbz/versions/h13ko2fP/Longwings-v0.9.5-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "e31dbbba066e44424bcbda1deced6b2f0294a6558c7ba344bab998ef86c6fab5902bb34ff8a4b913b93edb94f37cc6965833ebf9f71b21b8bec2a5475d45565b",
+        "sha1": "745475bd0428f1a426e9911e442771d4494fa80c"
+      },
+      "size": 1938589,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "loot-journal-neoforge",
+      "name": "Loot Journal: Pickup Notifier [NeoForge Edition]",
+      "path": "mods/loot_journal-neoforge-1.21.1-6.2.2.jar",
+      "url": "https://cdn.modrinth.com/data/OJ6ZYz5L/versions/zyIMDDzM/loot_journal-neoforge-1.21.1-6.2.2.jar",
+      "hashes": {
+        "sha512": "da6be07bebe1f2f38242568a49e13020c4cbead8e563d02d5106110ce3bc34525c2388ce47d36b477db8dcc7661afc38fa9eb243cc42c53737c531e0b5189c77",
+        "sha1": "9f6030dd1f081bc71f24e5c50ff83d58ce8e4cc4"
+      },
+      "size": 304549,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lootjs",
+      "name": "LootJS: KubeJS Addon",
+      "path": "mods/lootjs-neoforge-1.21.1-3.7.0.jar",
+      "url": "https://cdn.modrinth.com/data/fJFETWDN/versions/5AZDyUSn/lootjs-neoforge-1.21.1-3.7.0.jar",
+      "hashes": {
+        "sha512": "fab507e70197e74ffba43bd400066f55ef58c2f91cb213efedf4acd2a2ad7876d9de905f02788a0b6831304c2177fdc9996c435bcf855eabdb4daca7581270bc",
+        "sha1": "54ffddd1763ae4af84e9bbcb22e4081a1e7f3556"
+      },
+      "size": 247689,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lootr",
+      "name": "Lootr (Forge & NeoForge)",
+      "path": "mods/lootr-neoforge-1.21.1-1.11.38.127.jar",
+      "url": "https://cdn.modrinth.com/data/EltpO5cN/versions/SPOrIzX8/lootr-neoforge-1.21.1-1.11.38.127.jar",
+      "hashes": {
+        "sha512": "7496051c1ba98f8801b8eb81773d1baec16166c3d2c5682476bd6f9433f794095099cea609fd5610525edb7c450b1bacd0011a31763e91c77c9a0034c8245ca3",
+        "sha1": "7a305b581abd90e1a8b7c1bb5eb4511d2653aa58"
+      },
+      "size": 1075929,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "moogs-voyager-structures",
+      "name": "MVS - Moog's Voyager Structures",
+      "path": "mods/MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+      "url": "https://cdn.modrinth.com/data/OQAgZMH1/versions/PiFoSPXI/MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+      "hashes": {
+        "sha512": "80e9e4a6543e8fc7d24d7e1fb4d4245d1d30f9aaf02ae2ba1098956106bea411a4502ce1d4b8fa97b935c9421a0eebf42226a46c8172cbbf621cc8ca16a50457",
+        "sha1": "6759fa57891f731e54f865c13ffa0601a829b76a"
+      },
+      "size": 2234287,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "melody",
+      "name": "Melody",
+      "path": "mods/melody_neoforge_1.0.10_MC_1.21.jar",
+      "url": "https://cdn.modrinth.com/data/CVT4pFB2/versions/efcdRVZP/melody_neoforge_1.0.10_MC_1.21.jar",
+      "hashes": {
+        "sha512": "3bd96b851a65fa95d92d051851e6a7a415927f718fcb05f0dfb5983eb3ca54edfb842ea85f1497e1b3510b5884181b8f9c6080d2b15642ceadac695011c00ec1",
+        "sha1": "e83052a92c4ca0016bcfe7f0207273983dc84698"
+      },
+      "size": 36096,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "mezzconfig",
+      "name": "MezzConfig",
+      "path": "mods/mezz_config-1.21.1-neoforge-0.6.6-standalone.jar",
+      "url": "https://cdn.modrinth.com/data/7tEfOcA7/versions/rTaCN0TP/mezz_config-1.21.1-neoforge-0.6.6-standalone.jar",
+      "hashes": {
+        "sha512": "fbe56499a498e685c8c8409b5e326ec28d62f31978357a523b63355eb07826aee07118ef2e02c0e09803e0a0c994c9b2aa7f45de86a26fb6d0a0d8ea87c9a334",
+        "sha1": "ece9c53abe11d74f807afff505fcfed5a71a4129"
+      },
+      "size": 312220,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "midnightlib",
+      "name": "MidnightLib",
+      "path": "mods/midnightlib-neoforge-1.10.0+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/codAaoxh/versions/vcVnfiCM/midnightlib-neoforge-1.10.0+1.21.1.jar",
+      "hashes": {
+        "sha512": "9586940ec144452577455b61fd7c9f7ee123044a47255f9425be1bfcd4e842d5902b66c7f5546540281cad8c12e30d38fc29e8fb3aa3cb592ed13ff430316e68",
+        "sha1": "540612caebec8a02a8774488e03982488b6bbba9"
+      },
+      "size": 64794,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "mighty-mail",
+      "name": "Mighty Mail",
+      "path": "mods/mighty_mail-neoforge-1.21.1-1.1.4.jar",
+      "url": "https://edge.forgecdn.net/files/6542/124/mighty_mail-neoforge-1.21.1-1.1.4.jar",
+      "hashes": {
+        "sha1": "0647bf0f2d5e986dacbaa28a7799d000dd39c8d2",
+        "md5": "e58fb28c5ccd6bf844e6f65968b56682"
+      },
+      "size": 224354,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "modern-apple-cows",
+      "name": "Modern Apple Cows",
+      "path": "mods/apple_cows-1.0.1+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/h3VCF7si/versions/AkMWyskW/apple_cows-1.0.1+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "c82851e083b5fd60b6be2eb2d605e92917c0e92dcd4abef9cae791f9318e8fec99aea6e296428ded57fb3d71c805fa9c6b607b6a88be7d2bf3ee77efd945f525",
+        "sha1": "d8f93212fc26857cd61b598bc042a631c71fb503"
+      },
+      "size": 422015,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "modernfix",
+      "name": "ModernFix",
+      "path": "mods/modernfix-neoforge-5.27.26+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/nmDcB62a/versions/7Jy58lnT/modernfix-neoforge-5.27.26+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "37c76fc5bc72cfc1035260f891ffeb45b4f32651d2e490c5eb8c60f3b5686deca3145b32d4fab9036f65f5277b0ac66f4ad3855e52cd973e791b09e9c4b896d8",
+        "sha1": "69d468b70e53f6a014c778a81116a41a38fbab33"
+      },
+      "size": 611043,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "modulation",
+      "name": "Modulation",
+      "path": "mods/modulation-4.0.6+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/ItRzabx0/versions/2gdYSVNY/modulation-4.0.6+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "a578af137fb24b8d930a0e8208fc6e3b85900bfefdab232da77a2d23e5019e95b00fc52512b2a9e14fec29bafdaedab051dc6e11e3c33c17542f6748950201ef",
+        "sha1": "2427fe6868652fa61d2641c3a7b58486e8e3784a"
+      },
+      "size": 528361,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "moogs-structure-lib",
+      "name": "Moog's Structure Lib (moogs_structures)",
+      "path": "mods/MoogsStructureLib-neoforge-1.21.1-3.4.0.jar",
+      "url": "https://cdn.modrinth.com/data/1oUDhxuy/versions/ONHbCBrV/MoogsStructureLib-neoforge-1.21.1-3.4.0.jar",
+      "hashes": {
+        "sha512": "bfd6f6504b78e29ad45cf5356e736980ece37154b868c8d63a27e7d1474b40721513038bfed5360cb8a4aca785d869d333188d7c8ff7cea761c70b42a47419cd",
+        "sha1": "e63be4b3872f3eddcb58baee5e603669f136ec4c"
+      },
+      "size": 438281,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "selene",
+      "name": "Moonlight Lib",
+      "path": "mods/moonlight-1.21.1-3.7.2-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/twkfQtEc/versions/fAIfWX6M/moonlight-1.21.1-3.7.2-neoforge.jar",
+      "hashes": {
+        "sha512": "b4e8efba91e5f46729928335cce8952ad70af3e33b851e8cf4887a24346f7bbdfe3609f8cc482f76a715aa050bf39e7048ee97b33183e5c358f149bc3678183c",
+        "sha1": "0da45e6bc941f4b9b18dda24f8d047431ddc7226"
+      },
+      "size": 2299162,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "more-overlays-updated",
+      "name": "More Overlays Updated",
+      "path": "mods/moreoverlays-1.24.2-mc1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/Thy5Pqut/versions/Kq8xaqKi/moreoverlays-1.24.2-mc1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "6e590a05107b2c49579fa619de93029b3c858079c4baedd52ebbe0f8b18edf82c70c2ea841040610178b764848690e8806d11a532bfa12c28d9a9452b8254cea",
+        "sha1": "21e8bd61c5e146a9574266015d3f64621c2d9e18"
+      },
+      "size": 112984,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "mouse-tweaks",
+      "name": "Mouse Tweaks",
+      "path": "mods/MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+      "url": "https://cdn.modrinth.com/data/aC3cM3Vq/versions/9I21YYxf/MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+      "hashes": {
+        "sha512": "f95c0cc881211ee0442434976775e07aae40b4a2ba4e3a85455bc57ca9d3c991e239cd98374a8abd442dc9c378dcd9001e2caa1bf69991d424b5652dd7f3483b",
+        "sha1": "6dae57f4f50f7808d2ed9a18f6cd1c0d4640c6bc"
+      },
+      "size": 73938,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "mystical-oak-tree",
+      "name": "Mystical Oak Tree",
+      "path": "mods/mysticaloaktree-1.21-1.14-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/eUma2vmY/versions/DnclMSEE/mysticaloaktree-1.21-1.14-neoforge.jar",
+      "hashes": {
+        "sha512": "e38417a51fff91155c3d1f8005bf2ffdd162894a39ae4ee2ae53015af7ce1dc5b2a827832ca2d604332f35f2e975eaa6d5a952d715c90ca691c7ec9ec9a84b2c",
+        "sha1": "4cc872bd6e32becf53358b8f3daa1709064c831a"
+      },
+      "size": 206071,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "natures-compass",
+      "name": "Nature's Compass",
+      "path": "mods/NaturesCompass-1.21.1-3.4.0-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/fPetb5Kh/versions/nFniEtJV/NaturesCompass-1.21.1-3.4.0-neoforge.jar",
+      "hashes": {
+        "sha512": "5314b536bcb9a594a9cf2bbd46c82468d17e1559bd6c00da9d91e96c0814f50416799a011705f0d184bd731dac3f03dec009c76fea3d02b3556a6013f9649014",
+        "sha1": "e19721873bebc4dbc1674bb101af39d0ea406b95"
+      },
+      "size": 224657,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "neoauth",
+      "name": "NeoAuth",
+      "path": "mods/NeoAuth-1.21.1-1.0.1.jar",
+      "url": "https://cdn.modrinth.com/data/zeZhoBhv/versions/lpBpUy0s/NeoAuth-1.21.1-1.0.1.jar",
+      "hashes": {
+        "sha512": "d8f372b942efec0e057fa9a8a3a48c099eea78ed6461e27adcd782cee555dc2ddd7eb48c889ca41d549e684174e1c463a79811cdc45d4ef28c7b8f0437a6f883",
+        "sha1": "11a2067f43d712ee7d7fe5744e90b6eb85d343c8"
+      },
+      "size": 61286,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "netherportalfix",
+      "name": "NetherPortalFix",
+      "path": "mods/netherportalfix-neoforge-1.21.1-21.1.1.jar",
+      "url": "https://cdn.modrinth.com/data/nPZr02ET/versions/O09BGtgh/netherportalfix-neoforge-1.21.1-21.1.1.jar",
+      "hashes": {
+        "sha512": "be26c53b4e7aa9dc27b05fe4cafdd120a3d1356410b35d25381d473bd9a7aa19ce6cec1bb982fda842f2a663d15dec5d12248b50141f9479a5e9ec33ed2ab3f7",
+        "sha1": "9f1ba483216aebce1ee6185601231158684f5de8"
+      },
+      "size": 211972,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "no-chat-reports",
+      "name": "No Chat Reports",
+      "path": "mods/NoChatReports-NEOFORGE-1.21.1-v2.9.1.jar",
+      "url": "https://cdn.modrinth.com/data/qQyHxfxd/versions/ZV8eL55E/NoChatReports-NEOFORGE-1.21.1-v2.9.1.jar",
+      "hashes": {
+        "sha512": "292a3623b5addb17e9f15681a4f2534562e9882ef809e504f49da4778fafc12e21a71995b5d05554d435201f401ace1e86af50e6e26f6ce9d203a5896a1ece21",
+        "sha1": "9edfc7861277ff661141304dc8216f83eacdd9af"
+      },
+      "size": 306668,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "no-mans-land",
+      "name": "No Mans Land",
+      "path": "mods/nomansland-1.6.2.jar",
+      "url": "https://cdn.modrinth.com/data/kjZCvAn6/versions/yDQCtLNp/nomansland-1.6.2.jar",
+      "hashes": {
+        "sha512": "c7da5e70bcf09933b6cacc8d383e840be78079a41a646cbc121863360c224ec3ffc9139568cfd3d0f350513208cd6b4dbdd3fc742d4495610e204f3339ffe00e",
+        "sha1": "0cb994acb13df1abec5d93a484a87b0acbc91d88"
+      },
+      "size": 31730425,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "notenoughrecipebook",
+      "name": "Not Enough Recipe Book [NERB]",
+      "path": "mods/Not Enough Recipe Book-NEOFORGE-0.4.3+1.21.jar",
+      "url": "https://cdn.modrinth.com/data/bQh7xzFq/versions/8SBaRv1t/Not Enough Recipe Book-NEOFORGE-0.4.3+1.21.jar",
+      "hashes": {
+        "sha512": "544f83caec2e894e7422571f154bb5a470e9156d5b5b70e6352c754f1bac47ac2c055893064faae2d05ca3a8bef699343c851c925c2c1f8c3ace7de38cfd67ed",
+        "sha1": "e0c36cd85d3d31cc2afb1bfc6b885f505245252f"
+      },
+      "size": 23830,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "observable",
+      "name": "Observable",
+      "path": "mods/observable-5.4.4.jar",
+      "url": "https://cdn.modrinth.com/data/VYRu7qmG/versions/f8lSH3bs/observable-5.4.4.jar",
+      "hashes": {
+        "sha512": "e594ed3a4a211158db1282202a48ded9b824d2f326e985d86116ad1709b6111cf41eba3f6ad9a4a84a8053bc8a641f955c1d4090b5776bfb9448580c26816185",
+        "sha1": "e17417eee213aac8291ff8bad1c6a5f710636b72"
+      },
+      "size": 388133,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ok-zoomer",
+      "name": "Ok Zoomer - It's Zoom!",
+      "path": "mods/ok_zoomer-neo-10.0.0-beta.13.jar",
+      "url": "https://cdn.modrinth.com/data/aXf2OSFU/versions/AkPuuAgJ/ok_zoomer-neo-10.0.0-beta.13.jar",
+      "hashes": {
+        "sha512": "a7abed243ef8f535dbd24dc6e8a211cc42d28ff2c72322f04dc289e2de6fde4ca00ee2dd3943fad7aa24dc3af497b379c05e10f827ed24a737a73bdb1b142c6e",
+        "sha1": "bf38fe686628eca79cc1b33c6e60a1eb765c6b39"
+      },
+      "size": 208085,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "oreganized",
+      "name": "Oreganized",
+      "path": "mods/Oreganized 1.21.1-5.3.0+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/2FJutzEL/versions/4LJyawKL/Oreganized 1.21.1-5.3.0+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "02c698978b93ebeaceda88c6e1cc2537e5e37c6b6e90116d57a1b56c99c5f06a836b9d5ceecb11392c98b6d52abea2d13bba046bb72b52696ed613fd4e15c7a6",
+        "sha1": "2618049f163ff9ad095eebaf6605cbfd40e42df7"
+      },
+      "size": 5706021,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "painterjs",
+      "name": "PainterJS",
+      "path": "mods/painterjs-1.2.0.jar",
+      "url": "https://edge.forgecdn.net/files/7639/789/painterjs-1.2.0.jar",
+      "hashes": {
+        "sha1": "e13c1c11fbe032e42eb57266ee8300a7c9acf5bf",
+        "md5": "1d7a1d486259f0fd03745a59cc4ed35c"
+      },
+      "size": 212040,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "pandas-falling-trees",
+      "name": "Panda's Falling Trees",
+      "path": "mods/fallingtrees-neoforge-1.21.1-0.14.0.jar",
+      "url": "https://cdn.modrinth.com/data/i2kUe4lq/versions/26ZXBAbi/fallingtrees-neoforge-1.21.1-0.14.0.jar",
+      "hashes": {
+        "sha512": "9a7a4efd1f71e73243221d67659ed487212af959decb90fcf5073e5f7fa96dd8c4a7333e9e4fbf053418319f883e1ae3044f3f182c35214c3d6a7de4ef68b8b7",
+        "sha1": "070260f182d10bdc23de5e8e9297bec0231e2bec"
+      },
+      "size": 4086627,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "pandalib",
+      "name": "PandaLib",
+      "path": "mods/pandalib-neoforge-1.21.1-0.6.2.jar",
+      "url": "https://cdn.modrinth.com/data/mEEGbEIu/versions/XcO6cQIb/pandalib-neoforge-1.21.1-0.6.2.jar",
+      "hashes": {
+        "sha512": "99c025485ce42af875dbd0b4a8b3a46319ddc8f891d6068ddb3bb2e0511682a3705357a936d1488c04bc1ff1c1b0cfd69fcd7eab48165130b41d25f91a69bd9a",
+        "sha1": "0d93a27bcb4ee06be500c333d7232e1d1fe02706"
+      },
+      "size": 7904509,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "particle-rain",
+      "name": "Particle Rain",
+      "path": "mods/particlerain-4.0.2+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/nrikgvxm/versions/RxfaR4ud/particlerain-4.0.2+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "dc5fd6224dbd58079d9c82ef318ba2b945e5aa58f3476daea371ca86bb9ce976db5f4893a7093a990c0c1a8ddb7716089b24cced176f30cb253c2696b0cfd5b2",
+        "sha1": "444c6f221e57cca8e433702b18c4643faa82545a"
+      },
+      "size": 623257,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "patchouli",
+      "name": "Patchouli",
+      "path": "mods/Patchouli-1.21.1-93-NEOFORGE.jar",
+      "url": "https://cdn.modrinth.com/data/nU0bVIaL/versions/BIogJv2D/Patchouli-1.21.1-93-NEOFORGE.jar",
+      "hashes": {
+        "sha512": "0b5c172db9a6eeecb5ca44b359a83548c3a60be7ff313959acdfc1e5b8039736c18e57e947d435b52d06da31159d2d02ea36e5742668dbc826308a4c99e4039f",
+        "sha1": "5413bb9b8fc35ebe46b06b48bf9afafbd8471140"
+      },
+      "size": 646777,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "placebo",
+      "name": "Placebo",
+      "path": "mods/Placebo-1.21.1-9.9.2.jar",
+      "url": "https://cdn.modrinth.com/data/tCkE8p2N/versions/1Ypo4tf4/Placebo-1.21.1-9.9.2.jar",
+      "hashes": {
+        "sha512": "e8b4ba06fdbcdef8f936c39e7ba18bbfd326fad8d2512fd6cec80c899001b506a501b1aeac5eef2a1c2d7dd98f89ae3d94fac357c243027d623e59622bd295b5",
+        "sha1": "d44335094cf2db64998cb3ee31e58d8c01e80b4a"
+      },
+      "size": 324058,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "platform",
+      "name": "Platform",
+      "path": "mods/Platform-neoforge-1.21.1-1.4.1.jar",
+      "url": "https://cdn.modrinth.com/data/i6fiqm5y/versions/QHFLNdoG/Platform-neoforge-1.21.1-1.4.1.jar",
+      "hashes": {
+        "sha512": "a8de25431aa28cbbbef58b648d0275d880bbd326dfef9c9747e3a2a1fc277bedabfa858fa3640ac0f43d4870a2946bab20c1c3108a463ac953ad8becd36adfb9",
+        "sha1": "f183c417154f9a42d4c3387ab815ea1319db61bc"
+      },
+      "size": 560237,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "plonk",
+      "name": "Plonk",
+      "path": "mods/plonk-1.21.1-10.0.6-neo.jar",
+      "url": "https://cdn.modrinth.com/data/EUmBPkQn/versions/Y8aicJfZ/plonk-1.21.1-10.0.6-neo.jar",
+      "hashes": {
+        "sha512": "53863c453d49193ce2e337d046c3282cb291aaa516f6da32377a723d6f4338bf08bbd0da638ace2cb57b6a10f7213c3375832da07646d367ccc61a81bec51516",
+        "sha1": "6dc6134a0dffc6339ae6525d2c0437a03dcbb39b"
+      },
+      "size": 154059,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ponder",
+      "name": "Ponder for KubeJS",
+      "path": "mods/ponderjs-neoforge-1.21.1-2.4.0.jar",
+      "url": "https://cdn.modrinth.com/data/5A34Stj8/versions/BqhDf7W8/ponderjs-neoforge-1.21.1-2.4.0.jar",
+      "hashes": {
+        "sha512": "6390c4bf631561c29a76b8b29a496d4b984bf847572940b28e551f2c2e3da4a8fb04b6a82cf98a7935792a7d3485cdc45c76f2bdf7f93799210262ba5f184955",
+        "sha1": "9c35c5c31a613d58fc06e591e455bccfc3de6022"
+      },
+      "size": 1571893,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "portable-blueprints",
+      "name": "Portable blueprints",
+      "path": "mods/portable_blueprints-v2.0.10-mv1.21.1neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/pTRNOhPP/versions/eNemFHbI/portable_blueprints-v2.0.10-mv1.21.1neoforge.jar",
+      "hashes": {
+        "sha512": "1c67153e938c16a35c504c7bdb03cb029c87005966db1369ed5b9fc851a13cf95bdf6a3aa5db1c88d536a23c6645890551bd62be9140da7dd72964d9abb86d88",
+        "sha1": "82e8bde6f714bc28687675846acb35b63d85e025"
+      },
+      "size": 973840,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "portfolio",
+      "name": "Portfolio",
+      "path": "mods/portfolio-1.21.1-1.6.0-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/2k6aLirX/versions/UAqcjhgj/portfolio-1.21.1-1.6.0-neoforge.jar",
+      "hashes": {
+        "sha512": "e8a09b24e8251ba505023b2228b9b033a45d6f6bbd18ef03bc63875f71c2ffea58bf579799d231450db6acc7c7087a6880d73c339d7bd4127079f2c049109779",
+        "sha1": "c08c93235378e6ccfbedbc8f970463fa74078c7b"
+      },
+      "size": 1013427,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "prickle",
+      "name": "Prickle",
+      "path": "mods/prickle-neoforge-1.21.1-21.1.11.jar",
+      "url": "https://cdn.modrinth.com/data/aaRl8GiW/versions/EE1FHDyD/prickle-neoforge-1.21.1-21.1.11.jar",
+      "hashes": {
+        "sha512": "154d42795ccf1f3e07714775cdb82fd5db17574319286ced13d86b0456b64e4cf5bb89ffbcbfcefce67b73ed0b83e4e2944e493d79d9a385ff9de23006ee7bf5",
+        "sha1": "5174059ecf97340a0de5ef211b938de26c4eaa36"
+      },
+      "size": 84812,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "probejs",
+      "name": "ProbeJS",
+      "path": "mods/ProbeJS-8.0.3.jar",
+      "url": "https://cdn.modrinth.com/data/JJNYRb4B/versions/xC9KUA7R/ProbeJS-8.0.3.jar",
+      "hashes": {
+        "sha512": "342be675356044e7328841eb13116e66e476a6176dea8c634d3ca096b98cf818b314d190e42f2be859c9c9d2c53087fd471b0052e50872c3fc3f5090c813f5f3",
+        "sha1": "f0529482eff9596fa01de8a34abdce50529bdf55"
+      },
+      "size": 3405057,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "puffish-attributes",
+      "name": "Pufferfish's Attributes [Fabric & Forge & NeoForge]",
+      "path": "mods/puffish_attributes-0.8.3-1.21-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/FCFcFw09/versions/ZySEqrUb/puffish_attributes-0.8.3-1.21-neoforge.jar",
+      "hashes": {
+        "sha512": "e92d8a653b8c8e0b481aac1722ac5da9ca9174e61b3607e1b28c714e55c6b6399f68592bd227576a5a81dce251776a3221b5fc7e1b1446f17fa4795d9c1b449a",
+        "sha1": "9e6a87f790fc9281ea2685f8d4f6435d0d7c6d1f"
+      },
+      "size": 235542,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "puffish-skills",
+      "name": "Pufferfish's Skills [Fabric & Forge & NeoForge]",
+      "path": "mods/puffish_skills-0.19.1-1.21-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/hqQqvaa4/versions/uqAz8XFU/puffish_skills-0.19.1-1.21-neoforge.jar",
+      "hashes": {
+        "sha512": "2b5e11f8677b472d971cab3aa36e6e9267d04065ff40b70f537ace85f704b5d6e99b259b02776618d69592f26d01d5ea6dea5a241a1c5a3a4f5cde08ee492008",
+        "sha1": "9e0b16f97427fc7b0049fa3f518579cdc9fe59f9"
+      },
+      "size": 653105,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "puzzles-lib",
+      "name": "Puzzles Lib",
+      "path": "mods/puzzleslib-v21.1.62-mc1.21.1+neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/QAGBst4M/versions/1TmfTuyw/puzzleslib-v21.1.62-mc1.21.1+neoforge.jar",
+      "hashes": {
+        "sha512": "241ff7229990305fe5f85521b9c11cd8e2e8d01cb94bbca987aae4d3d9ecbd9115a4b66f618a62d73ef1b569ff8c72434bc1354bbfaf2f69c0e997db034c4883",
+        "sha1": "0d1675576fe17acc1f350a5505177ae08c17299b"
+      },
+      "size": 1450242,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "quality-food",
+      "name": "Quality Food",
+      "path": "mods/quality_food-1.21.1-2.4.5.jar",
+      "url": "https://cdn.modrinth.com/data/Ahdn1OE0/versions/fBMB1cPc/quality_food-1.21.1-2.4.5.jar",
+      "hashes": {
+        "sha512": "5f38f26a1eb78d1f74b9e7b07a376034356f486ddde02fc58b8f4130fbcea810b44e5f593fb4c96f504e51514cf4d60fd2e5d8c11199f3bfad78eb5e04d5a3ff",
+        "sha1": "eb602a9e170df18c590c7c40cc434ac82999ccb7"
+      },
+      "size": 259146,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "quark",
+      "name": "Quark",
+      "path": "mods/Quark-4.1-487.jar",
+      "url": "https://cdn.modrinth.com/data/qnQsVE2z/versions/18h0L19k/Quark-4.1-487.jar",
+      "hashes": {
+        "sha512": "0d1869d5d912e4f36d5e7c62acb9720cdb8c163911f09dad8f9eb3592bde4e1b25d664a8ed24d9002cb77ae6fd2f37768d3a97b779e7f9d84c567de83c9599f2",
+        "sha1": "d421f58ef6d31dc456c25890a5770b2609917d09"
+      },
+      "size": 15594344,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "reconnectible-chains",
+      "name": "Reconnectible Chains",
+      "path": "mods/connectiblechains-2.4.4+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/5pzBXDS3/versions/e4yVoAvP/connectiblechains-2.4.4+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "c09a3a354a26ce0dc511c2364332975222fae8515101f524de5e724f3a191eb75ffb4f381b8c78907f885d7a7e86f1ce7b883d56921fb5f31709466446efe00a",
+        "sha1": "1a47d26e63bceb28b488058a7d80738212d83d8c"
+      },
+      "size": 293575,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "recreative",
+      "name": "Recreative",
+      "path": "mods/recreative-neoforge-1.21.1-2.2.2.jar",
+      "url": "https://cdn.modrinth.com/data/EBWdtRFr/versions/F8vezYh1/recreative-neoforge-1.21.1-2.2.2.jar",
+      "hashes": {
+        "sha512": "5f6842779f426454639dfda60e01e06d69c1caa7d4447315416d7656caa114a18c9495daf0ad365e9327c396dae11170ed2f669a4be43ae15c610adf14788f8d",
+        "sha1": "bf825d64fbcc6b020712afecc89bb44ef4c8325e"
+      },
+      "size": 199373,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "redomesticate",
+      "name": "Redomesticate",
+      "path": "mods/redomesticate-neoforge-1.21.1-1.11.2.jar",
+      "url": "https://cdn.modrinth.com/data/4QTKALKe/versions/uoJoscHM/redomesticate-neoforge-1.21.1-1.11.2.jar",
+      "hashes": {
+        "sha512": "cc5a9042a740186655e82756a58ae664110b9f9bd1e6b9c09864246d60cdc98e27c995dd9f3e9e12617f7cffded3b3cfce986458b8911a55ee6d12a86a4214da",
+        "sha1": "90ffcc3390f740efea242c3b16e2d3e8f4cbccf9"
+      },
+      "size": 1039042,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "reliable-advancements",
+      "name": "Reliable Advancements",
+      "path": "mods/reliable_advancements-6.3.1+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/xVwaUG1g/versions/J5weQWAm/reliable_advancements-6.3.1+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "edebe4db22cf7e3be19efd8c67a96e806c7ff8a40181ba7646a4ec70a79bdd5975e2259166ef48450c5d7a495c81dde0e26b34d6d842957c9858223571847af8",
+        "sha1": "c0b9df24aed8f64a0d7ad88de872e9bf99e0d032"
+      },
+      "size": 728662,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "reliable-emi",
+      "name": "Reliable EMI (REMI)",
+      "path": "mods/remi-neoforge-1.21.1-4.7.9.jar",
+      "url": "https://cdn.modrinth.com/data/N9WucjHL/versions/iOekvzRL/remi-neoforge-1.21.1-4.7.9.jar",
+      "hashes": {
+        "sha512": "edd25c5cb8a83a4c0a046d8afd40b5f5b5242b5dd3689b3a951cd47ace3f84942f9b60ed2a1fd802fe16ad884128b92faba4ca6c28b3c265e6e6a70f6b99fc9a",
+        "sha1": "dd1a2f26d07fc3c099d970b3863605bb222999df"
+      },
+      "size": 292797,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "reliable-recipes",
+      "name": "Reliable Recipes",
+      "path": "mods/reliable_recipes-3.3.0+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/Hl4ARA1z/versions/x1QP8H48/reliable_recipes-3.3.0+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "f0ed0b95a7108ddaa609985ef432b164e907e222e3b601359a5380f6240e044410a092a5151c50ae924716035d9c5eb8f2841092c78aa4742a0d1eb115dd5c90",
+        "sha1": "a0b0907e62fd30f29f371d9a7b71353e8076cf00"
+      },
+      "size": 169578,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "reliable-remover",
+      "name": "Reliable Remover",
+      "path": "mods/reliable_remover-3.3.0+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/pLxsKvNt/versions/kIWssVNq/reliable_remover-3.3.0+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "8e1c1811cf1677db858472d9e58c7ee76510c5154b9223be55c2570304febeaae946478080a9392c4157c9b5d350a32b161e73028286b1b80cd4b6e4a04447fc",
+        "sha1": "dbe61507d8e624a58dbf72e5fcb6b9e1add45595"
+      },
+      "size": 160817,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "resource-pack-overrides",
+      "name": "Resource Pack Overrides",
+      "path": "mods/ResourcePackOverrides-v21.1.0-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/YsFycamt/versions/xf3H2eJV/ResourcePackOverrides-v21.1.0-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "9a15db96ffc86bc93624392c22c2aaea4ad4a7267c20ff528ff2dd61d8d84b9db611fc24673fba5b5d0bac318b4ce1e9d1725085ce2fad68f4231afa6bbb43c4",
+        "sha1": "42dddb70cc645a864596439ea95bd56e7a5561ed"
+      },
+      "size": 83035,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "resourceful-config",
+      "name": "Resourceful Config",
+      "path": "mods/resourcefulconfig-neoforge-1.21-3.0.11.jar",
+      "url": "https://cdn.modrinth.com/data/M1953qlQ/versions/lSbyRD6v/resourcefulconfig-neoforge-1.21-3.0.11.jar",
+      "hashes": {
+        "sha512": "8e4ccc37732b3f5190e7e98df34dbc1339fe614494fcabf1aeaeab9ad8e5993522964b51be31882000c08c48a6d0096b5458364415bb81f2b2b775a7daf2eb87",
+        "sha1": "6bf2b6ea9c071c00a2abcdc552667fb6f7d21031"
+      },
+      "size": 341009,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "resourceful-lib",
+      "name": "Resourceful Lib",
+      "path": "mods/resourcefullib-neoforge-1.21-3.0.12.jar",
+      "url": "https://cdn.modrinth.com/data/G1hIVOrD/versions/x99nCLTm/resourcefullib-neoforge-1.21-3.0.12.jar",
+      "hashes": {
+        "sha512": "a9d20e345faa9bcb297bd95ac9524205834804d1bb13518397dd4f7f62b352b08c3339ee7f7870d3669078ceeb33d5c31ea527aecce4b31d62ec1ff7d8b562c8",
+        "sha1": "24389c8e48ff0e8594e4686b750c494c66a5f8df"
+      },
+      "size": 484332,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "rhino",
+      "name": "Rhino",
+      "path": "mods/rhino-2101.2.8-build.91.jar",
+      "url": "https://cdn.modrinth.com/data/sk9knFPE/versions/SqkDvOLG/rhino-2101.2.8-build.91.jar",
+      "hashes": {
+        "sha512": "e3d92f663bc07872a83b0a6474b30a75230e9f92a2844fd98da1842ec9a79712bcb7d8e76574cc11ae3aeceb47f2933c60ddd6cf41f3ad7027bd573623730945",
+        "sha1": "56eab1d464ed0811c64040c64bd047df5cbc3aad"
+      },
+      "size": 980936,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "ribbits",
+      "name": "Ribbits",
+      "path": "mods/Ribbits-1.21.1-NeoForge-4.1.6.jar",
+      "url": "https://cdn.modrinth.com/data/8YcE8y4T/versions/XrUKaWrw/Ribbits-1.21.1-NeoForge-4.1.6.jar",
+      "hashes": {
+        "sha512": "5e78b0d63757d5904b96e0c4565d56832ca42b1cbba939b98101f848f618cfcda94d5aeadeacb0faff85bdd05fb071f2df551a42c3e7d0e3a2564adbec227931",
+        "sha1": "22dfd6a52d31bcab58b93c2d4a637ae1b2a01895"
+      },
+      "size": 2215572,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "svdialog",
+      "name": "SVDialog",
+      "path": "mods/SVDialog-1.6-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/5obrmvru/versions/E2awQjsH/SVDialog-1.6-1.21.1.jar",
+      "hashes": {
+        "sha512": "3302ee1547a5775d90a375f86562c22faf4baebf2eed7aa8c248b19c9f874ba4ad90555dfdd89cc76de5bf750e6ba5316a89b7c56b29162cb25ffe3cd986df0b",
+        "sha1": "e856bfc0813ec32b155070666e42e352655c3b66"
+      },
+      "size": 1224641,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "sawmill",
+      "name": "Sawmill",
+      "path": "mods/sawmill-1.21-1.8.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/WRaRZdTd/versions/vX4jdWHb/sawmill-1.21-1.8.1-neoforge.jar",
+      "hashes": {
+        "sha512": "8531d70d8d79f975ad772d42cf487f5164584c6cb62c106b136b97c42802d9b00c37a6d70e66e3c035d54320aa6e8178b897aea47e038f578734070a514530ab",
+        "sha1": "dcafb858097da453460b31c80cad52fadcad5cbb"
+      },
+      "size": 455580,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "searchables",
+      "name": "Searchables",
+      "path": "mods/Searchables-neoforge-1.21.1-1.0.2.jar",
+      "url": "https://cdn.modrinth.com/data/fuuu3xnx/versions/iEE85X0w/Searchables-neoforge-1.21.1-1.0.2.jar",
+      "hashes": {
+        "sha512": "d0824bac1900142ac9a53e68f7ec3b4c0d33d9366bbd3f1d0d93eed860e5eb6b5e6f5a215a69bfffa70bcb48573ff49b5a12bbaa96096ceac6636000d506027a",
+        "sha1": "5b8a0b43a474c066371b2e16f9bfb88622552a74"
+      },
+      "size": 77326,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "seasonhud",
+      "name": "SeasonHud",
+      "path": "mods/seasonhud-neoforge-1.21.1-2.0.10.jar",
+      "url": "https://cdn.modrinth.com/data/VNjUn3NA/versions/2vmfujjt/seasonhud-neoforge-1.21.1-2.0.10.jar",
+      "hashes": {
+        "sha512": "9375a5c3a796ba09b08a55c8b16ee3b79a4dde05d2cd85d8eb9c1ac691be62a7187d2708ba737532400ee03fbc7235f3efe7d952c9554d2b85dca1eb599df566",
+        "sha1": "4a36e6b0096707981236392430c7b9db14930a50"
+      },
+      "size": 222940,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "selectivebounds",
+      "name": "SelectiveBounds",
+      "path": "mods/selectivebounds-neoforge-1.21.1-0.0.4.jar",
+      "url": "https://cdn.modrinth.com/data/rnTvRqwF/versions/1sQq5nep/selectivebounds-neoforge-1.21.1-0.0.4.jar",
+      "hashes": {
+        "sha512": "71b1aae3ff909b91082adb5d88cb37aa52049a26621e4b05e342401cc115530058a7007d68a725480b289cb4bdff53128826b4f28d1b9d0fcf0c022b787018a2",
+        "sha1": "1ede1026cd5a2daa452c2e1163158b653b466645"
+      },
+      "size": 185999,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "serene-seasons",
+      "name": "Serene Seasons",
+      "path": "mods/SereneSeasons-neoforge-1.21.1-10.1.0.9.jar",
+      "url": "https://cdn.modrinth.com/data/e0bNACJD/versions/pHEgQQUE/SereneSeasons-neoforge-1.21.1-10.1.0.9.jar",
+      "hashes": {
+        "sha512": "a85209de65af7999b29af850e05ad3a045c208a005ec3a7e4e66a58f1c9d90fda501ba80a6245209a4aad856ee053c21c4f679efe8c02981746e907915e31fe1",
+        "sha1": "6b98eb4e64344bb8aba424187ed08bf04e59dccf"
+      },
+      "size": 163020,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "servercore",
+      "name": "ServerCore",
+      "path": "mods/servercore-neoforge-1.5.19+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/4WWQxlQP/versions/6N9hXiRa/servercore-neoforge-1.5.19+1.21.1.jar",
+      "hashes": {
+        "sha512": "55b97df4cc46f52db85b96487188d73c62d511229d98859991c115414c5f1ab37f2f40a0f2edb5692220aa94d6c48b392b0a2d8593b3c3381b1fcbde2a728c8f",
+        "sha1": "62ce692654e09271b5c55cbb3a1ef7606d067132"
+      },
+      "size": 1462674,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "shatterbyte-lib",
+      "name": "ShatterLib | OctoLib",
+      "path": "mods/OctoLib-NEOFORGE-0.6.2+1.21.jar",
+      "url": "https://cdn.modrinth.com/data/RH2KUdKJ/versions/yVCCi6TK/OctoLib-NEOFORGE-0.6.2+1.21.jar",
+      "hashes": {
+        "sha512": "c33faa056c9d5403f06b7aa883290c86c33dcea3502f99720df98eccbd819cd3050fb2ffecf048f2dbee1b69a14e9dc6c23245f35ba3a78e46b056859666a60a",
+        "sha1": "f4f66d677b104c6af7f5c0f7e3c08d8e4370ecad"
+      },
+      "size": 544378,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "shoulder-surfing-reloaded",
+      "name": "Shoulder Surfing Reloaded",
+      "path": "mods/ShoulderSurfing-NeoForge-1.21.1-5.2.0.jar",
+      "url": "https://cdn.modrinth.com/data/kepjj2sy/versions/woekHsje/ShoulderSurfing-NeoForge-1.21.1-5.2.0.jar",
+      "hashes": {
+        "sha512": "4497d2f8a992d6d8985b1a6fa7018158a877521052302682866f89171d14eafa7c6b75d92c6e08531003476bc292f71c67c7e4f34b8c1a6864074a3b0dcd7e75",
+        "sha1": "b889e1671b02f262fc4520a46b8140c3b1371585"
+      },
+      "size": 423716,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "simple-discord-rich-presence",
+      "name": "Simple Discord Rich Presence (Forge /  Fabric)",
+      "path": "mods/SimpleDiscordRichPresence-neoforge-88.0.1-build.54+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/SCAopByd/versions/ggKPQKwC/SimpleDiscordRichPresence-neoforge-88.0.1-build.54+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "ea7c4757fc74085b06ce0293f02fd6d6ff47616244987feec3a5fc2fadd491c13d47e55e344ac4602db00aafb3071370ddfadd08333925be1cff2b6a26111dd8",
+        "sha1": "3bcccf27fb2f954a81a3984bcb1ee8ea636d7247"
+      },
+      "size": 79869,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "simple-magnets",
+      "name": "Simple Magnets",
+      "path": "mods/simplemagnets-1.1.12c-neoforge-mc1.21.jar",
+      "url": "https://cdn.modrinth.com/data/YyNQVpOu/versions/Rh4OaF2U/simplemagnets-1.1.12c-neoforge-mc1.21.jar",
+      "hashes": {
+        "sha512": "8bf6f1928aef3ccbd0289f24397655b38c4e07f1d261a4e6d94057ef982705227df947b021981e26249d21d1f734507a792c94270a3ee065530d598a5d261c00",
+        "sha1": "abba7efcee3ae31bd3512147053279422e866ebf"
+      },
+      "size": 146262,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "simple-recall-potion",
+      "name": "Simple Recall Potion",
+      "path": "mods/simplerecall-1.0.6-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/JQFS1tDC/versions/q8cRauFO/simplerecall-1.0.6-1.21.1.jar",
+      "hashes": {
+        "sha512": "f2f4fb6e0025af03b3dafaab951c842d9af7ac1236ae3cd0ae603b62a253cac8bee2da02392560367ce5d1afc151cac789a8da2c89af53502812ee3177ad0486",
+        "sha1": "4254fa8b09805df442d8a8423bfc8ec25b371fd2"
+      },
+      "size": 14951,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "skillexpnotifier",
+      "name": "SkillExpNotifier",
+      "path": "mods/skillexpnotifier-forge-1.21-8.1.7-HOTFIX.jar",
+      "url": "https://cdn.modrinth.com/data/TF1o0VHV/versions/PBh4gX5Y/skillexpnotifier-forge-1.21-8.1.7-HOTFIX.jar",
+      "hashes": {
+        "sha512": "8ffe83ad525c1c33f49f635e6afae1d376277d88cbf5ffa7d771d1c9ecd2bee48a8e667f3ac8defb95ccb747db29beb8744dbd5dda601872536ac42f4f6ffebf",
+        "sha1": "04a05a0ca46317d34c67292890ebbb5a894f84db"
+      },
+      "size": 853552,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "smartbrainlib",
+      "name": "SmartBrainLib (Forge/Fabric/Quilt)",
+      "path": "mods/SmartBrainLib-neoforge-1.21.1-1.16.11.jar",
+      "url": "https://cdn.modrinth.com/data/PuyPazRT/versions/O5EpeqI3/SmartBrainLib-neoforge-1.21.1-1.16.11.jar",
+      "hashes": {
+        "sha512": "bfc76f6fd8c388d01b80601ad1b826f6b3f5ec5ea915e5725af129561e6bc4a10890975e6f6d2a0348d842c13042dcf1a9d0a1574fba76bce60119bee76e2dc2",
+        "sha1": "0310135a01eeceefbc7f1ab017498a65f3ad6836"
+      },
+      "size": 391053,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "snuffles",
+      "name": "Snuffles",
+      "path": "mods/snuffles-1.1.2.jar",
+      "url": "https://cdn.modrinth.com/data/NYGhKUS6/versions/YGfEgx7L/snuffles-1.1.2.jar",
+      "hashes": {
+        "sha512": "574d6695be769742b63ae00b203e693d4cd47ec9bd628910ed1be309e74971029c9c68dc55e8b46034f6f3e6e988ed6c55b98de902ce8590db392a4ed3d5127a",
+        "sha1": "a3a43993f9e95f9217c07a843d1af502f67a979b"
+      },
+      "size": 216010,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "society-trading",
+      "name": "Society Trading",
+      "path": "mods/society_trading-1.2.11-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/rFRQxRZI/versions/3Gf6gyTx/society_trading-1.2.11-1.21.1.jar",
+      "hashes": {
+        "sha512": "a7923d04c15be27fe96c5e9d18daa85cd90a5d549a81da869f496e2e3b681a0eb23f52021024c618f03b9e9cf5ba70db22985fbf58c53f40026c3b3ad0d9e06e",
+        "sha1": "1e998d40e8b823f3c7554a237b76d7c1d735cfac"
+      },
+      "size": 219393,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "sodium",
+      "name": "Sodium",
+      "path": "mods/sodium-neoforge-0.8.13+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/AANobbMI/versions/uMOpc5uV/sodium-neoforge-0.8.13+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "4f537696af95411e9daf15795fb5fcbc49913d488a96fa912fa8f1d7db408710995e8a1461190f3cd0f8217bf9e35e9539176592428ed587ca2d7aa84450a390",
+        "sha1": "1757289be21ed18db5b0d90703fa3db1b2de5693"
+      },
+      "size": 1292934,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "sophisticated-backpacks",
+      "name": "Sophisticated Backpacks",
+      "path": "mods/sophisticatedbackpacks-1.21.1-3.26.6.2174.jar",
+      "url": "https://cdn.modrinth.com/data/TyCTlI4b/versions/pJxNzk4X/sophisticatedbackpacks-1.21.1-3.26.6.2174.jar",
+      "hashes": {
+        "sha512": "de88746802c53786c09defe878ff4e766b246a1146cd417f4985765bf032cedfb89f08778e7350820bdf67a3514ec63e58e9d8e76856332c265c1adbf7ef84b4",
+        "sha1": "c4f240d4071835631da9b698481ec607b9f1f8be"
+      },
+      "size": 1239554,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "sophisticated-core",
+      "name": "Sophisticated Core",
+      "path": "mods/sophisticatedcore-1.21.1-1.5.2.2343.jar",
+      "url": "https://cdn.modrinth.com/data/nmoqTijg/versions/blXGSmAb/sophisticatedcore-1.21.1-1.5.2.2343.jar",
+      "hashes": {
+        "sha512": "ecaf6db1348d61934cbce15e39bb211d9af33ae7d8f2a1bb770c911f317807c15f67450363c92b9fe178eb12e922842ddc733b54d09784b359b7677b9318b852",
+        "sha1": "86a5cf18608b3feec76c17a8ccac4de36d660fbc"
+      },
+      "size": 1809363,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "sophisticated-storage",
+      "name": "Sophisticated Storage",
+      "path": "mods/sophisticatedstorage-1.21.1-1.6.0.2136.jar",
+      "url": "https://cdn.modrinth.com/data/hMlaZH8f/versions/GvOv4X8M/sophisticatedstorage-1.21.1-1.6.0.2136.jar",
+      "hashes": {
+        "sha512": "11988841e6aadd1e7c8b5741aeabf4dc80ffe28ad2e28329fd9e07fa6653f9e8be41e6738f3d50d9eb290fccd2c76b48efd34862233a439e216985d33831d710",
+        "sha1": "beea37f9065d5265d4c80e18bad5abda7196be4e"
+      },
+      "size": 1912108,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "sophisticated-storage-create-integration",
+      "name": "Sophisticated Storage Create Integration",
+      "path": "mods/sophisticatedstoragecreateintegration-1.21.1-0.1.21.209.jar",
+      "url": "https://cdn.modrinth.com/data/MJ0hdevs/versions/zG35SCtY/sophisticatedstoragecreateintegration-1.21.1-0.1.21.209.jar",
+      "hashes": {
+        "sha512": "8e7c0dbbb156620a4464073bba7f441e48317bca0d59f6970faef07d923a4a1be9b0bba7fbf1416baadfeaff0f13a08e19951295da7a6ffd860ae8cca47e0b0a",
+        "sha1": "99cc80fd3b9209e0d973c97c4c007fc692826e4d"
+      },
+      "size": 134163,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "starcatcher",
+      "name": "Starcatcher",
+      "path": "mods/starcatcher-3.3.10-NEOFORGE-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/h2jXvxNR/versions/D3OA7xyh/starcatcher-3.3.10-NEOFORGE-1.21.1.jar",
+      "hashes": {
+        "sha512": "d6b067cd224524aaaea447e2d1b22b0559a83b4abea67a331717b63de6399dfda800521f43344b98bd4199485b382e8fca97e716ade0cb32bb3b06262156e109",
+        "sha1": "e3e5749556bd96d9972583d741b986f801249a3f"
+      },
+      "size": 4814033,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "starcatchers-delight",
+      "name": "Starcatcher's Delight - Let's Do: Kaleidoscope edition",
+      "path": "mods/starcatcher_delight-3.2-NEOFORGE-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/NCXwQVxD/versions/xPr0G0XR/starcatcher_delight-3.2-NEOFORGE-1.21.1.jar",
+      "hashes": {
+        "sha512": "96321d31a5e507e07f48c2384bbb214e45b71eb7584a659d2b8ef96669daf9d6cc1c6a6df91b743c71b8b9cc233274cf9811ce67e9ae7ee8429a20d39243c39d",
+        "sha1": "6e7fe7101f1012bf3e0b769d2f910627b14d3c86"
+      },
+      "size": 936624,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "labels",
+      "name": "Storage Labels",
+      "path": "mods/labels-neoforge-1.21-2.1.1.jar",
+      "url": "https://cdn.modrinth.com/data/x6r7yhfi/versions/oQH8Om8c/labels-neoforge-1.21-2.1.1.jar",
+      "hashes": {
+        "sha512": "d1418dad839434e94e7180c7db397af3a2ed68466624ce1cd41e8760a30ed6b71d0227570725ac5dacdd68e104c0ff5643e1aeccd229641c85fa735a97677e3a",
+        "sha1": "ba6c64f874d8ca02dbdf977e002880946ab8fe8a"
+      },
+      "size": 108511,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "straw-statues",
+      "name": "Straw Statues",
+      "path": "mods/StrawStatues-v21.1.0-1.21.1-NeoForge.jar",
+      "url": "https://cdn.modrinth.com/data/2fltysAl/versions/C7j9WWVp/StrawStatues-v21.1.0-1.21.1-NeoForge.jar",
+      "hashes": {
+        "sha512": "ee213d7f9a6bc795b293927493e22f07f4bac06ab4cb412815c127cc895a02d286eea4f18973a3e153a27312ea4ebd0bedf5ac5f9247e12756811cdf3085eb85",
+        "sha1": "133f187ee682ee71c3db7307b93c572b7951af4b"
+      },
+      "size": 313043,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "structurify",
+      "name": "Structurify - Structure Control",
+      "path": "mods/structurify-neoforge-2.0.42+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/yz7AM2zx/versions/c7fCGDnx/structurify-neoforge-2.0.42+mc1.21.1.jar",
+      "hashes": {
+        "sha512": "8a71a097d53973901f9ae828844136507617e23edf252d5544728fa134580740c64d27b97fc502b416c1c45616b0606633f53f84764a3b9c204b00ba0ad2ec45",
+        "sha1": "afd7e5954d89ed624ac87f4b63565df4f92d8be4"
+      },
+      "size": 529923,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "supermartijn642s-config-lib",
+      "name": "SuperMartijn642's Config Lib",
+      "path": "mods/supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+      "url": "https://cdn.modrinth.com/data/LN9BxssP/versions/qKL9jM75/supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+      "hashes": {
+        "sha512": "768d8ca178c5e653986f5131b7aeb7fa57ce7d32c16ed399ced01b273565a2b640130c55c7092747efeff40dbb0348876b18b415f59b0d16dd2c7f32f1798ce2",
+        "sha1": "07452242e389975e8a88b97066f4bae6a4ebe574"
+      },
+      "size": 207514,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "supermartijn642s-core-lib",
+      "name": "SuperMartijn642's Core Lib",
+      "path": "mods/supermartijn642corelib-1.1.24a-neoforge-mc1.21.jar",
+      "url": "https://cdn.modrinth.com/data/rOUBggPv/versions/y8iP3aUs/supermartijn642corelib-1.1.24a-neoforge-mc1.21.jar",
+      "hashes": {
+        "sha512": "81516d533dcf0b680f663f93103b4cebe72267bb794715fa5966537905db921eae0aa1aa73141e256eb6c03e4e4d2e7ea0ea873b9eb7b8aecf416a58b8dbfeb6",
+        "sha1": "3295c76a45a1514007082135fd679301c71ab8b5"
+      },
+      "size": 562383,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "supplementaries",
+      "name": "Supplementaries",
+      "path": "mods/supplementaries-1.21.1-4.0.2-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/fFEIiSDQ/versions/rWq0ko29/supplementaries-1.21.1-4.0.2-neoforge.jar",
+      "hashes": {
+        "sha512": "092034ac007c327c9dd58c68ae585df59fa523a5ca40da88b34ad8f1c6347523d302e490acc1650eae6837f46979442ea8a8c151802074de2da99c396ec28894",
+        "sha1": "af25cb08a82c72b3fb67508071ce627714bd2b57"
+      },
+      "size": 13840377,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "tanukidecor",
+      "name": "Tanuki Decor",
+      "path": "mods/tanukidecor-21.1.0.2.jar",
+      "url": "https://edge.forgecdn.net/files/7440/111/tanukidecor-21.1.0.2.jar",
+      "hashes": {
+        "sha1": "4df072cd6d07804fe20aa6770973b55d8d78f673",
+        "md5": "2dd458d2c8b7985ffe5e47f8fb83a8a6"
+      },
+      "size": 2997956,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "tips",
+      "name": "Tips",
+      "path": "mods/tipsmod-neoforge-1.21.1-21.1.3.jar",
+      "url": "https://cdn.modrinth.com/data/AMCbgyVw/versions/dFBz1Le7/tipsmod-neoforge-1.21.1-21.1.3.jar",
+      "hashes": {
+        "sha512": "553ba2f75c0d8d2b04b116be186c41e80fce123932cd739feb04eb65cc3ea14592fc5c26a2fe59de25fc7f73b8d0bf5085ce80edc3c7d499b8cf4e7a7e95d1f2",
+        "sha1": "34db760aa9a1a8cec512e32b93e51525dbcb3597"
+      },
+      "size": 121037,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "titanium",
+      "name": "Titanium",
+      "path": "mods/titanium-1.21-4.0.50.jar",
+      "url": "https://cdn.modrinth.com/data/1Ro7m06l/versions/zCzYA9mW/titanium-1.21-4.0.50.jar",
+      "hashes": {
+        "sha512": "8569e4d3331ba8a23f67bf46b0697d6a5a325deed696823cede68d8d4fef119669f1086767077af76013211617fef6c0cede310c5b7dfc1b3f9a7f37bf843908",
+        "sha1": "c57a545f81104c5ee87bf1e0af55a6e87598573b"
+      },
+      "size": 607012,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "toast-control",
+      "name": "Toast Control",
+      "path": "mods/ToastControl-1.21.1-9.0.1.jar",
+      "url": "https://cdn.modrinth.com/data/CnOG2wlS/versions/jXHDAUrd/ToastControl-1.21.1-9.0.1.jar",
+      "hashes": {
+        "sha512": "544965f940c3b3eb856a57e9d35c79b7a88b9562a82a39618247b796037f7f4a83279f1effa08557a1a1d363f6169429b265e8645d5bb89578b32fdf22e4ee39",
+        "sha1": "47f9b3eb9e499996c77a7567c85e6bb9d3d51be8"
+      },
+      "size": 21072,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "too-fast",
+      "name": "Too Fast",
+      "path": "mods/toofast-1.21.0-0.4.3.5.jar",
+      "url": "https://cdn.modrinth.com/data/w6JSkKSH/versions/pDkjMI8q/toofast-1.21.0-0.4.3.5.jar",
+      "hashes": {
+        "sha512": "4108ff7d3ca21c4392f99df510bdcc5ca968def79ed0a855c8e77be91b583b4f435ee643b952a8238369db3bdcda3725c2efc84ca105fd0978b76c803ea250ec",
+        "sha1": "7940d2516a492ff687696dfc0f8b66a6c628baad"
+      },
+      "size": 3352,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "tooltip-overhaul",
+      "name": "Tooltip Overhaul",
+      "path": "mods/tooltipoverhaul-neoforge-1.21.1-2.0.6.jar",
+      "url": "https://cdn.modrinth.com/data/vRFcG5n6/versions/aclR21OH/tooltipoverhaul-neoforge-1.21.1-2.0.6.jar",
+      "hashes": {
+        "sha512": "88d787e8d6272d4c81809804d8ecab8ce9dea9efc744816dd777484f9b0c10710a36622803d40120d0ed4fa6ec928372e99b2d7b8ddafd81520d08a1b15474b8",
+        "sha1": "82f2732775ba103c8e6ba13d4114043f88cde919"
+      },
+      "size": 919973,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "torchmaster",
+      "name": "Torchmaster",
+      "path": "mods/torchmaster-neoforge-1.21.1-21.1.13.jar",
+      "url": "https://cdn.modrinth.com/data/Tl8ESrhX/versions/JmlakQNo/torchmaster-neoforge-1.21.1-21.1.13.jar",
+      "hashes": {
+        "sha512": "bfd009d48bef914c200b37395773372cec9bd2686eb8c726d2071d9799a13382f0c588c06caadfd5fce165eb9c34ddc38c91c890463e2dd9ae42b40b82feeeda",
+        "sha1": "b139713195dc65bbe66dcdbde87a0d84aa407b5a"
+      },
+      "size": 161205,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "trashslot",
+      "name": "TrashSlot",
+      "path": "mods/trashslot-neoforge-1.21.1-21.1.11.jar",
+      "url": "https://cdn.modrinth.com/data/vRYk0bv7/versions/HY8Ybozd/trashslot-neoforge-1.21.1-21.1.11.jar",
+      "hashes": {
+        "sha512": "4d3b7e5a103829d4cc5adafa18e05071f59ed1eb16ef198890b615e000aaa2d8447f9651a60c981886cbeb137c96abace32e235527f9d818b06ff7ae473d9cd2",
+        "sha1": "ce09d0128e6a7d225e731e1307f9c1deddac209a"
+      },
+      "size": 77535,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "twigs",
+      "name": "Twigs",
+      "path": "mods/Twigs-1.21.1-3.1.2.jar",
+      "url": "https://cdn.modrinth.com/data/RG50cUrX/versions/r1egimV5/Twigs-1.21.1-3.1.2.jar",
+      "hashes": {
+        "sha512": "8edc6ce6baa785800b72b0ffad6cffef3217573cc091600b63e616ef91f3c2ee3598bb64c17deb228b6e79d54b32769348e5f524381e4f7af4b2215c10d1ab88",
+        "sha1": "528c54b099afc36ae50c408ce9bfb78a28bdea8b"
+      },
+      "size": 2711016,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "untitled-duck-mod-forge",
+      "name": "Untitled Duck Mod (Forge)",
+      "path": "mods/untitledduckmod-1.7.0-neoforge-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/ojFjz7JF/versions/QfrVPbOi/untitledduckmod-1.7.0-neoforge-1.21.1.jar",
+      "hashes": {
+        "sha512": "b90e8527074388729f84fea9fcb87e0ae3b45eeadf5c23a7741db4b3885fe558eba7551c56da3cc3a5621c0db67946a9d669a351e2e4c28775f4fd8eb1fe2da8",
+        "sha1": "69e0d6383242526d75a994eaccae05f64ddefb95"
+      },
+      "size": 330692,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "unusual-fish",
+      "name": "Unusual Fish",
+      "path": "mods/unusualfishmod-1.21.1-1.1.13.jar",
+      "url": "https://cdn.modrinth.com/data/vYSi4UOX/versions/zyAcoKq7/unusualfishmod-1.21.1-1.1.13.jar",
+      "hashes": {
+        "sha512": "014c30e7597f80d1bcc2c2bf2efa018c3070b3780a104524ab1435530d039dde9e1feb2fdc359a446f68e894ba3415ed906f2522e7bbaedf824415d21537f173",
+        "sha1": "0ac4bc4dae946dbe7bfa40163f25db9a08dccab3"
+      },
+      "size": 5171378,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "vanillabackport",
+      "name": "Vanilla Backport",
+      "path": "mods/VanillaBackport-neoforge-1.21.1-1.1.7.10.jar",
+      "url": "https://cdn.modrinth.com/data/6xwxDTgf/versions/rUSWdBok/VanillaBackport-neoforge-1.21.1-1.1.7.10.jar",
+      "hashes": {
+        "sha512": "be0622afd2f7d216e4d83aed9190dec6f6f6a2919cffcebe8f334989b91f148638efa1b3e1d4bb8aa6c83ffa5f775951d6b3bc75c0d45b70b5b389b4f3476b4f",
+        "sha1": "eb30efe569cbd5186abf9e5d1e64d4a84895b346"
+      },
+      "size": 54902084,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "veggies-delight",
+      "name": "Veggies Delight (A Farmer's Delight Add-on)",
+      "path": "mods/VeggiesDelight-1.21.1-1.9.3.jar",
+      "url": "https://cdn.modrinth.com/data/emQ94xri/versions/9LiRnALb/VeggiesDelight-1.21.1-1.9.3.jar",
+      "hashes": {
+        "sha512": "bd108223b38236c7cae2a02601e52c98d4f655a45f4f3a8c2f5d298aaa0ed0debbb2639bb08e11c5f33a0ae27242a3d4ff0aab9820915e3dadb1ce06a2763960",
+        "sha1": "e13dd609c697b88b374829088d4bfbc884dce8fd"
+      },
+      "size": 565293,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "vein-mining",
+      "name": "Vein Mining (Fabric/Forge/Quilt)",
+      "path": "mods/veinmining-neoforge-5.0.0-beta.2+1.21.jar",
+      "url": "https://edge.forgecdn.net/files/5579/900/veinmining-neoforge-5.0.0-beta.2+1.21.jar",
+      "hashes": {
+        "sha1": "8fd7cd1e02103b4ffee716f3a76abfd5c04d8883",
+        "md5": "5acedd9665579dcf1fd6b13aa59c23e8"
+      },
+      "size": 221494,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "via-romana",
+      "name": "Via Romana: Infrastructure-Driven Fast Travel",
+      "path": "mods/via_romana-2.2.3+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/FVToiKwr/versions/I7nIGnGB/via_romana-2.2.3+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "2a9b28661deedddfaf2d223fcb394b0df6bf58d4cc8db6ed10e00eb051e816d0c92c65c5462efb4186af62e498a9836f98f7f8d93d443f7e9711c88151c8e7a9",
+        "sha1": "9a643a9a324bd25b8ee2067cec2971d6bbecc832"
+      },
+      "size": 1252710,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "vintage-delight-kots",
+      "name": "Vintage Delight - KOTS",
+      "path": "mods/vintagedelight-kots-0.3.1.jar",
+      "url": "https://edge.forgecdn.net/files/8886/919/vintagedelight-kots-0.3.1.jar",
+      "hashes": {
+        "sha1": "99a3ee4eaa53909136cc4b066c98429061a8b047",
+        "md5": "d90293115312477693588c3294058cbb"
+      },
+      "size": 1294060,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "watering-cans-dew-drop",
+      "name": "Watering Cans [Dew Drop]",
+      "path": "mods/dew_drop_watering_cans-1.0.2-1.21.1.jar",
+      "url": "https://edge.forgecdn.net/files/8767/261/dew_drop_watering_cans-1.0.2-1.21.1.jar",
+      "hashes": {
+        "sha1": "21192c16f8ff21a2ff2228a8dbaf933786f36ef9",
+        "md5": "7b60182124af176373d38423e84fd0af"
+      },
+      "size": 45920,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "waystones",
+      "name": "Waystones",
+      "path": "mods/waystones-neoforge-1.21.1-21.1.46.jar",
+      "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/6Z6MQ6os/waystones-neoforge-1.21.1-21.1.46.jar",
+      "hashes": {
+        "sha512": "ca90b58d884d4bc2b08a870484ae7ede397e71d31eaaf01ff2603ad498d584763e099c2094e57031522385339705d2c011ed4910bf36efae688e64935b49ece9",
+        "sha1": "75718161662d9ec957ba22e10e497788ec1687ba"
+      },
+      "size": 1223229,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "what-durability",
+      "name": "What Durability?",
+      "path": "mods/whatdurability-1.21.1-1.3.jar",
+      "url": "https://cdn.modrinth.com/data/lKY2kyjj/versions/WGuXuwwz/whatdurability-1.21.1-1.3.jar",
+      "hashes": {
+        "sha512": "07fac305dd41460ef1eb2052a5042be102802e00ec60a8c79ccbecca50a723be34ab106efe810c15e646c58b83ab02e1452d41d72cb0aa160db1ff107a95adb4",
+        "sha1": "e49650efa036ad7f29ec39d9f9377ebeec99f130"
+      },
+      "size": 21665,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "whimsy-deco",
+      "name": "Whimsy Deco",
+      "path": "mods/whimsy_deco-1.3-1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/EX0TBCxA/versions/avYfYyeX/whimsy_deco-1.3-1.21.1.jar",
+      "hashes": {
+        "sha512": "49d5e0fe7cec585352a420aa5d9eba06042571b55c00892425757e7f405fc3603de2ddfaa51c3c733bc89838bf6011fa2940588283602eedb4bb63b2c09a8c80",
+        "sha1": "c04c476db9c7bc8952feba19e3cc3a6919ea0162"
+      },
+      "size": 512279,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "windswept-delights",
+      "name": "Windswept Delights",
+      "path": "mods/windswept_delights-1.21.1-2.0.2.jar",
+      "url": "https://cdn.modrinth.com/data/IXcelib9/versions/NF0C0Fj9/windswept_delights-1.21.1-2.0.2.jar",
+      "hashes": {
+        "sha512": "baf1da3d443e2a42d9cf417c51ff78a1686776d54eee3ca4ede0eee36a478a22caea492c9c4d4b59aae4f1c87f39e02ec5353c8ad0bd753434a40c25d324c0f5",
+        "sha1": "fe70fa67fd53ac08cbc5aa8351317e9e421db727"
+      },
+      "size": 101694,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "windsweptmod",
+      "name": "Windswept!",
+      "path": "mods/windswept-1.21.1-4.0.4.jar",
+      "url": "https://cdn.modrinth.com/data/l0h5MtkA/versions/4IuP7gWB/windswept-1.21.1-4.0.4.jar",
+      "hashes": {
+        "sha512": "34691ad221ffe7a6bce30758e1eec3416e43f1b72d1438c5ae64e378ebfb938d6faf80cbeaf8c932433092bfbd4c69995424ae1a6e836164fc7e5c44bdce2229",
+        "sha1": "24bc8f13c8ff8b34655f9b9bfd918291696da16a"
+      },
+      "size": 10382969,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "xaeros-minimap",
+      "name": "Xaero's Minimap",
+      "path": "mods/xaerominimap-neoforge-1.21.1-26.5.0.jar",
+      "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/Q1tuMQBB/xaerominimap-neoforge-1.21.1-26.5.0.jar",
+      "hashes": {
+        "sha512": "0fde1066dd922ac0796d166ba1bf1b843873b8d8563da3a08777df54bb377ff6466096650c730ad1b96e0aecf2d8974cd87c32165edf6a30f6653840c3f99abf",
+        "sha1": "7553dddbe478d1c8c15198090217e723d27f79c4"
+      },
+      "size": 2185559,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "xaeros-world-map",
+      "name": "Xaero's World Map",
+      "path": "mods/xaeroworldmap-neoforge-1.21.1-1.46.0.jar",
+      "url": "https://cdn.modrinth.com/data/NcUtCpym/versions/9Ckiihkz/xaeroworldmap-neoforge-1.21.1-1.46.0.jar",
+      "hashes": {
+        "sha512": "fb14d11d66e0a6441981b18454c86534d8f534cd159ca19fa612950521788d858f37f18fe2093bb9b43ca0a88ae9af578eced5d140ff645a7681d7e452e8a268",
+        "sha1": "82b4ae6c0f2e13f02cbdc1325342909ed083fc24"
+      },
+      "size": 1422680,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "yungs-api-neoforge",
+      "name": "YUNG's API (NeoForge) [1.20.4-1.21.1 ONLY]",
+      "path": "mods/YungsApi-1.21.1-NeoForge-5.1.9.jar",
+      "url": "https://cdn.modrinth.com/data/Ua7DFN59/versions/2prKITKh/YungsApi-1.21.1-NeoForge-5.1.9.jar",
+      "hashes": {
+        "sha512": "7e3cf0b429e8a1c51dca094c2d8eabf12245bb42cbcd8b6e3e54959f931bef93201b81a08d200b417059aaa438e8eb445c3978a09568597bfb588199b7775967",
+        "sha1": "2c4b740c8ad27bbcb2a21b85b64f011b809aed91"
+      },
+      "size": 413763,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "yacl",
+      "name": "YetAnotherConfigLib",
+      "path": "mods/yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/7TVdVtxF/yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar",
+      "hashes": {
+        "sha512": "583de19b927ce8050c2b7d5e60b75accc69e325e5aac85c27994c82a9dec2e4e078343fa1d4c3a10d4bd7e0e524e0b3b246a18cf03db01e363a1e6f865adcf48",
+        "sha1": "fe270c9f6e0a8142cf316944087f5109cef08bbb"
+      },
+      "size": 1118651,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "zeta",
+      "name": "Zeta",
+      "path": "mods/Zeta-1.1-40.jar",
+      "url": "https://cdn.modrinth.com/data/MVARlG2f/versions/9GjNW2Gf/Zeta-1.1-40.jar",
+      "hashes": {
+        "sha512": "a81dcf44f2bfd0fc1a52f00d9ca47a84ad2baf067adedb35eec859f6b9cec7b61ca432e549a3342b10902f84e76d70224cd54400285c8b13a0926835a62c667c",
+        "sha1": "72f6efe421cfc0547c774ae8241d727b7d996754"
+      },
+      "size": 763725,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "entity-model-features",
+      "name": "[EMF] Entity Model Features [Fabric & Forge]",
+      "path": "mods/entity_model_features-3.3.9-1.21-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/4I1XuqiY/versions/gEOHNhtN/entity_model_features-3.3.9-1.21-neoforge.jar",
+      "hashes": {
+        "sha512": "566abfd11f6281bb0817e253624e9c7c2aa028f85ac93a24c276a0561fbc5c19a527f8f2ca200477d16cdb362ced9ca6b740b81ad926133188706c6ada0048cc",
+        "sha1": "022780fc9f221fc87ba507c6542d47c8e1e4889a"
+      },
+      "size": 641785,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "entity-texture-features-fabric",
+      "name": "[ETF] Entity Texture Features - [Fabric & Forge]",
+      "path": "mods/entity_texture_features-7.2.4-1.21-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/BVzZfTc1/versions/HOizEpC7/entity_texture_features-7.2.4-1.21-neoforge.jar",
+      "hashes": {
+        "sha512": "ab24eae8a255c74157f6599bcc603ef5ce03f259b0b1db43deb78896d6274512ffa2c783a925396c83d606c50fd87b12099160bd20f8986672b24641e7e47c16",
+        "sha1": "2551bb98d82d4d4064acecd8b513f1db469c635e"
+      },
+      "size": 790080,
+      "side": "client",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lets-do-furniture",
+      "name": "[Let's Do] Furniture",
+      "path": "mods/letsdo-furniture-neoforge-1.1.10.jar",
+      "url": "https://cdn.modrinth.com/data/3JQDJrYW/versions/FxbGZtS6/letsdo-furniture-neoforge-1.1.10.jar",
+      "hashes": {
+        "sha512": "8dee0bb12bdccef1dbabff2c3106abfaedd7ae4f469e89a24f99327c3ac366c1f104ea3a8971be5f3929bd97246b00634abb156c6d41d54c00aaca6ac34a1a32",
+        "sha1": "c81278d7abd8adb4abc46b612a0d27569f41ee24"
+      },
+      "size": 4658652,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lets-do-herbal-brews",
+      "name": "[Let's Do] HerbalBrews",
+      "path": "mods/letsdo-herbalbrews-neoforge-1.1.4.jar",
+      "url": "https://cdn.modrinth.com/data/Eh11TaTm/versions/kGYbyn9P/letsdo-herbalbrews-neoforge-1.1.4.jar",
+      "hashes": {
+        "sha512": "281bac102511bf7753371ab7ed488d6990dfb0caae0f216b931d3a05c74adfbe28330910e76d7eea0268f0a7d64997a7c0d7d9b3fc9efb43d9711487f36b4989",
+        "sha1": "22cddc92a7bca8d9816de608355a8329566e44cb"
+      },
+      "size": 760078,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lets-do-meadow",
+      "name": "[Let's Do] Meadow",
+      "path": "mods/letsdo-meadow-neoforge-1.4.9.jar",
+      "url": "https://cdn.modrinth.com/data/ra7o6Sl7/versions/SdTfMLxH/letsdo-meadow-neoforge-1.4.9.jar",
+      "hashes": {
+        "sha512": "d2964067e4e515c99f230d0c318497ae75c939f058eaaf686a3517f5b5277ffa431d3e9fd048715be965d2bc47bd28bea4f6b6fa880ce9ebbe2a38a989a8c783",
+        "sha1": "74aa328a49c3b4df00f489e63bf16eab04460e15"
+      },
+      "size": 2166999,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "lets-do-wildernature",
+      "name": "[Let's Do] WilderNature",
+      "path": "mods/letsdo-wildernature-neoforge-1.1.6.jar",
+      "url": "https://cdn.modrinth.com/data/AAiRU4aQ/versions/jwvFJJGi/letsdo-wildernature-neoforge-1.1.6.jar",
+      "hashes": {
+        "sha512": "e44694b5e2b45072ff82b0cd36e6b444954dab13108891e30467f9845d9120df575d92165ecb160f8f91ab1191be346125d1f9d83c0c95a059ca0c0329e63626",
+        "sha1": "bc05ae236a7ee3ede8117d504a64cab76a2271d5"
+      },
+      "size": 3335904,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "badpackets",
+      "name": "bad packets",
+      "path": "mods/badpackets-neo-0.8.2.jar",
+      "url": "https://cdn.modrinth.com/data/ftdbN0KK/versions/RNyYl9M3/badpackets-neo-0.8.2.jar",
+      "hashes": {
+        "sha512": "9f09fbb8fe9d98b3813bee81695f7eb36521deb94bd7804e6e96b130038425c7b2e1ae2072eeb8e8d70bf424a28468b63180dbf4136c0117d7cc607afc9ec421",
+        "sha1": "6a29963a30afd7fa8993b97e4f870460b3f51323"
+      },
+      "size": 54641,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "playeranimator",
+      "name": "playerAnimator",
+      "path": "mods/player-animation-lib-forge-2.0.4+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/gedNE4y2/versions/HJZB6bmA/player-animation-lib-forge-2.0.4+1.21.1.jar",
+      "hashes": {
+        "sha512": "fc00450fb6c95ec1779021bdc726122dacb5915c6baddaacc981cd221b01b8db35f2a0dfde5d6fa6766d877266dc82f58854f571ea53cc5c4d468b80e1548a5f",
+        "sha1": "05be8ddcc78532b9a5520c718edc6c971cd0057c"
+      },
+      "size": 203149,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "spark",
+      "name": "spark",
+      "path": "mods/spark-1.10.124-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/l6YH9Als/versions/v5qtqRQi/spark-1.10.124-neoforge.jar",
+      "hashes": {
+        "sha512": "f86ce34f2759c69df82578c397ff55b666c84626229a98f598458b960c21b38c95d6bfef4772af7f963c4f4868e5e2d9aef6b99c1d51bab55bf45e0e6e6b5ed4",
+        "sha1": "9430cc2ab64ff89d698be593769fb9f9ee4efae6"
+      },
+      "size": 3642581,
+      "side": "both",
+      "source": "Society project-honey upstream lock"
+    },
+    {
+      "project": "pixelmon",
+      "name": "pixelmon",
+      "path": "mods/Pixelmon-1.21.1-9.4.1-universal.jar",
+      "url": "https://cdn.modrinth.com/data/59ZceYlU/versions/tY57GRtu/Pixelmon-1.21.1-9.4.1-universal.jar",
+      "hashes": {
+        "sha1": "21ee5b13cfb5e387069dfc9d9f3772125471a820",
+        "sha512": "c7e53630100857e3b3d48d2abe4b19658d8649c50d4ea8e04ce43dee3ec850a2e5bb8a06f75c2728cbd08d7cc8c0d2188730b40ef46341f924416197d1546bba"
+      },
+      "size": 400171869,
+      "side": "both",
+      "source": "Modrinth tY57GRtu"
+    },
+    {
+      "project": "create-aeronautics",
+      "name": "create-aeronautics",
+      "path": "mods/create-aeronautics-bundled-1.21.1-1.3.2.jar",
+      "url": "https://cdn.modrinth.com/data/oWaK0Q19/versions/44pLdPGg/create-aeronautics-bundled-1.21.1-1.3.2.jar",
+      "hashes": {
+        "sha512": "dc7e8e1148fa442243889ba29412207137e1bb86206e6c92bc0a589f1374a466e93de22bdbf14f753984d86c29308fbbdc0f14a4b9618b14c0ac1666a36b46f5",
+        "sha1": "ddbe9cbc25e8f663218aa1e9fdfc4b99f0e11e4b"
+      },
+      "size": 33123131,
+      "side": "both",
+      "source": "Modrinth 44pLdPGg"
+    },
+    {
+      "project": "sable",
+      "name": "sable",
+      "path": "mods/sable-neoforge-1.21.1-2.0.6.jar",
+      "url": "https://cdn.modrinth.com/data/T9PomCSv/versions/fg9dTRz9/sable-neoforge-1.21.1-2.0.6.jar",
+      "hashes": {
+        "sha1": "cf46f7e8c1511f170abcdbee739944f0540549bf",
+        "sha512": "76d293ce751a01cb9c095a3659b0a41e03e005480bc9d76dfdc73ec7c2eabf7923740c7b077921d42616673c496cd5143569f2085ddcebe174fd91d81e2a04b8"
+      },
+      "size": 12986135,
+      "side": "both",
+      "source": "Modrinth fg9dTRz9"
+    }
+  ]
+}

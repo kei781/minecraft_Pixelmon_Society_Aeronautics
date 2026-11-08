@@ -1,0 +1,1780 @@
+[
+  {
+    "id": "CnOG2wlS",
+    "slug": "toast-control",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/CnOG2wlS"
+  },
+  {
+    "id": "vvuO3ImH",
+    "slug": "curios",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/vvuO3ImH"
+  },
+  {
+    "id": "qQyHxfxd",
+    "slug": "no-chat-reports",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/qQyHxfxd"
+  },
+  {
+    "id": "vRYk0bv7",
+    "slug": "trashslot",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/vRYk0bv7"
+  },
+  {
+    "id": "UnAEo77V",
+    "slug": "cluttered",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/UnAEo77V"
+  },
+  {
+    "id": "xv94TkTM",
+    "slug": "controlling",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/xv94TkTM"
+  },
+  {
+    "id": "Ua7DFN59",
+    "slug": "yungs-api",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Ua7DFN59"
+  },
+  {
+    "id": "vRFcG5n6",
+    "slug": "tooltip-overhaul",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/vRFcG5n6"
+  },
+  {
+    "id": "WRaRZdTd",
+    "slug": "universal-sawmill",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/WRaRZdTd"
+  },
+  {
+    "id": "bQh7xzFq",
+    "slug": "notenoughrecipebook",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/bQh7xzFq"
+  },
+  {
+    "id": "9ON3zv6e",
+    "slug": "log-begone",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/9ON3zv6e"
+  },
+  {
+    "id": "2FJutzEL",
+    "slug": "oreganized",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/2FJutzEL"
+  },
+  {
+    "id": "5ZwdcRci",
+    "slug": "immediatelyfast",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/5ZwdcRci"
+  },
+  {
+    "id": "VsM5EDoI",
+    "slug": "blueprint",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/VsM5EDoI"
+  },
+  {
+    "id": "rOUBggPv",
+    "slug": "supermartijn642s-core-lib",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/rOUBggPv"
+  },
+  {
+    "id": "5IIKsxiL",
+    "slug": "extreme_sound_muffler",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/5IIKsxiL"
+  },
+  {
+    "id": "LNytGWDc",
+    "slug": "create",
+    "client_side": "optional",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/LNytGWDc"
+  },
+  {
+    "id": "DfWQAvS4",
+    "slug": "immersive-enchanting",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/DfWQAvS4"
+  },
+  {
+    "id": "AMCbgyVw",
+    "slug": "tips",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/AMCbgyVw"
+  },
+  {
+    "id": "Ahdn1OE0",
+    "slug": "quality-food",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Ahdn1OE0"
+  },
+  {
+    "id": "8kRKVjUw",
+    "slug": "create-numismatics-utils",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/8kRKVjUw"
+  },
+  {
+    "id": "zi3Fnfmc",
+    "slug": "etched",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/zi3Fnfmc"
+  },
+  {
+    "id": "e0M1UDsY",
+    "slug": "collective",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/e0M1UDsY"
+  },
+  {
+    "id": "JJNYRb4B",
+    "slug": "probejs",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/JJNYRb4B"
+  },
+  {
+    "id": "YsFycamt",
+    "slug": "resource-pack-overrides",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/YsFycamt"
+  },
+  {
+    "id": "43gwKokf",
+    "slug": "create-entity-control",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/43gwKokf"
+  },
+  {
+    "id": "LOpKHB2A",
+    "slug": "waystones",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/LOpKHB2A"
+  },
+  {
+    "id": "5A34Stj8",
+    "slug": "ponder-kjs",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/5A34Stj8"
+  },
+  {
+    "id": "J81TRJWm",
+    "slug": "konkrete",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/J81TRJWm"
+  },
+  {
+    "id": "u6dRKJwZ",
+    "slug": "jei",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/u6dRKJwZ"
+  },
+  {
+    "id": "1bokaNcj",
+    "slug": "xaeros-minimap",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/1bokaNcj"
+  },
+  {
+    "id": "SaCpeal4",
+    "slug": "comforts",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/SaCpeal4"
+  },
+  {
+    "id": "JQFS1tDC",
+    "slug": "simple-recall-potion",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/JQFS1tDC"
+  },
+  {
+    "id": "5BPpCYUe",
+    "slug": "certain-questing-additions",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/5BPpCYUe"
+  },
+  {
+    "id": "7e9kzq9t",
+    "slug": "atlas-api",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/7e9kzq9t"
+  },
+  {
+    "id": "hqQqvaa4",
+    "slug": "skills",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/hqQqvaa4"
+  },
+  {
+    "id": "OQAgZMH1",
+    "slug": "moogs-voyager-structures",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/OQAgZMH1"
+  },
+  {
+    "id": "UT2M39wf",
+    "slug": "copycats",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/UT2M39wf"
+  },
+  {
+    "id": "49C5QgTK",
+    "slug": "fragmentum",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/49C5QgTK"
+  },
+  {
+    "id": "M1953qlQ",
+    "slug": "resourceful-config",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/M1953qlQ"
+  },
+  {
+    "id": "i2kUe4lq",
+    "slug": "pandas-falling-trees",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/i2kUe4lq"
+  },
+  {
+    "id": "8YcE8y4T",
+    "slug": "ribbits",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/8YcE8y4T"
+  },
+  {
+    "id": "joEfVgkn",
+    "slug": "carry-on",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/joEfVgkn"
+  },
+  {
+    "id": "5pzBXDS3",
+    "slug": "reconnectible-chains",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/5pzBXDS3"
+  },
+  {
+    "id": "mfzaZK3Z",
+    "slug": "ears",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/mfzaZK3Z"
+  },
+  {
+    "id": "LN9BxssP",
+    "slug": "supermartijn642s-config-lib",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/LN9BxssP"
+  },
+  {
+    "id": "roccmqou",
+    "slug": "fastsuite",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/roccmqou"
+  },
+  {
+    "id": "p19vrgc2",
+    "slug": "fusion-connected-textures",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/p19vrgc2"
+  },
+  {
+    "id": "QAGBst4M",
+    "slug": "puzzles-lib",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/QAGBst4M"
+  },
+  {
+    "id": "lhGA9TYQ",
+    "slug": "architectury-api",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/lhGA9TYQ"
+  },
+  {
+    "id": "AVq17PqV",
+    "slug": "leaves-be-gone",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/AVq17PqV"
+  },
+  {
+    "id": "uy4Cnpcm",
+    "slug": "bookshelf-lib",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/uy4Cnpcm"
+  },
+  {
+    "id": "aXf2OSFU",
+    "slug": "ok-zoomer",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/aXf2OSFU"
+  },
+  {
+    "id": "PWcQ3kcp",
+    "slug": "exposure-catalog",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/PWcQ3kcp"
+  },
+  {
+    "id": "iGEl6Crx",
+    "slug": "biolith",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/iGEl6Crx"
+  },
+  {
+    "id": "XxWD5pD3",
+    "slug": "ae2",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/XxWD5pD3"
+  },
+  {
+    "id": "72GXx2MO",
+    "slug": "emojiful",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/72GXx2MO"
+  },
+  {
+    "id": "3azQ6p0W",
+    "slug": "cherished-worlds",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/3azQ6p0W"
+  },
+  {
+    "id": "xX5VOqpH",
+    "slug": "classic-pipes",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/xX5VOqpH"
+  },
+  {
+    "id": "L95W3cqk",
+    "slug": "libtooltips",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/L95W3cqk"
+  },
+  {
+    "id": "codAaoxh",
+    "slug": "midnightlib",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/codAaoxh"
+  },
+  {
+    "id": "wCbFXJKH",
+    "slug": "darker-depths",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/wCbFXJKH"
+  },
+  {
+    "id": "MBAkmtvl",
+    "slug": "balm",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/MBAkmtvl"
+  },
+  {
+    "id": "aC3cM3Vq",
+    "slug": "mouse-tweaks",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/aC3cM3Vq"
+  },
+  {
+    "id": "x6r7yhfi",
+    "slug": "labels",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/x6r7yhfi"
+  },
+  {
+    "id": "ra7o6Sl7",
+    "slug": "lets-do-meadow",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/ra7o6Sl7"
+  },
+  {
+    "id": "kepjj2sy",
+    "slug": "shoulder-surfing-reloaded",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/kepjj2sy"
+  },
+  {
+    "id": "hMlaZH8f",
+    "slug": "sophisticated-storage",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/hMlaZH8f"
+  },
+  {
+    "id": "OJ6ZYz5L",
+    "slug": "loot-journal",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/OJ6ZYz5L"
+  },
+  {
+    "id": "ItRzabx0",
+    "slug": "modulation",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/ItRzabx0"
+  },
+  {
+    "id": "r9RZvhiJ",
+    "slug": "kaleidoscopetavern",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/r9RZvhiJ"
+  },
+  {
+    "id": "YXWD6pbz",
+    "slug": "longwings",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/YXWD6pbz"
+  },
+  {
+    "id": "9X0318ev",
+    "slug": "fastfurnace",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/9X0318ev"
+  },
+  {
+    "id": "BaR4ijFC",
+    "slug": "advanced-core-info",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/BaR4ijFC"
+  },
+  {
+    "id": "FCFcFw09",
+    "slug": "attributes",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/FCFcFw09"
+  },
+  {
+    "id": "OsZiaDHq",
+    "slug": "creativecore",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/OsZiaDHq"
+  },
+  {
+    "id": "nmDcB62a",
+    "slug": "modernfix",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/nmDcB62a"
+  },
+  {
+    "id": "nmoqTijg",
+    "slug": "sophisticated-core",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/nmoqTijg"
+  },
+  {
+    "id": "K0NYarUG",
+    "slug": "fancytabsections",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/K0NYarUG"
+  },
+  {
+    "id": "l6YH9Als",
+    "slug": "spark",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/l6YH9Als"
+  },
+  {
+    "id": "ix1qq8Ux",
+    "slug": "crash-assistant",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/ix1qq8Ux"
+  },
+  {
+    "id": "FQgc8dib",
+    "slug": "diagonal-walls",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/FQgc8dib"
+  },
+  {
+    "id": "nPZr02ET",
+    "slug": "netherportalfix",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/nPZr02ET"
+  },
+  {
+    "id": "WEg59z5b",
+    "slug": "default-options",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/WEg59z5b"
+  },
+  {
+    "id": "qIv5FhAA",
+    "slug": "horseman",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/qIv5FhAA"
+  },
+  {
+    "id": "xVwaUG1g",
+    "slug": "reliable-advancements",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/xVwaUG1g"
+  },
+  {
+    "id": "G1hIVOrD",
+    "slug": "resourceful-lib",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/G1hIVOrD"
+  },
+  {
+    "id": "xuDOzCLy",
+    "slug": "jade-addons-forge",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/xuDOzCLy"
+  },
+  {
+    "id": "Hl4ARA1z",
+    "slug": "reliable-recipes",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Hl4ARA1z"
+  },
+  {
+    "id": "fXbvd6mf",
+    "slug": "cyanide",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/fXbvd6mf"
+  },
+  {
+    "id": "z2XEADmE",
+    "slug": "data-anchor",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/z2XEADmE"
+  },
+  {
+    "id": "Tl8ESrhX",
+    "slug": "torchmaster",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Tl8ESrhX"
+  },
+  {
+    "id": "TF1o0VHV",
+    "slug": "skillexpnotifier",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/TF1o0VHV"
+  },
+  {
+    "id": "gvQqBUqZ",
+    "slug": "lithium",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/gvQqBUqZ"
+  },
+  {
+    "id": "vYSi4UOX",
+    "slug": "unusual-fish",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/vYSi4UOX"
+  },
+  {
+    "id": "h3VCF7si",
+    "slug": "modern-apple-cows",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/h3VCF7si"
+  },
+  {
+    "id": "TyCTlI4b",
+    "slug": "sophisticated-backpacks",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/TyCTlI4b"
+  },
+  {
+    "id": "ZjAeukl9",
+    "slug": "create-gears-and-tavern",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/ZjAeukl9"
+  },
+  {
+    "id": "zeZhoBhv",
+    "slug": "neoauth",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/zeZhoBhv"
+  },
+  {
+    "id": "i6fiqm5y",
+    "slug": "platform",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/i6fiqm5y"
+  },
+  {
+    "id": "1Ro7m06l",
+    "slug": "titanium",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/1Ro7m06l"
+  },
+  {
+    "id": "9BPuv4vL",
+    "slug": "beautify",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/9BPuv4vL"
+  },
+  {
+    "id": "BzHgFoGz",
+    "slug": "colorwheel",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/BzHgFoGz"
+  },
+  {
+    "id": "qEYs2G9A",
+    "slug": "golem-overhaul",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/qEYs2G9A"
+  },
+  {
+    "id": "rnTvRqwF",
+    "slug": "selectivebounds",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/rnTvRqwF"
+  },
+  {
+    "id": "EX0TBCxA",
+    "slug": "whimsy-deco",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/EX0TBCxA"
+  },
+  {
+    "id": "MJ0hdevs",
+    "slug": "sophisticated-storage-create-integration",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/MJ0hdevs"
+  },
+  {
+    "id": "ordsPcFz",
+    "slug": "kotlin-for-forge",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/ordsPcFz"
+  },
+  {
+    "id": "3JQDJrYW",
+    "slug": "lets-do-furniture",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/3JQDJrYW"
+  },
+  {
+    "id": "9uQhkMe5",
+    "slug": "librarianlib",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/9uQhkMe5"
+  },
+  {
+    "id": "TmZqgslV",
+    "slug": "experience-obliterator",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/TmZqgslV"
+  },
+  {
+    "id": "YyNQVpOu",
+    "slug": "simple-magnets",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/YyNQVpOu"
+  },
+  {
+    "id": "Q2OqKxDG",
+    "slug": "better-advancements",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/Q2OqKxDG"
+  },
+  {
+    "id": "rFRQxRZI",
+    "slug": "society-trading",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/rFRQxRZI"
+  },
+  {
+    "id": "r0v8vy1s",
+    "slug": "alternate-current",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/r0v8vy1s"
+  },
+  {
+    "id": "ylYAPOKe",
+    "slug": "faster-ladder-climbing",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/ylYAPOKe"
+  },
+  {
+    "id": "rEuzehyH",
+    "slug": "findme",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/rEuzehyH"
+  },
+  {
+    "id": "tS4nO5lw",
+    "slug": "cozy-cafe",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/tS4nO5lw"
+  },
+  {
+    "id": "s3dmwKy5",
+    "slug": "glitchcore",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/s3dmwKy5"
+  },
+  {
+    "id": "CVT4pFB2",
+    "slug": "melody",
+    "client_side": "unknown",
+    "server_side": "unknown",
+    "_source": "https://api.modrinth.com/v2/project/CVT4pFB2"
+  },
+  {
+    "id": "e0bNACJD",
+    "slug": "serene-seasons",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/e0bNACJD"
+  },
+  {
+    "id": "pTRNOhPP",
+    "slug": "portable-blueprints",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/pTRNOhPP"
+  },
+  {
+    "id": "SISoSFPP",
+    "slug": "configured-defaults",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/SISoSFPP"
+  },
+  {
+    "id": "PEPVViac",
+    "slug": "advanced-loot-info",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/PEPVViac"
+  },
+  {
+    "id": "2k6aLirX",
+    "slug": "portfolio",
+    "client_side": "optional",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/2k6aLirX"
+  },
+  {
+    "id": "VNjUn3NA",
+    "slug": "seasonhud",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/VNjUn3NA"
+  },
+  {
+    "id": "67kVxsaO",
+    "slug": "lmft",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/67kVxsaO"
+  },
+  {
+    "id": "7nEkcq0F",
+    "slug": "creature-feature",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/7nEkcq0F"
+  },
+  {
+    "id": "h2jXvxNR",
+    "slug": "starcatcher",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/h2jXvxNR"
+  },
+  {
+    "id": "fuuu3xnx",
+    "slug": "searchables",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/fuuu3xnx"
+  },
+  {
+    "id": "9nfaJPtX",
+    "slug": "irons-lib",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/9nfaJPtX"
+  },
+  {
+    "id": "YttyNOFA",
+    "slug": "cultural-delights",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/YttyNOFA"
+  },
+  {
+    "id": "1oUDhxuy",
+    "slug": "moogs-structure-lib",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/1oUDhxuy"
+  },
+  {
+    "id": "fJFETWDN",
+    "slug": "lootjs",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/fJFETWDN"
+  },
+  {
+    "id": "U9sJOFmJ",
+    "slug": "atmospheric",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/U9sJOFmJ"
+  },
+  {
+    "id": "gHoB7SHO",
+    "slug": "treechop",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/gHoB7SHO"
+  },
+  {
+    "id": "6iTJugQR",
+    "slug": "amendments",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/6iTJugQR"
+  },
+  {
+    "id": "6txNkua3",
+    "slug": "immersive-paintings",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/6txNkua3"
+  },
+  {
+    "id": "72RRCWM6",
+    "slug": "field-guide",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/72RRCWM6"
+  },
+  {
+    "id": "IXcelib9",
+    "slug": "windswept-delights",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/IXcelib9"
+  },
+  {
+    "id": "TaRVOwJr",
+    "slug": "etcetera",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/TaRVOwJr"
+  },
+  {
+    "id": "4Rh1Mobu",
+    "slug": "flerovium",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/4Rh1Mobu"
+  },
+  {
+    "id": "lOOpEntO",
+    "slug": "attributefix",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/lOOpEntO"
+  },
+  {
+    "id": "9s6osm5g",
+    "slug": "cloth-config",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/9s6osm5g"
+  },
+  {
+    "id": "4whAQxB5",
+    "slug": "hominid",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/4whAQxB5"
+  },
+  {
+    "id": "EO27GKs1",
+    "slug": "just-enough-effect-descriptions-jeed",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/EO27GKs1"
+  },
+  {
+    "id": "1iicrEO3",
+    "slug": "clayworks",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/1iicrEO3"
+  },
+  {
+    "id": "RG50cUrX",
+    "slug": "twigs",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/RG50cUrX"
+  },
+  {
+    "id": "Jdbbtt0i",
+    "slug": "numismatics",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Jdbbtt0i"
+  },
+  {
+    "id": "umyGl7zF",
+    "slug": "kubejs",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/umyGl7zF"
+  },
+  {
+    "id": "w6JSkKSH",
+    "slug": "too-fast",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/w6JSkKSH"
+  },
+  {
+    "id": "tCkE8p2N",
+    "slug": "placebo",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/tCkE8p2N"
+  },
+  {
+    "id": "Wb5oqrBJ",
+    "slug": "chat-heads",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/Wb5oqrBJ"
+  },
+  {
+    "id": "Oeb74GyG",
+    "slug": "bots-lib",
+    "client_side": "optional",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Oeb74GyG"
+  },
+  {
+    "id": "hNxmWV9g",
+    "slug": "decorative-blocks-reborn",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/hNxmWV9g"
+  },
+  {
+    "id": "v3CYg2V9",
+    "slug": "drippy-loading-screen",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/v3CYg2V9"
+  },
+  {
+    "id": "MVARlG2f",
+    "slug": "zeta",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/MVARlG2f"
+  },
+  {
+    "id": "8BmcQJ2H",
+    "slug": "geckolib",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/8BmcQJ2H"
+  },
+  {
+    "id": "KJhXPbHQ",
+    "slug": "better-compatibility-checker",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/KJhXPbHQ"
+  },
+  {
+    "id": "lKY2kyjj",
+    "slug": "what-durability",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/lKY2kyjj"
+  },
+  {
+    "id": "kjZCvAn6",
+    "slug": "no-mans-land",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/kjZCvAn6"
+  },
+  {
+    "id": "cO40ZIg3",
+    "slug": "functional-storage",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/cO40ZIg3"
+  },
+  {
+    "id": "Thy5Pqut",
+    "slug": "more-overlays-updated",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/Thy5Pqut"
+  },
+  {
+    "id": "l0h5MtkA",
+    "slug": "windswept",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/l0h5MtkA"
+  },
+  {
+    "id": "EUmBPkQn",
+    "slug": "plonk",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/EUmBPkQn"
+  },
+  {
+    "id": "nU0bVIaL",
+    "slug": "patchouli",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/nU0bVIaL"
+  },
+  {
+    "id": "KpICtuVx",
+    "slug": "in-control",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/KpICtuVx"
+  },
+  {
+    "id": "fPetb5Kh",
+    "slug": "natures-compass",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/fPetb5Kh"
+  },
+  {
+    "id": "R2OftAxM",
+    "slug": "farmers-delight",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/R2OftAxM"
+  },
+  {
+    "id": "eiktJyw1",
+    "slug": "every-compat",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/eiktJyw1"
+  },
+  {
+    "id": "fALzjamp",
+    "slug": "chunky",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/fALzjamp"
+  },
+  {
+    "id": "BVzZfTc1",
+    "slug": "entitytexturefeatures",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/BVzZfTc1"
+  },
+  {
+    "id": "hYykXjDp",
+    "slug": "fzzy-config",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/hYykXjDp"
+  },
+  {
+    "id": "hB899VmG",
+    "slug": "exposure",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/hB899VmG"
+  },
+  {
+    "id": "iHLDc0eo",
+    "slug": "better-advanced-tooltips",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/iHLDc0eo"
+  },
+  {
+    "id": "Yd4wb5wZ",
+    "slug": "critters-and-companions",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Yd4wb5wZ"
+  },
+  {
+    "id": "aQ7h7gal",
+    "slug": "dramatic-doors",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/aQ7h7gal"
+  },
+  {
+    "id": "SCAopByd",
+    "slug": "srdp",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/SCAopByd"
+  },
+  {
+    "id": "bbGCtEvb",
+    "slug": "armor-statues",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/bbGCtEvb"
+  },
+  {
+    "id": "yz7AM2zx",
+    "slug": "structurify",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/yz7AM2zx"
+  },
+  {
+    "id": "IKARgflD",
+    "slug": "diagonal-fences",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/IKARgflD"
+  },
+  {
+    "id": "DMu0oBKf",
+    "slug": "crafting-tweaks",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/DMu0oBKf"
+  },
+  {
+    "id": "nbg22QFg",
+    "slug": "crash-utilities",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/nbg22QFg"
+  },
+  {
+    "id": "sk9knFPE",
+    "slug": "rhino",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/sk9knFPE"
+  },
+  {
+    "id": "RoLsCIqN",
+    "slug": "hooked",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/RoLsCIqN"
+  },
+  {
+    "id": "5faXoLqX",
+    "slug": "iceberg",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/5faXoLqX"
+  },
+  {
+    "id": "YL57xq9U",
+    "slug": "iris",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/YL57xq9U"
+  },
+  {
+    "id": "6xwxDTgf",
+    "slug": "vanillabackport",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/6xwxDTgf"
+  },
+  {
+    "id": "MDIFP2NE",
+    "slug": "autowork",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/MDIFP2NE"
+  },
+  {
+    "id": "wQfMUdZT",
+    "slug": "colorful-hearts",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/wQfMUdZT"
+  },
+  {
+    "id": "ojFjz7JF",
+    "slug": "untitled-duck-mod",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/ojFjz7JF"
+  },
+  {
+    "id": "EBWdtRFr",
+    "slug": "recreative",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/EBWdtRFr"
+  },
+  {
+    "id": "mjGOuygR",
+    "slug": "chimes",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/mjGOuygR"
+  },
+  {
+    "id": "owUiXPam",
+    "slug": "creeper-firework",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/owUiXPam"
+  },
+  {
+    "id": "PuyPazRT",
+    "slug": "smartbrainlib",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/PuyPazRT"
+  },
+  {
+    "id": "ftdbN0KK",
+    "slug": "badpackets",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/ftdbN0KK"
+  },
+  {
+    "id": "OZBR5JT5",
+    "slug": "easy-anvils",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/OZBR5JT5"
+  },
+  {
+    "id": "cTagjDuu",
+    "slug": "irons-jewelry",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/cTagjDuu"
+  },
+  {
+    "id": "uXXizFIs",
+    "slug": "ferrite-core",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/uXXizFIs"
+  },
+  {
+    "id": "pLxsKvNt",
+    "slug": "reliable-remover",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/pLxsKvNt"
+  },
+  {
+    "id": "v0j2ftEp",
+    "slug": "little-joys",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/v0j2ftEp"
+  },
+  {
+    "id": "nrikgvxm",
+    "slug": "particle-rain",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/nrikgvxm"
+  },
+  {
+    "id": "NYGhKUS6",
+    "slug": "snuffles",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/NYGhKUS6"
+  },
+  {
+    "id": "RH2KUdKJ",
+    "slug": "shatterbyte-lib",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/RH2KUdKJ"
+  },
+  {
+    "id": "Tg5fXO1x",
+    "slug": "crafting-on-a-stick",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Tg5fXO1x"
+  },
+  {
+    "id": "bRAPbNyF",
+    "slug": "vein-mining",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/bRAPbNyF"
+  },
+  {
+    "id": "qnQsVE2z",
+    "slug": "quark",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/qnQsVE2z"
+  },
+  {
+    "id": "fRiHVvU7",
+    "slug": "emi",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/fRiHVvU7"
+  },
+  {
+    "id": "aaRl8GiW",
+    "slug": "prickle",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/aaRl8GiW"
+  },
+  {
+    "id": "N9WucjHL",
+    "slug": "reliable-emi",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/N9WucjHL"
+  },
+  {
+    "id": "HVnmMxH1",
+    "slug": "complementary-reimagined",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/HVnmMxH1"
+  },
+  {
+    "id": "emQ94xri",
+    "slug": "veggies-delight",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/emQ94xri"
+  },
+  {
+    "id": "AAiRU4aQ",
+    "slug": "lets-do-wildernature",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/AAiRU4aQ"
+  },
+  {
+    "id": "I7x1hGed",
+    "slug": "alfinolib",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/I7x1hGed"
+  },
+  {
+    "id": "7zlUOZvb",
+    "slug": "azurelib",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/7zlUOZvb"
+  },
+  {
+    "id": "5obrmvru",
+    "slug": "svdialog",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/5obrmvru"
+  },
+  {
+    "id": "fFEIiSDQ",
+    "slug": "supplementaries",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/fFEIiSDQ"
+  },
+  {
+    "id": "ULzrAD1U",
+    "slug": "createschematicchecker",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/ULzrAD1U"
+  },
+  {
+    "id": "5NYPwQRn",
+    "slug": "fastworkbench",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/5NYPwQRn"
+  },
+  {
+    "id": "KPsw5jDu",
+    "slug": "colorwheel-patcher",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/KPsw5jDu"
+  },
+  {
+    "id": "eUma2vmY",
+    "slug": "mystical-oak-tree",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/eUma2vmY"
+  },
+  {
+    "id": "twkfQtEc",
+    "slug": "moonlight",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/twkfQtEc"
+  },
+  {
+    "id": "EOA6vv83",
+    "slug": "gallery",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/EOA6vv83"
+  },
+  {
+    "id": "XaDC71GB",
+    "slug": "lithostitched",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/XaDC71GB"
+  },
+  {
+    "id": "4I1XuqiY",
+    "slug": "entity-model-features",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/4I1XuqiY"
+  },
+  {
+    "id": "4QTKALKe",
+    "slug": "redomesticate",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/4QTKALKe"
+  },
+  {
+    "id": "2fltysAl",
+    "slug": "straw-statues",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/2fltysAl"
+  },
+  {
+    "id": "1eAoo2KR",
+    "slug": "yacl",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/1eAoo2KR"
+  },
+  {
+    "id": "NcUtCpym",
+    "slug": "xaeros-world-map",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/NcUtCpym"
+  },
+  {
+    "id": "NCXwQVxD",
+    "slug": "starcatchers-delight",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/NCXwQVxD"
+  },
+  {
+    "id": "Eh11TaTm",
+    "slug": "lets-do-herbalbrews",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Eh11TaTm"
+  },
+  {
+    "id": "gedNE4y2",
+    "slug": "playeranimator",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/gedNE4y2"
+  },
+  {
+    "id": "AANobbMI",
+    "slug": "sodium",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/AANobbMI"
+  },
+  {
+    "id": "srJbhHkf",
+    "slug": "create-sophisticated-backpacks",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/srJbhHkf"
+  },
+  {
+    "id": "ufdDoWPd",
+    "slug": "kiwi",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/ufdDoWPd"
+  },
+  {
+    "id": "mtfbtanr",
+    "slug": "biome-spawn-point",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/mtfbtanr"
+  },
+  {
+    "id": "nvQzSEkH",
+    "slug": "jade",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/nvQzSEkH"
+  },
+  {
+    "id": "76H3XX6b",
+    "slug": "construction-wand-kots",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/76H3XX6b"
+  },
+  {
+    "id": "OvPZ16yX",
+    "slug": "entityjs",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/OvPZ16yX"
+  },
+  {
+    "id": "Ck4E7v7R",
+    "slug": "guideme",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/Ck4E7v7R"
+  },
+  {
+    "id": "UVtY3ZAC",
+    "slug": "enchantment-descriptions",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/UVtY3ZAC"
+  },
+  {
+    "id": "4WWQxlQP",
+    "slug": "servercore",
+    "client_side": "unsupported",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/4WWQxlQP"
+  },
+  {
+    "id": "b7vOFSIp",
+    "slug": "buzzier-bees",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/b7vOFSIp"
+  },
+  {
+    "id": "fM515JnW",
+    "slug": "ambientsounds",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/fM515JnW"
+  },
+  {
+    "id": "7tEfOcA7",
+    "slug": "mezzconfig",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/7tEfOcA7"
+  },
+  {
+    "id": "g1yXisD2",
+    "slug": "gui-clock",
+    "client_side": "required",
+    "server_side": "unsupported",
+    "_source": "https://api.modrinth.com/v2/project/g1yXisD2"
+  },
+  {
+    "id": "VYRu7qmG",
+    "slug": "observable",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/VYRu7qmG"
+  },
+  {
+    "id": "FVToiKwr",
+    "slug": "via-romana",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/FVToiKwr"
+  },
+  {
+    "id": "mEEGbEIu",
+    "slug": "pandalib",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/mEEGbEIu"
+  },
+  {
+    "id": "EltpO5cN",
+    "slug": "lootr",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/EltpO5cN"
+  },
+  {
+    "id": "Wq5SjeWM",
+    "slug": "fancymenu",
+    "client_side": "required",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/Wq5SjeWM"
+  },
+  {
+    "id": "BXeGCdww",
+    "slug": "featurify",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/BXeGCdww"
+  },
+  {
+    "id": "EsAfCjCV",
+    "slug": "appleskin",
+    "client_side": "optional",
+    "server_side": "optional",
+    "_source": "https://api.modrinth.com/v2/project/EsAfCjCV"
+  },
+  {
+    "id": "z3TzcquW",
+    "slug": "fast-paintings",
+    "client_side": "required",
+    "server_side": "required",
+    "_source": "https://api.modrinth.com/v2/project/z3TzcquW"
+  }
+]

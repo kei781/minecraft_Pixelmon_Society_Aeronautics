@@ -1,0 +1,30 @@
+[
+  {
+    "id": "tY57GRtu",
+    "version_number": "9.4.1",
+    "version_type": "release",
+    "date_published": "2026-09-17T08:34:26.795223Z",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "dependencies": [],
+    "files": [
+      {
+        "id": "YrNcwSeb",
+        "hashes": {
+          "sha1": "21ee5b13cfb5e387069dfc9d9f3772125471a820",
+          "sha512": "c7e53630100857e3b3d48d2abe4b19658d8649c50d4ea8e04ce43dee3ec850a2e5bb8a06f75c2728cbd08d7cc8c0d2188730b40ef46341f924416197d1546bba"
+        },
+        "url": "https://cdn.modrinth.com/data/59ZceYlU/versions/tY57GRtu/Pixelmon-1.21.1-9.4.1-universal.jar",
+        "filename": "Pixelmon-1.21.1-9.4.1-universal.jar",
+        "primary": true,
+        "size": 400171869,
+        "file_type": null
+      }
+    ],
+    "_source": "https://api.modrinth.com/v2/version/tY57GRtu"
+  }
+]

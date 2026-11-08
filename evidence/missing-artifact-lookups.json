@@ -1,0 +1,46 @@
+[
+  {
+    "mod": {
+      "jarName": "orchard-1.21.1-1.0.0.jar",
+      "modId": "orchard",
+      "name": "Orchard",
+      "version": "1.0.0",
+      "curseForgeHash": 1580175889,
+      "modrinthHash": "fc2eebc32d6f6c93a339b5d1583219b6d8b4da75"
+    },
+    "status": 404
+  },
+  {
+    "mod": {
+      "jarName": "plentifulponds-1.0.0-Beta.jar",
+      "modId": "plentifulponds",
+      "name": "Plentiful Ponds",
+      "version": "1.0.0-Beta",
+      "curseForgeHash": 91953738,
+      "modrinthHash": "616eb2a0d9bc969fc8e7a943ceeae6babb96ae38"
+    },
+    "status": 404
+  },
+  {
+    "mod": {
+      "jarName": "society-2.0-1.21.1.jar",
+      "modId": "society",
+      "name": "Society",
+      "version": "2.0-1.21.1",
+      "curseForgeHash": 1133031158,
+      "modrinthHash": "a9e70b6f893beaba7f4b1e6c53148e529c59bf70"
+    },
+    "status": 404
+  },
+  {
+    "mod": {
+      "jarName": "sunrisegardening-1.0.jar",
+      "modId": "sunrisegardening",
+      "name": "Sunrise Gardening",
+      "version": "1.0",
+      "curseForgeHash": 2733971424,
+      "modrinthHash": "a7c43d4d0e44fd9f98565b2eafa1956f6b11f7d2"
+    },
+    "status": 404
+  }
+]

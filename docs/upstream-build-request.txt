@@ -1,0 +1,19 @@
+Draft only. This message has NOT been sent.
+
+Hi! I'm investigating a private Minecraft 1.21.1 NeoForge server combining
+Society: Sunlit Valley, Pixelmon, and Create Aeronautics.
+
+The public project-honey branch at commit
+5e7c8fa9073a86f9ac74c7cbf087551e5872016c targets 1.21.1, but its recorded
+installed-mod list references these files absent from pakku-lock.json:
+
+- society-2.0-1.21.1.jar
+- sunrisegardening-1.0.jar
+- orchard-1.21.1-1.0.0.jar
+- plentifulponds-1.0.0-Beta.jar
+
+Is there a test build available for private play, or a public source/build
+location for the required components? If the development build is not yet
+available, we understand. We won't publish the missing binaries ourselves.
+
+Thank you!

@@ -1,0 +1,202 @@
+[
+  {
+    "jarName": "alltheleaks-1.1.14-1.21.1-neoforge.jar",
+    "modId": "alltheleaks",
+    "name": "All The Leaks",
+    "version": "1.1.14+1.21.1-neoforge",
+    "curseForgeHash": 4116540674,
+    "modrinthHash": "9466eee51e9af6d3dd65d1dc164cd8ea98df1fcc"
+  },
+  {
+    "jarName": "biomespawnpoint-1.21.1-3.0.jar",
+    "modId": "biomespawnpoint",
+    "name": "Biome Spawn Point",
+    "version": "3.0",
+    "curseForgeHash": 2849967136,
+    "modrinthHash": "754a772f4e153949996cb46e93b119a152382d49"
+  },
+  {
+    "jarName": "collective-1.21.1-8.65.jar",
+    "modId": "collective",
+    "name": "Collective",
+    "version": "8.65",
+    "curseForgeHash": 946153555,
+    "modrinthHash": "1dae6347808f50485e281624260dbd9c8ee146eb"
+  },
+  {
+    "jarName": "CreativeCore_NEOFORGE_v2.13.50_mc1.21.1.jar",
+    "modId": "creativecore",
+    "name": "CreativeCore",
+    "version": "2.13.50",
+    "curseForgeHash": 1982890106,
+    "modrinthHash": "2083a79b52c2cbd6dd171ff1ce4e85c9f4c9b86b"
+  },
+  {
+    "jarName": "etcetera-neoforge-1.21.1-2.2.8.jar",
+    "modId": "etcetera",
+    "name": "Etcetera",
+    "version": "2.2.8",
+    "curseForgeHash": 1031078025,
+    "modrinthHash": "9d04e2487964c36e02127c13bb46fee2fb73a2e1"
+  },
+  {
+    "jarName": "ftb-filter-system-neoforge-21.1.4.jar",
+    "modId": "ftbfiltersystem",
+    "name": "FTB Filter System",
+    "version": "21.1.4",
+    "curseForgeHash": 1958225968,
+    "modrinthHash": "a48e54edeacc59aaba29a1b627799c052112ee0b"
+  },
+  {
+    "jarName": "guiclock-1.21.1-5.0.jar",
+    "modId": "guiclock",
+    "name": "GUI Clock",
+    "version": "5.0",
+    "curseForgeHash": 1227223497,
+    "modrinthHash": "c0e72b98499251a14a62d6e41fc804f4904fbc46"
+  },
+  {
+    "jarName": "letsdo-meadow-neoforge-1.4.10.jar",
+    "modId": "meadow",
+    "name": "[Let's Do] Meadow",
+    "version": "1.4.10",
+    "curseForgeHash": 2881564003,
+    "modrinthHash": "dd30b394460c7994de8ab22e3ea0bf7d61fa42c6"
+  },
+  {
+    "jarName": "libtooltips-3.0-NEOFORGE-1.21.1.jar",
+    "modId": "libtooltips",
+    "name": "wd's Tooltips Library",
+    "version": "3.0-NEOFORGE-1.21.1",
+    "curseForgeHash": 2145520064,
+    "modrinthHash": "6a7c350a0b4ec92a9a8974e3423f0cf0449b3619"
+  },
+  {
+    "jarName": "midnightlib-neoforge-1.9.3+1.21.1.jar",
+    "modId": "midnightlib",
+    "name": "MidnightLib",
+    "version": "1.9.3",
+    "curseForgeHash": 3840229785,
+    "modrinthHash": "e0c9a1ffc6a53435029a23d9c110c44620595469"
+  },
+  {
+    "jarName": "nomansland-1.6.3.jar",
+    "modId": "nomansland",
+    "name": "No Man's Land",
+    "version": "1.6.3",
+    "curseForgeHash": 1927768055,
+    "modrinthHash": "c6f69a4d7e23c07cf6321792cd134b99a2078938"
+  },
+  {
+    "jarName": "orchard-1.21.1-1.0.0.jar",
+    "modId": "orchard",
+    "name": "Orchard",
+    "version": "1.0.0",
+    "curseForgeHash": 1580175889,
+    "modrinthHash": "fc2eebc32d6f6c93a339b5d1583219b6d8b4da75"
+  },
+  {
+    "jarName": "Oreganized-5.4.2-mc1.21.1.jar",
+    "modId": "oreganized",
+    "name": "Oreganized",
+    "version": "5.4.2",
+    "curseForgeHash": 2397731351,
+    "modrinthHash": "5b167bf1877a77d062289ec6554ebc3fa7045e31"
+  },
+  {
+    "jarName": "Platform-neoforge-1.21.1-1.4.2.jar",
+    "modId": "platform",
+    "name": "Platform",
+    "version": "1.4.2",
+    "curseForgeHash": 1303425455,
+    "modrinthHash": "38947983b65b08bffdcbbc347949a7bc5c6426e1"
+  },
+  {
+    "jarName": "plentifulponds-1.0.0-Beta.jar",
+    "modId": "plentifulponds",
+    "name": "Plentiful Ponds",
+    "version": "1.0.0-Beta",
+    "curseForgeHash": 91953738,
+    "modrinthHash": "616eb2a0d9bc969fc8e7a943ceeae6babb96ae38"
+  },
+  {
+    "jarName": "polytone-1.21-5.0.5-neoforge.jar",
+    "modId": "polytone",
+    "name": "Polytone",
+    "version": "1.21-5.0.5",
+    "curseForgeHash": 2081241475,
+    "modrinthHash": "375a3073b4d734f987a88d6307fbd078ebf7b3f1"
+  },
+  {
+    "jarName": "reliable_advancements-6.3.3-1.21.1-neoforge.jar",
+    "modId": "reliable_advancements",
+    "name": "Reliable Advancements",
+    "version": "6.3.3+1.21.1",
+    "curseForgeHash": 3137424568,
+    "modrinthHash": "456da0d49f5fb598a531eef98f3694009f9acf67"
+  },
+  {
+    "jarName": "reliable_recipes-3.8.3-1.21.1-neoforge.jar",
+    "modId": "reliable_recipes",
+    "name": "Reliable Recipes",
+    "version": "3.8.2+1.21.1",
+    "curseForgeHash": 3337499941,
+    "modrinthHash": "3085c72d4121ac37a42795a853cb53e5b21d62f5"
+  },
+  {
+    "jarName": "reliable_remover-3.8.4-1.21.1-neoforge.jar",
+    "modId": "reliable_remover",
+    "name": "Reliable Remover",
+    "version": "3.8.3+1.21.1",
+    "curseForgeHash": 3278572018,
+    "modrinthHash": "4835cab04b2123fccd3f9ae357144327db5aabaf"
+  },
+  {
+    "jarName": "remi-neoforge-1.21.1-4.8.1.jar",
+    "modId": "remi",
+    "name": "Reliable EMI",
+    "version": "4.8.1",
+    "curseForgeHash": 3473977953,
+    "modrinthHash": "7a9cb49c98061e815155946338163c44e5728e19"
+  },
+  {
+    "jarName": "selling_bin-1.6-NEOFORGE-1.21.1.jar",
+    "modId": "selling_bin",
+    "name": "wd's Selling Bin",
+    "version": "1.6-NEOFORGE-1.21.1",
+    "curseForgeHash": 407580048,
+    "modrinthHash": "6c67b55385cb029e77b96144a0ed530896450c79"
+  },
+  {
+    "jarName": "society-2.0-1.21.1.jar",
+    "modId": "society",
+    "name": "Society",
+    "version": "2.0-1.21.1",
+    "curseForgeHash": 1133031158,
+    "modrinthHash": "a9e70b6f893beaba7f4b1e6c53148e529c59bf70"
+  },
+  {
+    "jarName": "sunrisegardening-1.0.jar",
+    "modId": "sunrisegardening",
+    "name": "Sunrise Gardening",
+    "version": "1.0",
+    "curseForgeHash": 2733971424,
+    "modrinthHash": "a7c43d4d0e44fd9f98565b2eafa1956f6b11f7d2"
+  },
+  {
+    "jarName": "VanillaBackport-neoforge-1.21.1-1.2.2.jar",
+    "modId": "vanillabackport",
+    "name": "VanillaBackport",
+    "version": "1.2.2",
+    "curseForgeHash": 945660010,
+    "modrinthHash": "12871e5330f8b33df7740a975047fc9a584d0387"
+  },
+  {
+    "jarName": "whatdurability-1.21.1-2.1.jar",
+    "modId": "whatdurability",
+    "name": "What Durability?",
+    "version": "2.1",
+    "curseForgeHash": 622538695,
+    "modrinthHash": "3a226664f365d6df686d792d2919a6343953acc0"
+  }
+]
