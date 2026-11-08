@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+"""Export the full, private experimental Forge client; never skip content."""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import stat
+import tempfile
+import zipfile
+
+from export_client import safe_path, add_zip_file, data_bytes
+from stage_forge_candidate import PORT_SHA256, PIXELMON_SHA256, digest
+
+ROOT = Path(__file__).resolve().parents[1]
+OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
+
+
+def target_path(kind, filename):
+    folders = {"mod": "mods", "resourcepack": "resourcepacks", "shaderpack": "shaderpacks"}
+    if kind not in folders or Path(filename).name != filename:
+        raise ValueError("Unknown client file kind")
+    suffix = ".jar" if kind == "mod" else ".zip"
+    if not filename.endswith(suffix):
+        raise ValueError("Unexpected client file extension")
+    return safe_path(folders[kind] + "/" + filename)
+
+
+def overrides_from(archive):
+    result, folded = {}, set()
+    for item in archive.infolist():
+        if item.is_dir() or not item.filename.startswith("overrides/"):
+            continue
+        name = item.filename[len("overrides/"):]
+        safe_path(name)
+        if stat.S_ISLNK(item.external_attr >> 16):
+            raise ValueError("Client archive symlinks are not allowed")
+        if name.split("/")[0] not in OVERRIDE_FOLDERS and name not in {"options.txt", "optionsof.txt"}:
+            raise ValueError("Unrecognized client override: " + name)
+        if name.casefold() in folded:
+            raise ValueError("Duplicate client override")
+        folded.add(name.casefold())
+        result[name] = archive.read(item)
+    return result
+
+
+def verify_mod(path, entry):
+    if path.is_symlink() or path.parent.is_symlink() or not path.is_file():
+        raise ValueError("A regular verified mod file is required: " + entry["path"])
+    if path.stat().st_size != entry["size"] or set(entry["hashes"]) != {"sha1", "sha512"}:
+        raise ValueError("Invalid mod size/hash metadata")
+    for algorithm, expected in entry["hashes"].items():
+        if digest(path, algorithm) != expected:
+            raise ValueError("Client mod hash mismatch: " + entry["path"])
+
+
+def build(server, extras, society_zip, output):
+    server, extras, society_zip, output = map(Path, [server, extras, society_zip, output])
+    if output.exists() or output.is_symlink() or output.suffix.lower() != ".mrpack":
+        raise ValueError("A fresh .mrpack output is required")
+    if not (server / ".psa-forge-candidate.json").is_file():
+        raise ValueError("An owned full candidate is required")
+    lock_path = ROOT / "forge-client-lock.json"
+    lock = json.loads(lock_path.read_text())
+    base = lock["base_pack"]
+    if society_zip.stat().st_size != base["size"] or digest(society_zip, "sha1") != base["sha1"]:
+        raise ValueError("Official Society client archive hash mismatch")
+    if len(lock["files"]) != 367 or sum(f["side"] == "both" for f in lock["files"]) != 311:
+        raise ValueError("Incomplete frozen Society client inventory")
+    files = {}
+    for entry in lock["files"]:
+        name = safe_path(entry["path"])
+        if name != target_path(entry["kind"], Path(name).name) or len(Path(name).parts) != 2:
+            raise ValueError("Unexpected mod path")
+        if entry["side"] == "both" and entry["kind"] != "mod":
+            raise ValueError("Only mod JARs may be shared with this server")
+        source = server / name if entry["side"] == "both" else extras / Path(name).name
+        verify_mod(source, entry)
+        if name in files:
+            raise ValueError("Duplicate client mod")
+        files[name] = source
+    additions = {"mods/Pixelmon-1.20.1-9.2.3-universal.jar": PIXELMON_SHA256,
+                 "mods/psa-aeronautics-experimental-forge-1.20.1.jar": PORT_SHA256}
+    for name, expected in additions.items():
+        source = server / name
+        if source.is_symlink() or source.parent.is_symlink() or digest(source) != expected:
+            raise ValueError("Integration mod identity mismatch")
+        files[name] = source
+    expected_server = {f["path"] for f in lock["files"] if f["side"] == "both"} | set(additions)
+    actual_server = {p.relative_to(server).as_posix() for p in (server / "mods").rglob("*") if p.is_file()}
+    if actual_server != expected_server:
+        raise ValueError("Unexpected or missing server mod files")
+    with zipfile.ZipFile(society_zip) as archive:
+        manifest = json.loads(archive.read("manifest.json"))
+        if {(f["projectID"], f["fileID"]) for f in manifest["files"]} != {(f["project_id"], f["file_id"]) for f in lock["files"]}:
+            raise ValueError("Client lock does not match the official manifest")
+        overrides = overrides_from(archive)
+    for name, data in overrides.items():
+        if name.startswith("kubejs/"):
+            source = server / name
+            if source.is_symlink() or source.read_bytes() != data:
+                raise ValueError("Society KubeJS client/server mismatch: " + name)
+    neutral = (json.dumps({"enabled": False, "detection_logic": "simple", "replaced_mobs": [],
+                          "replacement_logic": "simple", "specs": []}, indent=2) + "\n").encode()
+    with zipfile.ZipFile(server / "mods/Pixelmon-1.20.1-9.2.3-universal.jar") as pokemon:
+        replacements = [n for n in pokemon.namelist() if n.startswith("data/pixelmon/spawn_replacement/") and n.endswith(".json")]
+    if len(replacements) != 68:
+        raise ValueError("Unexpected legacy Pixelmon replacement inventory")
+    for name in replacements:
+        target = "kubejs/" + safe_path(name)
+        if (server / target).read_bytes() != neutral:
+            raise ValueError("Server mob compatibility data mismatch")
+        overrides[target] = neutral
+    expected_scripts = {name for name in overrides if name.startswith("kubejs/")}
+    actual_scripts = {p.relative_to(server).as_posix() for p in (server / "kubejs").rglob("*") if p.is_file()}
+    if actual_scripts != expected_scripts:
+        raise ValueError("Unrecognized or missing server KubeJS content")
+    overrides["config/pixelmon/config.yml"] = b"allow-vanilla-mobs: true\n"
+    payload = dict(overrides)
+    for name in set(payload) & set(files):
+        if data_bytes(payload[name]) != data_bytes(files[name]):
+            raise ValueError("Indexed client file differs from a bundled override: " + name)
+    payload.update(files)
+    names = list(payload)
+    for name in names:
+        safe_path(name)
+    if len({name.casefold() for name in names}) != len(names):
+        raise ValueError("Windows case-colliding client files")
+    checks = {name: hashlib.sha256(data_bytes(value)).hexdigest() for name, value in sorted(payload.items())}
+    metadata = {"status": "experimental-full-content-gameplay-unverified", "complete_integration": False,
+                "minecraft": lock["minecraft"], "forge": lock["forge"], "society": lock["society"],
+                "mod_jars": sum(name.startswith("mods/") and name.endswith(".jar") for name in files),
+                "indexed_resourcepacks": sum(f["kind"] == "resourcepack" for f in lock["files"]),
+                "indexed_shaderpacks": sum(f["kind"] == "shaderpack" for f in lock["files"]),
+                "all_three_projects_included": True,
+                "shared_society_mods": 311, "lock_sha256": digest(lock_path),
+                "port_sha256": PORT_SHA256, "overrides": checks}
+    fingerprint = hashlib.sha256(json.dumps(metadata, sort_keys=True).encode()).hexdigest()
+    payload["psa-forge-client-profile.json"] = (json.dumps(metadata, indent=2) + "\n").encode()
+    index = {"formatVersion": 1, "game": "minecraft", "versionId": "psa-forge-" + fingerprint[:12],
+             "name": "PSA - Society + Pixelmon + Aeronautics (Experimental)",
+             "summary": "All three projects included; gameplay validation is ongoing.",
+             "dependencies": {"minecraft": lock["minecraft"], "forge": lock["forge"]}, "files": []}
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(prefix=".forge-pack-", dir=output.parent, delete=False) as stream:
+        temporary = Path(stream.name)
+    try:
+        with zipfile.ZipFile(temporary, "w") as archive:
+            add_zip_file(archive, "modrinth.index.json", (json.dumps(index, indent=2) + "\n").encode())
+            for name, value in sorted(payload.items()):
+                add_zip_file(archive, "overrides/" + name, value)
+        os.link(temporary, output)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return {"filename": output.name, "sha256": digest(output), "size": output.stat().st_size,
+            "version_id": index["versionId"], "mod_jars": metadata["mod_jars"],
+            "indexed_resourcepacks": metadata["indexed_resourcepacks"], "indexed_shaderpacks": metadata["indexed_shaderpacks"],
+            "override_files": len(payload),
+            "longest_relative_path": max(map(len, payload)), "full_gameplay_validated": False}
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--server", type=Path, required=True)
+    parser.add_argument("--extras", type=Path, required=True)
+    parser.add_argument("--society-client", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    print(json.dumps(build(args.server, args.extras, args.society_client, args.output), indent=2))

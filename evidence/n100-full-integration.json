@@ -1,0 +1,111 @@
+{
+  "hardware": "N100 / Ubuntu / user-stated RAM 16 GB",
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "society": "4.1.5A",
+  "pixelmon": "9.2.3 beta",
+  "aeronautics": "unofficial Forge port, canonical SHA256 0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
+  "top_level_mod_jars": 313,
+  "heap_max_gib": 6,
+  "authenticated_players": 0,
+  "initial_smoke": {
+    "done": true,
+    "done_seconds": 24.592,
+    "quests": 1142,
+    "normal_mobs": {
+      "cow": true,
+      "chicken": true,
+      "pig": true,
+      "sheep": true,
+      "zombie": true
+    },
+    "levitite_tag": true,
+    "airtight_tag": true,
+    "assembly_passed": true,
+    "pikachu_spawn_reported": true,
+    "command_exception": false,
+    "saved": true,
+    "positions": [
+      [
+        "0.5",
+        "121.5",
+        "0.5"
+      ],
+      [
+        "0.5000000596046448",
+        "121.50048828125",
+        "0.499982088804245"
+      ]
+    ],
+    "tps": [
+      "Overall: Mean tick time: 1.084 ms. Mean TPS: 20.000",
+      "Overall: Mean tick time: 2.963 ms. Mean TPS: 20.000"
+    ],
+    "raw_log_sha256": "5eea3e42d4e7d9bcb2247a08d85ef3c865e9c638c6f5a50f25c1790f6560cdc7"
+  },
+  "saved_world_restart": {
+    "done": true,
+    "quests_1142": true,
+    "normal_mobs_retained": {
+      "cow": true,
+      "chicken": true,
+      "pig": true,
+      "sheep": true,
+      "zombie": true
+    },
+    "stored_sublevel_positions": [
+      [
+        "0.49999940395355225",
+        "121.5003890991211",
+        "0.4999949634075165"
+      ]
+    ],
+    "null_ticker_error": false,
+    "saved": true,
+    "raw_log_sha256": "0b6d4571d6338eed5c2e1b51bc7008a878cd9fafe9c0bf5cbf2c92e49df82347"
+  },
+  "first_stop_exit_code": 0,
+  "first_stop_seconds": 3.29,
+  "second_stop": {
+    "stop_exit_code": 0,
+    "elapsed_seconds": 3.29,
+    "message": "Stopped"
+  },
+  "observed_idle_resources": {
+    "rss_kib": 5419436,
+    "authenticated_players": 0,
+    "scope": "idle server plus five test mobs and one test sub-level, not six-player load"
+  },
+  "fresh_player_world_running": true,
+  "test_world_preserved": true,
+  "player_quests_1142_loaded": true,
+  "online_authentication": true,
+  "max_players": 6,
+  "bind": "all interfaces",
+  "game_tcp_port": 25573,
+  "game_udp_port": 25573,
+  "tcp_and_udp_listening": true,
+  "direct_minecraft_status_ping": {
+    "reachable": true,
+    "minecraft_protocol": 763,
+    "max_players": 6,
+    "online_players": 0,
+    "forge_metadata_present": true
+  },
+  "java_version": "17.0.21.0.11",
+  "java_archive_hashes": {
+    "sha256": "8f9a2ddb131ec5317419f2b0769240fe22ce27f8a0ae43f5346d53e1c8aec6a0"
+  },
+  "forge_installer_hashes": {
+    "sha1": "237c5a17d941bfe793ff5780a4f330914d2c9f57"
+  },
+  "persistence": "dedicated tmux; survives SSH disconnect; no reboot autostart configured",
+  "full_goals_complete": false,
+  "not_tested": [
+    "authenticated Windows client connection",
+    "capture/battle",
+    "Society farming/economy/progression",
+    "piloted vehicle/flight",
+    "actual six-player load"
+  ]
+}

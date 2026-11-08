@@ -106,11 +106,15 @@ def stage(server_pack, pixelmon, port, destination):
     (config / "config.yml").write_text("allow-vanilla-mobs: true\n")
     (destination / "server.properties").write_text(
         "server-ip=127.0.0.1\nserver-port=25573\nonline-mode=true\n"
-        "enable-query=false\nenable-rcon=false\nmax-players=6\nview-distance=4\nsimulation-distance=4\n"
+        "enable-query=false\nenable-rcon=false\nallow-flight=true\nmax-players=6\nview-distance=4\nsimulation-distance=4\n"
         "level-name=world-psa-new\nspawn-protection=0\nmotd=PSA experimental full Forge candidate\n")
     (destination / "user_jvm_args.txt").write_text("-Xms1G\n-Xmx6G\n-XX:+UseG1GC\n")
-    # The task authorizes this isolated Minecraft server test.
-    (destination / "eula.txt").write_text("eula=true\n")
+    # Acceptance is explicit at runtime via server-control.sh start --accept-eula.
+    (destination / "eula.txt").write_text("eula=false\n")
+    shutil.copyfile(Path(__file__).resolve().parents[1] / "server-control.sh", destination / "server-control.sh")
+    (destination / "server-control.sh").chmod(0o755)
+    mod_hashes = [digest(p) + "  mods/" + p.name for p in sorted((destination / "mods").glob("*.jar"))]
+    (destination / ".psa-mods.sha256").write_text("\n".join(mod_hashes) + "\n")
     receipt = {"minecraft": "1.20.1", "forge": "47.4.20", "society": "4.1.5A",
                "pixelmon": "9.2.3 beta", "aeronautics": "unofficial Forge port 1.3.0",
                "server_pack_sha1": SERVER_SHA1, "pixelmon_sha256": PIXELMON_SHA256,
