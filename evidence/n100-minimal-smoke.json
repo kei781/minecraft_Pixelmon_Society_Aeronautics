@@ -1,0 +1,98 @@
+{
+  "checked_at": "2026-11-08T07:38:46.114376+00:00",
+  "scope": "MANUAL HARNESS: real Intel N100 startup/native-physics/entity-insertion smoke test with Pixelmon + Create Aeronautics; Society is absent. Not full integration, flight/assembly, Windows connection or six-player acceptance.",
+  "environment": {
+    "cpu": "Intel N100",
+    "os": "Ubuntu Linux x86_64",
+    "physical_memory_kib": 15618596,
+    "java": "Temurin 21.0.13+9",
+    "neoforge": "21.1.262",
+    "jvm_heap": "Xms1G Xmx4G"
+  },
+  "versions": {
+    "pixelmon": "9.4.1",
+    "create": "6.0.10",
+    "aeronautics": "1.3.2",
+    "sable": "2.0.6"
+  },
+  "top_level_mods": [
+    {
+      "project": "pixelmon",
+      "file": "mods/Pixelmon-1.21.1-9.4.1-universal.jar",
+      "sha256": "53aa02c7a0f06ff3aae0b4a079c06fbb47b8445ad9b84aa9a84f262456bed686"
+    },
+    {
+      "project": "kubejs",
+      "file": "mods/kubejs-neoforge-2101.7.2-build.377.jar",
+      "sha256": "df9a8458b1f83fed06ba54684977911795a5153a462b81a610895f5b1f2f0cbf"
+    },
+    {
+      "project": "rhino",
+      "file": "mods/rhino-2101.2.8-build.91.jar",
+      "sha256": "1d53d962aa4dac54bcbb4f998c1845980cf194318f1d6b1580ea6ac15cce5ef3"
+    },
+    {
+      "project": "create",
+      "file": "mods/create-1.21.1-6.0.10.jar",
+      "sha256": "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a"
+    },
+    {
+      "project": "create-aeronautics",
+      "file": "mods/create-aeronautics-bundled-1.21.1-1.3.2.jar",
+      "sha256": "a3f330d4757640f8715d991a43eedb826e4d0e51558d859c843ae6693bd35f1e"
+    },
+    {
+      "project": "sable",
+      "file": "mods/sable-neoforge-1.21.1-2.0.6.jar",
+      "sha256": "9c199157843bf953a47dff625fc5bb41c01a90538d35ad18e6996bbcb8a617c2"
+    },
+    {
+      "project": "local-test-probe",
+      "file": "mods/psa-mobs-probe.jar",
+      "sha256": "5c9644b8084130ec5ef2adcec49beeeac33b65eb179fa5e194a3567c84052f18"
+    }
+  ],
+  "probe_class_sha256": "2b766a7924a68728277204423cc01db30fa6fbabfda8c95db096ff7cc9b96298",
+  "source_lock_sha256": "0ebbc767bf6fa6bb5acd7d6a4c7b7e43911c94bce16fdc51376c895a2eb365c5",
+  "input_integrity": "Local upstream hashes verified before upload; archive SHA256 and all mod SHA256 verified again on target; portable Linux JDK official SHA256 verified.",
+  "isolation": {
+    "new_task_directory": true,
+    "existing_world_imported_or_opened": false,
+    "system_java_changed": false,
+    "system_service_installed": false,
+    "minecraft_tcp_bind": "loopback only",
+    "sable_udp_bind": "loopback only",
+    "test_ports_closed_after_shutdown": true
+  },
+  "results": {
+    "server_done": true,
+    "rapier_scene_initializations": 5,
+    "all_declared_entity_config_fields_checked": 6,
+    "vanilla_entity_insertion": {
+      "minecraft:cow": "true",
+      "minecraft:chicken": "true",
+      "minecraft:pig": "true",
+      "minecraft:sheep": "true",
+      "minecraft:zombie": "true"
+    },
+    "pixelmon_entity_insertion": true,
+    "console_stop": "graceful",
+    "ssh_foreground_process_exit_code": 0,
+    "all_dimensions_saved": true,
+    "server_left_running": false
+  },
+  "known_unresolved_log_errors": [
+    "Pixelmon pixelmon:spawning/drowned missing biome references",
+    "Block-attached entities at invalid positions during fresh world generation"
+  ],
+  "not_tested": [
+    "Society content or complete pack startup",
+    "Player capture/battle, farm/economy progression",
+    "Aeronautics vehicle assembly/flight",
+    "Windows client connection",
+    "Six concurrent players/load benchmark"
+  ],
+  "raw_log_sha256": "5d902a1b7c71ebc964a813dcf27e7e27718fcdeacaf439841115ed9689876d2c",
+  "privacy": "Raw remote log, actual server address, SSH settings and account paths remain local and are not tracked or passed to external review.",
+  "reproduction_note": "One-off scoped upload/install/run harness is retained locally under ignored cache; not a tracked automated runner."
+}

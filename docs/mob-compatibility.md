@@ -45,3 +45,9 @@ python3 tools/build_probe.py mobs-preserved --java-home /path/to/jdk-21
 ## 전체 공개 모드 프로필의 추가 확인
 
 기존 월드를 가져오지 않은 새 디렉터리에 공개 서버 파일 230개, 기존 CreativeCore 패치, 두 소스 후보, 이 수정안과 테스트 모드를 복사해 실행했습니다. 설정 검사와 KubeJS 서버 스크립트 44/44개 로딩은 통과했으나, Sunrise Gardening의 온실 블록 누락으로 월드 데이터 로딩이 실패했습니다. 이 시도에서 전체 몹 공존 검사나 전체 서버 기동이 통과했다고 주장하지 않습니다. 상세 결과는 `evidence/mob-compatibility-verification.json`에 있습니다.
+
+## N100 최소 조합 시험
+
+실제 Ubuntu / N100 / RAM 16 GB 장비의 새 임시 폴더에서 Pixelmon·KubeJS·Rhino·Create·Aeronautics·Sable와 테스트 모드를 함께 실행했습니다. JDK와 입력 파일의 해시를 대상 장비에서도 확인했습니다. 서버는 4 GB 힙으로 `Done`에 도달했고, Rapier 물리 엔진이 다섯 차원에서 초기화됐으며, 6개 설정 필드·일반 엔티티 5종·포켓몬 엔티티 검사가 통과했습니다. Minecraft TCP와 Sable UDP는 모두 loopback에 바인딩된 것을 확인했습니다. 콘솔 `stop`으로 모든 차원을 저장하고 종료했으며 시험 포트도 닫혔습니다.
+
+이 조합에는 Society가 없으므로 전체 통합 검증이 아닙니다. 비행·실제 접속·6인 부하는 검증하지 않았습니다. 일회성 업로드·설치·실행 하네스는 로컬에만 보관하고, 실제 서버 주소·계정 경로·SSH 설정을 제외한 요약은 `evidence/n100-minimal-smoke.json`에 기록합니다.
