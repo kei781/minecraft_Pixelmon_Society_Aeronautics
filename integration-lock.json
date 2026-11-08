@@ -1302,8 +1302,9 @@
         "sha1": "bdc9738d9ea84276569bbd6f7ae7f06143755194"
       },
       "size": 89474,
-      "side": "client",
-      "source": "Society project-honey upstream lock"
+      "side": "both",
+      "source": "Society project-honey upstream lock",
+      "side_override_reason": "Common API dependency of source-built Plentiful Ponds; see evidence/source-build-verification.json"
     },
     {
       "project": "fancymenu",
@@ -1913,8 +1914,9 @@
         "sha1": "5ac880fcc02b00d78b543d33471c9b8707b73d85"
       },
       "size": 80690,
-      "side": "client",
-      "source": "Society project-honey upstream lock"
+      "side": "both",
+      "source": "Society project-honey upstream lock",
+      "side_override_reason": "Common API dependency of source-built Plentiful Ponds; see evidence/source-build-verification.json"
     },
     {
       "project": "librarianlib",

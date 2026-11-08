@@ -9,8 +9,10 @@ installed-mod list references these files absent from pakku-lock.json:
 
 - society-2.0-1.21.1.jar
 - sunrisegardening-1.0.jar
-- orchard-1.21.1-1.0.0.jar
-- plentifulponds-1.0.0-Beta.jar
+
+We found the public Orchard 1.21.1 branch and Plentiful Ponds source and built
+unmodified pinned commits locally. Those are separate candidate binaries,
+not claimed to match your recorded developer-build hashes.
 
 Is there a test build available for private play, or a public source/build
 location for the required components? If the development build is not yet

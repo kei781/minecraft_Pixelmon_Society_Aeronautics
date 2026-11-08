@@ -1,0 +1,78 @@
+{
+  "checked_at": "2026-11-08T06:39:58.718443+00:00",
+  "scope": "Experimental source acquisition and partial-pack initialization only. Not full startup, original-binary equivalence, or gameplay acceptance.",
+  "environment": {
+    "os": "macOS arm64",
+    "java": "Temurin 21.0.13+9",
+    "gradle": "9.2.1",
+    "runtime_neoforge": "21.1.262",
+    "bind": "127.0.0.1"
+  },
+  "source_candidates": [
+    {
+      "mod_id": "orchard",
+      "filename": "orchard-1.21.1-1.0.0.jar",
+      "repository": "https://github.com/Mnesikos/Orchard.git",
+      "commit": "c04d3f242bd969a603d7a377948b1e42f6070cc3",
+      "sha256": "905ea760c33dad57ed7ab470cb075a9ddaf4e3d8143dfae1346b1c9236d2d9a3",
+      "original_sha1": "fc2eebc32d6f6c93a339b5d1583219b6d8b4da75",
+      "observed_sha1": "2a137800d35c30805e130f05a6e91f88a9820381",
+      "same_as_original_binary": false,
+      "size": 177589,
+      "clean_rebuild_same_sha256": true,
+      "source_modified": false,
+      "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "mod_id": "plentifulponds",
+      "filename": "plentifulponds-1.0.0-Beta.jar",
+      "repository": "https://github.com/Chakyl/Plentiful-Ponds.git",
+      "commit": "76ffefef664599ef914594814cbc1170e9f368e2",
+      "sha256": "e4b6b2e5a3da278f75ccbc17be641c15bde34acfe044580951aae3c2c5dd1d0c",
+      "original_sha1": "616eb2a0d9bc969fc8e7a943ceeae6babb96ae38",
+      "observed_sha1": "251f88f68c9e46955d37a48af3a47a86b86687ac",
+      "same_as_original_binary": false,
+      "size": 336685,
+      "clean_rebuild_same_sha256": true,
+      "source_modified": false,
+      "license_sha256": "605e9047a563c5c8396ffb18232aa4304ec56586aee537c45064c6fb425e44ad"
+    }
+  ],
+  "build_command": "python3 tools/build_external.py --java-home /path/to/jdk-21",
+  "rebuild_observation": "Both unmodified checkouts built successfully; a separate --offline --no-daemon clean build produced the same artifact hashes. The tracked builder was also executed successfully.",
+  "acquisition_observation": "MANUAL CHECK: acquire() was run against a fresh isolated temporary root; both pinned commits and license hashes verified. The one-off invocation is not a packaged runner.",
+  "regression_tests": {
+    "command": "python3 -m unittest discover -s tests -p 'test_external_artifacts.py' -v",
+    "passed": 4
+  },
+  "partial_pack_runs": [
+    {
+      "label": "MANUAL CHECK; existing development profile, not a tracked complete installer",
+      "inputs": "228 files from previous lock + patched CreativeCore + two source candidates",
+      "result": "Failed before mod initialization completed",
+      "error": "Fancy Tab Sections 4.0 selected from Ponds jarjar; NoSuchMethodError registerCreativeModeTab in starcatcher, starcatcher_delight and selling_bin"
+    },
+    {
+      "label": "MANUAL CHECK; existing development profile, not a tracked complete installer",
+      "inputs": "Same inputs plus pinned top-level Fancy Tab Sections 6.2.1 and LibTooltips 2.3.2",
+      "result": "Passed mod initialization and loaded 44/44 KubeJS server scripts with 0 script errors/warnings; world data failed to load",
+      "remaining_error": "Unknown registry keys sunrisegardening:greenhouse_glass and sunrisegardening:greenhouse_glass_pane"
+    }
+  ],
+  "library_override": {
+    "projects": [
+      "fancy-tab-sections",
+      "libtooltips"
+    ],
+    "reason": "Ponds uses these common APIs and embeds older copies. Selecting the current upstream top-level versions prevents the observed API mismatch. Upstream files/versions are unchanged, only server selection changes."
+  },
+  "integration_lock_sha256": "0ebbc767bf6fa6bb5acd7d6a4c7b7e43911c94bce16fdc51376c895a2eb365c5",
+  "selected_files": {
+    "server": 230,
+    "client": 277
+  },
+  "preflight_result": "Correctly rejects exactly society-2.0-1.21.1.jar and sunrisegardening-1.0.jar; both built candidates are accepted by their separate pinned SHA256.",
+  "complete_integration": false,
+  "windows_installer_implemented": false,
+  "n100_deployed": false
+}

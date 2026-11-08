@@ -1,0 +1,108 @@
+{
+  "checked_at": "2026-11-08T06:39:58.719396+00:00",
+  "conclusion": "Two public source candidates acquired and built. Society 2.0 for 1.21.1 and Sunrise Gardening remain unlocated in the public sources checked. This is not proof they are private or unavailable everywhere.",
+  "found_sources": [
+    {
+      "mod_id": "orchard",
+      "repository": "https://github.com/Mnesikos/Orchard.git",
+      "commit": "c04d3f242bd969a603d7a377948b1e42f6070cc3"
+    },
+    {
+      "mod_id": "plentifulponds",
+      "repository": "https://github.com/Chakyl/Plentiful-Ponds.git",
+      "commit": "76ffefef664599ef914594814cbc1170e9f368e2"
+    }
+  ],
+  "remaining": [
+    {
+      "mod_id": "society",
+      "filename": "society-2.0-1.21.1.jar",
+      "sha1": "a9e70b6f893beaba7f4b1e6c53148e529c59bf70"
+    },
+    {
+      "mod_id": "sunrisegardening",
+      "filename": "sunrisegardening-1.0.jar",
+      "sha1": "a7c43d4d0e44fd9f98565b2eafa1956f6b11f7d2"
+    }
+  ],
+  "checks": [
+    {
+      "url": "https://api.modrinth.com/v2/project/society-tweaks/version",
+      "observation": {
+        "public_versions": 8,
+        "minecraft_versions": [
+          "1.20.1"
+        ]
+      }
+    },
+    {
+      "url": "https://api.cfwidget.com/1424785",
+      "observation": {
+        "note": "Third-party public CurseForge metadata mirror; not an exhaustive primary-source absence proof.",
+        "files_returned": 22,
+        "file_names": [
+          "society-1.22.jar",
+          "society-1.21.jar",
+          "society-1.20.jar",
+          "society-1.19.jar",
+          "society-1.18.jar",
+          "society-1.17.jar",
+          "society-1.16.jar",
+          "society-1.15.jar",
+          "society-1.14.jar",
+          "society-1.13.jar",
+          "society-1.12.jar",
+          "society-1.11.jar",
+          "society-1.10.jar",
+          "society-1.9.jar",
+          "society-1.8.jar",
+          "society-1.7.jar",
+          "society-1.6.jar",
+          "society-1.5.jar",
+          "society-1.4.jar",
+          "society-1.3.jar",
+          "society-1.2.jar",
+          "society-1.1.jar"
+        ],
+        "minecraft_1_21_1_files": 0
+      }
+    },
+    {
+      "url": "https://api.modrinth.com/v2/search?query=sunrise%20gardening&limit=20",
+      "observation": "0 hits"
+    },
+    {
+      "url": "https://api.github.com/repos/Chakyl/society-sunlit-valley/actions/runs?branch=project-honey&per_page=20",
+      "observation": "0 workflow runs"
+    },
+    {
+      "url": "https://api.github.com/search/code?q=sunrisegardening+in:path&per_page=30",
+      "observation": "0 paths in indexed default branches"
+    },
+    {
+      "url": "https://api.github.com/search/code?q=%22sunrisegardening%22+fork:true&per_page=100",
+      "observation": "Only two unrelated expired-domain lists; no Minecraft source/binary found in indexed default branches"
+    },
+    {
+      "url": "https://api.github.com/search/code?q=%22society-2.0-1.21.1.jar%22&per_page=30",
+      "observation": "No indexed exact filename result"
+    },
+    {
+      "url": "https://github.com/Chakyl/society-sunlit-valley/tree/project-honey",
+      "observation": "Pinned pack contains configuration, scripts and the four recorded original hashes, but no mods directory or artifact download entries for these four"
+    },
+    {
+      "url": "https://github.com/ha22yJ/TGSV-Launcher/releases/tag/v1.0.0",
+      "observation": "Public launcher release targets Society 4.1.5, Minecraft 1.20.1, Forge 47.4.0"
+    },
+    {
+      "url": "https://github.com/gasibear/sunlit-valley-pack/releases/tag/mods",
+      "observation": "Public mod assets include society-1.22.jar and the 1.20.1 pack files; no requested 1.21.1 Society or Sunrise Gardening filename"
+    }
+  ],
+  "rejected_substitution": {
+    "url": "https://github.com/pouffy/Sunrise-Harvest",
+    "reason": "Different mod ID sunrise_harvest; not accepted as Sunrise Gardening."
+  },
+  "contacted_upstream": false
+}

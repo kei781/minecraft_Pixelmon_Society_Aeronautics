@@ -1,6 +1,12 @@
 MANUAL CHECK (one-off command; runner not tracked): Non-component generic codec matcher tables are returned unchanged. The Java test source is tests/CodecMatcherRegression.java; its classpath/compilation command is not packaged as a runner.
 MANUAL CHECK (one-off command; fixture not tracked): Missing Society inputs stop client staging before directory creation.
 PASS: 277 original downloads verified against upstream sizes and hashes.
+PASS: Orchard c04d3f2 and Plentiful Ponds 76ffefe unmodified source builds completed with Java 21; clean rebuilds produced identical SHA256. tools/build_external.py was also executed successfully.
+MANUAL CHECK (one-off invocation; runner not tracked): tools/build_external.acquire() fetched both exact commits into a fresh isolated temporary root and verified license hashes.
+PASS: Four tracked regression tests accept original/candidate hashes, reject candidate-byte tampering, and preserve the missing-Society gate. Run python3 -m unittest discover -s tests -p 'test_external_artifacts.py' -v.
+PASS: Current lock selects 230 server files and 277 client files; both sets reverified. The additional two server jars are pinned Fancy Tab Sections and LibTooltips.
+MANUAL CHECK (existing local development profile; full-pack runner not tracked): Adding two source candidates exposed old embedded Fancy Tab Sections API mismatch. Supplying the pinned top-level newer libraries passed mod initialization and 44/44 KubeJS server scripts, then failed world data on missing Sunrise Gardening blocks. See source-build-verification.json.
+PASS: Current preflight accepts both locally built candidates and rejects exactly the two still-missing Society and Sunrise Gardening files.
 MANUAL CHECK (one-off command; fixture not tracked): Both staging paths select exactly one patched CreativeCore; tampering stops staging before writes (isolated staging fixtures).
 MANUAL CHECK (one-off command; fixture not tracked): Invalid patch input preserves existing output jar (invalid-entry regression).
 PASS: Real NeoForge test mod verifies component-array extension and idempotence, CreativeCore item-stack encode/decode, Pixelmon legacy behavior against a Pixelmon-only control, and explicit Pixelmon component type decoding. See codec-probe-results.txt and pixelmon-codec-control.txt.

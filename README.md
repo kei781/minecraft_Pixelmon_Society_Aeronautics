@@ -16,24 +16,32 @@ Society의 이 개발 브랜치는 정식 1.20.1 모드팩 4.1.5와 동일한 �
 ## 실제로 수행한 검증
 
 - 공식 다운로드 원본 277개 파일을 다운로드하고 upstream 해시 및 크기를 검증했습니다.
-- 공식 클라이언트/서버 메타데이터에 따라 서버용 파일을 분리했습니다. 초기에는 upstream pakku의 side 설정만 사용해 244개를 선택했고, 이후 공식 Modrinth의 `server_side=unsupported`를 반영해 16개를 클라이언트 전용으로 재분류했습니다. 현재 서버 선택은 228개, 클라이언트 선택은 여전히 277개입니다. 초기 실패 기록의 provenance 필드에 16개 목록과 근거 URL을 남겼으며, 이후 다운로드 요약에는 사용한 lock의 SHA256을 기록합니다.
+- 공식 클라이언트/서버 메타데이터에 따라 서버용 파일을 분리했습니다. 초기 서버 선택은 244개, 클라이언트 전용 분리 후 228개였습니다. 이후 아래 Plentiful Ponds 기동 시험에서 공통 라이브러리 두 개가 서버에도 필요함을 확인해 현재 서버 선택은 230개입니다. 클라이언트는 277개입니다. 파일 자체의 upstream 버전과 해시는 바꾸지 않았습니다. 다운로드 요약에는 사용한 lock의 SHA256을 기록합니다.
 - 격리된 로컬 서버(127.0.0.1)에서 기동과 호환 패치 검증을 반복했습니다.
 - Pixelmon의 `createCodec` 덮어쓰기와 CreativeCore의 mixin이 충돌하는 첫 번째 오류를 재현했습니다.
 - CreativeCore의 수정 위치를 generic matcher 입력으로 옮기는 소스 포함 호환 패치를 작성했습니다. 실제 NeoForge에서 타입 배열 확장·중복 방지, CreativeCore 아이템 컴포넌트 저장/복원, Pixelmon 기본 및 명시적 타입 디코딩 검사가 통과했습니다. 전체 게임 플레이 호환성이 검증됐다는 뜻은 아닙니다.
 - 서버와 클라이언트 준비 경로 모두 원본 CreativeCore 대신 해시를 확인한 패치본 하나만 배치합니다. 잘못된 패치 입력이 기존 정상 산출물을 손상시키지 않는 것도 확인했습니다.
 - 이후 월드 생성은 `sunrisegardening:greenhouse_glass` 및 `greenhouse_glass_pane`이 없어서 중단됐습니다.
+- 공개 소스에서 Orchard와 Plentiful Ponds를 직접 빌드했습니다. 고정 커밋의 원본 소스를 수정하지 않았으며, 별도 clean 재빌드도 동일한 SHA256을 생성했습니다. 개발자 설치 기록의 원본 바이너리와는 해시가 다른 후보 빌드입니다.
+- 후보 두 개를 추가한 실제 로더 시험에서 오래된 내장 Fancy Tab Sections 충돌을 재현했습니다. 팩에 이미 고정된 Fancy Tab Sections 6.2.1과 LibTooltips 2.3.2를 서버에도 명시적으로 배치하자 모드 초기화와 KubeJS 서버 스크립트 44/44개 로딩을 통과했습니다. 월드 데이터는 여전히 Sunrise Gardening 블록 누락으로 중단됩니다. 이 부분 시험은 기존 로컬 개발 프로필에서 수행했으며 완성 설치기의 자동 검사로 주장하지 않습니다.
 - N100에는 읽기 전용 상태 점검만 수행했습니다. Minecraft 설치, 서비스 등록, 기존 데이터 변경은 하지 않았습니다.
 
 ## 현재 외부 의존성
 
-Society 개발자의 실제 설치 기록에는 아래 네 파일이 있지만, 해당 개발 브랜치의 공개 다운로드 lock에는 없습니다. 기록된 SHA1로 조회한 공식 Modrinth API도 네 파일 모두 404를 반환했습니다. 이를 비공개 파일이라고 단정할 수는 없지만 현재 확인한 공개 경로에서는 다운로드하지 못했습니다.
+Society 개발자의 설치 기록에는 아래 네 파일이 있지만 공개 다운로드 lock에는 없습니다. 인터넷에서 소스를 추가 조사해 두 개는 빌드했고, 두 개는 아직 확보하지 못했습니다.
 
-- `society-2.0-1.21.1.jar`
-- `sunrisegardening-1.0.jar`
-- `orchard-1.21.1-1.0.0.jar`
-- `plentifulponds-1.0.0-Beta.jar`
+| 파일 | 현재 상태 | 확인한 출처 |
+| --- | --- | --- |
+| `society-2.0-1.21.1.jar` | 미확보 | 공개 Society Tweaks 배포 목록은 1.20.1뿐이며, 필요한 소스/바이너리를 찾지 못함 |
+| `sunrisegardening-1.0.jar` | 미확보 | 공개 배포처와 해당 mod ID의 소스를 찾지 못함 |
+| `orchard-1.21.1-1.0.0.jar` | 소스 후보 빌드 확보 | [Mnesikos/Orchard의 1.21.1 브랜치](https://github.com/Mnesikos/Orchard/tree/c04d3f242bd969a603d7a377948b1e42f6070cc3) |
+| `plentifulponds-1.0.0-Beta.jar` | 소스 후보 빌드 확보 | [Chakyl/Plentiful-Ponds](https://github.com/Chakyl/Plentiful-Ponds/tree/76ffefef664599ef914594814cbc1170e9f368e2) |
 
-기록된 해시와 원본 위치는 `external-artifacts.json`, 조회 결과는 `evidence/missing-artifact-lookups.json`에 있습니다. 원본을 확보하면 `inputs/`에 두고 `python3 tools/prepare.py preflight`로 검증할 수 있습니다. 해시가 다른 새 개발본을 확보하면 해당 원본과 버전을 다시 감사해야 합니다. 필수 파일이 없는 상태에서 `stage`는 중단되며, 파일을 조용히 생략하지 않습니다.
+검색 범위와 결과는 `evidence/artifact-research.json`, 빌드·부분 기동 결과는 `evidence/source-build-verification.json`에 있습니다. 공개 검색에서 찾지 못한 것을 비공개 또는 어디에도 없는 파일이라고 단정하지 않습니다. 이름이 비슷한 Sunrise Harvest는 다른 mod ID이므로 대체하지 않았습니다.
+
+`external-artifacts.json`은 개발자 기록의 원본 SHA1을 보존하면서, 위 두 소스 후보의 별도 SHA256·커밋·라이선스 해시를 기록합니다. `python3 tools/build_external.py --java-home /path/to/jdk-21`을 실행하면 두 고정 소스를 내려받고 빌드하여, 확인한 크기와 SHA256이 맞을 때만 `inputs/`에 배치합니다. Git·Bash·Python 3.9+·Java 21 JDK가 있는 macOS/Linux 개발 환경용입니다. Gradle 의존성 다운로드에 네트워크가 필요합니다. 기존 소스가 수정됐거나 기존 입력 파일이 다르면 덮어쓰지 않고 중단합니다. 바이너리는 저장소에 재배포하지 않습니다.
+
+`python3 tools/prepare.py preflight`는 현재 남은 두 파일만 누락으로 보고합니다. 필수 파일이 없는 상태에서 `stage`는 중단되며 파일을 조용히 생략하지 않습니다. 아직 확보하지 못한 파일의 다른 버전·해시를 임의로 허용하지 않습니다.
 
 ## 남은 완료 조건
 
@@ -48,6 +56,8 @@ Society 개발자의 실제 설치 기록에는 아래 네 파일이 있지만, 
 이 개발 검사는 macOS/POSIX 환경용이며 Java 경로는 `--java-home /path/to/jdk-21`로 지정할 수 있습니다. 기본값은 `JAVA_HOME`, 없으면 이 작업에서 사용한 번들 JDK 경로입니다. 원시 게임 로그·역어셈블 덤프는 로컬에 보관하고, 검증 요약과 다운로드 실패 기록은 Git에 남깁니다.
 
 `evidence/verification.txt`는 추적된 도구로 재현할 수 있는 검사와, 일회성 명령으로 실행한 수동 검사를 구분합니다. 수동 staging 픽스처와 일부 회귀 검사 실행기는 저장소에 포함하지 않았으며, 이를 자동 테스트로 주장하지 않습니다.
+
+소스 후보 허용과 나머지 필수 파일 차단 회귀 검사는 `python3 -m unittest discover -s tests -p 'test_external_artifacts.py' -v`로 실행합니다.
 
 ## 원본
 

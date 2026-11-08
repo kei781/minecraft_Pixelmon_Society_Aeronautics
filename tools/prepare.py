@@ -17,6 +17,9 @@ ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "Personal-Pixelmon-Society-Aeronautics-Integration/0.1"
 COMMIT = "5e7c8fa9073a86f9ac74c7cbf087551e5872016c"
 PINNED = {"pixelmon": "9.4.1", "create-aeronautics": "1.3.2+mc1.21.1", "sable": "2.0.6+mc1.21.1"}
+# Plentiful Ponds calls these common APIs. Its older embedded copies otherwise
+# shadow the versions required by Starcatcher and Selling Bin on the server.
+SERVER_REQUIRED = {"fancy-tab-sections", "libtooltips"}
 
 
 def read_json(path):
@@ -36,7 +39,15 @@ def external_artifacts():
     missing = []
     for item in artifacts:
         path = ROOT / "inputs" / item["filename"]
-        if not path.is_file() or hashlib.sha1(path.read_bytes()).hexdigest() != item["sha1"]:
+        if not path.is_file():
+            missing.append(item["filename"])
+            continue
+        data = path.read_bytes()
+        original = hashlib.sha1(data).hexdigest() == item["sha1"]
+        build = item.get("source_build", {})
+        candidate = (len(data) == build.get("size")
+                     and hashlib.sha256(data).hexdigest() == build.get("sha256"))
+        if not (original or candidate):
             missing.append(item["filename"])
     if missing:
         raise ValueError("Society development artifacts missing or hash mismatch: " + ", ".join(missing))
@@ -110,9 +121,13 @@ def make_lock():
         side = config["projects"].get(slug, {}).get("side", "BOTH").lower()
         if kind != "MOD" or project.get("id", {}).get("modrinth") in client_only:
             side = "client"
+        if slug in SERVER_REQUIRED:
+            side = "both"
         files.append({"project": slug, "name": next(iter(project["name"].values())), "path": folder + "/" + filename,
                       "url": item["url"], "hashes": item["hashes"], "size": item["size"], "side": side,
                       "source": "Society project-honey upstream lock"})
+        if slug in SERVER_REQUIRED:
+            files[-1]["side_override_reason"] = "Common API dependency of source-built Plentiful Ponds; see evidence/source-build-verification.json"
     for slug, version in PINNED.items():
         versions = read_json(ROOT / "evidence" / (slug + "-versions.json"))
         matches = [v for v in versions if v["version_number"] == version and "1.21.1" in v["game_versions"] and "neoforge" in v["loaders"]]
