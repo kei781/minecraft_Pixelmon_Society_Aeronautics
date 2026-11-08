@@ -10,7 +10,7 @@ Society의 원래 InControl 설정은 지상/지하 적대 몹을 구분하고, 
 
 준비 도구는 다음을 함께 적용합니다.
 
-1. `config/pixelmon/entity.yml`에 `allow-vanilla-mobs: true`를 설정합니다. 나머지 엔티티 설정의 기본값은 실제 Pixelmon 로더에서 유지되는 것을 확인했습니다.
+1. `config/pixelmon/entity.yml`에 `allow-vanilla-mobs: true`를 설정합니다. 실제 Pixelmon 로더가 읽은 `EntityConfig`의 선언된 인스턴스 필드 6개를 새 기본 객체와 전부 비교했습니다. `allowVanillaMobs`만 true이고, 나머지 필드와 캡처 차원 목록 전체는 기본값과 같았습니다. 상위 설정 클래스의 내부 파일 관리 상태는 비교 대상이 아닙니다.
 2. 검증한 Pixelmon JAR의 `data/pixelmon/pixelmon/spawn_replacement/`에서 71개 JSON 경로를 읽습니다.
 3. 같은 경로에 대응하는 KubeJS 데이터를 생성합니다. 직접 작성한 빈 `types` 검출 목록으로 교체가 어떤 엔티티에도 적용되지 않게 합니다. 원본 JAR는 수정하지 않습니다.
 4. `stage`는 서버·클라이언트 양쪽에 동일하게 생성하고 `.integration-staging.json`에 경로와 SHA256을 남깁니다. Society 원본 InControl 규칙은 유지합니다.
@@ -21,7 +21,7 @@ Pixelmon의 자체 스포너는 수정하지 않습니다. 검증에서는 실�
 
 | 관찰 | 설정만 변경 | 설정 + 교체 데이터 수정 |
 | --- | --- | --- |
-| `allow-vanilla-mobs`와 나머지 엔티티 기본값 | 통과 | 통과 |
+| `EntityConfig` 선언 필드 6개와 전체 캡처 차원 목록 | 통과 | 통과 |
 | 월드 `doMobSpawning` | true | true |
 | 소·닭·돼지·양·좀비 각각 `level.addFreshEntity` | 모두 false | 모두 true |
 | Pikachu 엔티티 `level.addFreshEntity` | true | true |

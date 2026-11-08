@@ -20,14 +20,19 @@
         "minecraft:zombie": "false"
       },
       "pixelmon_entity_insertion": true,
-      "config_and_other_entity_defaults_pass": true,
       "doMobSpawning": true,
       "server_done": true,
       "process_exit_code": 0,
       "graceful_auto_shutdown": true,
-      "probe_class_sha256": "beb3ffbf2c7fc7c8258b5ddeed6ad76f15a5b16aa4b29efc2a4610d23eb6b891",
+      "probe_class_sha256": "2b766a7924a68728277204423cc01db30fa6fbabfda8c95db096ff7cc9b96298",
       "override_file_count": 1,
-      "log_sha256": "0e6ef37cf4cfa38ec3d586fcc3d6ca1cfe1691de8af7e5ab5f60b6e61abf58fd"
+      "log_sha256": "10734b3804f0cc13ac0c2499460765d6a8dd951521552e0a4eff735dc6b8b4ad",
+      "entity_declared_field_comparison": {
+        "pass": true,
+        "checked": 6,
+        "baseline": "New EntityConfig instance, with only allowVanillaMobs expected true",
+        "list_comparison": "Full Objects.equals comparison, including all capture-dimension list elements"
+      }
     },
     "mobs-preserved": {
       "vanilla_entity_insertion": {
@@ -38,14 +43,19 @@
         "minecraft:zombie": "true"
       },
       "pixelmon_entity_insertion": true,
-      "config_and_other_entity_defaults_pass": true,
       "doMobSpawning": true,
       "server_done": true,
       "process_exit_code": 0,
       "graceful_auto_shutdown": true,
-      "probe_class_sha256": "beb3ffbf2c7fc7c8258b5ddeed6ad76f15a5b16aa4b29efc2a4610d23eb6b891",
+      "probe_class_sha256": "2b766a7924a68728277204423cc01db30fa6fbabfda8c95db096ff7cc9b96298",
       "override_file_count": 72,
-      "log_sha256": "c3c67aa1428c1c5bb03d2aea20feaff0b1a0486ab648a4af3c72a182314f8f30"
+      "log_sha256": "03d910c832855dbfa1e8e14f441fe433065347f420ec0d58d51306e4a6da0175",
+      "entity_declared_field_comparison": {
+        "pass": true,
+        "checked": 6,
+        "baseline": "New EntityConfig instance, with only allowVanillaMobs expected true",
+        "list_comparison": "Full Objects.equals comparison, including all capture-dimension list elements"
+      }
     }
   },
   "generated_resources": {
@@ -66,7 +76,8 @@
     "kubejs_server_scripts_loaded": "44/44",
     "world_data_result": "FAILED: missing sunrisegardening:greenhouse_glass and greenhouse_glass_pane",
     "entity_insertion_probe_completed": false,
-    "stopped": "SIGINT after diagnosis; exit 130"
+    "stopped": "SIGINT after diagnosis; exit 130",
+    "config_probe_scope": "Earlier five-getter check; the stricter six-declared-field comparison was subsequently rerun in both isolated controls. Production overrides are unchanged."
   },
   "known_baseline_error": "Both isolated controls log missing pixelmon:spawning/drowned biome references. Not fixed or hidden; did not prevent Done or probe completion.",
   "unit_tests": {
@@ -77,5 +88,6 @@
   "remaining_artifacts": [
     "society-2.0-1.21.1.jar",
     "sunrisegardening-1.0.jar"
-  ]
+  ],
+  "review_followup": "Replaced partial getter/list-membership assertions with every declared non-static EntityConfig field compared to a fresh default object; reran both real controls successfully with six fields checked."
 }

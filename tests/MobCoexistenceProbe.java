@@ -1,7 +1,10 @@
 package dev.psa.codecprobe;
 
 import com.pixelmonmod.api.pokemon.PokemonSpecificationProxy;
+import com.pixelmonmod.pixelmon.api.config.EntityConfig;
 import com.pixelmonmod.pixelmon.api.config.PixelmonConfigProxy;
+import java.lang.reflect.Modifier;
+import java.util.Objects;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -22,13 +25,24 @@ public final class MobCoexistenceProbe {
 
     private void loaded(FMLLoadCompleteEvent event) {
         var config = PixelmonConfigProxy.getEntity();
-        if (!config.isAllowVanillaMobs()
-            || !config.isAllowCaptureOutsideBattle().contains("minecraft:overworld")
-            || !config.isEngagePlayerByPokeBall() || !config.isEnableWildAggression()
-            || config.isCanPokemonBeHit() || config.isDisabledNonPlayerMovement()) {
-            throw new AssertionError("Minimal entity config did not preserve the other Pixelmon defaults");
+        var defaults = new EntityConfig();
+        int checked = 0;
+        try {
+            for (var field : EntityConfig.class.getDeclaredFields()) {
+                if (Modifier.isStatic(field.getModifiers()) || field.isSynthetic()) continue;
+                field.setAccessible(true);
+                Object expected = field.getName().equals("allowVanillaMobs") ? Boolean.TRUE : field.get(defaults);
+                if (!Objects.equals(field.get(config), expected)) {
+                    throw new AssertionError("EntityConfig field differs from expected default: " + field.getName());
+                }
+                checked++;
+            }
+        } catch (ReflectiveOperationException error) {
+            throw new IllegalStateException("Could not inspect EntityConfig defaults", error);
         }
-        System.out.println("PSA_MOBS_CONFIG PASS: allow-vanilla-mobs=true; other entity defaults preserved");
+        if (!config.isAllowVanillaMobs() || checked == 0) throw new AssertionError("EntityConfig was not verified");
+        System.out.println("PSA_MOBS_CONFIG PASS: checked all " + checked
+            + " declared instance fields against defaults; allowVanillaMobs=true is the only override");
     }
 
     private void started(ServerStartedEvent event) {
