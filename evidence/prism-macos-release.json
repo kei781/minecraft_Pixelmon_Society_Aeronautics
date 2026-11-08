@@ -1,0 +1,7 @@
+{
+  "version": "11.1.1",
+  "url": "https://github.com/PrismLauncher/PrismLauncher/releases/download/11.1.1/PrismLauncher-macOS-11.1.1.zip",
+  "sha256": "15126a7df57acb4f37fe581dad68cb03c7bb60b70eb82345f8bb3246235600c6",
+  "size": 43614882,
+  "purpose": "Isolated cross-platform MRPack import verification; not Windows execution proof"
+}

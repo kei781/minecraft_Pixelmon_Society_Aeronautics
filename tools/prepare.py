@@ -214,11 +214,11 @@ def fetch(side):
         raise RuntimeError(str(len(failures)) + " required downloads failed; no files were silently omitted")
 
 
-def stage(side):
+def stage(side, target=None):
     verify_upstream()
     artifacts = external_artifacts()
     lock = read_json(ROOT / "integration-lock.json")
-    target = ROOT / ("server" if side == "server" else "client-test")
+    target = Path(target) if target is not None else ROOT / ("server" if side == "server" else "client-test")
     if target.exists():
         raise ValueError("Staging requires a fresh directory: " + str(target))
     selected = [f for f in lock["files"] if f["side"] in {"both", side}]
@@ -262,6 +262,7 @@ def stage(side):
         {"society_commit": COMMIT, "side": side, "external_artifacts": artifact_receipts(artifacts),
          "mob_compatibility_overrides": override_receipts}, indent=2) + "\n")
     print("Staged", len(selected), "verified files in", target, flush=True)
+    return target
 
 
 def main():
