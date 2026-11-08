@@ -35,6 +35,30 @@ def verify_upstream():
         raise ValueError("Society checkout must be clean and match the audited commit")
 
 
+def tracked_files(upstream, folders):
+    """Read only tracked regular files; never follow a source symlink."""
+    records = subprocess.check_output(["git", "-C", str(upstream), "ls-files", "--stage", "-z", "--", *folders])
+    result = []
+    for record in records.split(b"\0"):
+        if not record:
+            continue
+        header, name = record.split(b"\t", 1)
+        mode, _, stage_number = header.decode("ascii").split()
+        relative = Path(name.decode("utf-8"))
+        if (mode not in {"100644", "100755"} or stage_number != "0" or relative.is_absolute()
+                or ".." in relative.parts or "\\" in str(relative)
+                or not any(relative.as_posix().startswith(folder.rstrip("/") + "/") for folder in folders)):
+            raise ValueError("Tracked source must be a regular file within the selected folders: " + str(relative))
+        source = upstream / relative
+        # Check parents as well: is_file() alone follows directory symlinks.
+        if any(path.is_symlink() for path in [source, *source.parents] if path == upstream or upstream in path.parents):
+            raise ValueError("Symlink in tracked source path: " + str(relative))
+        if not source.is_file():
+            raise ValueError("Missing tracked source file: " + str(relative))
+        result.append((relative, source))
+    return sorted(result)
+
+
 def external_artifacts():
     artifacts = read_json(ROOT / "external-artifacts.json")["artifacts"]
     missing = []
@@ -248,15 +272,18 @@ def stage(side, target=None):
     if pixelmon_jar is None:
         raise ValueError("Pinned Pixelmon artifact required for integration overrides")
     overrides = mob_overrides(pixelmon_jar)
+    upstream = ROOT / "upstream/society"
+    configuration = tracked_files(upstream, ["config", "defaultconfigs", "kubejs"])
     target.mkdir()
     for source, dest in sources:
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, dest)
     for item in artifacts:
         shutil.copy2(ROOT / "inputs" / item["filename"], target / "mods" / item["filename"])
-    upstream = ROOT / "upstream/society"
-    for folder in ["config", "defaultconfigs", "kubejs"]:
-        shutil.copytree(upstream / folder, target / folder)
+    for relative, source in configuration:
+        destination = target / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
     override_receipts = write_overrides(target, overrides)
     (target / ".integration-staging.json").write_text(json.dumps(
         {"society_commit": COMMIT, "side": side, "external_artifacts": artifact_receipts(artifacts),

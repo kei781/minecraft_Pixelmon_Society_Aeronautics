@@ -68,22 +68,17 @@ def add_zip_file(archive, name, value):
 
 def society_resource_pack(target):
     """Rebuild the missing zip from the pinned, tracked unpacked resource pack."""
-    import subprocess
     upstream = ROOT / "upstream/society"
-    files = subprocess.check_output(["git", "-C", str(upstream), "ls-files", "-z", "--", RESOURCE_SOURCE + "/"])
-    paths = [name.decode("utf-8") for name in files.split(b"\0") if name]
-    if RESOURCE_SOURCE + "/pack.mcmeta" not in paths:
+    sources = prepare.tracked_files(upstream, [RESOURCE_SOURCE])
+    if Path(RESOURCE_SOURCE + "/pack.mcmeta") not in {name for name, _ in sources}:
         raise ValueError("Pinned Society resource-pack sources are required")
     destination = target / "resourcepacks/sunlit_overrides.zip"
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists():
         raise ValueError("Unexpected existing rebuilt resource pack")
     with zipfile.ZipFile(destination, "w") as archive:
-        for name in sorted(paths):
-            source = upstream / name
-            if source.is_symlink():
-                raise ValueError("Resource-pack source must be a regular tracked file")
-            relative = PurePosixPath(name).relative_to(RESOURCE_SOURCE).as_posix()
+        for name, source in sources:
+            relative = name.relative_to(RESOURCE_SOURCE).as_posix()
             add_zip_file(archive, relative, source)
     return destination
 

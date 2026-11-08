@@ -36,6 +36,8 @@ python3 tools/export_client.py integration --output dist/PSA-integration.mrpack
 
 전체 패키지는 고정 Society 소스의 설정·KubeJS와 압축이 풀린 `sunlit_overrides` 리소스를 포함하도록 구현했습니다. 이 리소스의 `pack_format: 43`도 원본 그대로 보존합니다. 원본이 설정한 `force_compatible`에 의존하는 부분과 실제 화면은 이후 전체 클라이언트 시험에서 확인해야 합니다. 원본에 없는 `configureddefaults`, `patchouli_books`나 이미 압축된 리소스 파일을 임의로 만들어 넣지 않습니다.
 
+설정·KubeJS·리소스는 Git에 추적된 일반 파일만 복사하며 무시 파일을 제외하고 심볼릭 링크를 거부합니다. 고정 소스의 가장 긴 설정 경로는 108자입니다. 예시 기본 경로 `C:\Users\Player\AppData\Roaming\PrismLauncher\instances\PSA-integration\minecraft\`를 붙이면 190자로, 검사한 경로는 모두 260자 미만이었습니다. 실제 사용자명·설치 폴더·인스턴스 이름이 훨씬 길면 짧은 휴대용 설치 경로를 사용하세요. 이는 경로 길이 측정이며 Windows 실행 검증은 아닙니다.
+
 자동 검사는 다음과 같습니다.
 
 ```sh

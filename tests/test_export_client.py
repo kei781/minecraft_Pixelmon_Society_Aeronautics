@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import subprocess
 import unittest
 from unittest.mock import patch
 import zipfile
@@ -60,6 +61,13 @@ class ClientExportTest(unittest.TestCase):
         (self.root / "upstream/society/config/fixture.json").write_text("{}")
         resource = self.root / "upstream/society" / exporter.RESOURCE_SOURCE
         (resource / "pack.mcmeta").write_text('{"pack":{"pack_format":43,"description":"fixture"}}')
+        upstream = self.root / "upstream/society"
+        (upstream / ".gitignore").write_text("ignored-local.*\n")
+        self.git("init", "-q")
+        self.git("add", ".")
+
+    def git(self, *args):
+        return subprocess.check_output(["git", "-C", str(self.root / "upstream/society"), *args])
 
     def test_diagnostic_has_exact_six_downloads_and_preservation_overrides(self):
         report = exporter.build("diagnostic", self.output)
@@ -100,8 +108,7 @@ class ClientExportTest(unittest.TestCase):
         self.assertEqual(report["downloads"], 0)
 
     def test_full_fixture_contains_one_patched_core_all_externals_and_rebuilt_resource(self):
-        tracked = (exporter.RESOURCE_SOURCE + "/pack.mcmeta\0").encode()
-        with patch.object(prepare, "verify_upstream"), patch("subprocess.check_output", return_value=tracked):
+        with patch.object(prepare, "verify_upstream"):
             exporter.build("integration", self.output)
         with zipfile.ZipFile(self.output) as archive:
             index = json.loads(archive.read("modrinth.index.json"))
@@ -114,6 +121,41 @@ class ClientExportTest(unittest.TestCase):
             with zipfile.ZipFile(io.BytesIO(archive.read("overrides/resourcepacks/sunlit_overrides.zip"))) as resource:
                 self.assertEqual(resource.namelist(), ["pack.mcmeta"])
             self.assertFalse(json.loads(archive.read("overrides/psa-client-profile.json"))["complete_integration"])
+
+    def test_ignored_files_and_ignored_external_symlinks_are_not_packaged(self):
+        config = self.root / "upstream/society/config"
+        outside = self.root / "private-fixture.txt"
+        outside.write_text("UNIT TEST PRIVATE MARKER")
+        (config / "ignored-local.json").write_text("UNIT TEST PRIVATE MARKER")
+        (config / "ignored-local.link").symlink_to(outside)
+        with patch.object(prepare, "verify_upstream"):
+            exporter.build("integration", self.output)
+        with zipfile.ZipFile(self.output) as archive:
+            self.assertIn("overrides/config/fixture.json", archive.namelist())
+            self.assertFalse(any("ignored-local" in name for name in archive.namelist()))
+            self.assertFalse(any(b"UNIT TEST PRIVATE MARKER" in archive.read(name) for name in archive.namelist()))
+
+    def test_tracked_external_symlink_is_rejected_before_output(self):
+        link = self.root / "upstream/society/config/external.json"
+        outside = self.root / "private-fixture.txt"
+        outside.write_text("UNIT TEST PRIVATE MARKER")
+        link.symlink_to(outside)
+        self.git("add", "config/external.json")
+        with patch.object(prepare, "verify_upstream"), self.assertRaisesRegex(ValueError, "regular file"):
+            exporter.build("integration", self.output)
+        self.assertFalse(self.output.parent.exists())
+
+    def test_parent_directory_symlink_is_rejected(self):
+        nested = self.root / "upstream/society/config/nested"
+        nested.mkdir()
+        (nested / "file.json").write_text("{}")
+        self.git("add", "config/nested/file.json")
+        (nested / "file.json").unlink()
+        nested.rmdir()
+        nested.symlink_to(self.root, target_is_directory=True)
+        (self.root / "file.json").write_text("UNIT TEST PRIVATE MARKER")
+        with self.assertRaisesRegex(ValueError, "Symlink"):
+            prepare.tracked_files(self.root / "upstream/society", ["config"])
 
     def test_deterministic_archives_and_exclusive_output(self):
         exporter.build("diagnostic", self.output)
