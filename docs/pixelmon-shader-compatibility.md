@@ -26,9 +26,13 @@ Claude R3는 합성 매개변수뿐 아니라 실제 Pixelmon이 만든 값을 �
 
 독립된 두 소스 트리에서 13개 빌드 작업을 모두 다시 실행했다. 정규화 결과는 동일하며, 실제 검사에 사용한 믹신 클래스와 전체 포팅 JAR의 해당 클래스도 바이트가 같았다. 이전 JAR에서 클래스 2개가 추가되고 호환 설정·출처 기록만 바뀌었다. 데이터 생성·리소스 내용은 그대로다. [재빌드 기록](../evidence/pixelmon-shader-port-rebuild.json).
 
-## 준비된 v6 후보
+## v6 배치와 남은 Windows 검증
 
-현재 N100 운영 서버와 전달했던 v5는 이전 포팅 JAR를 사용한다. 아래 v6는 클라이언트·서버를 함께 교체하기 위해 준비한 후보이며, 아직 N100에 배치하지 않았다. Windows 쪽 확인과 독립 리뷰를 거쳐 교체 시점을 맞춘다.
+Claude Opus 5.5 R4는 `d9c4de0`을 CLEAN으로 판정했고 검증된 브리지 적용 뒤 실제 미해결 스레드는 0건이다. CI 체크는 설정돼 있지 않다. 추가 정적 검사에서 Pixelmon 클래스 4,998개를 훑고 후보 7개를 디스어셈블했다. 보스 외 다이맥스·진화 경로도 FLOAT·FLOAT.listOf를 사용한다. 진화 뒤에는 기존 셰이더를 복구하는 호출도 있다. 이는 다이맥스·진화를 실제 실행한 증거는 아니다. [정적 검사](../evidence/pixelmon-shader-callsite-inspection.json).
+
+2026-11-09 00:12 KST에 N100의 v6 정상 기동을 확인했다. 실제 콘솔 0/6명을 다시 확인하고 정상 저장·종료한 뒤 기존 월드·JAR·검증 목록·구성 기록을 백업했다. 패치 JAR 하나와 해당 검증 기록만 갱신했으며 모드 313개 해시가 일치했다. 재기동 후 Done, 온라인 인증 유지, 0/6명·TPS20·전체 평균1.251ms를 확인했다. 이 수치는 6인 성능이 아니다. [배치 기록](../evidence/n100-v6-shader-deployment.json).
+
+아래 v6 파일, 서버 기동 완료 요청서와 비공개 접속 파일을 기존 같은 소유자 Taildrop으로 Windows PC에 전달했다. 채팅 read/send는 여전히 durable 호스트 오류로 실패하므로 상대 에이전트가 요청을 읽었다고 주장하지 않는다. Windows의 가져오기·파일 해시와 실제 재접속은 응답 대기 중이다. 서버에는 v6를 사용해야 하며 이전 v5는 보존만 한다.
 
 - 파일: `PSA-Forge-Full-Experimental-v6.mrpack`, 1,137,774,105바이트.
 - SHA256: `3b452f8068d4d02aeae89e293367540f3691c4c1134e3883b7691d5c6c979d2a`.
@@ -36,7 +40,7 @@ Claude R3는 합성 매개변수뿐 아니라 실제 Pixelmon이 만든 값을 �
 - 실제 macOS Prism 가져오기 후 payload 7,924개 해시·JAR 353개를 확인했다. 진단 모드는 포함되지 않았다. [가져오기 기록](../evidence/forge-client-import-v6.json).
 - Python 회귀 검사: Ubuntu 47개 통과, macOS 44개 통과·Linux 전용 3개 제외. [검사 기록](../evidence/phase4-shader-controller-tests.json).
 
-실제 Windows에서 보스 포켓몬을 추적해 같은 패킷 오류가 사라지는지, 포획·전투·Society 진행·조종 비행이 동작하는지는 별도 확인해야 한다. 실제 6인 부하와 최종 전체 리뷰도 남아 있다.
+[독립 리뷰 수락 범위](../evidence/phase4-shader-review-acceptance.json)는 패킷 수정과 서버 배치 하위 작업까지다. 실제 Windows에서 보스 포켓몬을 추적해 같은 패킷 오류가 사라지는지, 포획·전투·Society 진행·조종 비행이 동작하는지는 별도 확인해야 한다. 실제 6인 부하와 최종 전체 리뷰도 남아 있다.
 
 ## 진단 재현
 

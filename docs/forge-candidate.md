@@ -58,11 +58,11 @@ python3 "$PSA/tools/forge_resources.py" canonical-jar \
 
 위 해시는 Phase 2의 보존 기록이다. Phase 3의 실제 클라이언트 시험에서 포팅본의 `@ModifyArg` 세 개가 Oculus 콜백 지역 변수를 덮어쓰는 `VerifyError`를 재현했다. `renderer-locals.patch`는 같은 좌표 선택을 단일 `@WrapOperation`으로 수행한다. Pixelmon 9.2.3의 메뉴 코드도 없는 Realms 버튼을 참조했으므로 클라이언트 전용 `PixelmonMenuCompatMixin`은 기본 버튼 세 개가 모두 있을 때만 기존 메뉴 꾸미기를 실행한다. 기본 데모/사용자 지정 메뉴와 인증 제한은 유지한다.
 
-현재 배치용 정규화 JAR SHA256은 `cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de`다. 준비된 독립 소스 트리 두 개에 같은 수정과 메타데이터를 적용해 build/reobfJar 및 정규화 결과가 일치했다. 데이터 내용은 바뀌지 않아 데이터 생성기는 이 수정에서 다시 실행하지 않았다. 기존 JAR와 비교해 클라이언트 클래스·refmap·호환 설정·출처 기록만 바뀌었다. [재빌드 기록](../evidence/forge-client-fixes-rebuild.json).
+v5 당시 배치용 정규화 JAR SHA256은 `cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de`다. 준비된 독립 소스 트리 두 개에 같은 수정과 메타데이터를 적용해 build/reobfJar 및 정규화 결과가 일치했다. 데이터 내용은 바뀌지 않아 데이터 생성기는 이 수정에서 다시 실행하지 않았다. 기존 JAR와 비교해 클라이언트 클래스·refmap·호환 설정·출처 기록만 바뀌었다. [재빌드 기록](../evidence/forge-client-fixes-rebuild.json).
 
 ## 격리 서버 준비
 
-Phase 4의 새 v6 준비 도구는 실제 플레이어 접속에서 발견한 Pixelmon 셰이더 패킷 보정을 포함한 `a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74`를 고정한다. 위 `cc31e4…`는 v5 및 현재 N100 운영본의 보존 기록이다. 새 후보는 클라이언트와 서버를 함께 교체하기 전이며, [변경과 검사 범위](pixelmon-shader-compatibility.md)에 설명했다.
+Phase 4의 새 v6 준비 도구는 실제 플레이어 접속에서 발견한 Pixelmon 셰이더 패킷 보정을 포함한 `a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74`를 고정한다. 위 `cc31e4…`는 이전 v5 운영본의 보존 기록이다. v6는 독립 리뷰 후 N100에 배치했고 Windows PC에도 전달했으며 실제 Windows 재접속 검증은 남아 있다.  [변경과 검사 범위](pixelmon-shader-compatibility.md)에 설명했다.
 
 해시를 고정한 세 입력이 로컬에 있을 때 다음 도구로 새로운 프로필을 준비한다. `forge-candidate-lock.json`의 실제 공식 다운로드 URL·배포처 SHA1/SHA512·크기도 확인하고 입력 검증 결과를 프로필 영수증에 남긴다. 원본 311개 JAR, Pixelmon 교체 데이터 68개를 확인한다. 기존 경로를 덮어쓰지 않는다.
 

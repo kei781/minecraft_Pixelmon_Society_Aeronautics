@@ -56,3 +56,6 @@ python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.jso
 실제 장비에서 전체 기동, KubeJS startup 97/97·server 188/188 오류 0, 퀘스트 1,142개, 5종 일반 몹 유지, 포켓몬 생성 명령, 필수 물리 태그와 한 블록 구조물 조립을 확인했다. 정상 저장·정지·재시작 후 몹과 구조물도 복구했다.
 
 5종 시험 몹과 구조물 하나, 인증 접속자 0명 상태에서 TPS 20, 전체 평균 tick 2.963 ms, RSS 약 5.17 GiB였다. 실제 6인 성능으로 환산하지 않는다. Windows 인증 접속·포획/전투·Society 진행·조종 비행·6인 부하는 별도 검증이 필요하다.
+
+
+2026-11-09 00:12 KST 기준 v6 셰이더 패킷 보정을 배치했다. 기존 월드를 정상 저장·백업하고 포팅 JAR 하나 및 검증 기록만 갱신했다. 모드 313개 해시가 일치하고 Done·온라인 인증·0/6명·TPS20·평균1.251ms를 확인했다. 이전 v5의 지정 Windows 장치 인증 접속은 확인했지만, v6 Windows 재접속과 실제 게임 검증은 아직이다. 플레이어는 v6 팩을 사용한다. [배치 증거](../evidence/n100-v6-shader-deployment.json), [수정·독립 리뷰 범위](pixelmon-shader-compatibility.md).

@@ -1,0 +1,38 @@
+{
+  "phase": 4,
+  "scope": "Pixelmon shader packet fix and server deployment substep only",
+  "reviewed_code_sha": "d9c4de0382b1db60fb79b8421fd7d7d868cc21f8",
+  "review_model": "claude-opus-5-5",
+  "review_round": 4,
+  "verdict": "CLEAN",
+  "actual_unresolved_pr_threads": 0,
+  "pr": 2,
+  "ci_checks_configured": false,
+  "ci_observation": "gh pr checks: no checks reported; not claimed as CI pass",
+  "synthetic_packet_cases_per_patched_environment": 7,
+  "actual_boss_tiers_per_patched_environment": 9,
+  "patched_environments": [
+    "minimal original Pixelmon plus own mixins",
+    "full 313 production mod JARs plus test-only probe"
+  ],
+  "original_bugs_reproduced": 2,
+  "windows_same_owned_device_authenticated_v5_joins": 2,
+  "windows_v6_artifact_transferred_via_existing_taildrop": true,
+  "receiver_v6_hash_directly_verified": false,
+  "server_v6_deployment_evidence": "n100-v6-shader-deployment.json",
+  "client_v6_import_evidence": "forge-client-import-v6.json",
+  "static_additional_scope_evidence": "pixelmon-shader-callsite-inspection.json",
+  "phase4_complete": false,
+  "all_final_goals_complete": false,
+  "remaining": [
+    "Windows v6 import/filehash/visual evidence and authenticated rejoin",
+    "Actual Windows boss packet tracking retest",
+    "Pixelmon capture and battle",
+    "Society farming/economy/progression",
+    "Piloted Aeronautics flight and active shader outline validation",
+    "Actual six-player N100 load",
+    "Final overall review"
+  ],
+  "upstream_inquiry_posted": false,
+  "checked_at": "2026-11-08T15:13:17.441842+00:00"
+}

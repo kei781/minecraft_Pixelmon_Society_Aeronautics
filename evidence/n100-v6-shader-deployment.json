@@ -1,0 +1,21 @@
+{
+  "port_sha256": "a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74",
+  "previous_port_sha256": "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de",
+  "changed_mod_jars": 1,
+  "mod_jars": 313,
+  "fresh_players_before_stop": 0,
+  "world_backup_sha256": "d7a3548a2e23cf731d1e7da1a65c617d3369dd1a07aaefdad8ac2b1bbd8e446d",
+  "world_backup_bytes": 8196103,
+  "world_backup_entries": 373,
+  "reviewed_code_sha": "d9c4de0382b1db60fb79b8421fd7d7d868cc21f8",
+  "online_authentication_preserved": true,
+  "startup_done_verified": true,
+  "deployed_at": "2026-11-08T15:10:00.702247+00:00",
+  "done_line": "[15:11:55] [Server thread/INFO] [minecraft/DedicatedServer]: Done (2.927s)! For help, type \"help\"",
+  "players_after_start": 0,
+  "mean_tick_ms": 1.251,
+  "tps": 20.0,
+  "checked_at": "2026-11-08T15:12:35.971182+00:00",
+  "post_start_console_sha256": "56763a6c494735dc8346882c18fd45556dd4bdbdbf8d7c2745ea3aaa64b4b709",
+  "windows_v6_rejoin_verified": false
+}
