@@ -1,8 +1,8 @@
 # Windows 플레이어 설치
 
-v5 실행 중 발견한 Pixelmon 셰이더 패킷 오류를 보정한 v6를 사용한다. [변경과 검사 범위](pixelmon-shader-compatibility.md). 기존 v5 인스턴스는 보존하고 v6를 새 인스턴스로 가져온다.
+현재는 셰이더 패킷 보정과 일시정지 메뉴 겹침 보정을 포함한 v7를 사용한다. N100 서버는 v6를 유지하며 서버 공통 모드는 같다. [메뉴 수정 범위](pause-menu-compatibility.md), [패킷 보정](pixelmon-shader-compatibility.md). 이전 인스턴스는 보존하고 v7를 새 인스턴스로 가져온다.
 
-현재 시험 파일은 **`PSA-Forge-Full-Experimental-v6.mrpack`**이다. 세 프로젝트, 모드 JAR 353개, 리소스팩·셰이더·Society 설정을 포함한 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다.
+현재 시험 파일은 **`PSA-Forge-Full-Experimental-v7.mrpack`**이다. 세 프로젝트, 모드 JAR 354개, 리소스팩·셰이더·Society 설정을 포함한 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다.
 
 구성은 Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본이다. 현재 공식 1.21.1 배포본과 구분한다. [구성과 검증 범위](forge-candidate.md).
 
@@ -14,7 +14,7 @@ v5 실행 중 발견한 Pixelmon 셰이더 패킷 오류를 보정한 v6를 사�
 
 ## 파일 하나 가져오기
 
-1. 전달받은 위 v6 파일을 저장한다. 예전 `NO-SOCIETY` 진단 파일과 v1~v5 시험 파일은 이 서버에 사용하지 않는다.
+1. 전달받은 위 v7 파일을 저장한다. 예전 `NO-SOCIETY` 진단 파일과 v1~v6 시험 파일은 이 서버에 사용하지 않는다.
 2. **Add Instance → Import → 파일 선택 → OK**를 누른다. [공식 가져오기 안내](https://prismlauncher.org/wiki/getting-started/download-modpacks/).
 3. 외부 모드 확인창이 나오면 이 프로젝트가 구성한 파일인지 아래 SHA256으로 확인한 뒤 신뢰 체크를 하고 진행한다.
 4. 새 인스턴스가 Minecraft **1.20.1**, Forge **47.4.20**인지 확인한다. 첫 설치에는 Minecraft·로더·Java 다운로드용 인터넷이 필요하다.
@@ -24,20 +24,20 @@ v5 실행 중 발견한 Pixelmon 셰이더 패킷 오류를 보정한 v6를 사�
 현재 파일 SHA256:
 
 ```text
-3b452f8068d4d02aeae89e293367540f3691c4c1134e3883b7691d5c6c979d2a
+1d244e9b40d3791b66ab4e1114a66f164f06bbfa4398819cab0ff3e1ffc00224
 ```
 
 Windows PowerShell 확인 명령:
 
 ```powershell
-Get-FileHash ".\PSA-Forge-Full-Experimental-v6.mrpack" -Algorithm SHA256
+Get-FileHash ".\PSA-Forge-Full-Experimental-v7.mrpack" -Algorithm SHA256
 ```
 
 설치 경로와 인스턴스 이름은 짧게 쓴다. 가장 긴 상대 경로는 108자다. 다른 버전 모드를 추가하거나 원본 Society 팩 위에 수동으로 겹쳐 넣지 말고 새 인스턴스로 가져온다.
 
 ## 실제 확인한 범위
 
-macOS Prism 11.1.1의 실제 GUI 가져오기를 통과했다. 설치 파일 7,924개의 SHA256, JAR 353개, Minecraft/Forge 버전과 리소스·셰이더 위치를 확인했다. v1의 ZIP 오분류를 수정했고 v6의 mods 폴더에는 ZIP이 없다. [검증 기록](../evidence/forge-client-import-v6.json).
+macOS Prism 11.1.1의 실제 GUI 가져오기를 통과했다. 설치 파일 7,925개의 SHA256, JAR 354개, Minecraft/Forge 버전과 리소스·셰이더 위치를 확인했다. v1의 ZIP 오분류를 수정했고 v7의 mods 폴더에는 ZIP이 없다. [검증 기록](../evidence/forge-client-import-v7.json).
 
 v3는 클라이언트 전용 Shoulder Surfing을 공식 4.16.0에서 5.0.4로 변경했다. Aeronautics 포팅본이 참조하는 클래스와 메서드가 4.16.0에는 없고 5.0.4에 있는 것을 확인한 수정이다. 서버 공통 모드 311개는 동일하다. 원본 manifest와 교체 파일의 공식 URL·해시는 팩 안의 두 lock 파일에도 보존한다. [정적 API 검사](../evidence/shoulder-camera-linkage.json).
 
@@ -47,7 +47,9 @@ v5는 조종간·바퀴 등 17개 모델의 로더 이름을 Forge에 맞춘 호
 
 v6는 v5 모델 보정에 Pixelmon 셰이더 코덱 등록·RGBA 패킷 보정을 추가했다. 실제 Forge 원본 대조와 전체 팩의 보스 9등급 패킷 검사를 수행했고 Claude Opus R4에서 CLEAN이었다. [패킷 검사](pixelmon-shader-compatibility.md).
 
-N100 로그에서 지정 Windows 장치의 정품 인증과 월드 진입을 확인했다. Windows 파일 해시·게임 화면·포획/전투·농사/경제·조종 비행·6인 부하는 아직 검증하지 않았다. 가져오기 성공을 플레이 완료로 표현하지 않는다. [이전 1.21.1 진단 절차](windows-client-1.21-diagnostic.md)는 별도로 보존한다.
+v7는 클라이언트 전용 메뉴 보정 하나를 추가한다. Wiki·Credits와 Pixelmon 피드백·버그 신고 버튼이 겹치던 문제를 수정하며 Pixelmon·Discord 버튼도 보존한다. 4가지 설정 상태×배율 2·3·4를 원본/보정본에서 각각 검사했고 Claude Opus R2가 CLEAN으로 판정했다. 서버는 그대로이며 진단 모드는 들어 있지 않다. [실행 검사](../evidence/pause-menu-review-controls.json).
+
+N100 로그에서 지정 Windows 장치의 정품 인증과 월드 진입을 확인했다. Windows의 수정 후 파일 해시·게임 화면·포획/전투·농사/경제·조종 비행·6인 부하는 아직 검증하지 않았다. 가져오기 성공을 플레이 완료로 표현하지 않는다. [이전 1.21.1 진단 절차](windows-client-1.21-diagnostic.md)는 별도로 보존한다.
 
 ## 개발자 재생성
 
@@ -58,7 +60,11 @@ python3 tools/export_forge_client.py \
   --server /path/to/fresh-staged-forge-server \
   --extras /path/to/verified-client-only-cache \
   --society-client /path/to/Society-Sunlit-Valley-4.1.5A.zip \
+  --menu-fix /path/to/PSA-Client-Menu-Compat-1.0.jar \
   --output /path/to/new-full-client.mrpack
 ```
 
-`forge-client-lock.json`은 공식 CF manifest 367개 항목을 고정한다. JAR 351개에 Pixelmon·포팅 JAR를 더해 353개다. 나머지 15개는 리소스팩, 1개는 셰이더다. 공개 CF SHA1·크기로 원본을 확인했고 SHA512는 확인한 바이트에서 계산했다. 공통 모드 311개와 원본 KubeJS 5,290개는 서버와 일치한다. 필수 파일·해시·경로·스크립트가 다르면 중단한다. 계정 파일은 복사하지 않으며 기존 출력도 덮어쓰지 않는다.
+`forge-client-lock.json`은 공식 CF manifest 367개 항목을 고정한다. 원본 JAR 351개에 Pixelmon·포팅 JAR와 클라이언트 메뉴 보정을 더해 354개다. 나머지 15개는 리소스팩, 1개는 셰이더다. 공개 CF SHA1·크기로 원본을 확인했고 SHA512는 확인한 바이트에서 계산했다. 공통 모드 311개와 원본 KubeJS 5,290개는 서버와 일치한다. 필수 파일·해시·경로·스크립트가 다르면 중단한다. 계정 파일은 복사하지 않으며 기존 출력도 덮어쓰지 않는다.
+
+
+기존 v6 이용자는 게임을 정상 종료한 뒤 별도로 전달한 `PSA-Client-Menu-Compat-1.0.jar` 하나를 해당 인스턴스의 `minecraft/mods`에 넣고 다시 실행해도 된다. SHA256은 `512ca9eaedd2120a01e40a1cdbcf9550a986aeb46c4c3808ff414032071f924e`다. v6의 기존 파일은 바뀌지 않으며 서버도 그대로다. v5 이하에서는 v7를 새로 가져온다.

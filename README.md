@@ -2,13 +2,13 @@
 
 **현재 상태: 세 프로젝트 전체 실험 팩 생성 및 N100 전체 서버 기동·저장·재시작 확인. Windows 장치의 인증 접속은 서버 로그에서 확인했으며, 화면·게임 기능·6인 검증은 진행 중입니다.**
 
-새로 찾은 **Society 정식 4.1.5A + Pixelmon 9.2.3 베타 + Aeronautics 비공식 Forge 포팅본**으로 전체 월드 기동에 성공했습니다. Minecraft 1.20.1 / Forge 47.4.20 / Java 17의 별도 실험 후보입니다. 아래 1.21.1 개발 조합의 누락 파일을 확보한 것은 아닙니다. [후보 구성·수정·검증 범위](docs/forge-candidate.md)를 참고하세요. N100에서도 전체 팩을 시작하고 시험 몹·물리 구조물의 저장/복구를 확인했습니다. v5의 Windows 인증 접속은 확인했으며, v6 재접속·게임 기능·6인 검증은 남아 있습니다.
+새로 찾은 **Society 정식 4.1.5A + Pixelmon 9.2.3 베타 + Aeronautics 비공식 Forge 포팅본**으로 전체 월드 기동에 성공했습니다. Minecraft 1.20.1 / Forge 47.4.20 / Java 17의 별도 실험 후보입니다. 아래 1.21.1 개발 조합의 누락 파일을 확보한 것은 아닙니다. [후보 구성·수정·검증 범위](docs/forge-candidate.md)를 참고하세요. N100에서도 전체 팩을 시작하고 시험 몹·물리 구조물의 저장/복구를 확인했습니다. v5의 Windows 인증 접속은 확인했으며, 최신 클라이언트 재접속·게임 기능·6인 검증은 남아 있습니다.
 
 요청 구성은 Pixelmon + Society: Sunlit Valley + Create Aeronautics이며, 디지몬 데이터팩과 다른 대체 모드는 사용하지 않습니다. 서버 목표는 N100 / Ubuntu / RAM 16 GB / 동시 접속 최대 6명입니다.
 
 Windows 설치는 런처·Java 같은 선행 프로그램을 안내에 따라 설치하고 준비된 모드팩을 가져오는 방식도 허용합니다. 모든 준비 과정을 자동화한 단일 실행 파일은 필수 조건이 아닙니다. 같은 구성의 클라이언트를 설치하고 실제 서버에 접속하는 것이 완료 조건입니다.
 
-현재 전체 파일은 `PSA-Forge-Full-Experimental-v6.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 실제 macOS Prism 가져오기와 설치 파일 7,924개 해시 대조를 통과했습니다. 원래 1.21.1 진단 팩과 별도 구성입니다. [실행 계획](docs/implementation-plan.md)과 [진행 상태](docs/progress.md)에서 두 목표를 따로 관리합니다.
+현재 전체 파일은 `PSA-Forge-Full-Experimental-v7.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 실제 macOS Prism 가져오기와 설치 파일 7,925개 해시 대조를 통과했습니다. v7는 클라이언트 전용 메뉴 보정 하나를 추가하며 N100 v6 서버는 그대로 사용합니다. [메뉴 수정 범위](docs/pause-menu-compatibility.md). 원래 1.21.1 진단 팩과 별도 구성입니다. [실행 계획](docs/implementation-plan.md)과 [진행 상태](docs/progress.md)에서 두 목표를 따로 관리합니다.
 
 ## 보존한 최초 1.21.1 조사 기준
 
@@ -56,7 +56,7 @@ Society 개발자의 설치 기록에는 아래 네 파일이 있지만 공개 �
 
 ## 남은 완료 조건
 
-v6의 실제 Windows 로그인/접속 재검증 → Pixelmon 포획/전투·Society 농사/경제/진행·Aeronautics 조종 비행 → N100 실제 6인 부하 검증. 1.21.1 경로의 누락 파일은 별도 보존하며 새 Forge 내보내기를 차단하지 않습니다.
+최신 클라이언트의 실제 Windows 로그인/접속 재검증 → Pixelmon 포획/전투·Society 농사/경제/진행·Aeronautics 조종 비행 → N100 실제 6인 부하 검증. 1.21.1 경로의 누락 파일은 별도 보존하며 새 Forge 내보내기를 차단하지 않습니다.
 
 현재의 `tools/prepare.py`는 개발용 다운로드/검증 도구입니다. 최종 Windows 원샷 설치기가 아닙니다.
 

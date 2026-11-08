@@ -2,7 +2,7 @@
 
 | 완료 목표 | 상태 |
 | --- | --- |
-| Windows 플레이어용 세 프로젝트 설치 패키지 | 진행 중 — 전체 v6 팩 생성·Prism 가져오기·Windows PC 전송, v5 인증 접속 서버 로그 확인, Windows 자료 대조 및 v6 재검증 미완료 |
+| Windows 플레이어용 세 프로젝트 설치 패키지 | 진행 중 — 전체 v7 팩 생성·Prism 가져오기·Windows PC 전송, v5 인증 접속 서버 로그 확인, Windows 자료 대조 및 최신 클라이언트 재검증 미완료 |
 | N100 세 프로젝트 통합 서버 | 진행 중 — 전체 서버 구동·저장·재시작 및 v6 패치 배치 확인, 실제 Windows v6 게임/6인 검증 미완료 |
 
 이전 검증: N100에서 Pixelmon/Create/Aeronautics/Sable 최소 조합이 기동하고 물리 엔진 초기화와 엔티티 검사를 통과했다. 전체 Society는 포함하지 않았다. 해당 호환 코드 `12f9a56`은 Claude Opus 5.5 독립 리뷰에서 CLEAN이었다.
@@ -93,3 +93,5 @@ Shader R4: 실제 최신 Claude Opus 5.5가 `d9c4de0`을 CLEAN으로 판정했�
 사용자가 Windows 화면의 Wiki 줄 글자 겹침을 보고했다. BASE `b87bfc6`. 실제 전체 클라이언트에서 Society의 Wiki·Credits와 Pixelmon이 새로 추가한 피드백·버그 신고 버튼이 같은 위치에 있는 것을 재현했다. 원본 배율2/3/4 모두 겹침2쌍, 클라이언트 전용 패치 후 모두0쌍이다. Wiki·Credits·Pixelmon·Discord가 표시·활성 상태로 보존됐다. 원본 Society 메뉴 설정 해시가 맞는 경우에만 보정한다. N100은 변경하지 않았다. 두 트리의 정규화 빌드가 같고 Python49개 중46개 통과·Linux전용3개 제외다. v7 파일과 v6용 작은 보정 JAR를 준비했으며 독립 리뷰와 최종 가져오기·전달 검증은 이어서 수행한다. [문제·적용 범위](pause-menu-compatibility.md), [측정 증거](../evidence/pause-menu-verification.json). 두 최종 목표는 미완료다.
 
 Task 5 R1은 실제 최신 Opus5.5로 `762d002`를 검토해 P2(화면 사용자 지정 별도 스위치)와 P3(명시적 PauseScreen 범위)를 제시했다. 브리지로 게시했고 작성자는 해소하지 않았다. 실제 FancyMenu 활성 API와 화면 종류 조건을 보강했다. 동일한 진단으로 원본/보정본 각각4상태×3배율=12개, 합계24개 스냅샷을 실행했다. 기본 메뉴는 겹침2/2/2→0/0/0, 사용자 설정 관련9조건은 모든 위젯 상태가 원본과 같았다. 두 설정 파일도 복원됐다. 새 작은 JAR의 독립 빌드 해시는512ca9ea…로 일치한다. Python49개 중46개 통과·Linux전용3개 제외다. [R1 요청 대조 검사](../evidence/pause-menu-review-controls.json). 재리뷰와 갱신 파일 가져오기·전달은 이어서 진행한다.
+
+Task 5 R2 완료 범위: 실제 최신 Opus5.5가 `8b7c91d`를 CLEAN으로 판정했고 두 스레드 모두 독립 해소했다. 검증된 브리지 적용 후 실제 PR #2 미해결0건, CI 체크는 설정돼 있지 않다. 최신 v7(`1d244e9b…`,1,137,777,993바이트)을 실제 Prism GUI로 새로 가져와 payload7,925개·JAR354개·최종 helper512ca9ea…·진단 모드 부재를 확인했다. 작은3952바이트 보정JAR, v7전체파일, 작업 요청서와 비공개 접속 파일을 Windows PC에 기존 Taildrop으로 모두 전송 성공했다. N100 v6는 변경하지 않았다. Windows의 실제 적용·수신 해시·수정 후 화면은 아직 확인하지 못했다. [수락 범위](../evidence/phase4-menu-review-acceptance.json). 두 최종 목표는 미완료다.

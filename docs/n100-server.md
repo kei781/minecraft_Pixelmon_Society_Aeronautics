@@ -59,3 +59,5 @@ python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.jso
 
 
 2026-11-09 00:12 KST 기준 v6 셰이더 패킷 보정을 배치했다. 기존 월드를 정상 저장·백업하고 포팅 JAR 하나 및 검증 기록만 갱신했다. 모드 313개 해시가 일치하고 Done·온라인 인증·0/6명·TPS20·평균1.251ms를 확인했다. 이전 v5의 지정 Windows 장치 인증 접속은 확인했지만, v6 Windows 재접속과 실제 게임 검증은 아직이다. 플레이어는 v6 팩을 사용한다. [배치 증거](../evidence/n100-v6-shader-deployment.json), [수정·독립 리뷰 범위](pixelmon-shader-compatibility.md).
+
+클라이언트 v7는 메뉴 겹침을 고치는 클라이언트 전용 JAR 하나만 추가하므로 N100 v6의 공통 모드 313개·포팅 JAR·월드·시작 설정은 바꾸지 않는다. v6에 작은 보정 JAR를 추가하거나 v7를 새로 가져올 수 있다. [메뉴 보정 안내](pause-menu-compatibility.md).
