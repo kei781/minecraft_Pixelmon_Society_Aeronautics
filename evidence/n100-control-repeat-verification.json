@@ -1,0 +1,16 @@
+{
+  "linux_iterations": 20,
+  "linux_control_cases_per_iteration": 3,
+  "passed_cases": 60,
+  "failed_iterations": 0,
+  "mutation_removed_start_lock": true,
+  "mutation_expected_failure_observed": true,
+  "mutation_failure_kind": "second start incorrectly returned 0",
+  "test_fixtures_launched_as_minecraft": false,
+  "actual_n100_java_processes_checked": 1,
+  "actual_n100_java_lock_fd_count": 0,
+  "current_game_process_started_before_control_script_update": true,
+  "repeat_log_sha256": "a5b333b9327815768998672ad15139d64200ebd2333b6b36f070bf69481b70e5",
+  "mutation_log_sha256": "1a2959cf69b54cb9e9c33d379d46b076c7fccd802446c420c09f84910c9cf7fc",
+  "elapsed_seconds": 6.107
+}

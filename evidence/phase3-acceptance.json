@@ -1,0 +1,42 @@
+{
+  "phase": 3,
+  "status": "complete-preparation-and-provisioning",
+  "reviewed_code_sha": "15a4983f7d82d9b1e2602083598947c1f8fab9c5",
+  "review_model": "claude-opus-5-5",
+  "review_round": 3,
+  "verdict": "CLEAN",
+  "actual_unresolved_pr_threads": 0,
+  "ci_checks_configured": false,
+  "ci_observation": "gh pr checks: no checks reported; not claimed as CI pass",
+  "controller_tests": {
+    "ubuntu_passed": 42,
+    "macos_passed": 39,
+    "macos_linux_only_skips": 3,
+    "additional_linux_control_repeat_passed_cases": 60,
+    "expected_mutation_failure_confirmed": true
+  },
+  "client_artifact": {
+    "filename": "PSA-Forge-Full-Experimental-v4.mrpack",
+    "sha256": "753076589fd5c320c8d0d935ce13e0e437dbaa27313acf047b75d601b02f5e48",
+    "size": 1137764777,
+    "version_id": "psa-forge-7db77bf55074",
+    "mod_jars": 353,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7924,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "n100_full_server_running": true,
+  "all_final_goals_complete": false,
+  "remaining": [
+    "Authenticated Windows connection",
+    "Pixelmon capture and battle",
+    "Society farming, economy and progression",
+    "Piloted Aeronautics flight and active-shader outline validation",
+    "Actual six-player load",
+    "Final overall review after final gameplay verification"
+  ],
+  "upstream_inquiry_posted": false,
+  "checked_at": "2026-11-08T12:14:05.488340+00:00"
+}

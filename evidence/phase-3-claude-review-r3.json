@@ -1,0 +1,27 @@
+{
+  "head_sha": "15a4983f7d82d9b1e2602083598947c1f8fab9c5",
+  "verdict": "CLEAN",
+  "summary": "대상: head 15a4983 (base 35959ca). 제공된 pr.diff, threads.json, requirements.md와 스냅샷의 server-control.sh, tests/test_server_control_linux.py를 대조했다. 미해결 스레드 두 개는 모두 실제 코드 수정으로 해소됐다. 새로 생긴 결함은 찾지 못했다.\n\n1) 동시 start에서 로그가 이동되는 경쟁 (PRRT_kwDOVm1ZLc61AfHr)\n- `start`는 이제 `exec 9>.psa-control.lock; flock -n 9`(17–18행)를 먼저 실행한다. 그다음에 `running` 확인(19행), EULA·해시·수량·온라인 인증 검사, `console.log` 회전(27행), `new-session`/`set-option`(29–30행)을 진행한다. 따라서 이전 지적의 3단계, 즉 두 번째 호출이 실행 중인 console.log를 옮기는 경로가 막혔다.\n- 모든 tmux 호출은 `tmux_cmd() { ... 9>&-; }`를 거친다. 그래서 처음 fork되는 tmux 서버와 그 아래의 Java는 FD 9를 상속하지 않는다. 잠금은 스크립트가 끝날 때 해제된다. sha256sum, find, mv 같은 다른 자식 프로세스는 수명이 짧아서 잠금이 남지 않는다.\n- 잠금 실패 메시지는 'Another start operation is in progress'이고 exit 1이다. 테스트가 단언하는 문자열과 일치한다.\n- stage_forge_candidate.py는 스크립트를 복사만 한다. `.psa-control.lock` 파일이 검증 대상 목록(.psa-mods.sha256, mods/*.jar 수량)과 충돌하지 않음을 확인했다.\n\n2) 새 회귀 테스트 `test_concurrent_start_preserves_live_console_and_releases_lock`\n- PATH 앞에 넣은 sha256sum 래퍼가 `--check` 호출일 때만 gate를 만들고 release를 기다린다. 그래서 첫 start는 잠금을 쥔 채로 결정적으로 멈춘다. 7행의 소켓 해시 계산은 `--check`가 아니어서 그대로 통과한다.\n- 두 번째 start는 0이 아닌 종료 코드와 'operation is in progress'를 단언한다. 이 단언은 회귀를 실제로 잡는다. 잠금을 제거하면 두 번째 start는 gate가 이미 있어 대기 없이 진행되고, console.log를 옮긴 뒤 새 세션을 만들어 0을 반환한다. 그러면 `assertNotEqual(returncode, 0)`이 실패한다.\n- release 이후에는 첫 start의 성공, 'fixture-started' 기록, 이후 start의 'Already running'(잠금이 해제됐음을 확인)을 단언한다. 백업은 정확히 1개이고 내용이 'previous-console'인지도 단언한다. 정리 단계에서 kill-server를 등록한다.\n- skipUnless 조건에 flock이 추가됐다. 문서 요구 도구 목록에도 flock이 추가됐다.\n\n3) 보존 문서의 v2 표기 (PRRT_kwDOVm1ZLc61AfHt)\n- docs/windows-client-1.21-diagnostic.md 첫 줄이 버전을 빼고 '현행 전체 Forge 팩 설치는 [현행 안내](windows-client.md)'로 바뀌었다. 권고대로 수정됐다.\n\n4) 이전 out_of_scope 항목\n- 설치기를 다시 실행하기 전에 stop해야 한다는 절차가 docs/n100-server.md에 추가됐다.\n\n참고(결함 아님)\n- `stop`/`status`/`command`는 잠금을 쓰지 않는다. 그래서 start의 `new-session`과 `set-option` 사이의 아주 짧은 구간에 호출되면 @psa-root가 비어 있어 'Refusing to control an unrecognized tmux session'으로 실패할 수 있다. 이 경우 아무 것도 종료하거나 이동하지 않는다. 다시 실행하면 정상 동작하므로 지적하지 않는다.\n\n실행 검증\n이 리뷰는 읽기 전용이며 테스트를 실행하지 않았다. 다음 확인을 요청한다.\n- Linux에서 `python3 -m unittest tests.test_server_control_linux -v`를 여러 번(예: 20회) 반복해 새 동시성 테스트가 흔들리지 않는지 확인한다.\n- 같은 테스트를 잠금 두 줄을 임시로 제거한 상태에서 실행해 실패하는지 확인한다(뮤테이션 확인).\n- 실제 N100 프로필에서 start 후 `ls -l /proc/<java pid>/fd`에 `.psa-control.lock`이 열려 있지 않은지 확인한다.",
+  "resolve_thread_ids": [
+    "PRRT_kwDOVm1ZLc61AfHr",
+    "PRRT_kwDOVm1ZLc61AfHt"
+  ],
+  "replies": [
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc61AfHr",
+      "body": "15a4983에서 해소됐음을 코드로 확인했다.\n\n- `start`는 이제 `exec 9>.psa-control.lock; flock -n 9`(server-control.sh 17–18행)를 먼저 실행한다. 그다음에 `running` 확인, 로그 회전, `new-session`을 진행한다. 따라서 두 번째 호출이 실행 중인 console.log를 옮기는 경로가 막혔다.\n- 모든 tmux 호출은 `tmux_cmd`(`9>&-`)를 거친다. 그래서 tmux 서버와 Java는 잠금 FD를 상속하지 않는다.\n- 새 테스트는 sha256sum `--check` 지점의 barrier로 첫 start가 잠금을 쥔 상태를 결정적으로 만든다. 그 상태에서 동시 start의 거부를 단언한다. 이어서 이후 start가 'Already running'을 반환하는지(잠금 해제), 백업이 1개이고 내용이 'previous-console'인지 단언한다.\n- 잠금을 제거하면 두 번째 start가 0을 반환하므로 이 테스트는 회귀를 실제로 잡는다.\n\n테스트는 리뷰어가 실행하지 않았다."
+    },
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc61AfHt",
+      "body": "15a4983에서 해소됐음을 확인했다. docs/windows-client-1.21-diagnostic.md 첫 줄이 버전 표기 없이 '현행 전체 Forge 팩 설치는 [현행 안내](windows-client.md)를 사용한다'로 바뀌었다. 현행 안내는 계속 v4를 지정하므로 예전 버전을 현행으로 오해할 여지가 없어졌다."
+    }
+  ],
+  "new_comments": [],
+  "out_of_scope": [
+    "PR 본문(pr.json body)의 검사 수치가 아직 이전 값이다. 본문은 'Ubuntu 41/41, macOS 39 통과 및 Linux 전용 2개 제외'와 'Phase 3 새 커밋 리뷰 진행 중'으로 되어 있다. 하지만 이번 커밋의 evidence/phase3-controller-tests.json과 docs/progress.md는 Ubuntu 42/42, macOS 39 통과·3개 제외로 갱신됐다. PR 본문을 갱신하기를 권한다.",
+    "실제 Windows 인증 접속, Pixelmon 포획/전투, Society 농사/경제/진행, Aeronautics 조종 비행, N100 실제 6인 부하는 최종 phase의 작업이며 이 PR에서 검증되지 않았다(작성자도 미검증으로 명시).",
+    "PixelmonMenuCompatMixin은 정상 인증된 FancyMenu 타이틀 화면에서 확인해야 한다. renderer-locals.patch의 WrapOperation은 Oculus 셰이더 활성 상태의 서브레벨 외곽선을 화면으로 확인해야 한다. 둘 다 아직 실제 클라이언트에서 확인하지 않았다.",
+    "evidence/n100-control-lock-deployment.json과 forge-client-fixes-rebuild.json의 fresh_pinned_archive_build는 작성자가 실행한 결과의 요약이다. 리뷰어는 원본 로그나 실행으로 재확인하지 않았다."
+  ],
+  "blocked_reasons": []
+}
