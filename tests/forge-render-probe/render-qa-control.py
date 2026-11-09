@@ -13,10 +13,10 @@ import time
 import uuid
 
 ROOT = Path(__file__).resolve().parent
-BASELINE = "f43b0055a3c280d02618987a0cba3f418275bb09ff6d4d934c576b32e9547e79"
+BASELINE = "ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e"
 PROBE = "psa-render-probe-0.7.jar"
-JADE_PROBE = "psa-jade-probe-0.2.jar"
-JADE_PROBE_SHA256 = "41d8c90f00f4cf5149a38ee40f4285f7fd9510718810dc70cdfd4ce04a3c4033"
+JADE_PROBE = "psa-jade-probe-0.3.jar"
+JADE_PROBE_SHA256 = "0b886a87fb077f70463f77d79b57c3cdb39c446bda05bb084841a0a3bbcb6057"
 SOCKET = "psa-render-" + hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
 
 

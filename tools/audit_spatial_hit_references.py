@@ -9,6 +9,7 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import re
 import subprocess
 import tempfile
 import zipfile
@@ -18,10 +19,20 @@ from audit_menu_id_references import methods
 
 def family_references(refs):
     """Independent of hit-location reads: range/accessor code often has none."""
+    # SRG method identifiers are global; a subclass can own an inherited call.
+    srg = {
+        "m_82371_": "aabb_clip", "m_82390_": "aabb_contains", "m_82376_": "aabb_contains",
+        "m_272282_": "aabb_distance", "m_82557_": "point_distance",
+        "m_82554_": "point_distance", "m_82531_": "point_distance", "m_123331_": "point_distance",
+        "m_20280_": "entity_distance", "m_20238_": "entity_distance",
+        "m_20275_": "entity_distance", "m_20270_": "entity_distance",
+    }
     result = []
     for owner, name, descriptor in refs:
-        category = None
-        if owner == "net/minecraft/world/phys/AABB":
+        category = srg.get(name)
+        if category is not None:
+            pass
+        elif owner == "net/minecraft/world/phys/AABB":
             if name == "<init>":
                 category = "aabb_constructor"
             elif name in {"m_82371_", "clip"}:
@@ -30,15 +41,10 @@ def family_references(refs):
                 category = "aabb_contains"
             elif name in {"m_272282_", "distanceToSqr"}:
                 category = "aabb_distance"
-        elif owner in {"net/minecraft/world/phys/Vec3", "net/minecraft/core/BlockPos",
-                       "net/minecraft/core/Vec3i"} and name in {
-                           "m_82557_", "m_82554_", "m_82531_", "m_123331_",
-                           "distanceTo", "distanceToSqr", "distSqr"}:
+        elif owner.startswith("net/minecraft/") and name in {"distanceTo", "distanceToSqr", "distSqr"}:
+            # Named APIs are conservative; mod-owned named wrappers are not a hierarchy proof.
             category = "point_distance"
-        elif owner.startswith("net/minecraft/world/entity/") or owner == "net/minecraft/server/level/ServerPlayer":
-            if name in {"m_20280_", "m_20238_", "m_20275_", "m_20270_", "distanceTo", "distanceToSqr"}:
-                category = "entity_distance"
-        if category is None and owner.startswith("net/minecraft/"):
+        if category is None:
             # Include inherited LevelAccessor/EntityGetter interface owners too.
             if "Lnet/minecraft/world/phys/AABB;" in descriptor and descriptor.endswith("Ljava/util/List;"):
                 category = "entity_query"
@@ -47,7 +53,7 @@ def family_references(refs):
     return result
 
 
-def method_summary(bytecode, javap):
+def method_summary(bytecode, javap, expanded=False):
     """Keep API/method metadata only; no upstream instruction text is published."""
     with tempfile.TemporaryDirectory(prefix="psa-spatial-methods-") as temporary:
         target = Path(temporary) / "Candidate.class"
@@ -57,17 +63,28 @@ def method_summary(bytecode, javap):
     methods_found, current = [], None
     for line in output.splitlines():
         if line.startswith("  ") and not line.startswith("    ") and line.strip().endswith(";"):
-            current = {"method": line.strip(), "hit_reads": 0, "math_calls": 0, "query_calls": 0}
+            current = {"method": line.strip(), "hit_reads": 0, "math_calls": 0, "query_calls": 0,
+                       "family_category_calls": {}}
             methods_found.append(current)
-        elif current is not None and "// Method" in line:
+        elif current is not None and ("// Method" in line or "// InterfaceMethod" in line):
             if ".m_82450_:" in line or ".getLocation:" in line:
                 current["hit_reads"] += 1
             if any(token in line for token in ['AABB."<init>"', 'Vec3.m_82557_', 'BlockPos.m_123331_']):
                 current["math_calls"] += 1
             if any(token in line for token in ['Level.m_6249_', 'Level.m_45976_', 'Level.m_45547_', 'BlockGetter.m_45547_']):
                 current["query_calls"] += 1
-    return [method for method in methods_found if method["hit_reads"]
-            and (method["math_calls"] or method["query_calls"])]
+            if expanded:
+                match = re.search(r'// (?:InterfaceMethod|Method) (?:(.*?)\.)?([^.:]+):(\S+)', line)
+                if match:
+                    owner, name, descriptor = match.groups()
+                    for category, *_ in family_references([(owner or "", name.strip('"'), descriptor)]):
+                        calls = current["family_category_calls"]
+                        calls[category] = calls.get(category, 0) + 1
+    if expanded:
+        return [method for method in methods_found if method["family_category_calls"]]
+    for method in methods_found:
+        method.pop("family_category_calls")
+    return [method for method in methods_found if method["hit_reads"] and (method["math_calls"] or method["query_calls"])]
 
 
 def scan(source, expanded=False, summary=False, focus_jar=None, javap=None):
@@ -114,7 +131,8 @@ def scan(source, expanded=False, summary=False, focus_jar=None, javap=None):
                                 category_counts[category] = category_counts.get(category, 0) + 1
                             jar_counts[label] = jar_counts.get(label, 0) + 1
                         if javap is not None and (not summary or label == focus_jar):
-                            item["same_method_candidates"] = method_summary(bytecode, javap)
+                            key = "family_method_candidates" if expanded else "same_method_candidates"
+                            item[key] = method_summary(bytecode, javap, expanded)
                         candidates.append(item)
 
     if source.is_dir():
@@ -133,6 +151,7 @@ def scan(source, expanded=False, summary=False, focus_jar=None, javap=None):
               "expanded_family": expanded, **counts, "candidate_classes": len(candidates)}
     if expanded:
         result.update({"category_class_counts": category_counts, "jar_candidate_counts": jar_counts})
+        result["matching_limits"] = "SRG identifiers match any owner, including client and mod subclasses. Named distance APIs match Minecraft owners only; mod-owned named wrappers are not resolved by hierarchy. AABB-to-List query signatures match any owner."
     if summary:
         result["candidate_details_scope"] = "Only the exact focus JAR; aggregate counts cover the full input."
         candidates = [item for item in candidates if item["jar"] == focus_jar]

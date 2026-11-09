@@ -20,7 +20,7 @@ gradle.projectsEvaluated {
     }
     project.tasks.register('psaJadeProbeJar', Jar) {
         dependsOn compiler
-        archiveFileName.set('psa-jade-probe-0.2.jar')
+        archiveFileName.set('psa-jade-probe-0.3.jar')
         from compiler.flatMap { it.destinationDirectory }
         from new File(directory, 'resources')
         duplicatesStrategy = DuplicatesStrategy.FAIL

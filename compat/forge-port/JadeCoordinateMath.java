@@ -1,4 +1,4 @@
-package dev.psa.compat;
+package dev.psa.jademath;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import dev.ryanhcode.sable.companion.math.Pose3dc;

@@ -12,6 +12,8 @@ public final class JadeObserverMetadataTest {
             if (!"11.13.2+forge".equals(actual)) throw new AssertionError("Unexpected pinned Jade version: " + actual);
             String metadata = new String(observer.getInputStream(observer.getJarEntry("META-INF/mods.toml")).readAllBytes(),
                     StandardCharsets.UTF_8);
+            if (!Pattern.compile("(?m)^version=\"0.3\"$").matcher(metadata).find())
+                throw new AssertionError("Current observer version0.3 required");
             var matcher = Pattern.compile("versionRange=\"([^\"]+)\"").matcher(metadata);
             if (!matcher.find()) throw new AssertionError("Missing compiled dependency range");
             String range = matcher.group(1);
@@ -21,7 +23,7 @@ public final class JadeObserverMetadataTest {
                 throw new AssertionError("Compiled observer cannot load with pinned Jade");
             if (VersionRange.createFromVersionSpec("[11.13.2]").containsVersion(version))
                 throw new AssertionError("Negative control did not reproduce0.1 rejection");
-            System.out.println("Jade observer metadata: exact0.2 dependency accepted; original0.1 dependency rejected");
+            System.out.println("Jade observer0.3 metadata: exact dependency accepted; original0.1 dependency rejected");
         }
     }
 }

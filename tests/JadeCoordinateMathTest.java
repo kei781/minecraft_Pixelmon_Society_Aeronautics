@@ -1,5 +1,5 @@
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import dev.psa.compat.JadeCoordinateMath;
+import dev.psa.jademath.JadeCoordinateMath;
 import dev.ryanhcode.sable.companion.math.Pose3d;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;

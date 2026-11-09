@@ -1,0 +1,52 @@
+{
+  "scope": "All discovered configs, including inactive; descriptor candidate search is not runtime reachability proof. Bootstrap/plugin, relocation and generated-class candidates require interpretation.",
+  "baseline": {
+    "archives": 429,
+    "configs": 446,
+    "parse_errors": [
+      {
+        "jar": "serializer_debug-1.0.1.jar",
+        "config": "serializer_debug.mixins.json",
+        "error": "JSONDecodeError"
+      }
+    ],
+    "ordinary_top_level_candidates": 120,
+    "metadata_classes_excluded": [
+      "package-info.class",
+      "module-info.class"
+    ]
+  },
+  "negative_controls": {
+    "observer02": [
+      "dev.psa.jadeprobe.JadeProbe",
+      "dev.psa.jadeprobe.JadeClientQueries",
+      "dev.psa.jadeprobe.JadeServerRequests"
+    ],
+    "common75": [
+      "dev.psa.compat.JadeCoordinateMath"
+    ]
+  },
+  "current_common_psa_configs": [
+    {
+      "jar": "psa-jade-r3-candidate-1.jar",
+      "config": "psa-forge.mixins.json",
+      "package": "dev.psa.compat",
+      "ordinary_top_level_candidates": [],
+      "unannotated_inner_classes": [],
+      "bootstrap_plugin_excluded": null
+    }
+  ],
+  "current_observer_configs": [
+    {
+      "jar": "psa-jade-probe-0.3.jar",
+      "config": "psa-jade-probe.mixins.json",
+      "package": "dev.psa.jadeprobe.mixin",
+      "ordinary_top_level_candidates": [],
+      "unannotated_inner_classes": [],
+      "bootstrap_plugin_excluded": null
+    }
+  ],
+  "unchanged_common_bootstrap_candidate": "dev.ryanhcode.sable.mixin.AbstractSableMixinPlugin; superclass loaded during plugin bootstrap, baseline same class bytes. Not claimed as a newly reproduced error.",
+  "new_psa_ordinary_classes_in_reserved_namespaces": 0,
+  "remaining_upstream_candidates_cleared": false
+}

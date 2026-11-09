@@ -3,7 +3,7 @@ loaderVersion="[47,)"
 license="MIT"
 [[mods]]
 modId="psajadeprobe"
-version="0.2"
+version="0.3"
 displayName="PSA Jade Coordinate QA Observer"
 displayTest="IGNORE_ALL_VERSION"
 description='''Test observer only. Excluded from production exports. Records actual client queries and original server callback returns without changing query inputs, outputs or callback data.'''

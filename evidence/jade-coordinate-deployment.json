@@ -21,8 +21,8 @@
     "jade_observer_sha256": "41d8c90f00f4cf5149a38ee40f4285f7fd9510718810dc70cdfd4ce04a3c4033",
     "render_observer_unchanged_sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310",
     "missing_jade_observer_negative_control": "verify rejected; exact file restored and verify passed",
-    "server_start_command": "PASS; Done pending",
-    "windows_install": "PENDING",
+    "server_start_command": "FAILED before Done: observer0.2 reserved mixin namespace class loading error;309world files identical to backup",
+    "windows_install": "Installed matching files; not launched after server preflight failure",
     "native_query_and_data_response": "PENDING"
   },
   "auth_and_guards": {
@@ -32,5 +32,17 @@
     "marker_and_receipt_generation_unchanged": true,
     "normal_exits_only": true
   },
-  "both_goals_complete": false
+  "both_goals_complete": false,
+  "r3_candidate": {
+    "common_sha256": "31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5",
+    "observer_version": "0.3",
+    "observer_sha256": "0b886a87fb077f70463f77d79b57c3cdb39c446bda05bb084841a0a3bbcb6057",
+    "production313_manifest_sha256": "ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e",
+    "production_mods": 313,
+    "diagnostics": 2,
+    "start_command": "PASS; Done pending",
+    "same_world_generation": true,
+    "windows": "Hold until actual dedicated Done",
+    "native_query_and_data_response": "PENDING"
+  }
 }

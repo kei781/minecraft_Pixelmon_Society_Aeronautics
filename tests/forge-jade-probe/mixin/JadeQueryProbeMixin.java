@@ -1,4 +1,6 @@
-package dev.psa.jadeprobe;
+package dev.psa.jadeprobe.mixin;
+
+import dev.psa.jadeprobe.JadeClientQueries;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
