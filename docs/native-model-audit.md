@@ -63,3 +63,12 @@ The actual Mac trial went from 22 to 21 missing-model sentinels with the same
 17,239-item catalog. All 53 Decorative Blocks dropped-item render returns,
 model masks and cleanup then passed on the authenticated server. Remaining
 missing models, hand/inventory pixels, placement and use are still open.
+
+The five-entry batch in `compat/item-model-aliases.json` adds original matching
+block-model references for three DisplayDelight soups/stews, potted burnweed,
+and vinegar jar. Export validates the complete original parent/texture graph,
+including explicit vanilla dependencies, and preserves that provenance in the
+player profile. The batch stages every change before updating its caller.
+Actual native lookup dropped from 21 to 16 missing IDs with the same catalog;
+all 204 dropped-item render/model/cleanup controls across those three namespaces
+passed. These results do not verify hand/inventory pixels or block use.

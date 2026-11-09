@@ -111,8 +111,9 @@ class ItemModelAliasTest(unittest.TestCase):
         for name in ("owned_first", "owned_second"):
             specs.append({"item":"decorative_blocks:"+name, "jar":alias.JAR, "jar_sha256":jar_sha,
                           "target_path":"assets/decorative_blocks/models/item/"+name+".json",
-                          "parent":"decorative_blocks:block/owned", "resources":{block:self.sha(self.model)},
-                          "vanilla_dependencies":[]})
+                          "parent":"decorative_blocks:block/owned",
+                          "resources":{block:self.sha(self.model),alias.TEXTURE:self.sha(self.texture)},
+                          "vanilla_dependencies":["assets/minecraft/models/item/generated.json"]})
         path=Path(self.directory.name)/"specs.json";path.write_text(json.dumps(specs))
         return path, specs
 
@@ -133,6 +134,31 @@ class ItemModelAliasTest(unittest.TestCase):
             path.write_text(json.dumps(specs[:1]))
             with self.assertRaisesRegex(ValueError,"inventory"):
                 alias.apply_additional({},self.files,path)
+
+    def test_batch_rejects_wrong_target_parent_and_missing_provenance_without_mutation(self):
+        path,specs=self.batch_fixture();expected={s['item'] for s in specs}
+        changes=[('target_path','assets/owned/wrong.json'),('parent','other:block/owned'),
+                 ('parent','decorative_blocks:item/owned'),('resources',{}),('vanilla_dependencies',{}),
+                 ('vanilla_dependencies',[])]
+        for field,value in changes:
+            edited=json.loads(json.dumps(specs));edited[0][field]=value;path.write_text(json.dumps(edited))
+            overrides={'unrelated':b'preserved'};before=dict(overrides)
+            with self.subTest(field=field,value=value),patch.object(alias,'ADDITIONAL_ITEMS',expected),self.assertRaises(ValueError):
+                alias.apply_additional(overrides,self.files,path)
+            self.assertEqual(overrides,before)
+        edited=json.loads(json.dumps(specs));del edited[0]['resources'][alias.TEXTURE];path.write_text(json.dumps(edited))
+        with patch.object(alias,'ADDITIONAL_ITEMS',expected),self.assertRaisesRegex(ValueError,'Unpinned'):
+            alias.apply_additional({},self.files,path)
+
+    def test_committed_five_item_specification_is_complete(self):
+        specs=json.loads((Path(__file__).resolve().parents[1]/'compat/item-model-aliases.json').read_text())
+        self.assertEqual({s['item'] for s in specs},alias.ADDITIONAL_ITEMS);self.assertEqual(len(specs),5)
+        for spec in specs:
+            namespace,name=spec['item'].split(':')
+            self.assertEqual(spec['target_path'],'assets/'+namespace+'/models/item/'+name+'.json')
+            self.assertTrue(spec['parent'].startswith(namespace+':block/'))
+            self.assertIn('assets/'+spec['parent'].replace(':','/models/')+'.json',spec['resources'])
+            self.assertIsInstance(spec['vanilla_dependencies'],list)
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@ import io
 import json
 from pathlib import Path
 import zipfile
+from export_client import safe_path
 
 JAR = "mods/decorative_blocks-forge-1.20.1-4.1.3.jar"
 JAR_SHA256 = "19bc47b32258dd703b808f76e7b89da1746ecddaec4ad2bd5eaa356c0d2b3d87"
@@ -104,6 +105,54 @@ def apply_additional(overrides, files, spec_path):
         parent_path = "assets/" + spec["parent"].replace(":", "/models/") + ".json"
         if parent_path not in spec["resources"]:
             raise ValueError("Pinned original parent provenance required")
-        receipts.append(apply_verified(staged, files, **{k:v for k,v in spec.items() if k != "vanilla_dependencies"}))
+        validate_dependencies(spec, files)
+        receipt = apply_verified(staged, files, **{k:v for k,v in spec.items() if k != "vanilla_dependencies"})
+        receipt["vanilla_dependencies"] = list(spec["vanilla_dependencies"])
+        receipts.append(receipt)
     overrides.update(staged)
     return receipts
+
+
+def validate_dependencies(spec, files):
+    """Require complete original model/texture references, separating vanilla resources."""
+    vanilla = spec.get("vanilla_dependencies")
+    if (not isinstance(vanilla, list) or not all(isinstance(path, str) and path.startswith("assets/minecraft/")
+            and path.endswith((".json", ".png")) for path in vanilla) or len(vanilla) != len(set(vanilla))):
+        raise ValueError("Explicit unique vanilla dependency paths required")
+    for path in vanilla:
+        safe_path(path)
+    source = Path(files[spec["jar"]])
+    if source.is_symlink() or hashlib.sha256(source.read_bytes()).hexdigest() != spec["jar_sha256"]:
+        raise ValueError("Unexpected original model archive identity")
+    observed_vanilla = set()
+    resources = spec["resources"]
+    with zipfile.ZipFile(source) as archive:
+        names = set(archive.namelist())
+        for path in resources:
+            safe_path(path)
+            if not path.startswith("assets/") or not path.endswith((".json", ".png")):
+                raise ValueError("Only original model/texture resources may be pinned")
+            if not path.endswith(".json"):
+                continue
+            model = json.loads(archive.read(path))
+            references = []
+            if model.get("parent"):
+                references.append((model["parent"], "models/", ".json"))
+            for value in model.get("textures", {}).values():
+                if not isinstance(value, str):
+                    raise ValueError("Invalid original texture reference")
+                if not value.startswith("#"):
+                    references.append((value, "textures/", ".png"))
+            for value, folder, suffix in references:
+                namespace, name = value.split(":") if ":" in value else ("minecraft", value)
+                if namespace == "minecraft" and name in {"builtin/generated", "builtin/entity"} and folder == "models/":
+                    continue
+                reference = safe_path("assets/" + namespace + "/" + folder + name + suffix)
+                if reference in resources:
+                    continue
+                if reference not in names and namespace == "minecraft" and reference in vanilla:
+                    observed_vanilla.add(reference)
+                    continue
+                raise ValueError("Unpinned original model/texture dependency: " + reference)
+    if observed_vanilla != set(vanilla):
+        raise ValueError("Unused or missing vanilla dependency provenance")

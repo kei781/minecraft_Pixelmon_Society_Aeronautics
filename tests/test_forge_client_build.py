@@ -128,6 +128,36 @@ class ForgeClientBuildTest(unittest.TestCase):
         (self.server/'kubejs/server_scripts/init.js').write_bytes(b'changed')
         self.assert_no_export()
 
+    def test_export_includes_nonempty_additional_batch_and_profile_provenance(self):
+        alias = client.forge_item_model_alias
+        jar = self.server/alias.JAR
+        model = 'assets/decorative_blocks/models/block/owned.json'
+        data = b'{"elements":[]}'  # Packaging fixture only, never a game model.
+        with zipfile.ZipFile(jar,'a') as archive:
+            archive.writestr(model,data)
+        for entry in self.files:
+            if entry['path']==alias.JAR:
+                entry['size']=jar.stat().st_size;entry['hashes']=self.hashes(jar.read_bytes())
+        self.write_lock()
+        specs=[]
+        for name in ('owned_first','owned_second'):
+            specs.append({'item':'decorative_blocks:'+name,'jar':alias.JAR,'jar_sha256':client.digest(jar),
+                'target_path':'assets/decorative_blocks/models/item/'+name+'.json',
+                'parent':'decorative_blocks:block/owned','resources':{model:hashlib.sha256(data).hexdigest()},
+                'vanilla_dependencies':[]})
+        (self.root/'compat/item-model-aliases.json').write_text(json.dumps(specs))
+        with patch.object(alias,'ADDITIONAL_ITEMS',{s['item'] for s in specs}),patch.object(alias,'JAR_SHA256',client.digest(jar)):
+            self.build()
+        with zipfile.ZipFile(self.output) as archive:
+            profile=json.loads(archive.read('overrides/psa-forge-client-profile.json'))
+            self.assertEqual(len(profile['item_model_aliases']),3)
+            for spec in specs:
+                path='kubejs/'+spec['target_path']
+                self.assertIn('overrides/'+path,archive.namelist())
+                self.assertEqual(profile['overrides'][path],hashlib.sha256(archive.read('overrides/'+path)).hexdigest())
+                receipt=next(r for r in profile['item_model_aliases'] if r['item']==spec['item'])
+                self.assertEqual(receipt['vanilla_dependencies'],[])
+
     def test_extra_server_jar_fails_before_output(self):
         (self.server/'mods/extra.jar').write_bytes(b'extra')
         self.assert_no_export()
