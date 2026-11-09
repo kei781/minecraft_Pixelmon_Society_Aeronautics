@@ -1,0 +1,51 @@
+{
+  "task": 9,
+  "reviewed_scope": "Code and completed native-server controls only; authenticated client render and gameplay gates remain open.",
+  "reviewed_head": "5305e1da838e437c3d94c818415fe01b4f27bb0a",
+  "pr": 6,
+  "review_round": 4,
+  "requested_model": "claude-opus-5-5",
+  "reported_models": [
+    "claude-opus-5-5"
+  ],
+  "effort": "high",
+  "verdict": "CLEAN",
+  "result_sha256": "967d2d058c6b0bdff703f607fb68e747f7a5933677a9afb44b32415971ad17fd",
+  "receipt_sha256": "f351ef47cac7931495a5e15748f978a35204258fa4ab417e252c51f8637f0113",
+  "bridge_applied": true,
+  "actual_pr_unresolved_threads": 0,
+  "ci_configured": false,
+  "diagnostic_version": "0.7",
+  "diagnostic_sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310",
+  "diagnostic_bytes": 35466,
+  "two_independent_builds_byte_identical": true,
+  "full_native_control_version": "0.6",
+  "full_native_control_count": 17239,
+  "authenticated_render_complete": false,
+  "authenticated_ack_fault_complete": false,
+  "fresh_windows_import_verified": true,
+  "fresh_windows_game_launch_verified": false,
+  "task_complete": false,
+  "both_user_goals_complete": false,
+  "remaining_runtime_gates": [
+    "Fresh v9 JVM launch and authenticated join.",
+    "Actual small render/model-observation sample and authenticated ACK cleanup exception, rejection and recovery controls.",
+    "Pixelmon capture/battle, Society farming/trading/progression and Aeronautics assembly/piloted flight.",
+    "Broad client rendering, six-player load and final overall review."
+  ],
+  "ack_fault_success_requires": [
+    "completed_model_verified_returns == 4",
+    "cleanup_injection_triggered == true",
+    "cleanup_failed == true and cleanup_complete == false",
+    "Owned fixture chunk ticket retained.",
+    "Server exception call stack includes acknowledge / acceptAcknowledgement.",
+    "Next in-process start and controller restart rejected, then marked-world recovery verified."
+  ],
+  "windows_diagnostic_receipt": {
+    "file_name": "PSA-Windows-Render-Probe07-Receipt.json",
+    "bytes": 686,
+    "sha256": "6864edb750a277c31b0b1e1067696a2ec1648e3d1384342d992d0caee162da2c",
+    "artifact_hash_matches": true,
+    "original_report_transferred": false
+  }
+}

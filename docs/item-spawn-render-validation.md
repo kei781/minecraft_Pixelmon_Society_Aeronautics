@@ -34,6 +34,8 @@ QA 제어기는 `enable-rcon=false`도 확인한다. 처음 시작할 때 새 `w
 
 Claude R2가 찾은 부분 정리 실패도 보완했다. 0.6은 `discard()`가 반환하고 실제 레벨 조회에서 사라진 항목만 소유 목록에서 제거한다. 예외가 나면 실패 UUID·최초 원인과 영구 실패 플래그를 남기고 정리 완료를 표시하지 않는다. 청크 해제 실패도 같은 규칙을 쓴다. 비동기 응답 처리 예외는 기록 후 즉시 중단한다. 실제 `cleanup_failure_test`는 두 번째 소유 객체의 `EntityLeaveLevelEvent`에 예외를 넣어 원인 보존·다음 실행 거부·재기동 거부·실패 체크포인트 보존 복구를 확인했다. [부분 실패 검사](../evidence/item-render-cleanup-failure.json). 0.6의 정상 경로도17,239개 전부 통과했고 각 소유 객체의 실제 추적 제거를 확인했다. [0.6 전체 결과](../evidence/item-render-native-full.json).
 
-0.7은 `psa_render render_cleanup_failure_test PLAYER`를 추가한다. 실제 인증 플레이어 앞의 첫4개가 렌더·모델 관찰을 마친 뒤, 같은 정리 예외를 ACK 처리 경로에서 넣는 명령이다. 응답을 합성하지 않는다. 0.6과 0.7의 `RenderProbe$Session`은 `javap -c -p` 결과가 같고 프로토콜·클라이언트·운반 API 클래스도 같다. 0.7 실제 기동·소환16개는 확인했으며 인증 ACK 예외 대조는 클라이언트 접속 후 진행한다.
+0.7은 `psa_render render_cleanup_failure_test PLAYER`를 추가한다. 실제 인증 플레이어 앞의 첫4개가 렌더·모델 관찰을 마친 뒤, 같은 정리 예외를 ACK 처리 경로에서 넣는 명령이다. 응답을 합성하지 않는다. 0.6과 0.7의 `RenderProbe$Session`은 `javap -c -p` 결과가 같고 프로토콜·클라이언트·운반 API 클래스도 같다. 0.7 실제 기동·소환16개는 확인했으며 인증 ACK 예외 대조는 클라이언트 접속 후 진행한다. R4 독립 코드 리뷰는 CLEAN이며 실제 PR 미해결0건이다. [정확한 수락 범위](../evidence/task9-render-code-review.json).
+
+ACK 예외 대조는 최종 원인 문자열만으로 통과시키지 않는다. 모델 검증 반환4개, 실제 주입 발생, 영구 정리 실패와 완료 거부, 소유 청크 티켓 보존을 함께 확인한다. 서버 예외 스택에 `acknowledge`·`acceptAcknowledgement`가 있어야 인증 ACK 경로 검사로 인정한다. 시간 초과·미관찰 모델·접속 해제에서 정리 예외가 난 경우와 구분한다. 다음 실행·제어기 재기동 차단, 표식이 맞는 QA 월드 보존 복구도 확인한다.
 
 진단 통신은 [Forge SimpleImpl 공식 문서](https://docs.minecraftforge.net/en/1.20.1/networking/simpleimpl/)의 메인 스레드 처리와 방향별 패킷 등록을 따른다. 잘못된 실행 UUID·묶음·엔티티 ID·UUID·레지스트리·응답자는 거부한다. [현재 준비 기록](../evidence/item-render-probe-preparation.json).

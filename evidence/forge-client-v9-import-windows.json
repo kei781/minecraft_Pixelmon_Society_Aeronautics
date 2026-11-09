@@ -11,5 +11,11 @@
   "existing_instance_and_frozen_report_preserved": true,
   "fresh_game_launch_verified": false,
   "raw_verification_filename": "PSA-Windows-v9-Import-Verification.json",
-  "scope": "GUI import and installed file identity only; actual new-instance launch/connect/play pending."
+  "scope": "GUI import and installed file identity only; actual new-instance launch/connect/play pending.",
+  "private_windows_report_receipt": {
+    "file_name": "PSA-Windows-v9-Import-Verification.json",
+    "bytes": 41769,
+    "sha256": "2ed5e9cfa28e7d28292819bc29fd87bba7c778291a63af636c7217b1825c53a8",
+    "source": "Windows peer filesystem hash; original report remains on Windows and was not transferred"
+  }
 }
