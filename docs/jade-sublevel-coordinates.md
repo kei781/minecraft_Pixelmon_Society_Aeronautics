@@ -24,6 +24,6 @@
 
 실제 열기구는 플레이어를 태우고 상승했으며 두 번째 시도에서는 클라이언트 레버 ON/OFF와 착륙을 모두 확인했다. 최대 비행체 상승은 약 8.80블록이었다. 두 시도 모두 QA 높이 제한에서 물리를 잠시 멈췄고, 당시 플레이어는 크리에이티브이면서 자체 비행은 꺼진 상태였다. 따라서 서바이벌 비행이나 중단 없는 비행으로 표현하지 않는다. 첫 시도는 제한 시간 후 서버 안전 OFF를 사용했고, 두 번째 시도만 실제 플레이어 OFF 뒤 착륙했다. [비행 기록](../evidence/aeronautics-vertical-flight-roundtrip.json)에 시도별 범위와 한계를 보존했다.
 
-0.3이 `pack.mcmeta` 없이 빌드되어 Forge의 일반 리소스팩 경고가 표시된 문제는 0.4의 메타데이터로 수정했다. 두 독립 빌드가 동일하며 Java 클래스 6개는 0.3과 바이트가 같다. 의존성 정확 버전과 Minecraft 1.20.1의 pack format 15를 실제 JAR로 검사했다. 이 진단 JAR는 플레이어 배포 팩에 포함하지 않는다. 새 Windows JVM의 주 메뉴에서 원래 경고가 사라졌고 N100도 같은 월드로 시작했다. 0.4의 인증 재접속과 서바이벌 회귀 검사는 계속 진행 중이다.
+0.3이 `pack.mcmeta` 없이 빌드되어 Forge의 일반 리소스팩 경고가 표시된 문제는 0.4의 메타데이터로 수정했다. 두 독립 빌드가 동일하며 Java 클래스 6개는 0.3과 바이트가 같다. 의존성 정확 버전과 Minecraft 1.20.1의 pack format 15를 실제 JAR로 검사했다. 이 진단 JAR는 플레이어 배포 팩에 포함하지 않는다. 새 Windows JVM의 주 메뉴에서 원래 경고가 사라졌고 N100도 같은 월드로 시작했다. 0.4의 실제 인증 재접속과 서바이벌 수직 비행 왕복도 확인했다. QA 높이 제한 일시정지를 썼으며 최고 기체 상승은 약 9.01블록, 착륙 후 체력은 20이었다. [서바이벌 비행 기록](../evidence/aeronautics-survival-flight-roundtrip.json)과 [재접속·구버전 거부 검사](../evidence/jade04-reconnect-and-inventory-control.json)에 별도 보존했다. 수평 조종·중단 없는 비행·내부 엔티티 검증은 여전히 남아 있다.
 
 사용한 주입 API는 [MixinExtras의 공식 설명](https://github.com/LlamaLad7/MixinExtras/wiki/ModifyExpressionValue)에 따르며, 실제 포함된 0.4.1을 대상으로 빌드했다.
