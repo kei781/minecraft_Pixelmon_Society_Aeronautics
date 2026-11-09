@@ -1,0 +1,586 @@
+{
+  "scope": "Classify the sampled original Minior assertion and separate native switch-effect calls. No production battle patch; no player switch input or entire switch pipeline verified.",
+  "classification": "Minior was already on the battlefield before hazards were installed; the sampled original assertion contains no subsequent entry step but expects entry damage. Both hazards remain present. Direct native effects behave as expected in isolated and integrated controls.",
+  "production_common_sha256": "53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c",
+  "production_pack_changed": false,
+  "production_server_modified": false,
+  "artifact": {
+    "filename": "psa-pixelmon-hazard-trace-r3.jar",
+    "sha256": "9e4a293c717dc7b063e66ab4c15e3babc8afa260de0683292d8fb941df02cc9c",
+    "bytes": 10375,
+    "entries": 6,
+    "two_prepared_builds_byte_identical": true,
+    "reserved_mixin_namespace_only_actual_mixin": true
+  },
+  "passive_control_earlier_artifact": {
+    "variant": "minimal",
+    "mode": "observe",
+    "artifact_sha256": "581575840cab301d5d6e23eee73ed345492d2bd913f8507f8a7def813c53f054",
+    "production_inventory_count": 1,
+    "loaded_mod_files": 3,
+    "trace": {
+      "run": "5e05396d-67bb-495c-b6bf-6633b239cfdc",
+      "phase": "finished",
+      "scope": "Original native test observed unchanged; separately labelled optional effects after original assertion result, not player input",
+      "effects_opted_in": false,
+      "observations": [
+        {
+          "phase": "created",
+          "time": "2026-11-09T23:37:05.261860670Z",
+          "health": 12,
+          "maximum": 12,
+          "health_percent": 100.0,
+          "on_battlefield": false,
+          "battle_bound": false,
+          "meteor_form": true,
+          "ability": "ShieldsDown",
+          "spikes": false,
+          "stealth_rock": false,
+          "statuses": []
+        },
+        {
+          "phase": "before_attacks",
+          "time": "2026-11-09T23:37:05.263778805Z",
+          "health": 12,
+          "maximum": 12,
+          "health_percent": 100.0,
+          "on_battlefield": true,
+          "battle_bound": true,
+          "meteor_form": true,
+          "ability": "ShieldsDown",
+          "spikes": false,
+          "stealth_rock": false,
+          "statuses": []
+        },
+        {
+          "phase": "before_end_turn",
+          "time": "2026-11-09T23:37:05.355584409Z",
+          "health": 12,
+          "maximum": 12,
+          "health_percent": 100.0,
+          "on_battlefield": true,
+          "battle_bound": true,
+          "meteor_form": true,
+          "ability": "ShieldsDown",
+          "spikes": true,
+          "stealth_rock": true,
+          "statuses": [
+            "Spikes",
+            "StealthRock"
+          ]
+        },
+        {
+          "phase": "after_original_assertion",
+          "time": "2026-11-09T23:37:05.356843341Z",
+          "health": 12,
+          "maximum": 12,
+          "health_percent": 100.0,
+          "on_battlefield": true,
+          "battle_bound": true,
+          "meteor_form": true,
+          "ability": "ShieldsDown",
+          "spikes": true,
+          "stealth_rock": true,
+          "statuses": [
+            "Spikes",
+            "StealthRock"
+          ]
+        },
+        {
+          "phase": "after_end_turn",
+          "time": "2026-11-09T23:37:05.357628792Z",
+          "health": 12,
+          "maximum": 12,
+          "health_percent": 100.0,
+          "on_battlefield": true,
+          "battle_bound": true,
+          "meteor_form": true,
+          "ability": "ShieldsDown",
+          "spikes": true,
+          "stealth_rock": true,
+          "statuses": [
+            "Spikes",
+            "StealthRock"
+          ]
+        }
+      ],
+      "probes": [],
+      "errors": [],
+      "original_native_pass": false,
+      "original_native_reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+    },
+    "native_fixture": {
+      "run": "11d92292-9067-4001-9f30-9fcd59165fb0",
+      "pass": false,
+      "cleanup_complete": true,
+      "live_owned_actor_count": 0,
+      "actor_count": 31,
+      "results": {
+        "Normal doesn't damage ghost": {
+          "status": "success"
+        },
+        "clangorous_soulblaze_correct_boost_amount": {
+          "status": "success"
+        },
+        "dancer_copies_damage_dealing_dance_moves": {
+          "status": "failure",
+          "reason": "One of them failed."
+        },
+        "hidden_power_max_move_typing": {
+          "status": "success"
+        },
+        "non_extreme_weather_fails_during_delta_stream": {
+          "status": "success"
+        },
+        "shedinja_hp_dynamax": {
+          "status": "failure",
+          "reason": "Shedinja does not have 1 HP while Dynamaxed!"
+        },
+        "shell_trap_damages_opponents_not_user": {
+          "status": "success"
+        },
+        "shields_down_should_not_remove_hazards": {
+          "status": "failure",
+          "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+        },
+        "spammable_destiny_bond": {
+          "status": "success"
+        },
+        "splash_no_damage": {
+          "status": "success"
+        }
+      },
+      "errors": [],
+      "cleanup_errors": []
+    },
+    "raw_log_sha256": "097bbd026f4e2966c9fd2291711211d6780ef2e6eee1e0828cf4cc5af8c5cd3d",
+    "normal_stop_complete": true
+  },
+  "final_candidate_effect_runs": {
+    "minimal": {
+      "variant": "minimal",
+      "mode": "effects",
+      "artifact_sha256": "9e4a293c717dc7b063e66ab4c15e3babc8afa260de0683292d8fb941df02cc9c",
+      "production_inventory_count": 1,
+      "loaded_mod_files": 3,
+      "trace": {
+        "run": "adeb77b4-7531-41ef-a81d-0c5bbe9f8cd2",
+        "phase": "finished",
+        "scope": "Original native test observed unchanged; separately labelled optional effects after original assertion result, not player input",
+        "effects_opted_in": true,
+        "observations": [
+          {
+            "phase": "created",
+            "time": "2026-11-09T23:46:57.198963919Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": false,
+            "battle_bound": false,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": false,
+            "stealth_rock": false,
+            "statuses": []
+          },
+          {
+            "phase": "before_attacks",
+            "time": "2026-11-09T23:46:57.201179112Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": true,
+            "battle_bound": true,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": false,
+            "stealth_rock": false,
+            "statuses": []
+          },
+          {
+            "phase": "before_end_turn",
+            "time": "2026-11-09T23:46:57.298423607Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": true,
+            "battle_bound": true,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": true,
+            "stealth_rock": true,
+            "statuses": [
+              "Spikes",
+              "StealthRock"
+            ]
+          },
+          {
+            "phase": "after_original_assertion",
+            "time": "2026-11-09T23:46:57.299970990Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": true,
+            "battle_bound": true,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": true,
+            "stealth_rock": true,
+            "statuses": [
+              "Spikes",
+              "StealthRock"
+            ]
+          },
+          {
+            "phase": "after_end_turn",
+            "time": "2026-11-09T23:46:57.302673905Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": true,
+            "battle_bound": true,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": true,
+            "stealth_rock": true,
+            "statuses": [
+              "Spikes",
+              "StealthRock"
+            ]
+          }
+        ],
+        "probes": [
+          {
+            "kind": "native_ability_allow_family",
+            "allowed": {
+              "Spikes": true,
+              "StealthRock": true,
+              "ToxicSpikes": true,
+              "StickyWeb": true,
+              "Steelsurge": true,
+              "Substitute": true
+            }
+          },
+          {
+            "kind": "post_assert_native_switch_effect",
+            "name": "minior_stealth_rock",
+            "before": 12,
+            "computed_damage": 3,
+            "after": 9,
+            "expected_damage": true,
+            "pass": true,
+            "health_restored": true
+          },
+          {
+            "kind": "post_assert_native_switch_effect",
+            "name": "minior_spikes_flying",
+            "before": 12,
+            "computed_damage": 1,
+            "after": 12,
+            "expected_damage": false,
+            "pass": true,
+            "health_restored": true
+          },
+          {
+            "kind": "post_assert_native_switch_effect",
+            "name": "magikarp_stealth_rock",
+            "before": 11,
+            "computed_damage": 1,
+            "after": 10,
+            "expected_damage": true,
+            "pass": true,
+            "health_restored": true
+          },
+          {
+            "kind": "post_assert_native_switch_effect",
+            "name": "magikarp_spikes",
+            "before": 11,
+            "computed_damage": 1,
+            "after": 10,
+            "expected_damage": true,
+            "pass": true,
+            "health_restored": true
+          }
+        ],
+        "errors": [],
+        "original_native_pass": false,
+        "original_native_reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "native_fixture": {
+        "run": "8166cd07-0195-4218-83bc-b819ab0a1df4",
+        "pass": false,
+        "cleanup_complete": true,
+        "live_owned_actor_count": 0,
+        "actor_count": 31,
+        "results": {
+          "Normal doesn't damage ghost": {
+            "status": "success"
+          },
+          "clangorous_soulblaze_correct_boost_amount": {
+            "status": "success"
+          },
+          "dancer_copies_damage_dealing_dance_moves": {
+            "status": "success"
+          },
+          "hidden_power_max_move_typing": {
+            "status": "success"
+          },
+          "non_extreme_weather_fails_during_delta_stream": {
+            "status": "success"
+          },
+          "shedinja_hp_dynamax": {
+            "status": "failure",
+            "reason": "Shedinja does not have 1 HP while Dynamaxed!"
+          },
+          "shell_trap_damages_opponents_not_user": {
+            "status": "success"
+          },
+          "shields_down_should_not_remove_hazards": {
+            "status": "failure",
+            "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+          },
+          "spammable_destiny_bond": {
+            "status": "success"
+          },
+          "splash_no_damage": {
+            "status": "success"
+          }
+        },
+        "errors": [],
+        "cleanup_errors": []
+      },
+      "raw_log_sha256": "8bf1836f360cd286b2f26d2ae2957cfc00dba8ace092f375c2ffead131ef7360",
+      "normal_stop_complete": true
+    },
+    "full": {
+      "variant": "full",
+      "mode": "effects",
+      "artifact_sha256": "9e4a293c717dc7b063e66ab4c15e3babc8afa260de0683292d8fb941df02cc9c",
+      "production_inventory_count": 313,
+      "loaded_mod_files": 315,
+      "trace": {
+        "run": "e8033c25-7190-4221-87db-8f41e0517ec0",
+        "phase": "finished",
+        "scope": "Original native test observed unchanged; separately labelled optional effects after original assertion result, not player input",
+        "effects_opted_in": true,
+        "observations": [
+          {
+            "phase": "created",
+            "time": "2026-11-09T23:51:08.873131908Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": false,
+            "battle_bound": false,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": false,
+            "stealth_rock": false,
+            "statuses": []
+          },
+          {
+            "phase": "before_attacks",
+            "time": "2026-11-09T23:51:08.875877519Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": true,
+            "battle_bound": true,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": false,
+            "stealth_rock": false,
+            "statuses": []
+          },
+          {
+            "phase": "before_end_turn",
+            "time": "2026-11-09T23:51:08.973715982Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": true,
+            "battle_bound": true,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": true,
+            "stealth_rock": true,
+            "statuses": [
+              "Spikes",
+              "StealthRock"
+            ]
+          },
+          {
+            "phase": "after_original_assertion",
+            "time": "2026-11-09T23:51:08.974703111Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": true,
+            "battle_bound": true,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": true,
+            "stealth_rock": true,
+            "statuses": [
+              "Spikes",
+              "StealthRock"
+            ]
+          },
+          {
+            "phase": "after_end_turn",
+            "time": "2026-11-09T23:51:08.977333989Z",
+            "health": 12,
+            "maximum": 12,
+            "health_percent": 100.0,
+            "on_battlefield": true,
+            "battle_bound": true,
+            "meteor_form": true,
+            "ability": "ShieldsDown",
+            "spikes": true,
+            "stealth_rock": true,
+            "statuses": [
+              "Spikes",
+              "StealthRock"
+            ]
+          }
+        ],
+        "probes": [
+          {
+            "kind": "native_ability_allow_family",
+            "allowed": {
+              "Spikes": true,
+              "StealthRock": true,
+              "ToxicSpikes": true,
+              "StickyWeb": true,
+              "Steelsurge": true,
+              "Substitute": true
+            }
+          },
+          {
+            "kind": "post_assert_native_switch_effect",
+            "name": "minior_stealth_rock",
+            "before": 12,
+            "computed_damage": 3,
+            "after": 9,
+            "expected_damage": true,
+            "pass": true,
+            "health_restored": true
+          },
+          {
+            "kind": "post_assert_native_switch_effect",
+            "name": "minior_spikes_flying",
+            "before": 12,
+            "computed_damage": 1,
+            "after": 12,
+            "expected_damage": false,
+            "pass": true,
+            "health_restored": true
+          },
+          {
+            "kind": "post_assert_native_switch_effect",
+            "name": "magikarp_stealth_rock",
+            "before": 11,
+            "computed_damage": 1,
+            "after": 10,
+            "expected_damage": true,
+            "pass": true,
+            "health_restored": true
+          },
+          {
+            "kind": "post_assert_native_switch_effect",
+            "name": "magikarp_spikes",
+            "before": 11,
+            "computed_damage": 1,
+            "after": 10,
+            "expected_damage": true,
+            "pass": true,
+            "health_restored": true
+          }
+        ],
+        "errors": [],
+        "original_native_pass": false,
+        "original_native_reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "native_fixture": {
+        "run": "327af74e-9d64-4820-becf-e5c03f29cc2d",
+        "pass": false,
+        "cleanup_complete": true,
+        "live_owned_actor_count": 0,
+        "actor_count": 31,
+        "results": {
+          "Normal doesn't damage ghost": {
+            "status": "success"
+          },
+          "clangorous_soulblaze_correct_boost_amount": {
+            "status": "success"
+          },
+          "dancer_copies_damage_dealing_dance_moves": {
+            "status": "success"
+          },
+          "hidden_power_max_move_typing": {
+            "status": "success"
+          },
+          "non_extreme_weather_fails_during_delta_stream": {
+            "status": "success"
+          },
+          "shedinja_hp_dynamax": {
+            "status": "success"
+          },
+          "shell_trap_damages_opponents_not_user": {
+            "status": "success"
+          },
+          "shields_down_should_not_remove_hazards": {
+            "status": "failure",
+            "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+          },
+          "spammable_destiny_bond": {
+            "status": "success"
+          },
+          "splash_no_damage": {
+            "status": "success"
+          }
+        },
+        "errors": [],
+        "cleanup_errors": []
+      },
+      "raw_log_sha256": "fe8e79e74239f4b4c9efa7b6a520bcf2ba8e71e57cc23e978b99b7395e0bc9cd",
+      "normal_stop_complete": true
+    }
+  },
+  "minior_observations_except_time_equal_across_passive_and_effect_runs": true,
+  "four_effect_rows_equal_isolated_and_full": true,
+  "failed_marker_gate_before_fix": {
+    "artifact_sha256": "581575840cab301d5d6e23eee73ed345492d2bd913f8507f8a7def813c53f054",
+    "gate_passed": false,
+    "missing_marker": true,
+    "own_plugin_exception_logged": true,
+    "ready": true,
+    "world_created": true,
+    "hazard_reports": 0,
+    "fixture_reports": 67,
+    "scope": "Failed negative control retained; plugin onLoad exception alone skipped trace config without stopping server.",
+    "normal_stop_complete": true
+  },
+  "final_marker_gate": {
+    "marker_missing": true,
+    "own_gate_refused": true,
+    "missing_marker_cause": true,
+    "ready": false,
+    "world_level_dat_exists": false,
+    "fixture_reports": 0,
+    "hazard_reports": 0,
+    "jvm_session_stopped": true,
+    "raw_log_sha256": "b64c2ce0d7b6872fdfb558d3a0588282693e79d38ed191b1972aa14e600447ee",
+    "gate_passed": true
+  },
+  "sources": {
+    "stealth_rock_entry_rule": "https://pixelmonmod.com/wiki/Stealth_Rock",
+    "spikes_entry_and_flying_rule": "https://pixelmonmod.com/wiki/Spikes"
+  },
+  "limits": [
+    "Original native Minior assertion remains failure; no assertion, RNG or return result changed",
+    "Four effects invoked directly after original result, not player input or complete switch/form/item combinations",
+    "Only explicitly changed health restored; battle logs/counters not rolled back; disposable battle/actors/floor/ticket cleaned",
+    "Other native failures and both user goals remain open"
+  ]
+}
