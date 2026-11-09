@@ -63,5 +63,33 @@
       ],
       "refused_before_attach": true
     }
-  ]
+  ],
+  "preflight_refusal_controls": [
+    {
+      "case": "missing_settings",
+      "cli_exit_code": 1,
+      "agent_initialization_refused": true,
+      "new_reports": 0,
+      "settings_restored_exactly": true
+    },
+    {
+      "case": "wrong_common_hash",
+      "cli_exit_code": 1,
+      "agent_initialization_refused": true,
+      "new_reports": 0,
+      "settings_restored_exactly": true
+    }
+  ],
+  "builder_unknown_kind_controls": {
+    "cli_unknown_kind_exit": 2,
+    "api_unknown_kind_value_error_before_compiler": true,
+    "output_created": false
+  },
+  "server_after_preflight_refusals": {
+    "native_auth_login_count": 1,
+    "join_world_count": 1,
+    "left_world_count": 0,
+    "current_online_players": 1
+  },
+  "preflight_report_contract": "Preflight refusals exit CLI nonzero without a native report. Only requests reaching the native executor attempt a unique report; report I/O failure is logged separately."
 }

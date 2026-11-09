@@ -96,8 +96,12 @@ python3 tools/build_minecraft_qa_control.py --java-home /path/to/jdk17 --kind co
 /path/to/jdk17/bin/java --add-modules jdk.attach -cp /path/to/fresh/qa-connect.jar dev.psa.qaconnect.v2.MinecraftQaConnect PID
 ```
 
-Each request writes a unique report under `psa-qa-connect/`. `connect_requested`
-only means the native API was invoked; verify the real server authentication,
+Requests that pass preflight and reach the game executor write a unique report
+under `psa-qa-connect/`, unless report I/O fails (logged separately). Preflight
+rejections, such as missing settings or a mod hash mismatch, exit the CLI with
+a nonzero status and do not create a report. Check the CLI exit code before
+waiting for a report. `connect_requested` only means the native API was invoked;
+verify the real server authentication,
 world-entry log and current player count separately. Actual v16 Mac/N100 entry
 passed and a second request returned `active_world_refused` while the player
 remained connected. The new server contains 313 production mods and no probes;
@@ -112,3 +116,9 @@ Rebuilt 0.2 helpers are byte-identical, and the default control helper still
 matches its original hash. See
 `evidence/minecraft-qa-connect-build-and-runtime.json` for source/build hashes
 and sanitized actual runtime results.
+
+Actual missing-settings and wrong-common-hash controls each exited the CLI
+with status 1 and produced no new report. The original private settings bytes
+and mode were restored after each test. The same authenticated player remained
+connected, with no extra login/join or disconnect. Unknown builder kinds were
+also rejected by both CLI (status 2) and direct API, before output creation.
