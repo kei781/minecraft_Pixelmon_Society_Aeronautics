@@ -1517,35 +1517,43 @@
     "both_production_client_mixins_applied_in_log": true,
     "cases": [
       {
-        "completed": 143,
-        "reputation": 31,
-        "discount_percent": 40.0
+        "fixture_completed_count": 143,
+        "observed_reputation": 31,
+        "observed_discount_percent": 40.0
       },
       {
-        "completed": 135,
-        "reputation": 30,
-        "discount_percent": 40.0
+        "fixture_completed_count": 135,
+        "observed_reputation": 30,
+        "observed_discount_percent": 40.0
       },
       {
-        "completed": 32768,
-        "reputation": 564,
-        "bar_progress_numerator": 112,
-        "bar_progress_denominator": 114,
-        "discount_percent": 40.0
+        "fixture_completed_count": 32768,
+        "observed_reputation": 564,
+        "observed_discount_percent": 40.0,
+        "fixture_expected_level_progress": {
+          "numerator": 112,
+          "denominator": 114,
+          "source": "Native BoardCompanion.levelProgress computed from owned fixture input; numeric fraction is not displayed by the GUI."
+        },
+        "observed_bar_approx_percent": 98
       },
       {
-        "completed": 65536,
-        "reputation": 802,
-        "bar_progress_numerator": 12,
-        "bar_progress_denominator": 162,
-        "discount_percent": 40.0
+        "fixture_completed_count": 65536,
+        "observed_reputation": 802,
+        "observed_discount_percent": 40.0,
+        "fixture_expected_level_progress": {
+          "numerator": 12,
+          "denominator": 162,
+          "source": "Native BoardCompanion.levelProgress computed from owned fixture input; numeric fraction is not displayed by the GUI."
+        },
+        "observed_bar_approx_percent": 7
       },
       {
-        "completed": 0,
-        "reputation": 0,
-        "bar_empty": true,
-        "discount_percent": 0.0,
-        "reopen_retains_result": true
+        "reopen_retains_result": true,
+        "fixture_completed_count": 0,
+        "observed_reputation": 0,
+        "observed_discount_percent": 0.0,
+        "observed_bar_empty": true
       }
     ],
     "pause_menu": {
@@ -1571,6 +1579,6 @@
       "2026-11-09_13.02.47.png": "745a32109a41bd398a85ec3193c879ca681f680e8e99cbe6700dbb0a63645da0",
       "2026-11-09_13.03.07.png": "af8b81f0d72f39ab3759b4f264b7714d939aac88bc2106342d5714cf8a6f8703"
     },
-    "limits": "Existing authenticated instance updated to matching candidate JARs. Owned disposable board NBT fixtures; not natural quest completion. Raw reports/screenshots remain Windows. No fresh full-pack import claimed."
+    "limits": "Existing authenticated instance updated to matching candidate JARs. Owned disposable board NBT fixtures; not natural quest completion. Raw reports/screenshots remain Windows. No fresh full-pack import claimed. Completed counters are fixture inputs, not numbers read from the GUI. Exact progress fractions are computed native expectations; GUI observations are reputation, discount text and approximate bar fill."
   }
 }
