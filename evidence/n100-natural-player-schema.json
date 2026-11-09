@@ -68,5 +68,8 @@
   "temporary_inspector_removed": true,
   "all_gameplay_or_six_player_verified": false,
   "original_script_set_restored": true,
-  "script_reload_errors_after_cleanup": 0
+  "script_reload_errors_after_cleanup": 0,
+  "common_jar_set_sha256": "fd39fefd2b6c5f9408108d96603629e2a438c289169f1100168ea66cce5b5e74",
+  "port_sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+  "linked_windows_verification": "evidence/windows-entity-data-verification.json"
 }

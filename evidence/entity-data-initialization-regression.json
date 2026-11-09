@@ -511,8 +511,14 @@
       "net.minecraft.world.entity.animal.goat.Goat",
       "com.pixelmonmod.pixelmon.entities.pixelmon.AbstractBaseEntity"
     ],
-    "reference": "pinned full-mod Mac dedicated QA server, not a direct full N100 registration trace",
+    "reference": "pinned full common-mod Mac dedicated server, not a full N100 registration trace",
     "windows_run_locally_after_authentication": true,
-    "all_gameplay_verified": false
-  }
+    "all_gameplay_verified": false,
+    "probe_version": "0.3",
+    "windows_trace_sha256": "1bed9269373ea519df6857828d45e25f5d31a9e1ee9cce4cafc13d13ee8cdbbf",
+    "reference_trace_sha256": "3fcaf3888dd33d9ccf5ae5a68457a200633463fcec2ee8839be1918a22e91316",
+    "comparator_sha256": "cebc38f6512bc607baf9022d5dbefc9ba03eb6b038550858ee22a4de13f2ac5d",
+    "allocator_identity_includes_static_initializer": true
+  },
+  "authenticated_windows_verification_evidence": "evidence/windows-entity-data-verification.json"
 }

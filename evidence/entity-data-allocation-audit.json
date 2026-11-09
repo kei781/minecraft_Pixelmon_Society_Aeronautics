@@ -910,7 +910,10 @@
     "invokedynamic_and_ldc_handle_references": 2,
     "actual_detected": 2,
     "fixture": "tests/entity-data-audit/AllocationHandleFixture.java",
-    "fixture_is_never_loaded": true
+    "fixture_is_never_loaded": true,
+    "verification_log_sha256": "637519570c7c684e89227aaf0773cb13f3757814b90ffa066a2f58dac4341fca",
+    "controller_asserted_exactly_two_handle_rows": true,
+    "controller_asserted_summary_count_two": true
   },
   "observed_cross_side_comparison": {
     "shared_owners": 339,
@@ -926,9 +929,18 @@
       "net.minecraft.world.entity.animal.goat.Goat",
       "com.pixelmonmod.pixelmon.entities.pixelmon.AbstractBaseEntity"
     ],
-    "reference": "pinned full-mod Mac dedicated QA server, not a direct full N100 registration trace",
+    "reference": "pinned full common-mod Mac dedicated server, not a full N100 registration trace",
     "windows_run_locally_after_authentication": true,
-    "all_gameplay_verified": false
+    "all_gameplay_verified": false,
+    "probe_version": "0.3",
+    "windows_trace_sha256": "1bed9269373ea519df6857828d45e25f5d31a9e1ee9cce4cafc13d13ee8cdbbf",
+    "reference_trace_sha256": "3fcaf3888dd33d9ccf5ae5a68457a200633463fcec2ee8839be1918a22e91316",
+    "comparator_sha256": "cebc38f6512bc607baf9022d5dbefc9ba03eb6b038550858ee22a4de13f2ac5d",
+    "allocator_identity_includes_static_initializer": true
   },
-  "initial_v6_common_class_entries": 70808
+  "initial_v6_common_class_entries": 70808,
+  "allocation_jsonl_output_integrity": {
+    "helper_scan_current_common_and_current_full_client_byte_identical": true,
+    "reason": "New compatibility classes and selected client additions/replacement/helper contain no allocation callsite; the filtered callsite output is identical though all class entries were examined."
+  }
 }
