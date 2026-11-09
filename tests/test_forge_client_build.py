@@ -1,4 +1,5 @@
 import hashlib
+import io
 import json
 from pathlib import Path
 import sys
@@ -23,14 +24,26 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.extras.mkdir()
         (self.server/'.psa-forge-candidate.json').write_text('{}')
         self.files = []
+        self.fixture_data = {}
         for name, kind, side, data in [('shared.jar','mod','both',b'shared fixture'),
                 ('client.jar','mod','client',b'client fixture'), ('resource.zip','resourcepack','client',b'resource fixture'),
                 ('shader.zip','shaderpack','client',b'shader fixture')]:
             path = client.target_path(kind, name)
+            data = self.archive_bytes({'fixture.txt': data})
+            self.fixture_data[name] = data
             source = self.server/path if side=='both' else self.extras/name
             source.write_bytes(data)
             self.files.append({'path':path,'kind':kind,'side':side,'project_id':len(self.files)+1,
                 'file_id':len(self.files)+11,'size':len(data),'hashes':self.hashes(data),'url':'https://example.test/'+name})
+        alias = client.forge_item_model_alias
+        model, texture = b'{"parent":"minecraft:item/generated"}', b'owned fixture texture'
+        data = self.archive_bytes({alias.MODEL: model, alias.TEXTURE: texture})
+        (self.server/alias.JAR).write_bytes(data)
+        self.files.append({'path':alias.JAR,'kind':'mod','side':'both','project_id':5,'file_id':15,
+            'size':len(data),'hashes':self.hashes(data),'url':'https://example.test/decorative.jar'})
+        guard = patch.multiple(alias, JAR_SHA256=hashlib.sha256(data).hexdigest(),
+            MODEL_SHA256=hashlib.sha256(model).hexdigest(), TEXTURE_SHA256=hashlib.sha256(texture).hexdigest())
+        guard.start(); self.addCleanup(guard.stop)
         self.pixel = self.server/'mods/Pixelmon-1.20.1-9.2.3-universal.jar'
         self.replacement = 'data/pixelmon/spawn_replacement/test.json'
         with zipfile.ZipFile(self.pixel,'w') as z:
@@ -45,7 +58,7 @@ class ForgeClientBuildTest(unittest.TestCase):
             'replacement_logic':'simple','specs':[]},indent=2)+'\n').encode()
         target=self.server/'kubejs'/self.replacement;target.parent.mkdir(parents=True);target.write_bytes(neutral)
         (self.server/'kubejs/server_scripts/init.js').write_bytes(b'// fixture')
-        self.overrides={'kubejs/server_scripts/init.js':b'// fixture','shaderpacks/shader.zip':b'shader fixture',
+        self.overrides={'kubejs/server_scripts/init.js':b'// fixture','shaderpacks/shader.zip':self.fixture_data['shader.zip'],
             'config/resourcepackoverrides.json':json.dumps({'schema_version':2,'default_packs':['vanilla'],
                 'pack_overrides':{}}).encode(),
             'configureddefaults/options.txt':b'lang:en_us\nresourcePacks:["vanilla"]\n'}
@@ -53,9 +66,16 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.lock={'minecraft':'1.20.1','forge':'47.4.20','society':'fixture','files':self.files}
         self.write_base()
         (self.root/'forge-candidate-lock.json').write_text('{}')
-        for name,value in [('ROOT',self.root),('EXPECTED_FILES',4),('EXPECTED_SHARED',1),('EXPECTED_REPLACEMENTS',1),('EXPECTED_MODEL_OVERRIDES',1),
+        for name,value in [('ROOT',self.root),('EXPECTED_FILES',5),('EXPECTED_SHARED',2),('EXPECTED_REPLACEMENTS',1),('EXPECTED_MODEL_OVERRIDES',1),
                 ('PIXELMON_SHA256',client.digest(self.pixel)),('PORT_SHA256',client.digest(self.port))]:
             context=patch.object(client,name,value);context.start();self.addCleanup(context.stop)
+
+    @staticmethod
+    def archive_bytes(files):
+        stream = io.BytesIO()
+        with zipfile.ZipFile(stream, 'w') as archive:
+            for name, data in files.items(): archive.writestr(name, data)
+        return stream.getvalue()
 
     @staticmethod
     def hashes(data):
@@ -81,17 +101,22 @@ class ForgeClientBuildTest(unittest.TestCase):
 
     def test_real_build_places_resources_and_deduplicates_identical_shader(self):
         report=self.build()
-        self.assertEqual(report['mod_jars'],4)
+        self.assertEqual(report['mod_jars'],5)
         with zipfile.ZipFile(self.output) as z:
-            self.assertEqual(z.read('overrides/mods/shared.jar'),b'shared fixture')
-            self.assertEqual(z.read('overrides/resourcepacks/resource.zip'),b'resource fixture')
-            self.assertEqual(z.read('overrides/shaderpacks/shader.zip'),b'shader fixture')
+            self.assertEqual(z.read('overrides/mods/shared.jar'),self.fixture_data['shared.jar'])
+            self.assertEqual(z.read('overrides/resourcepacks/resource.zip'),self.fixture_data['resource.zip'])
+            self.assertEqual(z.read('overrides/shaderpacks/shader.zip'),self.fixture_data['shader.zip'])
             self.assertNotIn('overrides/mods/resource.zip',z.namelist())
             self.assertEqual(z.namelist().count('overrides/shaderpacks/shader.zip'),1)
             self.assertIn('overrides/resourcepacks/PSA-Forge-Model-Compat.zip',z.namelist())
             config=json.loads(z.read('overrides/config/resourcepackoverrides.json'))
             self.assertEqual(config['default_packs'],['vanilla','file/PSA-Forge-Model-Compat.zip'])
             self.assertTrue(config['pack_overrides']['file/PSA-Forge-Model-Compat.zip']['required'])
+            profile = json.loads(z.read('overrides/psa-forge-client-profile.json'))
+            alias = client.forge_item_model_alias
+            self.assertEqual(json.loads(z.read('overrides/kubejs/' + alias.TARGET)), {'parent': alias.PARENT})
+            self.assertEqual(len(profile['item_model_aliases']), 1)
+        self.assertFalse((self.server/'kubejs'/client.forge_item_model_alias.TARGET).exists())
 
     def test_kubejs_mismatch_fails_before_output(self):
         (self.server/'kubejs/server_scripts/init.js').write_bytes(b'changed')
@@ -132,11 +157,11 @@ class ForgeClientBuildTest(unittest.TestCase):
 
     def test_menu_fix_is_client_only_and_recorded_in_payload(self):
         menu = self.root/'menu-fixture.jar'
-        menu.write_bytes(b'archive fixture, never executed')
+        menu.write_bytes(self.archive_bytes({'fixture.txt':b'archive fixture, never executed'}))
         before = {p.name: p.read_bytes() for p in (self.server/'mods').iterdir()}
         with patch.object(client, 'MENU_PATCH_SHA256', client.digest(menu)):
             report = client.build(self.server, self.extras, self.society, self.output, menu)
-        self.assertEqual(report['mod_jars'], 5)
+        self.assertEqual(report['mod_jars'], 6)
         self.assertEqual(before, {p.name: p.read_bytes() for p in (self.server/'mods').iterdir()})
         with zipfile.ZipFile(self.output) as archive:
             name = 'mods/' + client.MENU_PATCH_NAME
