@@ -84,6 +84,23 @@ class ItemModelAliasTest(unittest.TestCase):
             alias.apply(overrides, dict(self.files, nested=nested))
         self.assertEqual(overrides, {})
 
+    def test_nonconflicting_folder_zip_and_nested_jar_preserve_inputs(self):
+        stream = io.BytesIO()
+        with zipfile.ZipFile(stream, "w") as archive:
+            archive.writestr(alias.MODEL, self.model)
+            archive.writestr("assets/owned/models/item/unrelated.json", b"{}")
+        safe_zip = stream.getvalue()
+        nested = Path(self.directory.name) / "safe-nested.jar"
+        with zipfile.ZipFile(nested, "w") as archive:
+            archive.writestr("META-INF/jarjar/safe.jar", safe_zip)
+        overrides = {"resourcepacks/safe.zip": safe_zip,
+                     "resourcepacks/safe-folder/" + alias.TEXTURE: self.texture,
+                     "resourcepacks/safe-folder/assets/owned/unrelated.json": b"{}"}
+        before = dict(overrides)
+        alias.apply(overrides, dict(self.files, nested=nested))
+        self.assertEqual({n:overrides[n] for n in before}, before)
+        self.assertEqual(set(overrides) - set(before), {"kubejs/" + alias.TARGET})
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -45,6 +45,20 @@ in `mods/`, has no arbitrary evaluation action, does not redefine classes, and
 does not change authentication or input. Its reports use unique filenames under
 `psa-qa-control/`.
 
+Build the helper from the repository source and committed agent manifest:
+
+```sh
+python3 tools/build_minecraft_qa_control.py --java-home /path/to/jdk17 --output /path/to/fresh/qa-control.jar
+/path/to/jdk17/bin/java --add-modules jdk.attach -cp /path/to/fresh/qa-control.jar dev.psa.qacontrol.MinecraftQaControl PID reload
+```
+
+The recipe rejects an existing output or a destination under `mods/`. The
+actual 0.2 runtime helper is 3,833 bytes, SHA256
+`b6ffd918acf0b00f9c6253e55ec320108f94d421597598fbbefc78f427bc1637`;
+rebuilding with Java 17.0.21 produced identical bytes. Source/manifest hashes
+and actual reload control IDs are in
+`evidence/minecraft-qa-control-build-and-runtime.json`.
+
 The actual Mac trial went from 22 to 21 missing-model sentinels with the same
 17,239-item catalog. All 53 Decorative Blocks dropped-item render returns,
 model masks and cleanup then passed on the authenticated server. Remaining

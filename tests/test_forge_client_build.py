@@ -131,8 +131,12 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.assert_no_export()
 
     def test_windows_collision_fails_before_output(self):
-        self.overrides['resourcepacks/RESOURCE.zip']=b'other';self.write_base()
-        self.assert_no_export()
+        self.overrides['resourcepacks/RESOURCE.zip']=self.archive_bytes({'fixture.txt':b'other'})
+        self.write_base()
+        with self.assertRaisesRegex(ValueError, 'case-colliding'):
+            self.build()
+        self.assertFalse(self.output.exists())
+        self.assertFalse(self.output.parent.exists())
 
     def test_existing_export_is_preserved(self):
         self.output.parent.mkdir();self.output.write_bytes(b'existing artifact')
