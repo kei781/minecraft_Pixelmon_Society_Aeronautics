@@ -137,5 +137,11 @@
   },
   "bounty_creator_name_reference_classes": 5,
   "foreign_bounty_creator_references_found": 0,
-  "input_jar_set": "all354productionfiles matched v8 archive metadata; excludes separate catalog diagnostic"
+  "input_jar_set": "all354productionfiles matched v8 archive metadata; excludes separate catalog diagnostic",
+  "script_config_exact_api_name_search": {
+    "source": "fresh pinned server profile original scripts/config plus bundled JAR text resources/nested libraries",
+    "script_or_config_matches": [],
+    "jar_resource_bounty_creator_matches": [],
+    "limit": "literal/reference search, not proof against arbitrary constructed strings or dynamic behavior"
+  }
 }

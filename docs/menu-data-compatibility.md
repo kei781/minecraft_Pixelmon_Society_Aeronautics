@@ -18,7 +18,9 @@ Windows 탱크 수레 화면이 서버의 물 1,000mB를 0mB로 표시했다. �
 JAVA_HOME="$JDK17" GRADLE_USER_HOME="$TASK_GRADLE_HOME" \
   "$GRADLE" --no-daemon --offline -p "$PORT" \
   -I "$PSA/tools/forge-menu-id-probe.gradle" \
-  -PpsaMenuIdProbeSource="$PSA/tests/forge-menu-id-probe" reobfPsaMenuIdProbeJar
+  -PpsaMenuIdProbeSource="$PSA/tests/forge-menu-id-probe" \
+  -PpsaMenuIdPortJar="$PORT_JAR" \
+  reobfPsaMenuIdProbeJar reobfPsaMenuIdPatchedProbeJar
 ```
 
-출력은 `build/libs/psa-menu-id-probe-0.1.jar`다. 전체 모드 시험에서는 원본 공통 후보와 새 공통 후보에 각각 이 진단 하나를 더해 실행한다. 최소 수정 시험에는 새 공통 후보의 자체 메뉴 클래스 바이트만 같은 진단에 넣은 격리 아티팩트를 사용했다. 원본 대조군은 `-Dpsa.menu.baseline=true`로 실행한다. 새 일회용 월드에서만 사용하며 기존 보고서를 비우고 새 결과 파일·성공 표식·실패 표식 부재·프로세스 종료를 함께 검사한다.
+출력은 `build/libs/psa-menu-id-probe-0.1.jar`와 `build/libs/psa-menu-id-patched-probe-0.1.jar`다. `PORT_JAR`는 위 59466e… 공통 포팅본이다. 전체 모드 시험에서는 원본 공통 후보와 새 공통 후보에 각각 원본 관찰 진단을 더해 실행한다. 최소 수정 시험에는 고정 해시를 검증한 포팅본에서 자체 메뉴 클래스 5개와 커밋된 시험용 믹신 설정만 더하는 보정 작업을 사용한다. 정규화는 두 출력 모두 `tools/forge_resources.py canonical-jar`로 수행한다. 원본 대조군은 `-Dpsa.menu.baseline=true`로 실행한다. 새 일회용 월드에서만 사용하며 기존 보고서를 비우고 새 결과 파일·성공 표식·실패 표식 부재·프로세스 종료를 함께 검사한다. [후속 재생성 검증](../evidence/diagnostic-probe-recipes.json).

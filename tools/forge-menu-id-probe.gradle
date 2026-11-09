@@ -13,14 +13,44 @@ gradle.projectsEvaluated {
         options.encoding = 'UTF-8'
         options.compilerArgs += ['-proc:none']
     }
-    project.tasks.register('psaMenuIdProbeJar', Jar) {
-        dependsOn compiler
-        archiveFileName.set('psa-menu-id-probe-0.1.jar')
-        from compiler.flatMap { it.destinationDirectory }
-        from new File(directory, 'resources')
-        manifest.attributes('FMLModType': 'MOD')
-        preserveFileTimestamps = false
-        reproducibleFileOrder = true
+    [Baseline: 'psaMenuIdProbeJar', Patched: 'psaMenuIdPatchedProbeJar'].each { mode, taskName ->
+        project.tasks.register(taskName, Jar) {
+            dependsOn compiler
+            archiveFileName.set(mode == 'Baseline' ? 'psa-menu-id-probe-0.1.jar' : 'psa-menu-id-patched-probe-0.1.jar')
+            duplicatesStrategy = DuplicatesStrategy.FAIL
+            from compiler.flatMap { it.destinationDirectory }
+            from(new File(directory, 'resources')) {
+                if (mode == 'Baseline') exclude 'psa-menu-id-patched.mixins.json'
+            }
+            if (mode == 'Patched') {
+                from({
+                    def argument = project.findProperty('psaMenuIdPortJar')
+                    if (!argument) throw new GradleException('psaMenuIdPortJar is required for patched probe')
+                    def port = project.file(argument.toString())
+                    if (!port.isFile() || java.nio.file.Files.isSymbolicLink(port.toPath()))
+                        throw new GradleException('A regular pinned common port JAR is required')
+                    def digest = java.security.MessageDigest.getInstance('SHA-256')
+                    port.withInputStream { input ->
+                        byte[] buffer = new byte[65536]
+                        int length
+                        while ((length = input.read(buffer)) != -1) digest.update(buffer, 0, length)
+                    }
+                    if (digest.digest().encodeHex().toString() != '59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe')
+                        throw new GradleException('Unexpected menu port identity')
+                    project.zipTree(port)
+                }) {
+                    include 'dev/psa/compat/TankCartMenuDataMixin.class'
+                    include 'dev/psa/compat/BatteryCartMenuDataMixin.class'
+                    include 'dev/psa/compat/BatteryCartMenuTypeMixin.class'
+                    include 'dev/psa/menudata/MenuIntData.class'
+                    include 'dev/psa/menudata/MenuIntData$1.class'
+                }
+                manifest.attributes('MixinConfigs': 'psa-menu-id-patched.mixins.json')
+            }
+            manifest.attributes('FMLModType': 'MOD')
+            preserveFileTimestamps = false
+            reproducibleFileOrder = true
+        }
+        project.reobf.create(taskName)
     }
-    project.reobf.create('psaMenuIdProbeJar')
 }

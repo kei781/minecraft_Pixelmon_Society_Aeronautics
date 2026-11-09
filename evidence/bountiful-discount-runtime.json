@@ -1,5 +1,5 @@
 {
-  "scope": "actual original factory argument observed without mutation; client-only pure normalization exercised on common class in isolated headless runtime; authenticated client rendering remains a separate check",
+  "scope": "Actual original factory argument observed without mutation; pure normalization exercised in isolated common-class headless control; authenticated Windows existing-instance GUI completed separately below. Fresh full-package GUI import remains open.",
   "helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
   "helper_bytes": 4778,
   "independent_builds_byte_identical": true,
@@ -1495,9 +1495,82 @@
       0,
       "reopen",
       "pause_menu"
-    ]
+    ],
+    "snapshot_note": "Historical first-join snapshot; all remaining controls completed in windows_candidate_final."
   },
   "production_patch_class_sha256": "8add46d3a97c45a2e35cccabb237d4d3cbdd4b8bd7648853db3f7ef4bf4e2759",
   "probe_observer_and_test_classes_identical_between_controls": true,
-  "tested_patch_class_identical_to_production_helper": true
+  "tested_patch_class_identical_to_production_helper": true,
+  "source_based_regeneration_evidence": "diagnostic-probe-recipes.json",
+  "initial_run_artifacts_note": "R1 execution artifacts retained as provenance; reproducible paired build/canonical new artifacts rerun separately with identical discount classes.",
+  "windows_candidate_final": {
+    "report_sha256": "c713fb7d8606081afb5565ddb5e619ae8b6509131d9846f5b72000bf04978fba",
+    "hash_checked_utc": "2026-11-09T04:04:10.705399+00:00",
+    "helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+    "common_port_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+    "common_313_manifest_sha256": "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812",
+    "total_jars_with_diagnostic": 355,
+    "common_jar_mismatches": 0,
+    "jar_changes_after_install": 0,
+    "target_packet_type_exceptions": 0,
+    "new_mixin_exceptions": 0,
+    "both_production_client_mixins_applied_in_log": true,
+    "cases": [
+      {
+        "completed": 143,
+        "reputation": 31,
+        "discount_percent": 40.0
+      },
+      {
+        "completed": 135,
+        "reputation": 30,
+        "discount_percent": 40.0
+      },
+      {
+        "completed": 32768,
+        "reputation": 564,
+        "bar_progress_numerator": 112,
+        "bar_progress_denominator": 114,
+        "discount_percent": 40.0
+      },
+      {
+        "completed": 65536,
+        "reputation": 802,
+        "bar_progress_numerator": 12,
+        "bar_progress_denominator": 162,
+        "discount_percent": 40.0
+      },
+      {
+        "completed": 0,
+        "reputation": 0,
+        "bar_empty": true,
+        "discount_percent": 0.0,
+        "reopen_retains_result": true
+      }
+    ],
+    "pause_menu": {
+      "gui_scale": 4,
+      "all_visible": [
+        "Wiki",
+        "Credits",
+        "Pixelmon",
+        "Discord"
+      ],
+      "overlap": false
+    },
+    "screenshots_sha256": {
+      "2026-11-09_12.44.48.png": "b01c64cb099eb6b050843becdb2181c14194342afa3f236261041a46334fed21",
+      "2026-11-09_12.47.43.png": "97a50f1c5cb8c3d4eca257e961e973394d59768f3836864c5f2a04b35a5c9416",
+      "2026-11-09_12.53.10.png": "15b341512985916d511c8fc28b45489ddfecf675421b97a8d77045c9423e361e",
+      "2026-11-09_12.53.24.png": "8e91d7d096e61760e1d13cc6f31c5c8fd706b69b4004258ae4e60e1ad3737cb6",
+      "2026-11-09_12.58.01.png": "9daf2fae7c9f03372b28d8ae20eeedbcd56d02fd6ffa57985b1f5c8517e2423d",
+      "2026-11-09_12.58.14.png": "0516d4ce33411a9fdc76369584e5c25773e0719c72fc1b14ce973d1758f4eee5",
+      "2026-11-09_13.01.53.png": "1f10e5cc0aad9be93c3d162cb8a38795b2c586534f923ddfcb1a91166f21ebe3",
+      "2026-11-09_13.02.07.png": "c8b9b0fd0013741c0ee2c0b520242b877c5d7d427664befa0c43334681f560be",
+      "2026-11-09_13.02.34.png": "123cc7c42380b9b4f98ba0d4879b9aaba5f7d2fe4c4c4de6505e038791bc0141",
+      "2026-11-09_13.02.47.png": "745a32109a41bd398a85ec3193c879ca681f680e8e99cbe6700dbb0a63645da0",
+      "2026-11-09_13.03.07.png": "af8b81f0d72f39ab3759b4f264b7714d939aac88bc2106342d5714cf8a6f8703"
+    },
+    "limits": "Existing authenticated instance updated to matching candidate JARs. Owned disposable board NBT fixtures; not natural quest completion. Raw reports/screenshots remain Windows. No fresh full-pack import claimed."
+  }
 }

@@ -10,6 +10,21 @@
 
 격리 Forge 전체 팩에서 실제 원본 서버 생성자를 호출하고, 생성자에 전달되는 평판을 바꾸지 않는 관찰기로 읽었다. 이어 원본 할인 함수를 대조했다. 입력 70건에서 원본의 범위 밖 표시 차이 9건을 재현했고, 보정본은 모두 원래 서버 계산과 같았다. 정상 범위 61건의 원본·보정 결과는 IEEE754 비트 단위로 같다. [실행 기록](../evidence/bountiful-discount-runtime.json).
 
-이 함수 검사는 클라이언트 전용 보정 클래스의 같은 바이트를 시험용 공통 믹신 설정으로 격리 전용 서버에 적용한 대조다. 실제 Windows 화면이나 실제 의뢰 완료 검증을 대신하지 않는다. 해당 진단 JAR은 운영 서버·플레이어 패키지에 포함하지 않는다. Windows 적용 대조와 독립 리뷰는 진행 중이다.
+이 함수 검사는 클라이언트 전용 보정 클래스의 같은 바이트를 시험용 공통 믹신 설정으로 격리 전용 서버에 적용한 대조다. 해당 진단 JAR은 운영 서버·플레이어 패키지에 포함하지 않는다. 별도로 Windows 인증 접속 화면에서 평판 30·31·564·802의 할인 40.0%, 0 복구·재열기, 일시정지 메뉴 겹침 없음까지 확인했다. 기존 인스턴스에 후보를 적용한 검사이며 전체 팩 새 가져오기와 실제 의뢰 완료는 아직 검증하지 않았다. [Windows 결과](../evidence/bountiful-discount-runtime.json). 독립 재리뷰는 진행 중이다.
 
-진단 빌드는 기존 고정 Forge 개발 트리에서 `tools/forge-bounty-discount-probe.gradle`과 `-PpsaDiscountProbeSource=/absolute/path/tests/forge-bounty-discount-probe`를 지정해 `reobfPsaDiscountProbeJar`를 실행한다. 원본 대조군에는 관찰 진단만 추가한다. 보정 대조군에는 후보에서 추출한 `BountifulDiscountMixin.class`와 별도의 시험용 믹신 설정만 더한다. 보정군은 `-Dpsa.discount.patched=true`로 실행하고 새 보고서·성공 표식·실패 표식 부재·정상 종료를 함께 확인한다.
+원본·보정 진단의 빌드 경로와 시험용 공통 믹신 설정을 저장소에 포함했다. 아래의 원본 작업은 후보 바이너리 인수 없이도 실행할 수 있다. 보정 작업은 정확한 1.1 후보 해시를 검증하고 해당 클래스 하나만 넣는다. 다른 버전 파일은 거부한다.
+
+```bash
+JAVA_HOME="$JDK17" GRADLE_USER_HOME="$TASK_GRADLE_HOME" \
+  "$GRADLE" --no-daemon --offline -p "$PORT" \
+  -I "$PSA/tools/forge-bounty-discount-probe.gradle" \
+  -PpsaDiscountProbeSource="$PSA/tests/forge-bounty-discount-probe" \
+  -PpsaDiscountHelperJar="$HELPER_JAR" \
+  reobfPsaDiscountProbeJar reobfPsaDiscountPatchedProbeJar
+python3 "$PSA/tools/forge_resources.py" canonical-jar \
+  "$PORT/build/libs/psa-discount-probe-0.1.jar" /fresh/baseline.jar
+python3 "$PSA/tools/forge_resources.py" canonical-jar \
+  "$PORT/build/libs/psa-discount-patched-probe-0.1.jar" /fresh/patched.jar
+```
+
+`HELPER_JAR`는 위 44cac… 파일이다. 보정군은 `-Dpsa.discount.patched=true`로 실행한다. 새 보고서·성공 표식·실패 표식 부재·정상 종료를 함께 확인한다. 이전 수동 조립본과 새 빌드본의 해시 차이는 매니페스트·믹신 설정 직렬화·ZIP 메타데이터를 구분해 기록하며, 같은 클래스 바이트와 새 아티팩트 재실행으로 검증한다. [재생성 검증](../evidence/diagnostic-probe-recipes.json).
