@@ -475,12 +475,44 @@
   ],
   "original_two_orders_differ": true,
   "patched_two_orders_match": true,
-  "authenticated_windows_after_fix_verified": false,
+  "authenticated_windows_after_fix_verified": true,
   "all_gameplay_or_six_players_verified": false,
   "controller_tests": {
-    "discovered": 54,
-    "passed": 51,
+    "discovered": 56,
+    "passed": 53,
     "skipped_linux_only": 3,
-    "log_sha256": "023906be8ecc1c766def48e7b956f7e2bf0f3492ca9e00d5150ec4eb04ffb576"
+    "log_sha256": "2ed0f8af3fabfec0ef97f2783283b92bf05ad1fadbb9243e0d4c2f4798bab7b4"
+  },
+  "actual_n100_natural_player_schema_evidence": "evidence/n100-natural-player-schema.json",
+  "windows_actual_reconnect_evidence": "two distinct authenticated joins with intervening disconnect in actual N100 log, plus Windows UI persistence and local error count; legacy LocalPlayer snapshot numbers not used as reconnect proof",
+  "windows_field_type_or_packet_failures_observed_after_fix": 0,
+  "patched_local_order_trace_comparison": {
+    "scope": "observed allocation IDs, serializer classes and allocator order only; no field values",
+    "shared_owners": 339,
+    "different_owners": 0,
+    "differences": [],
+    "missing_required_owners": [],
+    "left_only_owners": [],
+    "right_only_owners": [],
+    "required_observed_schemas_match": true,
+    "all_registered_entities_or_gameplay_verified": false
+  },
+  "authenticated_windows_vs_reference_trace_comparison": {
+    "shared_owners": 339,
+    "different_owners": 0,
+    "missing_required_owners": [],
+    "left_only_owners": [],
+    "right_only_owners": [],
+    "allocator_resolution": "first static initializer in the helper call chain, falling back to first callsite",
+    "required_owners": [
+      "net.minecraft.world.entity.player.Player",
+      "com.alc.moreminecarts.entities.FlagCartEntity",
+      "com.alc.moreminecarts.entities.TankCartEntity",
+      "net.minecraft.world.entity.animal.goat.Goat",
+      "com.pixelmonmod.pixelmon.entities.pixelmon.AbstractBaseEntity"
+    ],
+    "reference": "pinned full-mod Mac dedicated QA server, not a direct full N100 registration trace",
+    "windows_run_locally_after_authentication": true,
+    "all_gameplay_verified": false
   }
 }

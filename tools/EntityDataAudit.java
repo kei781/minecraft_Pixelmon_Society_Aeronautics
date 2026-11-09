@@ -8,12 +8,14 @@ import java.util.Set;
 import java.util.zip.ZipInputStream;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
+import org.objectweb.asm.Handle;
+import org.objectweb.asm.ConstantDynamic;
 import org.objectweb.asm.tree.*;
 import org.objectweb.asm.tree.analysis.*;
 
 /** Offline metadata audit. Never loads any Minecraft or mod class. JSONL on stdout. */
 public final class EntityDataAudit {
-    private static int classes, registrations, helpers, dynamic;
+    private static int classes, registrations, helpers, dynamic, handleReferences;
     private static int classArgument(MethodInsnNode call) {
         if (call.owner.equals("net/minecraft/network/syncher/SynchedEntityData")
                 && Set.of("defineId", "m_135353_").contains(call.name)) {
@@ -55,6 +57,21 @@ public final class EntityDataAudit {
         }
         return -1;
     }
+    private static void inspectConstant(String artifact, ClassNode node, MethodNode method, Object value) {
+        if (value instanceof Handle handle) {
+            MethodInsnNode call = new MethodInsnNode(Opcodes.INVOKESTATIC, handle.getOwner(), handle.getName(), handle.getDesc(), handle.isInterface());
+            if (classArgument(call) < 0) return;
+            handleReferences++;
+            System.out.println("{\"jar\":" + quote(artifact) + ",\"class\":" + quote(node.name)
+                    + ",\"method\":" + quote(method.name + method.desc) + ",\"owners\":[],\"serializers\":[],"
+                    + "\"call_type\":\"HANDLE\",\"kind\":\"DYNAMIC_OWNER\",\"owner_is_forwarded_parameter\":false,"
+                    + "\"allocation_api\":" + quote(handle.getOwner() + "#" + handle.getName() + handle.getDesc()) + "}");
+        } else if (value instanceof ConstantDynamic constant) {
+            inspectConstant(artifact, node, method, constant.getBootstrapMethod());
+            for (int i = 0; i < constant.getBootstrapMethodArgumentCount(); i++)
+                inspectConstant(artifact, node, method, constant.getBootstrapMethodArgument(i));
+        }
+    }
     private static Set<String> mixinTargets(ClassNode node) {
         Set<String> result = new LinkedHashSet<>();
         List<AnnotationNode> annotations = new ArrayList<>();
@@ -77,6 +94,12 @@ public final class EntityDataAudit {
         new org.objectweb.asm.ClassReader(bytes).accept(node, 0);
         Set<String> targets = mixinTargets(node);
         for (MethodNode method : node.methods) {
+            for (AbstractInsnNode insn : method.instructions) {
+                if (insn instanceof InvokeDynamicInsnNode invocation) {
+                    inspectConstant(artifact, node, method, invocation.bsm);
+                    for (Object argument : invocation.bsmArgs) inspectConstant(artifact, node, method, argument);
+                } else if (insn instanceof LdcInsnNode constant) inspectConstant(artifact, node, method, constant.cst);
+            }
             boolean relevant = false;
             for (AbstractInsnNode insn : method.instructions) if (insn instanceof MethodInsnNode call
                     && classArgument(call) >= 0) relevant = true;
@@ -137,6 +160,7 @@ public final class EntityDataAudit {
     public static void main(String[] args) throws Exception {
         if (args.length == 0) throw new IllegalArgumentException("Supply explicit mod JAR paths");
         for (String name : args) archive(Path.of(name).getFileName().toString(), Files.readAllBytes(Path.of(name)));
-        System.err.println("classes=" + classes + " direct_registrations=" + registrations + " helper_calls=" + helpers + " dynamic_owner_calls=" + dynamic);
+        System.err.println("classes=" + classes + " direct_registrations=" + registrations + " helper_calls=" + helpers
+                + " dynamic_owner_calls=" + dynamic + " allocation_handle_references=" + handleReferences);
     }
 }

@@ -62,7 +62,9 @@ v5 당시 배치용 정규화 JAR SHA256은 `cc31e4ab2684567361aab8fedc0be25bf43
 
 ## 격리 서버 준비
 
-Phase 4의 새 v6 준비 도구는 실제 플레이어 접속에서 발견한 Pixelmon 셰이더 패킷 보정을 포함한 `a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74`를 고정한다. 위 `cc31e4…`는 이전 v5 운영본의 보존 기록이다. v6는 독립 리뷰 후 N100에 배치했고 Windows PC에도 전달했으며 실제 Windows 재접속 검증은 남아 있다.  [변경과 검사 범위](pixelmon-shader-compatibility.md)에 설명했다.
+v6 당시 준비 도구는 Pixelmon 셰이더 패킷 보정을 포함한 `a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74`를 고정했다. 위 `cc31e4…`와 함께 이전 운영본의 보존 기록이다. [v6 변경 범위](pixelmon-shader-compatibility.md)를 참조한다.
+
+현재 준비·내보내기 도구의 포팅 JAR 고정값은 `6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99`, 44,446,971바이트다. v6에 플레이어·광산수레 등록 보정을 추가한 후보이며 같은 JAR를 양쪽에 설치해야 한다. 기존 v6 프로필은 새 도구의 입력 해시 검사에 통과하지 않는다. [동기화 변경과 검증 범위](player-data-compatibility.md)를 참조한다.
 
 해시를 고정한 세 입력이 로컬에 있을 때 다음 도구로 새로운 프로필을 준비한다. `forge-candidate-lock.json`의 실제 공식 다운로드 URL·배포처 SHA1/SHA512·크기도 확인하고 입력 검증 결과를 프로필 영수증에 남긴다. 원본 311개 JAR, Pixelmon 교체 데이터 68개를 확인한다. 기존 경로를 덮어쓰지 않는다.
 

@@ -15,7 +15,7 @@ gradle.projectsEvaluated {
     }
     project.tasks.register('psaCatalogProbeJar', Jar) {
         dependsOn compiler
-        archiveFileName.set('psa-catalog-probe-0.3.jar')
+        archiveFileName.set('psa-catalog-probe-0.4.jar')
         from compiler.flatMap { it.destinationDirectory }
         from new File(directory, 'resources')
         manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': 'psa-catalog-probe.mixins.json')

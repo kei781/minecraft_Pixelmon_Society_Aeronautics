@@ -1,7 +1,7 @@
 {
   "scope": "all direct defineId/m_135353_ callsites in the installed pinned mods including nested jarjar libraries; no mod classes executed by scanner",
   "common_jars": 313,
-  "common_class_entries": 70808,
+  "common_class_entries": 70810,
   "common_direct_calls": 556,
   "common_classifications": {
     "OWN_CLASS": 496,
@@ -509,14 +509,18 @@
     }
   ],
   "limits": [
-    "Static callsite classification is not a gameplay or client render check.",
-    "Dynamic helper paths require runtime and installed script inspection; unexercised paths are not passed.",
-    "Windswept Goat variant has one external allocator; client/server trace comparison remains pending."
+    "Static callsite classification and observed allocation comparison do not prove item rendering, placement, behavior or all entity variants.",
+    "Pixelmon DataSync external helper calls (Pokemon7/PokemonBase1 to AbstractBaseEntity) and Windswept Goat are explicitly included in the required339owner cross-side comparison, which passed with initializer-aware signatures.",
+    "Dynamic forwarding helper parameters were inspected; EntityJS getClass-based paths have no observed registration and installed scripts have no addSyncedData call. Any new scripts require reinspection.",
+    "Owners absent from either runtime trace must remain uncovered; current two traces have no unshared owners.",
+    "The initial70808common/8767client additions-or-replacements class-entry counts describe the v6 baseline search; current full candidates were rescanned separately, including the own menu helper and actual selected client replacement."
   ],
   "raw_metadata_sha256": {
     "common": "5ab7d60bcc5c2256bdcce3ee0038a69dc428aa52e81dbc77fc7fd53ec95404c3",
     "client": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "helper_scan": "f46e820aa384ceb5381c7c466262d292e502520ad39ec1a7407a6a8cf16da9f6"
+    "helper_scan": "f46e820aa384ceb5381c7c466262d292e502520ad39ec1a7407a6a8cf16da9f6",
+    "current-common": "f46e820aa384ceb5381c7c466262d292e502520ad39ec1a7407a6a8cf16da9f6",
+    "current-full-client": "f46e820aa384ceb5381c7c466262d292e502520ad39ec1a7407a6a8cf16da9f6"
   },
   "known_dynamic_helper_calls": 137,
   "helper_classifications": {
@@ -895,5 +899,36 @@
       "kind": "DYNAMIC_OWNER"
     }
   ],
-  "npc_terminal_helper_calls_owned_by_caller": 32
+  "npc_terminal_helper_calls_owned_by_caller": 32,
+  "current_common_class_entries": 70810,
+  "current_full_client_mod_jars": 354,
+  "current_full_client_class_entries": 79461,
+  "current_port_sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+  "allocation_method_handle_references_common": 0,
+  "allocation_method_handle_references_full_client": 0,
+  "method_handle_detection_control": {
+    "invokedynamic_and_ldc_handle_references": 2,
+    "actual_detected": 2,
+    "fixture": "tests/entity-data-audit/AllocationHandleFixture.java",
+    "fixture_is_never_loaded": true
+  },
+  "observed_cross_side_comparison": {
+    "shared_owners": 339,
+    "different_owners": 0,
+    "missing_required_owners": [],
+    "left_only_owners": [],
+    "right_only_owners": [],
+    "allocator_resolution": "first static initializer in the helper call chain, falling back to first callsite",
+    "required_owners": [
+      "net.minecraft.world.entity.player.Player",
+      "com.alc.moreminecarts.entities.FlagCartEntity",
+      "com.alc.moreminecarts.entities.TankCartEntity",
+      "net.minecraft.world.entity.animal.goat.Goat",
+      "com.pixelmonmod.pixelmon.entities.pixelmon.AbstractBaseEntity"
+    ],
+    "reference": "pinned full-mod Mac dedicated QA server, not a direct full N100 registration trace",
+    "windows_run_locally_after_authentication": true,
+    "all_gameplay_verified": false
+  },
+  "initial_v6_common_class_entries": 70808
 }

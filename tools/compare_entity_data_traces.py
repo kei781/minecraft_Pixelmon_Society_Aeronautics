@@ -23,7 +23,11 @@ def read_trace(path):
         fields = owners.setdefault(owner, {})
         if index in fields:
             raise ValueError("Duplicate owner/index; use a trace from one fresh JVM run")
-        fields[index] = {"id": index, "serializer_class": serializer, "allocator": callers.split(" <- ")[0]}
+        frames = callers.split(" <- ")
+        # Helpers such as DataSync allocate for several independent static initializers.
+        # Keeping only DataSync#<init> would erase the allocator that determines order.
+        allocator = next((frame for frame in frames if frame.endswith("#<clinit>")), frames[0])
+        fields[index] = {"id": index, "serializer_class": serializer, "allocator": allocator}
     if not owners:
         raise ValueError("No observed allocations")
     return {key: [fields[i] for i in sorted(fields)] for key, fields in sorted(owners.items())}
