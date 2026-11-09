@@ -1,0 +1,45 @@
+{
+  "task": 8,
+  "accepted_scope": "Client Bountiful discount display matches existing native factory bounded reputation; static callers, paired runtime controls, authenticated existing-instance Windows GUI, reproducible diagnostics.",
+  "reviewed_head": "f6be868d96a21e7ef5e5767a469348b0d52fc446",
+  "production_source_last_changed": "bd22766",
+  "review_model": "claude-opus-5-5",
+  "reported_models": [
+    "claude-opus-5-5"
+  ],
+  "review_effort": "high",
+  "review_rounds": 3,
+  "final_verdict": "CLEAN",
+  "review_result_sha256": "bd6d094db23b3f033eae042988087acf021a67de72b521182b3dc7c19d6abc78",
+  "actual_pr_unresolved_threads": 0,
+  "ci_configured": false,
+  "controller_validation": {
+    "macos_passed": 53,
+    "macos_linux_only_skips": 3,
+    "ubuntu_passed": 56,
+    "discount_inputs_per_control": 70,
+    "in_range_bit_identical": 61,
+    "baseline_outside_mismatches": 9,
+    "patched_mismatches": 0,
+    "two_independent_build_trees_byte_identical": true,
+    "regenerated_actual_runtime_runs": 4,
+    "baseline_no_binary_inputs": true,
+    "stale_binary_negative_controls": 2,
+    "windows_reputation_cases": [
+      30,
+      31,
+      564,
+      802
+    ],
+    "windows_zero_reset_reopen_and_pause": true
+  },
+  "helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+  "unchanged_common_port_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+  "production_code_changed_after_review": false,
+  "main_branch_merged": false,
+  "remaining_global_gates": [
+    "Fresh latest-package Windows GUI import.",
+    "Registered content actual spawn/render/use, primary three-project gameplay, six-player load and final overall review."
+  ],
+  "both_user_goals_complete": false
+}
