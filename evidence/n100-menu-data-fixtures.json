@@ -181,7 +181,7 @@
     ],
     "observed_tooltip_discount_percent": [
       0,
-      752.0,
+      752,
       1069.3,
       0
     ],
@@ -191,6 +191,20 @@
     "available_screenshot_sha256": {
       "65536_reputation_and_bar": "91ae836c6f2f9cec33c450cd8541db78f314b9774260dbdb922b0be9fd7d76b5",
       "65536_tooltip": "6f86bc145922c8e3423b91c61d4e4bd2d9deac7a239c9d616a49c0a9e8e08922"
+    },
+    "frozen_report_sha256": "20a47e0bb84834cc3f46316d807c7245e37b1f6bc86f7d88245d6f9996a1edf3",
+    "same_jvm": true,
+    "target_exceptions": 0,
+    "screenshots_sha256": {
+      "2026-11-09_12.11.19.png": "e27909d3086c678a2e1861af469afc36f5699c6e9aa2b7d59650db20b07dc984",
+      "2026-11-09_12.12.53.png": "7c7ebcc7f4a282231d33bfc2690400a4b363a35cd207502c2454f03a23368874",
+      "2026-11-09_12.13.07.png": "b7ab9c6c83bccd8dc4eed9c99b44137be8033fc6f1f530ced892112a706ccf2c",
+      "2026-11-09_12.15.56.png": "91ae836c6f2f9cec33c450cd8541db78f314b9774260dbdb922b0be9fd7d76b5",
+      "2026-11-09_12.16.07.png": "6f86bc145922c8e3423b91c61d4e4bd2d9deac7a239c9d616a49c0a9e8e08922",
+      "2026-11-09_12.18.42.png": "3f4dfc5969c807c8d4560901384b464b466f2f25c28ad65264aefbde90fa5ef1",
+      "2026-11-09_12.18.55.png": "80413653e4dde080485a8c097481faa6339624e5c63212ae2c46b98ed3190adb",
+      "2026-11-09_12.19.23.png": "2b9dd3e8d646e946241d8d3804e170246ba3723f81d2f0cc6258dfd87d1215d1",
+      "2026-11-09_12.19.38.png": "bf102ddceb8b5b7d43b816486166bbf153ca3fa42f4e210943f993f1ccf4ee55"
     }
   }
 }
