@@ -1,0 +1,138 @@
+#!/usr/bin/env python3
+"""Strict 313 production + one diagnostic controller, only in a new disposable QA profile."""
+import fcntl
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import shlex
+import subprocess
+import sys
+import time
+
+ROOT = Path(__file__).resolve().parent
+BASELINE = "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812"
+PROBE = "psa-render-probe-0.3.jar"
+SOCKET = "psa-render-" + hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
+
+
+def digest(path):
+    result = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1048576), b""):
+            result.update(chunk)
+    return result.hexdigest()
+
+
+def tmux(*args, check=True):
+    return subprocess.run(["tmux", "-L", SOCKET, "-f", "/dev/null", *args],
+                          cwd=ROOT, check=check, capture_output=True, text=True)
+
+
+def running():
+    return tmux("has-session", "-t", "server", check=False).returncode == 0
+
+
+def owned():
+    if tmux("show-options", "-qv", "-t", "server", "@psa-root").stdout.strip() != str(ROOT):
+        raise RuntimeError("Unrecognized tmux session")
+
+
+def inventory(receipt):
+    manifest = ROOT / ".psa-production-mods.sha256"
+    if manifest.is_symlink() or digest(manifest) != BASELINE:
+        raise RuntimeError("Production313 manifest identity mismatch")
+    files = {}
+    for line in manifest.read_text().splitlines():
+        expected, name = line.split("  ", 1)
+        path = ROOT / name
+        if path.is_symlink() or not path.is_file() or digest(path) != expected:
+            raise RuntimeError("Production mod mismatch: " + name)
+        files[path.name] = expected
+    if len(files) != 313 or PROBE in files:
+        raise RuntimeError("Invalid baseline inventory")
+    expected = receipt["diagnostic_sha256"]
+    if not re.fullmatch("[0-9a-f]{64}", expected):
+        raise RuntimeError("Invalid diagnostic identity")
+    probe = ROOT / "mods" / PROBE
+    if probe.is_symlink() or digest(probe) != expected:
+        raise RuntimeError("Diagnostic hash mismatch")
+    actual = list((ROOT / "mods").iterdir())
+    if {p.name for p in actual} != set(files) | {PROBE} or len(actual) != 314:
+        raise RuntimeError("Unexpected diagnostic inventory")
+    if any(p.is_symlink() or not p.is_file() for p in actual):
+        raise RuntimeError("Non-regular mod entry")
+    props = dict(line.split("=", 1) for line in (ROOT / "server.properties").read_text().splitlines()
+                 if "=" in line and not line.startswith("#"))
+    if props.get("online-mode") != "true" or props.get("level-name") != "world-render-qa":
+        raise RuntimeError("Authenticated disposable world required")
+    if "-Dpsa.render.enabled=true" not in (ROOT / "user_jvm_args.txt").read_text().splitlines():
+        raise RuntimeError("Explicit render opt-in required")
+
+
+def main():
+    if not (ROOT / ".psa-disposable-qa").is_file():
+        raise RuntimeError("Missing disposable marker")
+    receipt = json.loads((ROOT / ".psa-render-qa.json").read_text())
+    if receipt.get("owner") != "psa-render-qa-v1" or receipt.get("profile") != ROOT.name:
+        raise RuntimeError("Profile ownership mismatch")
+    action = sys.argv[1] if len(sys.argv) > 1 else "status"
+    if action == "verify":
+        inventory(receipt)
+        print("PSA_RENDER_QA production313 and one pinned diagnostic verified")
+    elif action == "status":
+        if running():
+            owned()
+            print("Running")
+        else:
+            print("Stopped")
+    elif action == "start":
+        with (ROOT / ".psa-render-control.lock").open("w") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            if running():
+                owned()
+                print("Already running")
+                return
+            inventory(receipt)
+            if (ROOT / "eula.txt").read_text().strip() != "eula=true":
+                raise RuntimeError("Existing explicit EULA acceptance required")
+            java = ROOT / "runtime/java/bin/java"
+            args = ROOT / "libraries/net/minecraftforge/forge/1.20.1-47.4.20/unix_args.txt"
+            if not os.access(java, os.X_OK) or not args.is_file():
+                raise RuntimeError("Pinned runtime required")
+            log = ROOT / "console.log"
+            if log.exists():
+                (ROOT / "logs").mkdir(exist_ok=True)
+                log.rename(ROOT / "logs" / ("console-render-previous-" + str(time.time_ns()) + ".log"))
+            command = "exec " + shlex.join([str(java), "@user_jvm_args.txt", "@" + str(args), "nogui"])
+            tmux("new-session", "-d", "-s", "server", "-c", str(ROOT), command + " >console.log 2>&1")
+            tmux("set-option", "-t", "server", "@psa-root", str(ROOT))
+            print("Started; verify Done before connecting")
+    elif action == "stop":
+        if not running():
+            print("Stopped")
+            return
+        owned()
+        tmux("send-keys", "-t", "server", "-l", "stop")
+        tmux("send-keys", "-t", "server", "Enter")
+        for _ in range(120):
+            if not running():
+                print("Stopped")
+                return
+            time.sleep(1)
+        raise RuntimeError("Shutdown pending; no process was killed")
+    elif action == "command":
+        if len(sys.argv) != 3 or any(c in sys.argv[2] for c in "\r\n"):
+            raise RuntimeError("One console command required")
+        if not running():
+            raise RuntimeError("Stopped")
+        owned()
+        tmux("send-keys", "-t", "server", "-l", sys.argv[2])
+        tmux("send-keys", "-t", "server", "Enter")
+    else:
+        raise RuntimeError("Usage: render-qa-control.py verify|start|stop|status|command '...'")
+
+
+if __name__ == "__main__":
+    main()

@@ -134,3 +134,9 @@ Task 7 뒤에 발견한 별도 기존 표시 오류다. 완료135→평판30·�
 v9 전체 후보를 생성해354개 JAR·선언파일7925개 해시와 진단 제외를 확인했다. 기존 Windows 인증 인스턴스에서 새 보정의 평판30·31·564·802, 0 복구·재열기, 일시정지 메뉴를 모두 통과했다. R1의 진단 빌드 재생성 지적은 같은 유형의 메뉴 진단까지 수정해 원본·보정 4개 아티팩트를 두 트리에서 재생성하고 실제 Forge 실행을 다시 확인했다. [표시 오류](bountiful-discount-display.md), [실행 대조](../evidence/bountiful-discount-runtime.json), [재생성 대조](../evidence/diagnostic-probe-recipes.json), [v9 아카이브](../evidence/forge-client-v9-package.json). 두 전체 목표는 진행 중이다.
 
 후속 수락: 실제 최신 Claude Opus 5.5 R3는 `f6be868` 증분을 CLEAN으로 판정했고, 앞선 코드·재생성 수정 판정과 함께 브리지를 적용했다. PR5 실제 미해결0건, CI 미설정이다. [수락 범위](../evidence/task8-discount-review-acceptance.json). v9는 Windows 수신 후 크기·SHA256 일치도 확인했다. [전달 기록](../evidence/forge-client-v9-delivery.json). 새 팩 가져오기·아이템 실제 소환과 렌더링·주요 게임 기능·6인 부하·최종 전체 리뷰는 계속 진행한다.
+
+### Task 9 — 실제 아이템 소환·렌더링 검사 진행 중
+
+4개씩 실제 소환하고 원래 클라이언트 렌더러 반환을 확인하는 자체 진단을 작성했다. 네트워크의 ID·UUID·레지스트리·실행 번호·응답자 대조는 Mac과 실제 Ubuntu에서 반례 검사를 통과했다. 두 Forge 개발 트리에서 같은 진단 JAR이 나왔다. 기존 313개 서버·월드는 정상 정지·백업했고 별도 QA 프로필은 313개 원본과 진단 하나만 허용한다. 0.1·0.2의 실제 기동·진단 로딩을 확인했다. 0.2의 첫 묶음은 비활성 청크로 시간 초과됐고, 같은 파일·같은16개가 청크 활성화 후 통과해 진단 조건 문제로 확인했다. 같은 유형의 청크 유지·접속 해제·정상 종료 정리까지 보완한0.3을 준비했다. 운영 팩 v9에는 진단을 넣지 않는다.
+
+현재 새 v9 가져오기는 Windows Prism의 외부 모드 신뢰 확인창에서 사용자 직접 조작을 기다린다. 서버 소환 전용 검사는 이 대기와 독립적으로 진행하며 클라이언트 렌더 성공으로 집계하지 않는다. 전수 검사나 Task 9 독립 리뷰를 완료했다고 표시하지 않는다. [검사 경로](item-spawn-render-validation.md), [준비 기록](../evidence/item-render-probe-preparation.json).

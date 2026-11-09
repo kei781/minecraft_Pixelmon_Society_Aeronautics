@@ -1,0 +1,49 @@
+{
+  "scope": "Initial actual server native-spawn diagnostic failure; not yet attributed to production mods. No client rendering attempted.",
+  "diagnostic_sha256": "6cce75b49a77cf5b47f32b1f3e6aa0a46be84b243e7d0bcd158ed17b84720f49",
+  "initial_failure": {
+    "run": "058d18f9-7389-451c-80f3-4c7c42473424",
+    "result": "spawn_timeout_or_unsupported_custom_entity",
+    "catalog_total": 17239,
+    "catalog_start": 0,
+    "selected_count": 16,
+    "completed_render_returns": 0,
+    "completed_native_spawns": 0,
+    "mode": "native_server_spawn_only",
+    "batch": 0,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:aeronautics:black_envelope",
+    "attempted_ids": [
+      "aeronautics:adjustable_burner",
+      "aeronautics:andesite_propeller",
+      "aeronautics:aviators_goggles",
+      "aeronautics:black_envelope"
+    ],
+    "scope": "native server item spawning only; no client/render attempt"
+  },
+  "full_native_submitted": false,
+  "full_native_passed": false,
+  "authenticated_render_sample_passed": false,
+  "same_artifact_loaded_chunk_control": {
+    "state": {
+      "run": "580c5a46-d070-428e-98d8-d3df1ac7c99f",
+      "result": "complete",
+      "catalog_total": 17239,
+      "catalog_start": 0,
+      "selected_count": 16,
+      "completed_render_returns": 0,
+      "completed_native_spawns": 16,
+      "mode": "native_server_spawn_only",
+      "batch": 4,
+      "active": false,
+      "last_operation": "default_stack_and_spawn:aeronautics:green_envelope_encased_shaft",
+      "attempted_ids": [],
+      "scope": "native server item spawning only; no client/render attempt"
+    },
+    "proof": {
+      "summary_sha256": "34194b81b4a687bd181446d6e2ef3961fc1a5a0bed26155c9b25e55c54b57323",
+      "journal_sha256": "80d84245d2e6c6a863264dbdeacbe761f416304b1a1b93eb301147b79c888bc3"
+    }
+  },
+  "attribution": "Diagnostic native-only precondition/cleanup defect: chunk was not loaded; forcing same chunk made same16 item run pass with unchanged production and diagnostic JAR. Original four owned item UUIDs were removed individually; control force-load ticket removed."
+}

@@ -1,0 +1,20 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psarenderprobe"
+version="0.3"
+displayName="PSA Disposable Item Render Probe"
+description='''Test-only native item spawning and authenticated client render submission. Excluded from player packs.'''
+[[dependencies.psarenderprobe]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.20]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.psarenderprobe]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,58 @@
+{
+  "artifact": "psa-render-probe-0.3.jar",
+  "sha256": "21b38b5509e4c2cee380eb136ff59229ccd6db4d20236e792d16764e6b3ba58b",
+  "bytes": 28220,
+  "independent_builds_byte_identical": true,
+  "minecraft_calls_reobfuscated": true,
+  "macos_protocol_negative_controls_pass": true,
+  "n100_protocol_negative_controls_pass": true,
+  "n100_qa_inventory_negative_controls": [
+    "extra mod file rejected",
+    "wrong diagnostic SHA rejected",
+    "online-mode=false rejected"
+  ],
+  "production_source_or_artifacts_changed": false,
+  "live_authenticated_render_sample_passed": false,
+  "full_item_traversal_complete": false,
+  "scope": "Diagnostic preparation and real Linux controller checks only. No spawn/render coverage is asserted by these build/guard results.",
+  "previous_artifact": {
+    "version": "0.1",
+    "sha256": "92f5151243ef50e03928624044a4b9eddc9077512c6abd9f3bb8af4bec99c5bf",
+    "actual_n100_dedicated_boot_done": true,
+    "source_console_status_idle": true,
+    "linkage_errors": 0
+  },
+  "native_spawn_mode_available": true,
+  "native_spawn_mode_does_not_increment_render_returns": true,
+  "source_sha256": {
+    "tests/forge-render-probe/RenderClient.java": "8f420c98c4cf94aa472116b0965b544e7a639a18f2bcb630140c241a118a6d03",
+    "tests/forge-render-probe/RenderNetwork.java": "45298ca4e1ffc3e8ad3359b4b912c575bb85731dc6e6e3970a6d7559b9cd0d03",
+    "tests/forge-render-probe/RenderProbe.java": "5ea38a78e3a7fee552d43638513375ce97200e2c9b51640529466a30c91d9ab0",
+    "tests/forge-render-probe/RenderProtocol.java": "66f67a4224ff423cfb4e2116276ed65d0471d81d18089b5611da3d9e3d66edda",
+    "tests/forge-render-probe/RenderProtocolTest.java": "ddbccef3ccb5f27800965083bd7a09292899c7a41b24135c4de5f23ca10a35f9",
+    "tests/forge-render-probe/mixin/ItemModelProbeMixin.java": "a8f054698b9b832b5b2a88291b2ec55fc44c934db5cb84f89631a038745e28b2",
+    "tests/forge-render-probe/mixin/RendererProbeMixin.java": "5fb4bdad62fb14cd843f79873207a773c6de65945e058bfe338923ad52c17acc",
+    "tests/forge-render-probe/render-qa-control.py": "f97abd2f6d95e29950756d8d4b695c5798a1d851acf5fac42edc8602f320a028",
+    "tests/forge-render-probe/resources/META-INF/mods.toml": "ef8806773637c553f3785a7b255a9ada2dfa189562415437907588a5b018ecef",
+    "tests/forge-render-probe/resources/pack.mcmeta": "51971f75019d28f93e5819a996a88fdbf6e8b333a263012921d73a9d4ae33b4b",
+    "tests/forge-render-probe/resources/psa-render-probe.mixins.json": "70f19e3897dfea00cba9f4096ed62015634a23e9c7924da35612f2e2cbd0959e"
+  },
+  "gradle_recipe_sha256": "53bdc4990fcfcd8d4a0d1906816842f0474b12757b24a70a1c168cc713c7ac41",
+  "n100_qa_guard_tests_artifact_version": "0.1; version0.2 changes diagnostic filename only in the controller; post-upgrade strict314 verify passed",
+  "original_qa_saved_stopped_and_backed_up": true,
+  "original_qa_world_backup_bytes": 4493868,
+  "previous_native_artifact": {
+    "version": "0.2",
+    "sha256": "6cce75b49a77cf5b47f32b1f3e6aa0a46be84b243e7d0bcd158ed17b84720f49",
+    "bytes": 27118,
+    "baseline_unloaded_chunk_timeout_reproduced": true,
+    "same_artifact_loaded_chunk_16_native_pass": true
+  },
+  "same_family_lifecycle_fix": [
+    "native-only chunk activation",
+    "render fixture chunks kept during disconnect",
+    "owned object/UUID cleanup before ticket release",
+    "server stopping cleanup",
+    "preexisting forced chunk tickets preserved"
+  ]
+}

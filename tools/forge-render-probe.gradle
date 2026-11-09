@@ -1,0 +1,27 @@
+// Test-only, explicit console opt-in; never included by the production exporter.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaRenderProbeSource')
+    if (!sourceRoot) throw new GradleException('psaRenderProbeSource is required')
+    def directory = new File(sourceRoot.toString())
+    if (!new File(directory, 'RenderProbe.java').isFile()) throw new GradleException('Missing render probe source')
+    def compiler = project.tasks.register('compilePsaRenderProbe', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java'; exclude '**/*Test.java' }
+        classpath = project.sourceSets.main.compileClasspath
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-render-probe/classes'))
+        options.release.set(17)
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaRenderProbeJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-render-probe-0.3.jar')
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': 'psa-render-probe.mixins.json')
+        preserveFileTimestamps = false
+        reproducibleFileOrder = true
+    }
+    project.reobf.create('psaRenderProbeJar')
+}
