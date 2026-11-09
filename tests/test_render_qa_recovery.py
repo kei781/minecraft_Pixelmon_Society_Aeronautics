@@ -23,13 +23,13 @@ class RecoveryBoundaries(unittest.TestCase):
         # exercise archive identity and data preservation without game binaries.
         self.control.inventory = lambda receipt: None
         self.receipt = {"owner": "psa-render-qa-v1", "profile": self.root.name,
-                        "world_generation": "before-generation"}
+                        "world_generation": "00000000-0000-0000-0000-000000000001"}
         (self.root / ".psa-disposable-qa").touch()
         (self.root / ".psa-render-qa.json").write_text(json.dumps(self.receipt))
         self.world = self.root / "world-render-qa"
         self.world.mkdir()
         (self.world / "owned-data.bin").write_bytes(b"preserve crashed data exactly")
-        self.marker = {"owner": "psa-render-world-v1", "profile": self.root.name, "generation": "before-generation"}
+        self.marker = {"owner": "psa-render-world-v1", "profile": self.root.name, "generation": "00000000-0000-0000-0000-000000000001"}
         (self.world / ".psa-render-world-owner.json").write_text(json.dumps(self.marker))
         self.other = self.root / "other-world"
         self.other.mkdir()
@@ -48,6 +48,15 @@ class RecoveryBoundaries(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "no owned QA marker"):
             self.control.recover(self.receipt)
         (self.world / ".psa-render-world-owner.json").write_text(json.dumps(self.marker))
+        for changed in [{"profile": "another-profile"}, {"generation": "another-generation"}]:
+            (self.world / ".psa-render-world-owner.json").write_text(json.dumps({**self.marker, **changed}))
+            with self.assertRaisesRegex(RuntimeError, "QA world generation mismatch"):
+                self.control.recover(self.receipt)
+            self.assertFalse((self.root / "qa-crash-history").exists())
+        (self.world / ".psa-render-world-owner.json").write_text(json.dumps(self.marker))
+        bad_receipt = {**self.receipt, "world_generation": "x/../../outside"}
+        with self.assertRaisesRegex(RuntimeError, "Invalid QA world generation"):
+            self.control.recover(bad_receipt)
         state = {"active": True, "world_generation": "other-generation"}
         (self.root / "psa-validation/render-server-current.json").write_text(json.dumps(state))
         with self.assertRaisesRegex(RuntimeError, "another QA world"):
@@ -56,7 +65,7 @@ class RecoveryBoundaries(unittest.TestCase):
         self.assertFalse((self.root / "qa-crash-history").exists())
 
     def test_recovery_archives_exact_world_and_checkpoint_only(self):
-        state = {"active": True, "world_generation": "before-generation", "owned_entities": ["fixture"]}
+        state = {"active": True, "world_generation": "00000000-0000-0000-0000-000000000001", "owned_entities": ["fixture"]}
         (self.root / "psa-validation/render-server-current.json").write_text(json.dumps(state))
         self.control.recover(self.receipt)
         archives = list((self.root / "qa-crash-history").iterdir())
@@ -67,7 +76,7 @@ class RecoveryBoundaries(unittest.TestCase):
         self.assertEqual((self.other / "unrelated.bin").read_bytes(), b"never modify another world")
         self.assertFalse((self.world / "owned-data.bin").exists())
         receipt = json.loads((self.root / ".psa-render-qa.json").read_text())
-        self.assertNotEqual(receipt["world_generation"], "before-generation")
+        self.assertNotEqual(receipt["world_generation"], "00000000-0000-0000-0000-000000000001")
         self.assertEqual(json.loads((self.world / ".psa-render-world-owner.json").read_text())["generation"], receipt["world_generation"])
 
     def test_dirty_or_invalid_checkpoint_refuses_start(self):
@@ -79,6 +88,17 @@ class RecoveryBoundaries(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError, "Unresolved prior QA run"):
                     self.control.main()
                 self.assertEqual((self.world / "owned-data.bin").read_bytes(), b"preserve crashed data exactly")
+        finally:
+            sys.argv = old
+
+    def test_permanent_cleanup_failure_refuses_contradictory_complete_flag(self):
+        state = {"active": False, "cleanup_complete": True, "cleanup_failed": True}
+        (self.root / "psa-validation/render-server-current.json").write_text(json.dumps(state))
+        old = sys.argv
+        try:
+            sys.argv = ["render-qa-control.py", "start"]
+            with self.assertRaisesRegex(RuntimeError, "Unresolved prior QA run"):
+                self.control.main()
         finally:
             sys.argv = old
 

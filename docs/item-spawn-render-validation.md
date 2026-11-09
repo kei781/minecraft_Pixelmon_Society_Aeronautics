@@ -2,7 +2,7 @@
 
 기존 레지스트리 검사는 모드 아이템 17,239개의 기본 스택 저장·복원만 확인했다. 실제 소환·표시·사용과 구분한다. Task 9의 진단은 운영 팩에 넣지 않고 새 폐기 가능 QA 프로필에서만 사용한다.
 
-`tests/forge-render-probe`와 `tools/forge-render-probe.gradle`을 고정 Forge 개발 트리에서 `-PpsaRenderProbeSource=/absolute/path/tests/forge-render-probe`로 지정하고 `reobfPsaRenderProbeJar`를 빌드한다. `tools/forge_resources.py canonical-jar`로 정규화한다. 출력은 `psa-render-probe-0.5.jar`다.
+`tests/forge-render-probe`와 `tools/forge-render-probe.gradle`을 고정 Forge 개발 트리에서 `-PpsaRenderProbeSource=/absolute/path/tests/forge-render-probe`로 지정하고 `reobfPsaRenderProbeJar`를 빌드한다. `tools/forge_resources.py canonical-jar`로 정규화한다. 출력은 `psa-render-probe-0.6.jar`다.
 
 QA 서버는 고정 313개 모드와 진단 하나만 허용하는 별도 `render-qa-control.py`를 쓴다. 기존 운영 제어기의 313개 검사나 원래 월드를 바꾸지 않는다. 온라인 인증과 최대 6명 설정을 유지한다. `.psa-disposable-qa`, 정확한 원본 목록·진단 해시가 담긴 QA 영수증, JVM의 `-Dpsa.render.enabled=true`가 필요하다.
 
@@ -29,5 +29,9 @@ QA 제어기는 `enable-rcon=false`도 확인한다. 처음 시작할 때 새 `w
 비정상 종료 대비로 대체 공장 호출·등록 전에 소유 UUID와 청크 좌표를 원자적 체크포인트·추가 기록에 남긴다. 미정리 실행이 남으면 제어기는 재기동을 거부한다. 서버가 완전히 정지한 상태에서 `python3 render-qa-control.py recover`를 실행하면 소유 표식·프로필·생성 UUID가 일치하는 **해당 QA 월드 전체를 보존 디렉터리로 이동**하고 새 시험 월드를 만든다. 사용자가 시험 세이브 폐기를 허용한 범위의 복구다. 정상 정리는 개별 소유 객체만 대상으로 하고, 크래시 복구는 이 식별된 일회용 월드에만 한정한다. 다른 월드나 임의 NBT를 수정하지 않는다. `psa_render crash_test`는 이를 검사하는 의도적 QA 서버 크래시이며, 보통의 소환 검사는 이 명령을 사용하지 않는다.
 
 실제 0.4 의도적 크래시에서 4개 UUID와 청크 좌표가 남았고, 0.5 제어기의 재기동 차단·RCON 활성 거부·복구를 확인했다. 보존한 월드의 전체 파일 트리 해시는 이동 전후 같았다. [크래시 복구 결과](../evidence/item-render-crash-recovery.json). 크래시 후 일부 작업 스레드로 JVM 종료가 지연됐다가 자체 종료했다. 종료 신호는 보내지 않았으며, 이 기록을 빠른 자동 복구나 모든 상류 모드의 종료 동작 검증으로 표현하지 않는다.
+
+0.5는 기본 스택 17,239개를 실제 서버에 소환했고, 고유 아이템·엔티티 UUID·실행 ID와 4,310개 묶음을 대조했다. [전체 소환 결과](../evidence/item-render-native-full.json). 렌더·사용 검증 수는 0이다.
+
+Claude R2가 찾은 부분 정리 실패도 보완했다. 0.6은 `discard()`가 반환하고 실제 레벨 조회에서 사라진 항목만 소유 목록에서 제거한다. 예외가 나면 실패 UUID·최초 원인과 영구 실패 플래그를 남기고 정리 완료를 표시하지 않는다. 청크 해제 실패도 같은 규칙을 쓴다. 비동기 응답 처리 예외는 기록 후 즉시 중단한다. 실제 `cleanup_failure_test`는 두 번째 소유 객체의 `EntityLeaveLevelEvent`에 예외를 넣어 원인 보존·다음 실행 거부·재기동 거부·실패 체크포인트 보존 복구를 확인했다. [부분 실패 검사](../evidence/item-render-cleanup-failure.json). 수정된 정상 정리 경로의 전체 소환 회귀 검사는 진행 중이다.
 
 진단 통신은 [Forge SimpleImpl 공식 문서](https://docs.minecraftforge.net/en/1.20.1/networking/simpleimpl/)의 메인 스레드 처리와 방향별 패킷 등록을 따른다. 잘못된 실행 UUID·묶음·엔티티 ID·UUID·레지스트리·응답자는 거부한다. [현재 준비 기록](../evidence/item-render-probe-preparation.json).

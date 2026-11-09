@@ -28,6 +28,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.event.entity.EntityLeaveLevelEvent;
 import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
@@ -47,10 +48,16 @@ public final class RenderProbe {
         MinecraftForge.EVENT_BUS.addListener(this::commands);
         MinecraftForge.EVENT_BUS.addListener(this::tick);
         MinecraftForge.EVENT_BUS.addListener(this::stopping);
+        MinecraftForge.EVENT_BUS.addListener(this::left);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, this::joined);
     }
     private static boolean enabled() {
         return Boolean.getBoolean("psa.render.enabled") && Files.isRegularFile(ROOT.resolve(".psa-disposable-qa"));
+    }
+    private static void requireStart() {
+        if (!enabled()) throw new IllegalStateException("Disposable opt-in required");
+        if (session != null && (session.active || !session.cleanupComplete || session.cleanupFailed))
+            throw new IllegalStateException("Prior QA run needs cleanup or explicit world recovery");
     }
     private void commands(RegisterCommandsEvent event) {
         event.getDispatcher().register(Commands.literal("psa_render")
@@ -63,16 +70,19 @@ public final class RenderProbe {
                     if (session != null && session.active) session.stop("controller_stop"); return 1;
                 }))
                 .then(Commands.literal("crash_test").executes(context -> {
-                    if (!enabled()) throw new IllegalStateException("Disposable opt-in required");
-                    if (session != null && session.active) throw new IllegalStateException("Run already active");
+                    requireStart();
                     var catalog = catalog();
                     session = new Session(context.getSource().getServer().overworld(), catalog.subList(0, Math.min(4, catalog.size())), 0, catalog.size());
                     session.crashTest = true; session.checkpoint(); return 1;
                 }))
+                .then(Commands.literal("cleanup_failure_test").executes(context -> {
+                    requireStart(); var catalog = catalog();
+                    session = new Session(context.getSource().getServer().overworld(), catalog.subList(0, Math.min(4, catalog.size())), 0, catalog.size());
+                    session.injectCleanupFailure = true; session.checkpoint(); return 1;
+                }))
                 .then(Commands.literal("baseline_pickup").then(Commands.argument("start", IntegerArgumentType.integer(0))
                     .executes(context -> {
-                        if (!enabled()) throw new IllegalStateException("Disposable opt-in required");
-                        if (session != null && session.active) throw new IllegalStateException("Run already active");
+                        requireStart();
                         var catalog = catalog(); int start = IntegerArgumentType.getInteger(context, "start");
                         if (start >= catalog.size()) throw new IllegalArgumentException("Catalog start outside range");
                         session = new Session(context.getSource().getServer().overworld(), catalog.subList(start, start + 1), start, catalog.size());
@@ -80,8 +90,7 @@ public final class RenderProbe {
                     })))
                 .then(Commands.literal("native").then(Commands.argument("start", IntegerArgumentType.integer(0))
                     .then(Commands.argument("count", IntegerArgumentType.integer(1, 20000)).executes(context -> {
-                        if (!enabled()) throw new IllegalStateException("Disposable marker and explicit render opt-in required");
-                        if (session != null && session.active) throw new IllegalStateException("Render run already active");
+                        requireStart();
                         List<ResourceLocation> catalog = catalog();
                         int start = IntegerArgumentType.getInteger(context, "start"), count = IntegerArgumentType.getInteger(context, "count");
                         if (start >= catalog.size()) throw new IllegalArgumentException("Catalog start outside range");
@@ -92,8 +101,7 @@ public final class RenderProbe {
                 .then(Commands.literal("start").then(Commands.argument("player", EntityArgument.player())
                     .then(Commands.argument("start", IntegerArgumentType.integer(0))
                     .then(Commands.argument("count", IntegerArgumentType.integer(1, 20000)).executes(context -> {
-                        if (!enabled()) throw new IllegalStateException("Disposable marker and explicit render opt-in required");
-                        if (session != null && session.active) throw new IllegalStateException("Render run already active");
+                        requireStart();
                         ServerPlayer player = EntityArgument.getPlayer(context, "player");
                         List<ResourceLocation> catalog = catalog();
                         int start = IntegerArgumentType.getInteger(context, "start"), count = IntegerArgumentType.getInteger(context, "count");
@@ -129,16 +137,41 @@ public final class RenderProbe {
     private void tick(TickEvent.ServerTickEvent event) {
         if (event.phase != TickEvent.Phase.END || session == null || !session.active) return;
         try { session.tick(); }
-        catch (Exception failure) { session.stop("probe_exception:" + failure); failure.printStackTrace(); }
+        catch (Exception failure) {
+            failure.printStackTrace(); session.failure("probe_exception", failure); session.stop("probe_exception");
+        }
         if (session.active && session.crashTest && !session.owned.isEmpty()) {
             session.lastOperation = "deliberate_owned_qa_crash_after_spawn"; session.checkpoint();
             throw new AssertionError("PSA_RENDER deliberate disposable-world crash test");
+        }
+    }
+    private void left(EntityLeaveLevelEvent event) {
+        if (session == null || !session.cleaning || !session.injectCleanupFailure || session.cleanupInjectionTriggered
+                || !session.owned.containsKey(event.getEntity().getUUID())) return;
+        if (++session.cleanupRemovalEvents == 2) {
+            session.cleanupInjectionTriggered = true;
+            throw new IllegalStateException("PSA_RENDER deliberate EntityLeaveLevelEvent cleanup failure");
         }
     }
     private void stopping(ServerStoppingEvent event) {
         if (session != null && session.active && session.level.getServer() == event.getServer()) session.stop("server_stopping");
     }
     public static void acknowledge(ServerPlayer sender, Ack message) {
+        try { acceptAcknowledgement(sender, message); }
+        catch (Throwable failure) {
+            failure.printStackTrace();
+            if (session != null) {
+                session.failure("acknowledge_exception", failure);
+                try { session.stop("acknowledge_exception"); }
+                catch (Throwable stoppingFailure) {
+                    stoppingFailure.printStackTrace();
+                    if (stoppingFailure != failure) failure.addSuppressed(stoppingFailure);
+                }
+            }
+            if (failure instanceof Error error) throw error;
+        }
+    }
+    private static void acceptAcknowledgement(ServerPlayer sender, Ack message) {
         if (session == null || !session.active || sender == null || sender.serverLevel() != session.level
                 || sender != session.level.getServer().getPlayerList().getPlayer(session.playerId)
                 || !matches(sender.getUUID(), session.playerId, session.expected, message)) {
@@ -193,7 +226,10 @@ public final class RenderProbe {
         int completed, modelVerifiedReturns, nativeSpawned, cursor, batch, age;
         int pickupDelay = 32766;
         boolean active = true;
-        boolean cleaning, cleanupComplete, crashTest;
+        boolean cleaning, cleanupComplete, cleanupFailed, crashTest, injectCleanupFailure, cleanupInjectionTriggered;
+        int cleanupRemovalEvents;
+        String firstFailure;
+        final java.util.Set<UUID> failedCleanupEntities = new java.util.LinkedHashSet<>();
         final java.util.Set<ChunkPos> ownedChunkTickets = new java.util.LinkedHashSet<>();
         String result = "running";
         String lastOperation = "created";
@@ -302,23 +338,48 @@ public final class RenderProbe {
         }
         void cleanup() {
             cleaning = true;
+            RuntimeException first = null;
             try {
-                // These exact references were captured from our native spawn events.
-                // UUID lookup can be hidden after a chunk unload or player disconnect.
-                for (Entity entity : List.copyOf(owned.values())) entity.discard();
+                for (var entry : List.copyOf(owned.entrySet())) {
+                    try {
+                        entry.getValue().discard();
+                        if (!entry.getValue().isRemoved() || level.getEntity(entry.getKey()) == entry.getValue())
+                            throw new IllegalStateException("Owned entity still tracked after discard: " + entry.getKey());
+                        owned.remove(entry.getKey(), entry.getValue());
+                        spawnSources.remove(entry.getKey());
+                    } catch (RuntimeException failure) {
+                        cleanupFailed = true; failedCleanupEntities.add(entry.getKey()); failure("owned_cleanup_exception", failure);
+                        checkpoint();
+                        if (first == null) first = failure; else if (first != failure) first.addSuppressed(failure);
+                    } catch (Error failure) {
+                        cleanupFailed = true; failedCleanupEntities.add(entry.getKey()); failure("owned_cleanup_error", failure);
+                        checkpoint(); throw failure;
+                    }
+                }
             } finally {
-                owned.clear(); spawnSources.clear(); cleaning = false;
+                cleaning = false;
             }
+            if (owned.isEmpty()) spawnSources.clear();
+            if (first != null) throw first;
+        }
+        void failure(String phase, Throwable failure) {
+            if (firstFailure == null) firstFailure = phase + ":" + failure.getClass().getName() + ":" + failure.getMessage();
         }
         void stop(String why) {
-            result = why; active = false;
-            try { checkpoint(); } finally {
-                try { cleanup(); } finally {
-                    for (ChunkPos chunk : ownedChunkTickets) level.setChunkForced(chunk.x, chunk.z, false);
-                    ownedChunkTickets.clear();
+            result = firstFailure == null ? why : firstFailure; active = false; cleanupComplete = false;
+            checkpoint();
+            try { cleanup(); }
+            catch (RuntimeException failure) { failure.printStackTrace(); failure("stop_cleanup_exception", failure); }
+            if (!cleanupFailed && owned.isEmpty()) {
+                for (ChunkPos chunk : List.copyOf(ownedChunkTickets)) {
+                    try { level.setChunkForced(chunk.x, chunk.z, false); ownedChunkTickets.remove(chunk); }
+                    catch (RuntimeException failure) {
+                        cleanupFailed = true; failure("chunk_release_exception", failure); failure.printStackTrace();
+                    }
                 }
             }
-            cleanupComplete = true;
+            cleanupComplete = !cleanupFailed && owned.isEmpty() && ownedChunkTickets.isEmpty();
+            if (firstFailure != null) result = firstFailure;
             checkpoint();
             System.out.println("PSA_RENDER STOP " + status());
         }
@@ -328,6 +389,10 @@ public final class RenderProbe {
             value.addProperty("world_generation", worldGeneration);
             value.addProperty("dimension", level.dimension().location().toString());
             value.addProperty("cleanup_complete", cleanupComplete);
+            value.addProperty("cleanup_failed", cleanupFailed);
+            value.addProperty("cleanup_injection_triggered", cleanupInjectionTriggered);
+            value.addProperty("first_failure", firstFailure);
+            value.add("failed_cleanup_entity_uuids", JSON.toJsonTree(failedCleanupEntities));
             value.addProperty("deliberate_crash_test", crashTest);
             value.addProperty("fixture_pickup_delay", pickupDelay);
             value.addProperty("catalog_total", totalCatalog); value.addProperty("catalog_start", catalogStart);

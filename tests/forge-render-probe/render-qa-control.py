@@ -14,7 +14,7 @@ import uuid
 
 ROOT = Path(__file__).resolve().parent
 BASELINE = "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812"
-PROBE = "psa-render-probe-0.5.jar"
+PROBE = "psa-render-probe-0.6.jar"
 SOCKET = "psa-render-" + hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
 
 
@@ -93,6 +93,11 @@ def owned_world(receipt):
     marker = world / ".psa-render-world-owner.json"
     if marker.is_symlink() or not marker.is_file():
         raise RuntimeError("Existing world has no owned QA marker; refusing recovery")
+    try:
+        if str(uuid.UUID(receipt.get("world_generation", ""))) != receipt["world_generation"]:
+            raise ValueError("Non-canonical generation")
+    except (ValueError, TypeError, KeyError, AttributeError) as error:
+        raise RuntimeError("Invalid QA world generation") from error
     owner = json.loads(marker.read_text())
     if owner != {"owner": "psa-render-world-v1", "profile": ROOT.name, "generation": receipt.get("world_generation")}:
         raise RuntimeError("QA world generation mismatch")
@@ -180,7 +185,7 @@ def main():
                 return
             inventory(receipt)
             state = current_state()
-            if state and (state.get("active") or not state.get("cleanup_complete")):
+            if state and (state.get("active") or not state.get("cleanup_complete") or state.get("cleanup_failed")):
                 raise RuntimeError("Unresolved prior QA run; use recover to archive the owned disposable world before restarting")
             initialize_world(receipt)
             if (ROOT / "eula.txt").read_text().strip() != "eula=true":
