@@ -1,8 +1,8 @@
 {
-  "scope": "All discovered configs, including inactive; descriptor candidate search is not runtime reachability proof. Bootstrap/plugin, relocation and generated-class candidates require interpretation.",
+  "scope": "Find ordinary top-level classes inside Mixin-reserved package prefixes.\n\nAll discovered mixin configs, including inactive ones, are candidates. Class\nloading/reachability is not proven. Declared bootstrap plugins and compiler\ninner classes are reported separately rather than assumed broken.",
   "baseline": {
     "archives": 429,
-    "configs": 446,
+    "configs": 447,
     "parse_errors": [
       {
         "jar": "serializer_debug-1.0.1.jar",
@@ -14,6 +14,15 @@
     "metadata_classes_excluded": [
       "package-info.class",
       "module-info.class"
+    ],
+    "external_manifest_references": [
+      {
+        "registering_jar": "domesticationinnovation-1.7.2-1.20.1.jar",
+        "config": "citadel.mixins.json",
+        "matching_config_archives": [
+          "citadel-2.6.3-1.20.1.jar"
+        ]
+      }
     ]
   },
   "negative_controls": {
@@ -31,6 +40,10 @@
       "jar": "psa-jade-r3-candidate-1.jar",
       "config": "psa-forge.mixins.json",
       "package": "dev.psa.compat",
+      "discovery": {
+        "manifest": true,
+        "name_convention": true
+      },
       "ordinary_top_level_candidates": [],
       "unannotated_inner_classes": [],
       "bootstrap_plugin_excluded": null
@@ -41,6 +54,10 @@
       "jar": "psa-jade-probe-0.3.jar",
       "config": "psa-jade-probe.mixins.json",
       "package": "dev.psa.jadeprobe.mixin",
+      "discovery": {
+        "manifest": true,
+        "name_convention": true
+      },
       "ordinary_top_level_candidates": [],
       "unannotated_inner_classes": [],
       "bootstrap_plugin_excluded": null
@@ -48,5 +65,13 @@
   ],
   "unchanged_common_bootstrap_candidate": "dev.ryanhcode.sable.mixin.AbstractSableMixinPlugin; superclass loaded during plugin bootstrap, baseline same class bytes. Not claimed as a newly reproduced error.",
   "new_psa_ordinary_classes_in_reserved_namespaces": 0,
-  "remaining_upstream_candidates_cleared": false
+  "remaining_upstream_candidates_cleared": false,
+  "scope_limits": "Class/package matching is within each config archive. External manifest registrations are matched against configs discovered in this input; unresolved external resources and strict-JSON parse failures remain unverified.",
+  "manifest_regression_control": {
+    "fixture": "Own observer0.2 classes with config renamed qa-config.json, folded MixinConfigs and plugin:null",
+    "discovered_by_manifest": true,
+    "discovered_by_name": false,
+    "known_bad_runtime_helper_detected": true,
+    "python_config_regressions": 2
+  }
 }

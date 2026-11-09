@@ -1,14 +1,14 @@
 # Pixelmon + Society + Aeronautics
 
-**현재 상태: 세 프로젝트 전체 실험 팩 생성 및 N100 전체 서버 기동·저장·재시작 확인. Windows 장치의 인증 접속은 서버 로그에서 확인했으며, 화면·게임 기능·6인 검증은 진행 중입니다.**
+**현재 상태: 세 프로젝트 전체 실험 팩과 N100 서버를 구성했고, Windows에서 Pixelmon 전투·포획과 Society 농사·판매를 확인했습니다. 비행체 조준 보정 회귀, 실제 비행·전체 아이템·6인 검증은 진행 중입니다.**
 
-새로 찾은 **Society 정식 4.1.5A + Pixelmon 9.2.3 베타 + Aeronautics 비공식 Forge 포팅본**으로 전체 월드 기동에 성공했습니다. Minecraft 1.20.1 / Forge 47.4.20 / Java 17의 별도 실험 후보입니다. 아래 1.21.1 개발 조합의 누락 파일을 확보한 것은 아닙니다. [후보 구성·수정·검증 범위](docs/forge-candidate.md)를 참고하세요. N100에서도 전체 팩을 시작하고 시험 몹·물리 구조물의 저장/복구를 확인했습니다. 같은 최신 공통 보정본의 Windows 인증 접속과 수레·깃발 메뉴 검증, 새 v9 가져오기를 확인했습니다. 새 인스턴스의 실제 실행·게임 주요 기능·6인 검증은 남아 있습니다.
+**Society 정식 4.1.5A + Pixelmon 9.2.3 베타 + Aeronautics 비공식 Forge 포팅본**으로 전체 월드 기동에 성공했습니다. Minecraft 1.20.1 / Forge 47.4.20 / Java 17의 별도 실험 후보입니다. 아래 1.21.1 개발 조합의 누락 파일을 확보한 것은 아닙니다. [후보 구성·수정·검증 범위](docs/forge-candidate.md)를 참고하세요. N100에서 전체 팩과 물리 구조물의 저장·복구, Windows v9의 새 가져오기·정품 접속·메뉴 검증을 확인했습니다. 이후 핵심 플레이를 검사하다 발견한 [Jade 비행체 좌표 문제](docs/jade-sublevel-coordinates.md)를 보정하고 새 실행을 검증 중입니다. 현재 보정본의 N100 실제 부팅도 확인했습니다.
 
 요청 구성은 Pixelmon + Society: Sunlit Valley + Create Aeronautics이며, 디지몬 데이터팩과 다른 대체 모드는 사용하지 않습니다. 서버 목표는 N100 / Ubuntu / RAM 16 GB / 동시 접속 최대 6명입니다.
 
 Windows 설치는 런처·Java 같은 선행 프로그램을 안내에 따라 설치하고 준비된 모드팩을 가져오는 방식도 허용합니다. 모든 준비 과정을 자동화한 단일 실행 파일은 필수 조건이 아닙니다. 같은 구성의 클라이언트를 설치하고 실제 서버에 접속하는 것이 완료 조건입니다.
 
-현재 전체 시험 파일은 `PSA-Forge-Full-Experimental-v9.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. v9는 같은 공통 보정본에 클라이언트 할인 표시 수정을 추가한 후보입니다. Windows Prism의 새 가져오기와 설치 파일7,925개 해시 대조를 통과했습니다. 원본354개를 유지하고 시험 진단 하나만 추가한 새 인스턴스에서 실제 기동·정품 접속과 아이템16개 렌더·모델 조회도 확인했습니다. 핵심 플레이와6인 검증은 계속 진행합니다. [새 실행 기록](evidence/forge-client-v9-launch-windows.json), [메뉴 정수 보정](docs/menu-data-compatibility.md), [할인 표시](docs/bountiful-discount-display.md), [진행 상태](docs/progress.md).
+현재 전체 시험 파일은 `PSA-Forge-Full-Experimental-v12.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 모드354개이며 진단은 포함하지 않습니다. [v12 패키지 검사](evidence/forge-client-v12-package.json)에서 v9 대비 공통 JAR·프로필 정보만 달라지고 다른 payload는 같은 것을 확인했습니다. v12 자체의 새 Windows 가져오기는 아직 완료로 기록하지 않습니다. 이전 v9은 새 가져오기·7,925개 파일 해시 대조·정품 접속·아이템16개 렌더를 통과했습니다. [당시 실행 기록](evidence/forge-client-v9-launch-windows.json), [메뉴 정수 보정](docs/menu-data-compatibility.md), [할인 표시](docs/bountiful-discount-display.md), [진행 상태](docs/progress.md).
 
 ## 보존한 최초 1.21.1 조사 기준
 

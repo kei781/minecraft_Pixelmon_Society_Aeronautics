@@ -1,0 +1,26 @@
+{
+  "package": {
+    "filename": "PSA-Forge-Full-Experimental-v12.mrpack",
+    "sha256": "bd884f35b18d157e7bbed3f3e1961539f0ac1913e914e3721a5d50eef94090e5",
+    "size": 1137793542,
+    "version_id": "psa-forge-bc39221369cd",
+    "mod_jars": 354,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7926,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "payload_paths_identical_to_v9": true,
+  "payload_changes_from_v9": [
+    "overrides/mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+    "overrides/psa-forge-client-profile.json"
+  ],
+  "all_other_payload_bytes_identical": true,
+  "diagnostics_exported": false,
+  "production_mods": 354,
+  "shared_server_production_mods": 313,
+  "client_helper_unchanged_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+  "fresh_windows_v12_import": "PENDING",
+  "gameplay_validation_complete": false
+}

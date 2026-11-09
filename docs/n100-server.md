@@ -60,7 +60,7 @@ python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.jso
 5종 시험 몹과 구조물 하나, 인증 접속자 0명 상태에서 TPS 20, 전체 평균 tick 2.963 ms, RSS 약 5.17 GiB였다. 실제 6인 성능으로 환산하지 않는다. Windows 인증 접속·포획/전투·Society 진행·조종 비행·6인 부하는 별도 검증이 필요하다.
 
 
-이하 v6·v7 기록은 당시 배치 이력이다. 현재 QA 서버는 v9과 같은 공통 보정본 `59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe`를 사용한다. 원래 서버 프로필은 정상 종료·백업 후 보존했으며 별도 폐기 가능한 QA 월드에서 Windows 상호작용을 검증한다. 공통 313개 파일 목록 SHA256은 `935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812`다. 이 QA 배치를 최종 월드 전환이나 6인 성능 합격으로 간주하지 않는다. [메뉴 검증](menu-data-compatibility.md).
+이하 v6·v7 기록은 당시 배치 이력이다. 현재 QA 서버는 v12와 같은 공통 보정본 `31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5`를 사용하며 2026-11-09 18:09:18 KST 실제 부팅 완료를 확인했다. 원래 서버 프로필과 현재 QA 월드는 정상 종료·백업해 보존한다. 공통 313개 파일 목록 SHA256은 `ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e`다. QA에만 해시 고정 Render0.7·Jade0.3 진단 두 개를 추가한다. 진단은 플레이어 팩과 최종 운영 구성에 포함하지 않는다. 이 QA 배치를 최종 월드 전환이나 6인 성능 합격으로 간주하지 않는다. [Jade 검증](jade-sublevel-coordinates.md), [메뉴 검증](menu-data-compatibility.md).
 
 2026-11-09 00:12 KST 기준 v6 셰이더 패킷 보정을 배치했다. 기존 월드를 정상 저장·백업하고 포팅 JAR 하나 및 검증 기록만 갱신했다. 모드 313개 해시가 일치하고 Done·온라인 인증·0/6명·TPS20·평균1.251ms를 확인했다. 이전 v5의 지정 Windows 장치 인증 접속은 확인했지만, v6 Windows 재접속과 실제 게임 검증은 아직이다. 플레이어는 v6 팩을 사용한다. [배치 증거](../evidence/n100-v6-shader-deployment.json), [수정·독립 리뷰 범위](pixelmon-shader-compatibility.md).
 
