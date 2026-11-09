@@ -14,3 +14,4 @@ PSA More Minecarts menu compatibility: transport runtime entity IDs as two ordin
 
 Bountiful 6.0.4 board cumulative completion count uses the same two-short transport; logical counter preserved.
 PSA Jade 11.13.2/Sable compatibility: project hit-location reads into world space for ray math, clip ship-local entity boxes in their own frame, and measure server block-accessor range in world space. Original hit results, predicates, reach thresholds and oversized-query guard preserved. Render pose context is scoped with finally. Original Jade JAR unchanged.
+PSA Jade optional distance tooltip: measure eye-to-hit distance using render poses for storage-frame points; original tooltip formatting and configuration unchanged. Entity-accessor distance already delegates to Sable's existing configured entity-distance overwrite, so no second wrapper is added there.

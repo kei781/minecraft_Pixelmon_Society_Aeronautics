@@ -1,8 +1,14 @@
 {
-  "observer_version": "0.1",
-  "bytes": 5330,
-  "sha256": "55133b53ac3bee5f795d71ccffbdf8637ef4020ca55a776ccde4337221afe2e7",
+  "observer_version": "0.2",
+  "bytes": 10269,
+  "sha256": "41d8c90f00f4cf5149a38ee40f4285f7fd9510718810dc70cdfd4ce04a3c4033",
+  "independent_canonical_builds_identical": true,
+  "exact_jade_dependency": "11.13.2+forge",
+  "pinned_api_jar_sha256": "31949971a7a8d5a5bc95ad9d400cbedfd2d65ffbfb3cea7c0b2fa3b47431a0a5",
   "production_exported": false,
-  "input_or_output_modified": false,
+  "native_data_mutated": false,
+  "native_calls_skipped": false,
+  "server_callback_forwarding": "Original consumer called with original CompoundTag, then return counted; callback return is not proof of client receipt.",
+  "client_isolation": "Entry point has no client types; client-only observers listed only in client mixins.",
   "runtime": "PENDING"
 }

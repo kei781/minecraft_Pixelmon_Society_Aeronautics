@@ -1,9 +1,11 @@
 {
   "scope": "Constant-pool candidates only; method bodies and runtime controls required.",
+  "expanded_family": false,
   "top_level_jars": 354,
   "nested_jars": 75,
   "class_entries": 79468,
   "hit_location_classes": 217,
+  "candidate_classes": 33,
   "candidates": [
     {
       "jar": "CreativeCore_FORGE_v2.12.32_mc1.20.1.jar",
@@ -945,15 +947,11 @@
       "classification": "Same-method geometry candidate; no identical cached-hit/world-camera-to-entity-query failure established. Feature-specific ship regression pending."
     }
   ],
+  "classification_method": "Controller-authored manual interpretation of reproducible constant-pool and javap method metadata; no automatic dataflow proof.",
+  "reproduce": "python3 tools/audit_spatial_hit_references.py dist/PSA-Forge-Full-Experimental-v9.mrpack --javap /path/to/JDK17/bin/javap",
   "jade_additional_family": {
-    "server_distance_class": "snownee.jade.impl.BlockAccessorImpl",
-    "server_distance_reads": 1,
-    "all_jade_classes_scanned_for_BlockPos_distSqr_Vec3_distanceToSqr_and_Level_getEntities": true,
-    "classes_with_those_references": [
-      "snownee.jade.impl.BlockAccessorImpl",
-      "snownee.jade.overlay.RayTracing"
-    ],
-    "upstream_compatibility_mixins_in_baseline": "Excluded by pinned build and absent from configured mixin lists; plugins return no dynamic mixins."
+    "expanded_evidence": "jade-spatial-family-expanded.json",
+    "entity_accessor": "Entity.distanceToSqr(Entity) delegates to Vec3 overload already overwritten by configured Sable interaction_distance.EntityMixin; actual ship entity-data regression remains pending."
   },
   "limitations": "Class reference search and method-level categorization do not prove arbitrary dataflow or all-feature compatibility; suspected other features stay unverified rather than silently passed."
 }

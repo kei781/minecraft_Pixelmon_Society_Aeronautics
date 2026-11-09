@@ -1,0 +1,12 @@
+{
+  "observer_version": "0.1",
+  "first_error_kst": "2026-11-09 17:47:10.434",
+  "requested_jade_version": "11.13.2",
+  "actual_jade_version": "11.13.2+forge",
+  "result": "Mod dependency rejection before gameplay; not a runtime pass",
+  "server_joined": false,
+  "client_query_report_created": false,
+  "windows_report_bytes": 2664,
+  "windows_report_sha256": "5749a42df368f716176f5b672d0d6d3b34d8cc5ff0082654585336b698a7624d",
+  "correction": "Observer0.2 exact dependency now11.13.2+forge; fresh launch pending."
+}

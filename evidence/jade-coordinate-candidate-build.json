@@ -1,7 +1,7 @@
 {
   "baseline_common_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
-  "candidate_common_sha256": "2ff0c9d4140364e18406f714029558116b0e6aa56e701babc40dbbf62a906f59",
-  "bytes": 44459617,
+  "candidate_common_sha256": "75c3d99e4c7ae1bd003a229f71ef127acf7e1ddc69618fd1e68c270ef3e56be9",
+  "bytes": 44461274,
   "independent_builds_identical": true,
   "changed_entries": [
     "PSA_PROVENANCE.txt",
@@ -10,10 +10,13 @@
   "added_entries": [
     "dev/psa/compat/JadeBlockAccessorCoordinatesMixin.class",
     "dev/psa/compat/JadeCoordinateMath.class",
+    "dev/psa/compat/JadeDistanceCoordinatesMixin.class",
     "dev/psa/compat/JadeRayTracingCoordinatesMixin.class"
   ],
   "removed_entries": [],
-  "geometry_controls": 36,
+  "geometry_controls": 40,
   "geometry_result": "PASS",
-  "runtime_candidate_test": "PENDING"
+  "production313_manifest_sha256": "f43b0055a3c280d02618987a0cba3f418275bb09ff6d4d934c576b32e9547e79",
+  "runtime_candidate_test": "PENDING",
+  "previous_candidate": "2ff0c9d4140364e18406f714029558116b0e6aa56e701babc40dbbf62a906f59; Windows launch stopped by test observer0.1 dependency before gameplay."
 }

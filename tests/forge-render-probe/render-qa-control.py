@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strict 313 production + one diagnostic controller, only in a new disposable QA profile."""
+"""Strict 313 production + two pinned diagnostics, only in an owned disposable QA profile."""
 import fcntl
 import hashlib
 import json
@@ -13,8 +13,10 @@ import time
 import uuid
 
 ROOT = Path(__file__).resolve().parent
-BASELINE = "4a4e3d5bc856514347354d33ae2f74bbc02b9bdef721df26c2fe3e668c6d578a"
+BASELINE = "f43b0055a3c280d02618987a0cba3f418275bb09ff6d4d934c576b32e9547e79"
 PROBE = "psa-render-probe-0.7.jar"
+JADE_PROBE = "psa-jade-probe-0.2.jar"
+JADE_PROBE_SHA256 = "41d8c90f00f4cf5149a38ee40f4285f7fd9510718810dc70cdfd4ce04a3c4033"
 SOCKET = "psa-render-" + hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
 
 
@@ -59,8 +61,11 @@ def inventory(receipt):
     probe = ROOT / "mods" / PROBE
     if probe.is_symlink() or digest(probe) != expected:
         raise RuntimeError("Diagnostic hash mismatch")
+    jade_probe = ROOT / "mods" / JADE_PROBE
+    if jade_probe.is_symlink() or not jade_probe.is_file() or digest(jade_probe) != JADE_PROBE_SHA256:
+        raise RuntimeError("Jade observer hash mismatch")
     actual = list((ROOT / "mods").iterdir())
-    if {p.name for p in actual} != set(files) | {PROBE} or len(actual) != 314:
+    if {p.name for p in actual} != set(files) | {PROBE, JADE_PROBE} or len(actual) != 315:
         raise RuntimeError("Unexpected diagnostic inventory")
     if any(p.is_symlink() or not p.is_file() for p in actual):
         raise RuntimeError("Non-regular mod entry")
@@ -165,7 +170,7 @@ def main():
     action = sys.argv[1] if len(sys.argv) > 1 else "status"
     if action == "verify":
         inventory(receipt)
-        print("PSA_RENDER_QA production313 and one pinned diagnostic verified")
+        print("PSA_RENDER_QA production313 and two pinned diagnostics verified")
     elif action == "recover":
         with (ROOT / ".psa-render-control.lock").open("w") as lock:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)

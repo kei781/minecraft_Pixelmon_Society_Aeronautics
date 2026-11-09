@@ -49,6 +49,9 @@ public final class JadeCoordinateMathTest {
             check(JadeCoordinateMath.contains(box, pose.transformPosition(localOrigin), pose, CONTAINS), "camera inside local box");
             check(!JadeCoordinateMath.contains(box, worldStart, pose, CONTAINS), "camera outside local box");
             near(JadeCoordinateMath.worldPoint(localOrigin, pose), new Vec3(23.5, 104, 7.5), "hit projection");
+            check(worldStart.distanceTo(localOrigin) > 1_000_000
+                    && Math.abs(worldStart.distanceTo(JadeCoordinateMath.worldPoint(localOrigin, pose)) - 3.5) < 1.0E-8,
+                    "distance tooltip uses world distance instead of storage magnitude");
             check(new AABB(worldStart, worldEnd).getSize() < 8, "bounded broadphase");
             Vec3 nearHit = JadeCoordinateMath.clip(box, worldStart, worldEnd, pose, CLIP).orElseThrow();
             Vec3 fartherBlock = pose.transformPosition(localOrigin.add(1, 0, 0));

@@ -1,0 +1,36 @@
+{
+  "qa_world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+  "baseline_backup": {
+    "backup_file": "before-coordinate-fix-1794213739810252056.tar.gz",
+    "backup_bytes": 47885242,
+    "backup_sha256": "115428279a7c7c098f98a35f14bd2968a15bf54569a03d63c17824a8df30c398"
+  },
+  "first_candidate": {
+    "common_sha256": "2ff0c9d4140364e18406f714029558116b0e6aa56e701babc40dbbf62a906f59",
+    "dedicated_done_utc": "2026-11-09 08:45:25",
+    "native_world_preserved": true,
+    "production_mods": 313,
+    "diagnostics": 1,
+    "windows_result": "Stopped at observer0.1 dependency before gameplay"
+  },
+  "r2_candidate": {
+    "common_sha256": "75c3d99e4c7ae1bd003a229f71ef127acf7e1ddc69618fd1e68c270ef3e56be9",
+    "production313_manifest_sha256": "f43b0055a3c280d02618987a0cba3f418275bb09ff6d4d934c576b32e9547e79",
+    "production_mods": 313,
+    "diagnostics": 2,
+    "jade_observer_sha256": "41d8c90f00f4cf5149a38ee40f4285f7fd9510718810dc70cdfd4ce04a3c4033",
+    "render_observer_unchanged_sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310",
+    "missing_jade_observer_negative_control": "verify rejected; exact file restored and verify passed",
+    "server_start_command": "PASS; Done pending",
+    "windows_install": "PENDING",
+    "native_query_and_data_response": "PENDING"
+  },
+  "auth_and_guards": {
+    "online_mode": true,
+    "rcon": false,
+    "op_or_auth_changes": false,
+    "marker_and_receipt_generation_unchanged": true,
+    "normal_exits_only": true
+  },
+  "both_goals_complete": false
+}

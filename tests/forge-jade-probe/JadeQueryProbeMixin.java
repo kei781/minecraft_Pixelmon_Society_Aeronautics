@@ -20,7 +20,7 @@ public abstract class JadeQueryProbeMixin {
                                                   AABB bounds, Predicate<Entity> predicate,
                                                   Operation<EntityHitResult> original) {
         EntityHitResult result = original.call(level, viewer, start, end, bounds, predicate);
-        JadeProbe.returned(start, end, bounds);
+        JadeClientQueries.returned(start, end, bounds);
         return result;
     }
 }
