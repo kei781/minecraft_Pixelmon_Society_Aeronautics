@@ -1,0 +1,42 @@
+{
+  "bin_position": [
+    6,
+    100,
+    7
+  ],
+  "actual_harvested_carrot_deposited": 1,
+  "native_owner_registered": true,
+  "native_cached_base_values_nan_count": 4,
+  "attribute_ids": [
+    "shippingbin:crop_sell_multiplier",
+    "shippingbin:wood_sell_multiplier",
+    "shippingbin:gem_sell_multiplier",
+    "shippingbin:meat_sell_multiplier"
+  ],
+  "serialized_player_nbt_presence": {
+    "shippingbin:crop_sell_multiplier": false,
+    "shippingbin:wood_sell_multiplier": false,
+    "shippingbin:gem_sell_multiplier": false,
+    "shippingbin:meat_sell_multiplier": false
+  },
+  "player_attributes_snapshot_sha256": "efc83e4671fe8b8319bd2868f0238c793b24da863ef3326a2ada3edbb2a35a07",
+  "bin_snapshot_sha256": "a9d68954bfb41557b089cec1a402a7b3797395806b6e969cce1886085bd596aa",
+  "native_attribute_api_not_yet_queried": true,
+  "sale_completed": false,
+  "production_source_unchanged": true,
+  "snapshot_scope": "Baseline captured before native attribute API reads or sale. Subsequent evaluation is separated below.",
+  "subsequent_evaluation": {
+    "native_base_api_values": {
+      "shippingbin:crop_sell_multiplier": 1.0,
+      "shippingbin:wood_sell_multiplier": 1.0,
+      "shippingbin:gem_sell_multiplier": 1.0,
+      "shippingbin:meat_sell_multiplier": 1.0
+    },
+    "native_api_getters_still_leave_serialized_nbt_absent": true,
+    "downstream_default_guard": "global.getAttributeMultiplier returns Number(filtered Base) || 1",
+    "functional_failure_reproduced": false,
+    "original_sale_completed_without_source_change": true,
+    "original_sale_evidence": "society-shipping-original-settlement.json",
+    "interpretation": "Missing serialized defaults produce NaN cache entries, but original consumers apply default multiplier1. Actual crop sale passed; no patch justified by this observation."
+  }
+}

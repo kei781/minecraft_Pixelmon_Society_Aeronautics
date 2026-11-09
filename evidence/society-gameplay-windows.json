@@ -1,0 +1,105 @@
+{
+  "package_version": "v9",
+  "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+  "production_code_changed": false,
+  "qa_materials_supplied": true,
+  "materials": [
+    "minecraft:iron_hoe",
+    "society:carrot_seed",
+    "dew_drop_watering_cans:copper_watering_can",
+    "shippingbin:basic_shipping_bin"
+  ],
+  "plot": [
+    7,
+    99,
+    5
+  ],
+  "watering_can_initial_observation": {
+    "use_key_action_at_source_water_observed": true,
+    "client_blue_water_visible": true,
+    "client_numeric_capacity_displayed": false,
+    "native_selected_item": "dew_drop_watering_cans:copper_watering_can",
+    "native_item_damage_at_071008_utc": 0,
+    "empty_to_full_transition_proven": false,
+    "scope": "Filled tool state confirmed after action; original default tool may already have been full. A later consumption/refill delta is needed to prove refill transition."
+  },
+  "manual_tilling_verified": true,
+  "manual_planting_verified": true,
+  "manual_watering_verified": true,
+  "native_daily_growth_verified": true,
+  "manual_harvest_verified": true,
+  "actual_shipping_sale_verified": true,
+  "both_user_goals_complete": false,
+  "initial_creative_observations": {
+    "manual_tilling_planting_wet_soil_visuals_confirmed": true,
+    "crop": "society:carrot",
+    "plot": [
+      6,
+      100,
+      5
+    ],
+    "seed_count_unchanged": 16
+  },
+  "game_mode": "survival",
+  "seed_count_before": 16,
+  "seed_count_after": 15,
+  "native_player_game_type": 0,
+  "native_survival_crop_age0_and_moisture7_queries_passed": true,
+  "native_watering_can_damage_after_survival_use": 1,
+  "native_watering_can_damage_after_actual_refill": 0,
+  "refill_transition_verified": true,
+  "first_native_daily_growth_age0_to1_verified": true,
+  "survival_farming_windows_receipt": {
+    "file_name": "PSA-Windows-v9-Society-Survival-Farming-Report.json",
+    "bytes": 2011,
+    "sha256": "b5497b64d8129fc200d6125ceb90bdb7bb91f3513688669ae724f708371f2b05",
+    "raw_file_transferred": false
+  },
+  "growth_control_evidence": "society-daily-growth-control.json",
+  "regrowth_control_evidence": "society-second-harvest-regrowth.json",
+  "mature_ui_and_native_age7_verified": true,
+  "harvest_right_click_resets_age0": true,
+  "farming_xp_gained_each_observed_harvest": 11,
+  "harvest_attempts": 2,
+  "first_harvest_drop": {
+    "item": "minecraft:carrot",
+    "count": 2,
+    "pickup_delay": 0,
+    "age": 5895,
+    "lifespan": 6000,
+    "out_of_player_pickup_range": true,
+    "naturally_despawned_before_pickup": true,
+    "not_replaced_by_give_command": true
+  },
+  "second_harvest": {
+    "actual_automatic_pickup": true,
+    "item": "minecraft:carrot",
+    "count": 1,
+    "client_hotbar_slot": 7,
+    "native_read_only_inventory_count": 1,
+    "native_count_verified_utc": "2026-11-09 07:32:01",
+    "crop_reset_to_age0": true
+  },
+  "actual_player_placed_bin": [
+    6,
+    100,
+    7
+  ],
+  "actual_currency_retrieval_verified": true,
+  "settlement_evidence": "society-shipping-original-settlement.json",
+  "nan_cache_functional_failure_reproduced": false,
+  "production_economy_code_patched": false,
+  "daylight_cycle_restored_to_original_true": true,
+  "full_natural_duration_crop_cycle_verified": false,
+  "windows_final_report": {
+    "file_name": "PSA-Windows-v9-Society-Farm-to-Sale-Final-Report.json",
+    "bytes": 7078,
+    "sha256": "54f3b34a23278061f7d1ff5bdb525018bdd61ae656f98fcd9933861ccd022fdc"
+  },
+  "windows_image_hashes": {
+    "harvest_pickup_16.31.57.png": "924e54dbaf9191de0c7f6e229b235bcf2536da4093dfd0586edfa8c2b10b102e",
+    "carrot_deposit_16.34.35.png": "c6322e9c9d81d952d62f7ac5457f6d4a7df9c20e012d996940e94c7855285167",
+    "settlement_16.48.14.png": "3f5753e00601b1ba6e0071d2a0932fd87b83d9e8ad34fe9afa54cec1acb62664",
+    "currency_retrieval_16.49.11.png": "2d43229190c6a080bf84054c6247f4f5d24b5db5916f8694dbe8a2254b2c8713"
+  }
+}

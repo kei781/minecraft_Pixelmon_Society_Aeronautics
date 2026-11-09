@@ -148,3 +148,11 @@ R1 수정 당시 기록: 0.3은3,484개 뒤 Create 꾸러미에서 멈췄고, �
 최신 결과: 0.6 전수 검사도17,239개·4,310묶음 전부 통과했다. Claude Opus5.5 R3는175131f를 CLEAN으로 판정했고 브리지 적용 후 실제 미해결0건, CI 미설정이다. 이 판정은 코드 수락이며 Task9 전체 완료가 아니다. 실제 인증 ACK 예외 대조를 준비하는 명령만 추가한0.7의 정상 Session은0.6과 `javap -c -p` 결과가 같다.0.7 기동·소표본16개도 통과했다. R4는5305e1d를 실제 최신 Claude Opus5.5/high로 검토해 CLEAN이었고 브리지 적용 후 실제 미해결0건이다. [당시 코드 리뷰 범위](../evidence/task9-render-code-review.json).
 
 R4 뒤 실제 인증 검사: 같은 Windows run과 서버 journal을 대조해 기본 Aeronautics 아이템16개 렌더·모델 조회를 확인했다. 이어4개 실제 ACK 뒤 의도한 정리 예외를 넣었고 `acknowledge`·`acceptAcknowledgement` 스택, 영구 실패·티켓 보존, 다음 실행·재기동 거부를 확인했다. 서버는 정상 정지했으며 실패 체크포인트와 월드308개 파일을 보존했고 이동 전후 전체 트리 해시가 같다. 새 세대 QA 월드를 기동해 핵심 플레이를 이어간다. 클라이언트 튕김은 없었고 전체 텍스처 육안 검사로 확대하지 않는다. [인증 표본](../evidence/item-render-authenticated-sample.json), [ACK 예외·복구](../evidence/item-render-authenticated-ack-failure.json). 세 프로젝트 핵심 플레이, 넓은 클라이언트 전수 표시·6인 부하·최종 전체 리뷰는 남아 있다.
+
+### 핵심 플레이 후속 검사와 새 좌표 오류
+
+같은 새 v9에서 Pixelmon 전투 UI의 Scratch 선택·상대 HP와 PP 감소·상대 Tackle 피해·턴 진행을 확인했다. 일반 몬스터볼 세 번째 시도에서 포획돼 파티2번의 Lv16 잉어킹 요약과 경험치·스타터 레벨 상승까지 확인했다. 당시 계정은 크리에이티브였으므로 서바이벌의 볼 소모·순수 KO 승리·야외 포획은 별도 미완료다. [관찰·영수증](../evidence/pixelmon-gameplay-windows.json).
+
+서바이벌 전환 후 Society 당근 씨앗16→15 소모, 경작·파종·물주기, 물뿌리개 Damage1→재충전0, 원래 일일 성장과 완숙·수확·Farming XP+11을 확인했다. 후속 성장일의 토양 조건과 시험 시간은 제어했고 작물 나이는 직접 설정하지 않았다. 첫 드롭은 줍기 범위 밖에서 정상 수명으로 사라져 같은 작물을 다시 길렀으며, 두 번째 수확 당근1개를 실제로 주웠다. 직접 설치한 출하함의 원본 정산으로 철 화폐1·구리 화폐7, 총23을 수령했다. 중간 캐시 NaN은 기본 배율1 보정으로 정상 처리됐으므로 코드 패치를 만들지 않았다. 관련303개 스크립트도 조사했다. [전체 경로](../evidence/society-gameplay-windows.json), [원본 정산](../evidence/society-shipping-original-settlement.json), [관련 읽기 조사](../evidence/society-attribute-reader-family.json).
+
+실제 Aero 블록의 정지 기체를 native 명령으로 조립해 물리 구조물1개·질량392.5와 클라이언트 표시를 확인했다. 조립한972칸은 공기를 포함한 영역 부피이며 고체 블록 수가 아니다. 기체에 올라 레버를 조준하자 Jade가 월드 좌표와 내부 저장 좌표를 섞은 큰 AABB로 탐색을 요청했고 Sable 보호 장치가 이를 중단했다. 첫 오류에서 레버·비행 검사를 멈추고 기체 밖으로 이동했다. [조립 범위](../evidence/aeronautics-assembly-runtime.json), [실제 오류](../evidence/jade-sublevel-raytrace-baseline.json). 보호 장치를 유지한 좌표 보정과 같은 유형의 호출자 조사를 별도 수정 단계로 진행한다. Task9의 R4 코드 판정은 유지되며 넓은 렌더 검사와 전체 목표는 여전히 미완료다.

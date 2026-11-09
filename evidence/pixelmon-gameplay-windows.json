@@ -1,0 +1,74 @@
+{
+  "package_version": "v9",
+  "diagnostic_version": "0.7",
+  "production_code_unchanged_since_review": true,
+  "fresh_instance": "PSA-v9-QA",
+  "battle_setup": "Native Pixelmon pokebattle species command with an authenticated player; game creates a separate normal wild Magikarp. No explicit AI/NBT modification on this battle participant.",
+  "opponent_species": "Magikarp",
+  "opponent_level": 16,
+  "starter_species": "Totodile",
+  "observed_battle": {
+    "native_ui_opened": true,
+    "actual_move_selected": "Scratch",
+    "opponent_hp_percent_before": 100.0,
+    "opponent_hp_percent_after": 93.9,
+    "move_pp_before": 35,
+    "move_pp_after": 34,
+    "opponent_move_observed": "Tackle",
+    "starter_hp_before": 20,
+    "starter_hp_after": 13,
+    "real_turns_progressed": true
+  },
+  "observed_capture": {
+    "route": "Native battle Bag -> Poke Balls -> ordinary Poke Ball",
+    "actual_attempts": 3,
+    "first_two_broke_free_and_returned_to_next_turn": true,
+    "capture_success_message_observed": true,
+    "experience_and_starter_level_up_observed": true,
+    "captured_party_slot": 2,
+    "summary_species_number": 129,
+    "summary_level": 16,
+    "summary_hp": [
+      30,
+      33
+    ],
+    "summary_ability": "Swift Swim"
+  },
+  "party_and_summary_confirmed": true,
+  "pure_ko_victory_validated": false,
+  "outdoor_throw_projectile_observed": true,
+  "outdoor_capture_validated": false,
+  "natural_encounter_frequency_validated": false,
+  "all_species_or_moves_validated": false,
+  "client_crash_since_battle_start": false,
+  "new_errors_or_disconnects_since_battle_start": 0,
+  "nonfatal_oculus_embeddium_change_warning_count": 1,
+  "raw_windows_report_pending": false,
+  "qa_input_changes_to_restore": [
+    "Use Item/Place Block: F8 back to original right mouse",
+    "Raw Input: restore original true if changed only for QA"
+  ],
+  "qa_setup_issue": "Initial arena pool overflow corrected before native battle; dry foot-space and recessed source-water controls both passed.",
+  "both_user_goals_complete": false,
+  "windows_receipts": {
+    "report": {
+      "file_name": "PSA-Windows-v9-Pixelmon-Battle-Capture-Report.json",
+      "bytes": 3264,
+      "sha256": "4593dea1c7c4f63380cc841582cf6a14367efce8d08fb42d6a8fef9fc7b76bf3"
+    },
+    "capture_success_image": {
+      "file_name": "2026-11-09_16.02.39.png",
+      "bytes": 2379904,
+      "sha256": "8c75fd489e306ce349fffbae40b6246c3363e19b767e9a3ddd6d0fff564af2dd"
+    },
+    "party_summary_image": {
+      "file_name": "2026-11-09_16.03.42.png",
+      "bytes": 1116262,
+      "sha256": "e469e2d5f5cbcb976b9544ba19a10194c8c2991c2b513a17caba4605c9f07ba6"
+    },
+    "original_files_remain_on_windows": true,
+    "raw_files_transferred": false
+  },
+  "initial_game_mode": "creative; confirmed in the following farming phase before transition to survival",
+  "survival_capture_and_ball_consumption_validated": false
+}
