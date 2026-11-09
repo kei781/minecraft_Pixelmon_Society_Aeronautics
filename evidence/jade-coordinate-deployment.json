@@ -42,7 +42,68 @@
     "diagnostics": 2,
     "start_command": "PASS; actual dedicated Done2026-11-09 09:09:18UTC",
     "same_world_generation": true,
-    "windows": "Fresh launch in progress; initial resource-loading exceptions under comparison, world entry not verified",
-    "native_query_and_data_response": "PENDING"
+    "windows": "Fresh authenticated JVM; ordinary furnace, exact old lever, actual ship furnace and ordinary projected chicken HUD passed; see jade-live-coordinate-regression.json.",
+    "native_query_and_data_response": "Positive real client query returns and storage block callback returns; no storage entity response proof."
+  },
+  "observer04_restart": {
+    "backup_file": "before-observer04-1794219966323379579.tar.gz",
+    "backup_bytes": 11444489,
+    "backup_sha256": "ae616e8c8639252738a147a7eb99dd7a238d0f12f5039382d794451695040390",
+    "observer_version": "0.4",
+    "observer_bytes": 10510,
+    "observer_sha256": "1775d74b4b28d9339e564a6725e90dfe6282deaf78dabd2a9f301bd8efa5e01c",
+    "production_manifest_sha256": "ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e",
+    "production_mods": 313,
+    "diagnostics": 2,
+    "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+    "property_changes": {
+      "gamemode": [
+        "creative",
+        "survival"
+      ],
+      "force-gamemode": [
+        "true",
+        "false"
+      ]
+    },
+    "missing_observer_negative_control": "rejected; restored exact artifact; verify passed",
+    "normal_stop": true,
+    "auth_unchanged": true,
+    "start": "Started; verify Done before connecting",
+    "dedicated_done_utc": "2026-11-09 10:28:09",
+    "fatal_loader_or_mixin_errors": 0,
+    "windows_install": {
+      "normal_previous_exit_code": 0,
+      "total_jars": 356,
+      "other_355_hashes_unchanged": true,
+      "java_classes_identical_to_03": 6,
+      "fresh_launch": {
+        "jvm_started_kst": "2026-11-09 19:29:41",
+        "main_menu": "PASS",
+        "previous_ResourcePackInfo_warning": "ABSENT",
+        "authenticated_same_world_join": "PENDING"
+      }
+    },
+    "persisted_rig": {
+      "native_read_utc": "2026-11-09 10:29:21",
+      "position": [
+        23.497737884521484,
+        110.3866195678711,
+        7.445521354675293
+      ],
+      "mass": 392.5,
+      "linear_velocity": [
+        0,
+        0,
+        0
+      ],
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "explicit_physics_unpause": true,
+      "save_completed": true
+    }
   }
 }

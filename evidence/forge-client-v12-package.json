@@ -22,5 +22,11 @@
   "shared_server_production_mods": 313,
   "client_helper_unchanged_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
   "fresh_windows_v12_import": "PENDING",
-  "gameplay_validation_complete": false
+  "gameplay_validation_complete": false,
+  "private_windows_delivery": {
+    "status": "PASS",
+    "receiver_bytes": 1137793542,
+    "receiver_sha256": "bd884f35b18d157e7bbed3f3e1961539f0ac1913e914e3721a5d50eef94090e5",
+    "fresh_import": "PENDING"
+  }
 }

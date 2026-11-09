@@ -17,7 +17,7 @@
   "geometry_controls": 40,
   "geometry_result": "PASS",
   "production313_manifest_sha256": "ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e",
-  "runtime_candidate_test": "PENDING",
+  "runtime_candidate_test": "PASS scoped: fresh actual ordinary/on-ship block query, native block response, HUD and controlled creative vertical flight; see live regression and flight evidence. Survival/local-entity/rotated-frame/full-pack remain unverified.",
   "build_scope": "Both project build outputs cleaned, compile classpath preparation task run separately, then full Java compile/build/reobf/canonicalization. Initial direct clean+build failed11missing-class diagnostics before classpath preparation; not relabelled as success.",
   "previous_candidate": "75c3d99e4c7ae1bd003a229f71ef127acf7e1ddc69618fd1e68c270ef3e56be9; observer0.2 loader failure before world entry. Same reserved-namespace issue in math helper corrected proactively."
 }
