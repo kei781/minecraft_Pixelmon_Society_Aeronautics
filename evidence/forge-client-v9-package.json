@@ -9,7 +9,7 @@
   "override_files": 7926,
   "longest_relative_path": 108,
   "full_gameplay_validated": false,
-  "validation": "all declared archive payload hashes, not fresh GUI import",
+  "validation": "Archive payload hashes and actual Windows Prism import/install hash comparison; fresh game launch still pending.",
   "verified_payload_hashes": 7925,
   "production_mods": 354,
   "diagnostic_jars": 0,
@@ -17,5 +17,5 @@
   "paired_candidate_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
   "client_helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
   "common_manifest_sha256": "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812",
-  "fresh_gui_import_verified": false
+  "fresh_gui_import_verified": true
 }

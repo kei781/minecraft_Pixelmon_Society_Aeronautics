@@ -33,7 +33,7 @@ Get-FileHash ".\PSA-Forge-Full-Experimental-v9.mrpack" -Algorithm SHA256
 
 ## 실제 확인한 범위
 
-v9 아카이브의 선언된 파일 7,925개 SHA256, 모드 354개, 구성 버전과 진단 코드 부재를 확인했다. 서버 공통 313개 파일은 N100 검증 후보와 일치한다. v9 자체의 새 GUI 가져오기는 아직 확인하지 않았다. [패키지 검사](../evidence/forge-client-v9-package.json).
+v9 아카이브의 선언된 파일 7,925개 SHA256, 모드 354개, 구성 버전과 진단 코드 부재를 확인했다. 서버 공통 313개 파일은 N100 검증 후보와 일치한다. Windows Prism에서 사용자가 신뢰 확인을 직접 처리한 뒤 새 `PSA-v9-QA` 인스턴스 가져오기와 설치 파일7,925개 해시·354개 모드 일치를 확인했다. 새 인스턴스 실행·접속은 이어서 검증한다. [패키지 검사](../evidence/forge-client-v9-package.json), [Windows 가져오기](../evidence/forge-client-v9-import-windows.json).
 
 이전 v7는 macOS Prism의 실제 GUI 가져오기와 설치 파일 해시 대조를 통과했다. 현재 Windows 게임 검사는 기존 인스턴스에 v9과 동일한 공통 수정본과 메뉴 보정을 적용해 진행한다. 새 패키지 가져오기 검증과 기존 인스턴스 실행 검증을 구분한다. [이전 가져오기 기록](../evidence/forge-client-import-v7.json).
 

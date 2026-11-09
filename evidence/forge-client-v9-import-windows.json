@@ -1,0 +1,15 @@
+{
+  "filename": "PSA-Forge-Full-Experimental-v9.mrpack",
+  "sha256": "64dcbbb3760860599adf9ed950831160df7bfa9eb8189849166bfa8cea7ab47a",
+  "actual_windows_prism_gui_import_complete": true,
+  "trust_confirmation_performed_by_user": true,
+  "installed_instance_name": "PSA-v9-QA",
+  "installed_mod_jars": 354,
+  "declared_payload_hashes_matched": 7925,
+  "common_port_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+  "client_helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+  "existing_instance_and_frozen_report_preserved": true,
+  "fresh_game_launch_verified": false,
+  "raw_verification_filename": "PSA-Windows-v9-Import-Verification.json",
+  "scope": "GUI import and installed file identity only; actual new-instance launch/connect/play pending."
+}

@@ -80,6 +80,13 @@ public final class RenderProbe {
                     session = new Session(context.getSource().getServer().overworld(), catalog.subList(0, Math.min(4, catalog.size())), 0, catalog.size());
                     session.injectCleanupFailure = true; session.checkpoint(); return 1;
                 }))
+                .then(Commands.literal("render_cleanup_failure_test").then(Commands.argument("player", EntityArgument.player())
+                    .executes(context -> {
+                        requireStart(); var catalog = catalog();
+                        session = new Session(EntityArgument.getPlayer(context, "player"),
+                                catalog.subList(0, Math.min(4, catalog.size())), 0, catalog.size());
+                        session.injectCleanupFailure = true; session.checkpoint(); return 1;
+                    })))
                 .then(Commands.literal("baseline_pickup").then(Commands.argument("start", IntegerArgumentType.integer(0))
                     .executes(context -> {
                         requireStart();

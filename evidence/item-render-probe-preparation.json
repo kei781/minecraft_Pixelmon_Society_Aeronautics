@@ -1,7 +1,7 @@
 {
-  "artifact": "psa-render-probe-0.6.jar",
-  "sha256": "d0307911edccd9762be20f0a63e2d809e712528402dc084832c9b4e92e2f3acc",
-  "bytes": 35371,
+  "artifact": "psa-render-probe-0.7.jar",
+  "sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310",
+  "bytes": 35466,
   "independent_builds_byte_identical": true,
   "minecraft_calls_reobfuscated": true,
   "macos_protocol_negative_controls_pass": true,
@@ -28,18 +28,18 @@
     "tests/forge-render-probe/DropStackView.java": "83ede94bcaf00186aab33dc39f4cae80500d2bafff6080e9b4328a1ccfa50090",
     "tests/forge-render-probe/RenderClient.java": "47ffb82f09dba49e7f84033a489e747a81917d43bb299cdf285b8cda4de9c52c",
     "tests/forge-render-probe/RenderNetwork.java": "9f067e82f0be0fa759a4b2f636f75603909a06ca3dad24673e6068fde6c835e5",
-    "tests/forge-render-probe/RenderProbe.java": "085aecaee226947b37bb078f809631a66a945689dd7b92b4abf75ed3026f7b99",
+    "tests/forge-render-probe/RenderProbe.java": "0e64b569b9d2f76fab9bef4a43884dbafdd0094a782982281ba519ef730c4bce",
     "tests/forge-render-probe/RenderProtocol.java": "6dab2795dc0f9b03e620037ffb1cef2940ed7384bbe9fb13b61d96ff50387549",
     "tests/forge-render-probe/RenderProtocolTest.java": "17489115b6365735950028a21da46e55250573d512deab996091b304ca3807bd",
     "tests/forge-render-probe/mixin/ForgeDropFactoryMixin.java": "dc98c804c5cc02485b1636d00f89845d164706c73f28481be59c350993ac2a78",
     "tests/forge-render-probe/mixin/ItemModelProbeMixin.java": "a8f054698b9b832b5b2a88291b2ec55fc44c934db5cb84f89631a038745e28b2",
     "tests/forge-render-probe/mixin/RendererProbeMixin.java": "5fb4bdad62fb14cd843f79873207a773c6de65945e058bfe338923ad52c17acc",
-    "tests/forge-render-probe/render-qa-control.py": "b9d8e8126335bed383e8b7adc1ac03c26e80e9a9c9e162a2f86693f836b23e97",
-    "tests/forge-render-probe/resources/META-INF/mods.toml": "9ebb98bc4ee1eee1593a20b19512998bd28659b3557587364823948879fd8e77",
+    "tests/forge-render-probe/render-qa-control.py": "df5fc289f46a423e445c6d9dd99bdd971b0f282a4f298a96d455dfe12a3ff4a7",
+    "tests/forge-render-probe/resources/META-INF/mods.toml": "5f4e56e4231fb79199507a3b16655c7552fa09c52aed5f5609a4fbebf2344c74",
     "tests/forge-render-probe/resources/pack.mcmeta": "51971f75019d28f93e5819a996a88fdbf6e8b333a263012921d73a9d4ae33b4b",
     "tests/forge-render-probe/resources/psa-render-probe.mixins.json": "e34c72c05759ef046fe7ecec697fcb2b2d33fe477adbcab489a1ec6429ad2234"
   },
-  "gradle_recipe_sha256": "2190b756116cfd79a4c62c306fd49a440f37c50436869594cfec655b29f0f47f",
+  "gradle_recipe_sha256": "a3e3ac9cd86f57959d5befb0508458d4036d85e7c16a1b451d17e06a13823c3b",
   "n100_qa_guard_tests_artifact_version": "0.1; version0.2 changes diagnostic filename only in the controller; post-upgrade strict314 verify passed",
   "original_qa_saved_stopped_and_backed_up": true,
   "original_qa_world_backup_bytes": 4493868,
@@ -73,8 +73,8 @@
   "actual05_boot_and_decoder_negative_controls_passed": true,
   "same_jar_pickup_baseline_and_44_family_defaults_passed": true,
   "previous_full_native_artifact": {
-    "version": "0.5",
-    "sha256": "23f6858693e3f7356dbceb3a3fa65fca6d617499d5bd133516e83d761712cb70",
+    "version": "0.6",
+    "sha256": "d0307911edccd9762be20f0a63e2d809e712528402dc084832c9b4e92e2f3acc",
     "native_unique_items_passed": 17239,
     "native_batches": 4310,
     "certificate": "item-render-native-full.json"
@@ -91,5 +91,8 @@
     "dev/psa/renderprobe/RenderProtocol$Token.class",
     "dev/psa/renderprobe/RenderProtocol.class"
   ],
-  "previous_actual_protocol_tests_apply_by_byte_identity": true
+  "previous_actual_protocol_tests_apply_by_byte_identity": true,
+  "authenticated_cleanup_fault_command_added": true,
+  "normal_session_javap_unchanged_from06_sha256": "a9cd8afe8a2fea865b42c32bb9428d3b5089accea4211ef25408721c76527cbd",
+  "normal07_native_smoke_passed": 16
 }
