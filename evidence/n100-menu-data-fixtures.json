@@ -19,7 +19,7 @@
     {
       "type": "moreminecarts:tank_cart",
       "runtime_id": 216785,
-      "water_mb": 1000
+      "fluid_mb": 1000
     },
     {
       "type": "moreminecarts:battery_cart",
@@ -37,5 +37,94 @@
     "screenshot_time_kst": "2026-11-09 11:35:07",
     "numeric_entity_id_source": "server tagged-fixture public getter, not Windows reading"
   },
-  "remaining": "Windows bucket fill/drain, live UI and battery confirmation still pending at this snapshot"
+  "remaining": "Additional battery live-transfer follow-up; Bountiful authenticated GUI and overall gameplay remain separate",
+  "fluid_identity_sources": {
+    "observer": "records amount only as fluid_mb; does not identify fluid",
+    "fixture_setup": "summon NBT FluidName=minecraft:water",
+    "windows_gui": "authenticated client displays Water label alongside 1000mB and live 2000mB"
+  },
+  "test_design_correction": {
+    "direct_bucket_interaction": "not supported by pinned TankCartEntity; opens menu",
+    "official_description": "https://www.curseforge.com/minecraft/mc-mods/more-minecarts",
+    "replacement": "native minecart loader/unloader tick transfer; do not count missing bucket interaction as a compatibility bug"
+  },
+  "windows_live_loader_gui": {
+    "menu_kept_open": true,
+    "before_mb": 1000,
+    "after_mb": 2000,
+    "screenshot_time_kst": "2026-11-09 11:40:39",
+    "native_loader_used": true,
+    "cart_amount_directly_written": false
+  },
+  "windows_live_unloader_gui": {
+    "menu_kept_open": true,
+    "before_mb": 2000,
+    "after_mb": 1000,
+    "native_unloader_used": true,
+    "cart_amount_directly_written": false,
+    "menu_reopen_retained_mb": 1000
+  },
+  "windows_battery_gui": {
+    "title": "Minecart with Battery",
+    "energy_fe": 40000,
+    "capacity_fe": 40000,
+    "correct_menu_type_observed": true,
+    "menu_reopen_retained": true
+  },
+  "windows_flag_gui": {
+    "red_signal_count": 1,
+    "red_world_flag": true,
+    "blue_signal_count": 1,
+    "blue_world_flag": true,
+    "replaced_red_returned_to_inventory": true,
+    "menu_reopen_retained_blue": true
+  },
+  "windows_pair_verification": {
+    "actual_common_jars": 313,
+    "missing": 0,
+    "mismatched": 0,
+    "actual_total_jars_with_diagnostic": 355,
+    "common_manifest_sha256": "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812",
+    "port_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+    "initial_hash_verified_utc": "2026-11-09T02:26:46.760494+00:00",
+    "final_hash_verified_utc": "2026-11-09T02:52:03.387076+00:00",
+    "jvm_started_utc": "2026-11-09T02:27:20.0840681Z",
+    "connection_utc": "2026-11-09T02:29:17.666Z",
+    "same_jvm_through_all_gui_checks": true,
+    "sync_or_packet_exceptions": 0,
+    "new_candidate_mixin_errors": 0,
+    "frozen_report_sha256": "72a969fe87dce6efa6a52377e8cb3bc83ccae898f3a3d2ca5ef8119ee9d1e8b6",
+    "raw_evidence_location": "retained on Windows; only aggregates and hashes shared",
+    "candidate_verified_before_server_authentication": true
+  },
+  "windows_screenshots_sha256": {
+    "2026-11-09_11.35.07.png": "938a05d87090d427ce39803ae23c8bf7caff79bb1fd04feeb6cc58d067f48fef",
+    "2026-11-09_11.40.39.png": "60608b240d2fa3d6ba93f466eb626fe190f972107df174ed78699863d276ed15",
+    "2026-11-09_11.42.10.png": "087fb6f109cf782493290bd2542d24aa2a38d8221b164ee394613f0d6ceddac7",
+    "2026-11-09_11.42.55.png": "f5ffbd07fb4a0fbe084dc67c5593fb132820ef433a4d8b59b49d89f2635708af",
+    "2026-11-09_11.45.01.png": "73c6ca40aa5a6d2a2d5e822263116f49d0556052a6def097d40eed1484ab72ee",
+    "2026-11-09_11.45.26.png": "6f458ab9ae89e05faf9c6266744798376d6bcae1891d01f0cc86b8b7fb780998",
+    "2026-11-09_11.47.56.png": "e222841e143cff508a8588365ab2c44d6e6060cf48f02a317650e0e379ac0a72",
+    "2026-11-09_11.48.18.png": "3bc67cd8cd683572467f7f1321d0d92817ea7468100c2bb97623ac0877c5dbcf",
+    "2026-11-09_11.49.12.png": "70261710fa538151cbbccdab70ce2276ee4b8b3a5b105ae4e2492f3327c23a08",
+    "2026-11-09_11.49.38.png": "0cfeb86acbb3b9795066db9edb9eccb927e8cbcccdfcd16b1ea9828a553ba8d9"
+  },
+  "controller_server_recheck": {
+    "candidate_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+    "common_manifest_sha256": "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812",
+    "production_jars": 313,
+    "diagnostic_jars": 0,
+    "temporary_scripts": 0,
+    "online_mode": "true",
+    "max_players": 6,
+    "local_timezone_is_utc": true,
+    "auth_login_events": 1,
+    "all_auth_sources_match_designated_windows": true,
+    "auth_login_times_utc": [
+      "02:29:16"
+    ],
+    "snapshot_utc": "2026-11-09T02:52:05.553796+00:00",
+    "private_console_sha256": "63302492285f10689c31bccb61fce9e1f9d6c00b22a999ddadddec30d2ffb478",
+    "all_server_scripts_restored": true
+  }
 }

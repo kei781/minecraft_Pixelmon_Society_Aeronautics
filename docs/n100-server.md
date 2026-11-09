@@ -49,7 +49,7 @@ python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.jso
 
 설치 도구는 공식 Java·Forge 파일을 고정 해시·크기로 확인한다. 검증한 캐시가 있으면 재사용한다. Temurin 배포 URL의 504 오류 때문에 이 장비에는 공식 Corretto 17로 공급자를 변경해 고정했다. 설치 아카이브도 시스템 밖의 전용 캐시에 보존한다. 기존 캐시가 손상됐으면 덮어쓰지 않고 중단한다.
 
-이미 만든 시험 프로필을 접속용으로 전환하려면 정상 `stop` 완료 후 `server.properties`의 `server-ip=0.0.0.0`, `level-name=world`, `allow-flight=true`, `online-mode=true`, `max-players=6`을 확인하고 다시 시작한다. 시험용 `world-psa-new`는 보존하며 월드를 삭제하거나 덮어쓰지 않는다. 실제 장비는 이 전환 후 별도 `world`에서 실행 중이다. 원격 인터넷 회선의 공유기 포트 전달은 별도 네트워크 조건이며, 현재 직접 상태 핑 성공을 인터넷 공개 접속 성공으로 간주하지 않는다.
+이미 만든 시험 프로필을 접속용으로 전환하려면 정상 `stop` 완료 후 `server.properties`의 `server-ip=0.0.0.0`, `level-name=world`, `allow-flight=true`, `online-mode=true`, `max-players=6`을 확인하고 다시 시작한다. 시험용 `world-psa-new`는 보존하며 월드를 삭제하거나 덮어쓰지 않는다. 초기 배치에서는 이 전환 후 별도 `world`를 사용했다. 현재는 아래의 별도 QA 프로필을 사용한다. 원격 인터넷 회선의 공유기 포트 전달은 별도 네트워크 조건이며, 현재 직접 상태 핑 성공을 인터넷 공개 접속 성공으로 간주하지 않는다.
 
 ## 확인 범위
 
@@ -57,6 +57,8 @@ python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.jso
 
 5종 시험 몹과 구조물 하나, 인증 접속자 0명 상태에서 TPS 20, 전체 평균 tick 2.963 ms, RSS 약 5.17 GiB였다. 실제 6인 성능으로 환산하지 않는다. Windows 인증 접속·포획/전투·Society 진행·조종 비행·6인 부하는 별도 검증이 필요하다.
 
+
+이하 v6·v7 기록은 당시 배치 이력이다. 현재 QA 서버는 v8과 같은 공통 보정본 `59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe`를 사용한다. 원래 서버 프로필은 정상 종료·백업 후 보존했으며 별도 폐기 가능한 QA 월드에서 Windows 상호작용을 검증한다. 공통 313개 파일 목록 SHA256은 `935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812`다. 이 QA 배치를 최종 월드 전환이나 6인 성능 합격으로 간주하지 않는다. [메뉴 검증](menu-data-compatibility.md).
 
 2026-11-09 00:12 KST 기준 v6 셰이더 패킷 보정을 배치했다. 기존 월드를 정상 저장·백업하고 포팅 JAR 하나 및 검증 기록만 갱신했다. 모드 313개 해시가 일치하고 Done·온라인 인증·0/6명·TPS20·평균1.251ms를 확인했다. 이전 v5의 지정 Windows 장치 인증 접속은 확인했지만, v6 Windows 재접속과 실제 게임 검증은 아직이다. 플레이어는 v6 팩을 사용한다. [배치 증거](../evidence/n100-v6-shader-deployment.json), [수정·독립 리뷰 범위](pixelmon-shader-compatibility.md).
 
