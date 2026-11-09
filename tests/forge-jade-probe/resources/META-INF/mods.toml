@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psajadeprobe"
+version="0.1"
+displayName="PSA Jade Coordinate QA Observer"
+displayTest="IGNORE_ALL_VERSION"
+description='''Client-only test observer. Excluded from production exports. Records bounded actual Jade queries without replacing their inputs or outputs.'''
+[[dependencies.psajadeprobe]]
+modId="jade"
+mandatory=true
+versionRange="[11.13.2]"
+ordering="AFTER"
+side="CLIENT"

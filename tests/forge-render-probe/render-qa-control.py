@@ -13,7 +13,7 @@ import time
 import uuid
 
 ROOT = Path(__file__).resolve().parent
-BASELINE = "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812"
+BASELINE = "4a4e3d5bc856514347354d33ae2f74bbc02b9bdef721df26c2fe3e668c6d578a"
 PROBE = "psa-render-probe-0.7.jar"
 SOCKET = "psa-render-" + hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
 
