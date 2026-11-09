@@ -12,9 +12,9 @@
     "online-mode=false rejected"
   ],
   "production_source_or_artifacts_changed": false,
-  "live_authenticated_render_sample_passed": false,
+  "live_authenticated_render_sample_passed": true,
   "full_item_traversal_complete": false,
-  "scope": "Diagnostic preparation and real Linux controller checks only. No spawn/render coverage is asserted by these build/guard results.",
+  "scope": "Preparation and guard records plus separately identified native and authenticated runtime certificates. Full client registry rendering and gameplay are still pending.",
   "previous_artifact": {
     "version": "0.1",
     "sha256": "92f5151243ef50e03928624044a4b9eddc9077512c6abd9f3bb8af4bec99c5bf",
@@ -94,5 +94,8 @@
   "previous_actual_protocol_tests_apply_by_byte_identity": true,
   "authenticated_cleanup_fault_command_added": true,
   "normal_session_javap_unchanged_from06_sha256": "a9cd8afe8a2fea865b42c32bb9428d3b5089accea4211ef25408721c76527cbd",
-  "normal07_native_smoke_passed": 16
+  "normal07_native_smoke_passed": 16,
+  "actual_authenticated_sample_evidence": "item-render-authenticated-sample.json",
+  "actual_authenticated_ack_fault_and_recovery_passed": true,
+  "actual_authenticated_ack_fault_evidence": "item-render-authenticated-ack-failure.json"
 }

@@ -33,9 +33,9 @@ Get-FileHash ".\PSA-Forge-Full-Experimental-v9.mrpack" -Algorithm SHA256
 
 ## 실제 확인한 범위
 
-v9 아카이브의 선언된 파일 7,925개 SHA256, 모드 354개, 구성 버전과 진단 코드 부재를 확인했다. 서버 공통 313개 파일은 N100 검증 후보와 일치한다. Windows Prism에서 사용자가 신뢰 확인을 직접 처리한 뒤 새 `PSA-v9-QA` 인스턴스 가져오기와 설치 파일7,925개 해시·354개 모드 일치를 확인했다. 새 인스턴스 실행·접속은 이어서 검증한다. [패키지 검사](../evidence/forge-client-v9-package.json), [Windows 가져오기](../evidence/forge-client-v9-import-windows.json).
+v9 아카이브의 선언된 파일 7,925개 SHA256, 모드 354개, 구성 버전과 진단 코드 부재를 확인했다. 서버 공통 313개 파일은 N100 검증 후보와 일치한다. Windows Prism에서 사용자가 신뢰 확인을 직접 처리한 뒤 새 `PSA-v9-QA` 인스턴스 가져오기와 설치 파일7,925개 해시·354개 모드 일치를 확인했다. 원본354개를 그대로 두고 시험용 진단0.7 하나만 추가한 새 인스턴스를 Java17·8192MiB로 실행해 정품 접속·월드 입장, 기본 아이템16개 실제 렌더 반환·모델 조회를 확인했다. 진단은 전달용 팩에 포함하지 않는다. [패키지 검사](../evidence/forge-client-v9-package.json), [Windows 가져오기](../evidence/forge-client-v9-import-windows.json), [실제 새 실행](../evidence/forge-client-v9-launch-windows.json).
 
-이전 v7는 macOS Prism의 실제 GUI 가져오기와 설치 파일 해시 대조를 통과했다. 현재 Windows 게임 검사는 기존 인스턴스에 v9과 동일한 공통 수정본과 메뉴 보정을 적용해 진행한다. 새 패키지 가져오기 검증과 기존 인스턴스 실행 검증을 구분한다. [이전 가져오기 기록](../evidence/forge-client-import-v7.json).
+이전 v7는 macOS Prism의 실제 GUI 가져오기와 설치 파일 해시 대조를 통과했다. 앞선 Windows 메뉴 검사는 기존 인스턴스에 v9과 동일한 공통 수정본과 메뉴 보정을 적용해 진행했고, 현재 렌더 검사는 새 v9 인스턴스를 사용한다. [이전 가져오기 기록](../evidence/forge-client-import-v7.json).
 
 Windows 인증 접속, 큰 번호의 탱크 수레 1000→2000→1000mB 표시와 메뉴 재열기를 확인했다. 배터리의 실시간 충방전·재열기, 깃발 색상 교체와 게시판 큰 카운터 갱신도 확인했다. 실제 모드의 로더·언로더로 이송했으며 직접 양동이 주입은 원래 지원하는 동작이 아니다. [메뉴 수정·검증 범위](menu-data-compatibility.md). Pixelmon 포획·전투, Society 농사·경제·진행, 조종 비행과 실제 6인 부하는 별도 검증 중이다.
 

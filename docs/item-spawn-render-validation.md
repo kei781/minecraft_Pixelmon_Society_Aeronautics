@@ -38,4 +38,6 @@ Claude R2가 찾은 부분 정리 실패도 보완했다. 0.6은 `discard()`가 
 
 ACK 예외 대조는 최종 원인 문자열만으로 통과시키지 않는다. 모델 검증 반환4개, 실제 주입 발생, 영구 정리 실패와 완료 거부, 소유 청크 티켓 보존을 함께 확인한다. 서버 예외 스택에 `acknowledge`·`acceptAcknowledgement`가 있어야 인증 ACK 경로 검사로 인정한다. 시간 초과·미관찰 모델·접속 해제에서 정리 예외가 난 경우와 구분한다. 다음 실행·제어기 재기동 차단, 표식이 맞는 QA 월드 보존 복구도 확인한다.
 
+후속 실행에서는 새 v9 Windows 클라이언트와 서버의 같은 run을 대조해 실제 렌더·모델 조회16개를 확인했다. [인증 표본](../evidence/item-render-authenticated-sample.json). 실제 ACK 예외 대조도4회 모델 반환·처리 스택·실패 보존·다음 실행과 재기동 거부·정상 종료·월드 보존 복구를 통과했다. 원래 월드308개 파일의 이동 전후 해시가 같다. [ACK 예외·복구](../evidence/item-render-authenticated-ack-failure.json). 빠른 표본 종료 뒤 화면을 관찰했으므로16개 각각의 텍스처를 육안 검증한 것으로 세지 않는다.
+
 진단 통신은 [Forge SimpleImpl 공식 문서](https://docs.minecraftforge.net/en/1.20.1/networking/simpleimpl/)의 메인 스레드 처리와 방향별 패킷 등록을 따른다. 잘못된 실행 UUID·묶음·엔티티 ID·UUID·레지스트리·응답자는 거부한다. [현재 준비 기록](../evidence/item-render-probe-preparation.json).
