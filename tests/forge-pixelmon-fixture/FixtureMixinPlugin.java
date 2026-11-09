@@ -12,6 +12,11 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
 /** Refuse accidental deployment or a different upstream binary before mixing tests. */
 public final class FixtureMixinPlugin implements IMixinConfigPlugin {
+    private static final Set<String> APPLIED = java.util.concurrent.ConcurrentHashMap.newKeySet();
+    public static void requireApplied(Set<String> expected) {
+        if (!APPLIED.equals(expected))
+            throw new IllegalStateException("Exact ten fixture transformations required; applied=" + APPLIED.size());
+    }
     public static void requireOwnedProfile() {
         try {
             Path root = Path.of("").toAbsolutePath();
@@ -35,5 +40,9 @@ public final class FixtureMixinPlugin implements IMixinConfigPlugin {
     @Override public void acceptTargets(Set<String> mine, Set<String> other) { }
     @Override public List<String> getMixins() { return null; }
     @Override public void preApply(String target, ClassNode node, String mixin, IMixinInfo info) { }
-    @Override public void postApply(String target, ClassNode node, String mixin, IMixinInfo info) { }
+    @Override public void postApply(String target, ClassNode node, String mixin, IMixinInfo info) {
+        if (!mixin.startsWith("dev.psa.pixelmonfixture.mixin."))
+            throw new IllegalStateException("Unexpected fixture mixin");
+        APPLIED.add(target);
+    }
 }

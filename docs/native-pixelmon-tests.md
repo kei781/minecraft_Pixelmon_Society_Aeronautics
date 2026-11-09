@@ -17,6 +17,13 @@ Shedinja Dynamax HP and Minior entry-hazard assertions need further diagnosis.
 This comparison is evidence against a new failure introduced by this mod
 combination for these ten assertions, not a general compatibility guarantee.
 See `evidence/pixelmon-world-fixture-runtime.json` for exact artifacts/results.
+After independent review, the transformation gate and interrupted-result
+inventory were strengthened. The 26,100-byte diagnostic with SHA256
+`861b616c6efcfba7dd56b9fd45b9abd212516b5efa2e6b2ce3ac70aed6303489`
+again produced identical eight-success/two-failure results in both profiles,
+with zero live owned actors after cleanup and zero logged null-pointer errors.
+Actual before/after boot and scene-failure controls are recorded in
+`evidence/pixelmon-fixture-review-regressions.json`.
 
 `tests/forge-pixelmon-fixture` is a separate diagnostic, excluded from player
 exports. It redirects fourteen constructor sites in the ten pinned test
@@ -51,6 +58,10 @@ Pixelmon-only control, but causes an unrelated optional Canary/Lithium
 injection expectation to abort the full pack's boot. Keep that global debug
 flag off in full-pack runs; the fixture's own strict counts still apply.
 The source archive hash is enforced both during build and before mixing.
+After class discovery the command also requires all ten transformations to
+have completed, independently of the boot-time plugin check. A marker added
+after a skipped Mixin configuration cannot turn a stock run into an adapted
+run. Passing also requires actual fixture actors and participants.
 Minecraft 1.20.1 / Forge 47.4.20 / Pixelmon 9.2.3 are exact dependencies.
 
 Keep authentication enabled, RCON disabled and the diagnostic server bound to
@@ -67,8 +78,10 @@ They are not invulnerable and no game exception or failed assertion is masked.
 
 Read the unique `psa-pixelmon-fixture/<run>/*-finished.json` after the
 `PSA_PIXELMON_FIXTURE FINISHED` log line. It preserves each native success,
-failure, exceptional result or a 120-second timeout. Invocations which cannot
-start are errors and stop the run. Passing requires all ten successes, no
+failure, exceptional result or a 120-second deadline measured from session
+creation, including chunk readiness. Invocations which cannot start are
+errors and stop the run. Unstarted and interrupted tests are retained as
+`not_started` and `aborted`, respectively. Passing requires all ten successes, no
 runner errors and successful cleanup of owned battle/entity/floor/ticket
 objects. Evidence I/O failure must not be treated as completion. Native logs
 remain available for full exception details. Stop the dedicated server

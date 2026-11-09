@@ -73,6 +73,9 @@ public final class PixelmonFixture {
                 try {
                     FixtureMixinPlugin.requireOwnedProfile();
                     methods = discover(); // fail before any world mutation
+                    var expectedTargets = new java.util.HashSet<String>();
+                    for (String type : TESTS.keySet()) expectedTargets.add("com.pixelmonmod.pixelmon.api.test." + type);
+                    FixtureMixinPlugin.requireApplied(expectedTargets);
                 } catch (Throwable failure) {
                     rethrowFatal(failure);
                     LOG.error("PSA_PIXELMON_FIXTURE PREFLIGHT_REFUSED", failure);
@@ -244,6 +247,17 @@ public final class PixelmonFixture {
                 try { launch(methods); }
                 catch (Exception failure) { throw new IllegalStateException("Native suite launch failed", failure); }
             }
+            collectResults();
+            if (results.size() == 10) finish();
+            else if (System.nanoTime() > deadline) {
+                for (String name : TESTS.values()) if (!results.containsKey(name)) {
+                    var row = new JsonObject(); row.addProperty("status", "timeout"); results.put(name, row);
+                }
+                finish();
+            }
+        }
+
+        void collectResults() {
             for (var entry : futures.entrySet()) {
                 if (results.containsKey(entry.getKey()) || !entry.getValue().isDone()) continue;
                 var row = new JsonObject();
@@ -261,13 +275,6 @@ public final class PixelmonFixture {
                 results.put(entry.getKey(), row);
                 LOG.info("PSA_PIXELMON_FIXTURE RESULT {} {}", entry.getKey(), row);
             }
-            if (results.size() == 10) finish();
-            else if (System.nanoTime() > deadline) {
-                for (String name : TESTS.values()) if (!results.containsKey(name)) {
-                    var row = new JsonObject(); row.addProperty("status", "timeout"); results.put(name, row);
-                }
-                finish();
-            }
         }
 
         void fail(Throwable failure) {
@@ -277,6 +284,12 @@ public final class PixelmonFixture {
         void finish() {
             if (closed) return;
             closed = true;
+            collectResults(); // retain native results completed before an external abort
+            for (String name : TESTS.values()) if (!results.containsKey(name)) {
+                var row = new JsonObject();
+                row.addProperty("status", futures.containsKey(name) ? "aborted" : "not_started");
+                results.put(name, row);
+            }
             Set<BattleController> battles = Collections.newSetFromMap(new IdentityHashMap<>());
             for (var participant : participants) if (participant.bc != null) battles.add(participant.bc);
             for (var battle : battles) try {
@@ -308,6 +321,7 @@ public final class PixelmonFixture {
 
         boolean passed() {
             return closed && cleaned && errors.isEmpty() && results.size() == 10
+                && sceneReady && !actors.isEmpty() && !participants.isEmpty()
                 && results.values().stream().allMatch(row -> "success".equals(row.get("status").getAsString()));
         }
 
