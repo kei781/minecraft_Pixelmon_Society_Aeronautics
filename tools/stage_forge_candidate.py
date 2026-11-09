@@ -11,7 +11,7 @@ import zipfile
 
 SERVER_SHA1 = "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
 PIXELMON_SHA256 = "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a"
-PORT_SHA256 = "31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5"
+PORT_SHA256 = "53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c"
 FOLDERS = {"mods", "config", "defaultconfigs", "kubejs", "patchouli_books"}
 LOCK = Path(__file__).resolve().parents[1] / "forge-candidate-lock.json"
 

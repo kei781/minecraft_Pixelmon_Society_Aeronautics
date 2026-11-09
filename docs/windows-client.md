@@ -1,8 +1,8 @@
 # Windows 플레이어 설치
 
-현재 시험 패키지는 **`PSA-Forge-Full-Experimental-v12.mrpack`**이다. 세 프로젝트, 모드 JAR 354개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. v12 새 Windows 가져오기·실행 검증은 진행 중이다.
+현재 시험 패키지는 **`PSA-Forge-Full-Experimental-v16.mrpack`**이다. 세 프로젝트, 모드 JAR 354개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. v16의 새 Windows 가져오기·실행은 아직 확인하지 않았다.
 
-Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. v12는 v9의 공통·메뉴 보정에 Jade 비행체 좌표 계산 보정을 추가한 후보다. 같은 공통 보정본의 서버를 사용한다. [구성과 검증 범위](forge-candidate.md).
+Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. v16은 기존 메뉴·Jade 보정과 원래 리소스를 사용한 아이템 모델 연결 여섯 개에 누케닌 다이맥스 최대 HP 보정을 더한 후보다. 같은 공통 보정본의 서버를 사용한다. [구성과 검증 범위](forge-candidate.md), [HP 보정](pixelmon-dynamax-hitpoints.md).
 
 ## 한 번 준비하기
 
@@ -12,26 +12,28 @@ Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타
 
 ## 파일 하나 가져오기
 
-1. 전달받은 v12 파일을 저장한다. 이전 인스턴스는 보존하고 새 인스턴스로 가져온다.
+1. 전달받은 v16 파일을 저장한다. 이전 인스턴스는 보존하고 새 인스턴스로 가져온다.
 2. **Add Instance → Import → 파일 선택 → OK**를 누른다. [공식 가져오기 안내](https://prismlauncher.org/wiki/getting-started/download-modpacks/).
 3. 외부 모드 확인창이 나오면 파일을 관리자에게서 받았는지, 아래 SHA256과 일치하는지 확인한 뒤 신뢰 체크를 하고 진행한다.
 4. Minecraft **1.20.1**, Forge **47.4.20**인지 확인한다. 첫 설치에는 Minecraft·로더·Java 다운로드용 인터넷이 필요하다.
 5. **Edit → Settings → Java**에서 메모리를 정한다. 16 GB 이상 PC에서는 최대 8192 MB를 첫 시작값으로 사용할 수 있다. [메모리 설정 안내](https://prismlauncher.org/wiki/help-pages/java-settings/).
 6. **Launch → Multiplayer → Add Server**에서 관리자가 별도로 전달한 서버 주소를 입력한다. 실제 사용자 서버 주소와 SSH 정보는 공개 저장소·패키지에 넣지 않았다.
 
-현재 파일은 1,137,793,542바이트이며 SHA256은 다음과 같다.
+현재 파일은 1,137,798,911바이트이며 SHA256은 다음과 같다.
 
 ```text
-bd884f35b18d157e7bbed3f3e1961539f0ac1913e914e3721a5d50eef94090e5
+6fb68d036d989ea3e88f12000478f06df65923a89c84814acf6f5dc4964d4531
 ```
 
 ```powershell
-Get-FileHash ".\PSA-Forge-Full-Experimental-v12.mrpack" -Algorithm SHA256
+Get-FileHash ".\PSA-Forge-Full-Experimental-v16.mrpack" -Algorithm SHA256
 ```
 
 설치 경로와 인스턴스 이름은 짧게 쓴다. 가장 긴 상대 경로는 108자다.
 
 ## 실제 확인한 범위
+
+v16의 354개 모드와 7,932개 override 파일을 검사했다. v15와 비교해 공통 호환 JAR·가져오기 색인·프로필 정보만 달라지고 나머지 파일은 같다. 진단 도구는 포함하지 않는다. N100의 전체 313개 모드 후보에서 같은 공통 JAR의 HP 대조 20개와 원본 누케닌 검사가 통과했다. 이는 v16의 Windows 새 가져오기·GUI·실제 6인 부하 확인을 뜻하지 않는다. [v16 패키지 기록](../evidence/player-pack-v16-candidate.json).
 
 v12의 354개 운영 모드와 구성 파일을 확인했다. v9과 모든 payload 경로가 같고 공통 JAR·프로필 메타데이터 두 파일만 다르며 나머지 바이트는 같다. 진단 두 개는 포함하지 않는다. v12 자체의 새 Windows 가져오기는 아직 통과로 기록하지 않는다. [패키지 비교](../evidence/forge-client-v12-package.json).
 
@@ -45,7 +47,7 @@ Windows 인증 접속, 큰 번호의 탱크 수레 1000→2000→1000mB 표시�
 
 ## 개발자 재생성
 
-공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 포팅 JAR 고정 SHA256은 `31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5`이고, 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다.
+공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c`이고, 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. [공통 JAR 재생성](pixelmon-dynamax-hitpoints.md)을 먼저 수행한다.
 
 ```bash
 python3 tools/export_forge_client.py \

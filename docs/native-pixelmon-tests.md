@@ -47,7 +47,7 @@ gradle --offline --no-daemon --max-workers=2 -p /path/to/prepared-forge-workspac
   -PpsaPixelmonJar=/path/to/Pixelmon-1.20.1-9.2.3-universal.jar \
   reobfPsaPixelmonFixtureJar
 python3 /path/to/repository/tools/forge_resources.py canonical-jar \
-  /path/to/prepared-forge-workspace/build/libs/psa-pixelmon-fixture-0.1.jar \
+  /path/to/prepared-forge-workspace/build/libs/psa-pixelmon-fixture-0.2-baseline.jar \
   /path/to/fresh-diagnostic.jar
 ```
 

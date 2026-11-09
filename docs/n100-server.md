@@ -2,7 +2,7 @@
 
 서버는 기존 데이터와 분리한 새 전용 폴더에 준비한다. 런타임과 라이브러리도 그 안에 설치하며 시스템 Java·기존 서비스·월드를 바꾸지 않는다. 실제 접속 주소와 SSH 설정은 공개 저장소에 포함하지 않는다.
 
-현재 콘텐츠 검사는 별도의 폐기 가능 렌더 QA 프로필을 사용한다. 기존 313개 서버·월드는 정상 정지·백업해 보존했고, 이 시험 프로필은 운영 313개와 해시 고정 Render0.8·Jade0.4 진단 두 개를 엄격히 확인한다. 기본 플레이어 팩에는 진단이 없으므로 이 시험 서버 접속에는 같은 진단을 추가한 QA 클라이언트가 필요하다. 최종 서버 전환이나 새 팩 가져오기 완료를 뜻하지 않는다. [검사 경로](item-spawn-render-validation.md).
+현재는 v16 팩과 공통 JAR 해시가 같은 **진단 없는 313개 모드 접속용 후보**를 새 폴더에서 실행한다. 2026-11-09 16:03:45 UTC(11월 10일 01:03:45 KST) 실제 기동을 확인했다. 기존 Render0.8·Jade0.4 QA 서버는 접속자가 0명인 것을 확인하고 정상 저장·정지해 월드와 함께 보존했다. 새 후보는 런타임·라이브러리도 독립 복사했으며 새 `world`를 사용한다. [배치 기록](../evidence/n100-v16-player-deployment.json). 새 Windows 가져오기와 실제 6인 부하 합격을 뜻하지는 않는다.
 
 ## 구성
 
@@ -10,6 +10,7 @@
 - Java 17.0.21.0.11 Amazon Corretto / Forge 47.4.20 / Minecraft 1.20.1.
 - Society 4.1.5A 서버 원본 JAR 311개 + Pixelmon + Aeronautics 포팅 JAR = 313개.
 - 최대 힙 6 GB, view/simulation distance 4. 실제 6인 부하에 맞춘 최종 튜닝은 아직 아니다.
+- 공통 JAR SHA256: `53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c`. [누케닌 HP 보정](pixelmon-dynamax-hitpoints.md).
 - 온라인 인증 사용. 게임 포트 25573. 물리 이동의 잘못된 비행 판정으로 인한 추방을 피하도록 `allow-flight=true`를 사용한다. 일반 플레이어에게 크리에이티브 비행 권한을 주는 설정은 아니다.
 
 ## 시작·정지·상태
@@ -60,7 +61,7 @@ python3 tools/install_forge_runtime.py --profile . --lock forge-runtime-lock.jso
 5종 시험 몹과 구조물 하나, 인증 접속자 0명 상태에서 TPS 20, 전체 평균 tick 2.963 ms, RSS 약 5.17 GiB였다. 실제 6인 성능으로 환산하지 않는다. Windows 인증 접속·포획/전투·Society 진행·조종 비행·6인 부하는 별도 검증이 필요하다.
 
 
-이하 v6·v7 기록은 당시 배치 이력이다. 현재 QA 서버는 v12와 같은 공통 보정본 `31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5`를 사용하며 2026-11-09 11:00:02 UTC(20:00:02 KST) 실제 부팅 완료를 확인했다. 원래 서버 프로필과 현재 QA 월드는 정상 종료·백업해 보존한다. 공통 313개 파일 목록 SHA256은 `ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e`다. QA에만 해시 고정 Render0.8·Jade0.4 진단 두 개를 추가한다. 현재 Render 파일은 `psa-render-probe-0.8.jar`, SHA256 `8255403e98ab26e6f42eecd6078f7107ca6e103759dd413fce5659792dceb66b`다. 현재 Jade 파일은 `psa-jade-probe-0.4.jar`, SHA256 `1775d74b4b28d9339e564a6725e90dfe6282deaf78dabd2a9f301bd8efa5e01c`이며, 0.3만 있으면 현재 제어기는 시작을 거부한다. 진단은 플레이어 팩과 최종 운영 구성에 포함하지 않는다. 이 QA 배치를 최종 월드 전환이나 6인 성능 합격으로 간주하지 않는다. [Jade 검증](jade-sublevel-coordinates.md), [메뉴 검증](menu-data-compatibility.md).
+이하 기록은 이전 배치 이력이다. 렌더 QA 서버는 v12 공통 보정본 `31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5`와 Render0.8·Jade0.4를 사용했고, 2026-11-09 11:00:02 UTC(20:00:02 KST)에 부팅했다. 이 QA 월드는 정상 정지해 보존했으며, 현재 접속용 v16 서버에는 진단을 넣지 않았다. QA 공통 313개 목록 SHA256은 `ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e`였다. 이 QA 기록은 6인 성능 합격이 아니다. [Jade 검증](jade-sublevel-coordinates.md), [메뉴 검증](menu-data-compatibility.md).
 
 Jade0.3의 2026-11-09 18:09:18 KST 부팅과 당시 조준·크리에이티브 비행은 이전 검사 이력이다. Jade0.4 전환의 10:28:09 UTC 부팅도 이전 이력이며 같은 월드·세대를 보존하고 관찰 파일 메타데이터만 바꿨다. 이후 Render0.8 전환에서도 운영 파일·Jade0.4·서버 설정을 유지했다. QA 기본값은 `gamemode=survival`, `force-gamemode=false`로 고쳤으며 실제 재접속에서도 서바이벌·자체 비행 해제를 확인했다. 인증·OP·RCON 설정은 변경하지 않았다.
 
