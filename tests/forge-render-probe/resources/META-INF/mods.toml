@@ -3,7 +3,7 @@ loaderVersion="[47,)"
 license="MIT"
 [[mods]]
 modId="psarenderprobe"
-version="0.3"
+version="0.5"
 displayName="PSA Disposable Item Render Probe"
 description='''Test-only native item spawning and authenticated client render submission. Excluded from player packs.'''
 [[dependencies.psarenderprobe]]

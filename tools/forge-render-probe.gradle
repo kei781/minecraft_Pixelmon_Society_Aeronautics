@@ -15,7 +15,7 @@ gradle.projectsEvaluated {
     }
     project.tasks.register('psaRenderProbeJar', Jar) {
         dependsOn compiler
-        archiveFileName.set('psa-render-probe-0.3.jar')
+        archiveFileName.set('psa-render-probe-0.5.jar')
         duplicatesStrategy = DuplicatesStrategy.FAIL
         from compiler.flatMap { it.destinationDirectory }
         from new File(directory, 'resources')

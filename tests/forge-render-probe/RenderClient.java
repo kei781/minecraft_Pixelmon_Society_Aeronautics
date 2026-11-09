@@ -24,19 +24,21 @@ public final class RenderClient {
     private static Batch batch;
     private static final Set<Integer> begun = new HashSet<>(), returned = new HashSet<>();
     private static final ArrayDeque<Integer> rendering = new ArrayDeque<>();
-    private static int missingMask;
+    private static int modelObservedMask, missingMask;
     private static boolean sent;
     private RenderClient() {}
     public static void accept(Batch value) {
-        batch = value; begun.clear(); returned.clear(); rendering.clear(); missingMask = 0; sent = false;
+        batch = value; begun.clear(); returned.clear(); rendering.clear(); modelObservedMask = 0; missingMask = 0; sent = false;
         persist("awaiting_native_render");
     }
     private static int find(Entity entity) {
-        if (batch == null || sent || !(entity instanceof ItemEntity item)) return -1;
+        if (batch == null || sent) return -1;
         for (int i = 0; i < batch.tokens().size(); i++) {
             Token token = batch.tokens().get(i);
             if (entity.getId() == token.entityId() && entity.getUUID().equals(token.entityUuid())
-                    && token.itemId().equals(String.valueOf(ForgeRegistries.ITEMS.getKey(item.getItem().getItem())))) return i;
+                    && token.entityClass().equals(entity.getClass().getName())
+                    && token.entityType().equals(String.valueOf(ForgeRegistries.ENTITY_TYPES.getKey(entity.getType())))
+                    && token.itemId().equals(String.valueOf(ForgeRegistries.ITEMS.getKey(DropStackView.stack(entity).getItem())))) return i;
         }
         return -1;
     }
@@ -64,13 +66,16 @@ public final class RenderClient {
         int current = rendering.peek();
         Token token = batch.tokens().get(current);
         if (!token.itemId().equals(String.valueOf(ForgeRegistries.ITEMS.getKey(stack.getItem())))) return;
+        modelObservedMask |= 1 << current;
         if (model == Minecraft.getInstance().getModelManager().getMissingModel()) missingMask |= 1 << current;
     }
     @SubscribeEvent
     public static void tick(TickEvent.ClientTickEvent event) {
         if (event.phase != TickEvent.Phase.END || batch == null || sent || returned.size() != batch.tokens().size()) return;
-        sent = true; persist(missingMask == 0 ? "ack_all_native_returns" : "ack_missing_model");
-        RenderNetwork.CHANNEL.sendToServer(new Ack(batch, missingMask));
+        sent = true;
+        persist(missingMask != 0 ? "ack_missing_model" : modelObservedMask != (1 << batch.tokens().size()) - 1
+                ? "ack_render_return_model_unobserved" : "ack_all_native_returns_and_models");
+        RenderNetwork.CHANNEL.sendToServer(new Ack(batch, modelObservedMask, missingMask));
     }
     @SubscribeEvent
     public static void logout(ClientPlayerNetworkEvent.LoggingOut event) {
@@ -82,6 +87,7 @@ public final class RenderClient {
         value.addProperty("run", batch.run().toString()); value.addProperty("batch", batch.index());
         value.addProperty("status", status); value.addProperty("begun_count", begun.size());
         value.addProperty("native_return_count", returned.size()); value.addProperty("missing_model_mask", missingMask);
+        value.addProperty("model_observed_mask", modelObservedMask);
         value.add("tokens", new com.google.gson.Gson().toJsonTree(batch.tokens()));
         RenderProbe.write(FMLPaths.GAMEDIR.get().resolve("psa-validation/render-client-current.json"), value);
     }

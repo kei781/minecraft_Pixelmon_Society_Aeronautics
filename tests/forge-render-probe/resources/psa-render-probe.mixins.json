@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.psa.renderprobe.mixin",
   "compatibilityLevel": "JAVA_17",
+  "mixins": ["ForgeDropFactoryMixin"],
   "client": ["RendererProbeMixin", "ItemModelProbeMixin"],
   "injectors": {"defaultRequire": 1}
 }

@@ -10,10 +10,11 @@ import shlex
 import subprocess
 import sys
 import time
+import uuid
 
 ROOT = Path(__file__).resolve().parent
 BASELINE = "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812"
-PROBE = "psa-render-probe-0.3.jar"
+PROBE = "psa-render-probe-0.5.jar"
 SOCKET = "psa-render-" + hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
 
 
@@ -65,10 +66,89 @@ def inventory(receipt):
         raise RuntimeError("Non-regular mod entry")
     props = dict(line.split("=", 1) for line in (ROOT / "server.properties").read_text().splitlines()
                  if "=" in line and not line.startswith("#"))
-    if props.get("online-mode") != "true" or props.get("level-name") != "world-render-qa":
+    if (props.get("online-mode") != "true" or props.get("level-name") != "world-render-qa"
+            or props.get("enable-rcon") != "false"):
         raise RuntimeError("Authenticated disposable world required")
     if "-Dpsa.render.enabled=true" not in (ROOT / "user_jvm_args.txt").read_text().splitlines():
         raise RuntimeError("Explicit render opt-in required")
+
+
+def write_json(path, value):
+    import tempfile
+    with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, prefix=".psa-render-", delete=False) as stream:
+        temporary = Path(stream.name)
+        json.dump(value, stream)
+        stream.flush()
+        os.fsync(stream.fileno())
+    try:
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def owned_world(receipt):
+    world = ROOT / "world-render-qa"
+    if world.is_symlink() or world.resolve().parent != ROOT:
+        raise RuntimeError("QA world path mismatch")
+    marker = world / ".psa-render-world-owner.json"
+    if marker.is_symlink() or not marker.is_file():
+        raise RuntimeError("Existing world has no owned QA marker; refusing recovery")
+    owner = json.loads(marker.read_text())
+    if owner != {"owner": "psa-render-world-v1", "profile": ROOT.name, "generation": receipt.get("world_generation")}:
+        raise RuntimeError("QA world generation mismatch")
+    return world
+
+
+def current_state():
+    path = ROOT / "psa-validation/render-server-current.json"
+    if not path.exists():
+        return None
+    if path.is_symlink():
+        raise RuntimeError("Checkpoint symlink refused")
+    try:
+        return json.loads(path.read_text())
+    except (ValueError, OSError):
+        return {"active": True, "unreadable_checkpoint": True}
+
+
+def initialize_world(receipt):
+    world = ROOT / "world-render-qa"
+    if world.exists() or world.is_symlink():
+        owned_world(receipt)
+        return
+    world.mkdir(mode=0o700)
+    receipt["world_generation"] = str(uuid.uuid4())
+    write_json(world / ".psa-render-world-owner.json", {"owner": "psa-render-world-v1", "profile": ROOT.name,
+                                                        "generation": receipt["world_generation"]})
+    write_json(ROOT / ".psa-render-qa.json", receipt)
+
+
+def recover(receipt):
+    if running():
+        raise RuntimeError("Recovery requires a fully stopped owned QA process")
+    inventory(receipt)
+    world = owned_world(receipt)
+    state = current_state()
+    if state and "world_generation" in state and state["world_generation"] != receipt["world_generation"]:
+        raise RuntimeError("Checkpoint belongs to another QA world")
+    history = ROOT / "qa-crash-history"
+    if history.is_symlink():
+        raise RuntimeError("Recovery archive symlink refused")
+    history.mkdir(exist_ok=True, mode=0o700)
+    archive = history / (str(time.time_ns()) + "-" + receipt["world_generation"])
+    archive.mkdir(mode=0o700)
+    import shutil
+    for name in ["console.log", ".psa-render-qa.json", "server.properties"]:
+        if (ROOT / name).is_file():
+            shutil.copy2(ROOT / name, archive / name)
+    # User explicitly permits discarding QA saves. Preserve the entire identified
+    # QA world, including crashed entities/tickets, instead of editing unrelated NBT.
+    world.rename(archive / world.name)
+    path = ROOT / "psa-validation/render-server-current.json"
+    if path.exists():
+        path.rename(archive / "render-server-current.json")
+    initialize_world(receipt)
+    print("PSA_RENDER_QA recovery archived the exact owned disposable world; fresh generation ready")
 
 
 def main():
@@ -81,6 +161,10 @@ def main():
     if action == "verify":
         inventory(receipt)
         print("PSA_RENDER_QA production313 and one pinned diagnostic verified")
+    elif action == "recover":
+        with (ROOT / ".psa-render-control.lock").open("w") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            recover(receipt)
     elif action == "status":
         if running():
             owned()
@@ -95,6 +179,10 @@ def main():
                 print("Already running")
                 return
             inventory(receipt)
+            state = current_state()
+            if state and (state.get("active") or not state.get("cleanup_complete")):
+                raise RuntimeError("Unresolved prior QA run; use recover to archive the owned disposable world before restarting")
+            initialize_world(receipt)
             if (ROOT / "eula.txt").read_text().strip() != "eula=true":
                 raise RuntimeError("Existing explicit EULA acceptance required")
             java = ROOT / "runtime/java/bin/java"
@@ -131,7 +219,7 @@ def main():
         tmux("send-keys", "-t", "server", "-l", sys.argv[2])
         tmux("send-keys", "-t", "server", "Enter")
     else:
-        raise RuntimeError("Usage: render-qa-control.py verify|start|stop|status|command '...'")
+        raise RuntimeError("Usage: render-qa-control.py verify|recover|start|stop|status|command '...'")
 
 
 if __name__ == "__main__":
