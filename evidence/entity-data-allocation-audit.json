@@ -1,0 +1,899 @@
+{
+  "scope": "all direct defineId/m_135353_ callsites in the installed pinned mods including nested jarjar libraries; no mod classes executed by scanner",
+  "common_jars": 313,
+  "common_class_entries": 70808,
+  "common_direct_calls": 556,
+  "common_classifications": {
+    "OWN_CLASS": 496,
+    "DYNAMIC_OWNER": 22,
+    "FOREIGN_OWNER": 12,
+    "MIXIN_TARGET": 26
+  },
+  "client_addition_or_replacement_jars": 41,
+  "client_class_entries": 8767,
+  "client_direct_calls": 0,
+  "foreign_owner_calls": [
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135030_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135027_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135027_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135027_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135027_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135027_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135027_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135027_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/listener/EntityPlayerExtension",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135027_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "carryon-forge-1.20.1-2.1.2.7.jar",
+      "class": "tschipp/carryon/common/carry/CarryOnDataManager",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/player/Player"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135042_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "moreminecarts-1.8.3.jar",
+      "class": "com/alc/moreminecarts/entities/TankCartEntity",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/alc/moreminecarts/entities/FlagCartEntity"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135042_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "windswept-1.20.1-3.0.4.jar",
+      "class": "com/rosemods/windswept/common/entity/variant/WindsweptGoatVariant",
+      "method": "<clinit>()V",
+      "owners": [
+        "net/minecraft/world/entity/animal/goat/Goat"
+      ],
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135028_"
+      ],
+      "kind": "FOREIGN_OWNER"
+    }
+  ],
+  "dynamic_owner_calls": [
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/data/DataSync",
+      "method": "<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "0"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "VarInsnNode"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/data/DataSync",
+      "method": "<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "0"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "VarInsnNode"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/AttackDataCapable",
+      "method": "registerSyncedAttackData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135035_"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/AttributeDataCapable",
+      "method": "registerSyncedAttributeData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#ENTITY_ATTRIBUTES"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/DisplayAttributeDataCapable",
+      "method": "registerSyncedDisplayAttributeData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#DISPLAY_ATTRIBUTE"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelDataCapable",
+      "method": "registerSyncedModelData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#MODEL_POSE"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelPositionDataCapable",
+      "method": "registerSyncedModelPositionData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#MODEL_PART_POSITION"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelRotationDataCapable",
+      "method": "registerSynchedModelRotationData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#MODEL_PART_ROTATION"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelScaleDataCapable",
+      "method": "registerSynchedModelScaleData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#MODEL_PART_SCALE"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelVisibilityDataCapable",
+      "method": "registerSynchedModelVisibilityData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#MODEL_PART_VISIBILITY"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/NavigationDataCapable",
+      "method": "registerSyncedNavigationData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135038_"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/OwnerDataCapable",
+      "method": "registerSyncedOwnerData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135041_"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ProfessionDataCapable",
+      "method": "registerSyncedProfessionData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#PROFESSION"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/RenderDataCapable",
+      "method": "registerSyncedRenderData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#RENDER_DATA_SET"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/SkinDataCapable",
+      "method": "registerSyncedSkinData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#SKIN_DATA_ENTRY"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/SoundDataCapable",
+      "method": "registerSyncedSoundData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#SOUND_DATA_SET"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/TradingDataCapable",
+      "method": "registerSyncedTradingData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#TRADING_DATA_SET"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/TradingDataCapable",
+      "method": "registerSyncedTradingData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135042_"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/TradingDataCapable",
+      "method": "registerSyncedTradingData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "de/markusbordihn/easynpc/network/syncher/EntityDataSerializersManager#MERCHANT_OFFERS"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/VariantDataCapable",
+      "method": "registerSyncedVariantData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [
+        "net/minecraft/network/syncher/EntityDataSerializers#f_135030_"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "entityjs-0.6.6-1.20.1.jar",
+      "class": "net/liopyu/entityjs/mixin/LivingEntityMixin",
+      "method": "entityJs$addSyncedData(Lnet/liopyu/entityjs/util/EntitySerializerType;Ljava/lang/String;Ljava/lang/Object;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [
+        "MethodInsnNode"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "entityjs-0.6.6-1.20.1.jar",
+      "class": "net/liopyu/entityjs/mixin/ProjectileMixin",
+      "method": "entityJs$addSyncedData(Lnet/liopyu/entityjs/util/EntitySerializerType;Ljava/lang/String;Ljava/lang/Object;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [
+        "MethodInsnNode"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    }
+  ],
+  "limits": [
+    "Static callsite classification is not a gameplay or client render check.",
+    "Dynamic helper paths require runtime and installed script inspection; unexercised paths are not passed.",
+    "Windswept Goat variant has one external allocator; client/server trace comparison remains pending."
+  ],
+  "raw_metadata_sha256": {
+    "common": "5ab7d60bcc5c2256bdcce3ee0038a69dc428aa52e81dbc77fc7fd53ec95404c3",
+    "client": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "helper_scan": "f46e820aa384ceb5381c7c466262d292e502520ad39ec1a7407a6a8cf16da9f6"
+  },
+  "known_dynamic_helper_calls": 137,
+  "helper_classifications": {
+    "FOREIGN_OWNER": 8,
+    "OWN_CLASS": 113,
+    "DYNAMIC_OWNER": 16
+  },
+  "foreign_helper_calls": [
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/pokemon/Pokemon",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity"
+      ],
+      "allocation_api": "com/pixelmonmod/pixelmon/api/data/DataSync#<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/pokemon/Pokemon",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity"
+      ],
+      "allocation_api": "com/pixelmonmod/pixelmon/api/data/DataSync#<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/pokemon/Pokemon",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity"
+      ],
+      "allocation_api": "com/pixelmonmod/pixelmon/api/data/DataSync#<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/pokemon/Pokemon",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity"
+      ],
+      "allocation_api": "com/pixelmonmod/pixelmon/api/data/DataSync#<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/pokemon/Pokemon",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity"
+      ],
+      "allocation_api": "com/pixelmonmod/pixelmon/api/data/DataSync#<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/pokemon/Pokemon",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity"
+      ],
+      "allocation_api": "com/pixelmonmod/pixelmon/api/data/DataSync#<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/pokemon/Pokemon",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity"
+      ],
+      "allocation_api": "com/pixelmonmod/pixelmon/api/data/DataSync#<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [],
+      "kind": "FOREIGN_OWNER"
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/api/pokemon/PokemonBase",
+      "method": "<clinit>()V",
+      "owners": [
+        "com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity"
+      ],
+      "allocation_api": "com/pixelmonmod/pixelmon/api/data/DataSync#<init>(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [],
+      "kind": "FOREIGN_OWNER"
+    }
+  ],
+  "unresolved_helper_calls": [],
+  "forwarded_helper_calls": [
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/AttackDataCapable#registerSyncedAttackData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/AttributeDataCapable#registerSyncedAttributeData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/DisplayAttributeDataCapable#registerSyncedDisplayAttributeData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/ModelDataCapable#registerSyncedModelData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/NavigationDataCapable#registerSyncedNavigationData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/OwnerDataCapable#registerSyncedOwnerData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/ProfessionDataCapable#registerSyncedProfessionData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/RenderDataCapable#registerSyncedRenderData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/SkinDataCapable#registerSyncedSkinData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/SoundDataCapable#registerSyncedSoundData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/TradingDataCapable#registerSyncedTradingData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/EasyNPCBase",
+      "method": "registerEasyNPCSyncedData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/VariantDataCapable#registerSyncedVariantData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelDataCapable",
+      "method": "registerSyncedModelData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/ModelPositionDataCapable#registerSyncedModelPositionData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelDataCapable",
+      "method": "registerSyncedModelData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/ModelRotationDataCapable#registerSynchedModelRotationData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelDataCapable",
+      "method": "registerSyncedModelData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/ModelScaleDataCapable#registerSynchedModelScaleData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "easy_npc-forge-1.20.1-6.1.0.jar",
+      "class": "de/markusbordihn/easynpc/entity/easynpc/data/ModelDataCapable",
+      "method": "registerSyncedModelData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "owners": [],
+      "allocation_api": "de/markusbordihn/easynpc/entity/easynpc/data/ModelVisibilityDataCapable#registerSynchedModelVisibilityData(Ljava/util/EnumMap;Ljava/lang/Class;)V",
+      "call_type": "HELPER",
+      "forwarded_class_parameters": [
+        "1"
+      ],
+      "owner_is_forwarded_parameter": true,
+      "serializers": [],
+      "kind": "DYNAMIC_OWNER"
+    }
+  ],
+  "remaining_runtime_owner_sites": [
+    {
+      "jar": "entityjs-0.6.6-1.20.1.jar",
+      "class": "net/liopyu/entityjs/mixin/LivingEntityMixin",
+      "method": "entityJs$addSyncedData(Lnet/liopyu/entityjs/util/EntitySerializerType;Ljava/lang/String;Ljava/lang/Object;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [
+        "MethodInsnNode"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    },
+    {
+      "jar": "entityjs-0.6.6-1.20.1.jar",
+      "class": "net/liopyu/entityjs/mixin/ProjectileMixin",
+      "method": "entityJs$addSyncedData(Lnet/liopyu/entityjs/util/EntitySerializerType;Ljava/lang/String;Ljava/lang/Object;)V",
+      "owners": [],
+      "allocation_api": "net/minecraft/network/syncher/SynchedEntityData#m_135353_(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "call_type": "DIRECT",
+      "forwarded_class_parameters": [],
+      "owner_is_forwarded_parameter": false,
+      "serializers": [
+        "MethodInsnNode"
+      ],
+      "kind": "DYNAMIC_OWNER"
+    }
+  ],
+  "npc_terminal_helper_calls_owned_by_caller": 32
+}

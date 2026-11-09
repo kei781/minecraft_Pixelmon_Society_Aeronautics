@@ -1,0 +1,21 @@
+{
+  "sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+  "size": 44446971,
+  "independent_builds_match": true,
+  "delta_from_v6": {
+    "added": [
+      "dev/psa/compat/PixelmonPlayerDataOrderMixin.class",
+      "dev/psa/compat/TankCartDataOwnerMixin.class"
+    ],
+    "removed": [],
+    "changed": [
+      "PSA_PROVENANCE.txt",
+      "psa-forge.mixins.json"
+    ]
+  },
+  "data_generation_rerun": false,
+  "build_logs_sha256": {
+    "player-cart-port-build.log": "a600626a52069b8f840324c46bcb2d08e1a5b8e9a9ecf9b0c11e45b2abdc3a83",
+    "player-cart-port-build-repro.log": "7a71fa02dad0ad6bc1bfe03365b482110d89596f535b0bd157ab9b8f7f0edb8a"
+  }
+}

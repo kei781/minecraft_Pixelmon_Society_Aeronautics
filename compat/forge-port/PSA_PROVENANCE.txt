@@ -8,3 +8,5 @@ Forge port author credited by upstream: Eewin-yiun.
 PSA packaging restores resources, generates 1.20.1 data, merges shared tags, and retains original notices.
 PSA client compatibility: safe outline argument wrapper for Oculus and optional Pixelmon cosmetic menu guard.
 PSA Pixelmon 9.2.3 shader wire compatibility: initialize the existing three codec names on both sides and normalize RGBA floats to match the existing reader. Original Pixelmon JAR unchanged.
+PSA Pixelmon/Carry On Player data compatibility: initialize Carry On's existing accessor before Pixelmon's existing accessors on both sides. No field IDs or packet values are replaced. Original mod JARs unchanged.
+PSA More Minecarts 1.8.3 compatibility: register TankCartEntity's existing fluid key against TankCartEntity rather than its unrelated FlagCartEntity sibling. Original More Minecarts JAR unchanged.

@@ -1,0 +1,26 @@
+// Test-only artifact on the existing pinned Forge classpath.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaCatalogProbeSource')
+    if (!sourceRoot) throw new GradleException('psaCatalogProbeSource is required')
+    def directory = new File(sourceRoot.toString())
+    if (!new File(directory, 'CatalogProbe.java').isFile()) throw new GradleException('Missing probe source')
+    def compiler = project.tasks.register('compilePsaCatalogProbe', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java' }
+        classpath = project.sourceSets.main.compileClasspath
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-catalog-probe/classes'))
+        options.release.set(17)
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaCatalogProbeJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-catalog-probe-0.3.jar')
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': 'psa-catalog-probe.mixins.json')
+        preserveFileTimestamps = false
+        reproducibleFileOrder = true
+    }
+    project.reobf.create('psaCatalogProbeJar')
+}

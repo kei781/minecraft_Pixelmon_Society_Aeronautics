@@ -7,7 +7,9 @@
   "mixins": [
     "LeavesBeGoneChunkMixin",
     "PixelmonShaderCodecMixin",
-    "PixelmonShaderColorMixin"
+    "PixelmonShaderColorMixin",
+    "PixelmonPlayerDataOrderMixin",
+    "TankCartDataOwnerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

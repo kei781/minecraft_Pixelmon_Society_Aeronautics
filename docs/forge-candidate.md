@@ -30,7 +30,7 @@ Society 4.1.5A의 공개 Modrinth 클라이언트팩과 CurseForge 서버팩도 
 고정 소스의 새 복사본을 `PORT`, 이 저장소의 절대 경로를 `PSA`, JDK 17 경로를 `JDK17`, Gradle 7.6.4 실행 파일을 `GRADLE`로 준비한다. 전역 Maven 대신 개인 작업 폴더 Maven 저장소에 Create 6.0.8, Flywheel 1.0.5, Ponder 1.0.91, Registrate 1.3.3, MixinExtras Forge/common 0.4.1의 JAR/POM이 있어야 한다. 좌표는 포팅 소스의 build.gradle에 고정돼 있다. 이들은 확인한 공식 Create와 내장 라이브러리에서 준비했다. 해당 경로로 패치의 자리표시자를 바꾼 뒤 다음 순서를 따른다.
 
 1. 고정 커밋의 깨끗한 소스에 `candidate-build.patch`와 `renderer-locals.patch`를 차례로 적용한다. `META-INF/mods.toml` 수정도 이때 적용된다.
-2. 이 저장소의 `compat/forge-port/LeavesBeGoneChunkMixin.java`, `PixelmonMenuCompatMixin.java`, `PixelmonShaderCodecMixin.java`, `PixelmonShaderColorMixin.java`를 `PORT/src/main/java/dev/psa/compat/`에 복사한다. 같은 디렉터리의 `psa-forge.mixins.json`, `PSA_PROVENANCE.txt`, `licenses/`는 `PORT/src/main/resources/`에 복사한다.
+2. 이 저장소의 `compat/forge-port/`에 있는 Java 믹신 소스를 `PORT/src/main/java/dev/psa/compat/`에 복사한다. 같은 디렉터리의 `psa-forge.mixins.json`, `PSA_PROVENANCE.txt`, `licenses/`는 `PORT/src/main/resources/`에 복사한다. 플레이어/광산수레 동기화 보정은 [별도 기록](player-data-compatibility.md)에 설명한다.
 3. 공식 아트 파일을 검증·복원한다. 새 소스에서 실제 신규 파일 1,291개를 쓰고, 같은 내용 103개와 수작업 번역 43개를 보존했다.
 4. 아래 데이터 생성·평탄화·결합·빌드를 차례로 실행한다. 모든 명령이 성공했을 때만 다음 명령으로 진행한다. 출력 디렉터리는 새 경로여야 한다.
 
