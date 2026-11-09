@@ -162,6 +162,8 @@ def build(server, extras, society_zip, output, menu_fix=None):
     if actual_scripts != expected_scripts:
         raise ValueError("Unrecognized or missing server KubeJS content")
     item_model_alias = forge_item_model_alias.apply(overrides, files)
+    additional_item_models = forge_item_model_alias.apply_additional(
+        overrides, files, ROOT / "compat/item-model-aliases.json")
     overrides["config/pixelmon/config.yml"] = b"allow-vanilla-mobs: true\n"
     model_data, model_receipt = forge_model_pack.build(
         server / "mods/psa-aeronautics-experimental-forge-1.20.1.jar", PORT_SHA256, EXPECTED_MODEL_OVERRIDES)
@@ -190,7 +192,7 @@ def build(server, extras, society_zip, output, menu_fix=None):
                                                    for item in lock.get("client_overrides", [])],
                 "port_sha256": PORT_SHA256, "overrides": checks}
     metadata["forge_model_compatibility"] = model_receipt
-    metadata["item_model_aliases"] = [item_model_alias]
+    metadata["item_model_aliases"] = [item_model_alias] + additional_item_models
     if menu_fix is not None:
         metadata["client_menu_compatibility"] = {
             "path": "mods/" + MENU_PATCH_NAME, "sha256": MENU_PATCH_SHA256,

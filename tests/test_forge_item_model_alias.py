@@ -101,6 +101,39 @@ class ItemModelAliasTest(unittest.TestCase):
         self.assertEqual({n:overrides[n] for n in before}, before)
         self.assertEqual(set(overrides) - set(before), {"kubejs/" + alias.TARGET})
 
+    def batch_fixture(self):
+        specs = []
+        # Reuse the actual archive guard with two owned model names and a block-model path.
+        block = "assets/decorative_blocks/models/block/owned.json"
+        with zipfile.ZipFile(self.jar, "a") as archive:
+            archive.writestr(block, self.model)
+        jar_sha = self.sha(self.jar.read_bytes())
+        for name in ("owned_first", "owned_second"):
+            specs.append({"item":"decorative_blocks:"+name, "jar":alias.JAR, "jar_sha256":jar_sha,
+                          "target_path":"assets/decorative_blocks/models/item/"+name+".json",
+                          "parent":"decorative_blocks:block/owned", "resources":{block:self.sha(self.model)},
+                          "vanilla_dependencies":[]})
+        path=Path(self.directory.name)/"specs.json";path.write_text(json.dumps(specs))
+        return path, specs
+
+    def test_batch_is_atomic_if_later_target_conflicts(self):
+        path,specs=self.batch_fixture()
+        overrides={"kubejs/"+specs[1]["target_path"]:b"existing user resource"}
+        before=dict(overrides)
+        with patch.object(alias,"ADDITIONAL_ITEMS",{s["item"] for s in specs}), self.assertRaisesRegex(ValueError,"already supplied"):
+            alias.apply_additional(overrides,self.files,path)
+        self.assertEqual(overrides,before)
+
+    def test_batch_applies_all_and_rejects_missing_inventory(self):
+        path,specs=self.batch_fixture();overrides={"unrelated":b"preserved"}
+        with patch.object(alias,"ADDITIONAL_ITEMS",{s["item"] for s in specs}):
+            receipts=alias.apply_additional(overrides,self.files,path)
+            self.assertEqual(len(receipts),2);self.assertEqual(overrides['unrelated'],b'preserved')
+            self.assertEqual(len(overrides),3)
+            path.write_text(json.dumps(specs[:1]))
+            with self.assertRaisesRegex(ValueError,"inventory"):
+                alias.apply_additional({},self.files,path)
+
 
 if __name__ == "__main__":
     unittest.main()

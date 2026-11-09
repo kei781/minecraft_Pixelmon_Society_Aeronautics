@@ -13,27 +13,29 @@ TEXTURE = "assets/decorative_blocks/textures/item/blockstate_copy_tool.png"
 TEXTURE_SHA256 = "c254807e84c95081bc952b6190d127109548404d2eca03baf57d088eb1bbecc4"
 TARGET = "assets/decorative_blocks/models/item/blockstate_copy_item.json"
 PARENT = "decorative_blocks:item/blockstate_copy_tool"
+ADDITIONAL_ITEMS = {"displaydelight:beetroot_soup", "displaydelight:mushroom_stew",
+                    "displaydelight:rabbit_stew", "verdantvibes:potted_burnweed", "vintagedelight:vinegar_jar"}
 
 
-def apply(overrides, files):
-    """Add a client-only KubeJS asset after the original server/script inventory check."""
-    source = Path(files[JAR])
-    if source.is_symlink() or hashlib.sha256(source.read_bytes()).hexdigest() != JAR_SHA256:
-        raise ValueError("Unexpected Decorative Blocks identity")
-    target = "kubejs/" + TARGET
+def apply_verified(overrides, files, *, jar, jar_sha256, target_path, parent, resources, item):
+    """Reference a pinned original model after the original server/script inventory check."""
+    source = Path(files[jar])
+    if source.is_symlink() or hashlib.sha256(source.read_bytes()).hexdigest() != jar_sha256:
+        raise ValueError("Unexpected original model archive identity")
+    target = "kubejs/" + target_path
     if any(name.casefold() == target.casefold() for name in overrides):
         raise ValueError("Item model alias already supplied by KubeJS")
-    expected = {MODEL: MODEL_SHA256, TEXTURE: TEXTURE_SHA256}
+    expected = dict(resources)
     with zipfile.ZipFile(source) as archive:
         for name, digest in expected.items():
             if hashlib.sha256(archive.read(name)).hexdigest() != digest:
                 raise ValueError("Original tool model/texture identity changed")
     # Another mod/pack may repair this upstream defect or replace the chosen parent.
     # Refuse to overwrite that state silently, including case collisions on Windows.
-    watched = {name.casefold(): name for name in [TARGET, MODEL, TEXTURE]}
+    watched = {name.casefold(): name for name in [target_path, *expected]}
     def check_resource(name, read):
         canonical = watched.get(name.casefold())
-        if canonical == TARGET:
+        if canonical == target_path:
             raise ValueError("Item model already supplied by a mod/resource pack")
         if canonical and (name != canonical or hashlib.sha256(read()).hexdigest() != expected[canonical]):
             raise ValueError("Original tool model/texture overridden by a mod/resource pack")
@@ -58,7 +60,7 @@ def apply(overrides, files):
             check_zip(path)
     for name, data in overrides.items():
         canonical = watched.get(name.casefold().removeprefix("kubejs/")) if name.casefold().startswith("kubejs/") else None
-        if canonical and (name != "kubejs/" + canonical or canonical == TARGET
+        if canonical and (name != "kubejs/" + canonical or canonical == target_path
                           or hashlib.sha256(data).hexdigest() != expected[canonical]):
             raise ValueError("Original tool model/texture overridden by KubeJS")
         parts = name.split("/")
@@ -67,9 +69,41 @@ def apply(overrides, files):
                 check_zip(io.BytesIO(data))
             elif len(parts) >= 3:
                 check_resource("/".join(parts[2:]), lambda: data)
-    data = (json.dumps({"parent": PARENT}, indent=2) + "\n").encode()
+    data = (json.dumps({"parent": parent}, indent=2) + "\n").encode()
     overrides[target] = data
-    return {"item": "decorative_blocks:blockstate_copy_item", "path": target, "parent": PARENT,
-            "sha256": hashlib.sha256(data).hexdigest(), "upstream_jar_sha256": JAR_SHA256,
+    return {"item": item, "path": target, "parent": parent,
+            "sha256": hashlib.sha256(data).hexdigest(), "upstream_jar_sha256": jar_sha256,
+            "original_resources": expected,
+            "scope": "Original matching model alias; native validation recorded separately"}
+
+
+def apply(overrides, files):
+    """Preserve the accepted Decorative Blocks alias and its exact receipt format."""
+    receipt = apply_verified(overrides, files, jar=JAR, jar_sha256=JAR_SHA256,
+                             target_path=TARGET, parent=PARENT,
+                             resources={MODEL: MODEL_SHA256, TEXTURE: TEXTURE_SHA256},
+                             item="decorative_blocks:blockstate_copy_item")
+    return {"item": receipt["item"], "path": receipt["path"], "parent": receipt["parent"],
+            "sha256": receipt["sha256"], "upstream_jar_sha256": JAR_SHA256,
             "original_model_sha256": MODEL_SHA256, "original_texture_sha256": TEXTURE_SHA256,
             "scope": "Original upstream tool model alias; native validation recorded separately"}
+
+
+def apply_additional(overrides, files, spec_path):
+    """Validate the complete pinned batch before committing any additional client asset."""
+    specs = json.loads(Path(spec_path).read_text())
+    if not isinstance(specs, list) or len(specs) != len(ADDITIONAL_ITEMS) or {s["item"] for s in specs} != ADDITIONAL_ITEMS:
+        raise ValueError("Unexpected additional item model inventory")
+    staged = dict(overrides)
+    receipts = []
+    for spec in specs:
+        namespace, name = spec["item"].split(":")
+        if (spec["target_path"] != "assets/" + namespace + "/models/item/" + name + ".json"
+                or not spec["parent"].startswith(namespace + ":block/")):
+            raise ValueError("An original matching block model is required")
+        parent_path = "assets/" + spec["parent"].replace(":", "/models/") + ".json"
+        if parent_path not in spec["resources"]:
+            raise ValueError("Pinned original parent provenance required")
+        receipts.append(apply_verified(staged, files, **{k:v for k,v in spec.items() if k != "vanilla_dependencies"}))
+    overrides.update(staged)
+    return receipts

@@ -66,6 +66,12 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.lock={'minecraft':'1.20.1','forge':'47.4.20','society':'fixture','files':self.files}
         self.write_base()
         (self.root/'forge-candidate-lock.json').write_text('{}')
+        # This minimal archive fixture isolates the original alias/export invariants.
+        # The full five-item batch is covered by dedicated controls and the real full-pack export.
+        (self.root/'compat').mkdir()
+        (self.root/'compat/item-model-aliases.json').write_text('[]')
+        context=patch.object(client.forge_item_model_alias, 'ADDITIONAL_ITEMS', set())
+        context.start();self.addCleanup(context.stop)
         for name,value in [('ROOT',self.root),('EXPECTED_FILES',5),('EXPECTED_SHARED',2),('EXPECTED_REPLACEMENTS',1),('EXPECTED_MODEL_OVERRIDES',1),
                 ('PIXELMON_SHA256',client.digest(self.pixel)),('PORT_SHA256',client.digest(self.port))]:
             context=patch.object(client,name,value);context.start();self.addCleanup(context.stop)
