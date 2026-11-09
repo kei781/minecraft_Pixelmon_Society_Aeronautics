@@ -9,7 +9,11 @@
     "PixelmonShaderCodecMixin",
     "PixelmonShaderColorMixin",
     "PixelmonPlayerDataOrderMixin",
-    "TankCartDataOwnerMixin"
+    "TankCartDataOwnerMixin",
+    "TankCartMenuDataMixin",
+    "BatteryCartMenuDataMixin",
+    "BatteryCartMenuTypeMixin",
+    "BountifulMenuDataMixin"
   ],
   "injectors": {
     "defaultRequire": 1

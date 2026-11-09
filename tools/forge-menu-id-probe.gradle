@@ -1,0 +1,26 @@
+// Build only our diagnostic against the existing pinned Forge classpath.
+// Invoke reobfPsaMenuIdProbeJar for a server-ready artifact, not just the Jar task.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaMenuIdProbeSource')
+    if (!sourceRoot) throw new GradleException('psaMenuIdProbeSource is required')
+    def directory = new File(sourceRoot.toString())
+    def compiler = project.tasks.register('compilePsaMenuIdProbe', JavaCompile) {
+        source project.fileTree(directory) { include '*.java' }
+        classpath = project.sourceSets.main.compileClasspath
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-menu-id-probe/classes'))
+        options.release.set(17)
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaMenuIdProbeJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-menu-id-probe-0.1.jar')
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType': 'MOD')
+        preserveFileTimestamps = false
+        reproducibleFileOrder = true
+    }
+    project.reobf.create('psaMenuIdProbeJar')
+}
