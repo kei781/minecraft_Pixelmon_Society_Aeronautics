@@ -46,11 +46,14 @@ public final class MenuIdProbe {
 
     private static final class Capture implements ContainerSynchronizer {
         int[] values;
+        final java.util.List<int[]> changes = new java.util.ArrayList<>();
         @Override public void sendInitialData(AbstractContainerMenu menu, NonNullList<ItemStack> slots,
                 ItemStack carried, int[] data) { values = data.clone(); }
         @Override public void sendSlotChange(AbstractContainerMenu menu, int slot, ItemStack stack) {}
         @Override public void sendCarriedChange(AbstractContainerMenu menu, ItemStack stack) {}
-        @Override public void sendDataChange(AbstractContainerMenu menu, int index, int value) {}
+        @Override public void sendDataChange(AbstractContainerMenu menu, int index, int value) {
+            changes.add(new int[] {index, value});
+        }
     }
 
     private static Object field(Object object, String name) throws Exception {
@@ -190,6 +193,23 @@ public final class MenuIdProbe {
             throw new IllegalStateException("Wrong completion counter: " + source + "/" + actual);
         JsonObject row = new JsonObject(); row.addProperty("source_count", source);
         row.addProperty("decoded_count", actual); row.addProperty("full_count_preserved", actual == source);
+        if (source == 65535) {
+            JsonArray updates = new JsonArray();
+            for (int next : new int[] {65536, 65537, 131071, 131072, 0}) {
+                counts.put("owned-local-qa-counter", next);
+                capture.changes.clear();
+                server.broadcastChanges();
+                if (capture.changes.isEmpty()) throw new IllegalStateException("No counter update packets");
+                for (int[] change : capture.changes) client.setData(change[0], roundtrip(change[0], change[1]));
+                int updated = (Integer) client.getClass().getMethod("getTotalNumComplete").invoke(client);
+                if (updated != (BASELINE ? (short) next : next))
+                    throw new IllegalStateException("Wrong broadcast completion update");
+                JsonObject update = new JsonObject(); update.addProperty("source_count", next);
+                update.addProperty("decoded_count", updated); update.addProperty("packets", capture.changes.size());
+                updates.add(update);
+            }
+            row.add("broadcast_updates", updates);
+        }
         return row;
     }
 

@@ -1,0 +1,41 @@
+{
+  "scope": "disposable N100 QA; no claim of six-player load or all gameplay",
+  "candidate_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+  "actual_common_jars": 313,
+  "canonical_common_manifest_sha256": "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812",
+  "original_profile_preserved": true,
+  "normal_stop_at_zero_players_before_replacement": true,
+  "qa_world_and_old_port_backup_before_replacement": true,
+  "authentication_retained": true,
+  "temporary_counter_source_sha256": "455d3a1ab251cba9bf0723b1f33665dc95c329ca99be023fa9181234f5f24914",
+  "temporary_counter_result": {
+    "last_id": 159443,
+    "unspawned_objects_allocated": 1,
+    "counter_overwritten": false,
+    "objects_added_to_world": 0
+  },
+  "read_only_observer_source_sha256": "45392dd42229a80b4d0e5056bfb99b0ff00e327a4c1ea448ce1cc1ac83272bb8",
+  "observed_fixtures": [
+    {
+      "type": "moreminecarts:tank_cart",
+      "runtime_id": 216785,
+      "water_mb": 1000
+    },
+    {
+      "type": "moreminecarts:battery_cart",
+      "runtime_id": 216786,
+      "energy_fe": 40000
+    }
+  ],
+  "temporary_scripts_removed_with_hash_guards": true,
+  "server_scripts_restored": 188,
+  "reload_errors": 0,
+  "reload_warnings": 0,
+  "windows_initial_tank_gui": {
+    "reported_water_mb": 1000,
+    "reported_capacity_mb": 40000,
+    "screenshot_time_kst": "2026-11-09 11:35:07",
+    "numeric_entity_id_source": "server tagged-fixture public getter, not Windows reading"
+  },
+  "remaining": "Windows bucket fill/drain, live UI and battery confirmation still pending at this snapshot"
+}

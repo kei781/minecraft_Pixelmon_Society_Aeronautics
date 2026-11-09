@@ -758,5 +758,465 @@
     "Not an error-free-log claim; baseline mod recipe warnings remain.",
     "Minimum configurations omit optional Create recipe providers.",
     "Authenticated client GUI and six-player gameplay are separate gates."
-  ]
+  ],
+  "initial_runs_source_commit": "a09cfad",
+  "broadcast_followup": {
+    "scope": "same real server menu remains open; mutate owned QA completion map, call actual broadcastChanges, roundtrip each captured packet and apply to existing client menu; not a natural bounty completion action",
+    "diagnostic_source_sha256": "9a6ebd73ff62a30978b9dbe6efadfe44cc7dc6da4ee61639742d4e08bef67188",
+    "diagnostic_jar_sha256": "87252e41da1633850a419eef445be1b8ea281735f4ffb573b8567fe639fb6140",
+    "runs": [
+      {
+        "baseline": true,
+        "log_sha256": "1c422b4e9a02dbc04c52900929ac265ac6ac58c1d5f7f11b5b19c59ce2c39fe0",
+        "report_sha256": "8f34bce41c024563b9e80af839e23cd8bdbaa39548e6293b7845185b1afde382",
+        "result": {
+          "baseline": true,
+          "scope": "real server and client-constructor menu logic with actual vanilla packet roundtrip on dedicated level; not authenticated client rendering",
+          "boundaries": [
+            {
+              "kind": "tank",
+              "source_id": 0,
+              "decoded_logical_id": 0,
+              "wire_properties": 1,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": 32767,
+              "decoded_logical_id": 32767,
+              "wire_properties": 1,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": 32768,
+              "decoded_logical_id": -32768,
+              "wire_properties": 1,
+              "menu_type_correct": true,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "tank",
+              "source_id": 65535,
+              "decoded_logical_id": -1,
+              "wire_properties": 1,
+              "menu_type_correct": true,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "tank",
+              "source_id": 65536,
+              "decoded_logical_id": 0,
+              "wire_properties": 1,
+              "menu_type_correct": true,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "tank",
+              "source_id": 251992,
+              "decoded_logical_id": -10152,
+              "wire_properties": 1,
+              "menu_type_correct": true,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "tank",
+              "source_id": 2147483647,
+              "decoded_logical_id": -1,
+              "wire_properties": 1,
+              "menu_type_correct": true,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "tank",
+              "source_id": -2147483648,
+              "decoded_logical_id": 0,
+              "wire_properties": 1,
+              "menu_type_correct": true,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "battery",
+              "source_id": 0,
+              "decoded_logical_id": 0,
+              "wire_properties": 1,
+              "menu_type_correct": false,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 32767,
+              "decoded_logical_id": 32767,
+              "wire_properties": 1,
+              "menu_type_correct": false,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 32768,
+              "decoded_logical_id": -32768,
+              "wire_properties": 1,
+              "menu_type_correct": false,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "battery",
+              "source_id": 65535,
+              "decoded_logical_id": -1,
+              "wire_properties": 1,
+              "menu_type_correct": false,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "battery",
+              "source_id": 65536,
+              "decoded_logical_id": 0,
+              "wire_properties": 1,
+              "menu_type_correct": false,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "battery",
+              "source_id": 251992,
+              "decoded_logical_id": -10152,
+              "wire_properties": 1,
+              "menu_type_correct": false,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "battery",
+              "source_id": 2147483647,
+              "decoded_logical_id": -1,
+              "wire_properties": 1,
+              "menu_type_correct": false,
+              "full_id_preserved": false
+            },
+            {
+              "kind": "battery",
+              "source_id": -2147483648,
+              "decoded_logical_id": 0,
+              "wire_properties": 1,
+              "menu_type_correct": false,
+              "full_id_preserved": false
+            }
+          ],
+          "partial_aliases": [
+            {
+              "kind": "tank",
+              "source_id": 251992,
+              "alias_id": -10152,
+              "first_half_cached_decoy": true,
+              "complete_data_resolved_wanted": false,
+              "getter_returned_nonnull": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 251992,
+              "alias_id": -10152,
+              "first_half_cached_decoy": true,
+              "complete_data_resolved_wanted": false,
+              "getter_returned_nonnull": true
+            }
+          ],
+          "completion_counter_boundaries": [
+            {
+              "source_count": 0,
+              "decoded_count": 0,
+              "full_count_preserved": true
+            },
+            {
+              "source_count": 32767,
+              "decoded_count": 32767,
+              "full_count_preserved": true
+            },
+            {
+              "source_count": 32768,
+              "decoded_count": -32768,
+              "full_count_preserved": false
+            },
+            {
+              "source_count": 65535,
+              "decoded_count": -1,
+              "full_count_preserved": false,
+              "broadcast_updates": [
+                {
+                  "source_count": 65536,
+                  "decoded_count": 0,
+                  "packets": 1
+                },
+                {
+                  "source_count": 65537,
+                  "decoded_count": 1,
+                  "packets": 1
+                },
+                {
+                  "source_count": 131071,
+                  "decoded_count": -1,
+                  "packets": 1
+                },
+                {
+                  "source_count": 131072,
+                  "decoded_count": 0,
+                  "packets": 1
+                },
+                {
+                  "source_count": 0,
+                  "decoded_count": 0,
+                  "packets": 1
+                }
+              ]
+            },
+            {
+              "source_count": 65536,
+              "decoded_count": 0,
+              "full_count_preserved": false
+            },
+            {
+              "source_count": 251992,
+              "decoded_count": -10152,
+              "full_count_preserved": false
+            },
+            {
+              "source_count": 2147483647,
+              "decoded_count": -1,
+              "full_count_preserved": false
+            },
+            {
+              "source_count": -2147483648,
+              "decoded_count": 0,
+              "full_count_preserved": false
+            }
+          ]
+        }
+      },
+      {
+        "baseline": false,
+        "log_sha256": "ea8752f0c60f72e86c38ce8e9e33829523b3fdef0e6deb89367b77bbff042792",
+        "report_sha256": "3336320e64c6bccc7d6110c7d2404f72d0d683eb304d39fadd8a4d9170f1f920",
+        "result": {
+          "baseline": false,
+          "scope": "real server and client-constructor menu logic with actual vanilla packet roundtrip on dedicated level; not authenticated client rendering",
+          "boundaries": [
+            {
+              "kind": "tank",
+              "source_id": 0,
+              "decoded_logical_id": 0,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": 32767,
+              "decoded_logical_id": 32767,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": 32768,
+              "decoded_logical_id": 32768,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": 65535,
+              "decoded_logical_id": 65535,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": 65536,
+              "decoded_logical_id": 65536,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": 251992,
+              "decoded_logical_id": 251992,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": 2147483647,
+              "decoded_logical_id": 2147483647,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "tank",
+              "source_id": -2147483648,
+              "decoded_logical_id": -2147483648,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 0,
+              "decoded_logical_id": 0,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 32767,
+              "decoded_logical_id": 32767,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 32768,
+              "decoded_logical_id": 32768,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 65535,
+              "decoded_logical_id": 65535,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 65536,
+              "decoded_logical_id": 65536,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 251992,
+              "decoded_logical_id": 251992,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 2147483647,
+              "decoded_logical_id": 2147483647,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            },
+            {
+              "kind": "battery",
+              "source_id": -2147483648,
+              "decoded_logical_id": -2147483648,
+              "wire_properties": 2,
+              "menu_type_correct": true,
+              "full_id_preserved": true
+            }
+          ],
+          "partial_aliases": [
+            {
+              "kind": "tank",
+              "source_id": 251992,
+              "alias_id": -10152,
+              "first_half_cached_decoy": false,
+              "complete_data_resolved_wanted": true,
+              "getter_returned_nonnull": true
+            },
+            {
+              "kind": "battery",
+              "source_id": 251992,
+              "alias_id": -10152,
+              "first_half_cached_decoy": false,
+              "complete_data_resolved_wanted": true,
+              "getter_returned_nonnull": true
+            }
+          ],
+          "completion_counter_boundaries": [
+            {
+              "source_count": 0,
+              "decoded_count": 0,
+              "full_count_preserved": true
+            },
+            {
+              "source_count": 32767,
+              "decoded_count": 32767,
+              "full_count_preserved": true
+            },
+            {
+              "source_count": 32768,
+              "decoded_count": 32768,
+              "full_count_preserved": true
+            },
+            {
+              "source_count": 65535,
+              "decoded_count": 65535,
+              "full_count_preserved": true,
+              "broadcast_updates": [
+                {
+                  "source_count": 65536,
+                  "decoded_count": 65536,
+                  "packets": 2
+                },
+                {
+                  "source_count": 65537,
+                  "decoded_count": 65537,
+                  "packets": 1
+                },
+                {
+                  "source_count": 131071,
+                  "decoded_count": 131071,
+                  "packets": 1
+                },
+                {
+                  "source_count": 131072,
+                  "decoded_count": 131072,
+                  "packets": 2
+                },
+                {
+                  "source_count": 0,
+                  "decoded_count": 0,
+                  "packets": 1
+                }
+              ]
+            },
+            {
+              "source_count": 65536,
+              "decoded_count": 65536,
+              "full_count_preserved": true
+            },
+            {
+              "source_count": 251992,
+              "decoded_count": 251992,
+              "full_count_preserved": true
+            },
+            {
+              "source_count": 2147483647,
+              "decoded_count": 2147483647,
+              "full_count_preserved": true
+            },
+            {
+              "source_count": -2147483648,
+              "decoded_count": -2147483648,
+              "full_count_preserved": true
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
