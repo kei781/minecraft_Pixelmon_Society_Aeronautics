@@ -64,7 +64,7 @@ v5 당시 배치용 정규화 JAR SHA256은 `cc31e4ab2684567361aab8fedc0be25bf43
 
 v6 당시 준비 도구는 Pixelmon 셰이더 패킷 보정을 포함한 `a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74`를 고정했다. 위 `cc31e4…`와 함께 이전 운영본의 보존 기록이다. [v6 변경 범위](pixelmon-shader-compatibility.md)를 참조한다.
 
-현재 준비·내보내기 도구의 포팅 JAR 고정값은 `31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5`, 44,461,296바이트다. 등록·메뉴 보정에 [Jade 비행체 좌표 보정](jade-sublevel-coordinates.md)을 더한 검증 후보이며 같은 JAR를 양쪽에 설치해야 한다. N100 정상 부팅과 기하 검사는 통과했고 Windows 실제 회귀는 진행 중이다. `59466e…`는 이전 v8·v9의 수락 당시 파일이며 새 도구의 입력 해시 검사에는 통과하지 않는다. [동기화 변경과 검증 범위](player-data-compatibility.md)를 참조한다.
+현재 준비·내보내기 도구의 공통 JAR 고정값은 `53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c`, 44,462,825바이트다. 기존 등록·메뉴·[Jade 보정](jade-sublevel-coordinates.md)에 [누케닌 HP 보정](pixelmon-dynamax-hitpoints.md)을 더한 v16 후보이며 같은 JAR를 양쪽에 설치해야 한다. 이전 `31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5`는 v12~v15 이력과 HP overlay의 기준 입력이다. 이전 `59466e…` 메뉴 수락 파일도 현재 준비 도구 입력으로는 거부한다. 최신 N100 기동·검증은 [운영 기록](n100-server.md)에 구분한다.
 
 해시를 고정한 세 입력이 로컬에 있을 때 다음 도구로 새로운 프로필을 준비한다. `forge-candidate-lock.json`의 실제 공식 다운로드 URL·배포처 SHA1/SHA512·크기도 확인하고 입력 검증 결과를 프로필 영수증에 남긴다. 원본 311개 JAR, Pixelmon 교체 데이터 68개를 확인한다. 기존 경로를 덮어쓰지 않는다.
 

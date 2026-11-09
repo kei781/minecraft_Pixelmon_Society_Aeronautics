@@ -1,0 +1,67 @@
+{
+  "build": {
+    "files": 2,
+    "sha256": "9f0d6990f4fde1cad5ad9e1bdd4ba62c32ae63cee938f9a5be04a1a0d1cba7f6",
+    "bytes": 5834,
+    "source_sha256": "e38833426f94de1391615b22fd6856d6d10be5c0f579628c05673c7ab92fd8e2",
+    "manifest_sha256": "ef2c0d6bd009ba9b3c296c232e5a4d9019ba6d5f7d7edd45941280dc4c30f5f6",
+    "manifest_source_sha256": "775a0f54331578d13704baf0f584cf5574f3ea8c08155933b8eaa01316b2b0fa",
+    "javac_version": "javac 17.0.21",
+    "agent_class": "dev.psa.qaconnect.v2.MinecraftQaConnect",
+    "production_mod": false
+  },
+  "independent_build_bytes_equal": true,
+  "existing_control_bytes_unchanged": true,
+  "connection_request": {
+    "run": "700d41be-883b-4ac9-a9b5-21644970b46c",
+    "result": "connect_requested",
+    "error_class": "",
+    "scope": "native QA connection request; no authentication/input/session modification"
+  },
+  "active_world_guard": {
+    "run": "ac2cf688-12a3-4abc-adb9-d82d2fbe5cb3",
+    "result": "active_world_refused",
+    "error_class": "",
+    "scope": "native QA connection request; no authentication/input/session modification"
+  },
+  "actual_authenticated_world_entry": {
+    "native_auth_login_count": 1,
+    "join_world_count": 1,
+    "left_world_count": 0,
+    "current_online_players": 1,
+    "last_overall_metrics": "Overall: Mean tick time: 14.289 ms. Mean TPS: 20.000",
+    "raw_server_log_sha256": "1b76d078cd5e2f11c6babbb55c3f8aaa09ac8dffd79f5633a517b4f55a21c324",
+    "runtime_production_mods": 313
+  },
+  "client_log_sha256": "25d6ab071929356b7a6cf566a153b4d98d35a5b45fea45947f8eb2176ac5411b",
+  "remaining_after_join": {
+    "ali_client_cache_null_pointer": true,
+    "reliable_emi_group_parse_errors": 11
+  },
+  "limits": "Uses real existing Microsoft session and native ConnectScreen, no world disconnect, auth alteration, arbitrary evaluation or class redefinition. Old in-JVM agent classes are not replaced: changed helper implementations require a fresh client process or distinct versioned class identity. Windows off; latest fresh Windows import not verified.",
+  "invalid_cli_controls": [
+    {
+      "arguments": [],
+      "refused_before_attach": true
+    },
+    {
+      "arguments": [
+        "0"
+      ],
+      "refused_before_attach": true
+    },
+    {
+      "arguments": [
+        "not-a-pid"
+      ],
+      "refused_before_attach": true
+    },
+    {
+      "arguments": [
+        "1",
+        "extra"
+      ],
+      "refused_before_attach": true
+    }
+  ]
+}

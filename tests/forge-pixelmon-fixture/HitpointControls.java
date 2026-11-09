@@ -21,11 +21,15 @@ public final class HitpointControls {
         var rows = new JsonArray(); int failures = 0;
         for (String species : new String[]{"shedinja", "magikarp", "ditto"})
             for (int level : new int[]{1, 50, 100}) for (int dynamax : new int[]{0, 10}) {
-                JsonObject row = sample(species, level, dynamax, false);
+                JsonObject row = sample(species, level, dynamax, 0);
                 rows.add(row); if (!row.get("pass").getAsBoolean()) failures++;
             }
         for (int dynamax : new int[]{0, 10}) {
-            JsonObject row = sample("shedinja", 100, dynamax, true);
+            JsonObject row = sample("shedinja", 100, dynamax, 100);
+            rows.add(row); if (!row.get("pass").getAsBoolean()) failures++;
+        }
+        for (int dynamax : new int[]{0, 10}) {
+            JsonObject row = sample("magikarp", 100, dynamax, 1);
             rows.add(row); if (!row.get("pass").getAsBoolean()) failures++;
         }
         var report = new JsonObject(); report.addProperty("run", UUID.randomUUID().toString());
@@ -41,17 +45,17 @@ public final class HitpointControls {
         return output;
     }
 
-    private static JsonObject sample(String species, int level, int dynamax, boolean customHP) {
+    private static JsonObject sample(String species, int level, int dynamax, int customHP) {
         var pokemon = PokemonBuilder.builder().species(species).level(level)
             .ivs(0, 0, 0, 0, 0, 0).evs(0, 0, 0, 0, 0, 0).build();
         pokemon.setDynamaxLevel(dynamax);
-        if (customHP) pokemon.getStats().set(BattleStatsType.HP, 100);
+        if (customHP > 0) pokemon.getStats().set(BattleStatsType.HP, customHP);
         var wrapper = new WildPixelmonParticipant(pokemon).asWrapper();
         int expectedBase;
-        if (customHP) expectedBase = 100;
+        if (customHP > 0) expectedBase = customHP;
         else if (species.equals("shedinja")) expectedBase = 1;
         else expectedBase = (species.equals("magikarp") ? 40 : 96) * level / 100 + level + 10;
-        int expectedDynamax = species.equals("shedinja") && !customHP ? 1
+        int expectedDynamax = species.equals("shedinja") && expectedBase == 1 ? 1
             : expectedBase + (int) Math.ceil(expectedBase * (0.5D + dynamax * 0.05D));
         wrapper.isDynamax = -1;
         int normal = wrapper.getMaxHealth(false), baseNormal = wrapper.getMaxHealth(true);

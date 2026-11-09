@@ -44,6 +44,21 @@
   "ready_at_utc": "2026-11-09 16:03:45",
   "client_package": "PSA-Forge-Full-Experimental-v16.mrpack",
   "client_sha256": "6fb68d036d989ea3e88f12000478f06df65923a89c84814acf6f5dc4964d4531",
-  "actual_authenticated_client_connection": "pending",
+  "actual_authenticated_client_connection": {
+    "result": "passed",
+    "client_install_scope": "Warm Mac QA instance with all 354 v16 production JAR hashes verified, plus one client-only model lookup audit; not a fresh Windows import",
+    "path": "Existing authorized SSH loopback forwarding; direct LAN native attempt returned NoRouteToHostException",
+    "runtime": {
+      "native_auth_login_count": 1,
+      "join_world_count": 1,
+      "left_world_count": 0,
+      "current_online_players": 1,
+      "last_overall_metrics": "Overall: Mean tick time: 14.289 ms. Mean TPS: 20.000",
+      "raw_server_log_sha256": "1b76d078cd5e2f11c6babbb55c3f8aaa09ac8dffd79f5633a517b4f55a21c324",
+      "runtime_production_mods": 313
+    },
+    "active_world_reconnect_refused": true,
+    "scope": "Native auth handshake and real world entry; no authentication/session modification. No six-player load claim."
+  },
   "six_player_load_passed": false
 }
