@@ -1,4 +1,5 @@
 import hashlib
+import io
 import json
 from pathlib import Path
 import sys
@@ -61,6 +62,27 @@ class ItemModelAliasTest(unittest.TestCase):
             self.assertEqual(overrides, {})
         with self.assertRaisesRegex(ValueError, "KubeJS"):
             alias.apply({"kubejs/" + alias.MODEL: b"{}"}, self.files)
+
+    def test_bundled_folder_zip_and_nested_jar_conflicts_are_rejected(self):
+        stream = io.BytesIO()
+        with zipfile.ZipFile(stream, "w") as archive:
+            archive.writestr(alias.TARGET, b"{}")
+        nested_bytes = stream.getvalue()
+        cases = [{"resourcepacks/repair.zip": nested_bytes},
+                 {"resourcepacks/repair/" + alias.TARGET: b"{}"},
+                 {"resourcepacks/repair/" + alias.TEXTURE: b"replacement"}]
+        for overrides in cases:
+            before = dict(overrides)
+            with self.subTest(keys=list(overrides)), self.assertRaises(ValueError):
+                alias.apply(overrides, self.files)
+            self.assertEqual(overrides, before)
+        nested = Path(self.directory.name) / "nested.jar"
+        with zipfile.ZipFile(nested, "w") as archive:
+            archive.writestr("META-INF/jarjar/dependency.jar", nested_bytes)
+        overrides = {}
+        with self.assertRaises(ValueError):
+            alias.apply(overrides, dict(self.files, nested=nested))
+        self.assertEqual(overrides, {})
 
 
 if __name__ == "__main__":

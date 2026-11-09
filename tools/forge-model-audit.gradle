@@ -15,7 +15,7 @@ gradle.projectsEvaluated {
     }
     project.tasks.register('psaModelAuditJar', Jar) {
         dependsOn compiler
-        archiveFileName.set('psa-model-audit-0.1.jar')
+        archiveFileName.set('psa-model-audit-0.2.jar')
         from compiler.flatMap { it.destinationDirectory }
         from new File(sourceDirectory, 'resources')
         manifest.attributes('FMLModType': 'MOD')

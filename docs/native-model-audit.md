@@ -12,6 +12,11 @@ The sorted catalog digest supports comparing the same inventory across reloads.
 Each bake produces one new UUID-named report under `psa-model-audit/`, followed
 by `PSA_MODEL_AUDIT COMPLETE` in the log. Read the report after that completion
 line. There is no continuously replaced checkpoint or network acknowledgement.
+Version 0.2 logs each current ID at debug level, records nonfatal throwables as
+lookup errors, and rethrows VM/ThreadDeath failures. A report I/O error logs
+`FAILED` with the full partial result, emits no `COMPLETE`, and stops that
+generation's audit. It does not change the separate render probe's strict
+checkpoint failure behavior.
 
 This is model lookup with no world/player context. It does not prove textures,
 actual rendering, native custom renderers, placement, interaction or gameplay.
@@ -24,3 +29,23 @@ model. The original JAR, model and PNG hashes are pinned. Another supplied
 target model or a replaced parent/texture rejects export before output creation.
 No original script or server file changes. Native verification is tracked in
 the evidence files, separately from packaging/source checks.
+
+The collision guard also checks resource-pack ZIPs/folders supplied as base
+overrides and nested Forge JarJar archives. An invalid ZIP or excessive nesting
+rejects export rather than silently skipping inspection.
+
+`tests/java/MinecraftQaControl.java` is a local JDK Attach API helper for the
+deliberately opted-in QA JVM. Its only actions are `status`, `reload`, and
+`stop`; it requires `psa.modelAudit=true`, the PSA profile marker, and the exact
+pinned Minecraft methods. Actions execute through Minecraft's own executor.
+Resource reload completion means its native future completed; confirm the
+separate audit `COMPLETE` marker too. `stop_requested` must be followed by
+verification that the actual game ended normally. This helper does not belong
+in `mods/`, has no arbitrary evaluation action, does not redefine classes, and
+does not change authentication or input. Its reports use unique filenames under
+`psa-qa-control/`.
+
+The actual Mac trial went from 22 to 21 missing-model sentinels with the same
+17,239-item catalog. All 53 Decorative Blocks dropped-item render returns,
+model masks and cleanup then passed on the authenticated server. Remaining
+missing models, hand/inventory pixels, placement and use are still open.

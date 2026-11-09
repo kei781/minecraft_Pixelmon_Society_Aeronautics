@@ -3,7 +3,8 @@ loaderVersion="[47,)"
 license="MIT"
 [[mods]]
 modId="psamodelaudit"
-version="0.1"
+version="0.2"
+displayTest="IGNORE_SERVER_VERSION"
 displayName="PSA Disposable Native Model Audit"
 description='''Opt-in cached default-stack model lookup only. Excluded from player packs.'''
 [[dependencies.psamodelaudit]]

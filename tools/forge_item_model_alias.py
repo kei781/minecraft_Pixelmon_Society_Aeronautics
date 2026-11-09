@@ -1,5 +1,6 @@
 """Repair one pinned upstream item/model name mismatch using its original model."""
 import hashlib
+import io
 import json
 from pathlib import Path
 import zipfile
@@ -30,21 +31,42 @@ def apply(overrides, files):
     # Another mod/pack may repair this upstream defect or replace the chosen parent.
     # Refuse to overwrite that state silently, including case collisions on Windows.
     watched = {name.casefold(): name for name in [TARGET, MODEL, TEXTURE]}
+    def check_resource(name, read):
+        canonical = watched.get(name.casefold())
+        if canonical == TARGET:
+            raise ValueError("Item model already supplied by a mod/resource pack")
+        if canonical and (name != canonical or hashlib.sha256(read()).hexdigest() != expected[canonical]):
+            raise ValueError("Original tool model/texture overridden by a mod/resource pack")
+
+    def check_archive(archive, depth=0):
+        for name in archive.namelist():
+            check_resource(name, lambda: archive.read(name))
+            if name.casefold().startswith("meta-inf/jarjar/") and name.casefold().endswith(".jar"):
+                if depth >= 4:
+                    raise ValueError("Nested JAR inspection depth exceeded")
+                check_zip(io.BytesIO(archive.read(name)), depth + 1)
+
+    def check_zip(source, depth=0):
+        try:
+            with zipfile.ZipFile(source) as archive:
+                check_archive(archive, depth)
+        except zipfile.BadZipFile as failure:
+            raise ValueError("Invalid mod/resource pack ZIP") from failure
+
     for path in files.values():
-        if Path(path).suffix.lower() not in {".jar", ".zip"}:
-            continue
-        with zipfile.ZipFile(path) as archive:
-            for name in archive.namelist():
-                canonical = watched.get(name.casefold())
-                if canonical == TARGET:
-                    raise ValueError("Item model already supplied by a mod/resource pack")
-                if canonical and (name != canonical or hashlib.sha256(archive.read(name)).hexdigest() != expected[canonical]):
-                    raise ValueError("Original tool model/texture overridden by a mod/resource pack")
+        if Path(path).suffix.lower() in {".jar", ".zip"}:
+            check_zip(path)
     for name, data in overrides.items():
         canonical = watched.get(name.casefold().removeprefix("kubejs/")) if name.casefold().startswith("kubejs/") else None
         if canonical and (name != "kubejs/" + canonical or canonical == TARGET
                           or hashlib.sha256(data).hexdigest() != expected[canonical]):
             raise ValueError("Original tool model/texture overridden by KubeJS")
+        parts = name.split("/")
+        if parts[0].casefold() == "resourcepacks":
+            if len(parts) == 2 and parts[1].casefold().endswith(".zip"):
+                check_zip(io.BytesIO(data))
+            elif len(parts) >= 3:
+                check_resource("/".join(parts[2:]), lambda: data)
     data = (json.dumps({"parent": PARENT}, indent=2) + "\n").encode()
     overrides[target] = data
     return {"item": "decorative_blocks:blockstate_copy_item", "path": target, "parent": PARENT,
