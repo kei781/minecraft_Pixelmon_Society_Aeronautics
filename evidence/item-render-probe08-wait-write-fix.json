@@ -1,0 +1,18 @@
+{
+  "candidate": "0.8-r3",
+  "bytes": 41017,
+  "sha256": "7b961c46e593ab13437c01ef47a99b65404c8c6a28fd75297d7859173aeb3da4",
+  "independent_canonical_builds_identical": true,
+  "changed_from_r2": [
+    "dev/psa/renderprobe/RenderClient.class"
+  ],
+  "fix": "Only first model-wait tick persists unchanged awaiting state; original deadline/missing checks and persistence exception preserved.",
+  "controls": {
+    "protocol": "PASS",
+    "visual_evidence_isolation": "PASS",
+    "actual_wait_ticks_2_to_19_no_persist_no_ack": "PASS",
+    "same_new_test_against_real_previous_R2_client": "FAIL as intended, enters persist during repeated wait tick"
+  },
+  "runtime_deployed": false,
+  "runtime_current_candidate": "0.8-r2 SHA825540; sourceR3 not retrospectively part of native60positive or missing-modelnegative evidence."
+}

@@ -121,7 +121,7 @@ public final class RenderClient {
         if (batch == null || sent || returned.size() != batch.tokens().size()) return;
         // Native Flywheel frames can complete asynchronously after the entity renderer returns.
         if (missingMask == 0 && modelObservedMask != (1 << batch.tokens().size()) - 1 && ++modelWaitTicks < 20) {
-            persist("awaiting_native_model_path");
+            if (modelWaitTicks == 1) persist("awaiting_native_model_path");
             return;
         }
         sent = true;
