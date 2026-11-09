@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psapixelmonfixture"
+version="0.1"
+displayName="PSA Disposable Pixelmon Fixture"
+description="Test-only world context for unchanged original native battle assertions. Excluded from player packs."
+[[dependencies.psapixelmonfixture]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.psapixelmonfixture]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.20]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.psapixelmonfixture]]
+modId="pixelmon"
+mandatory=true
+versionRange="[9.2.3]"
+ordering="NONE"
+side="BOTH"

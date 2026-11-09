@@ -18,3 +18,12 @@ GameTest는 테스트할 장면과 판정 코드를 작성해야 한다. 서버 
 
 공식 문서: [GameTest](https://docs.minecraftforge.net/en/1.20.x/misc/gametest/),
 [데이터 생성과 ExistingFileHelper](https://docs.minecraftforge.net/en/1.20.1/datagen/).
+# Native Pixelmon battle assertions without a client
+
+The pinned upstream binary contains ten console-run native battle tests.
+The separate [world fixture diagnostic](native-pixelmon-tests.md) supplies
+actual owned Pokemon entities while retaining those original methods and
+assertions. Its stock and adapted results are recorded separately; failures
+and incomplete tests are not silently accepted. This diagnostic does not
+belong in the player package and does not replace authenticated gameplay,
+rendering or six-player load checks.
