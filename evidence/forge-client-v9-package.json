@@ -1,0 +1,21 @@
+{
+  "filename": "PSA-Forge-Full-Experimental-v9.mrpack",
+  "sha256": "64dcbbb3760860599adf9ed950831160df7bfa9eb8189849166bfa8cea7ab47a",
+  "size": 1137786188,
+  "version_id": "psa-forge-e1cc9dab4a0f",
+  "mod_jars": 354,
+  "indexed_resourcepacks": 15,
+  "indexed_shaderpacks": 1,
+  "override_files": 7926,
+  "longest_relative_path": 108,
+  "full_gameplay_validated": false,
+  "validation": "all declared archive payload hashes, not fresh GUI import",
+  "verified_payload_hashes": 7925,
+  "production_mods": 354,
+  "diagnostic_jars": 0,
+  "qa_scripts": 0,
+  "paired_candidate_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+  "client_helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+  "common_manifest_sha256": "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812",
+  "fresh_gui_import_verified": false
+}

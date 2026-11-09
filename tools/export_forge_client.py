@@ -18,8 +18,8 @@ EXPECTED_FILES = 367
 EXPECTED_SHARED = 311
 EXPECTED_REPLACEMENTS = 68
 EXPECTED_MODEL_OVERRIDES = 17
-MENU_PATCH_NAME = "PSA-Client-Menu-Compat-1.0.jar"
-MENU_PATCH_SHA256 = "512ca9eaedd2120a01e40a1cdbcf9550a986aeb46c4c3808ff414032071f924e"
+MENU_PATCH_NAME = "PSA-Client-Menu-Compat-1.1.jar"
+MENU_PATCH_SHA256 = "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9"
 OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
 
 
@@ -222,6 +222,6 @@ if __name__ == "__main__":
     parser.add_argument("--extras", type=Path, required=True)
     parser.add_argument("--society-client", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--menu-fix", type=Path, help="Pinned client-only pause menu fix (v7)")
+    parser.add_argument("--menu-fix", type=Path, help="Pinned client-only menu and discount display compatibility JAR")
     args = parser.parse_args()
     print(json.dumps(build(args.server, args.extras, args.society_client, args.output, args.menu_fix), indent=2))

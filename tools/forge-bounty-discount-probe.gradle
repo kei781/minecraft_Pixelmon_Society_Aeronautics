@@ -1,0 +1,25 @@
+// Diagnostic only; invoke reobfPsaDiscountProbeJar for the actual Forge runtime.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaDiscountProbeSource')
+    if (!sourceRoot) throw new GradleException('psaDiscountProbeSource is required')
+    def directory = new File(sourceRoot.toString())
+    def compiler = project.tasks.register('compilePsaDiscountProbe', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java' }
+        classpath = project.sourceSets.main.compileClasspath
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-discount-probe/classes'))
+        options.release.set(17)
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaDiscountProbeJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-discount-probe-0.1.jar')
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': 'psa-discount-probe.mixins.json')
+        preserveFileTimestamps = false
+        reproducibleFileOrder = true
+    }
+    project.reobf.create('psaDiscountProbeJar')
+}

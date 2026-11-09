@@ -1,6 +1,6 @@
 # Pixelmon 셰이더 패킷 호환 후보
 
-이 문서는 셰이더 보정과 v6 당시의 구현·검증 기록이다. 해당 보정은 현재 v8에도 포함되며, 새 설치와 서버 짝 버전은 [Windows 안내](windows-client.md)와 [최신 진행 상태](progress.md)를 따른다.
+이 문서는 셰이더 보정과 v6 당시의 구현·검증 기록이다. 해당 보정은 후속 통합 팩에도 포함되며, 최신 설치와 서버 짝 버전은 [Windows 안내](windows-client.md)와 [최신 진행 상태](progress.md)를 따른다.
 
 Windows 게임을 켰다는 사용자 안내 뒤 N100 원문 로그에서 정품 인증과 월드 진입 2건을 확인했다. 첫 연결은 Pixelmon의 셰이더 매개변수를 엔티티 패킷에 기록하다 종료됐다. `ShaderParameters$Value.write:223`이 코덱 이름으로 null을 반환받아 `FriendlyByteBuf.writeUtf`에 전달한 오류다. [서버 관찰 기록](../evidence/n100-first-player-and-shader-failure.json).
 
