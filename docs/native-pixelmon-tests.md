@@ -7,7 +7,7 @@ two failures and one unfinished test. An unfinished suite is not a pass.
 The stock fixtures create virtual participants without world entities;
 null entity exceptions must be separated from gameplay failures.
 
-The current world-backed diagnostic produced the same ten native results in
+The initial world-backed diagnostic produced the same ten native results in
 both Pixelmon-only and full 313-production-mod profiles: eight successes,
 two failures, zero unfinished tests and zero logged null-pointer exceptions.
 The full run took 0.96 seconds from fixture start through cleanup, excluding
@@ -20,8 +20,11 @@ See `evidence/pixelmon-world-fixture-runtime.json` for exact artifacts/results.
 After independent review, the transformation gate and interrupted-result
 inventory were strengthened. The 26,100-byte diagnostic with SHA256
 `861b616c6efcfba7dd56b9fd45b9abd212516b5efa2e6b2ce3ac70aed6303489`
-again produced identical eight-success/two-failure results in both profiles,
-with zero live owned actors after cleanup and zero logged null-pointer errors.
+produced eight successes/two failures in the full profile, but six successes/
+four failures in its latest Pixelmon-only run. Dancer and Shell Trap also
+failed in that latest isolated sample. This variation needs further diagnosis;
+the earlier matching samples do not establish repeatability. Both current
+runs finished with zero live owned actors and zero logged null-pointer errors.
 Actual before/after boot and scene-failure controls are recorded in
 `evidence/pixelmon-fixture-review-regressions.json`.
 
