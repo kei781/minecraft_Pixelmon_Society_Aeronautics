@@ -4,6 +4,6 @@
   "package": "dev.psa.renderprobe.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": ["ForgeDropFactoryMixin"],
-  "client": ["RendererProbeMixin", "ItemModelProbeMixin"],
+  "client": ["RendererProbeMixin", "ItemModelProbeMixin", "PartialModelStateAccessor", "PackageFallbackProbeMixin", "PackageVisualProbeMixin"],
   "injectors": {"defaultRequire": 1}
 }

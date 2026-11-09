@@ -2,9 +2,9 @@
 
 기존 레지스트리 검사는 모드 아이템 17,239개의 기본 스택 저장·복원만 확인했다. 실제 소환·표시·사용과 구분한다. Task 9의 진단은 운영 팩에 넣지 않고 새 폐기 가능 QA 프로필에서만 사용한다.
 
-`tests/forge-render-probe`와 `tools/forge-render-probe.gradle`을 고정 Forge 개발 트리에서 `-PpsaRenderProbeSource=/absolute/path/tests/forge-render-probe`로 지정하고 `reobfPsaRenderProbeJar`를 빌드한다. `tools/forge_resources.py canonical-jar`로 정규화한다. 출력은 `psa-render-probe-0.7.jar`다.
+`tests/forge-render-probe`와 `tools/forge-render-probe.gradle`을 고정 Forge 개발 트리에서 `-PpsaRenderProbeSource=/absolute/path/tests/forge-render-probe`로 지정하고 `reobfPsaRenderProbeJar`를 빌드한다. `tools/forge_resources.py canonical-jar`로 정규화한다. 현재 출력은 `psa-render-probe-0.8.jar`다.
 
-QA 서버는 고정 313개 모드와 진단 하나만 허용하는 별도 `render-qa-control.py`를 쓴다. 기존 운영 제어기의 313개 검사나 원래 월드를 바꾸지 않는다. 온라인 인증과 최대 6명 설정을 유지한다. `.psa-disposable-qa`, 정확한 원본 목록·진단 해시가 담긴 QA 영수증, JVM의 `-Dpsa.render.enabled=true`가 필요하다.
+QA 서버는 운영 313개와 Render0.8·Jade0.4 진단 두 개, 총 315개만 허용하는 별도 `render-qa-control.py`를 쓴다. 기존 운영 제어기의 313개 검사나 원래 월드를 바꾸지 않는다. 온라인 인증과 최대 6명 설정을 유지한다. `.psa-disposable-qa`, 정확한 원본 목록·진단 해시가 담긴 QA 영수증, JVM의 `-Dpsa.render.enabled=true`가 필요하다.
 
 QA 제어기는 `enable-rcon=false`도 확인한다. 처음 시작할 때 새 `world-render-qa`에 프로필·생성 UUID가 담긴 소유 표식을 만든다. 이미 있는 월드에 맞는 표식이 없으면 시작·복구를 거부한다.
 
@@ -41,3 +41,11 @@ ACK 예외 대조는 최종 원인 문자열만으로 통과시키지 않는다.
 후속 실행에서는 새 v9 Windows 클라이언트와 서버의 같은 run을 대조해 실제 렌더·모델 조회16개를 확인했다. [인증 표본](../evidence/item-render-authenticated-sample.json). 실제 ACK 예외 대조도4회 모델 반환·처리 스택·실패 보존·다음 실행과 재기동 거부·정상 종료·월드 보존 복구를 통과했다. 원래 월드308개 파일의 이동 전후 해시가 같다. [ACK 예외·복구](../evidence/item-render-authenticated-ack-failure.json). 빠른 표본 종료 뒤 화면을 관찰했으므로16개 각각의 텍스처를 육안 검증한 것으로 세지 않는다.
 
 진단 통신은 [Forge SimpleImpl 공식 문서](https://docs.minecraftforge.net/en/1.20.1/networking/simpleimpl/)의 메인 스레드 처리와 방향별 패킷 등록을 따른다. 잘못된 실행 UUID·묶음·엔티티 ID·UUID·레지스트리·응답자는 거부한다. [현재 준비 기록](../evidence/item-render-probe-preparation.json).
+
+현재 0.8 후보는 같은 운영 파일에서 0.7 전수 검사가 멈춘 Create 꾸러미의 별도 모델 경로를 관찰한다. 0.7은 실제 렌더 반환 3,488개, 모델 검증 3,484개 뒤 `model_lookup_unverified_mask:1`로 멈췄고 정리를 완료했다. 게임 튕김이나 누락 모델로 단정하지 않는다. [최초 관찰 공백](../evidence/item-render-authenticated-package-model-gap.json)을 보존했다.
+
+0.8은 원래 fallback partial-buffer 호출 반환 뒤 실제 baked model 상태와, 원래 Flywheel 모델 생성·프레임 반환을 관찰한다. 작업 스레드는 최대 128개 큐에 증거만 넣고, 클라이언트 tick에서 현재 Batch 객체와 실제 엔티티 신원을 대조한다. 실제 렌더 반환 뒤 비동기 경로를 최대 20 tick 기다리며 미관찰·null·누락 모델은 통과시키지 않는다. 일반 ItemRenderer 경로는 유지한다. 서버 세션·프로토콜·네트워크·운반 API 클래스는 0.7과 바이트가 같다. [후보 빌드](../evidence/item-render-probe08-candidate-build.json), [동일 계열 API 조사](../evidence/package-native-model-family.json).
+
+Windows의 실시간 JSON 수집 중 `Files.move`가 AccessDeniedException을 내 첫 0.8 실행이 종료됐다. 원래 수집기도 삭제 공유를 허용했으므로 공유 플래그 누락으로 단정하지 않았다. 같은 NTFS 소유 임시파일의 200회씩 대조에서도 두 공유 방식 모두 교체 실패를 재현했다. [파일 대조](../evidence/windows-render-checkpoint-atomic-sharing.json)는 원래 크래시의 유일 원인 증명과 구분한다. 저장 예외 가드를 없애지 않고 선택적 hot JSON 수집을 중지했다. 이후 같은 JAR로 실제 일반 16개와 관련 44개의 렌더·모델·정리를 확인했다. [일반 대조](../evidence/item-render08-no-collector-ordinary-control.json), [계열 회귀](../evidence/item-render08-family-regressions.json). 실행 중에는 Linux 서버의 인증 ACK 기록을 읽고, 클라이언트 결과 파일은 실행 완료 후 읽는다.
+
+이전 0.7의 온전한 성공 묶음 3,484개는 동일한 운영 모드·설정·클라이언트 파일 해시를 확인해 재사용한다. 남은 순회는 정렬된 index 3,484부터 13,755개다. 합산된 전체 커버리지와 하나의 0.8 전수 실행을 구분하며, 아직 끝나지 않은 항목을 통과로 세지 않는다. 0.8의 독립 코드 리뷰와 전체 잔여 검사는 진행 중이며 두 사용자 목표를 완료 처리하지 않았다.

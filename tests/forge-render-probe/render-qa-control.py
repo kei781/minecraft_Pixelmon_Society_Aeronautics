@@ -14,7 +14,7 @@ import uuid
 
 ROOT = Path(__file__).resolve().parent
 BASELINE = "ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e"
-PROBE = "psa-render-probe-0.7.jar"
+PROBE = "psa-render-probe-0.8.jar"
 JADE_PROBE = "psa-jade-probe-0.4.jar"
 JADE_PROBE_SHA256 = "1775d74b4b28d9339e564a6725e90dfe6282deaf78dabd2a9f301bd8efa5e01c"
 SOCKET = "psa-render-" + hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
