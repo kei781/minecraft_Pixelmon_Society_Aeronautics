@@ -2,10 +2,45 @@
 
 | 완료 목표 | 상태 |
 | --- | --- |
-| Windows 플레이어용 세 프로젝트 설치 패키지 | 진행 중 — 단일 v9 팩 Windows 새 가져오기·설치 파일7,925개 해시 일치. 새 인스턴스 실행·핵심 플레이·최종 리뷰는 남음 |
-| N100 세 프로젝트 통합 서버 | 진행 중 — 최신 팩과 같은 공통 313개 파일로 별도 N100 QA 실행. 필드 동기화·탱크·배터리·게시판·깃발 확인. 주요 게임 기능·6인 부하·최종 리뷰는 남음 |
+| Windows 플레이어용 세 프로젝트 설치 패키지 | v16 생성 완료 — 354개 모드·진단 제외. 이전 v9 Windows 신규 가져오기·7,925개 해시·정품 접속 확인. 최신 v16은 Mac 기존 인스턴스 갱신·실제 서버 입장 확인, Windows 신규 설치·최종 검수는 남음 |
+| N100 세 프로젝트 통합 서버 | v16 배치·실제 접속 완료 — 독립된 313개 운영 모드·진단 0개. 온라인 인증·Mac 실제 1명 입장·TPS 20 확인. 남은 오류·장시간·6인 부하·최종 리뷰 진행 중 |
 
 이하 Phase·Task 문단은 각 시점의 이력이다. 현재 상태는 위 표와 최신 Task 절을 따른다.
+
+## 최신 상태 — 2026-11-10
+
+전체 단계는 **설치물 제작·통합 구동 완료 → 안정화와 최종 검수 진행 중**이다.
+최신 [v16 패키지](../evidence/player-pack-v16-candidate.json)는 약 1.14GB이며
+[Windows 안내](windows-client.md)에 따라 가져온다. N100의 새 접속용 서버는
+런타임·라이브러리도 독립 복사했고 기존 QA 월드는 정상 정지해 보존했다.
+최신 Mac 인증 입장은 기존 SSH의 루프백 전달로 확인했다. 직접 LAN 경로의
+`NoRouteToHost`는 남아 있다. 1명 상태의 TPS 20·평균 tick 14.289ms를
+6인 성능으로 환산하지 않는다. [실제 배치·접속 기록](../evidence/n100-v16-player-deployment.json).
+
+이전 QA에서는 실제 Pixelmon 포획·턴 전투, Society 생존 농사·출하 정산,
+Aeronautics 조립·생존 수직 비행·착륙을 확인했다. 최신 v16에서 이 모든 동작을
+다시 검증한 것은 아니다. 모든 아이템의 서버 소환·정리와 클라이언트 모델 조회는
+실제 렌더·사용 검증과 구분한다.
+
+Task 11~13의 후속 코드·원본 모델 연결·네이티브 전투 진단은 각각
+[Task 11 기록](../evidence/minecraft-qa-control-build-and-runtime.json),
+[Task 13 수락](../evidence/task13-review-acceptance.json) 및 개별 문서에 보존했다.
+Task 14는 누케닌 다이맥스 최대 HP 보정과 코드로 수행하는 접속 검증을 수락했다.
+원본 22개 수치 검사 중 6개 실패 → 수정 후 22개 통과, HP 1인 잉어킹 두 대조는
+수정 전후 모두 최대 HP 2를 유지했다. 기존 전체 313개 모드의 20개 대조도 통과했고,
+최신 공통 JAR는 그때와 동일하다. 실제 전투 전체 통과를 뜻하지는 않는다.
+[종 조건 대조](../evidence/pixelmon-dynamax-hp-species-guard-regression.json).
+
+Task 14의 수락 소스는 `2dcbf7b879795d11b4bc11a030ffb1ab4ff1332e`다.
+실제 최신 Claude Opus 5.5/high 세 회차, R3 CLEAN, 검증된 브리지 적용 뒤
+[PR #11](https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/pull/11)의
+실제 미해결 지적 0건을 확인했다. CI 체크는 미설정이며 병합하지 않았다.
+[수락 범위](../evidence/task14-review-acceptance.json).
+
+남은 항목은 원본 전투 검사의 메테노 실패·춤 기술/셸트랩 간헐 실패,
+모델 누락 16개와 넓은 실제 렌더·사용 검사, 접속 후 ALI 캐시 NPE·ReliableEmi
+그룹 오류 11건, 생존 포획 세부 조건·수평 비행·장시간·실제 6인 부하,
+최신 Windows 신규 설치와 최종 통합 리뷰다. 두 사용자 목표는 최종 완료로 표시하지 않는다.
 
 이전 검증: N100에서 Pixelmon/Create/Aeronautics/Sable 최소 조합이 기동하고 물리 엔진 초기화와 엔티티 검사를 통과했다. 전체 Society는 포함하지 않았다. 해당 호환 코드 `12f9a56`은 Claude Opus 5.5 독립 리뷰에서 CLEAN이었다.
 
