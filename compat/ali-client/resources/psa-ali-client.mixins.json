@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.psa.alicompat.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "dev.psa.alicompat.AliCompatPlugin",
+  "client": ["AliPaletteSynchronizationMixin", "AliTooltipPaletteMixin", "AliTooltipBuilderPaletteMixin", "AliDataRegistrationMixin"],
+  "injectors": {"defaultRequire": 1}
+}

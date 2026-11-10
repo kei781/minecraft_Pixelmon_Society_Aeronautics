@@ -1,0 +1,42 @@
+{
+  "accepted_source_sha": "2dcbf7b879795d11b4bc11a030ffb1ab4ff1332e",
+  "pr": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/pull/11",
+  "task": 14,
+  "task_review_rounds_used": 3,
+  "task_review_round_limit": 5,
+  "pr_review_rounds_used": 3,
+  "pr_review_round_limit": 8,
+  "requested_model": "claude-opus-5-5",
+  "reported_models": [
+    "claude-opus-5-5"
+  ],
+  "effort": "high",
+  "verdict": "CLEAN",
+  "bridge_applied": true,
+  "live_unresolved_threads": 0,
+  "configured_ci_checks": [],
+  "scope": "Authored HP correction and QA connection helper accepted; original native battle suite and both user goals remain open. Follow-up metadata is not source re-review.",
+  "actual_regressions": {
+    "native_math_cases": 22,
+    "baseline_failures": 6,
+    "patched_failures": 0,
+    "species_negative_controls": 2,
+    "related_python_tests": 42,
+    "existing_full_common_native_cases": 20,
+    "full_common_failures": 0,
+    "common_bytes_unchanged_after_extra_controls": true,
+    "authenticated_v16_world_entry": true,
+    "actual_players_verified": 1,
+    "direct_lan_passed": false,
+    "six_player_load_passed": false,
+    "preflight_refusal_controls": 2
+  },
+  "remaining": [
+    "Minior native assertion and intermittent original Dancer/ShellTrap failures",
+    "ALI client cache NPE and 11 ReliableEmi group errors",
+    "16 missing model sentinels and wider actual rendering/use",
+    "Direct LAN client path, fresh latest Windows import",
+    "Survival details, horizontal flight, long session and six-player load",
+    "Final integration review"
+  ]
+}

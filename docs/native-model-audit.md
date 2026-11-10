@@ -72,3 +72,53 @@ player profile. The batch stages every change before updating its caller.
 Actual native lookup dropped from 21 to 16 missing IDs with the same catalog;
 all 204 dropped-item render/model/cleanup controls across those three namespaces
 passed. These results do not verify hand/inventory pixels or block use.
+
+## Native paired-client connection
+
+`MinecraftQaConnect` is a separate local QA attach helper. It requests the real
+Minecraft `ConnectScreen` API using the current Microsoft session, without
+reading or changing authentication. It is excluded from the player package.
+The opted-in QA profile and pinned Pixelmon/common JAR hashes are required.
+The native game executor accepts only the title or disconnected screen and
+refuses an existing client world or player. It cannot dismiss trust dialogs,
+disconnect gameplay, evaluate arbitrary code, or redefine classes.
+
+Create `.psa-qa-connect.properties` privately inside the owned QA game directory,
+with exactly `owner=psa-owned-native-connection`, `server=HOST:25573` and
+`common_sha256=SHA256` for the actual common JAR. Keep the file owner-readable
+and do not commit it. Only that explicit endpoint is used. For the recorded Mac
+trial the direct LAN connection failed before the handshake; an existing
+authorized SSH connection forwarded a loopback port to the real server.
+That trial proves the forwarded connection, not direct LAN reachability.
+
+```sh
+python3 tools/build_minecraft_qa_control.py --java-home /path/to/jdk17 --kind connect --output /path/to/fresh/qa-connect.jar
+/path/to/jdk17/bin/java --add-modules jdk.attach -cp /path/to/fresh/qa-connect.jar dev.psa.qaconnect.v2.MinecraftQaConnect PID
+```
+
+Requests that pass preflight and reach the game executor write a unique report
+under `psa-qa-connect/`, unless report I/O fails (logged separately). Preflight
+rejections, such as missing settings or a mod hash mismatch, exit the CLI with
+a nonzero status and do not create a report. Check the CLI exit code before
+waiting for a report. `connect_requested` only means the native API was invoked;
+verify the real server authentication,
+world-entry log and current player count separately. Actual v16 Mac/N100 entry
+passed and a second request returned `active_world_refused` while the player
+remained connected. The new server contains 313 production mods and no probes;
+the warm client has all 354 production JARs plus the client-only model audit.
+The trial still recorded ALI cache and ReliableEmi group errors after joining.
+It is not a clean-error, fresh-Windows-import or six-player result.
+
+JDK attach does not replace an already loaded agent class. Version 0.2 uses a
+distinct `dev.psa.qaconnect.v2` identity from the initial trial. Future source
+changes require a fresh client process or another distinct versioned identity.
+Rebuilt 0.2 helpers are byte-identical, and the default control helper still
+matches its original hash. See
+`evidence/minecraft-qa-connect-build-and-runtime.json` for source/build hashes
+and sanitized actual runtime results.
+
+Actual missing-settings and wrong-common-hash controls each exited the CLI
+with status 1 and produced no new report. The original private settings bytes
+and mode were restored after each test. The same authenticated player remained
+connected, with no extra login/join or disconnect. Unknown builder kinds were
+also rejected by both CLI (status 2) and direct API, before output creation.
