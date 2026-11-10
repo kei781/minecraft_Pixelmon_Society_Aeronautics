@@ -1,4 +1,5 @@
 import hashlib
+import json
 import os
 from pathlib import Path
 import shlex
@@ -20,8 +21,8 @@ class ServerControlTest(unittest.TestCase):
         self.profile = Path(self.temp.name)
         self.env = os.environ.copy()
         shutil.copyfile(ROOT / "server-control.sh", self.profile / "server-control.sh")
-        for name in [".psa-forge-candidate.json", ".psa-owned-smoke-test"]:
-            (self.profile / name).write_text("isolated test fixture\n")
+        (self.profile / ".psa-forge-candidate.json").write_text("{}\n")
+        (self.profile / ".psa-owned-smoke-test").write_text("isolated test fixture\n")
         (self.profile / "eula.txt").write_text("eula=false\n")
         self.tmux = ["tmux", "-L", "psa-forge-" + hashlib.sha256(str(self.profile.resolve()).encode()).hexdigest()[:16], "-f", "/dev/null"]
 
@@ -94,3 +95,54 @@ class ServerControlTest(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("unrecognized tmux session", result.stderr)
         self.assertEqual(subprocess.run(self.tmux + ["has-session", "-t", "server"], capture_output=True).returncode, 0)
+
+    def prepare_optional_module_fixture(self, module_bytes, target_bytes):
+        # Process-control fixture only: this executable is a shell, never Minecraft.
+        java = self.profile/"runtime/java/bin/java"; java.parent.mkdir(parents=True)
+        java.write_text('#!/usr/bin/env bash\necho fixture-started\nwhile read -r line; do [[ "$line" == stop ]] && exit 0; done\n')
+        java.chmod(0o755)
+        args = self.profile/"libraries/net/minecraftforge/forge/1.20.1-47.4.20/unix_args.txt"
+        args.parent.mkdir(parents=True); args.write_text("")
+        mods = self.profile/"mods"; mods.mkdir()
+        for number in range(312): (mods/("fixture-%d.jar" % number)).write_bytes(b"shell fixture only")
+        (mods/"serializer_debug-1.0.1.jar").write_bytes(target_bytes)
+        (mods/"PSA-Datapack-Sync-Compat-0.1.jar").write_bytes(module_bytes)
+        declaration = {"path":"mods/PSA-Datapack-Sync-Compat-0.1.jar",
+            "sha256":hashlib.sha256(module_bytes).hexdigest(),"server_only":True,"source":"compat/datapack-sync",
+            "target_sha256":hashlib.sha256(target_bytes).hexdigest()}
+        (self.profile/".psa-forge-candidate.json").write_text(json.dumps({
+            "top_level_mod_jars":314,"datapack_sync_compatibility":declaration}))
+        (self.profile/".psa-mods.sha256").write_text("".join(
+            hashlib.sha256(p.read_bytes()).hexdigest()+"  mods/"+p.name+"\n" for p in sorted(mods.glob("*.jar"))))
+        (self.profile/"server.properties").write_text("online-mode=true\n")
+        (self.profile/"eula.txt").write_text("eula=true\n")
+
+    def test_relocked_but_unpinned_optional_module_is_not_started(self):
+        self.prepare_optional_module_fixture(b"not the pinned module", b"not the pinned target")
+        result = self.control("start")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("declaration required", result.stderr)
+        self.assertNotEqual(subprocess.run(self.tmux+["has-session","-t","server"],capture_output=True).returncode,0)
+
+    def test_declared_module_removed_and_relocked_does_not_downgrade_to_313(self):
+        self.prepare_optional_module_fixture(b"not executed", b"not executed")
+        (self.profile/"mods/PSA-Datapack-Sync-Compat-0.1.jar").unlink()
+        (self.profile/".psa-mods.sha256").write_text("".join(
+            hashlib.sha256(p.read_bytes()).hexdigest()+"  mods/"+p.name+"\n"
+            for p in sorted((self.profile/"mods").glob("*.jar"))))
+        result = self.control("start")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertNotEqual(subprocess.run(self.tmux+["has-session","-t","server"],capture_output=True).returncode,0)
+
+    def test_pinned_optional_module_fixture_starts_and_stops(self):
+        module = os.environ.get("PSA_QA_DATAPACK_MODULE")
+        target = os.environ.get("PSA_QA_SERIALIZER_TARGET")
+        if not module or not target: self.skipTest("Pinned optional artifact inputs not provided")
+        self.prepare_optional_module_fixture(Path(module).read_bytes(), Path(target).read_bytes())
+        self.addCleanup(lambda: subprocess.run(self.tmux+["kill-server"],capture_output=True))
+        result = self.control("start")
+        self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
+        self.assertEqual(self.control("status").stdout.strip(),"Running")
+        stopped = self.control("stop")
+        self.assertEqual(stopped.returncode, 0, stopped.stdout+stopped.stderr)
+        self.assertEqual(self.control("status").stdout.strip(),"Stopped")

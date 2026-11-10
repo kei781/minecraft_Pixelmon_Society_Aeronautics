@@ -14,7 +14,8 @@
     "BatteryCartMenuDataMixin",
     "BatteryCartMenuTypeMixin",
     "BountifulMenuDataMixin",
-    "JadeBlockAccessorCoordinatesMixin"
+    "JadeBlockAccessorCoordinatesMixin",
+    "PixelmonDynamaxHitpointsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,66 @@
+{
+  "task": 16,
+  "scope": "Pending-starter disconnect crash code acceptance only; not overall project completion",
+  "pr": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/pull/13",
+  "base_sha": "ca5b13ccc57d5640a34149aa0593dc6d182841a0",
+  "accepted_source_sha": "46f22a543265b63ee243143c26e58aecf734fc49",
+  "actual_model": [
+    "claude-opus-5-5"
+  ],
+  "effort": "high",
+  "round": 2,
+  "verdict": "CLEAN",
+  "bridge_applied": true,
+  "live_unresolved": 0,
+  "ci": "not configured; direct validations are separate",
+  "merged": false,
+  "public_binary_release": false,
+  "direct_python_tests_passed": 27,
+  "symlink_guard_removal_negative_expected_failure": true,
+  "production_common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+  "production_restart": "Native Done, all313hashes/noQA, actual1auth/worldentry, TPS20/overall7.725ms; see n100-v17-player-deployment.json",
+  "both_user_goals_complete": false,
+  "registration_followup_controller_observation": {
+    "native_poke_restart_and_starter_commands_require_online_player": true,
+    "native_storage_login_callback_checks_empty_unselected_party_and_current_online_player": true,
+    "native_load_callbacks_do_not_register_starter": true,
+    "native_pending_set_concurrent": true,
+    "actual_reconnect_registered_again_after_offline_pruning": true,
+    "scope": "Pinned native flow inspected locally; not upstream source reviewed by Claude or exhaustive timing proof"
+  },
+  "post_review_family_reference_scan": {
+    "scope": "All313production top-level mod JAR class UTF8 reference candidates; nested JARs/reflection/external plugins not covered, not dynamic proof",
+    "jar_count": 313,
+    "methods": {
+      "closeBattleSafely": [
+        {
+          "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+          "class": "com/pixelmonmod/pixelmon/api/storage/PlayerPartyStorage.class"
+        }
+      ],
+      "resetQuestData": [
+        {
+          "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+          "class": "com/pixelmonmod/pixelmon/api/storage/PlayerPartyStorage.class"
+        },
+        {
+          "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+          "class": "com/pixelmonmod/pixelmon/command/impl/quests/ResetAllQuestsCommand.class"
+        }
+      ],
+      "sendClientUpdateSelectedPacket": [
+        {
+          "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+          "class": "com/pixelmonmod/pixelmon/api/storage/PlayerPartyStorage.class"
+        }
+      ]
+    },
+    "followup_native_flow_notes": {
+      "ResetAllQuestsCommand": "requires native online ServerPlayer before resetting storage",
+      "closeBattleSafely": "no other top-level production class reference found",
+      "sendClientUpdateSelectedPacket": "no other top-level production class reference found",
+      "TCG_spectator_path": "distinct helper lacks null guard; lifecycle/dynamic reproduction still open; no broad production change"
+    }
+  },
+  "extra_client_export_regressions_passed": 11
+}

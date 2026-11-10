@@ -1,0 +1,234 @@
+{
+  "scope": "Six sequential original console runs in one Pixelmon-only JVM, unchanged original one-jar profile; no fixture diagnostic; old incomplete weather futures may remain. Observation-window unfinished is never a pass.",
+  "runs": [
+    {
+      "started": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "non_extreme_weather_fails_during_delta_stream",
+        "shedinja_hp_dynamax",
+        "shell_trap_damages_opponents_not_user",
+        "shields_down_should_not_remove_hazards",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "success": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "shell_trap_damages_opponents_not_user",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "failure": [
+        [
+          "shedinja_hp_dynamax",
+          "Shedinja does not have 1 HP while Dynamaxed!"
+        ],
+        [
+          "shields_down_should_not_remove_hazards",
+          "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+        ]
+      ],
+      "unfinished": [
+        "non_extreme_weather_fails_during_delta_stream"
+      ],
+      "log_segment_sha256": "933897320a452c1d193e8dd2ae4dfbf0e6bd89ad62f9be34df2012511ff0d7c9"
+    },
+    {
+      "started": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "non_extreme_weather_fails_during_delta_stream",
+        "shedinja_hp_dynamax",
+        "shell_trap_damages_opponents_not_user",
+        "shields_down_should_not_remove_hazards",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "success": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "shell_trap_damages_opponents_not_user",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "failure": [
+        [
+          "shedinja_hp_dynamax",
+          "Shedinja does not have 1 HP while Dynamaxed!"
+        ],
+        [
+          "shields_down_should_not_remove_hazards",
+          "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+        ]
+      ],
+      "unfinished": [
+        "non_extreme_weather_fails_during_delta_stream"
+      ],
+      "log_segment_sha256": "77594d0e8880a8d41b1da5c69a94cbda5d19233407036480efc20cc07c69e322"
+    },
+    {
+      "started": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "non_extreme_weather_fails_during_delta_stream",
+        "shedinja_hp_dynamax",
+        "shell_trap_damages_opponents_not_user",
+        "shields_down_should_not_remove_hazards",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "success": [
+        "shell_trap_damages_opponents_not_user",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost",
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing"
+      ],
+      "failure": [
+        [
+          "shedinja_hp_dynamax",
+          "Shedinja does not have 1 HP while Dynamaxed!"
+        ],
+        [
+          "shields_down_should_not_remove_hazards",
+          "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+        ]
+      ],
+      "unfinished": [
+        "non_extreme_weather_fails_during_delta_stream"
+      ],
+      "log_segment_sha256": "12b113748754eb79ec7c60e8bd79c0b1acf0b8ce50be7f2ed04e39f2f89e3dc6"
+    },
+    {
+      "started": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "non_extreme_weather_fails_during_delta_stream",
+        "shedinja_hp_dynamax",
+        "shell_trap_damages_opponents_not_user",
+        "shields_down_should_not_remove_hazards",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "success": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "shell_trap_damages_opponents_not_user",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "failure": [
+        [
+          "shedinja_hp_dynamax",
+          "Shedinja does not have 1 HP while Dynamaxed!"
+        ],
+        [
+          "shields_down_should_not_remove_hazards",
+          "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+        ]
+      ],
+      "unfinished": [
+        "non_extreme_weather_fails_during_delta_stream"
+      ],
+      "log_segment_sha256": "904afce3a76218cc98d16cc282d7d662be27a5b36b49878eb9d9ad79848db830"
+    },
+    {
+      "started": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "non_extreme_weather_fails_during_delta_stream",
+        "shedinja_hp_dynamax",
+        "shell_trap_damages_opponents_not_user",
+        "shields_down_should_not_remove_hazards",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "success": [
+        "Normal doesn't damage ghost",
+        "clangorous_soulblaze_correct_boost_amount",
+        "hidden_power_max_move_typing",
+        "shell_trap_damages_opponents_not_user",
+        "spammable_destiny_bond",
+        "splash_no_damage"
+      ],
+      "failure": [
+        [
+          "dancer_copies_damage_dealing_dance_moves",
+          "One of them failed."
+        ],
+        [
+          "shedinja_hp_dynamax",
+          "Shedinja does not have 1 HP while Dynamaxed!"
+        ],
+        [
+          "shields_down_should_not_remove_hazards",
+          "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+        ]
+      ],
+      "unfinished": [
+        "non_extreme_weather_fails_during_delta_stream"
+      ],
+      "log_segment_sha256": "1f1659b8f457094c6e88eadbb986fc700af1aee7fedbf0cbe42273f79b6ef973"
+    },
+    {
+      "started": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "non_extreme_weather_fails_during_delta_stream",
+        "shedinja_hp_dynamax",
+        "shell_trap_damages_opponents_not_user",
+        "shields_down_should_not_remove_hazards",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "success": [
+        "clangorous_soulblaze_correct_boost_amount",
+        "dancer_copies_damage_dealing_dance_moves",
+        "hidden_power_max_move_typing",
+        "spammable_destiny_bond",
+        "splash_no_damage",
+        "Normal doesn't damage ghost"
+      ],
+      "failure": [
+        [
+          "shedinja_hp_dynamax",
+          "Shedinja does not have 1 HP while Dynamaxed!"
+        ],
+        [
+          "shell_trap_damages_opponents_not_user",
+          "The Shell Trap did not activate."
+        ],
+        [
+          "shields_down_should_not_remove_hazards",
+          "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+        ]
+      ],
+      "unfinished": [
+        "non_extreme_weather_fails_during_delta_stream"
+      ],
+      "log_segment_sha256": "fa4d9442367d2431126a5383e2cec636ee48ddd99926eb9d676c396d617498b2"
+    }
+  ],
+  "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a"
+}
