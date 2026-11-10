@@ -101,6 +101,65 @@ class ItemModelAliasTest(unittest.TestCase):
         self.assertEqual({n:overrides[n] for n in before}, before)
         self.assertEqual(set(overrides) - set(before), {"kubejs/" + alias.TARGET})
 
+    def batch_fixture(self):
+        specs = []
+        # Reuse the actual archive guard with two owned model names and a block-model path.
+        block = "assets/decorative_blocks/models/block/owned.json"
+        with zipfile.ZipFile(self.jar, "a") as archive:
+            archive.writestr(block, self.model)
+        jar_sha = self.sha(self.jar.read_bytes())
+        for name in ("owned_first", "owned_second"):
+            specs.append({"item":"decorative_blocks:"+name, "jar":alias.JAR, "jar_sha256":jar_sha,
+                          "target_path":"assets/decorative_blocks/models/item/"+name+".json",
+                          "parent":"decorative_blocks:block/owned",
+                          "resources":{block:self.sha(self.model),alias.TEXTURE:self.sha(self.texture)},
+                          "vanilla_dependencies":["assets/minecraft/models/item/generated.json"]})
+        path=Path(self.directory.name)/"specs.json";path.write_text(json.dumps(specs))
+        return path, specs
+
+    def test_batch_is_atomic_if_later_target_conflicts(self):
+        path,specs=self.batch_fixture()
+        overrides={"kubejs/"+specs[1]["target_path"]:b"existing user resource"}
+        before=dict(overrides)
+        with patch.object(alias,"ADDITIONAL_ITEMS",{s["item"] for s in specs}), self.assertRaisesRegex(ValueError,"already supplied"):
+            alias.apply_additional(overrides,self.files,path)
+        self.assertEqual(overrides,before)
+
+    def test_batch_applies_all_and_rejects_missing_inventory(self):
+        path,specs=self.batch_fixture();overrides={"unrelated":b"preserved"}
+        with patch.object(alias,"ADDITIONAL_ITEMS",{s["item"] for s in specs}):
+            receipts=alias.apply_additional(overrides,self.files,path)
+            self.assertEqual(len(receipts),2);self.assertEqual(overrides['unrelated'],b'preserved')
+            self.assertEqual(len(overrides),3)
+            path.write_text(json.dumps(specs[:1]))
+            with self.assertRaisesRegex(ValueError,"inventory"):
+                alias.apply_additional({},self.files,path)
+
+    def test_batch_rejects_wrong_target_parent_and_missing_provenance_without_mutation(self):
+        path,specs=self.batch_fixture();expected={s['item'] for s in specs}
+        changes=[('target_path','assets/owned/wrong.json'),('parent','other:block/owned'),
+                 ('parent','decorative_blocks:item/owned'),('resources',{}),('vanilla_dependencies',{}),
+                 ('vanilla_dependencies',[])]
+        for field,value in changes:
+            edited=json.loads(json.dumps(specs));edited[0][field]=value;path.write_text(json.dumps(edited))
+            overrides={'unrelated':b'preserved'};before=dict(overrides)
+            with self.subTest(field=field,value=value),patch.object(alias,'ADDITIONAL_ITEMS',expected),self.assertRaises(ValueError):
+                alias.apply_additional(overrides,self.files,path)
+            self.assertEqual(overrides,before)
+        edited=json.loads(json.dumps(specs));del edited[0]['resources'][alias.TEXTURE];path.write_text(json.dumps(edited))
+        with patch.object(alias,'ADDITIONAL_ITEMS',expected),self.assertRaisesRegex(ValueError,'Unpinned'):
+            alias.apply_additional({},self.files,path)
+
+    def test_committed_five_item_specification_is_complete(self):
+        specs=json.loads((Path(__file__).resolve().parents[1]/'compat/item-model-aliases.json').read_text())
+        self.assertEqual({s['item'] for s in specs},alias.ADDITIONAL_ITEMS);self.assertEqual(len(specs),5)
+        for spec in specs:
+            namespace,name=spec['item'].split(':')
+            self.assertEqual(spec['target_path'],'assets/'+namespace+'/models/item/'+name+'.json')
+            self.assertTrue(spec['parent'].startswith(namespace+':block/'))
+            self.assertIn('assets/'+spec['parent'].replace(':','/models/')+'.json',spec['resources'])
+            self.assertIsInstance(spec['vanilla_dependencies'],list)
+
 
 if __name__ == "__main__":
     unittest.main()

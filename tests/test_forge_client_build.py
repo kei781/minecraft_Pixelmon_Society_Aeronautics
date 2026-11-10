@@ -62,10 +62,23 @@ class ForgeClientBuildTest(unittest.TestCase):
             'config/resourcepackoverrides.json':json.dumps({'schema_version':2,'default_packs':['vanilla'],
                 'pack_overrides':{}}).encode(),
             'configureddefaults/options.txt':b'lang:en_us\nresourcePacks:["vanilla"]\n'}
+        self.loot_original = b'{"forge:conditions":[{"type":"forge:false"}]}'
+        context = patch.object(client.forge_datapack_compat, 'RESOURCE_SHA256', hashlib.sha256(self.loot_original).hexdigest())
+        context.start(); self.addCleanup(context.stop)
+        self.overrides[client.forge_datapack_compat.RESOURCE] = self.loot_original
+        loot_target = self.server/client.forge_datapack_compat.RESOURCE
+        loot_target.parent.mkdir(parents=True)
+        loot_target.write_bytes(client.forge_datapack_compat.normalize_resource(self.loot_original)[0])
         self.society=self.root/'society.zip';self.output=self.root/'out/full.mrpack'
         self.lock={'minecraft':'1.20.1','forge':'47.4.20','society':'fixture','files':self.files}
         self.write_base()
         (self.root/'forge-candidate-lock.json').write_text('{}')
+        # This minimal archive fixture isolates the original alias/export invariants.
+        # The full five-item batch is covered by dedicated controls and the real full-pack export.
+        (self.root/'compat').mkdir()
+        (self.root/'compat/item-model-aliases.json').write_text('[]')
+        context=patch.object(client.forge_item_model_alias, 'ADDITIONAL_ITEMS', set())
+        context.start();self.addCleanup(context.stop)
         for name,value in [('ROOT',self.root),('EXPECTED_FILES',5),('EXPECTED_SHARED',2),('EXPECTED_REPLACEMENTS',1),('EXPECTED_MODEL_OVERRIDES',1),
                 ('PIXELMON_SHA256',client.digest(self.pixel)),('PORT_SHA256',client.digest(self.port))]:
             context=patch.object(client,name,value);context.start();self.addCleanup(context.stop)
@@ -121,6 +134,36 @@ class ForgeClientBuildTest(unittest.TestCase):
     def test_kubejs_mismatch_fails_before_output(self):
         (self.server/'kubejs/server_scripts/init.js').write_bytes(b'changed')
         self.assert_no_export()
+
+    def test_export_includes_nonempty_additional_batch_and_profile_provenance(self):
+        alias = client.forge_item_model_alias
+        jar = self.server/alias.JAR
+        model = 'assets/decorative_blocks/models/block/owned.json'
+        data = b'{"elements":[]}'  # Packaging fixture only, never a game model.
+        with zipfile.ZipFile(jar,'a') as archive:
+            archive.writestr(model,data)
+        for entry in self.files:
+            if entry['path']==alias.JAR:
+                entry['size']=jar.stat().st_size;entry['hashes']=self.hashes(jar.read_bytes())
+        self.write_lock()
+        specs=[]
+        for name in ('owned_first','owned_second'):
+            specs.append({'item':'decorative_blocks:'+name,'jar':alias.JAR,'jar_sha256':client.digest(jar),
+                'target_path':'assets/decorative_blocks/models/item/'+name+'.json',
+                'parent':'decorative_blocks:block/owned','resources':{model:hashlib.sha256(data).hexdigest()},
+                'vanilla_dependencies':[]})
+        (self.root/'compat/item-model-aliases.json').write_text(json.dumps(specs))
+        with patch.object(alias,'ADDITIONAL_ITEMS',{s['item'] for s in specs}),patch.object(alias,'JAR_SHA256',client.digest(jar)):
+            self.build()
+        with zipfile.ZipFile(self.output) as archive:
+            profile=json.loads(archive.read('overrides/psa-forge-client-profile.json'))
+            self.assertEqual(len(profile['item_model_aliases']),3)
+            for spec in specs:
+                path='kubejs/'+spec['target_path']
+                self.assertIn('overrides/'+path,archive.namelist())
+                self.assertEqual(profile['overrides'][path],hashlib.sha256(archive.read('overrides/'+path)).hexdigest())
+                receipt=next(r for r in profile['item_model_aliases'] if r['item']==spec['item'])
+                self.assertEqual(receipt['vanilla_dependencies'],[])
 
     def test_extra_server_jar_fails_before_output(self):
         (self.server/'mods/extra.jar').write_bytes(b'extra')
@@ -182,6 +225,94 @@ class ForgeClientBuildTest(unittest.TestCase):
                 client.build(self.server, self.extras, self.society, self.output, source)
         self.assertFalse(self.output.exists())
         self.assertFalse(self.output.parent.exists())
+
+    def test_ali_fix_is_client_only_and_preserves_other_payloads(self):
+        target = self.add_ali_target_fixture()
+        ali = self.root/'ali-fixture.jar'
+        ali.write_bytes(self.archive_bytes({'fixture.txt':b'packaging only; never executed'}))
+        before = {p.name:p.read_bytes() for p in (self.server/'mods').iterdir()}
+        with patch.multiple(client, ALI_PATCH_SHA256=client.digest(ali), ALI_TARGET_SHA256=client.digest(target),
+                EXPECTED_FILES=len(self.files), EXPECTED_SHARED=sum(f['side']=='both' for f in self.files)):
+            report = client.build(self.server, self.extras, self.society, self.output, ali_fix=ali)
+        self.assertEqual(report['mod_jars'], 7)
+        self.assertEqual(before, {p.name:p.read_bytes() for p in (self.server/'mods').iterdir()})
+        with zipfile.ZipFile(self.output) as archive:
+            name = 'mods/' + client.ALI_PATCH_NAME
+            self.assertEqual(archive.read('overrides/' + name), ali.read_bytes())
+            self.assertEqual(archive.read('overrides/mods/shared.jar'), self.fixture_data['shared.jar'])
+            profile = json.loads(archive.read('overrides/psa-forge-client-profile.json'))
+            self.assertTrue(profile['client_ali_compatibility']['client_only'])
+            self.assertEqual(profile['overrides'][name], client.digest(ali))
+
+    def test_invalid_missing_or_symlink_ali_fix_cannot_export(self):
+        ali = self.root/'ali-fixture.jar';ali.write_bytes(b'unverified')
+        for source in (ali, self.root/'missing.jar'):
+            with self.subTest(source=source), self.assertRaisesRegex(ValueError, 'ALI compatibility'):
+                client.build(self.server, self.extras, self.society, self.output, ali_fix=source)
+        link = self.root/'ali-link.jar';link.symlink_to(ali)
+        with patch.object(client, 'ALI_PATCH_SHA256', client.digest(ali)), self.assertRaisesRegex(ValueError, 'ALI compatibility'):
+            client.build(self.server, self.extras, self.society, self.output, ali_fix=link)
+        self.assertFalse(self.output.exists())
+        self.assertFalse(self.output.parent.exists())
+
+    def add_ali_target_fixture(self):
+        data = self.archive_bytes({'fixture.txt':b'ALI packaging target fixture, never executed'})
+        target = self.server/client.ALI_TARGET_PATH;target.write_bytes(data)
+        self.files.append({'path':client.ALI_TARGET_PATH,'kind':'mod','side':'both','project_id':99,'file_id':199,
+            'size':len(data),'hashes':self.hashes(data),'url':'https://example.test/ali-fixture.jar'})
+        self.write_lock();self.write_base()
+        return target
+
+    def test_ali_fix_without_target_is_refused_before_output(self):
+        ali = self.root/'ali-fixture.jar';ali.write_bytes(b'owned packaging fixture')
+        with patch.object(client, 'ALI_PATCH_SHA256', client.digest(ali)), self.assertRaisesRegex(ValueError, 'Pinned ALI target'):
+            client.build(self.server,self.extras,self.society,self.output,ali_fix=ali)
+        self.assertFalse(self.output.exists());self.assertFalse(self.output.parent.exists())
+
+    def test_valid_lock_with_wrong_ali_target_is_refused(self):
+        self.add_ali_target_fixture()
+        ali = self.root/'ali-fixture.jar';ali.write_bytes(b'owned packaging fixture')
+        with patch.multiple(client, ALI_PATCH_SHA256=client.digest(ali),
+                EXPECTED_FILES=len(self.files), EXPECTED_SHARED=sum(f['side']=='both' for f in self.files)), self.assertRaisesRegex(ValueError, 'Pinned ALI target'):
+            client.build(self.server,self.extras,self.society,self.output,ali_fix=ali)
+        self.assertFalse(self.output.exists());self.assertFalse(self.output.parent.exists())
+
+    def test_corrected_loot_resource_matches_staged_server(self):
+        self.build()
+        name = client.forge_datapack_compat.RESOURCE
+        with zipfile.ZipFile(self.output) as archive:
+            data = archive.read('overrides/'+name)
+            self.assertEqual(data, (self.server/name).read_bytes())
+            self.assertFalse(json.loads(data)['replace'])
+            self.assertEqual(json.loads(data)['entries'], [])
+
+    def test_changed_loot_input_even_with_relocked_archive_is_refused(self):
+        self.overrides[client.forge_datapack_compat.RESOURCE] = b'{}'
+        self.write_base()
+        self.assert_no_export()
+
+    def test_declared_missing_server_only_module_is_refused(self):
+        (self.server/'.psa-forge-candidate.json').write_text(json.dumps({
+            'datapack_sync_compatibility':client.forge_datapack_compat.module_receipt()}))
+        self.assert_no_export()
+
+    def test_verified_server_only_module_is_not_in_client_payload(self):
+        helper = client.forge_datapack_compat
+        target = self.server/helper.TARGET_PATH; target.write_bytes(self.archive_bytes({'fixture.txt':b'not a game mod'}))
+        data = target.read_bytes()
+        self.files.append({'path':helper.TARGET_PATH,'kind':'mod','side':'both','project_id':100,'file_id':200,
+            'size':len(data),'hashes':self.hashes(data),'url':'https://example.test/serializer-fixture.jar'})
+        module = self.server/helper.MODULE_PATH; module.write_bytes(b'authored module packaging fixture only')
+        self.write_base()
+        with patch.multiple(helper, MODULE_SHA256=helper.digest(module), TARGET_SHA256=helper.digest(target)), patch.multiple(
+                client, EXPECTED_FILES=len(self.files), EXPECTED_SHARED=sum(f['side']=='both' for f in self.files)):
+            declaration = helper.module_receipt()
+            (self.server/'.psa-forge-candidate.json').write_text(json.dumps({'datapack_sync_compatibility':declaration}))
+            self.build()
+            with zipfile.ZipFile(self.output) as archive:
+                self.assertNotIn('overrides/'+helper.MODULE_PATH, archive.namelist())
+                profile = json.loads(archive.read('overrides/psa-forge-client-profile.json'))
+                self.assertEqual(profile['server_datapack_sync_compatibility'], declaration)
 
 
 if __name__=='__main__':unittest.main()

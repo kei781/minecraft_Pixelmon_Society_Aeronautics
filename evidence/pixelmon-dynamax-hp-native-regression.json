@@ -1,0 +1,532 @@
+{
+  "scope": "Native fixed-input getter arithmetic, original world-backed assertion and tested common overlay. Not authenticated Dynamax player input or GUI.",
+  "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+  "math_cases": 20,
+  "before_failures": 6,
+  "standalone_after_failures": 0,
+  "full_common_after_failures": 0,
+  "standalone_and_full_after_rows_equal": true,
+  "changed_native_rows": [
+    {
+      "input": {
+        "species": "shedinja",
+        "level": 1,
+        "dynamax_level": 0,
+        "custom_base_hp": false
+      },
+      "before_active": 2,
+      "after_active": 1
+    },
+    {
+      "input": {
+        "species": "shedinja",
+        "level": 1,
+        "dynamax_level": 10,
+        "custom_base_hp": false
+      },
+      "before_active": 2,
+      "after_active": 1
+    },
+    {
+      "input": {
+        "species": "shedinja",
+        "level": 50,
+        "dynamax_level": 0,
+        "custom_base_hp": false
+      },
+      "before_active": 2,
+      "after_active": 1
+    },
+    {
+      "input": {
+        "species": "shedinja",
+        "level": 50,
+        "dynamax_level": 10,
+        "custom_base_hp": false
+      },
+      "before_active": 2,
+      "after_active": 1
+    },
+    {
+      "input": {
+        "species": "shedinja",
+        "level": 100,
+        "dynamax_level": 0,
+        "custom_base_hp": false
+      },
+      "before_active": 2,
+      "after_active": 1
+    },
+    {
+      "input": {
+        "species": "shedinja",
+        "level": 100,
+        "dynamax_level": 10,
+        "custom_base_hp": false
+      },
+      "before_active": 2,
+      "after_active": 1
+    }
+  ],
+  "after_rows": [
+    {
+      "species": "shedinja",
+      "level": 1,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 1,
+      "expected_active": 1,
+      "normal": 1,
+      "base_normal": 1,
+      "active": 1,
+      "base_active": 1,
+      "ended": 1,
+      "pass": true
+    },
+    {
+      "species": "shedinja",
+      "level": 1,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 1,
+      "expected_active": 1,
+      "normal": 1,
+      "base_normal": 1,
+      "active": 1,
+      "base_active": 1,
+      "ended": 1,
+      "pass": true
+    },
+    {
+      "species": "shedinja",
+      "level": 50,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 1,
+      "expected_active": 1,
+      "normal": 1,
+      "base_normal": 1,
+      "active": 1,
+      "base_active": 1,
+      "ended": 1,
+      "pass": true
+    },
+    {
+      "species": "shedinja",
+      "level": 50,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 1,
+      "expected_active": 1,
+      "normal": 1,
+      "base_normal": 1,
+      "active": 1,
+      "base_active": 1,
+      "ended": 1,
+      "pass": true
+    },
+    {
+      "species": "shedinja",
+      "level": 100,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 1,
+      "expected_active": 1,
+      "normal": 1,
+      "base_normal": 1,
+      "active": 1,
+      "base_active": 1,
+      "ended": 1,
+      "pass": true
+    },
+    {
+      "species": "shedinja",
+      "level": 100,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 1,
+      "expected_active": 1,
+      "normal": 1,
+      "base_normal": 1,
+      "active": 1,
+      "base_active": 1,
+      "ended": 1,
+      "pass": true
+    },
+    {
+      "species": "magikarp",
+      "level": 1,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 11,
+      "expected_active": 17,
+      "normal": 11,
+      "base_normal": 11,
+      "active": 17,
+      "base_active": 11,
+      "ended": 11,
+      "pass": true
+    },
+    {
+      "species": "magikarp",
+      "level": 1,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 11,
+      "expected_active": 22,
+      "normal": 11,
+      "base_normal": 11,
+      "active": 22,
+      "base_active": 11,
+      "ended": 11,
+      "pass": true
+    },
+    {
+      "species": "magikarp",
+      "level": 50,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 80,
+      "expected_active": 120,
+      "normal": 80,
+      "base_normal": 80,
+      "active": 120,
+      "base_active": 80,
+      "ended": 80,
+      "pass": true
+    },
+    {
+      "species": "magikarp",
+      "level": 50,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 80,
+      "expected_active": 160,
+      "normal": 80,
+      "base_normal": 80,
+      "active": 160,
+      "base_active": 80,
+      "ended": 80,
+      "pass": true
+    },
+    {
+      "species": "magikarp",
+      "level": 100,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 150,
+      "expected_active": 225,
+      "normal": 150,
+      "base_normal": 150,
+      "active": 225,
+      "base_active": 150,
+      "ended": 150,
+      "pass": true
+    },
+    {
+      "species": "magikarp",
+      "level": 100,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 150,
+      "expected_active": 300,
+      "normal": 150,
+      "base_normal": 150,
+      "active": 300,
+      "base_active": 150,
+      "ended": 150,
+      "pass": true
+    },
+    {
+      "species": "ditto",
+      "level": 1,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 11,
+      "expected_active": 17,
+      "normal": 11,
+      "base_normal": 11,
+      "active": 17,
+      "base_active": 11,
+      "ended": 11,
+      "pass": true
+    },
+    {
+      "species": "ditto",
+      "level": 1,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 11,
+      "expected_active": 22,
+      "normal": 11,
+      "base_normal": 11,
+      "active": 22,
+      "base_active": 11,
+      "ended": 11,
+      "pass": true
+    },
+    {
+      "species": "ditto",
+      "level": 50,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 108,
+      "expected_active": 162,
+      "normal": 108,
+      "base_normal": 108,
+      "active": 162,
+      "base_active": 108,
+      "ended": 108,
+      "pass": true
+    },
+    {
+      "species": "ditto",
+      "level": 50,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 108,
+      "expected_active": 216,
+      "normal": 108,
+      "base_normal": 108,
+      "active": 216,
+      "base_active": 108,
+      "ended": 108,
+      "pass": true
+    },
+    {
+      "species": "ditto",
+      "level": 100,
+      "dynamax_level": 0,
+      "custom_base_hp": false,
+      "expected_base": 206,
+      "expected_active": 309,
+      "normal": 206,
+      "base_normal": 206,
+      "active": 309,
+      "base_active": 206,
+      "ended": 206,
+      "pass": true
+    },
+    {
+      "species": "ditto",
+      "level": 100,
+      "dynamax_level": 10,
+      "custom_base_hp": false,
+      "expected_base": 206,
+      "expected_active": 412,
+      "normal": 206,
+      "base_normal": 206,
+      "active": 412,
+      "base_active": 206,
+      "ended": 206,
+      "pass": true
+    },
+    {
+      "species": "shedinja",
+      "level": 100,
+      "dynamax_level": 0,
+      "custom_base_hp": true,
+      "expected_base": 100,
+      "expected_active": 150,
+      "normal": 100,
+      "base_normal": 100,
+      "active": 150,
+      "base_active": 100,
+      "ended": 100,
+      "pass": true
+    },
+    {
+      "species": "shedinja",
+      "level": 100,
+      "dynamax_level": 10,
+      "custom_base_hp": true,
+      "expected_base": 100,
+      "expected_active": 200,
+      "normal": 100,
+      "base_normal": 100,
+      "active": 200,
+      "base_active": 100,
+      "ended": 100,
+      "pass": true
+    }
+  ],
+  "baseline_original_battle": {
+    "run": "fbf674ac-1586-472b-8b46-daa45a81178b",
+    "time": "2026-11-09T15:37:34.329303949Z",
+    "pass": false,
+    "actor_count": 31,
+    "participants": 31,
+    "live_owned_actor_count": 0,
+    "cleanup_complete": true,
+    "results": {
+      "Normal doesn't damage ghost": {
+        "status": "success"
+      },
+      "clangorous_soulblaze_correct_boost_amount": {
+        "status": "success"
+      },
+      "dancer_copies_damage_dealing_dance_moves": {
+        "status": "success"
+      },
+      "hidden_power_max_move_typing": {
+        "status": "success"
+      },
+      "non_extreme_weather_fails_during_delta_stream": {
+        "status": "success"
+      },
+      "shedinja_hp_dynamax": {
+        "status": "failure",
+        "reason": "Shedinja does not have 1 HP while Dynamaxed!"
+      },
+      "shell_trap_damages_opponents_not_user": {
+        "status": "success"
+      },
+      "shields_down_should_not_remove_hazards": {
+        "status": "failure",
+        "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "spammable_destiny_bond": {
+        "status": "success"
+      },
+      "splash_no_damage": {
+        "status": "success"
+      }
+    },
+    "errors": [],
+    "cleanup_errors": []
+  },
+  "standalone_patched_original_battle": {
+    "run": "f26e00a9-6ac9-43e6-a44d-75fd4e93c9ae",
+    "time": "2026-11-09T15:39:50.406324032Z",
+    "pass": false,
+    "actor_count": 31,
+    "participants": 31,
+    "live_owned_actor_count": 0,
+    "cleanup_complete": true,
+    "results": {
+      "Normal doesn't damage ghost": {
+        "status": "success"
+      },
+      "clangorous_soulblaze_correct_boost_amount": {
+        "status": "success"
+      },
+      "dancer_copies_damage_dealing_dance_moves": {
+        "status": "success"
+      },
+      "hidden_power_max_move_typing": {
+        "status": "success"
+      },
+      "non_extreme_weather_fails_during_delta_stream": {
+        "status": "success"
+      },
+      "shedinja_hp_dynamax": {
+        "status": "success"
+      },
+      "shell_trap_damages_opponents_not_user": {
+        "status": "success"
+      },
+      "shields_down_should_not_remove_hazards": {
+        "status": "failure",
+        "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "spammable_destiny_bond": {
+        "status": "success"
+      },
+      "splash_no_damage": {
+        "status": "success"
+      }
+    },
+    "errors": [],
+    "cleanup_errors": []
+  },
+  "full_common_original_battle": {
+    "run": "05e3d513-fe10-4756-a26e-f67c0cb69fbc",
+    "time": "2026-11-09T15:44:31.269975610Z",
+    "pass": false,
+    "actor_count": 31,
+    "participants": 31,
+    "live_owned_actor_count": 0,
+    "cleanup_complete": true,
+    "results": {
+      "Normal doesn't damage ghost": {
+        "status": "success"
+      },
+      "clangorous_soulblaze_correct_boost_amount": {
+        "status": "success"
+      },
+      "dancer_copies_damage_dealing_dance_moves": {
+        "status": "failure",
+        "reason": "One of them failed."
+      },
+      "hidden_power_max_move_typing": {
+        "status": "success"
+      },
+      "non_extreme_weather_fails_during_delta_stream": {
+        "status": "success"
+      },
+      "shedinja_hp_dynamax": {
+        "status": "success"
+      },
+      "shell_trap_damages_opponents_not_user": {
+        "status": "success"
+      },
+      "shields_down_should_not_remove_hazards": {
+        "status": "failure",
+        "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "spammable_destiny_bond": {
+        "status": "success"
+      },
+      "splash_no_damage": {
+        "status": "success"
+      }
+    },
+    "errors": [],
+    "cleanup_errors": []
+  },
+  "raw_log_sha256": {
+    "baseline": "3f9d266cc339165d0c2f4d92321048eb31a2c8a566e250c5c774f941c5828434",
+    "standalone_patched": "45b9b5ff9614340b6a5e66b6d1a236bde697139168905d4267e8bf19e15ed50c",
+    "full_common": "13b095fe45c57ce6e5ac51966b4d40c8ed2458e4e7f924bc4e54067b54d344df"
+  },
+  "common_build": {
+    "files": 4182,
+    "sha256": "53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c",
+    "bytes": 44462825,
+    "added": [
+      "dev/psa/compat/PixelmonDynamaxHitpointsMixin.class"
+    ],
+    "changed": [
+      "psa-forge.mixins.json",
+      "PSA_PROVENANCE.txt"
+    ],
+    "unchanged_entries": 4179,
+    "inputs": {
+      "change": "Shedinja native base-HP-one Dynamax maximum query",
+      "base_common_sha256": "31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5",
+      "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+      "source_sha256": "804ad4d7dc4acc1c00e8013da54ee049158d6269980ad2c55db05ab7ff97ca98",
+      "class_sha256": "d565c9464cfa65a0f150467a91b45e8a6cf4de29ddbda528e157119de3e97d6b"
+    }
+  },
+  "independent_prepared_diagnostic_builds_byte_identical": true,
+  "common_overlay_rebuild_byte_identical": true,
+  "tested_and_common_mixin_class_bytes_identical": true,
+  "upstream_unchanged_entries": 4179,
+  "hp_family_scan": {
+    "target": "Dynamax maximum HP multiplier query",
+    "references": [
+      {
+        "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+        "class": "com/pixelmonmod/pixelmon/battles/controller/participants/PixelmonWrapper.class",
+        "target": "getDynamaxHealthMod"
+      }
+    ],
+    "scope": "Class UTF8 candidate inventory, not proof of all dynamic callers. Pinned native getMaxHealth(boolean) and transition bodies inspected privately; no raw upstream code in public report."
+  },
+  "related_python_tests": {
+    "run": 42,
+    "passed": 42
+  },
+  "remaining": "Original Minior assertion still fails; Dancer/ShellTrap intermittent original-only failures remain open. Whole native suite and user goals not passed."
+}

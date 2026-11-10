@@ -1,0 +1,48 @@
+{
+  "version": "v17",
+  "accepted_source_sha": "46f22a543265b63ee243143c26e58aecf734fc49",
+  "readiness": {
+    "prepared_not_started": false,
+    "mods": 313,
+    "diagnostic_mods": 0,
+    "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+    "old_stopped_world_copied": true,
+    "original_world_untouched": true,
+    "independent_runtime_libraries": true,
+    "online_mode": true,
+    "rcon": false,
+    "max_players": 6,
+    "heap_gib": 6,
+    "view_simulation_distance": 4,
+    "mod_inventory_sha256": "656ed8324d609a944102efca705bfab17e8143657be4c2760329eb05d8a14545",
+    "ready": true,
+    "ready_checked_at_utc": "2026-11-10T01:34:45.707549+00:00",
+    "actual_online_players": 0,
+    "crash_report_count": 0,
+    "normal_qa_stop_before_start": true,
+    "log_sha256": "e80223a54c65f972d90d88903fa85a0112dc7fcd6bd6bba64dfb461042ffe0e4",
+    "native_tps_overall_lines": [
+      "Mean tick time: 1.489 ms. Mean TPS: 20.000"
+    ],
+    "initial_controller_observation": "Startup observed Done but fixed2s command waits read before native list reply; assertion failed. Server remained running/crash0. Fresh command replies now awaited explicitly; no restart or hidden failure."
+  },
+  "actual_authentication": {
+    "observed_at_utc": "2026-11-10T01:35:49.330004+00:00",
+    "actual_authenticated_world_entries": 1,
+    "actual_auth_verifications": 1,
+    "actual_online_players": 1,
+    "max_players": 6,
+    "crash_report_count": 0,
+    "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+    "mods": 313,
+    "diagnostic_mods": 0,
+    "native_tps_overall_lines": [
+      "Mean tick time: 7.725 ms. Mean TPS: 20.000"
+    ],
+    "log_sha256": "edb778651922a09148fc11064cc1a0ee59a3104b65e648f877fcb51995661661",
+    "scope": "One genuine Mac authenticated world entry on313production/noQA server via existing SSH loopback; not6players/directLAN/AeroUDP/gameplay stability"
+  },
+  "previous_v16_world_logs_crashes_preserved": true,
+  "qa_profiles_stopped_normally": true,
+  "scope": "Production candidate deployment and one genuine authenticated entry, not full gameplay or six-player capacity acceptance"
+}

@@ -1,0 +1,204 @@
+{
+  "build": {
+    "bytes": 26100,
+    "sha256": "861b616c6efcfba7dd56b9fd45b9abd212516b5efa2e6b2ce3ac70aed6303489",
+    "prepared_build_projects": 2,
+    "byte_identical": true,
+    "plugin_class_matches_actual_negative_boot_control": true
+  },
+  "current_guard_controls": [
+    {
+      "case": "optout",
+      "exit_code": 0,
+      "result": "PASS real fixture preflight refused: Owned disposable"
+    },
+    {
+      "case": "no-marker",
+      "exit_code": 0,
+      "result": "PASS real fixture preflight refused: NoSuchFileException"
+    },
+    {
+      "case": "wrong-marker",
+      "exit_code": 0,
+      "result": "PASS real fixture preflight refused: Owned disposable"
+    },
+    {
+      "case": "wrong-binary",
+      "exit_code": 0,
+      "result": "PASS real fixture preflight refused: Pinned Pixelmon binary differs"
+    }
+  ],
+  "late_marker_before_fix": {
+    "boot_ready": true,
+    "actor_count": 0,
+    "reported_scope": "Original ten test methods/assertions; world-backed participants; no player authentication tested",
+    "result_count": 9,
+    "pass": false
+  },
+  "late_marker_after_fix": {
+    "boot_ready": true,
+    "late_marker_control": true,
+    "preflight_refused": true,
+    "fixture_run_directories": 0,
+    "expected_reason": "Exact ten fixture transformations required; applied=0",
+    "log_sha256": "6ae25be054338369d5b7951b5e41ed853b3b704a07d4d8acb1d14ac0b70a5a13"
+  },
+  "blocked_scene_current": {
+    "run": "6efc3e50-e76b-4bf5-a7af-1510b2b23dc5",
+    "phase": "finished",
+    "pass": false,
+    "cleanup_complete": true,
+    "live_owned_actor_count": 0,
+    "actor_count": 0,
+    "results": {
+      "shields_down_should_not_remove_hazards": {
+        "status": "not_started"
+      },
+      "spammable_destiny_bond": {
+        "status": "not_started"
+      },
+      "clangorous_soulblaze_correct_boost_amount": {
+        "status": "not_started"
+      },
+      "non_extreme_weather_fails_during_delta_stream": {
+        "status": "not_started"
+      },
+      "splash_no_damage": {
+        "status": "not_started"
+      },
+      "Normal doesn't damage ghost": {
+        "status": "not_started"
+      },
+      "hidden_power_max_move_typing": {
+        "status": "not_started"
+      },
+      "shell_trap_damages_opponents_not_user": {
+        "status": "not_started"
+      },
+      "dancer_copies_damage_dealing_dance_moves": {
+        "status": "not_started"
+      },
+      "shedinja_hp_dynamax": {
+        "status": "not_started"
+      }
+    },
+    "errors": [
+      "java.lang.IllegalStateException: Native suite launch failed"
+    ]
+  },
+  "wrong_input_build_refusal": {
+    "exit_code": 1,
+    "expected_reason": "Unexpected Pixelmon input identity",
+    "compiler_not_run": true
+  },
+  "current_full_fixture": {
+    "run": "cd33d031-339b-4664-a9aa-6a749c9ea930",
+    "started_time": "2026-11-09T15:16:52.066701214Z",
+    "time": "2026-11-09T15:16:53.093402207Z",
+    "pass": false,
+    "cleanup_complete": true,
+    "live_owned_actor_count": 0,
+    "actor_count": 31,
+    "participants": 31,
+    "results": {
+      "Normal doesn't damage ghost": {
+        "status": "success"
+      },
+      "clangorous_soulblaze_correct_boost_amount": {
+        "status": "success"
+      },
+      "dancer_copies_damage_dealing_dance_moves": {
+        "status": "success"
+      },
+      "hidden_power_max_move_typing": {
+        "status": "success"
+      },
+      "non_extreme_weather_fails_during_delta_stream": {
+        "status": "success"
+      },
+      "shedinja_hp_dynamax": {
+        "status": "failure",
+        "reason": "Shedinja does not have 1 HP while Dynamaxed!"
+      },
+      "shell_trap_damages_opponents_not_user": {
+        "status": "success"
+      },
+      "shields_down_should_not_remove_hazards": {
+        "status": "failure",
+        "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "spammable_destiny_bond": {
+        "status": "success"
+      },
+      "splash_no_damage": {
+        "status": "success"
+      }
+    },
+    "errors": [],
+    "cleanup_errors": [],
+    "test_log_null_pointer_exceptions": 0,
+    "log_sha256": "58637135f65f52e7611c04384377cb04eb59e84d76fd659f8d039df576d21bc3"
+  },
+  "current_minimal_fixture": {
+    "run": "eb9cf3a5-4f4e-4102-ac86-0e7b400b1f3c",
+    "started_time": "2026-11-09T15:18:27.764464105Z",
+    "time": "2026-11-09T15:18:28.390988586Z",
+    "pass": false,
+    "cleanup_complete": true,
+    "live_owned_actor_count": 0,
+    "actor_count": 31,
+    "participants": 31,
+    "results": {
+      "Normal doesn't damage ghost": {
+        "status": "success"
+      },
+      "clangorous_soulblaze_correct_boost_amount": {
+        "status": "success"
+      },
+      "dancer_copies_damage_dealing_dance_moves": {
+        "status": "failure",
+        "reason": "One of them failed."
+      },
+      "hidden_power_max_move_typing": {
+        "status": "success"
+      },
+      "non_extreme_weather_fails_during_delta_stream": {
+        "status": "success"
+      },
+      "shedinja_hp_dynamax": {
+        "status": "failure",
+        "reason": "Shedinja does not have 1 HP while Dynamaxed!"
+      },
+      "shell_trap_damages_opponents_not_user": {
+        "status": "failure",
+        "reason": "The Shell Trap did not activate."
+      },
+      "shields_down_should_not_remove_hazards": {
+        "status": "failure",
+        "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "spammable_destiny_bond": {
+        "status": "success"
+      },
+      "splash_no_damage": {
+        "status": "success"
+      }
+    },
+    "errors": [],
+    "cleanup_errors": [],
+    "test_log_null_pointer_exceptions": 0,
+    "log_sha256": "6052598fae82da01084a5f240c5dbe8a3e64a545e4dbb324768e95a68695b247"
+  },
+  "current_ten_native_results_match": false,
+  "additional_minimal_failures": {
+    "dancer_copies_damage_dealing_dance_moves": {
+      "status": "failure",
+      "reason": "One of them failed."
+    },
+    "shell_trap_damages_opponents_not_user": {
+      "status": "failure",
+      "reason": "The Shell Trap did not activate."
+    }
+  },
+  "scope_note": "Do not claim repeatability: earlier R6 minimal/full both8success2failure; current R8 full8success2failure, minimal6success4failure. All ten actual native results retained; extra Dancer/ShellTrap failures need diagnosis. No NPE/cleanup failure in either current run."
+}
