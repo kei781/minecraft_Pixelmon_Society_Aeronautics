@@ -1,5 +1,5 @@
 {
-  "scope": "Task17 actual remote-client ALI correction and native cached-table same-session resync; full datapack reload has separate observed blockers; both overall goals remain incomplete",
+  "scope": "Task17 ALI correction, actual same-session cached-table resync and constructor/provider guard tests; full server reload has a separate observed fatal SerializerDebug blocker; both overall goals incomplete",
   "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
   "baseline_native_initial": {
     "run": "a8d81830-c501-4e0e-b894-c82e4cb8ebb8",
@@ -566,12 +566,13 @@
   },
   "final_build": {
     "files": 11,
-    "sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+    "sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+    "bytes": 11204,
     "entry_sha256": {
       "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
       "META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
-      "dev/psa/alicompat/AliClientCompat.class": "9819176fe19061bfe62d72e3ece709e94db3ad2362e00207b76dd0e2f39f1d7e",
-      "dev/psa/alicompat/AliCompatPlugin.class": "971f2bdf10797b67efc7275ccdd62f18e126b526b6fd4fb257a8a5ab4ddc0cc3",
+      "dev/psa/alicompat/AliClientCompat.class": "33c058b426b9f7d46260cf7954c0f7f15b7ae84ce9972a6f54b7201641c86c3e",
+      "dev/psa/alicompat/AliCompatPlugin.class": "aeac06023d4ca99aff5659c1937b919c5d31241d7532d91f95d6209054876e3d",
       "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
       "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class": "196464b532bccdc5c52265d00e22d1916f45b1bb5fbd83cd420cd68d87f81544",
       "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class": "75fa035c8c7fb0c4dc979b0f1d9dd64962405dcd9469488aa5dceb03da0bb179",
@@ -580,10 +581,9 @@
       "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
       "psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
     },
-    "bytes": 9868,
     "authored_source_sha256": {
-      "compat/ali-client/AliClientCompat.java": "deaad2f0271b83d530655b83f151858965e3d191bcefbdaa23e80e0c8381f049",
-      "compat/ali-client/AliCompatPlugin.java": "316811e68083c690d00cf451f05dc89523d8e6afd8d6ff52919b2e160a91cf80",
+      "compat/ali-client/AliClientCompat.java": "4b7e2fac7481cd9667655e6faf4a87c155ebdb99816755e8b7e75a8fea1e9db4",
+      "compat/ali-client/AliCompatPlugin.java": "3496ef51637f87e384fd8d644f40cef9fa6776b6ed05c1b6d53345b233fe41f0",
       "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
       "compat/ali-client/mixin/AliDataRegistrationMixin.java": "16b461f503ad3c54d2b7c5e841cf157a8117364722c9b03f1cadb86f241b21d6",
       "compat/ali-client/mixin/AliPaletteSynchronizationMixin.java": "fa0f5bb10151704246b2e229e8db898e1bd588e2d5e699cb92a5442c96a1da9d",
@@ -593,6 +593,10 @@
       "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
       "compat/ali-client/resources/psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
     },
+    "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
+    "pinned_emi_compile_sha256": "92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72",
+    "pinned_mixinextras_common_compile_sha256": "e09a7e37e2044f7b0d0e248d55ca9b590b03c3b03636549523b50ac69afdd1aa",
+    "gradle_recipe_sha256": "656879f70c5ac8a06a2623fd6098470ef83e5d568c07e6638e5dab24c3170f13",
     "entries": [
       "META-INF/MANIFEST.MF",
       "META-INF/mods.toml",
@@ -606,20 +610,15 @@
       "pack.mcmeta",
       "psa-ali-client.mixins.json"
     ],
-    "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
-    "pinned_emi_compile_sha256": "92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72",
-    "pinned_mixinextras_common_compile_sha256": "e09a7e37e2044f7b0d0e248d55ca9b590b03c3b03636549523b50ac69afdd1aa",
-    "gradle_recipe_sha256": "656879f70c5ac8a06a2623fd6098470ef83e5d568c07e6638e5dab24c3170f13",
-    "scope": "Authored standalone client compatibility with original factory access corrections and shared native palette monitors; native same-session resync verification and independent rereview pending"
+    "scope": "Authored client compatibility with active pinned WrapMethod injector and actually defined wrapper metadata checked in mandatory constructor; independent R3 review pending"
   },
   "independent_rebuild": {
-    "files": 11,
-    "sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+    "sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
     "independent_byte_equal": true
   },
   "compiled_guards": {
-    "scope": "Standalone compiled guards and original pinned class shape; callback tests are not full native Minecraft transforms",
-    "artifact_sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+    "scope": "Standalone guard methods/ASM metadata fixtures; no native transform claim. Missing provider case omits MixinExtras from real Java classpath. Full native no-provider startup recorded separately.",
+    "artifact_sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
     "results": {
       "valid": "PINNED_INPUT_ACCEPTED",
       "missing": "PINNED_INPUT_REFUSED",
@@ -632,9 +631,13 @@
       "missing-registration": "MISSING_REGISTRATION_WRAP_REFUSED",
       "palette-missing-method": "UNEXPECTED_PALETTE_SHAPE_REFUSED",
       "palette-static-method": "UNEXPECTED_PALETTE_SHAPE_REFUSED",
-      "all-callbacks": "ALL_CALLBACKS_ACCEPTED_SIX_MONITORS"
+      "all-callbacks": "CALLBACKS_WITHOUT_DEFINED_WRAPPER_REFUSED",
+      "runtime-refuse": "MISSING_OR_INACTIVE_WRAP_RUNTIME_REFUSED",
+      "merged-only": "UNCOMPLETED_WRAPPER_SHAPE_REFUSED",
+      "completed-shape": "COMPLETED_METHOD_METADATA_ACCEPTED_NOT_NATIVE_EXECUTION",
+      "static-wrapped-shape": "UNCOMPLETED_WRAPPER_SHAPE_REFUSED"
     },
-    "diagnostic_independent_byte_equal": true
+    "independent_byte_equal": true
   },
   "python_packaging_tests_passed": 15,
   "native_r5_initial_diagnostic_session": {
@@ -1258,7 +1261,8 @@
       "excluded_transport_flag": "0x100: indexed translation-key representation only; resolved key is still hashed"
     },
     "observer_independent_byte_equal": true,
-    "concurrency_limit": "Actual monitor flags/batch ownership observed; not exhaustive scheduling/model-checking proof"
+    "concurrency_limit": "Actual monitor flags/batch ownership observed; not exhaustive scheduling/model-checking proof",
+    "compat_revision": "R5: batch implementation preserved in R6; new mandatory startup verification is R6"
   },
   "diagnostic_failures_preserved": {
     "r2_missing_unique_serializer": {
@@ -1407,9 +1411,9 @@
   },
   "package": {
     "filename": "PSA-Forge-Full-Experimental-v18.mrpack",
-    "sha256": "80130dd80f2fa138fd79e27b0ecdd73ad2b54ec11f9f3193fb47a72368ad2e49",
-    "size": 1137810170,
-    "version_id": "psa-forge-d0092ce9fe48",
+    "sha256": "6cf50d9d3292a37ca122bf5651ddce7ac9a150617c73dc5b58c9a8487e46e673",
+    "size": 1137811504,
+    "version_id": "psa-forge-b4abd74e97d8",
     "mod_jars": 355,
     "indexed_resourcepacks": 15,
     "indexed_shaderpacks": 1,
@@ -1418,7 +1422,6 @@
     "full_gameplay_validated": false
   },
   "package_delta": {
-    "compared_against": "v17",
     "added": [
       "overrides/mods/PSA-ALI-Client-Compat-0.1.jar"
     ],
@@ -1426,20 +1429,20 @@
       "modrinth.index.json",
       "overrides/psa-forge-client-profile.json"
     ],
-    "unchanged_entries": 7931,
     "removed": [],
-    "qa_artifacts": 0,
-    "pack_sha256": "80130dd80f2fa138fd79e27b0ecdd73ad2b54ec11f9f3193fb47a72368ad2e49",
-    "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+    "unchanged_previous_entries": 7931,
+    "server_mods_unchanged": true,
+    "production_mods": 355,
+    "qa_mods": 0
   },
   "actual_mac_final_inventory": {
-    "player_mods_byte_equal_to_current_v18": 355,
-    "remaining_qa_extras": [
+    "actual_mac_player_mods_equal_final_v18": 355,
+    "qa_extras": [
       "psa-model-audit-0.2.jar"
     ],
-    "resync_probe_removed_and_preserved": true,
-    "profile_byte_equal_to_current_v18": true,
-    "private_completed_log_sha256": "df5d7e91820ba57f1f54eee4896319de914b4d96dcfe7ef3ffaaea26ea4ec357"
+    "resync_probe_and_marker_removed_and_preserved": true,
+    "profile_matches_final_pack": true,
+    "game_normally_exited": true
   },
   "native_class_owners": {
     "top_level_mods": 356,
@@ -1479,5 +1482,673 @@
     "production_common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
     "production_crashes": 0,
     "production_diagnostics": 0
+  },
+  "historical_r5_build": {
+    "final_build": {
+      "files": 11,
+      "sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+      "entry_sha256": {
+        "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
+        "META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
+        "dev/psa/alicompat/AliClientCompat.class": "9819176fe19061bfe62d72e3ece709e94db3ad2362e00207b76dd0e2f39f1d7e",
+        "dev/psa/alicompat/AliCompatPlugin.class": "971f2bdf10797b67efc7275ccdd62f18e126b526b6fd4fb257a8a5ab4ddc0cc3",
+        "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
+        "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class": "196464b532bccdc5c52265d00e22d1916f45b1bb5fbd83cd420cd68d87f81544",
+        "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class": "75fa035c8c7fb0c4dc979b0f1d9dd64962405dcd9469488aa5dceb03da0bb179",
+        "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class": "18cd6edadbea9ec94896310f895b48420ee45face02370a7a95ea0d8310336b4",
+        "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class": "43f094a47ddd8c2ae1a4a595f94ffe5e27833be50f2d9175e89d67d8353a53a0",
+        "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+        "psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
+      },
+      "bytes": 9868,
+      "authored_source_sha256": {
+        "compat/ali-client/AliClientCompat.java": "deaad2f0271b83d530655b83f151858965e3d191bcefbdaa23e80e0c8381f049",
+        "compat/ali-client/AliCompatPlugin.java": "316811e68083c690d00cf451f05dc89523d8e6afd8d6ff52919b2e160a91cf80",
+        "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
+        "compat/ali-client/mixin/AliDataRegistrationMixin.java": "16b461f503ad3c54d2b7c5e841cf157a8117364722c9b03f1cadb86f241b21d6",
+        "compat/ali-client/mixin/AliPaletteSynchronizationMixin.java": "fa0f5bb10151704246b2e229e8db898e1bd588e2d5e699cb92a5442c96a1da9d",
+        "compat/ali-client/mixin/AliTooltipBuilderPaletteMixin.java": "55b2bff96504e414be8bb3ab3c49dbfd6cf773cd3c4638c72596ca1ede58903e",
+        "compat/ali-client/mixin/AliTooltipPaletteMixin.java": "f2f83b31a2ec61283c81c773757dbcd01b69415a26e045e958a2275e21d91514",
+        "compat/ali-client/resources/META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
+        "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+        "compat/ali-client/resources/psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
+      },
+      "entries": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/mods.toml",
+        "dev/psa/alicompat/AliClientCompat.class",
+        "dev/psa/alicompat/AliCompatPlugin.class",
+        "dev/psa/alicompat/AliPaletteAccess.class",
+        "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class",
+        "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class",
+        "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class",
+        "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class",
+        "pack.mcmeta",
+        "psa-ali-client.mixins.json"
+      ],
+      "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
+      "pinned_emi_compile_sha256": "92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72",
+      "pinned_mixinextras_common_compile_sha256": "e09a7e37e2044f7b0d0e248d55ca9b590b03c3b03636549523b50ac69afdd1aa",
+      "gradle_recipe_sha256": "656879f70c5ac8a06a2623fd6098470ef83e5d568c07e6638e5dab24c3170f13",
+      "scope": "Authored standalone client compatibility with original factory access corrections and shared native palette monitors; native same-session resync verification and independent rereview pending"
+    },
+    "independent_rebuild": {
+      "files": 11,
+      "sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+      "independent_byte_equal": true
+    },
+    "compiled_guards": {
+      "scope": "Standalone compiled guards and original pinned class shape; callback tests are not full native Minecraft transforms",
+      "artifact_sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+      "results": {
+        "valid": "PINNED_INPUT_ACCEPTED",
+        "missing": "PINNED_INPUT_REFUSED",
+        "modified": "PINNED_INPUT_REFUSED",
+        "symlink": "PINNED_INPUT_REFUSED",
+        "unapplied": "UNAPPLIED_TRANSFORM_REFUSED",
+        "partial-node": "PARTIAL_TRANSFORM_REFUSED",
+        "partial-builder": "PARTIAL_TRANSFORM_REFUSED",
+        "partial-factories": "MISSING_PALETTE_LOCK_REFUSED",
+        "missing-registration": "MISSING_REGISTRATION_WRAP_REFUSED",
+        "palette-missing-method": "UNEXPECTED_PALETTE_SHAPE_REFUSED",
+        "palette-static-method": "UNEXPECTED_PALETTE_SHAPE_REFUSED",
+        "all-callbacks": "ALL_CALLBACKS_ACCEPTED_SIX_MONITORS"
+      },
+      "diagnostic_independent_byte_equal": true
+    },
+    "package": {
+      "filename": "PSA-Forge-Full-Experimental-v18.mrpack",
+      "sha256": "80130dd80f2fa138fd79e27b0ecdd73ad2b54ec11f9f3193fb47a72368ad2e49",
+      "size": 1137810170,
+      "version_id": "psa-forge-d0092ce9fe48",
+      "mod_jars": 355,
+      "indexed_resourcepacks": 15,
+      "indexed_shaderpacks": 1,
+      "override_files": 7933,
+      "longest_relative_path": 108,
+      "full_gameplay_validated": false
+    },
+    "package_delta": {
+      "compared_against": "v17",
+      "added": [
+        "overrides/mods/PSA-ALI-Client-Compat-0.1.jar"
+      ],
+      "changed": [
+        "modrinth.index.json",
+        "overrides/psa-forge-client-profile.json"
+      ],
+      "unchanged_entries": 7931,
+      "removed": [],
+      "qa_artifacts": 0,
+      "pack_sha256": "80130dd80f2fa138fd79e27b0ecdd73ad2b54ec11f9f3193fb47a72368ad2e49",
+      "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+    },
+    "actual_mac_final_inventory": {
+      "player_mods_byte_equal_to_current_v18": 355,
+      "remaining_qa_extras": [
+        "psa-model-audit-0.2.jar"
+      ],
+      "resync_probe_removed_and_preserved": true,
+      "profile_byte_equal_to_current_v18": true,
+      "private_completed_log_sha256": "df5d7e91820ba57f1f54eee4896319de914b4d96dcfe7ef3ffaaea26ea4ec357"
+    }
+  },
+  "current_guard_revision_r6": {
+    "scope": "Same native batch behavior as R5 with strengthened mandatory startup verification. PostApply bits alone no longer suffice. Actual-defined-class bridge metadata checked after late MixinExtras extension completes.",
+    "active_runtime_requirement": "MixinExtrasBootstrap version0.5.4 plus registered WrapMethod annotation injector; mandatory constructor, no manual bootstrap or Forge modId invented",
+    "completed_class_requirement": "Exactly one instance registerData, own private handler and generated private registerData$mixinextras$wrapped bridge with exact descriptors, then separate completion latch",
+    "no_provider_native_startup": {
+      "scope": "Actual isolated native Forge client startup, original pinned ALI+EMI plus own compat only; not synthetic guard callback",
+      "mod_jars": 3,
+      "compat_sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+      "mandatory_constructor_guard_seen": true,
+      "expected_guard_message": "Pinned active MixinExtras WrapMethod injector required",
+      "no_class_definition_for_mixinextras": true,
+      "extras_initialization_logged": false,
+      "auth_or_world_join_attempted": false,
+      "private_log_sha256": "bef04ccaca4903f5274c8c2aa0981df8f25ec67fa79e94cf5660606b6aba222d"
+    },
+    "native_after_render_stress": {
+      "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+      "report": {
+        "run": "3636c0f4-4c3a-4b31-b507-810ccb18a49c",
+        "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+        "native_client_world_present": true,
+        "server_registry_null": true,
+        "client_registry_present": true,
+        "client_palette_size_before": 30806,
+        "existing_palette_node_zero_present": true,
+        "existing_native_empty_flag_nodes": 1,
+        "empty_factory_success": true,
+        "empty_in_basic_mode": true,
+        "empty_in_advanced_mode": true,
+        "empty_node_id_in_client_palette": 1,
+        "existing_palette_node_zero_identity_preserved": true,
+        "client_palette_size_after": 30806,
+        "all_existing_palette_ids_identity_preserved": true,
+        "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+        "native_builder_success": true,
+        "native_builder_is_nonempty": true,
+        "native_builder_has_key": true,
+        "native_builder_components_contain_control_key": true,
+        "native_builder_id_in_client_palette": 30806,
+        "client_palette_size_after_owned_builder_control": 30807,
+        "all_existing_palette_ids_preserved_after_builder_control": true,
+        "server_registry_identity_preserved": true,
+        "total_emi_recipes": 66994,
+        "ali_emi_recipes_by_category": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:gameplay_loot": 553,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1
+        },
+        "ali_emi_recipe_count": 12246,
+        "ali_emi_category_api_recipe_counts": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:fishing_loot": 0,
+          "ali:gameplay_loot": 553,
+          "ali:hero_loot": 0,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1,
+          "ali:trade_loot": 0
+        },
+        "ali_emi_category_api_recipe_classes": {
+          "com.yanny.ali.emi.compatibility.emi.EmiBlockLoot": 11200,
+          "com.yanny.ali.emi.compatibility.emi.EmiEntityLoot": 267,
+          "com.yanny.ali.emi.compatibility.emi.EmiGameplayLoot": 779
+        },
+        "probe_completed": true
+      }
+    },
+    "native_observer": {
+      "files": 12,
+      "sha256": "de4c1a6f3e3adec28611ad310cd3c0f0187bca644626c3d14becb8b1879f9fca",
+      "bytes": 20650,
+      "fingerprint_same_as_server_r5": true,
+      "source_sha256": {
+        "tests/forge-ali-resync/AliPaletteFingerprint.java": "b5f80bfd9dd3342d8f9b6b5297b4d621672898a80e8ad6bb7171e810343cddc0",
+        "tests/forge-ali-resync/TraceMod.java": "69a2c4ab100121ce2b562ab5ad9e86476503bef27a57530db34a4af92265a4ab",
+        "tests/forge-ali-resync/TracePlugin.java": "958effeac7064823d19acb54efe2224f822d9b95ea079a3e0a1fb708ba86d60d",
+        "tests/forge-ali-resync/TraceState.java": "5aab3d56eaaa4b2cf2d6f0a3cf4549d14ceb04d4f21c9d4c042ffcc3a6e4bee8",
+        "tests/forge-ali-resync/mixin/PaletteTraceMixin.java": "56e5ccb02ef8bbb6c3d532df9a3a229737013cfcf9354a353ccfc2662a94c3bb",
+        "tests/forge-ali-resync/mixin/RegistrationTraceMixin.java": "c9122c6f4ae5d17d77022b6dc3b14f53781c237c7284739d9e876d5b88dd3bcd",
+        "tests/forge-ali-resync/resources/META-INF/mods.toml": "7159b1cbfba0a5dfda0ef59c82c5c0cfa1254f868ddb0926a6e5a5acf152f53b",
+        "tests/forge-ali-resync/resources/pack.mcmeta": "77e2c4d59406e0baba38181127d689c984cbcb1dc7b0afe8b08e2677d37b1f13",
+        "tests/forge-ali-resync/resources/psa-ali-resync.mixins.json": "52e1a5d8b897a3733c68b401983fc904074e994196eb626d2510cdc7b3bf14a9"
+      },
+      "stress_scope": "Explicitly armed QA-only one-second registration delay and native render palette read / connection disconnect; not production performance measurements"
+    },
+    "observer_independent_byte_equal": true,
+    "control_build": {
+      "files": 2,
+      "sha256": "3b1710131a75528d9940c0e29a2719ea0a248c338ba287972f51e2b271814682",
+      "bytes": 5888,
+      "source_sha256": "c9242e74bba536fd6e5da640c719126d011f25ef38ca83f9b78acfe685c3594f",
+      "manifest_sha256": "ffeee500b80094d62d5dc2810accaeda8a0b5429c41bef32a568915897d71322",
+      "manifest_source_sha256": "69c91c32963c4950d4fb28f0a8abae4c2ae7519d681262e3d58e50c0dc31c35d",
+      "javac_version": "javac 17.0.21",
+      "agent_class": "dev.psa.aliresyncqa.v2.AliResyncQaControl",
+      "production_mod": false
+    },
+    "client_stress": {
+      "events": [
+        {
+          "event": "registration_begin",
+          "observed_at_epoch_ms": 1794285041156,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 0,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_begin",
+          "observed_at_epoch_ms": 1794285041169,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "observed_at_epoch_ms": 1794285041182,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_complete",
+          "observed_at_epoch_ms": 1794285041274,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "6aa6ec73322275107ace9f49aca2eb1c0ba03bfbe428672a0628f9b27d1cf218",
+          "transport_indexed_key_nodes": 10375
+        },
+        {
+          "event": "registration_complete",
+          "observed_at_epoch_ms": 1794285042162,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "registration_begin",
+          "observed_at_epoch_ms": 1794285081634,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "render_stress_render_begin",
+          "observed_at_epoch_ms": 1794285081639,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "queued_wait_ms": 4
+        },
+        {
+          "event": "decode_begin",
+          "observed_at_epoch_ms": 1794285082644,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "observed_at_epoch_ms": 1794285082652,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_complete",
+          "observed_at_epoch_ms": 1794285082691,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "6aa6ec73322275107ace9f49aca2eb1c0ba03bfbe428672a0628f9b27d1cf218",
+          "transport_indexed_key_nodes": 10375
+        },
+        {
+          "event": "registration_complete",
+          "observed_at_epoch_ms": 1794285082869,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "render_stress_native_palette_read_complete",
+          "observed_at_epoch_ms": 1794285082869,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "palette_wait_ms": 1229,
+          "native_node_present": true
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "observed_at_epoch_ms": 1794285112602,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "registration_begin",
+          "observed_at_epoch_ms": 1794285137360,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-126",
+          "thread_id": 361,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "disconnect_stress_render_begin",
+          "observed_at_epoch_ms": 1794285137364,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "queued_wait_ms": 2
+        },
+        {
+          "event": "disconnect_stress_native_disconnect_requested",
+          "observed_at_epoch_ms": 1794285137367,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "registration_complete",
+          "observed_at_epoch_ms": 1794285138363,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-126",
+          "thread_id": 361,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        }
+      ],
+      "registration_success_logs": 3,
+      "registration_failure_logs": 0,
+      "decoded_generations": 2,
+      "failed_stress_actions": [],
+      "private_log_sha256": "c17836d76600bddc35eff6a3c3a0c15f79d22c4165934ff6f00ae372ae6c4879",
+      "actual_compat_sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+      "third_registration_scope": "Native disconnect requested while active_registrations1; registration completes after world is cleared without another decode. Not a third data-generation pass."
+    },
+    "server_original_prefix": {
+      "events": [
+        {
+          "event": "encode_prefix",
+          "run": "56d95ccd-aa19-42ce-8bd3-ca302576a4a6",
+          "epoch": 0,
+          "palette_identity": "6b9148c",
+          "thread": "Server thread",
+          "thread_id": 114,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "clear": false,
+            "decode": false,
+            "encode": false,
+            "getNodeId": false,
+            "getNodeById": false,
+            "getOrCreate": false
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "6aa6ec73322275107ace9f49aca2eb1c0ba03bfbe428672a0628f9b27d1cf218",
+          "transport_indexed_key_nodes": 0
+        }
+      ],
+      "actual_auths": 1,
+      "actual_entries": 1,
+      "crashes": 0
+    },
+    "native_disconnection_completed": {
+      "native_probe_sha256": "3b1710131a75528d9940c0e29a2719ea0a248c338ba287972f51e2b271814682",
+      "report": {
+        "run": "057175cd-26eb-49c9-9df9-ef64f20c7198",
+        "action": "disconnected_status",
+        "result": "native_world_and_player_absent",
+        "error_class": ""
+      }
+    },
+    "qa_before_stop": {
+      "qa_auths": 1,
+      "qa_entries": 1,
+      "qa_logouts": 1,
+      "qa_crashes": 0,
+      "qa_alive": true,
+      "production_running": true,
+      "production_mods": 313,
+      "production_inventory_sha256": "656ed8324d609a944102efca705bfab17e8143657be4c2760329eb05d8a14545"
+    },
+    "qa_normal_exit": {
+      "qa_process_exited": true,
+      "qa_auths": 1,
+      "qa_entries": 1,
+      "qa_logouts": 1,
+      "qa_crashes": 0,
+      "qa_stop_logged": true,
+      "qa_saved_all_dimensions": true,
+      "qa_final_log_sha256": "895a235ce0da5835a59799c8fd286837697a28cc2cf02af2304b3ea9eb89239c",
+      "production_running": true
+    },
+    "render_native_palette_wait_ms_with_explicit_qa_1000ms_delay": 1229,
+    "two_actual_decode_prefixes_match_server": true,
+    "limitations": [
+      "Explicit1000ms delay only in separately marked diagnostic; not production latency benchmark",
+      "One real authenticated QA client, not six-player concurrency",
+      "Disconnect requested while batch active; subsequent completion without third decode is cancellation/unload path, not third data generation",
+      "No exhaustive scheduling/deadlock proof and no actual trade GUI interaction"
+    ]
+  },
+  "reload_failure_causal_clarification": {
+    "loot_manager_error": "Missing replace/entries in original KubeJS global modifier override; native manager catches and logs at startup and reload, not the fatal reload abort",
+    "fatal_full_reload_abort": "SerializerDebugCommon.onPlayerDatapackSync sends to null player on all-player reload event; untouched in this ALI phase; next phase audit pending"
   }
 }

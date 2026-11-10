@@ -16,6 +16,27 @@ public final class AliCompatGateProbe {
                 catch (IllegalStateException expected) { System.out.println("UNAPPLIED_TRANSFORM_REFUSED"); return; }
                 throw new AssertionError("Missing transform accepted");
             }
+            case "runtime-refuse" -> {
+                try { AliCompatPlugin.requireWrapRuntime(); }
+                catch (IllegalStateException expected) { System.out.println("MISSING_OR_INACTIVE_WRAP_RUNTIME_REFUSED"); return; }
+                throw new AssertionError("Missing or inactive WrapMethod provider accepted");
+            }
+            case "merged-only", "completed-shape", "static-wrapped-shape" -> {
+                var shape = new org.objectweb.asm.tree.ClassNode();
+                String descriptor = "(Ldev/emi/emi/api/EmiRegistry;[B)V";
+                shape.methods.add(new org.objectweb.asm.tree.MethodNode(2, "registerData", descriptor, null, null));
+                shape.methods.add(new org.objectweb.asm.tree.MethodNode(2, "psa$registerOnePaletteGeneration",
+                    "(Ldev/emi/emi/api/EmiRegistry;[BLcom/llamalad7/mixinextras/injector/wrapoperation/Operation;)V", null, null));
+                if (!args[0].equals("merged-only")) shape.methods.add(new org.objectweb.asm.tree.MethodNode(
+                    args[0].equals("static-wrapped-shape") ? 10 : 2, "registerData$mixinextras$wrapped", descriptor, null, null));
+                try { AliCompatPlugin.requireRegistrationShape(shape); }
+                catch (IllegalStateException expected) {
+                    if (args[0].equals("completed-shape")) throw expected;
+                    System.out.println("UNCOMPLETED_WRAPPER_SHAPE_REFUSED"); return;
+                }
+                if (!args[0].equals("completed-shape")) throw new AssertionError("Uncompleted wrapper shape accepted");
+                System.out.println("COMPLETED_METHOD_METADATA_ACCEPTED_NOT_NATIVE_EXECUTION"); return;
+            }
             case "partial-node", "partial-builder" -> {
                 var plugin = new AliCompatPlugin();
                 if (args[0].equals("partial-node"))
@@ -63,7 +84,9 @@ public final class AliCompatGateProbe {
                     throw new AssertionError("Missing batch wrapper accepted");
                 }
                 plugin.postApply(AliCompatPlugin.REGISTRATION_TARGET, null, "dev.psa.alicompat.mixin.AliDataRegistrationMixin", null);
-                AliCompatPlugin.requireApplied(); System.out.println("ALL_CALLBACKS_ACCEPTED_SIX_MONITORS"); return;
+                try { AliCompatPlugin.requireApplied(); }
+                catch (IllegalStateException expected) { System.out.println("CALLBACKS_WITHOUT_DEFINED_WRAPPER_REFUSED"); return; }
+                throw new AssertionError("Callbacks alone claimed completed wrapper");
             }
             default -> throw new IllegalArgumentException("Known guard case required");
         }

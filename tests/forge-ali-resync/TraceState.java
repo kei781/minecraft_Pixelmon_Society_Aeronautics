@@ -18,6 +18,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class TraceState {
     private static final String RUN = UUID.randomUUID().toString();
     private static final AtomicInteger sequence = new AtomicInteger();
+    private static final java.util.concurrent.atomic.AtomicReference<String> armedStress = new java.util.concurrent.atomic.AtomicReference<>();
     private static final ConcurrentHashMap<TooltipNodePalette, Stats> stats = new ConcurrentHashMap<>();
     private static final Set<String> METHODS = Set.of("decode", "encode", "getOrCreate", "getNodeId", "getNodeById", "clear");
     private static final class Stats {
@@ -70,6 +71,63 @@ public final class TraceState {
         if ((state.decoding && state.decodeThread.get() != thread)
                 || (previous > 0 && state.registrationThread.get() != thread)) state.overlap = true;
         save(event("registration_begin", palette));
+        String stress = armedStress.getAndSet(null);
+        if (stress != null) {
+            scheduleStress(stress, palette);
+            // Explicit QA-only artificial delay, never part of the production compatibility jar.
+            // Do not wait for the render thread while holding its requested palette monitor.
+            java.util.concurrent.locks.LockSupport.parkNanos(java.util.concurrent.TimeUnit.SECONDS.toNanos(1));
+        }
+    }
+
+    public static void armStress(String action) {
+        if (!List.of("render", "disconnect").contains(action) || !armedStress.compareAndSet(null, action))
+            throw new IllegalStateException("One closed QA stress action required");
+    }
+
+    private static void scheduleStress(String action, TooltipNodePalette palette) {
+        try {
+            ClassLoader loader = palette.getClass().getClassLoader();
+            Class<?> type = loader.loadClass("net.minecraft.client.Minecraft");
+            Object client = type.getMethod("m_91087_").invoke(null);
+            long queued = System.nanoTime();
+            ((java.util.concurrent.Executor) client).execute(() -> {
+                var started = event(action + "_stress_render_begin", palette);
+                started.addProperty("queued_wait_ms", (System.nanoTime() - queued) / 1000000); save(started);
+                try {
+                    if (action.equals("render")) {
+                        long before = System.nanoTime(); Object node = palette.getNodeById(0);
+                        var done = event("render_stress_native_palette_read_complete", palette);
+                        done.addProperty("palette_wait_ms", (System.nanoTime() - before) / 1000000);
+                        done.addProperty("native_node_present", node != null); save(done);
+                    } else {
+                        Class<?> listener = loader.loadClass("net.minecraft.client.multiplayer.ClientPacketListener");
+                        Object packetListener = uniqueMethod(type, listener).invoke(client);
+                        Class<?> connection = loader.loadClass("net.minecraft.network.Connection");
+                        Object network = uniqueMethod(listener, connection).invoke(packetListener);
+                        Class<?> component = loader.loadClass("net.minecraft.network.chat.Component");
+                        Object reason = component.getMethod("m_237113_", String.class).invoke(null, "PSA owned ALI registration disconnect QA");
+                        uniqueMethod(connection, void.class, component).invoke(network, reason);
+                        save(event("disconnect_stress_native_disconnect_requested", palette));
+                    }
+                } catch (Throwable failure) {
+                    while (failure instanceof java.lang.reflect.InvocationTargetException && failure.getCause() != null) failure = failure.getCause();
+                    if (failure instanceof VirtualMachineError fatal) throw fatal;
+                    if (failure instanceof ThreadDeath fatal) throw fatal;
+                    var failed = event(action + "_stress_failed", palette);
+                    failed.addProperty("error_class", failure.getClass().getName()); save(failed);
+                }
+            });
+        } catch (ReflectiveOperationException failure) {
+            throw new IllegalStateException("Pinned native QA stress API required", failure);
+        }
+    }
+
+    private static java.lang.reflect.Method uniqueMethod(Class<?> owner, Class<?> result, Class<?>... arguments) {
+        var methods = java.util.Arrays.stream(owner.getMethods()).filter(method -> !java.lang.reflect.Modifier.isStatic(method.getModifiers())
+            && method.getReturnType() == result && java.util.Arrays.equals(method.getParameterTypes(), arguments)).toList();
+        if (methods.size() != 1) throw new IllegalStateException("Unique pinned native QA API required");
+        return methods.get(0);
     }
     public static void endRegistration() {
         var registry = CorePluginManager.INSTANCE.clientRegistry;
@@ -98,6 +156,7 @@ public final class TraceState {
 
     private static JsonObject event(String kind, TooltipNodePalette palette) {
         var state = state(palette); var data = new JsonObject(); data.addProperty("event", kind);
+        data.addProperty("observed_at_epoch_ms", System.currentTimeMillis());
         data.addProperty("run", RUN); data.addProperty("epoch", state.epoch.get());
         data.addProperty("palette_identity", Integer.toHexString(System.identityHashCode(palette)));
         data.addProperty("thread", Thread.currentThread().getName()); data.addProperty("thread_id", Thread.currentThread().getId());

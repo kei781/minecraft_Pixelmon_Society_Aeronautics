@@ -7,6 +7,10 @@ import java.util.HexFormat;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicBoolean;
+import com.llamalad7.mixinextras.MixinExtrasBootstrap;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import org.spongepowered.asm.mixin.injection.struct.InjectionInfo;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
@@ -19,6 +23,46 @@ public final class AliCompatPlugin implements IMixinConfigPlugin {
     static final String PALETTE_TARGET = "com.yanny.aci.tooltip.TooltipNodePalette";
     static final String REGISTRATION_TARGET = "com.yanny.ali.emi.compatibility.EmiCompatibility";
     private static final AtomicInteger applied = new AtomicInteger();
+    private static final AtomicBoolean registrationVerified = new AtomicBoolean();
+
+    static void requireWrapRuntime() {
+        try {
+            if (!"0.5.4".equals(MixinExtrasBootstrap.getVersion())
+                    || !InjectionInfo.getRegisteredAnnotations().contains(WrapMethod.class))
+                throw new IllegalStateException("Pinned active MixinExtras WrapMethod injector required");
+        } catch (LinkageError missingRuntime) {
+            throw new IllegalStateException("Pinned active MixinExtras WrapMethod injector required", missingRuntime);
+        }
+    }
+
+    static void requireRegistrationShape(ClassNode node) {
+        String descriptor = "(Ldev/emi/emi/api/EmiRegistry;[B)V";
+        String handlerDescriptor = "(Ldev/emi/emi/api/EmiRegistry;[BLcom/llamalad7/mixinextras/injector/wrapoperation/Operation;)V";
+        int original = 0, wrapped = 0, handler = 0;
+        for (var method : node.methods) {
+            boolean instanceBody = (method.access & (Opcodes.ACC_STATIC | Opcodes.ACC_NATIVE | Opcodes.ACC_ABSTRACT)) == 0;
+            if (method.name.equals("registerData") && method.desc.equals(descriptor) && instanceBody) original++;
+            if (method.name.startsWith("registerData$mixinextras$wrapped") && method.desc.equals(descriptor)
+                    && instanceBody && (method.access & Opcodes.ACC_PRIVATE) != 0) wrapped++;
+            if (method.name.contains("psa$registerOnePaletteGeneration") && method.desc.equals(handlerDescriptor)
+                    && instanceBody && (method.access & Opcodes.ACC_PRIVATE) != 0) handler++;
+        }
+        if (original != 1 || wrapped != 1 || handler != 1)
+            throw new IllegalStateException("Completed native registration wrapper required, not only a merged handler");
+    }
+
+    static void requireCompletedRegistration(Class<?> target) {
+        requireWrapRuntime();
+        if (!target.getName().equals(REGISTRATION_TARGET)) throw new IllegalStateException("Exact registration target required");
+        // WrapMethod's late extension runs AFTER mixin postApply. Inspect the actually
+        // defined class after Class.forName returns, rather than claiming postApply is proof.
+        var shape = new ClassNode();
+        for (var method : target.getDeclaredMethods())
+            shape.methods.add(new org.objectweb.asm.tree.MethodNode(method.getModifiers(), method.getName(),
+                org.objectweb.asm.Type.getMethodDescriptor(method), null, null));
+        requireRegistrationShape(shape);
+        registrationVerified.set(true);
+    }
 
     static void requirePinnedInput() {
         try {
@@ -38,7 +82,8 @@ public final class AliCompatPlugin implements IMixinConfigPlugin {
     }
 
     static void requireApplied() {
-        if (applied.get() != 15) throw new IllegalStateException("All four exact ALI tooltip transformations required");
+        if (applied.get() != 15 || !registrationVerified.get())
+            throw new IllegalStateException("All four exact ALI tooltip transformations and completed batch wrapper required");
     }
 
     @Override public void onLoad(String name) { requirePinnedInput(); }

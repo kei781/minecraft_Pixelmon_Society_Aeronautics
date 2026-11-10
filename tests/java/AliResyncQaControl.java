@@ -1,4 +1,4 @@
-package dev.psa.aliresyncqa.v1;
+package dev.psa.aliresyncqa.v2;
 
 import com.sun.tools.attach.VirtualMachine;
 import java.lang.instrument.Instrumentation;
@@ -13,7 +13,7 @@ import java.util.concurrent.Executor;
 
 /** Closed native QA actions on the explicitly marked local resync instance. No arbitrary targets or auth access. */
 public final class AliResyncQaControl {
-    private static final Set<String> ACTIONS = Set.of("connect_qa", "before_reload", "after_reload", "final", "request_native_reload");
+    private static final Set<String> ACTIONS = Set.of("connect_qa", "before_reload", "after_reload", "final", "request_native_reload", "arm_render_reload", "arm_disconnect_reload", "disconnected_status");
     public static void main(String[] args) throws Exception {
         if (args.length != 2 || !args[0].matches("[1-9][0-9]*") || !ACTIONS.contains(args[1]))
             throw new IllegalArgumentException("Owned PID and closed resync action required");
@@ -61,10 +61,29 @@ public final class AliResyncQaControl {
                     write(directory, run, action, "connect_requested", "");
                     return;
                 }
+                if (action.equals("disconnected_status")) {
+                    if (field(client, "net.minecraft.client.multiplayer.ClientLevel") != null
+                            || field(client, "net.minecraft.client.player.LocalPlayer") != null)
+                        throw new IllegalStateException("Native disconnection not completed");
+                    write(directory, run, action, "native_world_and_player_absent", ""); return;
+                }
                 if (field(client, "net.minecraft.client.multiplayer.ClientLevel") == null
                         || field(client, "net.minecraft.client.player.LocalPlayer") == null)
                     throw new IllegalStateException("Actual joined QA world required");
-                if (action.equals("request_native_reload")) {
+                if (action.equals("request_native_reload") || action.startsWith("arm_")) {
+                    if (action.startsWith("arm_")) {
+                        Class<?> dataType = loader.loadClass("net.minecraft.client.multiplayer.ServerData");
+                        var getters = Arrays.stream(minecraft.getMethods()).filter(method -> !Modifier.isStatic(method.getModifiers())
+                            && method.getReturnType() == dataType && method.getParameterCount() == 0).toList();
+                        if (getters.size() != 1) throw new IllegalStateException("Unique current server API required");
+                        Object current = getters.get(0).invoke(client); boolean ownedTarget = false;
+                        if (current != null) for (var value : dataType.getFields())
+                            if (value.getType() == String.class && !Modifier.isStatic(value.getModifiers())
+                                    && "127.0.0.1:25574".equals(value.get(current))) ownedTarget = true;
+                        if (!ownedTarget) throw new IllegalStateException("Fixed loopback QA endpoint required");
+                        loader.loadClass("dev.psa.aliresync.TraceState").getMethod("armStress", String.class)
+                            .invoke(null, action.equals("arm_render_reload") ? "render" : "disconnect");
+                    }
                     Class<?> managerType = loader.loadClass("com.yanny.aci.manager.CorePluginManager");
                     Object manager = managerType.getField("INSTANCE").get(null);
                     Object registry = managerType.getField("clientRegistry").get(manager);

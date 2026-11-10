@@ -28,7 +28,7 @@ def build(java_home, output, kind="control"):
     if kind == "ali-resync":
         source = ROOT / "tests/java/AliResyncQaControl.java"
         manifest_path = ROOT / "tests/java/ali-resync-qa-manifest.mf"
-        agent_class = "dev.psa.aliresyncqa.v1.AliResyncQaControl"
+        agent_class = "dev.psa.aliresyncqa.v2.AliResyncQaControl"
     javac = Path(java_home) / "bin/javac"
     output = Path(output)
     if output.exists() or output.is_symlink() or output.suffix != ".jar":

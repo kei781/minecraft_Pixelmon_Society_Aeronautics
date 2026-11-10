@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Agent-Class: dev.psa.aliresyncqa.v1.AliResyncQaControl
+Agent-Class: dev.psa.aliresyncqa.v2.AliResyncQaControl
 Can-Redefine-Classes: false
 Can-Retransform-Classes: false

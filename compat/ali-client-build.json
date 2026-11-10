@@ -1,11 +1,12 @@
 {
   "files": 11,
-  "sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+  "sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+  "bytes": 11204,
   "entry_sha256": {
     "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
     "META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
-    "dev/psa/alicompat/AliClientCompat.class": "9819176fe19061bfe62d72e3ece709e94db3ad2362e00207b76dd0e2f39f1d7e",
-    "dev/psa/alicompat/AliCompatPlugin.class": "971f2bdf10797b67efc7275ccdd62f18e126b526b6fd4fb257a8a5ab4ddc0cc3",
+    "dev/psa/alicompat/AliClientCompat.class": "33c058b426b9f7d46260cf7954c0f7f15b7ae84ce9972a6f54b7201641c86c3e",
+    "dev/psa/alicompat/AliCompatPlugin.class": "aeac06023d4ca99aff5659c1937b919c5d31241d7532d91f95d6209054876e3d",
     "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
     "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class": "196464b532bccdc5c52265d00e22d1916f45b1bb5fbd83cd420cd68d87f81544",
     "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class": "75fa035c8c7fb0c4dc979b0f1d9dd64962405dcd9469488aa5dceb03da0bb179",
@@ -14,10 +15,9 @@
     "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
     "psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
   },
-  "bytes": 9868,
   "authored_source_sha256": {
-    "compat/ali-client/AliClientCompat.java": "deaad2f0271b83d530655b83f151858965e3d191bcefbdaa23e80e0c8381f049",
-    "compat/ali-client/AliCompatPlugin.java": "316811e68083c690d00cf451f05dc89523d8e6afd8d6ff52919b2e160a91cf80",
+    "compat/ali-client/AliClientCompat.java": "4b7e2fac7481cd9667655e6faf4a87c155ebdb99816755e8b7e75a8fea1e9db4",
+    "compat/ali-client/AliCompatPlugin.java": "3496ef51637f87e384fd8d644f40cef9fa6776b6ed05c1b6d53345b233fe41f0",
     "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
     "compat/ali-client/mixin/AliDataRegistrationMixin.java": "16b461f503ad3c54d2b7c5e841cf157a8117364722c9b03f1cadb86f241b21d6",
     "compat/ali-client/mixin/AliPaletteSynchronizationMixin.java": "fa0f5bb10151704246b2e229e8db898e1bd588e2d5e699cb92a5442c96a1da9d",
@@ -27,6 +27,10 @@
     "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
     "compat/ali-client/resources/psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
   },
+  "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
+  "pinned_emi_compile_sha256": "92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72",
+  "pinned_mixinextras_common_compile_sha256": "e09a7e37e2044f7b0d0e248d55ca9b590b03c3b03636549523b50ac69afdd1aa",
+  "gradle_recipe_sha256": "656879f70c5ac8a06a2623fd6098470ef83e5d568c07e6638e5dab24c3170f13",
   "entries": [
     "META-INF/MANIFEST.MF",
     "META-INF/mods.toml",
@@ -40,9 +44,5 @@
     "pack.mcmeta",
     "psa-ali-client.mixins.json"
   ],
-  "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
-  "pinned_emi_compile_sha256": "92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72",
-  "pinned_mixinextras_common_compile_sha256": "e09a7e37e2044f7b0d0e248d55ca9b590b03c3b03636549523b50ac69afdd1aa",
-  "gradle_recipe_sha256": "656879f70c5ac8a06a2623fd6098470ef83e5d568c07e6638e5dab24c3170f13",
-  "scope": "Authored standalone client compatibility with original factory access corrections and shared native palette monitors; native same-session resync verification and independent rereview pending"
+  "scope": "Authored client compatibility with active pinned WrapMethod injector and actually defined wrapper metadata checked in mandatory constructor; independent R3 review pending"
 }
