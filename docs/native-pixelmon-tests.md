@@ -23,7 +23,9 @@ maximum query, with separate 22-case controls. The separate
 entry step in the sampled original assertion and distinguish it from direct
 native hazard-effect checks. They do not make that original assertion pass
 or verify the complete player switch path. The full native suite remains
-failed, and the original-only Dancer/Shell Trap variations are still open.
+failed. Dancer/Shell Trap failures have appeared in both isolated and integrated
+samples; stock Pixelmon-only repetition also reproduced them before this addon.
+Those variations remain open, and later successes do not replace earlier failures.
 After independent review, the transformation gate and interrupted-result
 inventory were strengthened. The 26,100-byte diagnostic with SHA256
 `861b616c6efcfba7dd56b9fd45b9abd212516b5efa2e6b2ce3ac70aed6303489`
