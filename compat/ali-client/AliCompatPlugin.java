@@ -1,0 +1,123 @@
+package dev.psa.alicompat;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.util.HexFormat;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicBoolean;
+import com.llamalad7.mixinextras.MixinExtrasBootstrap;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import org.spongepowered.asm.mixin.injection.struct.InjectionInfo;
+import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.tree.ClassNode;
+import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
+import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
+
+/** Also checked by the mandatory mod constructor, not only the Mixin plugin. */
+public final class AliCompatPlugin implements IMixinConfigPlugin {
+    static final String TARGET = "com.yanny.aci.tooltip.TooltipNode";
+    static final String BUILDER_TARGET = "com.yanny.aci.tooltip.TooltipBuilder";
+    static final String PALETTE_TARGET = "com.yanny.aci.tooltip.TooltipNodePalette";
+    static final String REGISTRATION_TARGET = "com.yanny.ali.emi.compatibility.EmiCompatibility";
+    private static final AtomicInteger applied = new AtomicInteger();
+    private static final AtomicBoolean registrationVerified = new AtomicBoolean();
+
+    static void requireWrapRuntime() {
+        try {
+            if (!"0.5.4".equals(MixinExtrasBootstrap.getVersion())
+                    || !InjectionInfo.getRegisteredAnnotations().contains(WrapMethod.class))
+                throw new IllegalStateException("Pinned active MixinExtras WrapMethod injector required");
+        } catch (LinkageError missingRuntime) {
+            throw new IllegalStateException("Pinned active MixinExtras WrapMethod injector required", missingRuntime);
+        }
+    }
+
+    static void requireRegistrationShape(ClassNode node) {
+        String descriptor = "(Ldev/emi/emi/api/EmiRegistry;[B)V";
+        String handlerDescriptor = "(Ldev/emi/emi/api/EmiRegistry;[BLcom/llamalad7/mixinextras/injector/wrapoperation/Operation;)V";
+        int original = 0, wrapped = 0, handler = 0;
+        for (var method : node.methods) {
+            boolean instanceBody = (method.access & (Opcodes.ACC_STATIC | Opcodes.ACC_NATIVE | Opcodes.ACC_ABSTRACT)) == 0;
+            if (method.name.equals("registerData") && method.desc.equals(descriptor) && instanceBody) original++;
+            if (method.name.startsWith("registerData$mixinextras$wrapped") && method.desc.equals(descriptor)
+                    && instanceBody && (method.access & Opcodes.ACC_PRIVATE) != 0) wrapped++;
+            if (method.name.contains("psa$registerOnePaletteGeneration") && method.desc.equals(handlerDescriptor)
+                    && instanceBody && (method.access & Opcodes.ACC_PRIVATE) != 0) handler++;
+        }
+        if (original != 1 || wrapped != 1 || handler != 1)
+            throw new IllegalStateException("Completed native registration wrapper required, not only a merged handler");
+    }
+
+    static void requireCompletedRegistration(Class<?> target) {
+        requireWrapRuntime();
+        if (!target.getName().equals(REGISTRATION_TARGET)) throw new IllegalStateException("Exact registration target required");
+        // WrapMethod's late extension runs AFTER mixin postApply. Inspect the actually
+        // defined class after Class.forName returns, rather than claiming postApply is proof.
+        var shape = new ClassNode();
+        for (var method : target.getDeclaredMethods())
+            shape.methods.add(new org.objectweb.asm.tree.MethodNode(method.getModifiers(), method.getName(),
+                org.objectweb.asm.Type.getMethodDescriptor(method), null, null));
+        requireRegistrationShape(shape);
+        registrationVerified.set(true);
+    }
+
+    static void requirePinnedInput() {
+        try {
+            Path input = Path.of("mods/AdvancedLootInfo-forge-1.20.1-1.12.0.jar");
+            if (!Files.isRegularFile(input) || Files.isSymbolicLink(input))
+                throw new IllegalStateException("Regular pinned ALI input required");
+            var hash = MessageDigest.getInstance("SHA-256");
+            try (var stream = Files.newInputStream(input)) {
+                byte[] block = new byte[65536]; int count;
+                while ((count = stream.read(block)) != -1) hash.update(block, 0, count);
+            }
+            if (!HexFormat.of().formatHex(hash.digest()).equals("6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"))
+                throw new IllegalStateException("ALI binary identity differs");
+        } catch (java.io.IOException | java.security.NoSuchAlgorithmException failure) {
+            throw new IllegalStateException("Pinned ALI compatibility refused", failure);
+        }
+    }
+
+    static void requireApplied() {
+        if (applied.get() != 15 || !registrationVerified.get())
+            throw new IllegalStateException("All four exact ALI tooltip transformations and completed batch wrapper required");
+    }
+
+    @Override public void onLoad(String name) { requirePinnedInput(); }
+    @Override public String getRefMapperConfig() { return null; }
+    @Override public boolean shouldApplyMixin(String target, String mixin) { return true; }
+    @Override public void acceptTargets(Set<String> mine, Set<String> other) { }
+    @Override public List<String> getMixins() { return null; }
+    @Override public void preApply(String target, ClassNode node, String mixin, IMixinInfo info) { }
+    @Override public void postApply(String target, ClassNode node, String mixin, IMixinInfo info) {
+        int bit;
+        if (TARGET.equals(target) && "dev.psa.alicompat.mixin.AliTooltipPaletteMixin".equals(mixin)) bit = 1;
+        else if (BUILDER_TARGET.equals(target) && "dev.psa.alicompat.mixin.AliTooltipBuilderPaletteMixin".equals(mixin)) bit = 2;
+        else if (REGISTRATION_TARGET.equals(target) && "dev.psa.alicompat.mixin.AliDataRegistrationMixin".equals(mixin)) bit = 8;
+        else if (PALETTE_TARGET.equals(target) && "dev.psa.alicompat.mixin.AliPaletteSynchronizationMixin".equals(mixin)) {
+            // Native decode calls getOrCreate on this same object: JVM monitors are reentrant.
+            // Guard readers, writers and clear with one monitor; leave every method body intact.
+            Set<String> required = Set.of(
+                "getOrCreate(Lcom/yanny/aci/tooltip/CacheKey;)Lcom/yanny/aci/tooltip/TooltipNode;",
+                "getNodeId(Lcom/yanny/aci/tooltip/TooltipNode;)I",
+                "getNodeById(I)Lcom/yanny/aci/tooltip/TooltipNode;",
+                "encode(Lcom/yanny/aci/api/ICoreServerUtils;Lnet/minecraft/network/FriendlyByteBuf;)V",
+                "decode(Lcom/yanny/aci/api/ICoreClientUtils;Lnet/minecraft/network/FriendlyByteBuf;)V",
+                "clear()V");
+            var found = new java.util.HashSet<String>();
+            for (var method : node.methods) if (required.contains(method.name + method.desc)) {
+                if ((method.access & (Opcodes.ACC_STATIC | Opcodes.ACC_NATIVE | Opcodes.ACC_ABSTRACT)) != 0
+                        || !found.add(method.name + method.desc))
+                    throw new IllegalStateException("Unexpected ALI palette method shape");
+                method.access |= Opcodes.ACC_SYNCHRONIZED;
+            }
+            if (!found.equals(required)) throw new IllegalStateException("All six pinned palette methods required");
+            bit = 4;
+        }
+        else throw new IllegalStateException("Unexpected ALI compatibility transformation");
+        applied.getAndUpdate(previous -> previous | bit);
+    }
+}

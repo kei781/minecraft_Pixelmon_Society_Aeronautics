@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.psa.jadeprobe.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": ["JadeBlockRequestProbeMixin", "JadeEntityRequestProbeMixin"],
+  "client": ["JadeQueryProbeMixin"],
+  "injectors": {"defaultRequire": 1}
+}

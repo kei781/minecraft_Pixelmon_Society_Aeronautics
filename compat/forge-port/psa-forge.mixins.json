@@ -7,12 +7,22 @@
   "mixins": [
     "LeavesBeGoneChunkMixin",
     "PixelmonShaderCodecMixin",
-    "PixelmonShaderColorMixin"
+    "PixelmonShaderColorMixin",
+    "PixelmonPlayerDataOrderMixin",
+    "TankCartDataOwnerMixin",
+    "TankCartMenuDataMixin",
+    "BatteryCartMenuDataMixin",
+    "BatteryCartMenuTypeMixin",
+    "BountifulMenuDataMixin",
+    "JadeBlockAccessorCoordinatesMixin",
+    "PixelmonDynamaxHitpointsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "client": [
-    "PixelmonMenuCompatMixin"
+    "PixelmonMenuCompatMixin",
+    "JadeRayTracingCoordinatesMixin",
+    "JadeDistanceCoordinatesMixin"
   ]
 }

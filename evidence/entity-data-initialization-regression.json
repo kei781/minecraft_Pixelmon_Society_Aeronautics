@@ -1,0 +1,524 @@
+{
+  "scope": "counterfactual initialization-order regression on full313-mod server, not authenticated client gameplay",
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "java": "17.0.21",
+  "cases": [
+    {
+      "case": 1,
+      "patched": false,
+      "requested_player_order": "carryon-first",
+      "requested_cart_order": "tank-first",
+      "player_schema": {
+        "entity_class": "net.minecraftforge.common.util.FakePlayer",
+        "fields": [
+          {
+            "owner": "tschipp.carryon.common.carry.CarryOnDataManager",
+            "field": "CARRY_DATA_KEY",
+            "id": 22,
+            "serializer": "compound",
+            "actual_value_class": "net.minecraft.nbt.CompoundTag"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwPokeballs",
+            "id": 23,
+            "serializer": "string",
+            "actual_value_class": "java.lang.String"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMegaItem",
+            "id": 24,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMegaItemsUnlocked",
+            "id": 25,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwShinyCharm",
+            "id": 26,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwOvalCharm",
+            "id": 27,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwExpCharm",
+            "id": 28,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwCatchingCharm",
+            "id": 29,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMarkCharm",
+            "id": 30,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwHween",
+            "id": 31,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          }
+        ]
+      },
+      "minecart_schemas": [
+        {
+          "entity_class": "com.alc.moreminecarts.entities.FlagCartEntity",
+          "fields": [
+            {
+              "owner": "com.alc.moreminecarts.entities.FlagCartEntity",
+              "field": "DISPLAY_TYPE",
+              "id": 15,
+              "serializer": "other",
+              "actual_value_class": "java.lang.Integer"
+            }
+          ],
+          "entity_type": "moreminecarts:flag_cart"
+        },
+        {
+          "entity_class": "com.alc.moreminecarts.entities.TankCartEntity",
+          "fields": [
+            {
+              "owner": "com.alc.moreminecarts.entities.TankCartEntity",
+              "field": "FLUID_TAG",
+              "id": 14,
+              "serializer": "compound",
+              "actual_value_class": "net.minecraft.nbt.CompoundTag"
+            }
+          ],
+          "entity_type": "moreminecarts:tank_cart"
+        }
+      ],
+      "default_stack_passed": 17239,
+      "default_stack_failed": 0,
+      "report_sha256": "0b1d5d63b2eb5f496721baec7b113962ea876ca646a97d35c587aa846a7969ab",
+      "private_log_sha256": "cf0a8aed961cb7c390d13a48103063d362673920543905a2c872c8a0587f7872",
+      "test_probe_sha256": "bd5c4fd0121b64bf856970e6caf3a6b3111cb53a1e1676c2d82001f214bf96da",
+      "port_sha256": "a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74",
+      "normal_exit_code": 0,
+      "all_dimensions_saved": true
+    },
+    {
+      "case": 2,
+      "patched": false,
+      "requested_player_order": "pixelmon-first",
+      "requested_cart_order": "flag-first",
+      "player_schema": {
+        "entity_class": "net.minecraftforge.common.util.FakePlayer",
+        "fields": [
+          {
+            "owner": "tschipp.carryon.common.carry.CarryOnDataManager",
+            "field": "CARRY_DATA_KEY",
+            "id": 31,
+            "serializer": "compound",
+            "actual_value_class": "net.minecraft.nbt.CompoundTag"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwPokeballs",
+            "id": 22,
+            "serializer": "string",
+            "actual_value_class": "java.lang.String"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMegaItem",
+            "id": 23,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMegaItemsUnlocked",
+            "id": 24,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwShinyCharm",
+            "id": 25,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwOvalCharm",
+            "id": 26,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwExpCharm",
+            "id": 27,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwCatchingCharm",
+            "id": 28,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMarkCharm",
+            "id": 29,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwHween",
+            "id": 30,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          }
+        ]
+      },
+      "minecart_schemas": [
+        {
+          "entity_class": "com.alc.moreminecarts.entities.FlagCartEntity",
+          "fields": [
+            {
+              "owner": "com.alc.moreminecarts.entities.FlagCartEntity",
+              "field": "DISPLAY_TYPE",
+              "id": 14,
+              "serializer": "other",
+              "actual_value_class": "java.lang.Integer"
+            }
+          ],
+          "entity_type": "moreminecarts:flag_cart"
+        },
+        {
+          "entity_class": "com.alc.moreminecarts.entities.TankCartEntity",
+          "fields": [
+            {
+              "owner": "com.alc.moreminecarts.entities.TankCartEntity",
+              "field": "FLUID_TAG",
+              "id": 15,
+              "serializer": "compound",
+              "actual_value_class": "net.minecraft.nbt.CompoundTag"
+            }
+          ],
+          "entity_type": "moreminecarts:tank_cart"
+        }
+      ],
+      "default_stack_passed": 17239,
+      "default_stack_failed": 0,
+      "report_sha256": "88081de2be929af9c79e2c41f050a7b9b73fc31a48f710cfd83e74f38a6f6dd0",
+      "private_log_sha256": "bef9679106f218db2b8a4159c03b6ef7d1cdf10f0eefc9742e9996f433099c16",
+      "test_probe_sha256": "bd5c4fd0121b64bf856970e6caf3a6b3111cb53a1e1676c2d82001f214bf96da",
+      "port_sha256": "a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74",
+      "normal_exit_code": 0,
+      "all_dimensions_saved": true
+    },
+    {
+      "case": 3,
+      "patched": true,
+      "requested_player_order": "carryon-first",
+      "requested_cart_order": "tank-first",
+      "player_schema": {
+        "entity_class": "net.minecraftforge.common.util.FakePlayer",
+        "fields": [
+          {
+            "owner": "tschipp.carryon.common.carry.CarryOnDataManager",
+            "field": "CARRY_DATA_KEY",
+            "id": 22,
+            "serializer": "compound",
+            "actual_value_class": "net.minecraft.nbt.CompoundTag"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwPokeballs",
+            "id": 23,
+            "serializer": "string",
+            "actual_value_class": "java.lang.String"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMegaItem",
+            "id": 24,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMegaItemsUnlocked",
+            "id": 25,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwShinyCharm",
+            "id": 26,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwOvalCharm",
+            "id": 27,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwExpCharm",
+            "id": 28,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwCatchingCharm",
+            "id": 29,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMarkCharm",
+            "id": 30,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwHween",
+            "id": 31,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          }
+        ]
+      },
+      "minecart_schemas": [
+        {
+          "entity_class": "com.alc.moreminecarts.entities.FlagCartEntity",
+          "fields": [
+            {
+              "owner": "com.alc.moreminecarts.entities.FlagCartEntity",
+              "field": "DISPLAY_TYPE",
+              "id": 14,
+              "serializer": "other",
+              "actual_value_class": "java.lang.Integer"
+            }
+          ],
+          "entity_type": "moreminecarts:flag_cart"
+        },
+        {
+          "entity_class": "com.alc.moreminecarts.entities.TankCartEntity",
+          "fields": [
+            {
+              "owner": "com.alc.moreminecarts.entities.TankCartEntity",
+              "field": "FLUID_TAG",
+              "id": 14,
+              "serializer": "compound",
+              "actual_value_class": "net.minecraft.nbt.CompoundTag"
+            }
+          ],
+          "entity_type": "moreminecarts:tank_cart"
+        }
+      ],
+      "default_stack_passed": 17239,
+      "default_stack_failed": 0,
+      "report_sha256": "533e93091d20d1d6cea29c223a801c93d0425ab68b58a0bff4deda74d5680ec2",
+      "private_log_sha256": "32127cc8627d2d4c1aec81a3beb5cb7f3e7b20bcef48a8cdc39c88186715ce6b",
+      "test_probe_sha256": "bd5c4fd0121b64bf856970e6caf3a6b3111cb53a1e1676c2d82001f214bf96da",
+      "port_sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+      "normal_exit_code": 0,
+      "all_dimensions_saved": true
+    },
+    {
+      "case": 4,
+      "patched": true,
+      "requested_player_order": "pixelmon-first",
+      "requested_cart_order": "flag-first",
+      "player_schema": {
+        "entity_class": "net.minecraftforge.common.util.FakePlayer",
+        "fields": [
+          {
+            "owner": "tschipp.carryon.common.carry.CarryOnDataManager",
+            "field": "CARRY_DATA_KEY",
+            "id": 22,
+            "serializer": "compound",
+            "actual_value_class": "net.minecraft.nbt.CompoundTag"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwPokeballs",
+            "id": 23,
+            "serializer": "string",
+            "actual_value_class": "java.lang.String"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMegaItem",
+            "id": 24,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMegaItemsUnlocked",
+            "id": 25,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwShinyCharm",
+            "id": 26,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwOvalCharm",
+            "id": 27,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwExpCharm",
+            "id": 28,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwCatchingCharm",
+            "id": 29,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwMarkCharm",
+            "id": 30,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          },
+          {
+            "owner": "com.pixelmonmod.pixelmon.listener.EntityPlayerExtension",
+            "field": "dwHween",
+            "id": 31,
+            "serializer": "byte",
+            "actual_value_class": "java.lang.Byte"
+          }
+        ]
+      },
+      "minecart_schemas": [
+        {
+          "entity_class": "com.alc.moreminecarts.entities.FlagCartEntity",
+          "fields": [
+            {
+              "owner": "com.alc.moreminecarts.entities.FlagCartEntity",
+              "field": "DISPLAY_TYPE",
+              "id": 14,
+              "serializer": "other",
+              "actual_value_class": "java.lang.Integer"
+            }
+          ],
+          "entity_type": "moreminecarts:flag_cart"
+        },
+        {
+          "entity_class": "com.alc.moreminecarts.entities.TankCartEntity",
+          "fields": [
+            {
+              "owner": "com.alc.moreminecarts.entities.TankCartEntity",
+              "field": "FLUID_TAG",
+              "id": 14,
+              "serializer": "compound",
+              "actual_value_class": "net.minecraft.nbt.CompoundTag"
+            }
+          ],
+          "entity_type": "moreminecarts:tank_cart"
+        }
+      ],
+      "default_stack_passed": 17239,
+      "default_stack_failed": 0,
+      "report_sha256": "ea533238beb2b81f65cbf9761f3ef59c65f981864e208abe4a90e20e4ca23095",
+      "private_log_sha256": "4de2127b19aada218d65327ed15c66a6d53dfc654798b334cccf48e8d520b4a7",
+      "test_probe_sha256": "bd5c4fd0121b64bf856970e6caf3a6b3111cb53a1e1676c2d82001f214bf96da",
+      "port_sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+      "normal_exit_code": 0,
+      "all_dimensions_saved": true
+    }
+  ],
+  "original_two_orders_differ": true,
+  "patched_two_orders_match": true,
+  "authenticated_windows_after_fix_verified": true,
+  "all_gameplay_or_six_players_verified": false,
+  "controller_tests": {
+    "discovered": 56,
+    "passed": 53,
+    "skipped_linux_only": 3,
+    "log_sha256": "2ed0f8af3fabfec0ef97f2783283b92bf05ad1fadbb9243e0d4c2f4798bab7b4"
+  },
+  "actual_n100_natural_player_schema_evidence": "evidence/n100-natural-player-schema.json",
+  "windows_actual_reconnect_evidence": "two distinct authenticated joins with intervening disconnect in actual N100 log, plus Windows UI persistence and local error count; legacy LocalPlayer snapshot numbers not used as reconnect proof",
+  "windows_field_type_or_packet_failures_observed_after_fix": 0,
+  "patched_local_order_trace_comparison": {
+    "scope": "observed allocation IDs, serializer classes and allocator order only; no field values",
+    "shared_owners": 339,
+    "different_owners": 0,
+    "differences": [],
+    "missing_required_owners": [],
+    "left_only_owners": [],
+    "right_only_owners": [],
+    "required_observed_schemas_match": true,
+    "all_registered_entities_or_gameplay_verified": false
+  },
+  "authenticated_windows_vs_reference_trace_comparison": {
+    "shared_owners": 339,
+    "different_owners": 0,
+    "missing_required_owners": [],
+    "left_only_owners": [],
+    "right_only_owners": [],
+    "allocator_resolution": "first static initializer in the helper call chain, falling back to first callsite",
+    "required_owners": [
+      "net.minecraft.world.entity.player.Player",
+      "com.alc.moreminecarts.entities.FlagCartEntity",
+      "com.alc.moreminecarts.entities.TankCartEntity",
+      "net.minecraft.world.entity.animal.goat.Goat",
+      "com.pixelmonmod.pixelmon.entities.pixelmon.AbstractBaseEntity"
+    ],
+    "reference": "pinned full common-mod Mac dedicated server, not a full N100 registration trace",
+    "windows_run_locally_after_authentication": true,
+    "all_gameplay_verified": false,
+    "probe_version": "0.3",
+    "windows_trace_sha256": "1bed9269373ea519df6857828d45e25f5d31a9e1ee9cce4cafc13d13ee8cdbbf",
+    "reference_trace_sha256": "3fcaf3888dd33d9ccf5ae5a68457a200633463fcec2ee8839be1918a22e91316",
+    "comparator_sha256": "cebc38f6512bc607baf9022d5dbefc9ba03eb6b038550858ee22a4de13f2ac5d",
+    "allocator_identity_includes_static_initializer": true
+  },
+  "authenticated_windows_verification_evidence": "evidence/windows-entity-data-verification.json"
+}

@@ -1,0 +1,16 @@
+{
+  "source_commit": "bd227666ac68d0a1aea75080f5e76788fde57cb4",
+  "macos": {
+    "passed": 53,
+    "linux_only_skips": 3,
+    "discovered": 56,
+    "log_sha256": "df20899e5c90f25c1286e81ba35f378fc92a6eb27f24f911353d960c90b09c8c"
+  },
+  "ubuntu": {
+    "passed": 56,
+    "skips": 0,
+    "discovered": 56,
+    "log_sha256": "36971fefe055050c04b924c5f21ede46852cdc423839cb64eacda83b61ce01fa"
+  },
+  "scope": "controller/export regression, separate from native discount function and authenticated GUI checks"
+}

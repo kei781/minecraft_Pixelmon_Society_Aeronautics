@@ -4,18 +4,84 @@ import io
 import json
 from pathlib import Path
 import stat
+import sys
 import tempfile
 import unittest
+from contextlib import ExitStack
 from unittest.mock import patch
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
 spec = importlib.util.spec_from_file_location("stage_forge", ROOT / "tools/stage_forge_candidate.py")
 stage_forge = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(stage_forge)
 
 
 class StageForgeTest(unittest.TestCase):
+    def prepare_stage_inputs(self, root, resource=True):
+        # Archive/file fixtures only; never installed or launched as game content.
+        helper = stage_forge.forge_datapack_compat
+        target_data = b"original serializer target fixture, never executed"
+        original = b'{"forge:conditions":[{"type":"forge:false"}]}'
+        server, pixelmon, port, module = [root/name for name in ["server.zip", "pixelmon.jar", "port.jar", "module.jar"]]
+        with zipfile.ZipFile(server, "w") as archive:
+            for number in range(310): archive.writestr("mods/fixture%d.jar" % number, b"not a game mod")
+            archive.writestr(helper.TARGET_PATH, target_data)
+            if resource: archive.writestr(helper.RESOURCE, original if resource is True else resource)
+        with zipfile.ZipFile(pixelmon, "w") as archive:
+            for number in range(68): archive.writestr("data/pixelmon/spawn_replacement/fixture%d.json" % number, "{}")
+        port.write_bytes(b"port fixture never executed"); module.write_bytes(b"module fixture never executed")
+        lock = root/"lock.json"
+        lock.write_text(json.dumps({"artifacts": {role: {
+            "source_page": "https://example.test/fixture", "size": path.stat().st_size,
+            "upstream_hashes": {"sha1": stage_forge.digest(path, "sha1")}}
+            for role,path in [("society_server", server), ("pixelmon", pixelmon)]}}))
+        contexts = ExitStack(); self.addCleanup(contexts.close)
+        contexts.enter_context(patch.multiple(stage_forge, LOCK=lock,
+            SERVER_SHA1=stage_forge.digest(server,"sha1"), PIXELMON_SHA256=stage_forge.digest(pixelmon),
+            PORT_SHA256=stage_forge.digest(port)))
+        contexts.enter_context(patch.multiple(helper, RESOURCE_SHA256=hashlib.sha256(original).hexdigest(),
+            TARGET_SHA256=hashlib.sha256(target_data).hexdigest(), MODULE_SHA256=stage_forge.digest(module)))
+        return server, pixelmon, port, module, original
+
+    def test_stage_normalizes_resource_and_records_optional_module_contract(self):
+        with tempfile.TemporaryDirectory() as scratch:
+            root=Path(scratch); server,pixelmon,port,module,original=self.prepare_stage_inputs(root)
+            helper=stage_forge.forge_datapack_compat
+            for enabled in [False,True]:
+                with self.subTest(module=enabled):
+                    destination=root/("with-module" if enabled else "legacy")
+                    receipt=stage_forge.stage(server,pixelmon,port,destination,"player",module if enabled else None)
+                    self.assertEqual((destination/helper.RESOURCE).read_bytes(),helper.normalize_resource(original)[0])
+                    self.assertEqual(receipt,json.loads((destination/".psa-forge-candidate.json").read_text()))
+                    self.assertEqual(receipt["top_level_mod_jars"],314 if enabled else 313)
+                    declaration=helper.module_receipt() if enabled else None
+                    self.assertEqual(receipt["datapack_sync_compatibility"],declaration)
+                    self.assertEqual(helper.verify_staged_module(destination,declaration),declaration)
+                    hashes=(destination/".psa-mods.sha256").read_text().splitlines()
+                    self.assertEqual(len(hashes),314 if enabled else 313)
+                    self.assertEqual(any(line.endswith("  "+helper.MODULE_PATH) for line in hashes),enabled)
+                    self.assertEqual((destination/"eula.txt").read_text(),"eula=false\n")
+
+    def test_stage_missing_or_changed_loot_list_fails_before_destination_creation(self):
+        for resource in [False,b"{}"]:
+            with self.subTest(resource=resource),tempfile.TemporaryDirectory() as scratch:
+                root=Path(scratch);server,pixelmon,port,module,_=self.prepare_stage_inputs(root,resource)
+                destination=root/"must-not-exist"
+                with self.assertRaisesRegex(ValueError,"global loot modifier"):
+                    stage_forge.stage(server,pixelmon,port,destination,datapack_fix=module)
+                self.assertFalse(destination.exists())
+
+    def test_stage_changed_optional_module_fails_before_destination_creation(self):
+        with tempfile.TemporaryDirectory() as scratch:
+            root=Path(scratch);server,pixelmon,port,module,_=self.prepare_stage_inputs(root)
+            module.write_bytes(b"changed fixture")
+            destination=root/"must-not-exist"
+            with self.assertRaisesRegex(ValueError,"server datapack module"):
+                stage_forge.stage(server,pixelmon,port,destination,datapack_fix=module)
+            self.assertFalse(destination.exists())
+
     def test_published_hashes_verify_both_metadata_shapes(self):
         with tempfile.TemporaryDirectory() as scratch:
             root = Path(scratch)

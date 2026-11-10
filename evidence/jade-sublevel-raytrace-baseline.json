@@ -1,0 +1,39 @@
+{
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "jade_version": "11.13.2",
+  "jade_raytracing_class_sha256": "935633dae36c15b4f0009b857e3504342b2b0b95b820d4d01828f1f7f52dd689",
+  "common_port_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+  "client_helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+  "first_error_kst": "2026-11-09 17:04:37.699",
+  "trigger": "After authenticated survival player teleports onto actual assembled Aero deck and Jade points at the Off lever; no F8 activation.",
+  "message": "Aborting entity get for abnormally large AABB",
+  "diagnostic_throwable": "java.lang.Throwable: Stack Trace",
+  "client_crashed": false,
+  "query_aborted_by_existing_guard": true,
+  "reported_world_coordinate_approx": 23.5,
+  "reported_virtual_coordinate_approx": 20481037,
+  "stack_frames": [
+    "dev.ryanhcode.sable.util.SubLevelInclusiveLevelEntityGetter.logError:71",
+    "dev.ryanhcode.sable.util.SubLevelInclusiveLevelEntityGetter.m_142232_:101",
+    "net.minecraft.world.level.Level.m_6249_:641",
+    "snownee.jade.overlay.RayTracing.getEntityHitResult:75",
+    "snownee.jade.overlay.RayTracing.rayTrace:147",
+    "snownee.jade.overlay.RayTracing.fire:117",
+    "snownee.jade.overlay.WailaTickHandler.tickClient:95",
+    "snownee.jade.util.ClientProxy.onClientTick:173"
+  ],
+  "native_on_deck_player_position": [
+    23.500027038271515,
+    104.00000541055479,
+    6.500004733602042
+  ],
+  "native_on_deck_position_stable_for_seconds": 65,
+  "vanilla_on_ground_flag": false,
+  "offboard_mitigation": "Teleport to observation pad14.5,103,7.5 facing away, no feature disabled.",
+  "lever_or_flight_attempt_after_first_error": false,
+  "source_patch_applied": false,
+  "flight_verified": false,
+  "both_user_goals_complete": false,
+  "scope": "Reproduced client spatial-query abort; no crash or flight claim."
+}

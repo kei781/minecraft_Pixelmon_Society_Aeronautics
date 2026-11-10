@@ -1,0 +1,90 @@
+{
+  "state": {
+    "run": "548e582e-38e9-4d1d-804d-122de954bfab",
+    "result": "model_lookup_unverified_mask:1",
+    "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+    "dimension": "minecraft:overworld",
+    "cleanup_complete": true,
+    "cleanup_failed": false,
+    "cleanup_injection_triggered": false,
+    "failed_cleanup_entity_uuids": [],
+    "deliberate_crash_test": false,
+    "fixture_pickup_delay": 32766,
+    "catalog_total": 17239,
+    "catalog_start": 0,
+    "selected_count": 17239,
+    "completed_render_returns": 3488,
+    "completed_model_verified_returns": 3484,
+    "completed_native_spawns": 3488,
+    "mode": "authenticated_client_render",
+    "batch": 871,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:create:cardboard_package_12x10",
+    "owned_fixture_chunk_ticket_count": 0,
+    "owned_entities": [],
+    "owned_fixture_chunks": [],
+    "attempted_ids": [
+      "create:cardboard_leggings",
+      "create:cardboard_package_10x12",
+      "create:cardboard_package_10x8",
+      "create:cardboard_package_12x10"
+    ],
+    "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+  },
+  "journal_sha256": "ecb7b526c643c8aa9bfbfe666a5b9144ea62fa73f91600d998c84221a78539a3",
+  "journal_bytes": 901009,
+  "ownership_sha256": "a4dc5c045625c016406be2d2d406340ce2f86ecd679c6724f96971477f9ed1e6",
+  "ack_batches": 872,
+  "unique_items": 3488,
+  "last_batch": {
+    "run": "548e582e-38e9-4d1d-804d-122de954bfab",
+    "batch": 871,
+    "render_return_tokens": [
+      {
+        "entityId": 4322,
+        "entityUuid": "a0cc2d56-bd1d-4d22-a104-b0ef492a4fca",
+        "itemId": "create:cardboard_leggings",
+        "entityType": "minecraft:item",
+        "entityClass": "net.minecraft.world.entity.item.ItemEntity",
+        "nativeReplacement": false
+      },
+      {
+        "entityId": 4324,
+        "entityUuid": "cb207e09-cb16-4cd5-b9c2-2ddd8b96b8f5",
+        "itemId": "create:cardboard_package_10x12",
+        "entityType": "create:package",
+        "entityClass": "com.simibubi.create.content.logistics.box.PackageEntity",
+        "nativeReplacement": true
+      },
+      {
+        "entityId": 4326,
+        "entityUuid": "c5e2fde8-68dc-4d20-a76d-4fce61a6f0b0",
+        "itemId": "create:cardboard_package_10x8",
+        "entityType": "create:package",
+        "entityClass": "com.simibubi.create.content.logistics.box.PackageEntity",
+        "nativeReplacement": true
+      },
+      {
+        "entityId": 4328,
+        "entityUuid": "18cb40cd-5805-4e74-87af-17b5933a5322",
+        "itemId": "create:cardboard_package_12x10",
+        "entityType": "create:package",
+        "entityClass": "com.simibubi.create.content.logistics.box.PackageEntity",
+        "nativeReplacement": true
+      }
+    ],
+    "model_observed_mask": 1,
+    "missing_model_mask": 0
+  },
+  "diagnostic_version": "0.7",
+  "scope": "Actual authenticated native EntityRenderDispatcher returns3488, models3484; stopped at first unobserved model path, not game crash or proven missing model. No skip/pass reinterpretation.",
+  "client_report": {
+    "bytes": 3758,
+    "sha256": "89067aa5ed68874d3fe249d4f59b880387cb950634d696694f86a6fdc0ce20ee",
+    "new_errors_after_stop": 0,
+    "backend_saved_value": "DEFAULT",
+    "shader_enabled": false,
+    "backend_active_runtime": "Not established by stored value alone"
+  },
+  "followup": "Code observer0.8 candidate: actual Create native fallback buffer return/state and Flywheel native frame/state, Factory jar fallback and inherited JarVisual super frame. No original render/model call replaced; source/native tests and independent review pending."
+}

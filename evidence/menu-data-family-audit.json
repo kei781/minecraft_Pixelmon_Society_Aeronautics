@@ -1,0 +1,167 @@
+{
+  "scope": "constant-pool candidate search; inspect method bodies and runtime tests before concluding",
+  "top_level_jars": 354,
+  "class_entries": 79461,
+  "menu_data_class_references": 203,
+  "candidates": [
+    {
+      "jar": "ArmorStatues-v8.0.6-1.20.1-Forge.jar!META-INF/jarjar/puzzlesapi-forge-8.1.4.jar",
+      "class": "fuzs/puzzlesapi/api/limitlesscontainers/v1/LimitlessContainerSynchronizer.class",
+      "menu_data": false,
+      "packet_reference": true,
+      "method_references": []
+    },
+    {
+      "jar": "Bountiful-6.0.4+1.20.1-forge.jar",
+      "class": "io/ejekta/bountiful/content/board/BoardBlockEntity.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "named_id_needs_classification",
+          "io/ejekta/bountiful/data/Decree",
+          "getId",
+          "()Ljava/lang/String;"
+        ]
+      ]
+    },
+    {
+      "jar": "CreateNumismatics-1.1.0+forge-mc1.20.1.jar",
+      "class": "dev/ithundxr/createnumismatics/content/backend/BigStackSizeContainerSynchronizer.class",
+      "menu_data": false,
+      "packet_reference": true,
+      "method_references": []
+    },
+    {
+      "jar": "StrawStatues-v8.0.3-1.20.1-Forge.jar!META-INF/jarjar/puzzlesapi-forge-8.1.4.jar",
+      "class": "fuzs/puzzlesapi/api/limitlesscontainers/v1/LimitlessContainerSynchronizer.class",
+      "menu_data": false,
+      "packet_reference": true,
+      "method_references": []
+    },
+    {
+      "jar": "moreminecarts-1.8.3.jar",
+      "class": "com/alc/moreminecarts/containers/BatteryCartContainer.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "integer_entity_lookup",
+          "net/minecraft/world/level/Level",
+          "m_6815_",
+          "(I)Lnet/minecraft/world/entity/Entity;"
+        ]
+      ]
+    },
+    {
+      "jar": "moreminecarts-1.8.3.jar",
+      "class": "com/alc/moreminecarts/containers/TankCartContainer.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "integer_entity_lookup",
+          "net/minecraft/world/level/Level",
+          "m_6815_",
+          "(I)Lnet/minecraft/world/entity/Entity;"
+        ]
+      ]
+    },
+    {
+      "jar": "moreminecarts-1.8.3.jar",
+      "class": "com/alc/moreminecarts/entities/BatteryCartEntity$1.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "runtime_entity_id",
+          "com/alc/moreminecarts/entities/BatteryCartEntity",
+          "m_19879_",
+          "()I"
+        ]
+      ]
+    },
+    {
+      "jar": "moreminecarts-1.8.3.jar",
+      "class": "com/alc/moreminecarts/entities/TankCartEntity$1.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "runtime_entity_id",
+          "com/alc/moreminecarts/entities/TankCartEntity",
+          "m_19879_",
+          "()I"
+        ]
+      ]
+    },
+    {
+      "jar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "class": "com/mrcrayfish/furniture/refurbished/blockentity/ComputerBlockEntity.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "named_id_needs_classification",
+          "com/mrcrayfish/furniture/refurbished/computer/Program",
+          "getId",
+          "()Lnet/minecraft/resources/ResourceLocation;"
+        ]
+      ]
+    },
+    {
+      "jar": "zetter-1.20.1-0.21.7.jar",
+      "class": "me/dantaeusb/zetter/block/entity/ArtistTableBlockEntity$1.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "named_id_needs_classification",
+          "me/dantaeusb/zetter/menu/ArtistTableMenu$Mode",
+          "getId",
+          "()B"
+        ]
+      ]
+    },
+    {
+      "jar": "zetter-1.20.1-0.21.7.jar",
+      "class": "me/dantaeusb/zetter/block/entity/ArtistTableBlockEntity.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "named_id_needs_classification",
+          "me/dantaeusb/zetter/menu/ArtistTableMenu$Mode",
+          "getId",
+          "()B"
+        ]
+      ]
+    },
+    {
+      "jar": "zetter-1.20.1-0.21.7.jar",
+      "class": "me/dantaeusb/zetter/menu/ArtistTableMenu.class",
+      "menu_data": true,
+      "packet_reference": false,
+      "method_references": [
+        [
+          "named_id_needs_classification",
+          "me/dantaeusb/zetter/menu/ArtistTableMenu$Mode",
+          "getId",
+          "()B"
+        ]
+      ]
+    }
+  ],
+  "classifications": {
+    "More Minecarts Tank/Battery": "two runtime ID producers and two menu lookups; corrected and packet-tested",
+    "Bountiful BoardBlockEntity": "named getId returns String, but method-body follow-up found separate cumulative int completion property; corrected and packet-tested",
+    "Zetter ArtistTable (three classes)": "Mode.getId returns byte; enum values COMBINE=0 SPLIT=1, not a runtime entity ID",
+    "Refurbished Furniture ComputerBlockEntity": "Program.getId returns ResourceLocation and uses a custom state message, not a menu entity ID",
+    "PuzzlesAPI two nested copies and Numismatics synchronizers": "construct ordinary vanilla data packets; no global wider-value codec found in these methods",
+    "Exposure LightroomScreen (earlier broad heuristic)": "FrameData.getIdOrTexture, not an entity ID producer or lookup"
+  },
+  "limits": [
+    "Constant-pool reference search plus candidate method-body inspection, not exhaustive arbitrary interprocedural dataflow.",
+    "No claim that all unrelated menu quantities can never exceed a short."
+  ]
+}

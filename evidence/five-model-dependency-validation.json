@@ -1,0 +1,36 @@
+{
+  "all_five_original_archive_graphs_checked_by_exporter": true,
+  "items": [
+    {
+      "item": "displaydelight:beetroot_soup",
+      "pinned_resource_references": 5,
+      "vanilla_dependencies": []
+    },
+    {
+      "item": "displaydelight:mushroom_stew",
+      "pinned_resource_references": 5,
+      "vanilla_dependencies": []
+    },
+    {
+      "item": "displaydelight:rabbit_stew",
+      "pinned_resource_references": 5,
+      "vanilla_dependencies": []
+    },
+    {
+      "item": "verdantvibes:potted_burnweed",
+      "pinned_resource_references": 3,
+      "vanilla_dependencies": [
+        "assets/minecraft/textures/block/dirt.png",
+        "assets/minecraft/textures/block/flower_pot.png"
+      ]
+    },
+    {
+      "item": "vintagedelight:vinegar_jar",
+      "pinned_resource_references": 4,
+      "vanilla_dependencies": []
+    }
+  ],
+  "all_22_original_resource_hashes_verified": true,
+  "vanilla_paths_present_in_actual_mc1201_client_jar": true,
+  "scope": "Static original resource closure and source hashes, not pixel/rendered texture proof."
+}
