@@ -1,0 +1,14 @@
+{
+  "version": "0.2",
+  "sha256": "96f9b9ba198bd964cff01161b38640e108860ef8d11b54ac60a99f722c385813",
+  "bytes": 6902,
+  "two_prepared_builds_identical": true,
+  "native_first_run": "e729bb80-84dc-42cd-bf41-95e5633cd9e1",
+  "native_lookup_seconds_first_run": 9.437,
+  "catalog_items": 17239,
+  "nonmissing_model_lookups": 17218,
+  "missing_models": 21,
+  "lookup_errors": 0,
+  "default_mismatches": 0,
+  "scope": "Native cached default-stack lookups, not rendering or functional use. VM/ThreadDeath fault injection not performed."
+}

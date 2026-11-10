@@ -1,0 +1,1584 @@
+{
+  "scope": "Actual original factory argument observed without mutation; pure normalization exercised in isolated common-class headless control; authenticated Windows existing-instance GUI completed separately below. Fresh full-package GUI import remains open.",
+  "helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+  "helper_bytes": 4778,
+  "independent_builds_byte_identical": true,
+  "previous_pause_classes_byte_identical": true,
+  "production_server_jar_unchanged": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+  "runs": [
+    {
+      "profile": "baseline",
+      "production_mod_jars": 313,
+      "diagnostic_jars": 1,
+      "process_exit_code": 0,
+      "log_sha256": "6ff16d6da6b1297d6cd9f74539aaa50a597f85ddfb3bc55792e9624a8c132352",
+      "report_sha256": "17554bc8cea8867c9b51abef82db533348f440a01f4504cd2e1665f88b76948d",
+      "result": {
+        "patched": false,
+        "scope": "actual original server factory argument and native discount function; patched client-only mixin applied to common class in isolated headless diagnostic, not real client rendering or production server deployment",
+        "in_range_unchanged": 61,
+        "outside_server_ui_mismatches": 9,
+        "cases": [
+          {
+            "source_reputation": -30,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 1.4,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-40.0"
+          },
+          {
+            "source_reputation": -29,
+            "actual_factory_constructor_reputation": -29,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3866666666666667,
+            "ui_equivalent_multiplier": 1.3866666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-38.7"
+          },
+          {
+            "source_reputation": -28,
+            "actual_factory_constructor_reputation": -28,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3733333333333333,
+            "ui_equivalent_multiplier": 1.3733333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-37.3"
+          },
+          {
+            "source_reputation": -27,
+            "actual_factory_constructor_reputation": -27,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3599999999999999,
+            "ui_equivalent_multiplier": 1.3599999999999999,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-36.0"
+          },
+          {
+            "source_reputation": -26,
+            "actual_factory_constructor_reputation": -26,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3466666666666667,
+            "ui_equivalent_multiplier": 1.3466666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-34.7"
+          },
+          {
+            "source_reputation": -25,
+            "actual_factory_constructor_reputation": -25,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3333333333333333,
+            "ui_equivalent_multiplier": 1.3333333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-33.3"
+          },
+          {
+            "source_reputation": -24,
+            "actual_factory_constructor_reputation": -24,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.32,
+            "ui_equivalent_multiplier": 1.32,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-32.0"
+          },
+          {
+            "source_reputation": -23,
+            "actual_factory_constructor_reputation": -23,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3066666666666666,
+            "ui_equivalent_multiplier": 1.3066666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-30.7"
+          },
+          {
+            "source_reputation": -22,
+            "actual_factory_constructor_reputation": -22,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2933333333333334,
+            "ui_equivalent_multiplier": 1.2933333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-29.3"
+          },
+          {
+            "source_reputation": -21,
+            "actual_factory_constructor_reputation": -21,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.28,
+            "ui_equivalent_multiplier": 1.28,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-28.0"
+          },
+          {
+            "source_reputation": -20,
+            "actual_factory_constructor_reputation": -20,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2666666666666666,
+            "ui_equivalent_multiplier": 1.2666666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-26.7"
+          },
+          {
+            "source_reputation": -19,
+            "actual_factory_constructor_reputation": -19,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2533333333333334,
+            "ui_equivalent_multiplier": 1.2533333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-25.3"
+          },
+          {
+            "source_reputation": -18,
+            "actual_factory_constructor_reputation": -18,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.24,
+            "ui_equivalent_multiplier": 1.24,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-24.0"
+          },
+          {
+            "source_reputation": -17,
+            "actual_factory_constructor_reputation": -17,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2266666666666666,
+            "ui_equivalent_multiplier": 1.2266666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-22.7"
+          },
+          {
+            "source_reputation": -16,
+            "actual_factory_constructor_reputation": -16,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2133333333333334,
+            "ui_equivalent_multiplier": 1.2133333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-21.3"
+          },
+          {
+            "source_reputation": -15,
+            "actual_factory_constructor_reputation": -15,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2,
+            "ui_equivalent_multiplier": 1.2,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-20.0"
+          },
+          {
+            "source_reputation": -14,
+            "actual_factory_constructor_reputation": -14,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1866666666666668,
+            "ui_equivalent_multiplier": 1.1866666666666668,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-18.7"
+          },
+          {
+            "source_reputation": -13,
+            "actual_factory_constructor_reputation": -13,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1733333333333333,
+            "ui_equivalent_multiplier": 1.1733333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-17.3"
+          },
+          {
+            "source_reputation": -12,
+            "actual_factory_constructor_reputation": -12,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.16,
+            "ui_equivalent_multiplier": 1.16,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-16.0"
+          },
+          {
+            "source_reputation": -11,
+            "actual_factory_constructor_reputation": -11,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1466666666666667,
+            "ui_equivalent_multiplier": 1.1466666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-14.7"
+          },
+          {
+            "source_reputation": -10,
+            "actual_factory_constructor_reputation": -10,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1333333333333333,
+            "ui_equivalent_multiplier": 1.1333333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-13.3"
+          },
+          {
+            "source_reputation": -9,
+            "actual_factory_constructor_reputation": -9,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.12,
+            "ui_equivalent_multiplier": 1.12,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-12.0"
+          },
+          {
+            "source_reputation": -8,
+            "actual_factory_constructor_reputation": -8,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1066666666666667,
+            "ui_equivalent_multiplier": 1.1066666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-10.7"
+          },
+          {
+            "source_reputation": -7,
+            "actual_factory_constructor_reputation": -7,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0933333333333333,
+            "ui_equivalent_multiplier": 1.0933333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-9.3"
+          },
+          {
+            "source_reputation": -6,
+            "actual_factory_constructor_reputation": -6,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.08,
+            "ui_equivalent_multiplier": 1.08,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-8.0"
+          },
+          {
+            "source_reputation": -5,
+            "actual_factory_constructor_reputation": -5,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0666666666666667,
+            "ui_equivalent_multiplier": 1.0666666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-6.7"
+          },
+          {
+            "source_reputation": -4,
+            "actual_factory_constructor_reputation": -4,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0533333333333332,
+            "ui_equivalent_multiplier": 1.0533333333333332,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-5.3"
+          },
+          {
+            "source_reputation": -3,
+            "actual_factory_constructor_reputation": -3,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.04,
+            "ui_equivalent_multiplier": 1.04,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-4.0"
+          },
+          {
+            "source_reputation": -2,
+            "actual_factory_constructor_reputation": -2,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0266666666666666,
+            "ui_equivalent_multiplier": 1.0266666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-2.7"
+          },
+          {
+            "source_reputation": -1,
+            "actual_factory_constructor_reputation": -1,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0133333333333334,
+            "ui_equivalent_multiplier": 1.0133333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-1.3"
+          },
+          {
+            "source_reputation": 0,
+            "actual_factory_constructor_reputation": 0,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0,
+            "ui_equivalent_multiplier": 1.0,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "0.0"
+          },
+          {
+            "source_reputation": 1,
+            "actual_factory_constructor_reputation": 1,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9866666666666667,
+            "ui_equivalent_multiplier": 0.9866666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "1.3"
+          },
+          {
+            "source_reputation": 2,
+            "actual_factory_constructor_reputation": 2,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9733333333333334,
+            "ui_equivalent_multiplier": 0.9733333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "2.7"
+          },
+          {
+            "source_reputation": 3,
+            "actual_factory_constructor_reputation": 3,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.96,
+            "ui_equivalent_multiplier": 0.96,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "4.0"
+          },
+          {
+            "source_reputation": 4,
+            "actual_factory_constructor_reputation": 4,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9466666666666667,
+            "ui_equivalent_multiplier": 0.9466666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "5.3"
+          },
+          {
+            "source_reputation": 5,
+            "actual_factory_constructor_reputation": 5,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9333333333333333,
+            "ui_equivalent_multiplier": 0.9333333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "6.7"
+          },
+          {
+            "source_reputation": 6,
+            "actual_factory_constructor_reputation": 6,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.92,
+            "ui_equivalent_multiplier": 0.92,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "8.0"
+          },
+          {
+            "source_reputation": 7,
+            "actual_factory_constructor_reputation": 7,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9066666666666666,
+            "ui_equivalent_multiplier": 0.9066666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "9.3"
+          },
+          {
+            "source_reputation": 8,
+            "actual_factory_constructor_reputation": 8,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8933333333333333,
+            "ui_equivalent_multiplier": 0.8933333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "10.7"
+          },
+          {
+            "source_reputation": 9,
+            "actual_factory_constructor_reputation": 9,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.88,
+            "ui_equivalent_multiplier": 0.88,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "12.0"
+          },
+          {
+            "source_reputation": 10,
+            "actual_factory_constructor_reputation": 10,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8666666666666667,
+            "ui_equivalent_multiplier": 0.8666666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "13.3"
+          },
+          {
+            "source_reputation": 11,
+            "actual_factory_constructor_reputation": 11,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8533333333333333,
+            "ui_equivalent_multiplier": 0.8533333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "14.7"
+          },
+          {
+            "source_reputation": 12,
+            "actual_factory_constructor_reputation": 12,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.84,
+            "ui_equivalent_multiplier": 0.84,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "16.0"
+          },
+          {
+            "source_reputation": 13,
+            "actual_factory_constructor_reputation": 13,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8266666666666667,
+            "ui_equivalent_multiplier": 0.8266666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "17.3"
+          },
+          {
+            "source_reputation": 14,
+            "actual_factory_constructor_reputation": 14,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8133333333333334,
+            "ui_equivalent_multiplier": 0.8133333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "18.7"
+          },
+          {
+            "source_reputation": 15,
+            "actual_factory_constructor_reputation": 15,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8,
+            "ui_equivalent_multiplier": 0.8,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "20.0"
+          },
+          {
+            "source_reputation": 16,
+            "actual_factory_constructor_reputation": 16,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7866666666666666,
+            "ui_equivalent_multiplier": 0.7866666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "21.3"
+          },
+          {
+            "source_reputation": 17,
+            "actual_factory_constructor_reputation": 17,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7733333333333333,
+            "ui_equivalent_multiplier": 0.7733333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "22.7"
+          },
+          {
+            "source_reputation": 18,
+            "actual_factory_constructor_reputation": 18,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.76,
+            "ui_equivalent_multiplier": 0.76,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "24.0"
+          },
+          {
+            "source_reputation": 19,
+            "actual_factory_constructor_reputation": 19,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7466666666666666,
+            "ui_equivalent_multiplier": 0.7466666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "25.3"
+          },
+          {
+            "source_reputation": 20,
+            "actual_factory_constructor_reputation": 20,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7333333333333334,
+            "ui_equivalent_multiplier": 0.7333333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "26.7"
+          },
+          {
+            "source_reputation": 21,
+            "actual_factory_constructor_reputation": 21,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.72,
+            "ui_equivalent_multiplier": 0.72,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "28.0"
+          },
+          {
+            "source_reputation": 22,
+            "actual_factory_constructor_reputation": 22,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7066666666666667,
+            "ui_equivalent_multiplier": 0.7066666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "29.3"
+          },
+          {
+            "source_reputation": 23,
+            "actual_factory_constructor_reputation": 23,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6933333333333334,
+            "ui_equivalent_multiplier": 0.6933333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "30.7"
+          },
+          {
+            "source_reputation": 24,
+            "actual_factory_constructor_reputation": 24,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6799999999999999,
+            "ui_equivalent_multiplier": 0.6799999999999999,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "32.0"
+          },
+          {
+            "source_reputation": 25,
+            "actual_factory_constructor_reputation": 25,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6666666666666667,
+            "ui_equivalent_multiplier": 0.6666666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "33.3"
+          },
+          {
+            "source_reputation": 26,
+            "actual_factory_constructor_reputation": 26,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6533333333333333,
+            "ui_equivalent_multiplier": 0.6533333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "34.7"
+          },
+          {
+            "source_reputation": 27,
+            "actual_factory_constructor_reputation": 27,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.64,
+            "ui_equivalent_multiplier": 0.64,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "36.0"
+          },
+          {
+            "source_reputation": 28,
+            "actual_factory_constructor_reputation": 28,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6266666666666667,
+            "ui_equivalent_multiplier": 0.6266666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "37.3"
+          },
+          {
+            "source_reputation": 29,
+            "actual_factory_constructor_reputation": 29,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6133333333333333,
+            "ui_equivalent_multiplier": 0.6133333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "38.7"
+          },
+          {
+            "source_reputation": 30,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.6,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "40.0"
+          },
+          {
+            "source_reputation": -2147483648,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 28633116.30666667,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "-2863311530.7"
+          },
+          {
+            "source_reputation": -32768,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 437.9066666666667,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "-43690.7"
+          },
+          {
+            "source_reputation": -75,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 2.0,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "-100.0"
+          },
+          {
+            "source_reputation": -31,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 1.4133333333333333,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "-41.3"
+          },
+          {
+            "source_reputation": 31,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.5866666666666667,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "41.3"
+          },
+          {
+            "source_reputation": 75,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.0,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "100.0"
+          },
+          {
+            "source_reputation": 32768,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": -435.9066666666667,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "43690.7"
+          },
+          {
+            "source_reputation": 65536,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": -872.8133333333334,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "87381.3"
+          },
+          {
+            "source_reputation": 2147483647,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": -28633114.293333333,
+            "matches_actual_server_argument": false,
+            "ui_discount_percent_text": "2863311529.3"
+          }
+        ]
+      },
+      "diagnostic_jar_sha256": "ae882c4805f76ffd876d7902317a9b1bd7df2b7fc0c1bb33c49818c3e8c8164c"
+    },
+    {
+      "profile": "patched",
+      "production_mod_jars": 313,
+      "diagnostic_jars": 1,
+      "process_exit_code": 0,
+      "log_sha256": "08c5ac85968876a8443aeb1e9d8985d76693e2b4e10ae7eb1a3b32cde8883f97",
+      "report_sha256": "5e653c225a18c11fecfac80ff2dadd5e25d5e697d4cc0e1f65f64055de390a40",
+      "result": {
+        "patched": true,
+        "scope": "actual original server factory argument and native discount function; patched client-only mixin applied to common class in isolated headless diagnostic, not real client rendering or production server deployment",
+        "in_range_unchanged": 61,
+        "outside_server_ui_mismatches": 0,
+        "cases": [
+          {
+            "source_reputation": -30,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 1.4,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-40.0"
+          },
+          {
+            "source_reputation": -29,
+            "actual_factory_constructor_reputation": -29,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3866666666666667,
+            "ui_equivalent_multiplier": 1.3866666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-38.7"
+          },
+          {
+            "source_reputation": -28,
+            "actual_factory_constructor_reputation": -28,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3733333333333333,
+            "ui_equivalent_multiplier": 1.3733333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-37.3"
+          },
+          {
+            "source_reputation": -27,
+            "actual_factory_constructor_reputation": -27,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3599999999999999,
+            "ui_equivalent_multiplier": 1.3599999999999999,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-36.0"
+          },
+          {
+            "source_reputation": -26,
+            "actual_factory_constructor_reputation": -26,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3466666666666667,
+            "ui_equivalent_multiplier": 1.3466666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-34.7"
+          },
+          {
+            "source_reputation": -25,
+            "actual_factory_constructor_reputation": -25,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3333333333333333,
+            "ui_equivalent_multiplier": 1.3333333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-33.3"
+          },
+          {
+            "source_reputation": -24,
+            "actual_factory_constructor_reputation": -24,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.32,
+            "ui_equivalent_multiplier": 1.32,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-32.0"
+          },
+          {
+            "source_reputation": -23,
+            "actual_factory_constructor_reputation": -23,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.3066666666666666,
+            "ui_equivalent_multiplier": 1.3066666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-30.7"
+          },
+          {
+            "source_reputation": -22,
+            "actual_factory_constructor_reputation": -22,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2933333333333334,
+            "ui_equivalent_multiplier": 1.2933333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-29.3"
+          },
+          {
+            "source_reputation": -21,
+            "actual_factory_constructor_reputation": -21,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.28,
+            "ui_equivalent_multiplier": 1.28,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-28.0"
+          },
+          {
+            "source_reputation": -20,
+            "actual_factory_constructor_reputation": -20,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2666666666666666,
+            "ui_equivalent_multiplier": 1.2666666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-26.7"
+          },
+          {
+            "source_reputation": -19,
+            "actual_factory_constructor_reputation": -19,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2533333333333334,
+            "ui_equivalent_multiplier": 1.2533333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-25.3"
+          },
+          {
+            "source_reputation": -18,
+            "actual_factory_constructor_reputation": -18,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.24,
+            "ui_equivalent_multiplier": 1.24,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-24.0"
+          },
+          {
+            "source_reputation": -17,
+            "actual_factory_constructor_reputation": -17,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2266666666666666,
+            "ui_equivalent_multiplier": 1.2266666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-22.7"
+          },
+          {
+            "source_reputation": -16,
+            "actual_factory_constructor_reputation": -16,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2133333333333334,
+            "ui_equivalent_multiplier": 1.2133333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-21.3"
+          },
+          {
+            "source_reputation": -15,
+            "actual_factory_constructor_reputation": -15,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.2,
+            "ui_equivalent_multiplier": 1.2,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-20.0"
+          },
+          {
+            "source_reputation": -14,
+            "actual_factory_constructor_reputation": -14,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1866666666666668,
+            "ui_equivalent_multiplier": 1.1866666666666668,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-18.7"
+          },
+          {
+            "source_reputation": -13,
+            "actual_factory_constructor_reputation": -13,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1733333333333333,
+            "ui_equivalent_multiplier": 1.1733333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-17.3"
+          },
+          {
+            "source_reputation": -12,
+            "actual_factory_constructor_reputation": -12,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.16,
+            "ui_equivalent_multiplier": 1.16,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-16.0"
+          },
+          {
+            "source_reputation": -11,
+            "actual_factory_constructor_reputation": -11,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1466666666666667,
+            "ui_equivalent_multiplier": 1.1466666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-14.7"
+          },
+          {
+            "source_reputation": -10,
+            "actual_factory_constructor_reputation": -10,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1333333333333333,
+            "ui_equivalent_multiplier": 1.1333333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-13.3"
+          },
+          {
+            "source_reputation": -9,
+            "actual_factory_constructor_reputation": -9,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.12,
+            "ui_equivalent_multiplier": 1.12,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-12.0"
+          },
+          {
+            "source_reputation": -8,
+            "actual_factory_constructor_reputation": -8,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.1066666666666667,
+            "ui_equivalent_multiplier": 1.1066666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-10.7"
+          },
+          {
+            "source_reputation": -7,
+            "actual_factory_constructor_reputation": -7,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0933333333333333,
+            "ui_equivalent_multiplier": 1.0933333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-9.3"
+          },
+          {
+            "source_reputation": -6,
+            "actual_factory_constructor_reputation": -6,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.08,
+            "ui_equivalent_multiplier": 1.08,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-8.0"
+          },
+          {
+            "source_reputation": -5,
+            "actual_factory_constructor_reputation": -5,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0666666666666667,
+            "ui_equivalent_multiplier": 1.0666666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-6.7"
+          },
+          {
+            "source_reputation": -4,
+            "actual_factory_constructor_reputation": -4,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0533333333333332,
+            "ui_equivalent_multiplier": 1.0533333333333332,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-5.3"
+          },
+          {
+            "source_reputation": -3,
+            "actual_factory_constructor_reputation": -3,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.04,
+            "ui_equivalent_multiplier": 1.04,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-4.0"
+          },
+          {
+            "source_reputation": -2,
+            "actual_factory_constructor_reputation": -2,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0266666666666666,
+            "ui_equivalent_multiplier": 1.0266666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-2.7"
+          },
+          {
+            "source_reputation": -1,
+            "actual_factory_constructor_reputation": -1,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0133333333333334,
+            "ui_equivalent_multiplier": 1.0133333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-1.3"
+          },
+          {
+            "source_reputation": 0,
+            "actual_factory_constructor_reputation": 0,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.0,
+            "ui_equivalent_multiplier": 1.0,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "0.0"
+          },
+          {
+            "source_reputation": 1,
+            "actual_factory_constructor_reputation": 1,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9866666666666667,
+            "ui_equivalent_multiplier": 0.9866666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "1.3"
+          },
+          {
+            "source_reputation": 2,
+            "actual_factory_constructor_reputation": 2,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9733333333333334,
+            "ui_equivalent_multiplier": 0.9733333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "2.7"
+          },
+          {
+            "source_reputation": 3,
+            "actual_factory_constructor_reputation": 3,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.96,
+            "ui_equivalent_multiplier": 0.96,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "4.0"
+          },
+          {
+            "source_reputation": 4,
+            "actual_factory_constructor_reputation": 4,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9466666666666667,
+            "ui_equivalent_multiplier": 0.9466666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "5.3"
+          },
+          {
+            "source_reputation": 5,
+            "actual_factory_constructor_reputation": 5,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9333333333333333,
+            "ui_equivalent_multiplier": 0.9333333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "6.7"
+          },
+          {
+            "source_reputation": 6,
+            "actual_factory_constructor_reputation": 6,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.92,
+            "ui_equivalent_multiplier": 0.92,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "8.0"
+          },
+          {
+            "source_reputation": 7,
+            "actual_factory_constructor_reputation": 7,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.9066666666666666,
+            "ui_equivalent_multiplier": 0.9066666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "9.3"
+          },
+          {
+            "source_reputation": 8,
+            "actual_factory_constructor_reputation": 8,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8933333333333333,
+            "ui_equivalent_multiplier": 0.8933333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "10.7"
+          },
+          {
+            "source_reputation": 9,
+            "actual_factory_constructor_reputation": 9,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.88,
+            "ui_equivalent_multiplier": 0.88,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "12.0"
+          },
+          {
+            "source_reputation": 10,
+            "actual_factory_constructor_reputation": 10,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8666666666666667,
+            "ui_equivalent_multiplier": 0.8666666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "13.3"
+          },
+          {
+            "source_reputation": 11,
+            "actual_factory_constructor_reputation": 11,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8533333333333333,
+            "ui_equivalent_multiplier": 0.8533333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "14.7"
+          },
+          {
+            "source_reputation": 12,
+            "actual_factory_constructor_reputation": 12,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.84,
+            "ui_equivalent_multiplier": 0.84,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "16.0"
+          },
+          {
+            "source_reputation": 13,
+            "actual_factory_constructor_reputation": 13,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8266666666666667,
+            "ui_equivalent_multiplier": 0.8266666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "17.3"
+          },
+          {
+            "source_reputation": 14,
+            "actual_factory_constructor_reputation": 14,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8133333333333334,
+            "ui_equivalent_multiplier": 0.8133333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "18.7"
+          },
+          {
+            "source_reputation": 15,
+            "actual_factory_constructor_reputation": 15,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.8,
+            "ui_equivalent_multiplier": 0.8,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "20.0"
+          },
+          {
+            "source_reputation": 16,
+            "actual_factory_constructor_reputation": 16,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7866666666666666,
+            "ui_equivalent_multiplier": 0.7866666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "21.3"
+          },
+          {
+            "source_reputation": 17,
+            "actual_factory_constructor_reputation": 17,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7733333333333333,
+            "ui_equivalent_multiplier": 0.7733333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "22.7"
+          },
+          {
+            "source_reputation": 18,
+            "actual_factory_constructor_reputation": 18,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.76,
+            "ui_equivalent_multiplier": 0.76,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "24.0"
+          },
+          {
+            "source_reputation": 19,
+            "actual_factory_constructor_reputation": 19,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7466666666666666,
+            "ui_equivalent_multiplier": 0.7466666666666666,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "25.3"
+          },
+          {
+            "source_reputation": 20,
+            "actual_factory_constructor_reputation": 20,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7333333333333334,
+            "ui_equivalent_multiplier": 0.7333333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "26.7"
+          },
+          {
+            "source_reputation": 21,
+            "actual_factory_constructor_reputation": 21,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.72,
+            "ui_equivalent_multiplier": 0.72,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "28.0"
+          },
+          {
+            "source_reputation": 22,
+            "actual_factory_constructor_reputation": 22,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.7066666666666667,
+            "ui_equivalent_multiplier": 0.7066666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "29.3"
+          },
+          {
+            "source_reputation": 23,
+            "actual_factory_constructor_reputation": 23,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6933333333333334,
+            "ui_equivalent_multiplier": 0.6933333333333334,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "30.7"
+          },
+          {
+            "source_reputation": 24,
+            "actual_factory_constructor_reputation": 24,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6799999999999999,
+            "ui_equivalent_multiplier": 0.6799999999999999,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "32.0"
+          },
+          {
+            "source_reputation": 25,
+            "actual_factory_constructor_reputation": 25,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6666666666666667,
+            "ui_equivalent_multiplier": 0.6666666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "33.3"
+          },
+          {
+            "source_reputation": 26,
+            "actual_factory_constructor_reputation": 26,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6533333333333333,
+            "ui_equivalent_multiplier": 0.6533333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "34.7"
+          },
+          {
+            "source_reputation": 27,
+            "actual_factory_constructor_reputation": 27,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.64,
+            "ui_equivalent_multiplier": 0.64,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "36.0"
+          },
+          {
+            "source_reputation": 28,
+            "actual_factory_constructor_reputation": 28,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6266666666666667,
+            "ui_equivalent_multiplier": 0.6266666666666667,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "37.3"
+          },
+          {
+            "source_reputation": 29,
+            "actual_factory_constructor_reputation": 29,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6133333333333333,
+            "ui_equivalent_multiplier": 0.6133333333333333,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "38.7"
+          },
+          {
+            "source_reputation": 30,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.6,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "40.0"
+          },
+          {
+            "source_reputation": -2147483648,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 1.4,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-40.0"
+          },
+          {
+            "source_reputation": -32768,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 1.4,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-40.0"
+          },
+          {
+            "source_reputation": -75,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 1.4,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-40.0"
+          },
+          {
+            "source_reputation": -31,
+            "actual_factory_constructor_reputation": -30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 1.4,
+            "ui_equivalent_multiplier": 1.4,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "-40.0"
+          },
+          {
+            "source_reputation": 31,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.6,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "40.0"
+          },
+          {
+            "source_reputation": 75,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.6,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "40.0"
+          },
+          {
+            "source_reputation": 32768,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.6,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "40.0"
+          },
+          {
+            "source_reputation": 65536,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.6,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "40.0"
+          },
+          {
+            "source_reputation": 2147483647,
+            "actual_factory_constructor_reputation": 30,
+            "factory_argument_observations": 1,
+            "empty_decree_factory_returned_stack": true,
+            "server_multiplier": 0.6,
+            "ui_equivalent_multiplier": 0.6,
+            "matches_actual_server_argument": true,
+            "ui_discount_percent_text": "40.0"
+          }
+        ]
+      },
+      "diagnostic_jar_sha256": "ea760c90b038f3947d76e7bba2e4ec2139fd34d07d3ca11e28a66ca56538579f"
+    }
+  ],
+  "controller_cross_run_comparison": {
+    "case_count": 70,
+    "factory_constructor_arguments_identical": true,
+    "original_server_multiplier_equals_patched_ui_all70": true,
+    "server_multiplier_unchanged_all70": true,
+    "in_range_baseline_vs_patched_ui_bit_identical": 61,
+    "comparison": "IEEE754 binary64 after lossless JSON roundtrip, not just within-one-run equality"
+  },
+  "diagnostic_source_sha256": "3c7a8a44c1399217f38fb5d934b267faa064676867b7dc9dfbf89c73c7229df6",
+  "probe_source_sha256": "50a6c235122da64f52a8613d48c418eca3367e199439fa692b41bb4dfa29e03d",
+  "pinned_bountiful_jar_sha256": "ba171d8cf146faa138563b4b7114742e1589fc444fce7503a1779eb80a8a4765",
+  "windows_baseline": {
+    "input_completed_counts": [
+      135,
+      143
+    ],
+    "observed_reputation": [
+      30,
+      31
+    ],
+    "observed_discount_percent": [
+      40.0,
+      41.3
+    ],
+    "both_counts_below_signed_short_boundary": true,
+    "frozen_report_sha256": "6796ff0f0e3d4002b95fa5500e580f62660bb49668eea773450963e044eac9f9",
+    "screenshots_sha256": {
+      "2026-11-09_12.33.19.png": "e3142b2cc73107d01e0f4664bd39f01b265fba24fa06bd92fd21f610e5f16b41",
+      "2026-11-09_12.35.29.png": "fc0b44da8e274729bd354b74363bf4cfd0b2801778904fbd944adfbda1484c64"
+    },
+    "candidate_applied": false
+  },
+  "windows_candidate_initial": {
+    "helper_version": "1.1",
+    "helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+    "helper_verified_utc": "2026-11-09T03:40:52.0493231Z",
+    "jvm_started_utc": "2026-11-09T03:41:50.8518360Z",
+    "connection_utc": "2026-11-09T03:44:09.147Z",
+    "total_jars_with_diagnostic": 355,
+    "other_jar_files_unchanged": 354,
+    "common_jar_mismatches": 0,
+    "duplicate_helper_jars": 0,
+    "player_data_fields_unchanged": 10,
+    "actual_input_completed": 143,
+    "actual_reputation": 31,
+    "actual_discount_percent": 40.0,
+    "screenshot_sha256": "b01c64cb099eb6b050843becdb2181c14194342afa3f236261041a46334fed21",
+    "remaining_gui_controls": [
+      135,
+      32768,
+      65536,
+      0,
+      "reopen",
+      "pause_menu"
+    ],
+    "snapshot_note": "Historical first-join snapshot; all remaining controls completed in windows_candidate_final."
+  },
+  "production_patch_class_sha256": "8add46d3a97c45a2e35cccabb237d4d3cbdd4b8bd7648853db3f7ef4bf4e2759",
+  "probe_observer_and_test_classes_identical_between_controls": true,
+  "tested_patch_class_identical_to_production_helper": true,
+  "source_based_regeneration_evidence": "diagnostic-probe-recipes.json",
+  "initial_run_artifacts_note": "R1 execution artifacts retained as provenance; reproducible paired build/canonical new artifacts rerun separately with identical discount classes.",
+  "windows_candidate_final": {
+    "report_sha256": "c713fb7d8606081afb5565ddb5e619ae8b6509131d9846f5b72000bf04978fba",
+    "hash_checked_utc": "2026-11-09T04:04:10.705399+00:00",
+    "helper_sha256": "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9",
+    "common_port_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+    "common_313_manifest_sha256": "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812",
+    "total_jars_with_diagnostic": 355,
+    "common_jar_mismatches": 0,
+    "jar_changes_after_install": 0,
+    "target_packet_type_exceptions": 0,
+    "new_mixin_exceptions": 0,
+    "both_production_client_mixins_applied_in_log": true,
+    "cases": [
+      {
+        "fixture_completed_count": 143,
+        "observed_reputation": 31,
+        "observed_discount_percent": 40.0
+      },
+      {
+        "fixture_completed_count": 135,
+        "observed_reputation": 30,
+        "observed_discount_percent": 40.0
+      },
+      {
+        "fixture_completed_count": 32768,
+        "observed_reputation": 564,
+        "observed_discount_percent": 40.0,
+        "fixture_expected_level_progress": {
+          "numerator": 112,
+          "denominator": 114,
+          "source": "Native BoardCompanion.levelProgress computed from owned fixture input; numeric fraction is not displayed by the GUI."
+        },
+        "observed_bar_approx_percent": 98
+      },
+      {
+        "fixture_completed_count": 65536,
+        "observed_reputation": 802,
+        "observed_discount_percent": 40.0,
+        "fixture_expected_level_progress": {
+          "numerator": 12,
+          "denominator": 162,
+          "source": "Native BoardCompanion.levelProgress computed from owned fixture input; numeric fraction is not displayed by the GUI."
+        },
+        "observed_bar_approx_percent": 7
+      },
+      {
+        "reopen_retains_result": true,
+        "fixture_completed_count": 0,
+        "observed_reputation": 0,
+        "observed_discount_percent": 0.0,
+        "observed_bar_empty": true
+      }
+    ],
+    "pause_menu": {
+      "gui_scale": 4,
+      "all_visible": [
+        "Wiki",
+        "Credits",
+        "Pixelmon",
+        "Discord"
+      ],
+      "overlap": false
+    },
+    "screenshots_sha256": {
+      "2026-11-09_12.44.48.png": "b01c64cb099eb6b050843becdb2181c14194342afa3f236261041a46334fed21",
+      "2026-11-09_12.47.43.png": "97a50f1c5cb8c3d4eca257e961e973394d59768f3836864c5f2a04b35a5c9416",
+      "2026-11-09_12.53.10.png": "15b341512985916d511c8fc28b45489ddfecf675421b97a8d77045c9423e361e",
+      "2026-11-09_12.53.24.png": "8e91d7d096e61760e1d13cc6f31c5c8fd706b69b4004258ae4e60e1ad3737cb6",
+      "2026-11-09_12.58.01.png": "9daf2fae7c9f03372b28d8ae20eeedbcd56d02fd6ffa57985b1f5c8517e2423d",
+      "2026-11-09_12.58.14.png": "0516d4ce33411a9fdc76369584e5c25773e0719c72fc1b14ce973d1758f4eee5",
+      "2026-11-09_13.01.53.png": "1f10e5cc0aad9be93c3d162cb8a38795b2c586534f923ddfcb1a91166f21ebe3",
+      "2026-11-09_13.02.07.png": "c8b9b0fd0013741c0ee2c0b520242b877c5d7d427664befa0c43334681f560be",
+      "2026-11-09_13.02.34.png": "123cc7c42380b9b4f98ba0d4879b9aaba5f7d2fe4c4c4de6505e038791bc0141",
+      "2026-11-09_13.02.47.png": "745a32109a41bd398a85ec3193c879ca681f680e8e99cbe6700dbb0a63645da0",
+      "2026-11-09_13.03.07.png": "af8b81f0d72f39ab3759b4f264b7714d939aac88bc2106342d5714cf8a6f8703"
+    },
+    "limits": "Existing authenticated instance updated to matching candidate JARs. Owned disposable board NBT fixtures; not natural quest completion. Raw reports/screenshots remain Windows. No fresh full-pack import claimed. Completed counters are fixture inputs, not numbers read from the GUI. Exact progress fractions are computed native expectations; GUI observations are reputation, discount text and approximate bar fill."
+  }
+}

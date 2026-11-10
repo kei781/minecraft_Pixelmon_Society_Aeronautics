@@ -1,0 +1,69 @@
+{
+  "scope": "Exact declared Forge custom item-entity API metadata; conditional returns, dynamically generated code and rendering require runtime checks.",
+  "pack_sha256": "64dcbbb3760860599adf9ed950831160df7bfa9eb8189849166bfa8cea7ab47a",
+  "top_level_jars": 354,
+  "nested_jars": 75,
+  "class_entries": 79468,
+  "candidates": [
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/logistics/box/PackageItem.class",
+      "declared_methods": [
+        {
+          "name": "hasCustomEntity",
+          "descriptor": "(Lnet/minecraft/world/item/ItemStack;)Z",
+          "access": 1
+        },
+        {
+          "name": "createEntity",
+          "descriptor": "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/entity/Entity;",
+          "access": 1
+        }
+      ]
+    },
+    {
+      "jar": "create_factory_logistics-1.20.1-1.4.7.jar",
+      "class": "ru/zznty/create_factory_logistics/logistics/composite/CompositePackageItem.class",
+      "declared_methods": [
+        {
+          "name": "createEntity",
+          "descriptor": "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/entity/Entity;",
+          "access": 1
+        }
+      ]
+    },
+    {
+      "jar": "create_factory_logistics-1.20.1-1.4.7.jar",
+      "class": "ru/zznty/create_factory_logistics/logistics/jar/JarPackageItem.class",
+      "declared_methods": [
+        {
+          "name": "createEntity",
+          "descriptor": "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/entity/Entity;",
+          "access": 1
+        }
+      ]
+    },
+    {
+      "jar": "sophisticatedbackpacks-1.20.1-3.24.60.1982.jar",
+      "class": "net/p3pp3rf1y/sophisticatedbackpacks/backpack/BackpackItem.class",
+      "declared_methods": [
+        {
+          "name": "hasCustomEntity",
+          "descriptor": "(Lnet/minecraft/world/item/ItemStack;)Z",
+          "access": 1
+        },
+        {
+          "name": "createEntity",
+          "descriptor": "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/entity/Entity;",
+          "access": 1
+        }
+      ]
+    }
+  ],
+  "classification": {
+    "Create PackageItem": "native LivingEntity PackageEntity; public getBox API",
+    "Factory Logistics composite/jar items": "Both concrete entity classes extend Create PackageEntity; inherited public getBox API. No functional/renderer pass inferred.",
+    "Sophisticated BackpackItem": "conditional everlasting ItemEntity; default factory may return null, native original retained",
+    "limit": "Exact overrides only; conditional default behavior and all native types require runtime tests. Source/decompiled implementation not included."
+  }
+}

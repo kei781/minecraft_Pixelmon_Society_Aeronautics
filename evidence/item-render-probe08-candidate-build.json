@@ -1,0 +1,58 @@
+{
+  "version": "0.8",
+  "candidate": "r2",
+  "bytes": 41011,
+  "sha256": "8255403e98ab26e6f42eecd6078f7107ca6e103759dd413fce5659792dceb66b",
+  "independent_canonical_builds_identical": true,
+  "previous07": {
+    "sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310"
+  },
+  "unchanged_existing_classes": [
+    "dev/psa/renderprobe/DropStackView.class",
+    "dev/psa/renderprobe/RenderNetwork.class",
+    "dev/psa/renderprobe/RenderProbe$Session.class",
+    "dev/psa/renderprobe/RenderProbe$Spawn.class",
+    "dev/psa/renderprobe/RenderProbe.class",
+    "dev/psa/renderprobe/RenderProtocol$Ack.class",
+    "dev/psa/renderprobe/RenderProtocol$Batch.class",
+    "dev/psa/renderprobe/RenderProtocol$Token.class",
+    "dev/psa/renderprobe/RenderProtocol.class",
+    "dev/psa/renderprobe/mixin/ForgeDropFactoryMixin.class",
+    "dev/psa/renderprobe/mixin/ItemModelProbeMixin.class",
+    "dev/psa/renderprobe/mixin/RendererProbeMixin.class"
+  ],
+  "delta": {
+    "changed": [
+      "META-INF/mods.toml",
+      "dev/psa/renderprobe/RenderClient.class",
+      "psa-render-probe.mixins.json"
+    ],
+    "added": [
+      "dev/psa/renderprobe/RenderClient$VisualFrame.class",
+      "dev/psa/renderprobe/mixin/PackageFallbackProbeMixin.class",
+      "dev/psa/renderprobe/mixin/PackageVisualProbeMixin.class",
+      "dev/psa/renderprobe/mixin/PartialModelStateAccessor.class"
+    ]
+  },
+  "controls": {
+    "protocol_identity_bounds": "PASS",
+    "stale_visual_frame_rejection": "PASS (real client queue, headless; not a native rendering pass)",
+    "namespace_scan_own_ordinary_candidates": 0,
+    "recovery": 5
+  },
+  "scope": "Test-only native fallback buffer return/baked state and actual Flywheel visual frame/baked state in addition to original EntityRenderDispatcher RETURN. Not GPU pixel, texture, placement or functional-use proof.",
+  "native_behavior": "Original native model call exactly once; unchanged result. No manual rendering, substituted model, fake ACK or guard bypass. Native Flywheel workers only enqueue bounded evidence; actual client tick verifies current Batch object and full entity identity before masking.",
+  "runtime": {
+    "dedicated_done_utc": "2026-11-09 11:00:02",
+    "ordinary_defaults": 16,
+    "family_defaults": 44,
+    "actual_native_render_model_controls": "PASS",
+    "native_factory_fallback_mask": 2,
+    "native_factory_visual_mask": 0,
+    "visual_runtime_proof": false,
+    "full_remaining_tail": "STOPPED at first native missing_model_mask8 for decorative_blocks:blockstate_copy_item; tail740verified, contiguousprefix4224. Not complete.",
+    "hot_reader_failure_preserved": "Native first attempt crashed on Windows checkpoint move; same artifact passes60afteroptionalcollectorstopped; no checkpoint guard changes.",
+    "actual_missing_model_negative_control": "Observed actual native model mask15/missing8, native renderer returned4, failclosed and cleanup complete; no synthetic bad resource introduced."
+  },
+  "source_review": "Existing Task9 R5 not yet run; Task10 max5 unchanged; no final acceptance."
+}

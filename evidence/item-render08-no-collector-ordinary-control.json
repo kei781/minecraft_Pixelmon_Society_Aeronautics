@@ -1,0 +1,32 @@
+{
+  "state": {
+    "run": "d91d88f9-2c89-4add-98d4-50fb6ff30464",
+    "result": "complete",
+    "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+    "dimension": "minecraft:overworld",
+    "cleanup_complete": true,
+    "cleanup_failed": false,
+    "cleanup_injection_triggered": false,
+    "failed_cleanup_entity_uuids": [],
+    "deliberate_crash_test": false,
+    "fixture_pickup_delay": 32766,
+    "catalog_total": 17239,
+    "catalog_start": 0,
+    "selected_count": 16,
+    "completed_render_returns": 16,
+    "completed_model_verified_returns": 16,
+    "completed_native_spawns": 16,
+    "mode": "authenticated_client_render",
+    "batch": 4,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:aeronautics:green_envelope_encased_shaft",
+    "owned_fixture_chunk_ticket_count": 0,
+    "owned_entities": [],
+    "owned_fixture_chunks": [],
+    "attempted_ids": [],
+    "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+  },
+  "hot_windows_json_reader": false,
+  "source_artifact_unchanged": true,
+  "previous_first_failure_preserved": true
+}

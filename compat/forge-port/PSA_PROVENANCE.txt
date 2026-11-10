@@ -10,3 +10,8 @@ PSA client compatibility: safe outline argument wrapper for Oculus and optional 
 PSA Pixelmon 9.2.3 shader wire compatibility: initialize the existing three codec names on both sides and normalize RGBA floats to match the existing reader. Original Pixelmon JAR unchanged.
 PSA Pixelmon/Carry On Player data compatibility: initialize Carry On's existing accessor before Pixelmon's existing accessors on both sides. No field IDs or packet values are replaced. Original mod JARs unchanged.
 PSA More Minecarts 1.8.3 compatibility: register TankCartEntity's existing fluid key against TankCartEntity rather than its unrelated FlagCartEntity sibling. Original More Minecarts JAR unchanged.
+PSA More Minecarts menu compatibility: transport runtime entity IDs as two ordinary short menu properties while retaining a full-int logical property; use the existing battery menu type in its client constructor. Original packet layout and mod JAR unchanged.
+
+Bountiful 6.0.4 board cumulative completion count uses the same two-short transport; logical counter preserved.
+PSA Jade 11.13.2/Sable compatibility: project hit-location reads into world space for ray math, clip ship-local entity boxes in their own frame, and measure server block-accessor range in world space. Original hit results, predicates, reach thresholds and oversized-query guard preserved. Render pose context is scoped with finally. Original Jade JAR unchanged.
+PSA Jade optional distance tooltip: measure eye-to-hit distance using render poses for storage-frame points; original tooltip formatting and configuration unchanged. Entity-accessor distance already delegates to Sable's existing configured entity-distance overwrite, so no second wrapper is added there.

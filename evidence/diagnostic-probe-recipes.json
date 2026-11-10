@@ -1,0 +1,172 @@
+{
+  "variants": [
+    {
+      "filename": "psa-discount-probe-0.1.jar",
+      "sha256": "96dcdf60dca812e423f6567184ae8c8c6fa43a2eaa50ef18f3fdcfe63ba67ed6",
+      "independent_builds_byte_identical": true
+    },
+    {
+      "filename": "psa-discount-patched-probe-0.1.jar",
+      "sha256": "33c0649f30fea449a4980ae6576ee3ce78a21284f76929e82ad2d4031b027c0d",
+      "independent_builds_byte_identical": true
+    },
+    {
+      "filename": "psa-menu-id-probe-0.1.jar",
+      "sha256": "a22f7f07c2ae25c762cd9a462452634c62632cc4b7756b3c4b03cb7b1e07304a",
+      "independent_builds_byte_identical": true
+    },
+    {
+      "filename": "psa-menu-id-patched-probe-0.1.jar",
+      "sha256": "e60c8e784dbf7541fcbd98829512b9a1917cca776de5ae902d8364262eee1675",
+      "independent_builds_byte_identical": true
+    }
+  ],
+  "baseline_without_binary_inputs": {
+    "discount": true,
+    "menu": true
+  },
+  "negative_controls": [
+    {
+      "kind": "discount",
+      "stale_valid_artifact_rejected": true,
+      "exit_code": 1,
+      "expected_error": "Unexpected discount helper identity",
+      "log_sha256": "eb401e7df9376e45320d81d8602001ec74e7d039186d39f250d8088490218c92"
+    },
+    {
+      "kind": "menu",
+      "stale_valid_artifact_rejected": true,
+      "exit_code": 1,
+      "expected_error": "Unexpected menu port identity",
+      "log_sha256": "8894ed3aebe4083d5a9f3f7a20985c9a1c30fb22c421e3b3e504402bf0477a6c"
+    }
+  ],
+  "runtime_runs": [
+    {
+      "kind": "discount",
+      "variant": "baseline",
+      "diagnostic_sha256": "96dcdf60dca812e423f6567184ae8c8c6fa43a2eaa50ef18f3fdcfe63ba67ed6",
+      "log_sha256": "089ee3d829108357cb499ba2aa7576313314b50277b8ed0ec1a9f2b42e9c27e7",
+      "report_sha256": "17554bc8cea8867c9b51abef82db533348f440a01f4504cd2e1665f88b76948d",
+      "process_exit_code": 0,
+      "marker": "PSA_DISCOUNT_PROBE BASELINE_REPRODUCED",
+      "semantic_result_identical_to_initial": true,
+      "canonical_result_sha256": "698ff258adcd55bb340e215f468bebcaaf1a78f27d4abc9b2dad162c60497a2a",
+      "case_count": 70,
+      "in_range_cases": 61
+    },
+    {
+      "kind": "discount",
+      "variant": "patched",
+      "diagnostic_sha256": "33c0649f30fea449a4980ae6576ee3ce78a21284f76929e82ad2d4031b027c0d",
+      "log_sha256": "35e397b052d8e772b1b53ff3b8b33b58840af7ba55acc35f5e4c3edeec275faa",
+      "report_sha256": "5e653c225a18c11fecfac80ff2dadd5e25d5e697d4cc0e1f65f64055de390a40",
+      "process_exit_code": 0,
+      "marker": "PSA_DISCOUNT_PROBE PATCHED_PASS",
+      "semantic_result_identical_to_initial": true,
+      "canonical_result_sha256": "5c2fa5a6f91519977b3c875b8e9c31efdbba3999aad301b48ed550c9f591f0ed",
+      "case_count": 70,
+      "in_range_cases": 61
+    },
+    {
+      "kind": "menu",
+      "variant": "baseline",
+      "diagnostic_sha256": "a22f7f07c2ae25c762cd9a462452634c62632cc4b7756b3c4b03cb7b1e07304a",
+      "log_sha256": "9557c6822fd9d43a8c323155aa5689fb80b7b2689190c18e7dfc5967b0fe11e5",
+      "report_sha256": "171522ea7ee8dd4d01763245c62ea42aab94430ee1808889e59bb2c9b12ac62b",
+      "process_exit_code": 0,
+      "marker": "PSA_MENU_ID_PROBE BASELINE_REPRODUCED",
+      "semantic_result_identical_to_initial": true,
+      "canonical_result_sha256": "0577ec90ac19f529406b68d79b7613868c41d10a408c71e4d9dcebf555d5f688",
+      "case_count": 16,
+      "wrong_cart_alias_cases": 2
+    },
+    {
+      "kind": "menu",
+      "variant": "patched",
+      "diagnostic_sha256": "e60c8e784dbf7541fcbd98829512b9a1917cca776de5ae902d8364262eee1675",
+      "log_sha256": "accb4a10d90e44543a0541f6f4da54fce96a4d4c83be459c9f3b07cd13083363",
+      "report_sha256": "12d0c2eebd3844daf6e29ea371532777442d7ab31b0735ec00e4710d1355b084",
+      "process_exit_code": 0,
+      "marker": "PSA_MENU_ID_PROBE PATCHED_PASS",
+      "semantic_result_identical_to_initial": true,
+      "canonical_result_sha256": "fe7e57a37e164fae1baf0463b9d2b77cab6cfe15043617dfece811cd06b49a6b",
+      "case_count": 16,
+      "wrong_cart_alias_cases": 2
+    }
+  ],
+  "initial_vs_regenerated_payloads": [
+    {
+      "kind": "discount",
+      "variant": "baseline",
+      "initial_sha256": "ae882c4805f76ffd876d7902317a9b1bd7df2b7fc0c1bb33c49818c3e8c8164c",
+      "regenerated_sha256": "96dcdf60dca812e423f6567184ae8c8c6fa43a2eaa50ef18f3fdcfe63ba67ed6",
+      "changed_payload_entries": [],
+      "changed_class_entries": [],
+      "added_entries": [],
+      "removed_entries": []
+    },
+    {
+      "kind": "discount",
+      "variant": "patched",
+      "initial_sha256": "ea760c90b038f3947d76e7bba2e4ec2139fd34d07d3ca11e28a66ca56538579f",
+      "regenerated_sha256": "33c0649f30fea449a4980ae6576ee3ce78a21284f76929e82ad2d4031b027c0d",
+      "changed_payload_entries": [
+        "META-INF/MANIFEST.MF",
+        "psa-discount-patched.mixins.json"
+      ],
+      "changed_class_entries": [],
+      "added_entries": [],
+      "removed_entries": []
+    },
+    {
+      "kind": "menu",
+      "variant": "baseline",
+      "initial_sha256": "bd7f3ec94bfc1b1b829e5d80f6a01838a8c7344af19134026b45d361d65064e0",
+      "regenerated_sha256": "a22f7f07c2ae25c762cd9a462452634c62632cc4b7756b3c4b03cb7b1e07304a",
+      "changed_payload_entries": [
+        "dev/psa/menuidprobe/MenuIdProbe$Capture.class",
+        "dev/psa/menuidprobe/MenuIdProbe.class"
+      ],
+      "changed_class_entries": [
+        "dev/psa/menuidprobe/MenuIdProbe$Capture.class",
+        "dev/psa/menuidprobe/MenuIdProbe.class"
+      ],
+      "added_entries": [],
+      "removed_entries": []
+    },
+    {
+      "kind": "menu",
+      "variant": "patched",
+      "initial_sha256": "047f85282300e84e93d9354103cf4d07f4dd261d93b2ed5d289b175fb958dede",
+      "regenerated_sha256": "e60c8e784dbf7541fcbd98829512b9a1917cca776de5ae902d8364262eee1675",
+      "changed_payload_entries": [
+        "META-INF/MANIFEST.MF",
+        "dev/psa/menuidprobe/MenuIdProbe$Capture.class",
+        "dev/psa/menuidprobe/MenuIdProbe.class"
+      ],
+      "changed_class_entries": [
+        "dev/psa/menuidprobe/MenuIdProbe$Capture.class",
+        "dev/psa/menuidprobe/MenuIdProbe.class"
+      ],
+      "added_entries": [
+        "psa-menu-id-patched.mixins.json"
+      ],
+      "removed_entries": [
+        "psa-menu-id-probe.mixins.json"
+      ]
+    }
+  ],
+  "artifact_identity_note": "Canonical archives use committed manifests/configuration and normalized ZIP metadata. Old manually composed hashes are preserved; no claim of byte identity to ea760c. Discount Java class bytes are identical. Menu initial minimal probes predate the already-accepted broadcast followup source; regeneration uses that current source.",
+  "same_family_recipe_audit": {
+    "shader": "already has committed Baseline/Patched tasks",
+    "catalog": "single diagnostic, production variants built separately from committed sources",
+    "model": "single diagnostic JAR, resource controls separate",
+    "menu_id": "previous selective-class composition now committed and rerun",
+    "discount": "current finding fixed with committed paired tasks and hash-checked extraction"
+  },
+  "production_classes_preserved": {
+    "discount_mixin_byte_identical_to_helper": 1,
+    "menu_mixins_and_helper_byte_identical_to_common_port": 5
+  }
+}

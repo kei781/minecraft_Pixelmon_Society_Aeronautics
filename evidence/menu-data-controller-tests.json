@@ -1,0 +1,16 @@
+{
+  "source_commit": "a09cfad7f912b3e9d91b5bdd2ce3f11188f887ce",
+  "macos": {
+    "discovered": 56,
+    "passed": 53,
+    "skipped_linux_only": 3,
+    "log_sha256": "36d6c2b62171e55e3ecaf71d9a08a9211b33143e2bbf59bf9df21826fd554e25"
+  },
+  "ubuntu": {
+    "discovered": 56,
+    "passed": 56,
+    "skipped": 0,
+    "log_sha256": "244cd7657cf40f8a8ab4604aca1b87c1665597ddaf3509e469282393449beb61"
+  },
+  "scope": "preparation/export/controller regression; does not stand in for authenticated client rendering or gameplay"
+}

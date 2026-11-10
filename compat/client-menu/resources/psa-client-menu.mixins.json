@@ -3,6 +3,6 @@
   "minVersion": "0.8",
   "package": "dev.psa.clientmenu.mixin",
   "compatibilityLevel": "JAVA_17",
-  "client": ["PixelmonPauseMenuMixin"],
+  "client": ["PixelmonPauseMenuMixin", "BountifulDiscountMixin"],
   "injectors": {"defaultRequire": 1}
 }

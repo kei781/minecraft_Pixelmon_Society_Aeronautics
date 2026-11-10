@@ -1,0 +1,141 @@
+{
+  "journal_sha256": "f29c9c20f6553468bd065f37145db3a8e7510e0430c3b3d4049fd27d2b5cad16",
+  "journal_bytes": 37962,
+  "sample_count": 125,
+  "first_on": {
+    "event": "sample",
+    "body": [
+      23.497739791870117,
+      110.3866195678711,
+      7.445526123046875
+    ],
+    "player": [
+      23.49743530767923,
+      104.00000355978148,
+      6.445081392302464
+    ],
+    "body_rise": 0.0,
+    "pilot_rise": 7.42535505082742e-07,
+    "lever": "ON",
+    "physics_paused_by_monitor": false,
+    "elapsed_seconds": 78.473
+  },
+  "first_off_after_on": {
+    "event": "sample",
+    "body": [
+      23.449386596679688,
+      118.46656036376953,
+      7.4153313636779785
+    ],
+    "player": [
+      23.465200605247706,
+      112.07993759164188,
+      6.424652800472353
+    ],
+    "body_rise": 8.079940795898438,
+    "pilot_rise": 8.079934774395909,
+    "lever": "OFF",
+    "physics_paused_by_monitor": true,
+    "elapsed_seconds": 119.534
+  },
+  "max_body_rise": 9.014244079589844,
+  "sample_at_max": {
+    "event": "sample",
+    "body": [
+      23.449386596679688,
+      119.40086364746094,
+      7.414816379547119
+    ],
+    "player": [
+      23.46072650586303,
+      112.98179469443009,
+      6.421371145009923
+    ],
+    "body_rise": 9.014244079589844,
+    "pilot_rise": 8.981791877184122,
+    "lever": "OFF",
+    "physics_paused_by_monitor": false,
+    "elapsed_seconds": 121.466
+  },
+  "events": [
+    {
+      "event": "ready",
+      "body": [
+        23.497737884521484,
+        110.3866195678711,
+        7.445521354675293
+      ],
+      "player": [
+        23.497435715259382,
+        104.00000281724597,
+        6.445079742480455
+      ],
+      "mass": 392.5,
+      "lever": "OFF",
+      "elapsed_seconds": 0.476
+    },
+    {
+      "event": "height_cap_hold",
+      "body_rise": 7.3430938720703125,
+      "pilot_rise": 7.424694706463072,
+      "elapsed_seconds": 107.543
+    },
+    {
+      "event": "off_observed_physics_resumed",
+      "elapsed_seconds": 119.593
+    },
+    {
+      "event": "landed_after_off",
+      "body_rise": 0.017547607421875,
+      "pilot_rise": 0.030415862372521474,
+      "elapsed_seconds": 124.495
+    },
+    {
+      "event": "monitor_finished",
+      "on_observed": true,
+      "off_after_on_observed": true,
+      "landed_observed": true,
+      "cleanup_errors": [],
+      "elapsed_seconds": 124.554
+    }
+  ],
+  "mode_before_flight": {
+    "playerGameType": 0,
+    "flying": false,
+    "mayfly": false,
+    "invulnerable": false,
+    "health": 20
+  },
+  "scope": "Actual survival vertical hot-air lift and native player carry with QAheight-cap pause, not uninterrupted flight. No scripted lift/velocity or player teleport during lift.",
+  "post_flight_native_health": 20,
+  "post_flight_native_game_type": 0,
+  "post_flight_native_flying": false,
+  "post_flight_native_mayfly": false,
+  "same_world_restart": true,
+  "observer_version": "0.4",
+  "common_sha256": "31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5",
+  "windows_report": {
+    "bytes": 8297,
+    "sha256": "8fb4bf2b399255324614aed215215cf10d6ffab6d7d8da76f8107ee50f0fe46b",
+    "f8_on_kst": "2026-11-09 19:35:12.817",
+    "f8_off_kst": "2026-11-09 19:35:53.721",
+    "new_errors": 0,
+    "hearts_visible": 10,
+    "hunger_full": true,
+    "experience_level": 2,
+    "party": [
+      {
+        "species": "Totodile",
+        "level": 6,
+        "hp": 13,
+        "max_hp": 22
+      },
+      {
+        "species": "Magikarp",
+        "level": 16,
+        "hp": 30,
+        "max_hp": 33
+      }
+    ]
+  }
+}

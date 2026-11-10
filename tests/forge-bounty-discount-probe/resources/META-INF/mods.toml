@@ -1,0 +1,8 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psadiscountprobe"
+version="0.1"
+displayName="PSA isolated bounty discount probe"
+description="Test only. Observes server factory arguments and checks original discount math. Never export."

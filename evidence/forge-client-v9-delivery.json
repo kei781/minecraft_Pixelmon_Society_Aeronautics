@@ -1,0 +1,12 @@
+{
+  "filename": "PSA-Forge-Full-Experimental-v9.mrpack",
+  "windows_received": true,
+  "size": 1137786188,
+  "sha256": "64dcbbb3760860599adf9ed950831160df7bfa9eb8189849166bfa8cea7ab47a",
+  "windows_peer_verified_size_and_sha256": true,
+  "existing_game_instance_and_frozen_report_preserved": true,
+  "receipt_filename": "PSA-Windows-v9-Receipt.json",
+  "fresh_import_started_separately": true,
+  "fresh_import_passed": true,
+  "scope": "Actual user-confirmed Prism import and installed7925 payload hashes; see forge-client-v9-import-windows.json. Fresh launch pending."
+}

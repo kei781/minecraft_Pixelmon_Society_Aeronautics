@@ -1,5 +1,7 @@
 # 일시정지 메뉴 겹침 수정
 
+이 문서는 Task 5와 v7 당시의 구현·검증 기록이다. 해당 보정은 후속 통합 팩에도 포함되며, 최신 설치와 서버 짝 버전은 [Windows 안내](windows-client.md)와 [최신 진행 상태](progress.md)를 따른다.
+
 사용자가 보낸 Windows 화면에서 Wiki 버튼의 글자가 겹쳤다. Society 4.1.5A의 FancyMenu 설정은 같은 줄에 자체 Wiki·Credits 버튼을 추가하고 기본 피드백·버그 신고 버튼을 숨긴다. Pixelmon 9.2.3은 그 위치에 피드백·버그 신고 버튼을 새로 추가한다. 전체 클라이언트의 실제 버튼 좌표를 측정해 배율 2·3·4에서 각각 겹침 2쌍을 재현했다.
 
 `PSA-Client-Menu-Compat-1.0.jar`는 자체 작성한 클라이언트 전용 보정이다. 일시정지 화면이며 Society·FancyMenu가 로드됐고, FancyMenu의 실제 화면 사용자 지정 API가 활성 상태를 반환하며, 고정 Society 원본 메뉴 설정 SHA256도 맞을 때만 Pixelmon의 중복 링크 버튼을 숨기고 비활성화한다. API를 확인할 수 없으면 보정하지 않는다. Wiki·Credits와 Pixelmon·Discord 버튼을 유지한다. 메뉴 설정을 사용자가 바꾸거나 비활성화했으면 보정하지 않는다. 서버 모드·월드·인증·게임 콘텐츠는 바꾸지 않는다.

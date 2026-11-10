@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psadatapacksynccompat"
+version="0.1"
+displayName="PSA Dedicated Datapack Sync Compatibility"
+displayTest="IGNORE_SERVER_VERSION"
+description='''Authored server-only recipient correction for pinned SerializerDebug. Original packet data is preserved.'''
+[[dependencies.psadatapacksynccompat]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="SERVER"
+[[dependencies.psadatapacksynccompat]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.20]"
+ordering="NONE"
+side="SERVER"
+[[dependencies.psadatapacksynccompat]]
+modId="serializer_debug"
+mandatory=true
+versionRange="[1.0.1]"
+ordering="AFTER"
+side="SERVER"

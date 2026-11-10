@@ -1,0 +1,20 @@
+{
+  "backup_file": "before-render08-1794221883225577333.tar.gz",
+  "backup_bytes": 12035905,
+  "backup_sha256": "c420abe8f19bf8b8942b229e116b33e06f8cdbbc091af132e9def17fe4c8ba80",
+  "observer_version": "0.8",
+  "observer_bytes": 41011,
+  "observer_sha256": "8255403e98ab26e6f42eecd6078f7107ca6e103759dd413fce5659792dceb66b",
+  "production313_manifest_sha256": "ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e",
+  "production_mods": 313,
+  "diagnostics": 2,
+  "jade04_sha256": "1775d74b4b28d9339e564a6725e90dfe6282deaf78dabd2a9f301bd8efa5e01c",
+  "same_world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+  "properties_unchanged": true,
+  "normal_stop": true,
+  "missing_render08_negative_control": "rejected; exact restored/verify passed",
+  "start": "Started; verify Done before connecting",
+  "dedicated_done_utc": "2026-11-09 11:00:02",
+  "fatal_loader_mixin_errors": 0,
+  "windows_candidate_runtime": "PASS scoped60native/model/rendercontrols, same825540/nohotreader; realassetmissingnegative stopswholeprogress at4224; no allfeatures/overallcompletion."
+}
