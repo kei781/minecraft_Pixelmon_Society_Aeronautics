@@ -1,6 +1,6 @@
 # Windows 플레이어 설치
 
-현재 시험 후보는 **`PSA-Forge-Full-Experimental-v19.mrpack`**이다. 세 프로젝트, 모드 JAR 355개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. v19의 새 Windows 가져오기·실행과 Task18 독립 리뷰는 아직 확인하지 않았다.
+현재 시험 후보는 **`PSA-Forge-Full-Experimental-v19.mrpack`**이다. 세 프로젝트, 모드 JAR 355개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. Task18 독립 리뷰는 수락했으며 v19의 새 Windows 가져오기·실행은 아직 확인하지 않았다.
 
 Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. v18은 기존 보정에 원격 접속 후 ALI 툴팁 등록 오류를 고치는 클라이언트 전용 모드 하나를 더했다. 서버는 v17과 같은 공통 보정본·313개 모드를 사용한다. [구성과 검증 범위](forge-candidate.md), [ALI 수정](ali-client-tooltips.md), [스타터 오류 수정](pixelmon-starter-disconnect.md).
 

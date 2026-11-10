@@ -8,7 +8,7 @@
 
 Windows 설치는 런처·Java 같은 선행 프로그램을 안내에 따라 설치하고 준비된 모드팩을 가져오는 방식도 허용합니다. 모든 준비 과정을 자동화한 단일 실행 파일은 필수 조건이 아닙니다. 같은 구성의 클라이언트를 설치하고 실제 서버에 접속하는 것이 완료 조건입니다.
 
-현재 전체 시험 후보는 `PSA-Forge-Full-Experimental-v19.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 모드355개이며 진단은 포함하지 않습니다. 기존 [스타터 오류 수정](docs/pixelmon-starter-disconnect.md)·[ALI 툴팁 수정](docs/ali-client-tooltips.md)에 전리품 JSON 보정을 반영했습니다. 별도 QA 서버에서 [전체 데이터 갱신·변경·복원](docs/datapack-reload-recovery.md)을 통과했으며 새 314개 모드 서버 후보는 staging 상태입니다. 현재 운영은 v17·313개로 계속 실행합니다. 최신 후보의 독립 리뷰·운영 교체·새 Windows 가져오기는 아직입니다. 이전 v9은 새 가져오기·7,925개 파일 해시 대조·정품 접속·아이템16개 렌더를 통과했습니다. [당시 실행 기록](evidence/forge-client-v9-launch-windows.json), [진행 상태](docs/progress.md).
+현재 전체 시험 후보는 `PSA-Forge-Full-Experimental-v19.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 모드355개이며 진단은 포함하지 않습니다. 기존 [스타터 오류 수정](docs/pixelmon-starter-disconnect.md)·[ALI 툴팁 수정](docs/ali-client-tooltips.md)에 전리품 JSON 보정을 반영했습니다. 별도 QA 서버에서 [전체 데이터 갱신·변경·복원](docs/datapack-reload-recovery.md)을 통과했고 최신 Opus 독립 리뷰도 수락했습니다. 새 314개 모드 서버 후보는 N100의 별도 준비 경로에서 정지 상태입니다. 현재 운영은 v17·313개로 계속 실행합니다. 운영 교체·새 Windows 가져오기는 아직입니다. 이전 v9은 새 가져오기·7,925개 파일 해시 대조·정품 접속·아이템16개 렌더를 통과했습니다. [당시 실행 기록](evidence/forge-client-v9-launch-windows.json), [진행 상태](docs/progress.md).
 
 ## 보존한 최초 1.21.1 조사 기준
 

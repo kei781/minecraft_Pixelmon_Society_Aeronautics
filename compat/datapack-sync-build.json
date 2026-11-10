@@ -22,5 +22,5 @@
   "recipe_sha256": "6ff7e918736526d8f72f6a60da11dda45502818b496cf451391d5785f698497d",
   "original_target_sha256": "fe77df10d803e08c95b9d47608444982629d2a426d1f74ac41ec569eb8fe96a8",
   "independent_byte_equal": true,
-  "scope": "Authored dedicated-server recipient correction; minimal original failure/patched success and full genuine one-player changed/restored reload verified; independent source review pending"
+  "scope": "Authored dedicated-server recipient correction; native minimal original failure/patched success and full genuine one-player changed/restored reload verified; latest-stable Opus5.5/high R2 CLEAN, live PR15 unresolved0"
 }
