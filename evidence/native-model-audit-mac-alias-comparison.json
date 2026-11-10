@@ -1,0 +1,96 @@
+{
+  "diagnostic_version": "0.1",
+  "platform": "macOS arm64, Java17",
+  "scope": "native default-stack ItemRenderer.getModel; null world/player; no render, texture, spawn, use or gameplay proof",
+  "catalog_sha256": "32af2e9be25cb5f8f14e75e4dc9426d1f4b68f0eb90385a8e6a70aa81a8fa533",
+  "catalog_items": 17239,
+  "baseline": {
+    "run": "ca157a8c-841e-4715-941b-d66753b155e3",
+    "resource_generation": 1,
+    "missing_models": [
+      {
+        "id": "decorative_blocks:blockstate_copy_item"
+      },
+      {
+        "id": "displaydelight:beetroot_soup"
+      },
+      {
+        "id": "displaydelight:mushroom_stew"
+      },
+      {
+        "id": "displaydelight:rabbit_stew"
+      },
+      {
+        "id": "pixelmon:boss_music_disc"
+      },
+      {
+        "id": "pixelmon:christmas_ball"
+      },
+      {
+        "id": "pixelmon:custom_music_disc"
+      },
+      {
+        "id": "pixelmon:gym_music_disc"
+      },
+      {
+        "id": "pixelmon:legendary_music_disc"
+      },
+      {
+        "id": "pixelmon:loaded_dice"
+      },
+      {
+        "id": "pixelmon:no_item"
+      },
+      {
+        "id": "pixelmon:player_music_disc"
+      },
+      {
+        "id": "pixelmon:poke_center_music_disc"
+      },
+      {
+        "id": "pixelmon:punching_glove"
+      },
+      {
+        "id": "pixelmon:raid_music_disc"
+      },
+      {
+        "id": "pixelmon:trainer_music_disc"
+      },
+      {
+        "id": "pixelmon:ultra_space_music_disc"
+      },
+      {
+        "id": "pixelmon:wild_music_disc"
+      },
+      {
+        "id": "tcg:battle_spectator"
+      },
+      {
+        "id": "verdantvibes:potted_burnweed"
+      },
+      {
+        "id": "via_romana:warp_block"
+      },
+      {
+        "id": "vintagedelight:vinegar_jar"
+      }
+    ],
+    "report_sha256": "d9f99e1dfccb43da6e659ce629f1dd0496a42aabf4db870be89fc60823a40e9a"
+  },
+  "after_alias": {
+    "run": "391ca0cf-5cd6-4d8d-a453-720428abeb68",
+    "resource_generation": 2,
+    "missing_model_count": 21,
+    "report_sha256": "582ab48a07df04957e65b932a283c52eee6c00cbbf46e2aeba36fe8ec82f9571"
+  },
+  "removed_missing_ids": [
+    "decorative_blocks:blockstate_copy_item"
+  ],
+  "new_missing_ids": [],
+  "lookup_errors_both": 0,
+  "default_stack_mismatches_both": 0,
+  "native_reload_control_run": "11637d98-201a-454a-b3c7-63a1d1eac1b5",
+  "native_reload_future_result": "completed",
+  "native_item_render_or_use_verified": false,
+  "observed_note": "Unique completed valid JSON reports, newline and all totals verified; v0.1 System.out completion marker was not persisted in the game log. v0.2 switches to the game logger."
+}

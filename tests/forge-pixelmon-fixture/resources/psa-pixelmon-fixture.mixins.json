@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.psa.pixelmonfixture.mixin",
+  "plugin": "dev.psa.pixelmonfixture.FixtureMixinPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "SplashTestFixtureMixin",
+    "ClangorousSoulblazeCorrectBoostAmountTestFixtureMixin",
+    "DancerTestFixtureMixin",
+    "HiddenPowerMaxMoveTypingTestFixtureMixin",
+    "NonExtremeWeatherFailsDuringDeltaStreamTestFixtureMixin",
+    "ShedinjaHPDynamaxTestFixtureMixin",
+    "ShellTrapTestFixtureMixin",
+    "ShieldsDownRemovesHazardsTestFixtureMixin",
+    "SpammableDestinyBondTestFixtureMixin",
+    "TypeTestingFixtureMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

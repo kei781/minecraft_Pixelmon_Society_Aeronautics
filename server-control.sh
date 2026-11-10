@@ -21,7 +21,35 @@ case "${1:-status}" in
     grep -qx 'eula=true' eula.txt || { echo 'Read the Minecraft EULA, then start --accept-eula' >&2; exit 1; }
     [[ -x runtime/java/bin/java && -f libraries/net/minecraftforge/forge/1.20.1-47.4.20/unix_args.txt ]] || { echo 'Install the pinned runtime first' >&2; exit 1; }
     sha256sum --check --status .psa-mods.sha256 || { echo 'Mod hash mismatch' >&2; exit 1; }
-    [[ "$(find mods -maxdepth 1 -type f -name '*.jar' | wc -l)" -eq 313 ]] || { echo 'Unexpected mod inventory' >&2; exit 1; }
+    expected_mods=$(python3 - <<'PY'
+import hashlib
+import json
+from pathlib import Path
+
+expected = {"path": "mods/PSA-Datapack-Sync-Compat-0.1.jar",
+    "sha256": "02ef84d99f5cbd086624403160a6e0ba4cd2c87516874692f1e1cdcc4f5d948d",
+    "server_only": True, "source": "compat/datapack-sync",
+    "target_sha256": "fe77df10d803e08c95b9d47608444982629d2a426d1f74ac41ec569eb8fe96a8"}
+profile = json.loads(Path(".psa-forge-candidate.json").read_text())
+module = Path(expected["path"])
+if not module.exists() and not module.is_symlink() and profile.get("datapack_sync_compatibility") is None:
+    if profile.get("top_level_mod_jars", 313) != 313:
+        raise SystemExit("Declared server-only datapack module missing")
+    print(313)
+    raise SystemExit(0)
+if profile.get("top_level_mod_jars") != 314 or profile.get("datapack_sync_compatibility") != expected:
+    raise SystemExit("Exact server-only datapack module declaration required")
+if Path("mods").is_symlink():
+    raise SystemExit("Regular mod directory required")
+for name, wanted in [(expected["path"], expected["sha256"]),
+                     ("mods/serializer_debug-1.0.1.jar", expected["target_sha256"])]:
+    path = Path(name)
+    if path.is_symlink() or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != wanted:
+        raise SystemExit("Pinned server-only datapack module or target differs")
+print(314)
+PY
+    )
+    [[ "$(find mods -maxdepth 1 -type f -name '*.jar' | wc -l)" -eq "$expected_mods" ]] || { echo 'Unexpected mod inventory' >&2; exit 1; }
     grep -qx 'online-mode=true' server.properties || { echo 'Online authentication is required' >&2; exit 1; }
     mkdir -p logs
     if [[ -f console.log ]]; then mv console.log "$(mktemp logs/console-previous-XXXXXXXX)"; fi

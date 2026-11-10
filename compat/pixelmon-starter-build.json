@@ -1,0 +1,9 @@
+{
+  "base_common_sha256": "53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c",
+  "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+  "tested_patch_sha256": "aa87c196293e2a818ebf56b595e27c70b89536d00fe7c89ae6f339dc985a806b",
+  "source_sha256": "e532a4395143226db85b14219a98fccacf4c24091d1d9f5dcd310e768b242328",
+  "config_sha256": "fc317dfd75afcea22a2e67924f92a9427e7f3ea93e5a2926f14437d01f733cec",
+  "class_sha256": "3fe8e9fd616d2e4429b97a39c4968e5854897f8c2dab1246f6d48996d83e27a1",
+  "scope": "Only authored starter recipient class/config and manifest/provenance. Pixelmon/upstream code/assets and existing HP correction preserved."
+}

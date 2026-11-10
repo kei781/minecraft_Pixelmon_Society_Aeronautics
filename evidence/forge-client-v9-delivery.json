@@ -7,6 +7,6 @@
   "existing_game_instance_and_frozen_report_preserved": true,
   "receipt_filename": "PSA-Windows-v9-Receipt.json",
   "fresh_import_started_separately": true,
-  "fresh_import_passed": false,
-  "scope": "File receipt only; raw receipt remains Windows, private addresses excluded."
+  "fresh_import_passed": true,
+  "scope": "Actual user-confirmed Prism import and installed7925 payload hashes; see forge-client-v9-import-windows.json. Fresh launch pending."
 }

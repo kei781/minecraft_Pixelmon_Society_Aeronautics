@@ -1,0 +1,74 @@
+{
+  "state": {
+    "run": "0ab86379-4208-4b36-8f04-177561a5f4b9",
+    "result": "complete",
+    "world_generation": "a6eccefa-6640-4608-9d85-ea2c1d79edc9",
+    "dimension": "minecraft:overworld",
+    "cleanup_complete": true,
+    "cleanup_failed": false,
+    "cleanup_injection_triggered": false,
+    "failed_cleanup_entity_uuids": [],
+    "deliberate_crash_test": false,
+    "fixture_pickup_delay": 32766,
+    "catalog_total": 17239,
+    "catalog_start": 0,
+    "selected_count": 16,
+    "completed_render_returns": 16,
+    "completed_model_verified_returns": 16,
+    "completed_native_spawns": 16,
+    "mode": "authenticated_client_render",
+    "batch": 4,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:aeronautics:green_envelope_encased_shaft",
+    "owned_fixture_chunk_ticket_count": 0,
+    "owned_entities": [],
+    "owned_fixture_chunks": [],
+    "attempted_ids": [],
+    "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+  },
+  "diagnostic_version": "0.7",
+  "diagnostic_sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310",
+  "summary_sha256": "01d5f4c7c78e9b59f463c31cf157e82e89ed867c386000ae40b8c2f678facb91",
+  "journal_sha256": "f9c609d471270bf892e8894c24d111a219269344bb0426f339177a6f3af4d19d",
+  "ownership_ledger_sha256": "9138c74e36975892143353e23ddb22a2d92999e4fe2eb460d2f9775f85d72117",
+  "batches": 4,
+  "unique_items": 16,
+  "unique_entity_uuids": 16,
+  "model_masks": [
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ]
+  ],
+  "scope": "Actual authenticated client native renderer returns and model lookup observations for sixteen Aeronautics default items; not full registry, texture correctness or functional use.",
+  "windows_visual_report_pending": false,
+  "task_complete": false,
+  "both_user_goals_complete": false,
+  "windows_client_observation": {
+    "same_run_and_batch": true,
+    "last_batch": 3,
+    "status": "ack_all_native_returns_and_models",
+    "begun": 4,
+    "native_return": 4,
+    "model_observed_mask": 15,
+    "missing_model_mask": 0,
+    "checkpoint_bytes": 1123,
+    "checkpoint_sha256": "0125080204f325c05810f3c61e9542fd2ce823af8d0bcab4755cf6a9f88ea9d9",
+    "report_bytes": 1617,
+    "report_sha256": "8e7d0b4a584874a462ba0c544f7d0d72ccab332755cb08e1b32da9eb2ccd13f8",
+    "all_sixteen_textures_visually_verified": false,
+    "raw_windows_files_transferred": false
+  }
+}

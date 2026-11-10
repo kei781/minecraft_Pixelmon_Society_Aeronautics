@@ -1,0 +1,117 @@
+{
+  "pixelmon_only": {
+    "started": [
+      "clangorous_soulblaze_correct_boost_amount",
+      "dancer_copies_damage_dealing_dance_moves",
+      "hidden_power_max_move_typing",
+      "non_extreme_weather_fails_during_delta_stream",
+      "shedinja_hp_dynamax",
+      "shell_trap_damages_opponents_not_user",
+      "shields_down_should_not_remove_hazards",
+      "spammable_destiny_bond",
+      "splash_no_damage",
+      "Normal doesn't damage ghost"
+    ],
+    "success_logs": [
+      "clangorous_soulblaze_correct_boost_amount",
+      "dancer_copies_damage_dealing_dance_moves",
+      "hidden_power_max_move_typing",
+      "shell_trap_damages_opponents_not_user",
+      "spammable_destiny_bond",
+      "splash_no_damage",
+      "Normal doesn't damage ghost"
+    ],
+    "failure_logs": [
+      [
+        "shedinja_hp_dynamax",
+        "Shedinja does not have 1 HP while Dynamaxed!"
+      ],
+      [
+        "shields_down_should_not_remove_hazards",
+        "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      ]
+    ],
+    "pending_names": [
+      "non_extreme_weather_fails_during_delta_stream"
+    ],
+    "null_trainer_errors": 0,
+    "null_pokemon_errors": 1
+  },
+  "integrated_no_player": {
+    "started": [
+      "clangorous_soulblaze_correct_boost_amount",
+      "dancer_copies_damage_dealing_dance_moves",
+      "hidden_power_max_move_typing",
+      "non_extreme_weather_fails_during_delta_stream",
+      "shedinja_hp_dynamax",
+      "shell_trap_damages_opponents_not_user",
+      "shields_down_should_not_remove_hazards",
+      "spammable_destiny_bond",
+      "splash_no_damage",
+      "Normal doesn't damage ghost"
+    ],
+    "success_logs": [
+      "clangorous_soulblaze_correct_boost_amount",
+      "dancer_copies_damage_dealing_dance_moves",
+      "hidden_power_max_move_typing",
+      "shell_trap_damages_opponents_not_user",
+      "spammable_destiny_bond",
+      "splash_no_damage",
+      "Normal doesn't damage ghost"
+    ],
+    "failure_logs": [
+      [
+        "shedinja_hp_dynamax",
+        "Shedinja does not have 1 HP while Dynamaxed!"
+      ],
+      [
+        "shields_down_should_not_remove_hazards",
+        "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      ]
+    ],
+    "pending_names": [
+      "non_extreme_weather_fails_during_delta_stream"
+    ],
+    "null_trainer_errors": 12,
+    "null_pokemon_errors": 1
+  },
+  "pixelmon_only_rain": {
+    "started": [
+      "clangorous_soulblaze_correct_boost_amount",
+      "dancer_copies_damage_dealing_dance_moves",
+      "hidden_power_max_move_typing",
+      "non_extreme_weather_fails_during_delta_stream",
+      "shedinja_hp_dynamax",
+      "shell_trap_damages_opponents_not_user",
+      "shields_down_should_not_remove_hazards",
+      "spammable_destiny_bond",
+      "splash_no_damage",
+      "Normal doesn't damage ghost"
+    ],
+    "success_logs": [
+      "clangorous_soulblaze_correct_boost_amount",
+      "dancer_copies_damage_dealing_dance_moves",
+      "hidden_power_max_move_typing",
+      "shell_trap_damages_opponents_not_user",
+      "spammable_destiny_bond",
+      "splash_no_damage",
+      "Normal doesn't damage ghost"
+    ],
+    "failure_logs": [
+      [
+        "shedinja_hp_dynamax",
+        "Shedinja does not have 1 HP while Dynamaxed!"
+      ],
+      [
+        "shields_down_should_not_remove_hazards",
+        "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      ]
+    ],
+    "pending_names": [
+      "non_extreme_weather_fails_during_delta_stream"
+    ],
+    "null_trainer_errors": 0,
+    "null_pokemon_errors": 1
+  },
+  "scope": "Unmodified native console battletests; success log counts do not mean suite completion. No native result is altered. Player count and rain controls did not explain extra integrated null-trainer errors."
+}

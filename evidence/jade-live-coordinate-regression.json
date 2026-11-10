@@ -1,0 +1,94 @@
+{
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "common_sha256": "31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5",
+  "observer_version": "0.3",
+  "ordinary_world_control": {
+    "seconds": 37.65,
+    "client_query_delta": 800,
+    "client_cumulative_queries": 4200,
+    "storage_like_queries": 0,
+    "cumulative_max_aabb_axis": 4.50222762492611,
+    "hud": "Furnace/Minecraft with smelting data",
+    "new_client_errors": 0,
+    "report_bytes": 1991,
+    "report_sha256": "215c9cc3a28722dd6315a874b0bd2b4587ee5888f2a723b467f11ac4fc68ce33"
+  },
+  "exact_old_lever_reproduction": {
+    "seconds": 49.61,
+    "hud": "Lever/State:Off",
+    "client_query_delta": 1000,
+    "storage_like_delta": 1000,
+    "client_cumulative_queries": 11000,
+    "storage_like_cumulative": 1441,
+    "new_client_errors": 0,
+    "sample_query": 9560,
+    "world_start": [
+      23.5,
+      105.61999988555908,
+      6.5
+    ],
+    "world_end": [
+      24.51997739783903,
+      104.37499666537408,
+      7.519977397432295
+    ],
+    "unchanged_cached_hit": [
+      20481037.519935563,
+      129.375,
+      20481036.51996268
+    ],
+    "sample_aabb_max_axis": 1.2450032201849979,
+    "report_bytes": 4437,
+    "report_sha256": "71c6db5d767853dd730adcbc6f045d7d5ea4d6d2483d29c050f79c8c05f940aa"
+  },
+  "query_guard_suppressed": false,
+  "interaction_hit_modified": false,
+  "scope": "Actual authenticated fresh JVM query returns and HUD plus native callback returns. Cached local hit remains unchanged. Storage-like counters use diagnostic magnitude, not frame identity. No claim every target, rotated live frame, local entity, or complete pack passed.",
+  "ship_furnace_control": {
+    "seconds": 37.31,
+    "hud": "Furnace/Minecraft, coal fuel, progress arrow and iron output",
+    "new_client_errors": 0,
+    "query_delta": 700,
+    "storage_like_delta": 700,
+    "cumulative_query_count": 19100,
+    "storage_like_cumulative": 9541,
+    "report_bytes": 4027,
+    "report_sha256": "7a63b0e9243583249dc3e19f40c85abcc096e7ce81980ee53e4e19bac84238b5",
+    "native_storage_block": [
+      20481035,
+      129,
+      20481036
+    ],
+    "native_storage_request_callbacks": 571,
+    "native_storage_requests": 571,
+    "storage_coordinates_calculated_by": "Native execute in_sub_level actual pose, not guessed"
+  },
+  "server_native_callbacks_before_fixture_cleanup": {
+    "scope": "Native Jade requests and forwarded native callback returns; not proof of client receipt. Storage-like is raw squared distance greater than 10000, not frame identity.",
+    "block_requests": 1873,
+    "block_callbacks_returned": 1873,
+    "entity_requests": 1527,
+    "entity_callbacks_returned": 1527,
+    "storage_like_block_requests": 599,
+    "storage_like_block_callbacks_returned": 599,
+    "storage_like_entity_requests": 0,
+    "storage_like_entity_callbacks_returned": 0
+  },
+  "entity_control": {
+    "seconds": 37.82,
+    "hud": "Chicken/Minecraft, two hearts and Next Egg",
+    "new_client_errors": 0,
+    "report_bytes": 4221,
+    "report_sha256": "7108c6c4485e2303f8058ebd68bd290b5b8fa61957df126110cd3b3b3288c360",
+    "native_position_frame": "Chicken projected to ordinary world at22.5,105.02,7.5; not a storage-entity control",
+    "client_query_count_delta": 0,
+    "reason": "Original Jade fire cached-entity early path does not call the observed rayTrace",
+    "storage_entity_response_verified": false
+  },
+  "fixture_cleanup": {
+    "owned_ship_furnace_inventory_cleared_before_removal": true,
+    "tagged_empty_loot_chicken_removed": true,
+    "original_rig_mass_restored": 392.5
+  }
+}

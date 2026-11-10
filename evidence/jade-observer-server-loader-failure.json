@@ -1,0 +1,21 @@
+{
+  "observer_version": "0.2",
+  "first_error_utc": "2026-11-09 08:56:50",
+  "exception": "org.spongepowered.asm.mixin.transformer.throwables.IllegalClassLoadError",
+  "message": "JadeProbe is in defined mixin package dev.psa.jadeprobe.* and cannot be referenced directly",
+  "dedicated_done": false,
+  "first_relevant_frame": "org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins:334",
+  "affected_own_classes": [
+    "dev.psa.jadeprobe.JadeProbe",
+    "dev.psa.jadeprobe.JadeClientQueries",
+    "dev.psa.jadeprobe.JadeServerRequests",
+    "dev.psa.compat.JadeCoordinateMath"
+  ],
+  "correction": "Move probe mixins to dev.psa.jadeprobe.mixin and math helper to dev.psa.jademath; preserve ordinary runtime helpers outside reserved packages.",
+  "world_file_count": 309,
+  "all_world_paths_and_content_hashes_unchanged_from_pre_failure_backup": true,
+  "forced_process_termination": false,
+  "raw_logs_preserved_on_owned_server": true,
+  "source_changes_in_progress": true,
+  "gameplay_pass": false
+}

@@ -1,0 +1,81 @@
+{
+  "original_pack_script_files_scanned": 303,
+  "direct_base_read_sites": [
+    {
+      "file": "kubejs/server_scripts/blockEvents/checkAttributes.js",
+      "line": 52
+    },
+    {
+      "file": "kubejs/server_scripts/blockEvents/checkAttributes.js",
+      "line": 59
+    },
+    {
+      "file": "kubejs/server_scripts/blockEvents/checkAttributes.js",
+      "line": 66
+    },
+    {
+      "file": "kubejs/server_scripts/blockEvents/checkAttributes.js",
+      "line": 73
+    },
+    {
+      "file": "kubejs/startup_scripts/globalMachineOwnerUtils.js",
+      "line": 57
+    },
+    {
+      "file": "kubejs/startup_scripts/globalShippingBinHandlers.js",
+      "line": 69
+    },
+    {
+      "file": "kubejs/startup_scripts/globalShippingBinHandlers.js",
+      "line": 414
+    }
+  ],
+  "named_cache_owner_call_sites": [
+    {
+      "file": "kubejs/startup_scripts/powerfulMachines/artisanHopper.js",
+      "line": 522,
+      "argument_count": 2,
+      "attributes_parameter_provided": false
+    },
+    {
+      "file": "kubejs/startup_scripts/powerfulMachines/autoGrabber.js",
+      "line": 306,
+      "argument_count": 2,
+      "attributes_parameter_provided": false
+    },
+    {
+      "file": "kubejs/startup_scripts/powerfulMachines/fishPondBasket.js",
+      "line": 125,
+      "argument_count": 2,
+      "attributes_parameter_provided": false
+    },
+    {
+      "file": "kubejs/startup_scripts/powerfulMachines/fishPondBasket.js",
+      "line": 225,
+      "argument_count": 2,
+      "attributes_parameter_provided": false
+    }
+  ],
+  "original_file_sha256": {
+    "kubejs/startup_scripts/globalShippingBinHandlers.js": "c7c7c8c3c653ae783bc3ecdd6260a6c0613025cd16ffcdd7331db5d5dfe29db9",
+    "kubejs/startup_scripts/globalMachineOwnerUtils.js": "1590cffc030a04a5ebc74a4763a649ef36f77d87ac9ab05a15383dd02e220b19",
+    "kubejs/server_scripts/blockEvents/checkAttributes.js": "29b6be4550fdd3d13d3b75a007fbe6ff6aa2bfca2aa49cd4e32418adb9babf2a",
+    "kubejs/client_scripts/tooltips/addPriceTooltips.js": "47bddf18e813d5c517e396a7f217b895876dbaf3b9bc8cdcff6042b1b95eea7e"
+  },
+  "classification": {
+    "shipping_cache": "Missing default attribute NBT yields NaN; actual downstream multiplier applies Number(Base)||1 and crop settlement passed.",
+    "generic_owner_cache": "Optional attribute serialization reader; call arguments above identify whether attribute branch is used.",
+    "debug_display": "Four direct readers have explicit absent-entry fallback1.",
+    "client_price_tooltip": "Passes serialized attributes through the same default1 multiplier consumer."
+  },
+  "actual_native_default_values": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "actual_original_crop_sale_value": 23,
+  "runtime_failure_reproduced": false,
+  "source_patch_applied": false,
+  "scope": "Static named JavaScript readers/call sites plus actual original crop settlement. Does not assert every machine or future dynamic script has been executed."
+}

@@ -1,0 +1,13 @@
+{
+  "pinned_create_sha256": "6fbb910c367dbce8e4fc7e5bf64b6edd4de980906ed00af8e47e4af843c0d9b0",
+  "pinned_factory_logistics_sha256": "f425d697818ebc4a9b208cc5b1cdf4cb8846f26c9519a55dd114d3af96b2c730",
+  "static_method_metadata": {
+    "PackageVisual.constructor": "Original entity unchanged -> getBox -> native PackageItem check -> AllPartialModels.PACKAGES by registry ID -> Models.partial(selected) once -> native instancer(... same returned Model).createInstance -> inherited instance.",
+    "JarVisual.constructor": "Passes same entity directly to original PackageVisual super constructor. Then writes only own jarEntity/fluidStack/fluid/buffers, creates distinct FluidVisual buffers; does not replace inherited box instance.",
+    "JarVisual.beginFrame": "Calls original PackageVisual.beginFrame(context) before its fluid-specific updates.",
+    "observer": "Captures exact PartialModel argument/result presence at original Models.partial call; field read at original parent frame RETURN. No second selection/model lookup substituted."
+  },
+  "scope": "Controller inspection of pinned upstream implementation, published API/dataflow metadata only; no raw upstream source/bytecode. This establishes parent box-model provenance statically, not enabled-Flywheel native GPU/frame execution. Fluid-content variants unverified.",
+  "live_visual_mask_verified": false,
+  "native_default_factory_fallback_mask": 2
+}

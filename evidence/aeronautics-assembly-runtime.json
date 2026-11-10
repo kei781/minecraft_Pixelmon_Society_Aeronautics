@@ -1,0 +1,47 @@
+{
+  "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+  "static_fixture_native_commands_passed": 13,
+  "preassembly_sublevel_count": 0,
+  "native_assembly_command": "sable assemble area 19 103 3 27 114 11",
+  "native_assembly_utc": "2026-11-09 07:58:28",
+  "assembled_region_volume_including_air": 972,
+  "source_fixture_non_air_block_count_calculated": 404,
+  "actual_sublevel_count": 1,
+  "native_info_utc": "2026-11-09 07:58:29",
+  "native_mass": 392.5,
+  "initial_native_pose_position": [
+    23.50002670288086,
+    110.3866195678711,
+    7.500029563903809
+  ],
+  "initial_native_orientation_xyzw": [
+    1.982407866307767e-06,
+    -1.7184254019753098e-08,
+    -8.032293976611982e-07,
+    1.0
+  ],
+  "initial_native_linear_velocity": [
+    -0.00013661905541084707,
+    -4.386686850921251e-05,
+    -0.0002652676485013217
+  ],
+  "initial_native_angular_velocity": [
+    -3.591035783756524e-05,
+    4.253685958696164e-14,
+    1.8490793081582524e-05
+  ],
+  "new_server_assembly_exceptions": 0,
+  "client_assembled_display_verification_pending": false,
+  "actual_player_lever_interaction_verified": false,
+  "actual_lift_or_flight_verified": false,
+  "survival_crafting_or_player_assembler_ui_verified": false,
+  "scope": "Actual native console-driven assembly of provided real Aero blocks. Region volume includes air. No flight claim from body creation alone.",
+  "client_assembled_display_observed": true,
+  "postassembly_windows_report": {
+    "file_name": "PSA-Windows-v9-Aeronautics-Postassembly-Observation.json",
+    "bytes": 1587,
+    "sha256": "cff2ab68257cfadd5bc8cf1eea50a17871fd0812e16036a3d792e7c4587791ca"
+  },
+  "onboard_jade_spatial_query_failure_evidence": "jade-sublevel-raytrace-baseline.json",
+  "flight_blocked_on_jade_coordinate_fix": true
+}

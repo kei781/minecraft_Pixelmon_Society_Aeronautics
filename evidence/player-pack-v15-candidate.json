@@ -1,0 +1,14 @@
+{
+  "filename": "PSA-Forge-Full-Experimental-v15.mrpack",
+  "sha256": "d93e7ad8f0fd78c5b4e418c56af91634d2ceafbbe4d1dca0c8a2698552a12933",
+  "size": 1137797399,
+  "version_id": "psa-forge-33fd35295fd4",
+  "mod_jars": 354,
+  "indexed_resourcepacks": 15,
+  "indexed_shaderpacks": 1,
+  "override_files": 7932,
+  "longest_relative_path": 108,
+  "full_gameplay_validated": false,
+  "whole_declared_payload_map_unchanged_from_v14": true,
+  "scope": "Candidate metadata now preserves validated vanilla provenance; production mod/asset payloads identical to v14. Fresh Windows import pending."
+}

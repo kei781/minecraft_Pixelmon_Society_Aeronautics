@@ -1,0 +1,701 @@
+{
+  "scope": "Constant-pool candidates only; method bodies and runtime controls required.",
+  "top_level_jars": 354,
+  "nested_jars": 75,
+  "class_entries": 79468,
+  "hit_location_classes": 217,
+  "candidates": [
+    {
+      "jar": "CreativeCore_FORGE_v2.12.32_mc1.20.1.jar",
+      "class": "team/creative/creativecore/common/util/math/box/ABB.class",
+      "class_sha256": "953219cbe97d9065e82ae07aaa09ca11b4e68d5f58f3672520f17b315268b19f",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "Jade-1.20.1-Forge-11.13.2.jar",
+      "class": "snownee/jade/overlay/RayTracing.class",
+      "class_sha256": "935633dae36c15b4f0009b857e3504342b2b0b95b820d4d01828f1f7f52dd689",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/EntityHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ],
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "Kiwi-1.20.1-Forge-11.9.2.jar",
+      "class": "snownee/kiwi/customization/block/behavior/SitManager.class",
+      "class_sha256": "96acc86c4d5fca1c22c5b623f29440a0db6d6eb1cb0a64febdbd9dddc4f058c5",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/command/impl/SpecTestCommand.class",
+      "class_sha256": "e180378cd68b8acc146d15250d3fc2fa5cf0dc2b3984b6b729e7ef74420a2511",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+      "class": "com/pixelmonmod/pixelmon/entities/projectiles/HookEntity.class",
+      "class_sha256": "c381cffef7cacf28a751c6cbb7f52f7653c2f59a548eec38b5a125af3f449f72",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "ShoulderSurfing-Forge-1.20.1-5.0.4.jar",
+      "class": "com/github/exopandora/shouldersurfing/client/renderer/CrosshairRenderer.class",
+      "class_sha256": "d80f8a3755b616c77825011202c7ce5425f7faf40966984e07f817491adbfc90",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "ShoulderSurfing-Forge-1.20.1-5.0.4.jar",
+      "class": "com/github/exopandora/shouldersurfing/client/world/phys/ObjectPicker.class",
+      "class_sha256": "aa177150ac9caa04e54e418efd552200f57d9e85cbb3467c45a8c8d55b78606e",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/EntityHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/contraptions/ContraptionHandlerClient.class",
+      "class_sha256": "cc04bb71d6965f96b0f7ddc0d7aed9d9d55cb01933dd9680e8a1cd0ee698bb4d",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/contraptions/elevator/ElevatorControlsHandler.class",
+      "class_sha256": "e78571e65a4904471865ac98e1f4052dce84a92257587a0d40eec6501085551f",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/decoration/girder/GirderWrenchBehavior.class",
+      "class_sha256": "cff0ca478dee8929f891c62d1892344b294513e3d19f1751030f11a386924e9f",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/equipment/extendoGrip/ExtendoGripItem.class",
+      "class_sha256": "46a8c037027cab027626a0520cf48d431231b352546304f1995466149a4b8402",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/EntityHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/equipment/sandPaper/SandPaperItem.class",
+      "class_sha256": "daadf36cd740949b8d6c4daae8a354116dbcdfcaa50ff09a51a280aea1ce0bd5",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/kinetics/chainConveyor/ChainConveyorInteractionHandler.class",
+      "class_sha256": "379d24527726fb3256a4742afcdae4c1bc09740df2d878350f92393148124517",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ],
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/logistics/factoryBoard/FactoryPanelBlock.class",
+      "class_sha256": "9fb7c8ce51e439a17704f28da994dad2a5216c40a51457898dd18919e89f9cde",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/logistics/factoryBoard/FactoryPanelConnectionHandler.class",
+      "class_sha256": "95cb6dbf9012cc0a44753d3dc08f3ed9dc7d8d64cde1d8314a3d8ae4f9e274c0",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/redstone/link/LinkHandler.class",
+      "class_sha256": "bf6d6995aa2072054635177982d6fa014fe72eb61c9a8740062577459f0be3ad",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/redstone/link/LinkRenderer.class",
+      "class_sha256": "763acb1d7cfbecf212e891a923044d5907bbe411a28eccc0d2b0daf2dfbb91c9",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ],
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/trains/track/TrackBlockOutline.class",
+      "class_sha256": "2fe7ffb3e8e76e1455865e5b27af04457f4bd0f73352cf586250bc3be11bd751",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/foundation/block/BigOutlines.class",
+      "class_sha256": "14c18082440a2836f21ce0f2426e7c273263d8f9ef0cce198c85e93afb3393ce",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/foundation/blockEntity/behaviour/filtering/FilteringRenderer.class",
+      "class_sha256": "6710d87cdb3e25bce386927e8a85485167bbb09da0a1f44558dcf970ef90382a",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ],
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/foundation/blockEntity/behaviour/scrollValue/ScrollValueRenderer.class",
+      "class_sha256": "630de6e1572a809aa82050c77ceb2f61bd01f23ac770b964e1d740df528dc5a9",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "createutilities-0.3.2+1.20.1.jar",
+      "class": "me/duquee/createutilities/voidlink/VoidLinkRenderer.class",
+      "class_sha256": "847210e54e74b8d67fc484d40ed64f34c6db8c4d29a0f40b246d92758c39089a",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ],
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "domesticationinnovation-1.7.2-1.20.1.jar",
+      "class": "com/github/alexthe668/domesticationinnovation/client/ClientProxy.class",
+      "class_sha256": "8ddeb636a1e64cb1484c397314cba3153863adcedfc5a2e10fd3cebb7d6cefab",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "extra_gauges-2.0.7.jar",
+      "class": "net/liukrast/eg/content/logistics/board/ScrollPanelRenderer.class",
+      "class_sha256": "018c2951a6cae9c09a322c41953e56d784a714f6b64e7e2d3f71232f38d1c789",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "kubejs-forge-2001.6.5-build.16.jar",
+      "class": "dev/latvian/mods/kubejs/core/EntityKJS.class",
+      "class_sha256": "d663877de6b8cfd5d37c87c711422b72a1a174d0d351d5a4afa4a4b803b98583",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/EntityHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "mysticaloaktree-1.20-1.11.jar",
+      "class": "net/mehvahdjukaar/mysticaloaktree/block/WiseOakTile.class",
+      "class_sha256": "675b8b483aefa7069c4cbbc25db9f32b25c5db731b079a8b47ca5cb5c6189e0f",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "portable_blueprints-v2.0.11-mv1.20.1.jar",
+      "class": "nimble/portable_blueprints/robautile/Operazioni.class",
+      "class_sha256": "9af607ad6ad0985d9ee362efe3fe632bee3de47d54d194d31b1a370e0682bf14",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/core/BlockPos",
+          "m_123331_",
+          "(Lnet/minecraft/core/Vec3i;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "psa-aeronautics-experimental-forge-1.20.1.jar",
+      "class": "dev/ryanhcode/sable/mixin/clip_overwrite/BlockGetterMixin.class",
+      "class_sha256": "2da3794e040180f5472cc0d48e3785bd0bb7f2fc68130aece82d15e395433954",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "psa-aeronautics-experimental-forge-1.20.1.jar",
+      "class": "dev/simulated_team/simulated/content/blocks/lasers/LaserBehaviour.class",
+      "class_sha256": "5a185089a5ad0a7ac037365bcf8a8f8e981683ba4807c31258ba6158bace8373",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/EntityHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "psa-aeronautics-experimental-forge-1.20.1.jar",
+      "class": "dev/simulated_team/simulated/content/items/rope/RopeItem/ClientRopeItemHandler.class",
+      "class_sha256": "d4fbf4ab3cb407cb1273a34dbf261a01be8eb379d5e859095706e88fd6a0f05c",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "class": "com/mrcrayfish/furniture/refurbished/client/LinkHandler.class",
+      "class_sha256": "ced09e75e63ee3931848e22bd71c3bdcb2c96d9668d43dad99394a345ae17b4b",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    },
+    {
+      "jar": "supplementaries-1.20-3.1.43-forge.jar",
+      "class": "net/mehvahdjukaar/supplementaries/client/cannon/CannonTrajectoryRenderer.class",
+      "class_sha256": "27a7c3ff59b908c759cb68c51a31176d3d2768bdd112a6a964461822c0a04276",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ]
+    },
+    {
+      "jar": "supplementaries-1.20-3.1.43-forge.jar",
+      "class": "net/mehvahdjukaar/supplementaries/client/renderers/items/SlingshotRendererHelper.class",
+      "class_sha256": "49337a2823d1f0e9f3bc2249dec68cce6dea952a0a9b78dc5382e99cc3e940a9",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ]
+    }
+  ]
+}

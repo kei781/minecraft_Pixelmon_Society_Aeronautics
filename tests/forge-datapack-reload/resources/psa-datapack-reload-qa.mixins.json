@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.psa.datapackreloadqa.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "dev.psa.datapackreloadqa.ReloadQaPlugin",
+  "server": ["ReloadFutureMixin"],
+  "injectors": {"defaultRequire": 1}
+}
