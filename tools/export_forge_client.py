@@ -21,6 +21,8 @@ EXPECTED_REPLACEMENTS = 68
 EXPECTED_MODEL_OVERRIDES = 17
 MENU_PATCH_NAME = "PSA-Client-Menu-Compat-1.1.jar"
 MENU_PATCH_SHA256 = "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9"
+ALI_PATCH_NAME = "PSA-ALI-Client-Compat-0.1.jar"
+ALI_PATCH_SHA256 = "8046126f8834b6e7fea3fa6e6691ca29b816a1ec27ef1d669a780081eb34e534"
 OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
 
 
@@ -89,7 +91,7 @@ def apply_client_overrides(files, lock, extras):
         files[name] = source
 
 
-def build(server, extras, society_zip, output, menu_fix=None):
+def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
     server, extras, society_zip, output = map(Path, [server, extras, society_zip, output])
     if output.exists() or output.is_symlink() or output.suffix.lower() != ".mrpack":
         raise ValueError("A fresh .mrpack output is required")
@@ -98,6 +100,11 @@ def build(server, extras, society_zip, output, menu_fix=None):
         if (menu_fix.is_symlink() or menu_fix.parent.is_symlink() or not menu_fix.is_file()
                 or digest(menu_fix) != MENU_PATCH_SHA256):
             raise ValueError("Client menu compatibility hash mismatch")
+    if ali_fix is not None:
+        ali_fix = Path(ali_fix)
+        if (ali_fix.is_symlink() or ali_fix.parent.is_symlink() or not ali_fix.is_file()
+                or digest(ali_fix) != ALI_PATCH_SHA256):
+            raise ValueError("Client ALI compatibility hash mismatch")
     if not (server / ".psa-forge-candidate.json").is_file():
         raise ValueError("An owned full candidate is required")
     lock_path = ROOT / "forge-client-lock.json"
@@ -136,6 +143,11 @@ def build(server, extras, society_zip, output, menu_fix=None):
         if name in files:
             raise ValueError("Duplicate client menu compatibility mod")
         files[name] = menu_fix
+    if ali_fix is not None:
+        name = "mods/" + ALI_PATCH_NAME
+        if name in files:
+            raise ValueError("Duplicate client ALI compatibility mod")
+        files[name] = ali_fix
     with zipfile.ZipFile(society_zip) as archive:
         manifest = json.loads(archive.read("manifest.json"))
         if {(f["projectID"], f["fileID"]) for f in manifest["files"]} != {(f["project_id"], f["file_id"]) for f in lock["files"]}:
@@ -197,6 +209,11 @@ def build(server, extras, society_zip, output, menu_fix=None):
         metadata["client_menu_compatibility"] = {
             "path": "mods/" + MENU_PATCH_NAME, "sha256": MENU_PATCH_SHA256,
             "client_only": True, "source": "compat/client-menu"}
+    if ali_fix is not None:
+        metadata["client_ali_compatibility"] = {
+            "path": "mods/" + ALI_PATCH_NAME, "sha256": ALI_PATCH_SHA256,
+            "client_only": True, "source": "compat/ali-client",
+            "target_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"}
     fingerprint = hashlib.sha256(json.dumps(metadata, sort_keys=True).encode()).hexdigest()
     payload["psa-forge-client-profile.json"] = (json.dumps(metadata, indent=2) + "\n").encode()
     index = {"formatVersion": 1, "game": "minecraft", "versionId": "psa-forge-" + fingerprint[:12],
@@ -228,5 +245,6 @@ if __name__ == "__main__":
     parser.add_argument("--society-client", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--menu-fix", type=Path, help="Pinned client-only menu and discount display compatibility JAR")
+    parser.add_argument("--ali-fix", type=Path, help="Pinned client-only ALI empty-tooltip compatibility JAR")
     args = parser.parse_args()
-    print(json.dumps(build(args.server, args.extras, args.society_client, args.output, args.menu_fix), indent=2))
+    print(json.dumps(build(args.server, args.extras, args.society_client, args.output, args.menu_fix, args.ali_fix), indent=2))

@@ -219,5 +219,32 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.assertFalse(self.output.exists())
         self.assertFalse(self.output.parent.exists())
 
+    def test_ali_fix_is_client_only_and_preserves_other_payloads(self):
+        ali = self.root/'ali-fixture.jar'
+        ali.write_bytes(self.archive_bytes({'fixture.txt':b'packaging only; never executed'}))
+        before = {p.name:p.read_bytes() for p in (self.server/'mods').iterdir()}
+        with patch.object(client, 'ALI_PATCH_SHA256', client.digest(ali)):
+            report = client.build(self.server, self.extras, self.society, self.output, ali_fix=ali)
+        self.assertEqual(report['mod_jars'], 6)
+        self.assertEqual(before, {p.name:p.read_bytes() for p in (self.server/'mods').iterdir()})
+        with zipfile.ZipFile(self.output) as archive:
+            name = 'mods/' + client.ALI_PATCH_NAME
+            self.assertEqual(archive.read('overrides/' + name), ali.read_bytes())
+            self.assertEqual(archive.read('overrides/mods/shared.jar'), self.fixture_data['shared.jar'])
+            profile = json.loads(archive.read('overrides/psa-forge-client-profile.json'))
+            self.assertTrue(profile['client_ali_compatibility']['client_only'])
+            self.assertEqual(profile['overrides'][name], client.digest(ali))
+
+    def test_invalid_missing_or_symlink_ali_fix_cannot_export(self):
+        ali = self.root/'ali-fixture.jar';ali.write_bytes(b'unverified')
+        for source in (ali, self.root/'missing.jar'):
+            with self.subTest(source=source), self.assertRaisesRegex(ValueError, 'ALI compatibility'):
+                client.build(self.server, self.extras, self.society, self.output, ali_fix=source)
+        link = self.root/'ali-link.jar';link.symlink_to(ali)
+        with patch.object(client, 'ALI_PATCH_SHA256', client.digest(ali)), self.assertRaisesRegex(ValueError, 'ALI compatibility'):
+            client.build(self.server, self.extras, self.society, self.output, ali_fix=link)
+        self.assertFalse(self.output.exists())
+        self.assertFalse(self.output.parent.exists())
+
 
 if __name__=='__main__':unittest.main()

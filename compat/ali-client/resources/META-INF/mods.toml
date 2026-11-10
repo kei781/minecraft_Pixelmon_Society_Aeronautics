@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psaaliclientcompat"
+version="0.1"
+displayName="PSA ALI client compatibility"
+displayTest="IGNORE_SERVER_VERSION"
+description="Preserves native ALI empty tooltips on a remote client using the existing client palette."
+[[dependencies.psaaliclientcompat]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.psaaliclientcompat]]
+modId="ali"
+mandatory=true
+versionRange="[1.12.0]"
+ordering="AFTER"
+side="CLIENT"

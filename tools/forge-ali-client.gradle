@@ -1,0 +1,34 @@
+// Only authored client compatibility sources; native ALI is a pinned compile input.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaAliSource')
+    def aliPath = project.findProperty('psaAliJar')
+    if (!sourceRoot || !aliPath) throw new GradleException('Explicit ALI compatibility source and pinned binary required')
+    def ali = new File(aliPath.toString())
+    if (!ali.isFile() || java.nio.file.Files.isSymbolicLink(ali.toPath()))
+        throw new GradleException('Regular ALI compile input required')
+    def digest = java.security.MessageDigest.getInstance('SHA-256')
+    ali.withInputStream { input ->
+        byte[] buffer = new byte[65536]; int count
+        while ((count = input.read(buffer)) != -1) digest.update(buffer, 0, count)
+    }
+    if (digest.digest().encodeHex().toString() != '6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8')
+        throw new GradleException('ALI identity differs')
+    def directory = new File(sourceRoot.toString())
+    def compiler = project.tasks.register('compilePsaAliClient', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java' }
+        classpath = project.sourceSets.main.compileClasspath + project.files(ali)
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-ali-client/classes'))
+        options.release.set(17); options.encoding = 'UTF-8'; options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaAliClientJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('PSA-ALI-Client-Compat-0.1.jar')
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': 'psa-ali-client.mixins.json')
+        preserveFileTimestamps = false; reproducibleFileOrder = true
+    }
+    project.reobf.create('psaAliClientJar')
+}

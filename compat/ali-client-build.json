@@ -1,0 +1,40 @@
+{
+  "files": 9,
+  "sha256": "8046126f8834b6e7fea3fa6e6691ca29b816a1ec27ef1d669a780081eb34e534",
+  "entries": [
+    "META-INF/MANIFEST.MF",
+    "META-INF/mods.toml",
+    "dev/psa/alicompat/AliClientCompat.class",
+    "dev/psa/alicompat/AliCompatPlugin.class",
+    "dev/psa/alicompat/AliPaletteAccess.class",
+    "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class",
+    "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class",
+    "pack.mcmeta",
+    "psa-ali-client.mixins.json"
+  ],
+  "entry_sha256": {
+    "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
+    "META-INF/mods.toml": "02f868561f26bdf0334cfa5819dfad7732cc03b2464cde79d59a1e68da833610",
+    "dev/psa/alicompat/AliClientCompat.class": "1f7d7980efabdc63bb9f59f98c283f4896c527bbaae0a61d67d63590fa8d4709",
+    "dev/psa/alicompat/AliCompatPlugin.class": "1e747849c581e80534e33b50dd816e77e13299a74e8a3908cb320efaca438c56",
+    "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
+    "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class": "18cd6edadbea9ec94896310f895b48420ee45face02370a7a95ea0d8310336b4",
+    "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class": "43f094a47ddd8c2ae1a4a595f94ffe5e27833be50f2d9175e89d67d8353a53a0",
+    "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+    "psa-ali-client.mixins.json": "a030265f589a58dc264293a4094c29dbba6710d08c3ef3b805cc8ad0582f75ba"
+  },
+  "bytes": 7095,
+  "authored_source_sha256": {
+    "compat/ali-client/AliClientCompat.java": "92901144b1e0865bed04518ac038a3b47af5456342f89cf02874cf704bf3d55c",
+    "compat/ali-client/AliCompatPlugin.java": "be7ca558b811e008e4ff3991bc1236f390e1e4e3a06baa7c8ec2fbb54fc20513",
+    "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
+    "compat/ali-client/mixin/AliTooltipBuilderPaletteMixin.java": "55b2bff96504e414be8bb3ab3c49dbfd6cf773cd3c4638c72596ca1ede58903e",
+    "compat/ali-client/mixin/AliTooltipPaletteMixin.java": "f2f83b31a2ec61283c81c773757dbcd01b69415a26e045e958a2275e21d91514",
+    "compat/ali-client/resources/META-INF/mods.toml": "02f868561f26bdf0334cfa5819dfad7732cc03b2464cde79d59a1e68da833610",
+    "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+    "compat/ali-client/resources/psa-ali-client.mixins.json": "a030265f589a58dc264293a4094c29dbba6710d08c3ef3b805cc8ad0582f75ba"
+  },
+  "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
+  "gradle_recipe_sha256": "53da17f1db049093aa9716fd210dc089cf234e177b538d4639df0056c8cd977b",
+  "scope": "Authored standalone client compatibility only; upstream classes/assets and server untouched; actual two-process native checks passed, independent source review pending"
+}
