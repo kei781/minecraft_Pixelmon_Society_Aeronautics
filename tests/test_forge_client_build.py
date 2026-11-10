@@ -220,12 +220,14 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.assertFalse(self.output.parent.exists())
 
     def test_ali_fix_is_client_only_and_preserves_other_payloads(self):
+        target = self.add_ali_target_fixture()
         ali = self.root/'ali-fixture.jar'
         ali.write_bytes(self.archive_bytes({'fixture.txt':b'packaging only; never executed'}))
         before = {p.name:p.read_bytes() for p in (self.server/'mods').iterdir()}
-        with patch.object(client, 'ALI_PATCH_SHA256', client.digest(ali)):
+        with patch.multiple(client, ALI_PATCH_SHA256=client.digest(ali), ALI_TARGET_SHA256=client.digest(target),
+                EXPECTED_FILES=len(self.files), EXPECTED_SHARED=sum(f['side']=='both' for f in self.files)):
             report = client.build(self.server, self.extras, self.society, self.output, ali_fix=ali)
-        self.assertEqual(report['mod_jars'], 6)
+        self.assertEqual(report['mod_jars'], 7)
         self.assertEqual(before, {p.name:p.read_bytes() for p in (self.server/'mods').iterdir()})
         with zipfile.ZipFile(self.output) as archive:
             name = 'mods/' + client.ALI_PATCH_NAME
@@ -245,6 +247,28 @@ class ForgeClientBuildTest(unittest.TestCase):
             client.build(self.server, self.extras, self.society, self.output, ali_fix=link)
         self.assertFalse(self.output.exists())
         self.assertFalse(self.output.parent.exists())
+
+    def add_ali_target_fixture(self):
+        data = self.archive_bytes({'fixture.txt':b'ALI packaging target fixture, never executed'})
+        target = self.server/client.ALI_TARGET_PATH;target.write_bytes(data)
+        self.files.append({'path':client.ALI_TARGET_PATH,'kind':'mod','side':'both','project_id':99,'file_id':199,
+            'size':len(data),'hashes':self.hashes(data),'url':'https://example.test/ali-fixture.jar'})
+        self.write_lock();self.write_base()
+        return target
+
+    def test_ali_fix_without_target_is_refused_before_output(self):
+        ali = self.root/'ali-fixture.jar';ali.write_bytes(b'owned packaging fixture')
+        with patch.object(client, 'ALI_PATCH_SHA256', client.digest(ali)), self.assertRaisesRegex(ValueError, 'Pinned ALI target'):
+            client.build(self.server,self.extras,self.society,self.output,ali_fix=ali)
+        self.assertFalse(self.output.exists());self.assertFalse(self.output.parent.exists())
+
+    def test_valid_lock_with_wrong_ali_target_is_refused(self):
+        self.add_ali_target_fixture()
+        ali = self.root/'ali-fixture.jar';ali.write_bytes(b'owned packaging fixture')
+        with patch.multiple(client, ALI_PATCH_SHA256=client.digest(ali),
+                EXPECTED_FILES=len(self.files), EXPECTED_SHARED=sum(f['side']=='both' for f in self.files)), self.assertRaisesRegex(ValueError, 'Pinned ALI target'):
+            client.build(self.server,self.extras,self.society,self.output,ali_fix=ali)
+        self.assertFalse(self.output.exists());self.assertFalse(self.output.parent.exists())
 
 
 if __name__=='__main__':unittest.main()

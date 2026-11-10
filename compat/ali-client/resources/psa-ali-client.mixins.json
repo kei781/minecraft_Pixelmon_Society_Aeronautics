@@ -4,6 +4,6 @@
   "package": "dev.psa.alicompat.mixin",
   "compatibilityLevel": "JAVA_17",
   "plugin": "dev.psa.alicompat.AliCompatPlugin",
-  "client": ["AliTooltipPaletteMixin", "AliTooltipBuilderPaletteMixin"],
+  "client": ["AliPaletteSynchronizationMixin", "AliTooltipPaletteMixin", "AliTooltipBuilderPaletteMixin", "AliDataRegistrationMixin"],
   "injectors": {"defaultRequire": 1}
 }

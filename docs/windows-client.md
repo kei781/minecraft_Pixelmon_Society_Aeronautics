@@ -19,10 +19,10 @@ Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타
 5. **Edit → Settings → Java**에서 메모리를 정한다. 16 GB 이상 PC에서는 최대 8192 MB를 첫 시작값으로 사용할 수 있다. [메모리 설정 안내](https://prismlauncher.org/wiki/help-pages/java-settings/).
 6. **Launch → Multiplayer → Add Server**에서 관리자가 별도로 전달한 서버 주소를 입력한다. 실제 사용자 서버 주소와 SSH 정보는 공개 저장소·패키지에 넣지 않았다.
 
-현재 파일은 1,137,807,667바이트이며 SHA256은 다음과 같다.
+현재 파일은 1,137,810,170바이트이며 SHA256은 다음과 같다.
 
 ```text
-80ce90c3ac385aec9db7b9460c40dcbbacf99dcda0e30055409b8945134c910d
+80130dd80f2fa138fd79e27b0ecdd73ad2b54ec11f9f3193fb47a72368ad2e49
 ```
 
 ```powershell

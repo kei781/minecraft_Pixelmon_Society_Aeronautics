@@ -12,8 +12,10 @@ public final class AliClientCompat {
         // A plugin exception alone can disable a Mixin config without stopping Forge.
         AliCompatPlugin.requirePinnedInput();
         try {
+            Class.forName(AliCompatPlugin.PALETTE_TARGET);
             Class.forName(AliCompatPlugin.TARGET);
             Class.forName(AliCompatPlugin.BUILDER_TARGET);
+            Class.forName(AliCompatPlugin.REGISTRATION_TARGET);
         }
         catch (ClassNotFoundException failure) { throw new IllegalStateException("Pinned ALI target missing", failure); }
         AliCompatPlugin.requireApplied();

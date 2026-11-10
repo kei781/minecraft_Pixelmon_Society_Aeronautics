@@ -7,6 +7,7 @@ import java.util.HexFormat;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -15,6 +16,8 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 public final class AliCompatPlugin implements IMixinConfigPlugin {
     static final String TARGET = "com.yanny.aci.tooltip.TooltipNode";
     static final String BUILDER_TARGET = "com.yanny.aci.tooltip.TooltipBuilder";
+    static final String PALETTE_TARGET = "com.yanny.aci.tooltip.TooltipNodePalette";
+    static final String REGISTRATION_TARGET = "com.yanny.ali.emi.compatibility.EmiCompatibility";
     private static final AtomicInteger applied = new AtomicInteger();
 
     static void requirePinnedInput() {
@@ -35,7 +38,7 @@ public final class AliCompatPlugin implements IMixinConfigPlugin {
     }
 
     static void requireApplied() {
-        if (applied.get() != 3) throw new IllegalStateException("Both exact ALI tooltip transformations required");
+        if (applied.get() != 15) throw new IllegalStateException("All four exact ALI tooltip transformations required");
     }
 
     @Override public void onLoad(String name) { requirePinnedInput(); }
@@ -48,6 +51,27 @@ public final class AliCompatPlugin implements IMixinConfigPlugin {
         int bit;
         if (TARGET.equals(target) && "dev.psa.alicompat.mixin.AliTooltipPaletteMixin".equals(mixin)) bit = 1;
         else if (BUILDER_TARGET.equals(target) && "dev.psa.alicompat.mixin.AliTooltipBuilderPaletteMixin".equals(mixin)) bit = 2;
+        else if (REGISTRATION_TARGET.equals(target) && "dev.psa.alicompat.mixin.AliDataRegistrationMixin".equals(mixin)) bit = 8;
+        else if (PALETTE_TARGET.equals(target) && "dev.psa.alicompat.mixin.AliPaletteSynchronizationMixin".equals(mixin)) {
+            // Native decode calls getOrCreate on this same object: JVM monitors are reentrant.
+            // Guard readers, writers and clear with one monitor; leave every method body intact.
+            Set<String> required = Set.of(
+                "getOrCreate(Lcom/yanny/aci/tooltip/CacheKey;)Lcom/yanny/aci/tooltip/TooltipNode;",
+                "getNodeId(Lcom/yanny/aci/tooltip/TooltipNode;)I",
+                "getNodeById(I)Lcom/yanny/aci/tooltip/TooltipNode;",
+                "encode(Lcom/yanny/aci/api/ICoreServerUtils;Lnet/minecraft/network/FriendlyByteBuf;)V",
+                "decode(Lcom/yanny/aci/api/ICoreClientUtils;Lnet/minecraft/network/FriendlyByteBuf;)V",
+                "clear()V");
+            var found = new java.util.HashSet<String>();
+            for (var method : node.methods) if (required.contains(method.name + method.desc)) {
+                if ((method.access & (Opcodes.ACC_STATIC | Opcodes.ACC_NATIVE | Opcodes.ACC_ABSTRACT)) != 0
+                        || !found.add(method.name + method.desc))
+                    throw new IllegalStateException("Unexpected ALI palette method shape");
+                method.access |= Opcodes.ACC_SYNCHRONIZED;
+            }
+            if (!found.equals(required)) throw new IllegalStateException("All six pinned palette methods required");
+            bit = 4;
+        }
         else throw new IllegalStateException("Unexpected ALI compatibility transformation");
         applied.getAndUpdate(previous -> previous | bit);
     }

@@ -1,40 +1,48 @@
 {
-  "files": 9,
-  "sha256": "8046126f8834b6e7fea3fa6e6691ca29b816a1ec27ef1d669a780081eb34e534",
+  "files": 11,
+  "sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+  "entry_sha256": {
+    "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
+    "META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
+    "dev/psa/alicompat/AliClientCompat.class": "9819176fe19061bfe62d72e3ece709e94db3ad2362e00207b76dd0e2f39f1d7e",
+    "dev/psa/alicompat/AliCompatPlugin.class": "971f2bdf10797b67efc7275ccdd62f18e126b526b6fd4fb257a8a5ab4ddc0cc3",
+    "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
+    "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class": "196464b532bccdc5c52265d00e22d1916f45b1bb5fbd83cd420cd68d87f81544",
+    "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class": "75fa035c8c7fb0c4dc979b0f1d9dd64962405dcd9469488aa5dceb03da0bb179",
+    "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class": "18cd6edadbea9ec94896310f895b48420ee45face02370a7a95ea0d8310336b4",
+    "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class": "43f094a47ddd8c2ae1a4a595f94ffe5e27833be50f2d9175e89d67d8353a53a0",
+    "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+    "psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
+  },
+  "bytes": 9868,
+  "authored_source_sha256": {
+    "compat/ali-client/AliClientCompat.java": "deaad2f0271b83d530655b83f151858965e3d191bcefbdaa23e80e0c8381f049",
+    "compat/ali-client/AliCompatPlugin.java": "316811e68083c690d00cf451f05dc89523d8e6afd8d6ff52919b2e160a91cf80",
+    "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
+    "compat/ali-client/mixin/AliDataRegistrationMixin.java": "16b461f503ad3c54d2b7c5e841cf157a8117364722c9b03f1cadb86f241b21d6",
+    "compat/ali-client/mixin/AliPaletteSynchronizationMixin.java": "fa0f5bb10151704246b2e229e8db898e1bd588e2d5e699cb92a5442c96a1da9d",
+    "compat/ali-client/mixin/AliTooltipBuilderPaletteMixin.java": "55b2bff96504e414be8bb3ab3c49dbfd6cf773cd3c4638c72596ca1ede58903e",
+    "compat/ali-client/mixin/AliTooltipPaletteMixin.java": "f2f83b31a2ec61283c81c773757dbcd01b69415a26e045e958a2275e21d91514",
+    "compat/ali-client/resources/META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
+    "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+    "compat/ali-client/resources/psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
+  },
   "entries": [
     "META-INF/MANIFEST.MF",
     "META-INF/mods.toml",
     "dev/psa/alicompat/AliClientCompat.class",
     "dev/psa/alicompat/AliCompatPlugin.class",
     "dev/psa/alicompat/AliPaletteAccess.class",
+    "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class",
+    "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class",
     "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class",
     "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class",
     "pack.mcmeta",
     "psa-ali-client.mixins.json"
   ],
-  "entry_sha256": {
-    "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
-    "META-INF/mods.toml": "02f868561f26bdf0334cfa5819dfad7732cc03b2464cde79d59a1e68da833610",
-    "dev/psa/alicompat/AliClientCompat.class": "1f7d7980efabdc63bb9f59f98c283f4896c527bbaae0a61d67d63590fa8d4709",
-    "dev/psa/alicompat/AliCompatPlugin.class": "1e747849c581e80534e33b50dd816e77e13299a74e8a3908cb320efaca438c56",
-    "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
-    "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class": "18cd6edadbea9ec94896310f895b48420ee45face02370a7a95ea0d8310336b4",
-    "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class": "43f094a47ddd8c2ae1a4a595f94ffe5e27833be50f2d9175e89d67d8353a53a0",
-    "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
-    "psa-ali-client.mixins.json": "a030265f589a58dc264293a4094c29dbba6710d08c3ef3b805cc8ad0582f75ba"
-  },
-  "bytes": 7095,
-  "authored_source_sha256": {
-    "compat/ali-client/AliClientCompat.java": "92901144b1e0865bed04518ac038a3b47af5456342f89cf02874cf704bf3d55c",
-    "compat/ali-client/AliCompatPlugin.java": "be7ca558b811e008e4ff3991bc1236f390e1e4e3a06baa7c8ec2fbb54fc20513",
-    "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
-    "compat/ali-client/mixin/AliTooltipBuilderPaletteMixin.java": "55b2bff96504e414be8bb3ab3c49dbfd6cf773cd3c4638c72596ca1ede58903e",
-    "compat/ali-client/mixin/AliTooltipPaletteMixin.java": "f2f83b31a2ec61283c81c773757dbcd01b69415a26e045e958a2275e21d91514",
-    "compat/ali-client/resources/META-INF/mods.toml": "02f868561f26bdf0334cfa5819dfad7732cc03b2464cde79d59a1e68da833610",
-    "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
-    "compat/ali-client/resources/psa-ali-client.mixins.json": "a030265f589a58dc264293a4094c29dbba6710d08c3ef3b805cc8ad0582f75ba"
-  },
   "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
-  "gradle_recipe_sha256": "53da17f1db049093aa9716fd210dc089cf234e177b538d4639df0056c8cd977b",
-  "scope": "Authored standalone client compatibility only; upstream classes/assets and server untouched; actual two-process native checks passed, independent source review pending"
+  "pinned_emi_compile_sha256": "92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72",
+  "pinned_mixinextras_common_compile_sha256": "e09a7e37e2044f7b0d0e248d55ca9b590b03c3b03636549523b50ac69afdd1aa",
+  "gradle_recipe_sha256": "656879f70c5ac8a06a2623fd6098470ef83e5d568c07e6638e5dab24c3170f13",
+  "scope": "Authored standalone client compatibility with original factory access corrections and shared native palette monitors; native same-session resync verification and independent rereview pending"
 }

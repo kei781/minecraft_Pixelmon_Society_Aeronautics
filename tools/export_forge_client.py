@@ -22,7 +22,9 @@ EXPECTED_MODEL_OVERRIDES = 17
 MENU_PATCH_NAME = "PSA-Client-Menu-Compat-1.1.jar"
 MENU_PATCH_SHA256 = "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9"
 ALI_PATCH_NAME = "PSA-ALI-Client-Compat-0.1.jar"
-ALI_PATCH_SHA256 = "8046126f8834b6e7fea3fa6e6691ca29b816a1ec27ef1d669a780081eb34e534"
+ALI_PATCH_SHA256 = "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e"
+ALI_TARGET_PATH = "mods/AdvancedLootInfo-forge-1.20.1-1.12.0.jar"
+ALI_TARGET_SHA256 = "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
 OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
 
 
@@ -144,6 +146,9 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
             raise ValueError("Duplicate client menu compatibility mod")
         files[name] = menu_fix
     if ali_fix is not None:
+        target = files.get(ALI_TARGET_PATH)
+        if target is None or digest(target) != ALI_TARGET_SHA256:
+            raise ValueError("Pinned ALI target missing or incompatible")
         name = "mods/" + ALI_PATCH_NAME
         if name in files:
             raise ValueError("Duplicate client ALI compatibility mod")
@@ -213,7 +218,7 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
         metadata["client_ali_compatibility"] = {
             "path": "mods/" + ALI_PATCH_NAME, "sha256": ALI_PATCH_SHA256,
             "client_only": True, "source": "compat/ali-client",
-            "target_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"}
+            "target_ali_sha256": ALI_TARGET_SHA256}
     fingerprint = hashlib.sha256(json.dumps(metadata, sort_keys=True).encode()).hexdigest()
     payload["psa-forge-client-profile.json"] = (json.dumps(metadata, indent=2) + "\n").encode()
     index = {"formatVersion": 1, "game": "minecraft", "versionId": "psa-forge-" + fingerprint[:12],
