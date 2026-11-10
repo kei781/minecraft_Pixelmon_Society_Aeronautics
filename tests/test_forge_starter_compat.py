@@ -29,6 +29,7 @@ class StarterOverlayTest(unittest.TestCase):
             "PSA_PROVENANCE.txt": b"original provenance\n",
             "upstream/Untouched.class": b"opaque upstream bytes"}
         self.write_zip(self.base, self.original)
+        self.base_bytes = self.base.read_bytes()
         self.compiled = b"authored compiled fixture only"
         self.config.write_text(json.dumps({"required": True, "minVersion": "0.8", "package": "dev.psa.startercompat.mixin",
             "compatibilityLevel": "JAVA_17", "mixins": ["PixelmonStarterRecipientMixin"], "injectors": {"defaultRequire": 1}}))
@@ -102,7 +103,8 @@ class StarterOverlayTest(unittest.TestCase):
     def test_mutated_input_and_symlink_are_refused(self):
         self.base.write_bytes(b"changed")
         with self.assertRaisesRegex(ValueError, "base_common"): self.build()
-        self.write_zip(self.base, self.original)
+        self.base.write_bytes(self.base_bytes)
+        self.assertEqual(compat.digest(self.base), self.pins["base_common_sha256"])
         link = self.root / "alias.jar"; link.symlink_to(self.base)
         with self.assertRaisesRegex(ValueError, "base_common"):
             compat.build(link, self.patchjar, self.pixelmon, self.output)
