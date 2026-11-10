@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.psa.hazardtrace.mixin",
+  "plugin": "dev.psa.hazardtrace.HazardTracePlugin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": ["ShieldsDownTraceMixin"],
+  "injectors": {"defaultRequire": 1}
+}

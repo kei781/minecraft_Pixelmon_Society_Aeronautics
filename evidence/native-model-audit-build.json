@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "artifact_bytes": 6448,
+  "sha256": "46765b2659c284803acc0eb60695b2c5878870f933f3b0db3da9c6f72de22da1",
+  "canonical_reproducible": true,
+  "independent_prepared_builds": 2,
+  "scope": "Opt-in actual cached default-stack model lookup; not rendering or gameplay. Runtime pending.",
+  "initial_build_failure": "Gradle source variable shadowed source method; renamed; both subsequent builds passed.",
+  "production_pack_included": false
+}

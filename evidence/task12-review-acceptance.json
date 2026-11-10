@@ -1,0 +1,17 @@
+{
+  "task": 12,
+  "pr": 9,
+  "reviewed_source_sha": "225ed2c70fcfd3d40b1f0fef8138c066e72329c8",
+  "review_round": 2,
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "verdict": "CLEAN",
+  "bridge_applied": true,
+  "live_unresolved": 0,
+  "ci_checks": [],
+  "controller_python_tests_passed": 37,
+  "native_namespace_render_model_passes": 204,
+  "native_lookup_remaining_missing": 16,
+  "complete_global_goals": false,
+  "scope": "Five original matching model references and validated provenance accepted; remaining assets, gameplay, Windows final import and load checks open."
+}

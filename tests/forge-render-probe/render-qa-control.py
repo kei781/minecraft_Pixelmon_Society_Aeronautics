@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strict 313 production + one diagnostic controller, only in a new disposable QA profile."""
+"""Strict 313 production + two pinned diagnostics, only in an owned disposable QA profile."""
 import fcntl
 import hashlib
 import json
@@ -13,8 +13,10 @@ import time
 import uuid
 
 ROOT = Path(__file__).resolve().parent
-BASELINE = "935491cfd78a9ffadaaf517aeb869aebcd8f4208e1ef54b56a835cff44225812"
-PROBE = "psa-render-probe-0.7.jar"
+BASELINE = "ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e"
+PROBE = "psa-render-probe-0.8.jar"
+JADE_PROBE = "psa-jade-probe-0.4.jar"
+JADE_PROBE_SHA256 = "1775d74b4b28d9339e564a6725e90dfe6282deaf78dabd2a9f301bd8efa5e01c"
 SOCKET = "psa-render-" + hashlib.sha256(str(ROOT).encode()).hexdigest()[:16]
 
 
@@ -59,8 +61,11 @@ def inventory(receipt):
     probe = ROOT / "mods" / PROBE
     if probe.is_symlink() or digest(probe) != expected:
         raise RuntimeError("Diagnostic hash mismatch")
+    jade_probe = ROOT / "mods" / JADE_PROBE
+    if jade_probe.is_symlink() or not jade_probe.is_file() or digest(jade_probe) != JADE_PROBE_SHA256:
+        raise RuntimeError("Jade observer hash mismatch")
     actual = list((ROOT / "mods").iterdir())
-    if {p.name for p in actual} != set(files) | {PROBE} or len(actual) != 314:
+    if {p.name for p in actual} != set(files) | {PROBE, JADE_PROBE} or len(actual) != 315:
         raise RuntimeError("Unexpected diagnostic inventory")
     if any(p.is_symlink() or not p.is_file() for p in actual):
         raise RuntimeError("Non-regular mod entry")
@@ -165,7 +170,7 @@ def main():
     action = sys.argv[1] if len(sys.argv) > 1 else "status"
     if action == "verify":
         inventory(receipt)
-        print("PSA_RENDER_QA production313 and one pinned diagnostic verified")
+        print("PSA_RENDER_QA production313 and two pinned diagnostics verified")
     elif action == "recover":
         with (ROOT / ".psa-render-control.lock").open("w") as lock:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)

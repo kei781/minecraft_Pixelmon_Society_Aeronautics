@@ -1,0 +1,92 @@
+{
+  "state": {
+    "run": "4c213c13-f64e-4b78-9cf7-414d1fc2174c",
+    "result": "missing_model_mask:8",
+    "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+    "dimension": "minecraft:overworld",
+    "cleanup_complete": true,
+    "cleanup_failed": false,
+    "cleanup_injection_triggered": false,
+    "failed_cleanup_entity_uuids": [],
+    "deliberate_crash_test": false,
+    "fixture_pickup_delay": 32766,
+    "catalog_total": 17239,
+    "catalog_start": 3484,
+    "selected_count": 13755,
+    "completed_render_returns": 744,
+    "completed_model_verified_returns": 740,
+    "completed_native_spawns": 744,
+    "mode": "authenticated_client_render",
+    "batch": 185,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:decorative_blocks:blockstate_copy_item",
+    "owned_fixture_chunk_ticket_count": 0,
+    "owned_entities": [],
+    "owned_fixture_chunks": [],
+    "attempted_ids": [
+      "decorative_blocks:birch_palisade",
+      "decorative_blocks:birch_seat",
+      "decorative_blocks:birch_support",
+      "decorative_blocks:blockstate_copy_item"
+    ],
+    "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+  },
+  "journal_sha256": "f356962da212920940d91d89b511e3c7eeb2cd414cae751a95e408959d6f0abf",
+  "journal_bytes": 191444,
+  "ack_batches": 186,
+  "last_batch": {
+    "run": "4c213c13-f64e-4b78-9cf7-414d1fc2174c",
+    "batch": 185,
+    "render_return_tokens": [
+      {
+        "entityId": 1822,
+        "entityUuid": "b2905e29-c727-408b-b80c-1fb08869a66f",
+        "itemId": "decorative_blocks:birch_palisade",
+        "entityType": "minecraft:item",
+        "entityClass": "net.minecraft.world.entity.item.ItemEntity",
+        "nativeReplacement": false
+      },
+      {
+        "entityId": 1823,
+        "entityUuid": "65bfa5ed-b67c-4f0a-9cae-734c9f975458",
+        "itemId": "decorative_blocks:birch_seat",
+        "entityType": "minecraft:item",
+        "entityClass": "net.minecraft.world.entity.item.ItemEntity",
+        "nativeReplacement": false
+      },
+      {
+        "entityId": 1824,
+        "entityUuid": "c71569a5-2ccd-4865-b9d5-291b0d7c5b65",
+        "itemId": "decorative_blocks:birch_support",
+        "entityType": "minecraft:item",
+        "entityClass": "net.minecraft.world.entity.item.ItemEntity",
+        "nativeReplacement": false
+      },
+      {
+        "entityId": 1825,
+        "entityUuid": "c12fa4f4-0494-43ac-bc66-15c0238437c2",
+        "itemId": "decorative_blocks:blockstate_copy_item",
+        "entityType": "minecraft:item",
+        "entityClass": "net.minecraft.world.entity.item.ItemEntity",
+        "nativeReplacement": false
+      }
+    ],
+    "model_observed_mask": 15,
+    "missing_model_mask": 8
+  },
+  "prefix_verified": 3484,
+  "verified_contiguous_total": 4224,
+  "scope": "First genuine native missing-model sentinel, no skipped batch. Source observer passing negative case is not asset fix.",
+  "static_candidate": {
+    "mod_jar": "decorative_blocks-forge-1.20.1-4.1.3.jar",
+    "mod_sha256": "19bc47b32258dd703b808f76e7b89da1746ecddaec4ad2bd5eaa356c0d2b3d87",
+    "registered_item": "decorative_blocks:blockstate_copy_item",
+    "expected_default_model_present": false,
+    "existing_model": "decorative_blocks:item/blockstate_copy_tool",
+    "existing_texture": "decorative_blocks:item/blockstate_copy_tool",
+    "existing_texture_present": true,
+    "item_class": "lilypuree.decorative_blocks.items.BlockstateCopyItem",
+    "item_declared_methods": "constructor, useOn, appendTooltip, addProperties; no declared client model renderer",
+    "classification": "Resource-name mismatch candidate; no alias implemented, no fix or hidden-item exemption claimed."
+  }
+}

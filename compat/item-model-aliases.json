@@ -1,0 +1,77 @@
+[
+  {
+    "item": "displaydelight:beetroot_soup",
+    "jar": "mods/displaydelight-0.0.1-lite.jar",
+    "jar_sha256": "b47a6c9a688aa923c071d04ab7a9ba3cdaa73c61f1cc5b69bf5f876bc0a992d6",
+    "target_path": "assets/displaydelight/models/item/beetroot_soup.json",
+    "parent": "displaydelight:block/beetroot_soup",
+    "resources": {
+      "assets/displaydelight/models/block/beetroot_soup.json": "58e322e3c4d48e55f7f37835d6b2e2d8bcb9f7bce6e66d49c293f2104efad649",
+      "assets/displaydelight/models/block/bowl.json": "fa1214cbdd6f617e8ec38b6af82f669bcb716df46da21ce6991517401bde9044",
+      "assets/displaydelight/textures/block/beetroot_soup.png": "ca44b9cb126db51e82412652445125e6b425520dbf09acb501e2cb8c9b166605",
+      "assets/displaydelight/textures/block/bowl.png": "9dafe8e08805d07bfa93051272871fdaccafd7d08adab6869bf412d5e55d9843",
+      "assets/displaydelight/textures/block/bowl2.png": "c7c55bec5683e8a6a716517644ce4c39fd5a72030fc7506c4e068de89601541b"
+    },
+    "vanilla_dependencies": []
+  },
+  {
+    "item": "displaydelight:mushroom_stew",
+    "jar": "mods/displaydelight-0.0.1-lite.jar",
+    "jar_sha256": "b47a6c9a688aa923c071d04ab7a9ba3cdaa73c61f1cc5b69bf5f876bc0a992d6",
+    "target_path": "assets/displaydelight/models/item/mushroom_stew.json",
+    "parent": "displaydelight:block/mushroom_stew",
+    "resources": {
+      "assets/displaydelight/models/block/bowl.json": "fa1214cbdd6f617e8ec38b6af82f669bcb716df46da21ce6991517401bde9044",
+      "assets/displaydelight/models/block/mushroom_stew.json": "ce67e55f67f505881b2164c0d39218776b21a93e162548214b3aec5f4563c0ae",
+      "assets/displaydelight/textures/block/bowl.png": "9dafe8e08805d07bfa93051272871fdaccafd7d08adab6869bf412d5e55d9843",
+      "assets/displaydelight/textures/block/bowl2.png": "c7c55bec5683e8a6a716517644ce4c39fd5a72030fc7506c4e068de89601541b",
+      "assets/displaydelight/textures/block/mushroom_stew.png": "9907e89bbae3483de7fbac52a856f0bdd93e4e99d726f9315309862aa61f8a91"
+    },
+    "vanilla_dependencies": []
+  },
+  {
+    "item": "displaydelight:rabbit_stew",
+    "jar": "mods/displaydelight-0.0.1-lite.jar",
+    "jar_sha256": "b47a6c9a688aa923c071d04ab7a9ba3cdaa73c61f1cc5b69bf5f876bc0a992d6",
+    "target_path": "assets/displaydelight/models/item/rabbit_stew.json",
+    "parent": "displaydelight:block/rabbit_stew",
+    "resources": {
+      "assets/displaydelight/models/block/bowl.json": "fa1214cbdd6f617e8ec38b6af82f669bcb716df46da21ce6991517401bde9044",
+      "assets/displaydelight/models/block/rabbit_stew.json": "3e32a5d8a36d2b3d0fc43de9819e2dc913b7f7566cf6beb91ae8b857ddd06498",
+      "assets/displaydelight/textures/block/bowl.png": "9dafe8e08805d07bfa93051272871fdaccafd7d08adab6869bf412d5e55d9843",
+      "assets/displaydelight/textures/block/bowl2.png": "c7c55bec5683e8a6a716517644ce4c39fd5a72030fc7506c4e068de89601541b",
+      "assets/displaydelight/textures/block/rabbit_stew.png": "acdd4d59f266277d9e3c16979bf946b9fdd519a77807d4b67ba6c3ea9cb47864"
+    },
+    "vanilla_dependencies": []
+  },
+  {
+    "item": "verdantvibes:potted_burnweed",
+    "jar": "mods/verdantvibes-1.0.3-1.20.1.jar",
+    "jar_sha256": "f227d6ae2d7e39f6aca6851f80d2f25bd45b0ca1fe69537247551c1c538bab73",
+    "target_path": "assets/verdantvibes/models/item/potted_burnweed.json",
+    "parent": "verdantvibes:block/potted_burnweed",
+    "resources": {
+      "assets/verdantvibes/models/block/potted_burnweed.json": "e55d7d81df41577c6223924bde71205b560c3a501e08ef35e59829cd69ea1d84",
+      "assets/verdantvibes/textures/block/burnweed_no_tint.png": "092607ea85e28caf031cbebd9af5eef12519346c7cbe2bcaaf0b777c83df39d4",
+      "assets/verdantvibes/textures/block/burnweed_pot.png": "f9cb35103fc3255c8a46e7663909ab7bf8e1d06a5bb8af9e7b9829fbe6aeac34"
+    },
+    "vanilla_dependencies": [
+      "assets/minecraft/textures/block/dirt.png",
+      "assets/minecraft/textures/block/flower_pot.png"
+    ]
+  },
+  {
+    "item": "vintagedelight:vinegar_jar",
+    "jar": "mods/vintagedelight-0.1.6.jar",
+    "jar_sha256": "f3645fcf42546edb5fe09bee833f2e7524dd93b9b5380ecae3d3aa2847a4c9db",
+    "target_path": "assets/vintagedelight/models/item/vinegar_jar.json",
+    "parent": "vintagedelight:block/vinegar_jar_one_jar",
+    "resources": {
+      "assets/vintagedelight/models/block/template_mason_jar_one.json": "7fa6aa884fa824df441cc58215d83bab44a5f18c1c7ef99ecf3d433b6bfe1747",
+      "assets/vintagedelight/models/block/vinegar_jar_one_jar.json": "7cc626c6bb7edf0002c59450cdfe9957af71e6d9b0885aa99b5a3e6352da6fab",
+      "assets/vintagedelight/textures/block/mason_jar_texture.png": "bfebee00f0285b05e4d50b8c8774f2007aaca95a716b60eb26f50b035132c4cf",
+      "assets/vintagedelight/textures/block/vinegar_interior_texture.png": "14948178f97249c7c2727c84ee4e6a39f34003209098a96b61013e99338f1d42"
+    },
+    "vanilla_dependencies": []
+  }
+]

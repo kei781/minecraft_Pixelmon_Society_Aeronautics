@@ -1,0 +1,229 @@
+{
+  "observer_sha256": "8255403e98ab26e6f42eecd6078f7107ca6e103759dd413fce5659792dceb66b",
+  "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+  "cases": [
+    {
+      "label": "original_package_gap",
+      "state": {
+        "run": "2c4101a7-9155-4f86-8790-08a7835fa057",
+        "result": "complete",
+        "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+        "dimension": "minecraft:overworld",
+        "cleanup_complete": true,
+        "cleanup_failed": false,
+        "cleanup_injection_triggered": false,
+        "failed_cleanup_entity_uuids": [],
+        "deliberate_crash_test": false,
+        "fixture_pickup_delay": 32766,
+        "catalog_total": 17239,
+        "catalog_start": 3484,
+        "selected_count": 8,
+        "completed_render_returns": 8,
+        "completed_model_verified_returns": 8,
+        "completed_native_spawns": 8,
+        "mode": "authenticated_client_render",
+        "batch": 2,
+        "active": false,
+        "last_operation": "default_stack_and_spawn:create:chain_conveyor",
+        "owned_fixture_chunk_ticket_count": 0,
+        "owned_entities": [],
+        "owned_fixture_chunks": [],
+        "attempted_ids": [],
+        "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+      },
+      "journal_sha256": "96fd5d36560cc4ddcb92fa410c4b2dbcc94536e58f4bc62a913ee875001f943b",
+      "ack_batches": 2,
+      "unique_items": 8,
+      "entity_classes": [
+        "com.simibubi.create.content.logistics.box.PackageEntity",
+        "net.minecraft.world.entity.item.ItemEntity"
+      ],
+      "masks": [
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "rare_packages",
+      "state": {
+        "run": "7bc3aa56-1737-4d21-9636-68a7de2bcc41",
+        "result": "complete",
+        "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+        "dimension": "minecraft:overworld",
+        "cleanup_complete": true,
+        "cleanup_failed": false,
+        "cleanup_injection_triggered": false,
+        "failed_cleanup_entity_uuids": [],
+        "deliberate_crash_test": false,
+        "fixture_pickup_delay": 32766,
+        "catalog_total": 17239,
+        "catalog_start": 3917,
+        "selected_count": 10,
+        "completed_render_returns": 10,
+        "completed_model_verified_returns": 10,
+        "completed_native_spawns": 10,
+        "mode": "authenticated_client_render",
+        "batch": 3,
+        "active": false,
+        "last_operation": "default_stack_and_spawn:create:rare_vector_package",
+        "owned_fixture_chunk_ticket_count": 0,
+        "owned_entities": [],
+        "owned_fixture_chunks": [],
+        "attempted_ids": [],
+        "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+      },
+      "journal_sha256": "29d09e323e734fbfe55bbf1f8cbdb827474a90fce077e5f6f7a9dd6c7d9a256c",
+      "ack_batches": 3,
+      "unique_items": 10,
+      "entity_classes": [
+        "com.simibubi.create.content.logistics.box.PackageEntity"
+      ],
+      "masks": [
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "backpack_defaults",
+      "state": {
+        "run": "f79c23b6-cdac-40be-b03e-9f3f52ee0e3c",
+        "result": "complete",
+        "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+        "dimension": "minecraft:overworld",
+        "cleanup_complete": true,
+        "cleanup_failed": false,
+        "cleanup_injection_triggered": false,
+        "failed_cleanup_entity_uuids": [],
+        "deliberate_crash_test": false,
+        "fixture_pickup_delay": 32766,
+        "catalog_total": 17239,
+        "catalog_start": 14952,
+        "selected_count": 24,
+        "completed_render_returns": 24,
+        "completed_model_verified_returns": 24,
+        "completed_native_spawns": 24,
+        "mode": "authenticated_client_render",
+        "batch": 6,
+        "active": false,
+        "last_operation": "default_stack_and_spawn:sophisticatedbackpacks:smelting_upgrade",
+        "owned_fixture_chunk_ticket_count": 0,
+        "owned_entities": [],
+        "owned_fixture_chunks": [],
+        "attempted_ids": [],
+        "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+      },
+      "journal_sha256": "f08953126748dd5ae0637c553f25263e8efd8d667e53476891cfa9771e1d01a0",
+      "ack_batches": 6,
+      "unique_items": 24,
+      "entity_classes": [
+        "net.minecraft.world.entity.item.ItemEntity"
+      ],
+      "masks": [
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "factory_packages",
+      "state": {
+        "run": "6cb2d382-62dd-42dc-8664-2ed53a7496ea",
+        "result": "complete",
+        "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+        "dimension": "minecraft:overworld",
+        "cleanup_complete": true,
+        "cleanup_failed": false,
+        "cleanup_injection_triggered": false,
+        "failed_cleanup_entity_uuids": [],
+        "deliberate_crash_test": false,
+        "fixture_pickup_delay": 32766,
+        "catalog_total": 17239,
+        "catalog_start": 4144,
+        "selected_count": 2,
+        "completed_render_returns": 2,
+        "completed_model_verified_returns": 2,
+        "completed_native_spawns": 2,
+        "mode": "authenticated_client_render",
+        "batch": 1,
+        "active": false,
+        "last_operation": "default_stack_and_spawn:create_factory_logistics:copper_jar_package_8x8",
+        "owned_fixture_chunk_ticket_count": 0,
+        "owned_entities": [],
+        "owned_fixture_chunks": [],
+        "attempted_ids": [],
+        "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+      },
+      "journal_sha256": "4332beebaee278555446eccee4afb0646b63eeb99df33892be31990f51382857",
+      "ack_batches": 1,
+      "unique_items": 2,
+      "entity_classes": [
+        "ru.zznty.create_factory_logistics.logistics.composite.CompositePackageEntity",
+        "ru.zznty.create_factory_logistics.logistics.jar.JarPackageEntity"
+      ],
+      "masks": [
+        [
+          3,
+          0
+        ]
+      ]
+    }
+  ],
+  "complete": true,
+  "first_failure": null,
+  "scope": "Actual authenticated native render/model returns after same825540artifact and optional Windows hot JSON reader stopped. Four family cases44 plus separate ordinary16 pass; no GPU pixel/texture/functional variants claim.",
+  "last_factory_client_snapshot": {
+    "run": "6cb2d382-62dd-42dc-8664-2ed53a7496ea",
+    "batch": 0,
+    "status": "ack_all_native_returns_and_models",
+    "native_returns": 2,
+    "model_observed_mask": 3,
+    "missing_model_mask": 0,
+    "fallback_partial_model_mask": 2,
+    "visual_partial_model_mask": 0,
+    "native_partial_model_items": [
+      "create_factory_logistics:copper_jar_package_8x8"
+    ],
+    "report_bytes": 5762,
+    "report_sha256": "87d2085f40bba22bb221485af281e2bcc89aa07844fe00ca6e8616d098abbee0",
+    "source_handle_closed_kst": "2026-11-09 20:34:29.644",
+    "checkpoint_errors": 0,
+    "existing_flywheel_fallback_errors": 2
+  }
+}

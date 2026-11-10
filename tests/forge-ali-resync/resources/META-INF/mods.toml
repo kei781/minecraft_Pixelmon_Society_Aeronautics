@@ -1,0 +1,9 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psaaliresynctrace"
+version="0.1"
+displayName="PSA owned ALI resync QA trace"
+displayTest="IGNORE_ALL_VERSION"
+description="Disposable native palette encode/decode identity and thread observation. Excluded from player packages."

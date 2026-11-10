@@ -1,0 +1,150 @@
+{
+  "state": {
+    "run": "b6af637a-8622-423e-865e-759b5d507e9d",
+    "result": "complete",
+    "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+    "dimension": "minecraft:overworld",
+    "cleanup_complete": true,
+    "cleanup_failed": false,
+    "cleanup_injection_triggered": false,
+    "failed_cleanup_entity_uuids": [],
+    "deliberate_crash_test": false,
+    "fixture_pickup_delay": 32766,
+    "catalog_total": 17239,
+    "catalog_start": 4215,
+    "selected_count": 53,
+    "completed_render_returns": 53,
+    "completed_model_verified_returns": 53,
+    "completed_native_spawns": 53,
+    "mode": "authenticated_client_render",
+    "batch": 14,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:decorative_blocks:warped_support",
+    "owned_fixture_chunk_ticket_count": 0,
+    "owned_entities": [],
+    "owned_fixture_chunks": [],
+    "attempted_ids": [],
+    "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+  },
+  "ack_batches": 14,
+  "journal_sha256": "c208e5fe5b1b03407972d085dbb2e0944b7816d2bef12f05589d0eae75201e74",
+  "masks": [
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "observed_items": [
+    "decorative_blocks:acacia_beam",
+    "decorative_blocks:acacia_palisade",
+    "decorative_blocks:acacia_seat",
+    "decorative_blocks:acacia_support",
+    "decorative_blocks:bamboo_palisade",
+    "decorative_blocks:bamboo_seat",
+    "decorative_blocks:bamboo_support",
+    "decorative_blocks:bar_panel",
+    "decorative_blocks:birch_beam",
+    "decorative_blocks:birch_palisade",
+    "decorative_blocks:birch_seat",
+    "decorative_blocks:birch_support",
+    "decorative_blocks:blockstate_copy_item",
+    "decorative_blocks:brazier",
+    "decorative_blocks:chain",
+    "decorative_blocks:chandelier",
+    "decorative_blocks:cherry_beam",
+    "decorative_blocks:cherry_palisade",
+    "decorative_blocks:cherry_seat",
+    "decorative_blocks:cherry_support",
+    "decorative_blocks:crimson_beam",
+    "decorative_blocks:crimson_palisade",
+    "decorative_blocks:crimson_seat",
+    "decorative_blocks:crimson_support",
+    "decorative_blocks:dark_oak_beam",
+    "decorative_blocks:dark_oak_palisade",
+    "decorative_blocks:dark_oak_seat",
+    "decorative_blocks:dark_oak_support",
+    "decorative_blocks:jungle_beam",
+    "decorative_blocks:jungle_palisade",
+    "decorative_blocks:jungle_seat",
+    "decorative_blocks:jungle_support",
+    "decorative_blocks:lattice",
+    "decorative_blocks:mangrove_beam",
+    "decorative_blocks:mangrove_palisade",
+    "decorative_blocks:mangrove_seat",
+    "decorative_blocks:mangrove_support",
+    "decorative_blocks:oak_beam",
+    "decorative_blocks:oak_palisade",
+    "decorative_blocks:oak_seat",
+    "decorative_blocks:oak_support",
+    "decorative_blocks:rocky_dirt",
+    "decorative_blocks:soul_brazier",
+    "decorative_blocks:soul_chandelier",
+    "decorative_blocks:spruce_beam",
+    "decorative_blocks:spruce_palisade",
+    "decorative_blocks:spruce_seat",
+    "decorative_blocks:spruce_support",
+    "decorative_blocks:stone_pillar",
+    "decorative_blocks:warped_beam",
+    "decorative_blocks:warped_palisade",
+    "decorative_blocks:warped_seat",
+    "decorative_blocks:warped_support"
+  ],
+  "client_observer_sha256": "7b961c46e593ab13437c01ef47a99b65404c8c6a28fd75297d7859173aeb3da4",
+  "server_observer_sha256": "8255403e98ab26e6f42eecd6078f7107ca6e103759dd413fce5659792dceb66b",
+  "observer_different_classes": [
+    "dev/psa/renderprobe/RenderClient.class"
+  ],
+  "scope": "Actual Microsoft-authenticated Mac client: original server spawns and client EntityRenderDispatcher returns, model masks, cleanup. No pixel, hand/inventory, block placement or functional-use proof."
+}

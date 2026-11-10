@@ -1,0 +1,30 @@
+{
+  "filename": "PSA-Forge-Full-Experimental-v13.mrpack",
+  "sha256": "6588efbbcebbc07101878d1eeb704d3b84a5c636e7f8e1ae8ef607771174e0bf",
+  "size": 1137794260,
+  "version_id": "psa-forge-c3316e33f6ca",
+  "mod_jars": 354,
+  "indexed_resourcepacks": 15,
+  "indexed_shaderpacks": 1,
+  "override_files": 7927,
+  "longest_relative_path": 108,
+  "full_gameplay_validated": false,
+  "added_payload_paths": [
+    "kubejs/assets/decorative_blocks/models/item/blockstate_copy_item.json"
+  ],
+  "removed_payload_paths": [],
+  "changed_existing_payload_paths": [],
+  "model_alias": [
+    {
+      "item": "decorative_blocks:blockstate_copy_item",
+      "path": "kubejs/assets/decorative_blocks/models/item/blockstate_copy_item.json",
+      "parent": "decorative_blocks:item/blockstate_copy_tool",
+      "sha256": "54d0ac13768c9d1618d9e37b6219bb4a4be74b9bd1f20e856e9f82e239b46b5d",
+      "upstream_jar_sha256": "19bc47b32258dd703b808f76e7b89da1746ecddaec4ad2bd5eaa356c0d2b3d87",
+      "original_model_sha256": "568a456b1b1466a3f6f25c4ad8e96d7216e334eca9479d7f5bcfc826cc63a9fc",
+      "original_texture_sha256": "c254807e84c95081bc952b6190d127109548404d2eca03baf57d088eb1bbecc4",
+      "scope": "Original upstream tool model alias; native validation recorded separately"
+    }
+  ],
+  "scope": "Private candidate only; actual native alias reload/lookup and Windows v13 import pending."
+}

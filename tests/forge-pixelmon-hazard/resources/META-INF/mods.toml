@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psahazardtrace"
+version="0.1"
+displayName="PSA Disposable Hazard Diagnostic"
+description="Original native test observations and separate post-assert effects; excluded from player packs."
+[[dependencies.psahazardtrace]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.psahazardtrace]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.20]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.psahazardtrace]]
+modId="pixelmon"
+mandatory=true
+versionRange="[9.2.3]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.psahazardtrace]]
+modId="psapixelmonfixture"
+mandatory=true
+versionRange="[0.2]"
+ordering="AFTER"
+side="BOTH"

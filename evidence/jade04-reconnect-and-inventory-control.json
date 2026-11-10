@@ -1,0 +1,43 @@
+{
+  "player_game_type": 0,
+  "abilities": {
+    "instabuild": 0,
+    "flying": 0,
+    "mayfly": 0,
+    "invulnerable": 0,
+    "mayBuild": 1
+  },
+  "health": 20.0,
+  "position": [
+    23.497435715142796,
+    104.00000281724596,
+    6.445079739997887
+  ],
+  "inventory_response_sha256": "0e48e0af7a635462062118a707e816641de79e148e078953dd75cecfeb68a428",
+  "inventory_top_level_ids": [
+    "dew_drop_watering_cans:copper_watering_can",
+    "minecraft:iron_hoe",
+    "numismatics:sprocket",
+    "numismatics:spur",
+    "pixelmon:poke_ball",
+    "pixelmon:potion",
+    "society:carrot_seed"
+  ],
+  "windows_report": {
+    "bytes": 5080,
+    "sha256": "a41010b5225627e1cbd77c4686043c77e3b262474b389ff281535a7c65bc879c",
+    "jvm_started_kst": "2026-11-09 19:29:41",
+    "world_join_kst": "2026-11-09 19:32:37",
+    "new_errors": 0,
+    "ResourcePackInfo_warning_count": 0,
+    "party_count_visible": 2,
+    "hotbar_and_rig_visible": true
+  },
+  "isolated_inventory_control": {
+    "old_03_only_exact_315_negative": "rejected with Jade observer hash mismatch",
+    "matching_04_exact_315_positive": "PSA_RENDER_QA production313 and two pinned diagnostics verified",
+    "isolated_temporary_fixture": true,
+    "running_profile_files_changed": false,
+    "console_commands_sent": false
+  }
+}

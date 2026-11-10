@@ -1,0 +1,22 @@
+{
+  "filename": "PSA-Forge-Full-Experimental-v14.mrpack",
+  "sha256": "367d8da4e6e698a6ebe984692169760ac2c05587c9ebaf86316e7209900ad2d7",
+  "size": 1137797340,
+  "version_id": "psa-forge-d95ddf613381",
+  "mod_jars": 354,
+  "indexed_resourcepacks": 15,
+  "indexed_shaderpacks": 1,
+  "override_files": 7932,
+  "longest_relative_path": 108,
+  "full_gameplay_validated": false,
+  "added_payload_paths": [
+    "kubejs/assets/displaydelight/models/item/beetroot_soup.json",
+    "kubejs/assets/displaydelight/models/item/mushroom_stew.json",
+    "kubejs/assets/displaydelight/models/item/rabbit_stew.json",
+    "kubejs/assets/verdantvibes/models/item/potted_burnweed.json",
+    "kubejs/assets/vintagedelight/models/item/vinegar_jar.json"
+  ],
+  "removed_payload_paths": [],
+  "changed_existing_payload_paths": [],
+  "scope": "Private candidate with five original matching block-model references. Actual Mac warm QA overlay verified separately; fresh Windows import still pending."
+}

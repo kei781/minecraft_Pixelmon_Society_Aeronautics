@@ -13,12 +13,16 @@
     "TankCartMenuDataMixin",
     "BatteryCartMenuDataMixin",
     "BatteryCartMenuTypeMixin",
-    "BountifulMenuDataMixin"
+    "BountifulMenuDataMixin",
+    "JadeBlockAccessorCoordinatesMixin",
+    "PixelmonDynamaxHitpointsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "client": [
-    "PixelmonMenuCompatMixin"
+    "PixelmonMenuCompatMixin",
+    "JadeRayTracingCoordinatesMixin",
+    "JadeDistanceCoordinatesMixin"
   ]
 }
