@@ -8,7 +8,7 @@
 
 Windows 설치는 런처·Java 같은 선행 프로그램을 안내에 따라 설치하고 준비된 모드팩을 가져오는 방식도 허용합니다. 모든 준비 과정을 자동화한 단일 실행 파일은 필수 조건이 아닙니다. 같은 구성의 클라이언트를 설치하고 실제 서버에 접속하는 것이 완료 조건입니다.
 
-현재 전체 시험 파일은 `PSA-Forge-Full-Experimental-v16.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 모드354개이며 진단은 포함하지 않습니다. 원본 아이템 모델 연결 여섯 개와 [누케닌 HP 보정](docs/pixelmon-dynamax-hitpoints.md)을 포함합니다. [v16 패키지 기록](evidence/player-pack-v16-candidate.json)의 새 Windows 가져오기는 아직 확인하지 않았습니다. 이전 v9은 새 가져오기·7,925개 파일 해시 대조·정품 접속·아이템16개 렌더를 통과했습니다. [당시 실행 기록](evidence/forge-client-v9-launch-windows.json), [메뉴 정수 보정](docs/menu-data-compatibility.md), [할인 표시](docs/bountiful-discount-display.md), [진행 상태](docs/progress.md).
+현재 전체 시험 파일은 `PSA-Forge-Full-Experimental-v17.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 모드354개이며 진단은 포함하지 않습니다. 기존 보정에 [스타터 로그아웃 서버 크래시 수정](docs/pixelmon-starter-disconnect.md)을 더했습니다. [v17 패키지·검증 기록](evidence/pixelmon-starter-disconnect.json)의 새 Windows 가져오기는 아직 확인하지 않았습니다. 같은 공통 패치의 진단 없는 N100 서버에서 [실제 인증·월드 입장](evidence/n100-v17-player-deployment.json)을 확인했습니다. 이전 v9은 새 가져오기·7,925개 파일 해시 대조·정품 접속·아이템16개 렌더를 통과했습니다. [당시 실행 기록](evidence/forge-client-v9-launch-windows.json), [메뉴 정수 보정](docs/menu-data-compatibility.md), [할인 표시](docs/bountiful-discount-display.md), [진행 상태](docs/progress.md).
 
 ## 보존한 최초 1.21.1 조사 기준
 

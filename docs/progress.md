@@ -217,3 +217,12 @@ v17 원샷 팩(354개 모드)과 새 서버 프로필(313개)을 만들었다. �
 리뷰와 진단 없는 접속용 재기동은 이어서 진행한다. 같은 유형의 저장소·TCG 후보는 아직
 추가 재현이 필요하다. [원인·수정 범위](pixelmon-starter-disconnect.md),
 [직접 검증 결과](../evidence/pixelmon-starter-disconnect.json). 두 최종 목표는 미완료다.
+
+Task16 수락: 소스 `46f22a5`를 최신 실제 Claude Opus5.5/high R2가 CLEAN으로 판정했다.
+지적 2개 모두 독립 해소됐고 PR #13 실제 미해결 0개, CI는 미설정이다. 문서의 현재 해시와
+심볼릭 링크 회귀 검출력을 수정했으며 가드 제거 시 실제 테스트 실패도 확인했다.
+직접 Python 검사 총27개가 통과했다. 수락 뒤 진단 없는 N100 v17을 기동해 같은 Mac
+클라이언트의 정품 인증·월드 입장·1명 접속과 TPS20/7.725ms·크래시0을 확인했다.
+원래 v16 월드는 보존했다. [코드 수락 범위](../evidence/task16-review-acceptance.json),
+[실제 배치](../evidence/n100-v17-player-deployment.json). 최신 Windows 가져오기·6인·장시간
+합격으로 확대하지 않는다. 다음은 실제 접속 후 관찰한 ALI/EMI 오류다.
