@@ -1,0 +1,119 @@
+{
+  "scope": "Initial actual server native-spawn diagnostic failure; not yet attributed to production mods. No client rendering attempted.",
+  "diagnostic_sha256": "6cce75b49a77cf5b47f32b1f3e6aa0a46be84b243e7d0bcd158ed17b84720f49",
+  "initial_failure": {
+    "run": "058d18f9-7389-451c-80f3-4c7c42473424",
+    "result": "spawn_timeout_or_unsupported_custom_entity",
+    "catalog_total": 17239,
+    "catalog_start": 0,
+    "selected_count": 16,
+    "completed_render_returns": 0,
+    "completed_native_spawns": 0,
+    "mode": "native_server_spawn_only",
+    "batch": 0,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:aeronautics:black_envelope",
+    "attempted_ids": [
+      "aeronautics:adjustable_burner",
+      "aeronautics:andesite_propeller",
+      "aeronautics:aviators_goggles",
+      "aeronautics:black_envelope"
+    ],
+    "scope": "native server item spawning only; no client/render attempt"
+  },
+  "full_native_submitted": true,
+  "full_native_passed": false,
+  "authenticated_render_sample_passed": false,
+  "same_artifact_loaded_chunk_control": {
+    "state": {
+      "run": "580c5a46-d070-428e-98d8-d3df1ac7c99f",
+      "result": "complete",
+      "catalog_total": 17239,
+      "catalog_start": 0,
+      "selected_count": 16,
+      "completed_render_returns": 0,
+      "completed_native_spawns": 16,
+      "mode": "native_server_spawn_only",
+      "batch": 4,
+      "active": false,
+      "last_operation": "default_stack_and_spawn:aeronautics:green_envelope_encased_shaft",
+      "attempted_ids": [],
+      "scope": "native server item spawning only; no client/render attempt"
+    },
+    "proof": {
+      "summary_sha256": "34194b81b4a687bd181446d6e2ef3961fc1a5a0bed26155c9b25e55c54b57323",
+      "journal_sha256": "80d84245d2e6c6a863264dbdeacbe761f416304b1a1b93eb301147b79c888bc3"
+    }
+  },
+  "attribution": "Diagnostic native-only precondition/cleanup defect: chunk was not loaded; forcing same chunk made same16 item run pass with unchanged production and diagnostic JAR. Original four owned item UUIDs were removed individually; control force-load ticket removed.",
+  "fixed03_unforced_chunk_regression": {
+    "state": {
+      "run": "c5cbd092-c708-46fe-b8bc-70015c4c8771",
+      "result": "complete",
+      "catalog_total": 17239,
+      "catalog_start": 0,
+      "selected_count": 16,
+      "completed_render_returns": 0,
+      "completed_native_spawns": 16,
+      "mode": "native_server_spawn_only",
+      "batch": 4,
+      "active": false,
+      "last_operation": "default_stack_and_spawn:aeronautics:green_envelope_encased_shaft",
+      "owned_fixture_chunk_ticket_count": 0,
+      "attempted_ids": [],
+      "scope": "native server item spawning only; no client/render attempt"
+    },
+    "proof": {
+      "summary_sha256": "97663009ea3ab1115ea3595dd36f36f82c7337ff041e6fee7cd3d2e05db4ce55",
+      "journal_sha256": "81911bb3855e4e6f71261ed329a0ebe350e25d1831690d53ac0127f2522c20cb"
+    }
+  },
+  "fixed03_preexisting_ticket_regression": {
+    "state": {
+      "run": "c2fbc7ff-58ac-4118-8a96-d70d0114eb11",
+      "result": "complete",
+      "catalog_total": 17239,
+      "catalog_start": 0,
+      "selected_count": 16,
+      "completed_render_returns": 0,
+      "completed_native_spawns": 16,
+      "mode": "native_server_spawn_only",
+      "batch": 4,
+      "active": false,
+      "last_operation": "default_stack_and_spawn:aeronautics:green_envelope_encased_shaft",
+      "owned_fixture_chunk_ticket_count": 0,
+      "attempted_ids": [],
+      "scope": "native server item spawning only; no client/render attempt"
+    },
+    "summary_sha256": "0064474fbef9f240a36f7d5691d1b53aa33b2ab443fb0c607317e87b34557765",
+    "preexisting_force_ticket_preserved": true,
+    "new_ticket_release_before_control_proved_by_query": true,
+    "log_slice_sha256": "f7e322021ed722ca73a9680a8477668c9bb29123d2e096eee929aab47b032d63"
+  },
+  "fixed_diagnostic_sha256": "21b38b5509e4c2cee380eb136ff59229ccd6db4d20236e792d16764e6b3ba58b",
+  "fixed03_full_run_first_stop": {
+    "state": {
+      "run": "5a6a2099-21a0-4901-aae9-8fe868ff0251",
+      "result": "spawn_timeout_or_unsupported_custom_entity",
+      "catalog_total": 17239,
+      "catalog_start": 0,
+      "selected_count": 17239,
+      "completed_render_returns": 0,
+      "completed_native_spawns": 3484,
+      "mode": "native_server_spawn_only",
+      "batch": 871,
+      "active": false,
+      "last_operation": "default_stack_and_spawn:create:cardboard_package_12x10",
+      "owned_fixture_chunk_ticket_count": 0,
+      "attempted_ids": [
+        "create:cardboard_leggings",
+        "create:cardboard_package_10x12",
+        "create:cardboard_package_10x8",
+        "create:cardboard_package_12x10"
+      ],
+      "scope": "native server item spawning only; no client/render attempt"
+    },
+    "summary_sha256": "57c7a6cbaa41cad7a418d31f7e1099d323d51f80f8cc3f3b5687828fb2156004",
+    "journal_sha256": "90a88289c538257ee38edada11e1b165de64aa76b2d997a5fa4b319985ce8f69"
+  }
+}

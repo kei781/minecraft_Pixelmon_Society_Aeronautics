@@ -1,0 +1,26 @@
+// Test-only artifact using the existing pinned Forge build's mapped classpath.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaModelProbeSource')
+    if (!sourceRoot) throw new GradleException('psaModelProbeSource is required')
+    def probeDirectory = new File(sourceRoot.toString())
+    if (!new File(probeDirectory, 'ModelProbe.java').isFile()) throw new GradleException('Missing model probe source')
+    def compiler = project.tasks.register('compilePsaModelProbe', JavaCompile) {
+        source new File(probeDirectory, 'ModelProbe.java')
+        classpath = project.sourceSets.main.compileClasspath
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-model-probe/classes'))
+        options.release.set(17)
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaModelProbeJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-model-probe-1.0.jar')
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(probeDirectory, 'resources')
+        manifest.attributes('FMLModType': 'MOD')
+        preserveFileTimestamps = false
+        reproducibleFileOrder = true
+    }
+    project.reobf.create('psaModelProbeJar')
+}

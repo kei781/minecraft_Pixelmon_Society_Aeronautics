@@ -1,0 +1,29 @@
+{
+  "observer_version": "0.4",
+  "bytes": 10510,
+  "sha256": "1775d74b4b28d9339e564a6725e90dfe6282deaf78dabd2a9f301bd8efa5e01c",
+  "independent_canonical_builds_identical": true,
+  "exact_jade_dependency": "11.13.2+forge",
+  "pinned_api_jar_sha256": "31949971a7a8d5a5bc95ad9d400cbedfd2d65ffbfb3cea7c0b2fa3b47431a0a5",
+  "production_exported": false,
+  "native_data_mutated": false,
+  "native_calls_skipped": false,
+  "server_callback_forwarding": "Original consumer receives original CompoundTag before counting its return; not proof of client receipt.",
+  "namespace": "Only annotated mixins in dev.psa.jadeprobe.mixin; runtime entry and helpers in parent package. Math helper in dev.psa.jademath. Known bad0.2 and common75 detected by negative namespace controls.",
+  "runtime": "N100 actual Done2026-11-09 10:28:09UTC, same QA world/generation; Windows exact install356/other355unchanged. Fresh JVM2026-11-09 19:29:41KST reached main menu without original ResourcePackInfo warning. Auth world entry pending.",
+  "previous_03": {
+    "bytes": 10318,
+    "sha256": "0b886a87fb077f70463f77d79b57c3cdb39c446bda05bb084841a0a3bbcb6057",
+    "runtime": "Authenticated client ordinary and storage block queries, native callbacks and HUD verified. Forge warned of missing pack.mcmeta; ordinary Proceed continued successfully."
+  },
+  "java_classes_unchanged_from_03": 6,
+  "metadata_delta": {
+    "added": [
+      "pack.mcmeta"
+    ],
+    "removed": [],
+    "changed": [
+      "META-INF/mods.toml"
+    ]
+  }
+}

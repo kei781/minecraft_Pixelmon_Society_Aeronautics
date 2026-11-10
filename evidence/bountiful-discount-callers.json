@@ -1,0 +1,147 @@
+{
+  "scope": "complete pinned v8 production client JAR set, nested jars included; CP references do not prove arbitrary interprocedural/reflection behavior",
+  "top_level_jars": 354,
+  "class_entries": 79467,
+  "nested_jars": 75,
+  "exact_target_reference_count": 2,
+  "candidates": [
+    {
+      "jar": "Botania-1.20.1-454-FORGE.jar",
+      "class": "vazkii/botania/api/mana/ManaDiscountArmor.class",
+      "class_sha256": "f970186ca8f116952b2de8698732541a0c24b897570103549ed78fb0497ae1f1",
+      "method_references": [],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Botania-1.20.1-454-FORGE.jar",
+      "class": "vazkii/botania/api/mana/ManaDiscountEvent.class",
+      "class_sha256": "4c7897fe950a6174110cb4f9767aff7727018c1d4d912482a77bebc40c2b8a81",
+      "method_references": [],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Botania-1.20.1-454-FORGE.jar",
+      "class": "vazkii/botania/common/impl/mana/ManaItemHandlerImpl.class",
+      "class_sha256": "cc9fd2748df9152eff9a770a1f79a635ca7e0f5d8acecaf0efd495f8c9670231",
+      "method_references": [
+        [
+          "vazkii/botania/api/mana/ManaDiscountArmor",
+          "getDiscount",
+          "(Lnet/minecraft/world/item/ItemStack;ILnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)F"
+        ]
+      ],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Botania-1.20.1-454-FORGE.jar",
+      "class": "vazkii/botania/common/item/equipment/armor/elementium/ElementiumHelmItem.class",
+      "class_sha256": "bdecf0cb10ba01c8f84e012bb09f711026226174fb3ed67747ed8da601997e0c",
+      "method_references": [],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Botania-1.20.1-454-FORGE.jar",
+      "class": "vazkii/botania/common/item/equipment/armor/manasteel/ManasteelHelmItem.class",
+      "class_sha256": "2d2622da7487f170b4728423c2c623b8db50686cb7aa2d03fafbc454792d0875",
+      "method_references": [],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Botania-1.20.1-454-FORGE.jar",
+      "class": "vazkii/botania/common/item/equipment/armor/manaweave/ManaweaveHelmItem.class",
+      "class_sha256": "66fcddeb1440f1d53f668c4b226b9ad5fd1d2ee91db1d120bd7b906d5deebc41",
+      "method_references": [],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Botania-1.20.1-454-FORGE.jar",
+      "class": "vazkii/botania/common/item/equipment/armor/terrasteel/TerrasteelHelmItem.class",
+      "class_sha256": "5ade4ccbaa6ed24eb6e68b144f5706b14bfb2d54b2628afffe2ff8260fed504e",
+      "method_references": [],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Botania-1.20.1-454-FORGE.jar",
+      "class": "vazkii/botania/forge/xplat/ForgeXplatImpl.class",
+      "class_sha256": "89126efc43eb65b3d40a1db6d42a0c441e318ef980f73990a2e88cddbc96fe65",
+      "method_references": [
+        [
+          "vazkii/botania/api/mana/ManaDiscountEvent",
+          "getDiscount",
+          "()F"
+        ]
+      ],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Bountiful-6.0.4+1.20.1-forge.jar",
+      "class": "io/ejekta/bountiful/content/BountyCreator$Companion.class",
+      "class_sha256": "d37b667223eeb3ac65af38663e37138e345c2feb1b802fa895ab5c475c6bb6c2",
+      "method_references": [],
+      "exact_target_references": 0,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Bountiful-6.0.4+1.20.1-forge.jar",
+      "class": "io/ejekta/bountiful/content/BountyCreator.class",
+      "class_sha256": "1e1bcbb0608935646ccfa76b92ff40d39fec7af37045007eab44d6efce09f534",
+      "method_references": [
+        [
+          "io/ejekta/bountiful/content/BountyCreator$Companion",
+          "getDiscount",
+          "(I)D"
+        ]
+      ],
+      "exact_target_references": 1,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    },
+    {
+      "jar": "Bountiful-6.0.4+1.20.1-forge.jar",
+      "class": "io/ejekta/bountiful/client/BoardScreen.class",
+      "class_sha256": "2a3e0e8866823b2666ecdb18385c3c394f6a7a839562fbe05b94cdd9586acbbe",
+      "method_references": [
+        [
+          "io/ejekta/bountiful/content/BountyCreator$Companion",
+          "getDiscount",
+          "(I)D"
+        ]
+      ],
+      "exact_target_references": 1,
+      "exact_name_literal": true,
+      "scope": "reference candidate; method-body classification still required"
+    }
+  ],
+  "classifications": {
+    "BountyCreator.genObjectives": "native server objective multiplier, receives factory-normalized reputation",
+    "BoardScreen tooltip lambda": "raw displayed reputation; missing factory input range in displayed discount",
+    "BountyCreator$Companion": "API definition and server factory; actual constructor inputs observed for all70cases",
+    "Botania named methods": "different owners and mana-discount API signatures; not Bountiful reputation calls"
+  },
+  "bounty_creator_name_reference_classes": 5,
+  "foreign_bounty_creator_references_found": 0,
+  "input_jar_set": "all354productionfiles matched v8 archive metadata; excludes separate catalog diagnostic",
+  "script_config_exact_api_name_search": {
+    "source": "fresh pinned server profile original scripts/config plus bundled JAR text resources/nested libraries",
+    "script_or_config_matches": [],
+    "jar_resource_bounty_creator_matches": [],
+    "limit": "literal/reference search, not proof against arbitrary constructed strings or dynamic behavior"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "accepted_source_sha": "017341d9923005b5b17350403a5618f0e9071687",
+  "pr": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/pull/12",
+  "task": 15,
+  "task_review_rounds_used": 2,
+  "task_review_round_limit": 5,
+  "pr_review_rounds_used": 2,
+  "pr_review_round_limit": 8,
+  "requested_model": "claude-opus-5-5",
+  "reported_models": [
+    "claude-opus-5-5"
+  ],
+  "effort": "high",
+  "verdict": "CLEAN",
+  "bridge_applied": true,
+  "live_unresolved_threads": 0,
+  "configured_ci_checks": [],
+  "scope": "Scoped native hazard diagnosis and disposable diagnostic accepted. No production battle fix or complete switch/player-input claim. Both overall user goals remain open.",
+  "runtime": {
+    "final_diagnostic_sha256": "9e4a293c717dc7b063e66ab4c15e3babc8afa260de0683292d8fb941df02cc9c",
+    "final_passive_vs_effect_observations_equal_except_time": true,
+    "effect_cases_isolated_and_full": 4,
+    "ability_allow_responses": 6,
+    "owned_actors_per_run": 31,
+    "live_owned_after_cleanup": 0,
+    "cleanup_and_normal_stop": true,
+    "original_minior_assertion_remains_failure": true,
+    "historical_native_failures_preserved": true,
+    "marker_refusal_before_world_creation": true,
+    "production_package_or_server_changed": false
+  },
+  "historical_constructor_check": {
+    "earlier_artifact_sha256": "581575840cab301d5d6e23eee73ed345492d2bd913f8507f8a7def813c53f054",
+    "final_artifact_sha256": "9e4a293c717dc7b063e66ab4c15e3babc8afa260de0683292d8fb941df02cc9c",
+    "four_constructor_and_effect_call_sequences_equal": true,
+    "resolved_symbols": [
+      "String minior_stealth_rock",
+      "class com/pixelmonmod/pixelmon/battles/status/StealthRock",
+      "Method effect:(Ljava/lang/String;Lcom/pixelmonmod/pixelmon/battles/controller/participants/PixelmonWrapper;Lcom/pixelmonmod/pixelmon/battles/status/EntryHazard;Z)V",
+      "String minior_spikes_flying",
+      "class com/pixelmonmod/pixelmon/battles/status/Spikes",
+      "Method effect:(Ljava/lang/String;Lcom/pixelmonmod/pixelmon/battles/controller/participants/PixelmonWrapper;Lcom/pixelmonmod/pixelmon/battles/status/EntryHazard;Z)V",
+      "String magikarp_stealth_rock",
+      "class com/pixelmonmod/pixelmon/battles/status/StealthRock",
+      "Method effect:(Ljava/lang/String;Lcom/pixelmonmod/pixelmon/battles/controller/participants/PixelmonWrapper;Lcom/pixelmonmod/pixelmon/battles/status/EntryHazard;Z)V",
+      "String magikarp_spikes",
+      "class com/pixelmonmod/pixelmon/battles/status/Spikes",
+      "Method effect:(Ljava/lang/String;Lcom/pixelmonmod/pixelmon/battles/controller/participants/PixelmonWrapper;Lcom/pixelmonmod/pixelmon/battles/status/EntryHazard;Z)V"
+    ],
+    "scope": "Controller inspection of own diagnostic bytecode for four fresh default constructors/call sites, not a whole-class byte equality or upstream code review."
+  },
+  "remaining": [
+    "Dancer/Shell Trap intermittent native failures",
+    "ALI empty-tooltip client initialization NPE and ReliableEmi group errors",
+    "16 model sentinels and broader rendering/use",
+    "Fresh latest Windows import, actual survival/horizontal flight/long session/six-player load",
+    "Final integration review"
+  ]
+}

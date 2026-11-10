@@ -1,0 +1,23 @@
+// Explicitly opted-in native reload observer; never included in a player/server release.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourcePath = project.findProperty('psaReloadQaSource')
+    if (!sourcePath) throw new GradleException('Authored reload QA source required')
+    def directory = new File(sourcePath.toString())
+    def compiler = project.tasks.register('compilePsaReloadQa', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java' }
+        classpath = project.sourceSets.main.compileClasspath
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-reload-qa/classes'))
+        options.release.set(17); options.encoding = 'UTF-8'; options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaReloadQaJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-datapack-reload-qa-0.1.jar')
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType':'MOD', 'MixinConfigs':'psa-datapack-reload-qa.mixins.json')
+        preserveFileTimestamps = false; reproducibleFileOrder = true
+    }
+    project.reobf.create('psaReloadQaJar')
+}

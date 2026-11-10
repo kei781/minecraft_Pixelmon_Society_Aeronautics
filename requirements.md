@@ -14,5 +14,6 @@
 - Preserve Society's vanilla mob progression alongside Pixelmon. Pixelmon 9.4.1's allow-vanilla-mobs flag only restores the world spawning rule; its separate entity-join replacements must also be neutralized. Keep the independent Pixelmon spawners and entity insertion available. Test with config-only and data-override controls.
 - Start by proving the actual development snapshot can load with Pixelmon, Aeronautics, Sable, and the Society configuration. Failed launches and missing upstream artifacts must remain visible and must not be reported as working integration.
 - Do not deploy to an existing server or overwrite worlds during local preparation.
+- Fix the reported Windows pause-menu label overlap while preserving Society's Wiki/Credits, Pixelmon/Discord and all three projects. Deliver the client correction in the single-import pack; a small add-on for already installed v6 clients is also useful. Keep the working N100 v6 server unchanged for this client-only correction.
 
 Acceptance requires successful startup with all required content; a documented Windows installation path (guide and/or script) and a Windows client connecting; Pixelmon capture/battle; Society farming/economy/progression; Aeronautics vehicle assembly and flight; and actual six-player load measurements on the N100. None of these is presumed complete from matching version numbers.

@@ -1,0 +1,62 @@
+{
+  "reason": "First harvest produced two real carrots but normal lifetime6000 elapsed before pickup; no replacement carrots granted.",
+  "old_drop_pickup_delay": 0,
+  "old_drop_age_at_last_read": 5895,
+  "old_drop_lifespan": 6000,
+  "old_drop_position": [
+    6.658260221224744,
+    99.9375,
+    5.602326352616104
+  ],
+  "old_player_position": [
+    8.5,
+    100,
+    5.5
+  ],
+  "new_cycles": [
+    {
+      "expected_age": 1,
+      "forward_time_set": 216000,
+      "native_age_test_passed": true
+    },
+    {
+      "expected_age": 2,
+      "forward_time_set": 240000,
+      "native_age_test_passed": true
+    },
+    {
+      "expected_age": 3,
+      "forward_time_set": 264000,
+      "native_age_test_passed": true
+    },
+    {
+      "expected_age": 4,
+      "forward_time_set": 288000,
+      "native_age_test_passed": true
+    },
+    {
+      "expected_age": 5,
+      "forward_time_set": 312000,
+      "native_age_test_passed": true
+    },
+    {
+      "expected_age": 6,
+      "forward_time_set": 336000,
+      "native_age_test_passed": true
+    },
+    {
+      "expected_age": 7,
+      "forward_time_set": 360000,
+      "native_age_test_passed": true
+    }
+  ],
+  "crop_age_directly_set": false,
+  "soil_moisture_fixture_controlled": true,
+  "complete": true,
+  "pickup_stance": [
+    7.5,
+    100,
+    5.5
+  ],
+  "finish_utc": "2026-11-09T07:30:05.910083+00:00"
+}

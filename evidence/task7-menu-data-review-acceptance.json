@@ -1,0 +1,37 @@
+{
+  "task": 7,
+  "accepted_scope": "menu integer transport and battery menu identity; production patch, packet regressions, authenticated same-candidate GUI checks, paired package creation/delivery",
+  "reviewed_head": "61b777df60d382bf36e8cabc26724102c12550c3",
+  "production_source_last_changed": "a09cfad",
+  "review_model": "claude-opus-5-5",
+  "reported_models": [
+    "claude-opus-5-5"
+  ],
+  "review_effort": "high",
+  "review_rounds": 4,
+  "final_verdict": "CLEAN",
+  "review_result_sha256": "cd3c8004db8da3986b99a6cbd11ce4639663b7ae4c387660721dffe9cd2aabad",
+  "actual_pr_unresolved_threads": 0,
+  "ci_configured": false,
+  "controller_validation": {
+    "macos_passed": 53,
+    "macos_linux_only_skips": 3,
+    "ubuntu_passed": 56,
+    "minimal_and_full_counterfactual_runtime_runs": 4,
+    "full_live_counter_followups": 2,
+    "authenticated_windows_tank_live_and_reopen": true,
+    "authenticated_windows_battery_type_energy_live_and_reopen": true,
+    "authenticated_windows_flag_colors_and_reopen": true,
+    "authenticated_windows_bountiful_large_counter_live_and_reset": true
+  },
+  "candidate_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+  "production_code_changed_after_review": false,
+  "new_metadata_only_evidence_after_review": true,
+  "main_branch_merged": false,
+  "remaining_global_gates": [
+    "Fresh latest-package GUI import is an installation/Phase4 gate, not asserted by this menu-protocol task acceptance.",
+    "Newly observed pre-existing Bountiful discount tooltip clamp mismatch is a separate follow-up.",
+    "Default item actual spawn/render/use, primary three-project gameplay, six-player load, final overall review."
+  ],
+  "both_user_goals_complete": false
+}

@@ -1,0 +1,22 @@
+{
+  "head_sha": "d9c4de0382b1db60fb79b8421fd7d7d868cc21f8",
+  "verdict": "CLEAN",
+  "summary": "대상은 d9c4de0의 증분(BASE eeb70b8)이다. pr.diff, threads.json, requirements.md, 스냅샷의 ShaderProbe.java·forge-shader-probe.gradle·증거 JSON을 대조했다. 운영 믹신(PixelmonShaderCodecMixin/ColorMixin)과 export/stage 코드는 이번 증분에서 바뀌지 않았다. 변경 범위는 시험용 프로브, Gradle 빌드 입력 고정, 문서, 증거뿐이다.\n\n확인한 사항:\n- ShaderProbe의 실제 보스 경로는 다음과 같다. `PokemonFactory.create(PIKACHU)`로 엔티티를 만들고, `setBossTier`를 호출한 뒤 `addFreshEntity`로 월드에 추가하고 성공 여부를 단언한다. 그다음 `SYNC_SHADER_PARAMETERS` 접근자로 실제 동기화 값을 읽는다. 이 경로에는 코덱이나 매개변수를 직접 구성하는 코드가 없다.\n- 보정본(checkRegistry=true)은 실제 값의 parameters가 비어 있지 않은지 단언하고, 각 Value.codec이 `CODECS.containsValue`인지 확인한다. 이것으로 R3의 '순환 검사' 지적을 직접 닫는다.\n- 그 뒤 `getNonDefaultValues()` 전체로 `ClientboundSetEntityDataPacket`을 쓰고 Minecraft 실제 파서로 다시 읽는다. 엔티티 ID, 셰이더 항목 존재, Optional 형태, `sameShader`(id·renderColor·플래그 4개, 파라미터별 codec·value), 남은 바이트 0을 모두 단언한다.\n- 원본 대조는 실제 보스 패킷에서 두 실패를 모두 재현해야 통과한다. NPE는 스택에 `ShaderParameters$Value.write` 프레임이 있어야 인정한다. 다른 경로의 NPE를 오인하지 않으려는 장치다. 상류 `init()`를 호출한 뒤에는 'Color parameter outside' 메시지의 IllegalArgumentException이 나야 한다.\n- 등록된 isBoss 등급은 모두 열거한다. 하나도 없으면 `bosses > 0`에서 실패하고, `PATCHED_PASS`는 보스 루프가 끝난 뒤에만 출력된다. 시험 엔티티는 finally에서 discard한다.\n- 실패하면 FAILED를 출력한 뒤 halt하는 기존 구조를 유지한다.\n- Gradle은 `psaShaderPixelmonJar`를 필수로 받는다. 심볼릭 링크와 일반 파일이 아닌 경로는 거부하고, SHA256 8f2777f5…를 확인한 뒤에만 컴파일 classpath에 추가한다. 이 값은 wire-verification.json의 pixelmon_sha256과 같다. Baseline JAR는 여전히 `dev/psa/shaderprobe/**`만 담고 mixin 설정을 제외한다.\n- 증거의 마커 목록은 코드 출력과 일치한다. 원본은 4개 마커와 BASELINE_REPRODUCED를 남기고 등급별 마커는 없다. 보정본은 등급 9개, REAL_BOSS_PASS tiers=9, PATCHED_PASS를 남긴다. 문서도 지정 Windows 장치 대조를 주소 없이 boolean으로만 공개하고, Windows 화면·파일 해시·게임 기능·6인 부하가 미완료임을 유지한다.\n\n새 지적은 없다. 미해결 스레드 1건(R3 P3)은 제안 (a)가 실제로 구현돼 해소로 판정했다. 다만 남는 범위 한계가 있어 아래 out_of_scope에 적었다.\n\n추가 실행 검증 요청(Codex):\n(1) 고정 Pixelmon JAR에서 `SYNC_SHADER_PARAMETERS` setter 호출부와 `ShaderParameters$Value.<init>` 호출부를 바이트코드로 열거한다. 보스 외의 셰이더 생성 경로가 있는지, 그 경로의 코덱도 세 값 안에 있는지 확인한다.\n(2) v6 서버·클라이언트를 함께 교체한 뒤 실제 Windows에서 보스 엔티티를 추적해 PacketEncoder 오류가 사라졌는지 재시험한다.\n\n나는 테스트·빌드·게임을 실행하지 않았다. 증거 JSON의 실행 결과와 로그 해시는 작성자 보고이며 내가 재현하지 않았다.",
+  "resolve_thread_ids": [
+    "PRRT_kwDOVm1ZLc61Bhrd"
+  ],
+  "replies": [
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc61Bhrd",
+      "body": "d9c4de0의 코드로 해소를 확인했다. `realBoss()`는 `PokemonFactory`로 실제 Pikachu를 만들고 `setBossTier`를 호출한 뒤 `addFreshEntity`로 월드에 추가하며, 추가 성공을 단언한다. `bossPacket()`은 `SYNC_SHADER_PARAMETERS`에서 실제 동기화 값을 읽는다. 보정본에서는 각 파라미터 코덱이 `CODECS.containsValue`인지 단언하므로, 미등록 코덱이 섞이면 실패한다.\n\n이어서 `getNonDefaultValues()` 전체로 `ClientboundSetEntityDataPacket`을 쓰고 다시 읽는다. ID, codec·value·color·flags, 남은 바이트 0을 비교한다. 원본에서는 같은 실제 보스 패킷이 `ShaderParameters$Value.write` 프레임이 있는 NPE를 내야 하고, `init()` 호출 뒤에는 Color 범위 예외를 내야 통과한다. 따라서 이 경로는 실제 장애와 같은 스택을 재현한다. 등록된 isBoss 등급은 모두 열거하고 0개면 실패한다. 이번 엔티티 경로에는 코덱을 직접 고르는 순환 요소가 없다.\n\n남는 한계도 있다. 시험 대상은 보스 등급(종은 Pikachu 하나)뿐이다. 보스가 아닌 셰이더 생성 경로가 Pixelmon에 있는지는 열거하지 않았다. 13:58:34Z 장애 엔티티가 보스였는지도 증거로 특정되지 않는다. 이 한계는 요약에 바이트코드 호출부 열거와 Windows 재시험 요청으로 남겼다. 제안 (a)는 그대로 구현됐으므로 이 스레드는 해소로 판정한다."
+    }
+  ],
+  "new_comments": [],
+  "out_of_scope": [
+    "실제 엔티티 검사는 보스 등급과 단일 종(Pikachu)만 다룬다. Pixelmon 9.2.3에 보스가 아닌 SYNC_SHADER_PARAMETERS 설정 경로가 있는지, 그 경로가 등록된 세 코덱 밖의 코덱을 쓰는지는 열거되지 않았다. 고정 JAR 바이트코드에서 setter와 `ShaderParameters$Value.<init>` 호출부를 정적으로 열거하면 닫을 수 있다.",
+    "v6 후보는 아직 N100·Windows에 배치되지 않았다. 클라이언트·서버를 함께 교체한 뒤 실제 인증 접속에서 보스 엔티티 추적 시 셰이더 패킷 오류가 사라졌는지 재시험해야 한다.",
+    "Phase 4의 나머지 요구가 아직 증명되지 않았다: Windows 화면·파일 해시 직접 대조, Pixelmon 포획·전투, Society 농사·경제·진행, Aeronautics 조립·조종 비행, 실제 6인 부하, 최종 전체 리뷰.",
+    "TCP 상태 응답(0명)과 콘솔 list(1/6) 불일치의 원인은 여전히 조사되지 않았다."
+  ],
+  "blocked_reasons": []
+}

@@ -1,0 +1,66 @@
+{
+  "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+  "bin_position": [
+    6,
+    100,
+    7
+  ],
+  "original_scripts_unchanged": true,
+  "input": {
+    "item": "minecraft:carrot",
+    "count": 1,
+    "source": "Actual manually harvested/picked-up survival crop; no give replacement"
+  },
+  "owner_registered_by_actual_player_placement": true,
+  "daylight_cycle_original_value": true,
+  "daylight_cycle_restored": true,
+  "forward_time_set": 384000,
+  "actual_outputs": [
+    {
+      "item": "numismatics:sprocket",
+      "count": 1,
+      "unit_value": 16
+    },
+    {
+      "item": "numismatics:spur",
+      "count": 7,
+      "unit_value": 1
+    }
+  ],
+  "total_native_coin_value": 23,
+  "input_carrot_removed": true,
+  "cached_attribute_values_still_nan": 4,
+  "native_attribute_base_values": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "original_consumer_fallback_used": 1,
+  "recent_server_exception_count": 0,
+  "raw_after_snapshot_sha256": "aa05ad6ab36fa0f97e32b88f03c8ad19b68e3b5524844244bb0087a607170797",
+  "player_currency_retrieval_observation_pending": false,
+  "raw_windows_files_transferred": false,
+  "functional_error_reproduced_from_nan_cache": false,
+  "source_patch_applied": false,
+  "client_observed_labels": [
+    {
+      "name": "Iron Coin",
+      "count": 1,
+      "unit_value": 16
+    },
+    {
+      "name": "Copper Coin",
+      "count": 7,
+      "unit_value": 1
+    }
+  ],
+  "currency_received_in_player_inventory": true,
+  "bin_empty_after_retrieval": true,
+  "sales_popup_observed": false,
+  "windows_final_report": {
+    "file_name": "PSA-Windows-v9-Society-Farm-to-Sale-Final-Report.json",
+    "bytes": 7078,
+    "sha256": "54f3b34a23278061f7d1ff5bdb525018bdd61ae656f98fcd9933861ccd022fdc"
+  }
+}

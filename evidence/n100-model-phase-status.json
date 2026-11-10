@@ -1,0 +1,11 @@
+{
+  "process_status": "Running",
+  "all_313_runtime_mod_hashes_valid": true,
+  "mod_jars": 313,
+  "port_sha256": "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de",
+  "online_mode": "true",
+  "max_players": 6,
+  "world": "world",
+  "server_changes_for_model_fix": false,
+  "checked_at": "2026-11-08T12:31:37.510460+00:00"
+}

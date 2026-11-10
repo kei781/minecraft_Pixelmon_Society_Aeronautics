@@ -1,0 +1,33 @@
+{
+  "accepted_source_head": "2c26e01b762e6e8f110f8b9f6537d6d359a9ecfe",
+  "review_round": 2,
+  "requested_model": "claude-opus-5-5",
+  "reported_models": [
+    "claude-opus-5-5"
+  ],
+  "effort": "high",
+  "model_policy": {
+    "policy": "latest-opus",
+    "source": "https://www.anthropic.com/claude/opus",
+    "source_sha256": "cb310393cbb60406dc1dd789a00847a008c94a827f6e8838266bb41dce2669a0",
+    "checked_at": "2026-11-10T11:43:17.260609+00:00"
+  },
+  "verdict": "CLEAN",
+  "live_unresolved_threads": 0,
+  "actual_ci": "No check runs or status contexts; not a CI pass",
+  "ci_check_runs": {
+    "total_count": 0,
+    "checks": []
+  },
+  "ci_status_contexts": 0,
+  "result_sha256": "b00927ab2293506d6548712c04767a62e6f2ed34e48804b5abea77a0ba533f3a",
+  "receipt_sha256": "21915982930bd0cbdf7f1f6da0f650411a23db682a2d049c37740c1fa0f178f9",
+  "post_review_verification": {
+    "stage_tests_passed": 8,
+    "stage_test_output_sha256": "b731cfcfd9b6f70dfe0395b8247464ba08958c58305779d58069cffd45c5b690",
+    "guard_runner_source_hash_matches_recorded": true,
+    "guard_output_preserved": true,
+    "production_artifact_unchanged": true
+  },
+  "both_overall_goals_complete": false
+}

@@ -1,0 +1,17 @@
+offroad:block/rockcutting_wheel/item
+offroad:block/rockcutting_wheel/wheel
+offroad:item/large_tire/item
+offroad:item/large_tire/large_tire
+offroad:item/monstrous_tire/item
+offroad:item/monstrous_tire/monstrous_tire
+offroad:item/small_tire/item
+offroad:item/small_tire/small_tire
+offroad:item/tire/item
+offroad:item/tire/tire
+simulated:block/mecanum_wheel/block
+simulated:block/mecanum_wheel/block_flipped
+simulated:block/mecanum_wheel/item
+simulated:block/plunger_wheel/block
+simulated:block/plunger_wheel/item
+simulated:block/steering_wheel/item
+simulated:block/steering_wheel/wheel

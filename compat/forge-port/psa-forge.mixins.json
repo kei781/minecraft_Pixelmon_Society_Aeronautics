@@ -5,12 +5,24 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "aeronautics.refmap.json",
   "mixins": [
-    "LeavesBeGoneChunkMixin"
+    "LeavesBeGoneChunkMixin",
+    "PixelmonShaderCodecMixin",
+    "PixelmonShaderColorMixin",
+    "PixelmonPlayerDataOrderMixin",
+    "TankCartDataOwnerMixin",
+    "TankCartMenuDataMixin",
+    "BatteryCartMenuDataMixin",
+    "BatteryCartMenuTypeMixin",
+    "BountifulMenuDataMixin",
+    "JadeBlockAccessorCoordinatesMixin",
+    "PixelmonDynamaxHitpointsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "client": [
-    "PixelmonMenuCompatMixin"
+    "PixelmonMenuCompatMixin",
+    "JadeRayTracingCoordinatesMixin",
+    "JadeDistanceCoordinatesMixin"
   ]
 }

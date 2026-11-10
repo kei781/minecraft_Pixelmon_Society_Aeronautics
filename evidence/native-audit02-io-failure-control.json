@@ -1,0 +1,13 @@
+{
+  "scope": "Actual diagnostic I/O failure control; native renderer checkpoint failure policy unchanged.",
+  "expected_failure_seen": true,
+  "false_complete_seen": false,
+  "restored": true,
+  "failed_run": "27fea312-aebb-478d-a8b9-f9b92b03e5b5",
+  "processed": 17239,
+  "missing_count": 21,
+  "lookup_errors": 0,
+  "recovery_run": "b64c98ee-fefd-45ad-adc8-a1040a3ec14f",
+  "recovery_completed": true,
+  "recovery_model_missing_count": 21
+}

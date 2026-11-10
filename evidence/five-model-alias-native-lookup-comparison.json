@@ -1,0 +1,36 @@
+{
+  "scope": "native default-stack ItemRenderer.getModel; null world/player; no render, texture, spawn, use or gameplay proof",
+  "before_run": "92931820-2764-4dde-83d9-67529a4e4709",
+  "after_run": "53a9720f-789b-4c9d-9c86-500395f27561",
+  "catalog_sha256": "32af2e9be25cb5f8f14e75e4dc9426d1f4b68f0eb90385a8e6a70aa81a8fa533",
+  "catalog_items": 17239,
+  "before_missing": 21,
+  "after_missing": 16,
+  "removed_ids": [
+    "displaydelight:beetroot_soup",
+    "displaydelight:mushroom_stew",
+    "displaydelight:rabbit_stew",
+    "verdantvibes:potted_burnweed",
+    "vintagedelight:vinegar_jar"
+  ],
+  "lookup_errors": [],
+  "default_stack_mismatches": [],
+  "remaining_missing_ids": [
+    "pixelmon:boss_music_disc",
+    "pixelmon:christmas_ball",
+    "pixelmon:custom_music_disc",
+    "pixelmon:gym_music_disc",
+    "pixelmon:legendary_music_disc",
+    "pixelmon:loaded_dice",
+    "pixelmon:no_item",
+    "pixelmon:player_music_disc",
+    "pixelmon:poke_center_music_disc",
+    "pixelmon:punching_glove",
+    "pixelmon:raid_music_disc",
+    "pixelmon:trainer_music_disc",
+    "pixelmon:ultra_space_music_disc",
+    "pixelmon:wild_music_disc",
+    "tcg:battle_spectator",
+    "via_romana:warp_block"
+  ]
+}

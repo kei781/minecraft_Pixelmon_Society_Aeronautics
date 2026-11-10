@@ -1,0 +1,71 @@
+{
+  "crashed_artifact_version": "0.4",
+  "crash_checkpoint": {
+    "run": "ac3152d4-1e95-4107-a28e-1a43b844c36d",
+    "result": "running",
+    "world_generation": "f81e8df5-dc1b-4b25-a24c-b9268f10e633",
+    "dimension": "minecraft:overworld",
+    "cleanup_complete": false,
+    "deliberate_crash_test": true,
+    "catalog_total": 17239,
+    "catalog_start": 0,
+    "selected_count": 4,
+    "completed_render_returns": 0,
+    "completed_model_verified_returns": 0,
+    "completed_native_spawns": 0,
+    "mode": "native_server_spawn_only",
+    "batch": 0,
+    "active": true,
+    "last_operation": "deliberate_owned_qa_crash_after_spawn",
+    "owned_fixture_chunk_ticket_count": 1,
+    "owned_entities": [
+      {
+        "uuid": "c9b70644-d49a-417a-822d-f53ae518c836",
+        "entity_type": "minecraft:item",
+        "entity_class": "net.minecraft.world.entity.item.ItemEntity"
+      },
+      {
+        "uuid": "f206f055-f614-49eb-ad09-eba7b7171c15",
+        "entity_type": "minecraft:item",
+        "entity_class": "net.minecraft.world.entity.item.ItemEntity"
+      },
+      {
+        "uuid": "22e5538c-6491-41b5-8507-c406a3efa5e7",
+        "entity_type": "minecraft:item",
+        "entity_class": "net.minecraft.world.entity.item.ItemEntity"
+      },
+      {
+        "uuid": "11fc0814-49fb-4460-90c4-a1407630bbb9",
+        "entity_type": "minecraft:item",
+        "entity_class": "net.minecraft.world.entity.item.ItemEntity"
+      }
+    ],
+    "owned_fixture_chunks": [
+      {
+        "x": 0,
+        "z": 0
+      }
+    ],
+    "attempted_ids": [
+      "aeronautics:adjustable_burner",
+      "aeronautics:andesite_propeller",
+      "aeronautics:aviators_goggles",
+      "aeronautics:black_envelope"
+    ],
+    "scope": "native server item spawning only; no client/render attempt"
+  },
+  "native_exit_delayed_but_finished_without_signal": true,
+  "sigterm_sent": false,
+  "sigkill_sent": false,
+  "all_dimensions_saved": true,
+  "checkpoint_sha256": "5be6dbcde58a1cb2e570157998d149f994bfa7f2f910da701ad4ffff2536b942",
+  "console_sha256": "bb5239abf21d2625ad9f22237bae9c6615e4a6eac9f392266f4f55afdd81b09c",
+  "unresolved_run_restart_rejected": true,
+  "rcon_enabled_negative_control_rejected": true,
+  "recovery_controller_version": "0.5",
+  "world_archive_bytes_identical": true,
+  "archived_world_tree_sha256": "67165767fa883bc4ae835b9157600a82a4d65b81a840b1596aa5c248c9f8d2d5",
+  "new_world_generation_created": true,
+  "archived_checkpoint_preserved": true,
+  "recovery_mode": "archive only exact marked disposable QA world, then create a fresh one; no NBT editing"
+}

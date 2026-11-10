@@ -1,0 +1,50 @@
+{
+  "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+  "plot": [
+    7,
+    100,
+    5
+  ],
+  "crop": "society:carrot",
+  "first_actual_player_watered_growth": {
+    "before_age": 0,
+    "after_age": 1,
+    "forward_time_set": 48000
+  },
+  "further_cycles": [
+    {
+      "expected_age": 2,
+      "forward_time_set": 72000,
+      "actual_native_age_condition_passed": true
+    },
+    {
+      "expected_age": 3,
+      "forward_time_set": 96000,
+      "actual_native_age_condition_passed": true
+    },
+    {
+      "expected_age": 4,
+      "forward_time_set": 120000,
+      "actual_native_age_condition_passed": true
+    },
+    {
+      "expected_age": 5,
+      "forward_time_set": 144000,
+      "actual_native_age_condition_passed": true
+    },
+    {
+      "expected_age": 6,
+      "forward_time_set": 168000,
+      "actual_native_age_condition_passed": true
+    },
+    {
+      "expected_age": 7,
+      "forward_time_set": 192000,
+      "actual_native_age_condition_passed": true
+    }
+  ],
+  "age_directly_set": false,
+  "soil_moisture_fixture_reset_each_further_day": true,
+  "complete": true,
+  "finish_utc": "2026-11-09T07:20:29.395103+00:00"
+}

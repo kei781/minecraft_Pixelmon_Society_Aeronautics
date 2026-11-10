@@ -8,10 +8,11 @@ import re
 import shutil
 import stat
 import zipfile
+import forge_datapack_compat
 
 SERVER_SHA1 = "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
 PIXELMON_SHA256 = "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a"
-PORT_SHA256 = "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de"
+PORT_SHA256 = "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db"
 FOLDERS = {"mods", "config", "defaultconfigs", "kubejs", "patchouli_books"}
 LOCK = Path(__file__).resolve().parents[1] / "forge-candidate-lock.json"
 
@@ -62,12 +63,14 @@ def selected_entries(archive):
     return entries
 
 
-def stage(server_pack, pixelmon, port, destination, mode="smoke"):
+def stage(server_pack, pixelmon, port, destination, mode="smoke", datapack_fix=None):
     destination = Path(destination)
     if mode not in {"smoke", "player"}:
         raise ValueError("Unknown server profile mode")
     if destination.exists() or destination.is_symlink():
         raise ValueError("A fresh destination is required")
+    if datapack_fix is not None:
+        forge_datapack_compat.verify_module_file(datapack_fix)
     for path, algorithm, expected in [(server_pack, "sha1", SERVER_SHA1),
             (pixelmon, "sha256", PIXELMON_SHA256), (port, "sha256", PORT_SHA256)]:
         if digest(path, algorithm) != expected:
@@ -84,6 +87,10 @@ def stage(server_pack, pixelmon, port, destination, mode="smoke"):
                 raise ValueError("Unexpected Pixelmon replacement path")
     with zipfile.ZipFile(server_pack) as archive:
         entries = selected_entries(archive)
+        try:
+            forge_datapack_compat.normalize_resource(archive.read(forge_datapack_compat.RESOURCE))
+        except KeyError as failure:
+            raise ValueError("Pinned original global loot modifier list missing") from failure
         destination.mkdir(parents=True)
         (destination / ".psa-owned-smoke-test").write_text("Experimental Forge 1.20.1 candidate; not final validation.\n")
         for item in entries:
@@ -95,6 +102,8 @@ def stage(server_pack, pixelmon, port, destination, mode="smoke"):
                          (port, "psa-aeronautics-experimental-forge-1.20.1.jar")]:
         with Path(source).open("rb") as stream, (destination / "mods" / name).open("xb") as output:
             shutil.copyfileobj(stream, output)
+    loot_list = forge_datapack_compat.apply_directory(destination)
+    datapack_module = forge_datapack_compat.install_module(destination, datapack_fix) if datapack_fix is not None else None
     neutral = {"enabled": False, "detection_logic": "simple", "replaced_mobs": [],
                "replacement_logic": "simple", "specs": []}
     for name in replacements:
@@ -121,9 +130,11 @@ def stage(server_pack, pixelmon, port, destination, mode="smoke"):
     receipt = {"minecraft": "1.20.1", "forge": "47.4.20", "society": "4.1.5A",
                "pixelmon": "9.2.3 beta", "aeronautics": "unofficial Forge port 1.3.0",
                "server_pack_sha1": SERVER_SHA1, "pixelmon_sha256": PIXELMON_SHA256,
-               "port_sha256": PORT_SHA256, "top_level_mod_jars": 313,
+               "port_sha256": PORT_SHA256, "top_level_mod_jars": 313 + int(datapack_module is not None),
                "official_inputs": official_inputs, "lock_sha256": digest(LOCK),
-               "neutral_replacement_files": 68, "final_gameplay_validated": False}
+               "neutral_replacement_files": 68, "final_gameplay_validated": False,
+               "global_loot_modifier_compatibility": loot_list,
+               "datapack_sync_compatibility": datapack_module}
     receipt["mode"] = mode
     (destination / ".psa-forge-candidate.json").write_text(json.dumps(receipt, indent=2) + "\n")
     return receipt
@@ -136,5 +147,6 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=Path, required=True)
     parser.add_argument("--destination", type=Path, required=True)
     parser.add_argument("--mode", choices=["smoke", "player"], default="smoke")
+    parser.add_argument("--datapack-fix", type=Path, help="Pinned authored dedicated-server recipient compatibility JAR")
     args = parser.parse_args()
-    print(json.dumps(stage(args.server_pack, args.pixelmon, args.port, args.destination, args.mode), indent=2))
+    print(json.dumps(stage(args.server_pack, args.pixelmon, args.port, args.destination, args.mode, args.datapack_fix), indent=2))

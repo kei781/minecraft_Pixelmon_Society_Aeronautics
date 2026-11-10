@@ -1,0 +1,23 @@
+{
+  "baseline_common_sha256": "59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe",
+  "candidate_common_sha256": "31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5",
+  "bytes": 44461296,
+  "independent_builds_identical": true,
+  "changed_entries": [
+    "PSA_PROVENANCE.txt",
+    "psa-forge.mixins.json"
+  ],
+  "added_entries": [
+    "dev/psa/compat/JadeBlockAccessorCoordinatesMixin.class",
+    "dev/psa/compat/JadeDistanceCoordinatesMixin.class",
+    "dev/psa/compat/JadeRayTracingCoordinatesMixin.class",
+    "dev/psa/jademath/JadeCoordinateMath.class"
+  ],
+  "removed_entries": [],
+  "geometry_controls": 40,
+  "geometry_result": "PASS",
+  "production313_manifest_sha256": "ae8fb30dc8d959a4abd6b9482502cc35ca38c97381c50ff492a9cc9ce89af53e",
+  "runtime_candidate_test": "PASS scoped: fresh actual ordinary/on-ship block query, native block response, HUD and controlled creative vertical flight; see live regression and flight evidence. Survival/local-entity/rotated-frame/full-pack remain unverified.",
+  "build_scope": "Both project build outputs cleaned, compile classpath preparation task run separately, then full Java compile/build/reobf/canonicalization. Initial direct clean+build failed11missing-class diagnostics before classpath preparation; not relabelled as success.",
+  "previous_candidate": "75c3d99e4c7ae1bd003a229f71ef127acf7e1ddc69618fd1e68c270ef3e56be9; observer0.2 loader failure before world entry. Same reserved-namespace issue in math helper corrected proactively."
+}

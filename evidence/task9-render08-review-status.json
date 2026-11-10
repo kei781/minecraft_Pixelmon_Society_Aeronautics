@@ -1,0 +1,21 @@
+{
+  "pr": 7,
+  "task": 9,
+  "round": 5,
+  "task_round_limit": 5,
+  "reviewed_head": "593012c7e9ba7729d6099a9655dc5bd9f9c84697",
+  "actual_model": "claude-opus-5-5",
+  "effort": "high",
+  "verdict": "FINDINGS",
+  "priority": "P3",
+  "thread_id": "PRRT_kwDOVm1ZLc61Pbwx",
+  "issue": "Repeated identical checkpoint replacement on model-wait ticks",
+  "fix": "First waiting tick persists; subsequent unchanged wait ticks do not. Original failure and deadline handling retained.",
+  "controls": "Actual ticks2..19 no persist/ACK PASS; identical new test rejects actual old R2 client at persist path. Protocol and stale visual controls PASS.",
+  "author_resolved": false,
+  "task_fully_accepted": false,
+  "overall_pr_unresolved_threads": 2,
+  "other_thread": "Task10 doc P3 addressed earlier, independent disposition pending; Task10max5 reached.",
+  "runtime": "R2actual60positive/nativeassetnegative controls; R3fix built canonically twice but not yet deployed. Enabled-Flywheel visual callback unverified on hardware with fallback; static JarVisual model provenance separately verified.",
+  "remaining": "No further Task9/10 review round; findings preserved for broader integrated review. Whole traversal at4224/models, native decorative resource gap pending; globalgoals open."
+}
