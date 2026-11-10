@@ -12,11 +12,20 @@ both Pixelmon-only and full 313-production-mod profiles: eight successes,
 two failures, zero unfinished tests and zero logged null-pointer exceptions.
 The full run took 0.96 seconds from fixture start through cleanup, excluding
 server boot. Each run owned 31 native actors and finished with zero live
-owned actors, floor and ticket cleanup confirmed. The suite remains failed:
-Shedinja Dynamax HP and Minior entry-hazard assertions need further diagnosis.
+owned actors, floor and ticket cleanup confirmed. At that initial stage,
+Shedinja Dynamax HP and Minior entry-hazard assertions failed.
 This comparison is evidence against a new failure introduced by this mod
 combination for these ten assertions, not a general compatibility guarantee.
 See `evidence/pixelmon-world-fixture-runtime.json` for exact artifacts/results.
+The later [HP correction](pixelmon-dynamax-hitpoints.md) fixes the Shedinja
+maximum query, with separate 22-case controls. The separate
+[Minior hazard observations](native-pixelmon-hazards.md) identify a missing
+entry step in the sampled original assertion and distinguish it from direct
+native hazard-effect checks. They do not make that original assertion pass
+or verify the complete player switch path. The full native suite remains
+failed. Dancer/Shell Trap failures have appeared in both isolated and integrated
+samples; stock Pixelmon-only repetition also reproduced them before this addon.
+Those variations remain open, and later successes do not replace earlier failures.
 After independent review, the transformation gate and interrupted-result
 inventory were strengthened. The 26,100-byte diagnostic with SHA256
 `861b616c6efcfba7dd56b9fd45b9abd212516b5efa2e6b2ce3ac70aed6303489`
@@ -47,7 +56,7 @@ gradle --offline --no-daemon --max-workers=2 -p /path/to/prepared-forge-workspac
   -PpsaPixelmonJar=/path/to/Pixelmon-1.20.1-9.2.3-universal.jar \
   reobfPsaPixelmonFixtureJar
 python3 /path/to/repository/tools/forge_resources.py canonical-jar \
-  /path/to/prepared-forge-workspace/build/libs/psa-pixelmon-fixture-0.1.jar \
+  /path/to/prepared-forge-workspace/build/libs/psa-pixelmon-fixture-0.2-baseline.jar \
   /path/to/fresh-diagnostic.jar
 ```
 

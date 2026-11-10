@@ -63,6 +63,22 @@ public final class PixelmonFixture {
     }
 
     private void commands(RegisterCommandsEvent event) {
+        event.getDispatcher().register(Commands.literal("psa_pixelmon_hp_controls")
+            .requires(source -> source.getEntity() == null && source.hasPermission(4))
+            .executes(context -> {
+                FixtureMixinPlugin.requireOwnedProfile();
+                if (!context.getSource().getServer().isDedicatedServer()
+                        || context.getSource().getServer().getPlayerCount() != 0)
+                    throw new IllegalStateException("Dedicated disposable server without players required");
+                try {
+                    Path result = HitpointControls.run();
+                    LOG.info("PSA_PIXELMON_HP_CONTROLS COMPLETE {}", result.getFileName());
+                } catch (java.io.IOException failure) {
+                    LOG.error("PSA_PIXELMON_HP_CONTROLS FAILED", failure);
+                    throw new IllegalStateException("HP report I/O failed", failure);
+                }
+                return 1;
+            }));
         event.getDispatcher().register(Commands.literal("psa_pixelmon_fixture")
             .requires(source -> source.getEntity() == null && source.hasPermission(4))
             .executes(context -> {

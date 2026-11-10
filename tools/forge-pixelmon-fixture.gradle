@@ -18,6 +18,7 @@ gradle.projectsEvaluated {
     def directory = new File(sourceRoot.toString())
     def compiler = project.tasks.register('compilePsaPixelmonFixture', JavaCompile) {
         source project.fileTree(directory) { include '**/*.java' }
+        source new File(directory, '../../compat/forge-port/PixelmonDynamaxHitpointsMixin.java')
         classpath = project.sourceSets.main.compileClasspath + project.files(pixelmon)
         destinationDirectory.set(project.layout.buildDirectory.dir('psa-pixelmon-fixture/classes'))
         options.release.set(17)
@@ -26,13 +27,24 @@ gradle.projectsEvaluated {
     }
     project.tasks.register('psaPixelmonFixtureJar', Jar) {
         dependsOn compiler
-        archiveFileName.set('psa-pixelmon-fixture-0.1.jar')
+        archiveFileName.set('psa-pixelmon-fixture-0.2-baseline.jar')
         duplicatesStrategy = DuplicatesStrategy.FAIL
-        from compiler.flatMap { it.destinationDirectory }
-        from new File(directory, 'resources')
+        from(compiler.flatMap { it.destinationDirectory }) { exclude 'dev/psa/compat/**' }
+        from(new File(directory, 'resources')) { exclude 'psa-pixelmon-hp-patch.mixins.json' }
         manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': 'psa-pixelmon-fixture.mixins.json')
         preserveFileTimestamps = false
         reproducibleFileOrder = true
     }
     project.reobf.create('psaPixelmonFixtureJar')
+    project.tasks.register('psaPixelmonFixturePatchedJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-pixelmon-fixture-0.2-patched.jar')
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': 'psa-pixelmon-fixture.mixins.json,psa-pixelmon-hp-patch.mixins.json')
+        preserveFileTimestamps = false
+        reproducibleFileOrder = true
+    }
+    project.reobf.create('psaPixelmonFixturePatchedJar')
 }

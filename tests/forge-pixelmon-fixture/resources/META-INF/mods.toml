@@ -3,7 +3,7 @@ loaderVersion="[47,)"
 license="MIT"
 [[mods]]
 modId="psapixelmonfixture"
-version="0.1"
+version="0.2"
 displayName="PSA Disposable Pixelmon Fixture"
 description="Test-only world context for unchanged original native battle assertions. Excluded from player packs."
 [[dependencies.psapixelmonfixture]]
