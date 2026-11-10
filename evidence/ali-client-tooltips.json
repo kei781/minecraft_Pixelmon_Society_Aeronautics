@@ -1,0 +1,2156 @@
+{
+  "scope": "Task17 ALI correction, actual same-session cached-table resync and constructor/provider guard tests; full server reload has a separate observed fatal SerializerDebug blocker; both overall goals incomplete",
+  "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
+  "baseline_native_initial": {
+    "run": "a8d81830-c501-4e0e-b894-c82e4cb8ebb8",
+    "native_client_world_present": true,
+    "server_registry_null": true,
+    "client_registry_present": true,
+    "existing_palette_node_zero_present": true,
+    "empty_factory_success": false,
+    "empty_factory_error_class": "java.lang.NullPointerException",
+    "existing_palette_node_zero_identity_preserved": true,
+    "server_registry_identity_preserved": true,
+    "total_emi_recipes": 66774,
+    "ali_emi_recipes_by_category": {
+      "ali:archaeology_loot": 15,
+      "ali:block_loot": 11152,
+      "ali:cat_morning_gift": 1,
+      "ali:chest_loot": 208,
+      "ali:entity_loot": 267,
+      "ali:gameplay_loot": 553,
+      "ali:piglin_bartering": 1,
+      "ali:plant_loot": 48,
+      "ali:sniffer_digging": 1
+    },
+    "ali_emi_recipe_count": 12246,
+    "probe_completed": true
+  },
+  "baseline_native_with_palette": {
+    "run": "a72ec2e5-d73d-48c8-9aa7-2831618d1d8f",
+    "native_client_world_present": true,
+    "server_registry_null": true,
+    "client_registry_present": true,
+    "client_palette_size_before": 30804,
+    "existing_palette_node_zero_present": true,
+    "existing_native_empty_flag_nodes": 1,
+    "empty_factory_success": false,
+    "empty_factory_error_class": "java.lang.NullPointerException",
+    "existing_palette_node_zero_identity_preserved": true,
+    "client_palette_size_after": 30804,
+    "all_existing_palette_ids_identity_preserved": true,
+    "server_registry_identity_preserved": true,
+    "total_emi_recipes": 66774,
+    "ali_emi_recipes_by_category": {
+      "ali:archaeology_loot": 15,
+      "ali:block_loot": 11152,
+      "ali:cat_morning_gift": 1,
+      "ali:chest_loot": 208,
+      "ali:entity_loot": 267,
+      "ali:gameplay_loot": 553,
+      "ali:piglin_bartering": 1,
+      "ali:plant_loot": 48,
+      "ali:sniffer_digging": 1
+    },
+    "ali_emi_recipe_count": 12246,
+    "probe_completed": true
+  },
+  "rejected_first_packaging": {
+    "rejected_artifact_sha256": "d23fc407f66c307c7283135b96df0ed47d16a82e2a57c94fa0c192cb609d280f",
+    "current_screen_class": "net.minecraftforge.client.gui.LoadingErrorScreen",
+    "native_connection_result": "connection_screen_required",
+    "actual_new_authentications": 0,
+    "native_probe_completed": false,
+    "native_probe_failure": "Actual joined client world required",
+    "own_missing_pack_metadata_warning": true,
+    "source_guard_failure": false,
+    "unchanged_baseline_connectivity_warning_counts": [
+      1,
+      1
+    ],
+    "private_log_sha256": "c7621fd7063622c2eeaacbb2db1ccc33561bfe03cc6f486ec2696a2991de33e8",
+    "candidate_pack_not_accepted": true
+  },
+  "intermediate_empty_only_failure": {
+    "scope": "Intermediate R2 fixes empty() but trading remains failed in TooltipBuilder.build; not accepted",
+    "client_patch_sha256": "cbda293f02ef5a807c15b34415b26e55b07c855b1da667c2168e5e916f66c671",
+    "native_observation": {
+      "native_probe_sha256": "5b795c459c55275d87bbde3a590a25055fc3086c5c52b8f67e21753609465828",
+      "report": {
+        "run": "009b0a62-2524-4b65-907f-5ed61c3b1a8e",
+        "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+        "native_client_world_present": true,
+        "server_registry_null": true,
+        "client_registry_present": true,
+        "client_palette_size_before": 30804,
+        "existing_palette_node_zero_present": true,
+        "existing_native_empty_flag_nodes": 1,
+        "empty_factory_success": true,
+        "empty_in_basic_mode": true,
+        "empty_in_advanced_mode": true,
+        "empty_node_id_in_client_palette": 1,
+        "existing_palette_node_zero_identity_preserved": true,
+        "client_palette_size_after": 30804,
+        "all_existing_palette_ids_identity_preserved": true,
+        "server_registry_identity_preserved": true,
+        "total_emi_recipes": 66773,
+        "ali_emi_recipes_by_category": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:gameplay_loot": 553,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1
+        },
+        "ali_emi_recipe_count": 12246,
+        "probe_completed": true
+      }
+    },
+    "next_failure": "TooltipBuilder.build -> TradeLevelNode.getTooltip -> EMI trade widget registration; same null serverRegistry.getTooltipCache",
+    "private_log_sha256": "ef7f2fb259f9cf63967cdb5f66c095fbdec3f57db424ff4466d6a390464165ad"
+  },
+  "society_filter": {
+    "path": "kubejs/assets/emi/recipe/filters/emi.json",
+    "sha256": "4b5d8a639a6089c984535f33635dbc5bdb9807f2144f666a5c1eaef9902f15cf",
+    "preserved": true,
+    "hidden_ali_categories": [
+      "ali:trade_loot",
+      "ali:fishing_loot",
+      "ali:hero_loot"
+    ],
+    "zero_final_recipe_counts_expected": true,
+    "raw_prefilter_trade_recipe_count_not_instrumented": true
+  },
+  "same_family_audit": {
+    "utf8_reference_candidates": [
+      "com/yanny/aci/tooltip/TooltipBuilder.class",
+      "com/yanny/aci/tooltip/TooltipNode.class",
+      "com/yanny/ali/network/AbstractServer.class"
+    ],
+    "patched_native_factories": [
+      "TooltipNode.empty",
+      "TooltipBuilder.build()"
+    ],
+    "server_only_encoding_and_clear_path_untouched": "AbstractServer",
+    "scope": "Pinned ALI local bytecode inspected; candidates are not all possible dynamic/external callers; no upstream code sent for review",
+    "protocol_and_threads": {
+      "native_decode": "Clears idToNode and pool, then rebuilds complete table in received order; child references resolve earlier IDs",
+      "server_encode": "AbstractServer builds encoded cached chunks then clears server palette; server code unchanged",
+      "client_to_server_request": "RequestLootDataMessage has empty encode body; no tooltip node IDs. Direct pinned call-site survey found node serialization on server send path",
+      "threading": "Raw network chunks complete a future. GenericUtils invokes registerData/processData on EMI registration worker; actual decode and widget generation both observed under same palette monitor on Thread-60 then Thread-170. Render-thread factory control also uses palette monitor.",
+      "production_change": "Six exact native instance methods made synchronized without body changes; complete native EmiCompatibility.registerData body called inside same monitor using WrapMethod; exceptions propagate",
+      "scope": "Pinned ALI direct references and actual samples; external reflection/unobserved integrations not exhaustively covered"
+    }
+  },
+  "limitations": [
+    "No new Windows import because PC off",
+    "Actual trade-screen GUI and integrated singleplayer not tested",
+    "Society intentionally filters trade/fishing/hero recipes; not unhidden",
+    "Standalone guard negatives do not simulate full Forge startup failures",
+    "Native builder control adds one own local cache entry and does not send a packet",
+    "Connectivity warning and ReliableEmi group errors remain; model/gameplay/long-session/six-player work remains",
+    "Both user goals remain incomplete",
+    "Full server /reload failed with independent LootModifierManager/SerializerDebug errors; not accepted. Native same-session ALI cached-data rerequest passed, not changed-data reload.",
+    "No exhaustive concurrent schedule proof; actual participating methods and entire registration batch use the same JVM monitor."
+  ],
+  "native_probe_build_history": {
+    "ali-client-probe-build-task17.json": {
+      "files": 2,
+      "sha256": "287d43d0309c57eeaa238d276a39bbe0cb54c2fdae98d82432e513eb330c9340",
+      "bytes": 6224,
+      "source_sha256": "ad0180da87e640988e42b8ae9312155f3060e932255cc4add590636cde6c08a2",
+      "manifest_sha256": "438addbb4600ab9a88adadfcb441768367c8a8328169510b675970b42f7653f9",
+      "manifest_source_sha256": "728846c5dab098a33206cfc39173212bb2cbaeb42c6bf7c734e2d65c7074be69",
+      "javac_version": "javac 17.0.21",
+      "agent_class": "dev.psa.aliqa.v1.AliClientQaControl",
+      "production_mod": false
+    },
+    "ali-client-probe-build-v2-task17.json": {
+      "files": 2,
+      "sha256": "60fb968d031e3f1ab48c790f1047ef1c9df1a7cd6326f4c1e43366e334ac9cc6",
+      "bytes": 6663,
+      "source_sha256": "7f9ee99d0f736c883719f6745290b016950402d7c333ced5a2ea9da6efe6c0d0",
+      "manifest_sha256": "7c7a6eeae8d30174c24f040a3790eea7feb996ebed2953f26b71a8495035b1c8",
+      "manifest_source_sha256": "61772f3addd0582f521011d12d1f5dc8ce22c59eadf8f270b4f3cb04c8a49d9f",
+      "javac_version": "javac 17.0.21",
+      "agent_class": "dev.psa.aliqa.v2.AliClientQaControl",
+      "production_mod": false
+    },
+    "ali-client-probe-build-v3-task17.json": {
+      "files": 2,
+      "sha256": "5b795c459c55275d87bbde3a590a25055fc3086c5c52b8f67e21753609465828",
+      "bytes": 6818,
+      "source_sha256": "32174c1cf57f74420a4175b84f97ac3f1a57b842b028e40b4504a1a5c01a8589",
+      "manifest_sha256": "4f5188b3df3cfc653581b733c963e26430ec49862274e775f0fa0abf5c50e321",
+      "manifest_source_sha256": "c2fd6aeb69750774d3c822aa3a81fa95b7efe9cc899905f8b3b7993a3f92ec61",
+      "javac_version": "javac 17.0.21",
+      "agent_class": "dev.psa.aliqa.v3.AliClientQaControl",
+      "production_mod": false
+    },
+    "ali-client-probe-build-v4-task17.json": {
+      "files": 2,
+      "sha256": "7f677d071396457cbbccf40082352d90db84c1c09a6543757ea85c8070dd85c1",
+      "bytes": 7482,
+      "source_sha256": "f9fe1e54d995e6567c7984d4726f80ccfb242d5e225cfbbcabb20811513859c1",
+      "manifest_sha256": "d626111f71705bfdc3af064fde32fc1251b02fd6a3b234ed95dc30c3ec4649be",
+      "manifest_source_sha256": "f79912c94c2f2dc59ef0b0de1a3296bb524ad0e31c37dbc87e36bd59fd090e03",
+      "javac_version": "javac 17.0.21",
+      "agent_class": "dev.psa.aliqa.v4.AliClientQaControl",
+      "production_mod": false
+    },
+    "ali-client-probe-build-v5-task17.json": {
+      "files": 2,
+      "sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+      "bytes": 7778,
+      "source_sha256": "2a428439bb0713936f53fd3a24cfa0c1a11c1b6ee8698515df05080f73dc5ed9",
+      "manifest_sha256": "de987d74cc66870dfc12e62d689cb35af511acb82af09dbfd8a9edbe766e588b",
+      "manifest_source_sha256": "1e84ebfc56ec01b54b5399dbca65e1f3e0c0bbaff03c0310a3e19a4508a9c9b8",
+      "javac_version": "javac 17.0.21",
+      "agent_class": "dev.psa.aliqa.v5.AliClientQaControl",
+      "production_mod": false
+    }
+  },
+  "historical_r3": {
+    "final_build": {
+      "files": 9,
+      "sha256": "8046126f8834b6e7fea3fa6e6691ca29b816a1ec27ef1d669a780081eb34e534",
+      "entries": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/mods.toml",
+        "dev/psa/alicompat/AliClientCompat.class",
+        "dev/psa/alicompat/AliCompatPlugin.class",
+        "dev/psa/alicompat/AliPaletteAccess.class",
+        "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class",
+        "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class",
+        "pack.mcmeta",
+        "psa-ali-client.mixins.json"
+      ],
+      "entry_sha256": {
+        "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
+        "META-INF/mods.toml": "02f868561f26bdf0334cfa5819dfad7732cc03b2464cde79d59a1e68da833610",
+        "dev/psa/alicompat/AliClientCompat.class": "1f7d7980efabdc63bb9f59f98c283f4896c527bbaae0a61d67d63590fa8d4709",
+        "dev/psa/alicompat/AliCompatPlugin.class": "1e747849c581e80534e33b50dd816e77e13299a74e8a3908cb320efaca438c56",
+        "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
+        "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class": "18cd6edadbea9ec94896310f895b48420ee45face02370a7a95ea0d8310336b4",
+        "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class": "43f094a47ddd8c2ae1a4a595f94ffe5e27833be50f2d9175e89d67d8353a53a0",
+        "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+        "psa-ali-client.mixins.json": "a030265f589a58dc264293a4094c29dbba6710d08c3ef3b805cc8ad0582f75ba"
+      },
+      "bytes": 7095,
+      "authored_source_sha256": {
+        "compat/ali-client/AliClientCompat.java": "92901144b1e0865bed04518ac038a3b47af5456342f89cf02874cf704bf3d55c",
+        "compat/ali-client/AliCompatPlugin.java": "be7ca558b811e008e4ff3991bc1236f390e1e4e3a06baa7c8ec2fbb54fc20513",
+        "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
+        "compat/ali-client/mixin/AliTooltipBuilderPaletteMixin.java": "55b2bff96504e414be8bb3ab3c49dbfd6cf773cd3c4638c72596ca1ede58903e",
+        "compat/ali-client/mixin/AliTooltipPaletteMixin.java": "f2f83b31a2ec61283c81c773757dbcd01b69415a26e045e958a2275e21d91514",
+        "compat/ali-client/resources/META-INF/mods.toml": "02f868561f26bdf0334cfa5819dfad7732cc03b2464cde79d59a1e68da833610",
+        "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+        "compat/ali-client/resources/psa-ali-client.mixins.json": "a030265f589a58dc264293a4094c29dbba6710d08c3ef3b805cc8ad0582f75ba"
+      }
+    },
+    "independent_rebuild": {
+      "files": 9,
+      "sha256": "8046126f8834b6e7fea3fa6e6691ca29b816a1ec27ef1d669a780081eb34e534",
+      "independent_byte_equal": true
+    },
+    "compiled_guards": {
+      "scope": "Standalone compiled guard methods; partial cases simulate only plugin callbacks, not real Minecraft transformation",
+      "results": {
+        "valid": "PINNED_INPUT_ACCEPTED",
+        "missing": "PINNED_INPUT_REFUSED",
+        "modified": "PINNED_INPUT_REFUSED",
+        "symlink": "PINNED_INPUT_REFUSED",
+        "unapplied": "UNAPPLIED_TRANSFORM_REFUSED",
+        "partial-node": "PARTIAL_TRANSFORM_REFUSED",
+        "partial-builder": "PARTIAL_TRANSFORM_REFUSED"
+      }
+    },
+    "python_packaging_tests_passed": 13,
+    "first_final_native": {
+      "native_probe_sha256": "7f677d071396457cbbccf40082352d90db84c1c09a6543757ea85c8070dd85c1",
+      "report": {
+        "run": "d253985b-7991-4e16-b56f-d22b5e549350",
+        "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+        "native_client_world_present": true,
+        "server_registry_null": true,
+        "client_registry_present": true,
+        "client_palette_size_before": 30809,
+        "existing_palette_node_zero_present": true,
+        "existing_native_empty_flag_nodes": 1,
+        "empty_factory_success": true,
+        "empty_in_basic_mode": true,
+        "empty_in_advanced_mode": true,
+        "empty_node_id_in_client_palette": 1,
+        "existing_palette_node_zero_identity_preserved": true,
+        "client_palette_size_after": 30809,
+        "all_existing_palette_ids_identity_preserved": true,
+        "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+        "native_builder_success": true,
+        "native_builder_is_nonempty": true,
+        "native_builder_has_key": true,
+        "native_builder_components_contain_control_key": true,
+        "native_builder_id_in_client_palette": 30809,
+        "client_palette_size_after_owned_builder_control": 30810,
+        "all_existing_palette_ids_preserved_after_builder_control": true,
+        "server_registry_identity_preserved": true,
+        "total_emi_recipes": 66774,
+        "ali_emi_recipes_by_category": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:gameplay_loot": 553,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1
+        },
+        "ali_emi_recipe_count": 12246,
+        "probe_completed": true
+      }
+    },
+    "first_late_native": {
+      "native_probe_sha256": "7f677d071396457cbbccf40082352d90db84c1c09a6543757ea85c8070dd85c1",
+      "report": {
+        "run": "b24a1a4c-a627-45ff-8592-b618b43fae5d",
+        "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+        "native_client_world_present": true,
+        "server_registry_null": true,
+        "client_registry_present": true,
+        "client_palette_size_before": 30810,
+        "existing_palette_node_zero_present": true,
+        "existing_native_empty_flag_nodes": 1,
+        "empty_factory_success": true,
+        "empty_in_basic_mode": true,
+        "empty_in_advanced_mode": true,
+        "empty_node_id_in_client_palette": 1,
+        "existing_palette_node_zero_identity_preserved": true,
+        "client_palette_size_after": 30810,
+        "all_existing_palette_ids_identity_preserved": true,
+        "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+        "native_builder_success": true,
+        "native_builder_is_nonempty": true,
+        "native_builder_has_key": true,
+        "native_builder_components_contain_control_key": true,
+        "native_builder_id_in_client_palette": 30809,
+        "client_palette_size_after_owned_builder_control": 30810,
+        "all_existing_palette_ids_preserved_after_builder_control": true,
+        "server_registry_identity_preserved": true,
+        "total_emi_recipes": 66774,
+        "ali_emi_recipes_by_category": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:gameplay_loot": 553,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1
+        },
+        "ali_emi_recipe_count": 12246,
+        "probe_completed": true
+      }
+    },
+    "first_category_api": {
+      "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+      "report": {
+        "run": "23b8b969-bfbe-45db-ab98-06f87f304e34",
+        "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+        "native_client_world_present": true,
+        "server_registry_null": true,
+        "client_registry_present": true,
+        "client_palette_size_before": 30810,
+        "existing_palette_node_zero_present": true,
+        "existing_native_empty_flag_nodes": 1,
+        "empty_factory_success": true,
+        "empty_in_basic_mode": true,
+        "empty_in_advanced_mode": true,
+        "empty_node_id_in_client_palette": 1,
+        "existing_palette_node_zero_identity_preserved": true,
+        "client_palette_size_after": 30810,
+        "all_existing_palette_ids_identity_preserved": true,
+        "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+        "native_builder_success": true,
+        "native_builder_is_nonempty": true,
+        "native_builder_has_key": true,
+        "native_builder_components_contain_control_key": true,
+        "native_builder_id_in_client_palette": 30809,
+        "client_palette_size_after_owned_builder_control": 30810,
+        "all_existing_palette_ids_preserved_after_builder_control": true,
+        "server_registry_identity_preserved": true,
+        "total_emi_recipes": 66774,
+        "ali_emi_recipes_by_category": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:gameplay_loot": 553,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1
+        },
+        "ali_emi_recipe_count": 12246,
+        "ali_emi_category_api_recipe_counts": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:fishing_loot": 0,
+          "ali:gameplay_loot": 553,
+          "ali:hero_loot": 0,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1,
+          "ali:trade_loot": 0
+        },
+        "ali_emi_category_api_recipe_classes": {
+          "com.yanny.ali.emi.compatibility.emi.EmiBlockLoot": 11200,
+          "com.yanny.ali.emi.compatibility.emi.EmiEntityLoot": 267,
+          "com.yanny.ali.emi.compatibility.emi.EmiGameplayLoot": 779
+        },
+        "probe_completed": true
+      }
+    },
+    "second_final_native": {
+      "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+      "report": {
+        "run": "f3907663-9505-4d5c-ab7a-39715ac145bc",
+        "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+        "native_client_world_present": true,
+        "server_registry_null": true,
+        "client_registry_present": true,
+        "client_palette_size_before": 30809,
+        "existing_palette_node_zero_present": true,
+        "existing_native_empty_flag_nodes": 1,
+        "empty_factory_success": true,
+        "empty_in_basic_mode": true,
+        "empty_in_advanced_mode": true,
+        "empty_node_id_in_client_palette": 1,
+        "existing_palette_node_zero_identity_preserved": true,
+        "client_palette_size_after": 30809,
+        "all_existing_palette_ids_identity_preserved": true,
+        "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+        "native_builder_success": true,
+        "native_builder_is_nonempty": true,
+        "native_builder_has_key": true,
+        "native_builder_components_contain_control_key": true,
+        "native_builder_id_in_client_palette": 30809,
+        "client_palette_size_after_owned_builder_control": 30810,
+        "all_existing_palette_ids_preserved_after_builder_control": true,
+        "server_registry_identity_preserved": true,
+        "total_emi_recipes": 66774,
+        "ali_emi_recipes_by_category": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:gameplay_loot": 553,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1
+        },
+        "ali_emi_recipe_count": 12246,
+        "ali_emi_category_api_recipe_counts": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:fishing_loot": 0,
+          "ali:gameplay_loot": 553,
+          "ali:hero_loot": 0,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1,
+          "ali:trade_loot": 0
+        },
+        "ali_emi_category_api_recipe_classes": {
+          "com.yanny.ali.emi.compatibility.emi.EmiBlockLoot": 11200,
+          "com.yanny.ali.emi.compatibility.emi.EmiEntityLoot": 267,
+          "com.yanny.ali.emi.compatibility.emi.EmiGameplayLoot": 779
+        },
+        "probe_completed": true
+      }
+    },
+    "first_client_observation": {
+      "production_client_jars_verified": 355,
+      "qa_extra_jars": 1,
+      "client_common_unchanged_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+      "ali_patch_sha256": "8046126f8834b6e7fea3fa6e6691ca29b816a1ec27ef1d669a780081eb34e534",
+      "native_ali_registration_successes": 1,
+      "native_ali_registration_failures": 0,
+      "private_log_sha256": "823e2f87b34d21af62f8e124559a3cc33b388daa9fe7c997d612e54786d395ec",
+      "connectivity_warning_baseline_and_patched": [
+        1,
+        1
+      ],
+      "society_hidden_ali_categories": [
+        "ali:hero_loot",
+        "ali:fishing_loot",
+        "ali:trade_loot"
+      ],
+      "society_filter_sha256": "4b5d8a639a6089c984535f33635dbc5bdb9807f2144f666a5c1eaef9902f15cf"
+    },
+    "second_client_observation": {
+      "native_ali_registration_successes": 1,
+      "native_ali_registration_failures": 0,
+      "raw_log_sha256": "193b099f83ecd98530cfd19f3a41e4739eac5fb4612c30f7fd54f08754335d83",
+      "same_genuine_account_new_game_process": true,
+      "client_common_unchanged": true
+    },
+    "native_class_owners": {
+      "actual_mod_files_scanned": 356,
+      "production_mods": 355,
+      "qa_model_audit_extra": 1,
+      "nested_archives_scanned": 184,
+      "depth_limit": 4,
+      "native_class_owners": {
+        "com/yanny/aci/tooltip/TooltipNode.class": [
+          "AdvancedLootInfo-forge-1.20.1-1.12.0.jar"
+        ],
+        "com/yanny/aci/tooltip/TooltipBuilder.class": [
+          "AdvancedLootInfo-forge-1.20.1-1.12.0.jar"
+        ]
+      },
+      "ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+    },
+    "server_unchanged_runtime": {
+      "observed_at_utc": "2026-11-10T02:21:21.726191+00:00",
+      "actual_authenticated_world_entries": 4,
+      "actual_auth_verifications": 4,
+      "actual_online_players": 1,
+      "max_players": 6,
+      "crash_report_count": 0,
+      "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+      "mods": 313,
+      "diagnostic_mods": 0,
+      "native_tps_overall_lines": [
+        "Mean tick time: 6.652 ms. Mean TPS: 20.000"
+      ],
+      "log_sha256": "249388238b65f511c5b76dc61a5c90b8f6c2b9c8cb1a9ed5f7f4f0ca4ff1e8e6",
+      "scope": "One genuine Mac authenticated world entry on313production/noQA server via existing SSH loopback; not6players/directLAN/AeroUDP/gameplay stability"
+    },
+    "package": {
+      "filename": "PSA-Forge-Full-Experimental-v18.mrpack",
+      "sha256": "80ce90c3ac385aec9db7b9460c40dcbbacf99dcda0e30055409b8945134c910d",
+      "size": 1137807667,
+      "version_id": "psa-forge-d7b427c363c5",
+      "mod_jars": 355,
+      "indexed_resourcepacks": 15,
+      "indexed_shaderpacks": 1,
+      "override_files": 7933,
+      "longest_relative_path": 108,
+      "full_gameplay_validated": false
+    },
+    "package_delta": {
+      "added": [
+        "overrides/mods/PSA-ALI-Client-Compat-0.1.jar"
+      ],
+      "deleted": [],
+      "changed": [
+        "modrinth.index.json",
+        "overrides/psa-forge-client-profile.json"
+      ],
+      "unchanged_previous_entries": 7931,
+      "server_mods_unchanged": true,
+      "production_mods": 355,
+      "qa_mods": 0
+    }
+  },
+  "final_build": {
+    "files": 11,
+    "sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+    "bytes": 11204,
+    "entry_sha256": {
+      "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
+      "META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
+      "dev/psa/alicompat/AliClientCompat.class": "33c058b426b9f7d46260cf7954c0f7f15b7ae84ce9972a6f54b7201641c86c3e",
+      "dev/psa/alicompat/AliCompatPlugin.class": "aeac06023d4ca99aff5659c1937b919c5d31241d7532d91f95d6209054876e3d",
+      "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
+      "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class": "196464b532bccdc5c52265d00e22d1916f45b1bb5fbd83cd420cd68d87f81544",
+      "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class": "75fa035c8c7fb0c4dc979b0f1d9dd64962405dcd9469488aa5dceb03da0bb179",
+      "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class": "18cd6edadbea9ec94896310f895b48420ee45face02370a7a95ea0d8310336b4",
+      "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class": "43f094a47ddd8c2ae1a4a595f94ffe5e27833be50f2d9175e89d67d8353a53a0",
+      "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+      "psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
+    },
+    "authored_source_sha256": {
+      "compat/ali-client/AliClientCompat.java": "4b7e2fac7481cd9667655e6faf4a87c155ebdb99816755e8b7e75a8fea1e9db4",
+      "compat/ali-client/AliCompatPlugin.java": "3496ef51637f87e384fd8d644f40cef9fa6776b6ed05c1b6d53345b233fe41f0",
+      "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
+      "compat/ali-client/mixin/AliDataRegistrationMixin.java": "16b461f503ad3c54d2b7c5e841cf157a8117364722c9b03f1cadb86f241b21d6",
+      "compat/ali-client/mixin/AliPaletteSynchronizationMixin.java": "fa0f5bb10151704246b2e229e8db898e1bd588e2d5e699cb92a5442c96a1da9d",
+      "compat/ali-client/mixin/AliTooltipBuilderPaletteMixin.java": "55b2bff96504e414be8bb3ab3c49dbfd6cf773cd3c4638c72596ca1ede58903e",
+      "compat/ali-client/mixin/AliTooltipPaletteMixin.java": "f2f83b31a2ec61283c81c773757dbcd01b69415a26e045e958a2275e21d91514",
+      "compat/ali-client/resources/META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
+      "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+      "compat/ali-client/resources/psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
+    },
+    "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
+    "pinned_emi_compile_sha256": "92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72",
+    "pinned_mixinextras_common_compile_sha256": "e09a7e37e2044f7b0d0e248d55ca9b590b03c3b03636549523b50ac69afdd1aa",
+    "gradle_recipe_sha256": "656879f70c5ac8a06a2623fd6098470ef83e5d568c07e6638e5dab24c3170f13",
+    "entries": [
+      "META-INF/MANIFEST.MF",
+      "META-INF/mods.toml",
+      "dev/psa/alicompat/AliClientCompat.class",
+      "dev/psa/alicompat/AliCompatPlugin.class",
+      "dev/psa/alicompat/AliPaletteAccess.class",
+      "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class",
+      "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class",
+      "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class",
+      "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class",
+      "pack.mcmeta",
+      "psa-ali-client.mixins.json"
+    ],
+    "scope": "Authored client compatibility; actual native startup/refusal/resync/render/disconnect checks, latest stable Claude Opus5.5/high R3 CLEAN on source091d7fc; live PR14 unresolved0; no CI configured",
+    "accepted_source_head": "091d7fc5271c918bb1c121c420c7f4d22e5ee7dc"
+  },
+  "independent_rebuild": {
+    "sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+    "independent_byte_equal": true
+  },
+  "compiled_guards": {
+    "scope": "Standalone guard methods/ASM metadata fixtures; no native transform claim. Missing provider case omits MixinExtras from real Java classpath. Full native no-provider startup recorded separately.",
+    "artifact_sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+    "results": {
+      "valid": "PINNED_INPUT_ACCEPTED",
+      "missing": "PINNED_INPUT_REFUSED",
+      "modified": "PINNED_INPUT_REFUSED",
+      "symlink": "PINNED_INPUT_REFUSED",
+      "unapplied": "UNAPPLIED_TRANSFORM_REFUSED",
+      "partial-node": "PARTIAL_TRANSFORM_REFUSED",
+      "partial-builder": "PARTIAL_TRANSFORM_REFUSED",
+      "partial-factories": "MISSING_PALETTE_LOCK_REFUSED",
+      "missing-registration": "MISSING_REGISTRATION_WRAP_REFUSED",
+      "palette-missing-method": "UNEXPECTED_PALETTE_SHAPE_REFUSED",
+      "palette-static-method": "UNEXPECTED_PALETTE_SHAPE_REFUSED",
+      "all-callbacks": "CALLBACKS_WITHOUT_DEFINED_WRAPPER_REFUSED",
+      "runtime-refuse": "MISSING_OR_INACTIVE_WRAP_RUNTIME_REFUSED",
+      "merged-only": "UNCOMPLETED_WRAPPER_SHAPE_REFUSED",
+      "completed-shape": "COMPLETED_METHOD_METADATA_ACCEPTED_NOT_NATIVE_EXECUTION",
+      "static-wrapped-shape": "UNCOMPLETED_WRAPPER_SHAPE_REFUSED"
+    },
+    "independent_byte_equal": true
+  },
+  "python_packaging_tests_passed": 15,
+  "native_r5_initial_diagnostic_session": {
+    "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+    "report": {
+      "run": "39e40ba8-ff3f-4bb1-ab9a-c95ad6a8d18e",
+      "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+      "native_client_world_present": true,
+      "server_registry_null": true,
+      "client_registry_present": true,
+      "client_palette_size_before": 30806,
+      "existing_palette_node_zero_present": true,
+      "existing_native_empty_flag_nodes": 1,
+      "empty_factory_success": true,
+      "empty_in_basic_mode": true,
+      "empty_in_advanced_mode": true,
+      "empty_node_id_in_client_palette": 1,
+      "existing_palette_node_zero_identity_preserved": true,
+      "client_palette_size_after": 30806,
+      "all_existing_palette_ids_identity_preserved": true,
+      "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+      "native_builder_success": true,
+      "native_builder_is_nonempty": true,
+      "native_builder_has_key": true,
+      "native_builder_components_contain_control_key": true,
+      "native_builder_id_in_client_palette": 30806,
+      "client_palette_size_after_owned_builder_control": 30807,
+      "all_existing_palette_ids_preserved_after_builder_control": true,
+      "server_registry_identity_preserved": true,
+      "total_emi_recipes": 66975,
+      "ali_emi_recipes_by_category": {
+        "ali:archaeology_loot": 15,
+        "ali:block_loot": 11152,
+        "ali:cat_morning_gift": 1,
+        "ali:chest_loot": 208,
+        "ali:entity_loot": 267,
+        "ali:gameplay_loot": 553,
+        "ali:piglin_bartering": 1,
+        "ali:plant_loot": 48,
+        "ali:sniffer_digging": 1
+      },
+      "ali_emi_recipe_count": 12246,
+      "ali_emi_category_api_recipe_counts": {
+        "ali:archaeology_loot": 15,
+        "ali:block_loot": 11152,
+        "ali:cat_morning_gift": 1,
+        "ali:chest_loot": 208,
+        "ali:entity_loot": 267,
+        "ali:fishing_loot": 0,
+        "ali:gameplay_loot": 553,
+        "ali:hero_loot": 0,
+        "ali:piglin_bartering": 1,
+        "ali:plant_loot": 48,
+        "ali:sniffer_digging": 1,
+        "ali:trade_loot": 0
+      },
+      "ali_emi_category_api_recipe_classes": {
+        "com.yanny.ali.emi.compatibility.emi.EmiBlockLoot": 11200,
+        "com.yanny.ali.emi.compatibility.emi.EmiEntityLoot": 267,
+        "com.yanny.ali.emi.compatibility.emi.EmiGameplayLoot": 779
+      },
+      "probe_completed": true
+    }
+  },
+  "native_r5_before_same_session_reload": {
+    "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+    "report": {
+      "run": "5aa86631-93ca-487a-8da8-5990fa41ffb5",
+      "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+      "native_client_world_present": true,
+      "server_registry_null": true,
+      "client_registry_present": true,
+      "client_palette_size_before": 30806,
+      "existing_palette_node_zero_present": true,
+      "existing_native_empty_flag_nodes": 1,
+      "empty_factory_success": true,
+      "empty_in_basic_mode": true,
+      "empty_in_advanced_mode": true,
+      "empty_node_id_in_client_palette": 1,
+      "existing_palette_node_zero_identity_preserved": true,
+      "client_palette_size_after": 30806,
+      "all_existing_palette_ids_identity_preserved": true,
+      "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+      "native_builder_success": true,
+      "native_builder_is_nonempty": true,
+      "native_builder_has_key": true,
+      "native_builder_components_contain_control_key": true,
+      "native_builder_id_in_client_palette": 30806,
+      "client_palette_size_after_owned_builder_control": 30807,
+      "all_existing_palette_ids_preserved_after_builder_control": true,
+      "server_registry_identity_preserved": true,
+      "total_emi_recipes": 66590,
+      "ali_emi_recipes_by_category": {
+        "ali:archaeology_loot": 15,
+        "ali:block_loot": 11152,
+        "ali:cat_morning_gift": 1,
+        "ali:chest_loot": 208,
+        "ali:entity_loot": 267,
+        "ali:gameplay_loot": 553,
+        "ali:piglin_bartering": 1,
+        "ali:plant_loot": 48,
+        "ali:sniffer_digging": 1
+      },
+      "ali_emi_recipe_count": 12246,
+      "ali_emi_category_api_recipe_counts": {
+        "ali:archaeology_loot": 15,
+        "ali:block_loot": 11152,
+        "ali:cat_morning_gift": 1,
+        "ali:chest_loot": 208,
+        "ali:entity_loot": 267,
+        "ali:fishing_loot": 0,
+        "ali:gameplay_loot": 553,
+        "ali:hero_loot": 0,
+        "ali:piglin_bartering": 1,
+        "ali:plant_loot": 48,
+        "ali:sniffer_digging": 1,
+        "ali:trade_loot": 0
+      },
+      "ali_emi_category_api_recipe_classes": {
+        "com.yanny.ali.emi.compatibility.emi.EmiBlockLoot": 11200,
+        "com.yanny.ali.emi.compatibility.emi.EmiEntityLoot": 267,
+        "com.yanny.ali.emi.compatibility.emi.EmiGameplayLoot": 779
+      },
+      "probe_completed": true
+    }
+  },
+  "native_r5_after_same_session_reload": {
+    "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+    "report": {
+      "run": "faf838b4-786b-41ee-9c7a-b76b9b68cdab",
+      "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+      "native_client_world_present": true,
+      "server_registry_null": true,
+      "client_registry_present": true,
+      "client_palette_size_before": 30806,
+      "existing_palette_node_zero_present": true,
+      "existing_native_empty_flag_nodes": 1,
+      "empty_factory_success": true,
+      "empty_in_basic_mode": true,
+      "empty_in_advanced_mode": true,
+      "empty_node_id_in_client_palette": 1,
+      "existing_palette_node_zero_identity_preserved": true,
+      "client_palette_size_after": 30806,
+      "all_existing_palette_ids_identity_preserved": true,
+      "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+      "native_builder_success": true,
+      "native_builder_is_nonempty": true,
+      "native_builder_has_key": true,
+      "native_builder_components_contain_control_key": true,
+      "native_builder_id_in_client_palette": 30806,
+      "client_palette_size_after_owned_builder_control": 30807,
+      "all_existing_palette_ids_preserved_after_builder_control": true,
+      "server_registry_identity_preserved": true,
+      "total_emi_recipes": 66590,
+      "ali_emi_recipes_by_category": {
+        "ali:archaeology_loot": 15,
+        "ali:block_loot": 11152,
+        "ali:cat_morning_gift": 1,
+        "ali:chest_loot": 208,
+        "ali:entity_loot": 267,
+        "ali:gameplay_loot": 553,
+        "ali:piglin_bartering": 1,
+        "ali:plant_loot": 48,
+        "ali:sniffer_digging": 1
+      },
+      "ali_emi_recipe_count": 12246,
+      "ali_emi_category_api_recipe_counts": {
+        "ali:archaeology_loot": 15,
+        "ali:block_loot": 11152,
+        "ali:cat_morning_gift": 1,
+        "ali:chest_loot": 208,
+        "ali:entity_loot": 267,
+        "ali:fishing_loot": 0,
+        "ali:gameplay_loot": 553,
+        "ali:hero_loot": 0,
+        "ali:piglin_bartering": 1,
+        "ali:plant_loot": 48,
+        "ali:sniffer_digging": 1,
+        "ali:trade_loot": 0
+      },
+      "ali_emi_category_api_recipe_classes": {
+        "com.yanny.ali.emi.compatibility.emi.EmiBlockLoot": 11200,
+        "com.yanny.ali.emi.compatibility.emi.EmiEntityLoot": 267,
+        "com.yanny.ali.emi.compatibility.emi.EmiGameplayLoot": 779
+      },
+      "probe_completed": true
+    }
+  },
+  "same_session_resync": {
+    "scope": "Actual authenticated joined client, same JVM/palette and one server login; native ALI data rerequest and EMI reload received original cached server table again. Full /reload failed independently; not a changed-data/server-generation pass.",
+    "client": {
+      "events": [
+        {
+          "event": "registration_begin",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 0,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-60",
+          "thread_id": 293,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_begin",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 1,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-60",
+          "thread_id": 293,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 1,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-60",
+          "thread_id": 293,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_complete",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 1,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-60",
+          "thread_id": 293,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "564822fc850502cc172577515a13e43fa8ed3191960fd628ff48555f8886b76f",
+          "transport_indexed_key_nodes": 10375
+        },
+        {
+          "event": "registration_complete",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 1,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-60",
+          "thread_id": 293,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 1,
+          "palette_identity": "5a8f8127",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "before_reload",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 1,
+          "palette_identity": "5a8f8127",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "564822fc850502cc172577515a13e43fa8ed3191960fd628ff48555f8886b76f",
+          "transport_indexed_key_nodes": 10375,
+          "matches_last_decode": true,
+          "total_nodes": 30807,
+          "native_create_threads": {
+            "Render thread": 3,
+            "Thread-60": 30986
+          }
+        },
+        {
+          "event": "registration_begin",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 1,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-170",
+          "thread_id": 416,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_begin",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 2,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-170",
+          "thread_id": 416,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 2,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-170",
+          "thread_id": 416,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_complete",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 2,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-170",
+          "thread_id": 416,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "564822fc850502cc172577515a13e43fa8ed3191960fd628ff48555f8886b76f",
+          "transport_indexed_key_nodes": 10375
+        },
+        {
+          "event": "registration_complete",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 2,
+          "palette_identity": "5a8f8127",
+          "thread": "Thread-170",
+          "thread_id": 416,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "after_reload",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 2,
+          "palette_identity": "5a8f8127",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "564822fc850502cc172577515a13e43fa8ed3191960fd628ff48555f8886b76f",
+          "transport_indexed_key_nodes": 10375,
+          "matches_last_decode": true,
+          "total_nodes": 30806,
+          "native_create_threads": {
+            "Render thread": 3,
+            "Thread-170": 30986,
+            "Thread-60": 30986
+          }
+        },
+        {
+          "event": "final",
+          "run": "99b8f722-c24a-4c19-8ee6-a17034ba0e6e",
+          "epoch": 2,
+          "palette_identity": "5a8f8127",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeById": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "564822fc850502cc172577515a13e43fa8ed3191960fd628ff48555f8886b76f",
+          "transport_indexed_key_nodes": 10375,
+          "matches_last_decode": true,
+          "total_nodes": 30807,
+          "native_create_threads": {
+            "Render thread": 6,
+            "Thread-170": 30986,
+            "Thread-60": 30986
+          }
+        }
+      ],
+      "registration_successes": 2,
+      "registration_failures": 0
+    },
+    "server": {
+      "qa_server_events": [
+        {
+          "event": "first_native_create_on_thread",
+          "run": "9c48377e-66a4-49da-be0a-3b3be7fe124f",
+          "epoch": 0,
+          "palette_identity": "319bf368",
+          "thread": "Server thread",
+          "thread_id": 113,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "clear": false,
+            "decode": false,
+            "encode": false,
+            "getNodeId": false,
+            "getNodeById": false,
+            "getOrCreate": false
+          }
+        },
+        {
+          "event": "encode_prefix",
+          "run": "9c48377e-66a4-49da-be0a-3b3be7fe124f",
+          "epoch": 0,
+          "palette_identity": "319bf368",
+          "thread": "Server thread",
+          "thread_id": 113,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "clear": false,
+            "decode": false,
+            "encode": false,
+            "getNodeId": false,
+            "getNodeById": false,
+            "getOrCreate": false
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "564822fc850502cc172577515a13e43fa8ed3191960fd628ff48555f8886b76f",
+          "transport_indexed_key_nodes": 0
+        }
+      ],
+      "qa_crashes": 0,
+      "qa_auths": 1,
+      "qa_world_entries": 1,
+      "qa_logouts": 0,
+      "qa_probe_sha256": "01c026d8ba0d82e24906653c703a03609a619842346ecc70c213c1e217bdca14",
+      "production_running": true,
+      "production_mod_count": 313,
+      "production_mod_list_sha256": "656ed8324d609a944102efca705bfab17e8143657be4c2760329eb05d8a14545",
+      "production_common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+      "production_crashes": 0,
+      "production_diagnostics": 0,
+      "qa_log_sha256_at_collection": "339786c349440253da8dd77fccd2a24e845bef7fcffef355ebd13f3a7572dd74"
+    },
+    "all_server_ids_and_semantics_match_both_decodes": true,
+    "old_local_control_removed_by_native_decode": true,
+    "full_server_reload_failure": {
+      "full_server_reload_success": false,
+      "failed_to_execute_reload": true,
+      "failure1": "net.minecraftforge.common.loot.LootModifierManager.apply:60 NullPointerException",
+      "failure2": "com.dairymoose.sd.SerializerDebugCommon.onPlayerDatapackSync:149 null player PacketDistributor.playerConsumer",
+      "actual_auths": 1,
+      "actual_world_entries": 1,
+      "crashes": 0,
+      "log_sha256_at_failure": "51572a0848f20d26db931a9db65f2c3311caea0f8db9bbab5da30a5b1749a00b",
+      "encoded_generations": 1,
+      "production_untouched": true
+    },
+    "qa_normal_exit": {
+      "qa_process_exited": true,
+      "qa_auths": 1,
+      "qa_entries": 1,
+      "qa_logouts": 1,
+      "qa_crashes": 0,
+      "qa_stop_logged": true,
+      "qa_saved_all_dimensions": true,
+      "qa_final_log_sha256": "516ab4e2c69f0a333fea076381e80bdd7f4e947c04bb1fcaf30b6a53a76dd2c4",
+      "production_running": true
+    },
+    "native_control_build": {
+      "files": 2,
+      "sha256": "f33ff30a5a48fa91e1615f2a2029623f50748258b98f352dcffdcab12d19ecec",
+      "bytes": 5330,
+      "source_sha256": "07f035c3ac51c10a9bbbbf2db502fc9cfa07e2ba1b48ec89abe5f5b91ad889ff",
+      "manifest_sha256": "86e8e35f25e95359b1ee0b28e1d43823868028817167c0c8f724c07a4d14a554",
+      "manifest_source_sha256": "929ac9d8be63c1f910bdd733bcb9e22c45f08dd31b015fda88ba78d9f10f4d8b",
+      "javac_version": "javac 17.0.21",
+      "agent_class": "dev.psa.aliresyncqa.v1.AliResyncQaControl",
+      "production_mod": false
+    },
+    "observer_build": {
+      "sha256": "01c026d8ba0d82e24906653c703a03609a619842346ecc70c213c1e217bdca14",
+      "bytes": 18151,
+      "source_sha256": {
+        "tests/forge-ali-resync/AliPaletteFingerprint.java": "b5f80bfd9dd3342d8f9b6b5297b4d621672898a80e8ad6bb7171e810343cddc0",
+        "tests/forge-ali-resync/TraceMod.java": "69a2c4ab100121ce2b562ab5ad9e86476503bef27a57530db34a4af92265a4ab",
+        "tests/forge-ali-resync/TracePlugin.java": "958effeac7064823d19acb54efe2224f822d9b95ea079a3e0a1fb708ba86d60d",
+        "tests/forge-ali-resync/TraceState.java": "f5904fe3fbbdee21cb49caf8d2e9fdd0ab41075420fabaa96336c01fac1ccdef",
+        "tests/forge-ali-resync/mixin/PaletteTraceMixin.java": "56e5ccb02ef8bbb6c3d532df9a3a229737013cfcf9354a353ccfc2662a94c3bb",
+        "tests/forge-ali-resync/mixin/RegistrationTraceMixin.java": "c9122c6f4ae5d17d77022b6dc3b14f53781c237c7284739d9e876d5b88dd3bcd",
+        "tests/forge-ali-resync/resources/META-INF/mods.toml": "7159b1cbfba0a5dfda0ef59c82c5c0cfa1254f868ddb0926a6e5a5acf152f53b",
+        "tests/forge-ali-resync/resources/pack.mcmeta": "77e2c4d59406e0baba38181127d689c984cbcb1dc7b0afe8b08e2677d37b1f13",
+        "tests/forge-ali-resync/resources/psa-ali-resync.mixins.json": "52e1a5d8b897a3733c68b401983fc904074e994196eb626d2510cdc7b3bf14a9"
+      },
+      "excluded_transport_flag": "0x100: indexed translation-key representation only; resolved key is still hashed"
+    },
+    "observer_independent_byte_equal": true,
+    "concurrency_limit": "Actual monitor flags/batch ownership observed; not exhaustive scheduling/model-checking proof",
+    "compat_revision": "R5: batch implementation preserved in R6; new mandatory startup verification is R6"
+  },
+  "diagnostic_failures_preserved": {
+    "r2_missing_unique_serializer": {
+      "scope": "Rejected diagnostic r2, not production patch failure",
+      "qa_process_exited": true,
+      "failure": "Fingerprint API-shape search matched two native component serializers",
+      "crash_sha256": "80a2993b10e7fc4bea68682684c053b1e6a39754b5858659ace6a620c7557598",
+      "log_sha256": "49b591cc0500b995d3e7641d202744e3321c71186481fb1765d87c2a232af947",
+      "broad_done_matches": [
+        "[03:31:45] [Server thread/INFO] [minecraft/DedicatedServer]: Done (10.556s)! For help, type \"help\""
+      ],
+      "production_running": true
+    },
+    "r3_r4_transport_representation_mismatch": {
+      "server_ordered_nodes": 30801,
+      "server_raw_semantics_sha256": "0b716a2cfe913afad1affe4228c14969f053bba4575002ac541f7acd2e7e072d",
+      "client_raw_semantics_sha256": "2400f94f065910d20b6467301a3929920982790ed72ad4248b86f9363b608cc9",
+      "cause": "Native encode adds indexed-key flag0x100 only in wire-local flags; decoded nodes retain it. V2 compares resolved key and all other flags, recording0x100 counts separately.",
+      "client_records": [
+        {
+          "event": "registration_begin",
+          "run": "30d11061-cc38-4a66-b94d-e8ef588a14e8",
+          "epoch": 0,
+          "palette_identity": "6f009e2c",
+          "thread": "Thread-57",
+          "thread_id": 285,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "clear": true,
+            "decode": true,
+            "encode": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true
+          }
+        },
+        {
+          "event": "decode_begin",
+          "run": "30d11061-cc38-4a66-b94d-e8ef588a14e8",
+          "epoch": 1,
+          "palette_identity": "6f009e2c",
+          "thread": "Thread-57",
+          "thread_id": 285,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "clear": true,
+            "decode": true,
+            "encode": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "run": "30d11061-cc38-4a66-b94d-e8ef588a14e8",
+          "epoch": 1,
+          "palette_identity": "6f009e2c",
+          "thread": "Thread-57",
+          "thread_id": 285,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "clear": true,
+            "decode": true,
+            "encode": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true
+          }
+        },
+        {
+          "event": "decode_complete",
+          "run": "30d11061-cc38-4a66-b94d-e8ef588a14e8",
+          "epoch": 1,
+          "palette_identity": "6f009e2c",
+          "thread": "Thread-57",
+          "thread_id": 285,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "clear": true,
+            "decode": true,
+            "encode": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "2400f94f065910d20b6467301a3929920982790ed72ad4248b86f9363b608cc9"
+        },
+        {
+          "event": "registration_complete",
+          "run": "30d11061-cc38-4a66-b94d-e8ef588a14e8",
+          "epoch": 1,
+          "palette_identity": "6f009e2c",
+          "thread": "Thread-57",
+          "thread_id": 285,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "clear": true,
+            "decode": true,
+            "encode": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "run": "30d11061-cc38-4a66-b94d-e8ef588a14e8",
+          "epoch": 1,
+          "palette_identity": "6f009e2c",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "clear": true,
+            "decode": true,
+            "encode": true,
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true
+          }
+        }
+      ]
+    },
+    "initial_connect_before_ready": "connect_requested alone produced no genuine QA login; separate retry after exact readiness produced actual auth/world entry",
+    "inventory_controller_case_error": "Final QA-extras assertion used uppercase ModelAudit; actual file is psa-model-audit-0.2.jar. All355 production hashes already matched; corrected explicit filename verification below."
+  },
+  "package": {
+    "filename": "PSA-Forge-Full-Experimental-v18.mrpack",
+    "sha256": "6cf50d9d3292a37ca122bf5651ddce7ac9a150617c73dc5b58c9a8487e46e673",
+    "size": 1137811504,
+    "version_id": "psa-forge-b4abd74e97d8",
+    "mod_jars": 355,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7933,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "package_delta": {
+    "added": [
+      "overrides/mods/PSA-ALI-Client-Compat-0.1.jar"
+    ],
+    "changed": [
+      "modrinth.index.json",
+      "overrides/psa-forge-client-profile.json"
+    ],
+    "removed": [],
+    "unchanged_previous_entries": 7931,
+    "server_mods_unchanged": true,
+    "production_mods": 355,
+    "qa_mods": 0
+  },
+  "actual_mac_final_inventory": {
+    "actual_mac_player_mods_equal_final_v18": 355,
+    "qa_extras": [
+      "psa-model-audit-0.2.jar"
+    ],
+    "resync_probe_and_marker_removed_and_preserved": true,
+    "profile_matches_final_pack": true,
+    "game_normally_exited": true
+  },
+  "native_class_owners": {
+    "top_level_mods": 356,
+    "nested_archives": 184,
+    "max_nested_depth": 4,
+    "owners": {
+      "com/yanny/aci/tooltip/TooltipNode.class": [
+        {
+          "archive": "AdvancedLootInfo-forge-1.20.1-1.12.0.jar",
+          "sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+        }
+      ],
+      "com/yanny/aci/tooltip/TooltipBuilder.class": [
+        {
+          "archive": "AdvancedLootInfo-forge-1.20.1-1.12.0.jar",
+          "sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+        }
+      ],
+      "com/yanny/aci/tooltip/TooltipNodePalette.class": [
+        {
+          "archive": "AdvancedLootInfo-forge-1.20.1-1.12.0.jar",
+          "sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+        }
+      ],
+      "com/yanny/ali/emi/compatibility/EmiCompatibility.class": [
+        {
+          "archive": "AdvancedLootInfo-forge-1.20.1-1.12.0.jar",
+          "sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+        }
+      ]
+    }
+  },
+  "server_unchanged_runtime": {
+    "production_running": true,
+    "production_mod_count": 313,
+    "production_mod_list_sha256": "656ed8324d609a944102efca705bfab17e8143657be4c2760329eb05d8a14545",
+    "production_common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+    "production_crashes": 0,
+    "production_diagnostics": 0
+  },
+  "historical_r5_build": {
+    "final_build": {
+      "files": 11,
+      "sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+      "entry_sha256": {
+        "META-INF/MANIFEST.MF": "41fcc4252088d4b04076645bf11c15d5f5a4e57b8ea23d8b93f746617aa8b6b8",
+        "META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
+        "dev/psa/alicompat/AliClientCompat.class": "9819176fe19061bfe62d72e3ece709e94db3ad2362e00207b76dd0e2f39f1d7e",
+        "dev/psa/alicompat/AliCompatPlugin.class": "971f2bdf10797b67efc7275ccdd62f18e126b526b6fd4fb257a8a5ab4ddc0cc3",
+        "dev/psa/alicompat/AliPaletteAccess.class": "f6a224839398df6ab7bf232d9df5d463cadc5c4754f6bdda18ef57b9f9ab6c76",
+        "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class": "196464b532bccdc5c52265d00e22d1916f45b1bb5fbd83cd420cd68d87f81544",
+        "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class": "75fa035c8c7fb0c4dc979b0f1d9dd64962405dcd9469488aa5dceb03da0bb179",
+        "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class": "18cd6edadbea9ec94896310f895b48420ee45face02370a7a95ea0d8310336b4",
+        "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class": "43f094a47ddd8c2ae1a4a595f94ffe5e27833be50f2d9175e89d67d8353a53a0",
+        "pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+        "psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
+      },
+      "bytes": 9868,
+      "authored_source_sha256": {
+        "compat/ali-client/AliClientCompat.java": "deaad2f0271b83d530655b83f151858965e3d191bcefbdaa23e80e0c8381f049",
+        "compat/ali-client/AliCompatPlugin.java": "316811e68083c690d00cf451f05dc89523d8e6afd8d6ff52919b2e160a91cf80",
+        "compat/ali-client/AliPaletteAccess.java": "c2af508ad3248820f50189aab718e769fa3d1350c5dfbeed4ff89c4d121ee09a",
+        "compat/ali-client/mixin/AliDataRegistrationMixin.java": "16b461f503ad3c54d2b7c5e841cf157a8117364722c9b03f1cadb86f241b21d6",
+        "compat/ali-client/mixin/AliPaletteSynchronizationMixin.java": "fa0f5bb10151704246b2e229e8db898e1bd588e2d5e699cb92a5442c96a1da9d",
+        "compat/ali-client/mixin/AliTooltipBuilderPaletteMixin.java": "55b2bff96504e414be8bb3ab3c49dbfd6cf773cd3c4638c72596ca1ede58903e",
+        "compat/ali-client/mixin/AliTooltipPaletteMixin.java": "f2f83b31a2ec61283c81c773757dbcd01b69415a26e045e958a2275e21d91514",
+        "compat/ali-client/resources/META-INF/mods.toml": "98a824542d1312c4795f3210e52c8101236d483dea2403681a87f94d41438d09",
+        "compat/ali-client/resources/pack.mcmeta": "75a2fde459780c8a598b1dcd2145df4d30cbebcc3ad8c4a71de2f5cf9c5cba01",
+        "compat/ali-client/resources/psa-ali-client.mixins.json": "c66be6f53a822a8c0168f902ffe9629fef3952589d567c7b44d8df226208a62e"
+      },
+      "entries": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/mods.toml",
+        "dev/psa/alicompat/AliClientCompat.class",
+        "dev/psa/alicompat/AliCompatPlugin.class",
+        "dev/psa/alicompat/AliPaletteAccess.class",
+        "dev/psa/alicompat/mixin/AliDataRegistrationMixin.class",
+        "dev/psa/alicompat/mixin/AliPaletteSynchronizationMixin.class",
+        "dev/psa/alicompat/mixin/AliTooltipBuilderPaletteMixin.class",
+        "dev/psa/alicompat/mixin/AliTooltipPaletteMixin.class",
+        "pack.mcmeta",
+        "psa-ali-client.mixins.json"
+      ],
+      "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8",
+      "pinned_emi_compile_sha256": "92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72",
+      "pinned_mixinextras_common_compile_sha256": "e09a7e37e2044f7b0d0e248d55ca9b590b03c3b03636549523b50ac69afdd1aa",
+      "gradle_recipe_sha256": "656879f70c5ac8a06a2623fd6098470ef83e5d568c07e6638e5dab24c3170f13",
+      "scope": "Authored standalone client compatibility with original factory access corrections and shared native palette monitors; native same-session resync verification and independent rereview pending"
+    },
+    "independent_rebuild": {
+      "files": 11,
+      "sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+      "independent_byte_equal": true
+    },
+    "compiled_guards": {
+      "scope": "Standalone compiled guards and original pinned class shape; callback tests are not full native Minecraft transforms",
+      "artifact_sha256": "404e6457bb4c599be9520e0d3a5b52b508847ccf184d42acc9c3f58cdda7838e",
+      "results": {
+        "valid": "PINNED_INPUT_ACCEPTED",
+        "missing": "PINNED_INPUT_REFUSED",
+        "modified": "PINNED_INPUT_REFUSED",
+        "symlink": "PINNED_INPUT_REFUSED",
+        "unapplied": "UNAPPLIED_TRANSFORM_REFUSED",
+        "partial-node": "PARTIAL_TRANSFORM_REFUSED",
+        "partial-builder": "PARTIAL_TRANSFORM_REFUSED",
+        "partial-factories": "MISSING_PALETTE_LOCK_REFUSED",
+        "missing-registration": "MISSING_REGISTRATION_WRAP_REFUSED",
+        "palette-missing-method": "UNEXPECTED_PALETTE_SHAPE_REFUSED",
+        "palette-static-method": "UNEXPECTED_PALETTE_SHAPE_REFUSED",
+        "all-callbacks": "ALL_CALLBACKS_ACCEPTED_SIX_MONITORS"
+      },
+      "diagnostic_independent_byte_equal": true
+    },
+    "package": {
+      "filename": "PSA-Forge-Full-Experimental-v18.mrpack",
+      "sha256": "80130dd80f2fa138fd79e27b0ecdd73ad2b54ec11f9f3193fb47a72368ad2e49",
+      "size": 1137810170,
+      "version_id": "psa-forge-d0092ce9fe48",
+      "mod_jars": 355,
+      "indexed_resourcepacks": 15,
+      "indexed_shaderpacks": 1,
+      "override_files": 7933,
+      "longest_relative_path": 108,
+      "full_gameplay_validated": false
+    },
+    "package_delta": {
+      "compared_against": "v17",
+      "added": [
+        "overrides/mods/PSA-ALI-Client-Compat-0.1.jar"
+      ],
+      "changed": [
+        "modrinth.index.json",
+        "overrides/psa-forge-client-profile.json"
+      ],
+      "unchanged_entries": 7931,
+      "removed": [],
+      "qa_artifacts": 0,
+      "pack_sha256": "80130dd80f2fa138fd79e27b0ecdd73ad2b54ec11f9f3193fb47a72368ad2e49",
+      "pinned_ali_sha256": "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+    },
+    "actual_mac_final_inventory": {
+      "player_mods_byte_equal_to_current_v18": 355,
+      "remaining_qa_extras": [
+        "psa-model-audit-0.2.jar"
+      ],
+      "resync_probe_removed_and_preserved": true,
+      "profile_byte_equal_to_current_v18": true,
+      "private_completed_log_sha256": "df5d7e91820ba57f1f54eee4896319de914b4d96dcfe7ef3ffaaea26ea4ec357"
+    }
+  },
+  "current_guard_revision_r6": {
+    "scope": "Same native batch behavior as R5 with strengthened mandatory startup verification. PostApply bits alone no longer suffice. Actual-defined-class bridge metadata checked after late MixinExtras extension completes.",
+    "active_runtime_requirement": "MixinExtrasBootstrap version0.5.4 plus registered WrapMethod annotation injector; mandatory constructor, no manual bootstrap or Forge modId invented",
+    "completed_class_requirement": "Exactly one instance registerData, own private handler and generated private registerData$mixinextras$wrapped bridge with exact descriptors, then separate completion latch",
+    "no_provider_native_startup": {
+      "scope": "Actual isolated native Forge client startup, original pinned ALI+EMI plus own compat only; not synthetic guard callback",
+      "mod_jars": 3,
+      "compat_sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+      "mandatory_constructor_guard_seen": true,
+      "expected_guard_message": "Pinned active MixinExtras WrapMethod injector required",
+      "no_class_definition_for_mixinextras": true,
+      "extras_initialization_logged": false,
+      "auth_or_world_join_attempted": false,
+      "private_log_sha256": "bef04ccaca4903f5274c8c2aa0981df8f25ec67fa79e94cf5660606b6aba222d"
+    },
+    "native_after_render_stress": {
+      "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+      "report": {
+        "run": "3636c0f4-4c3a-4b31-b507-810ccb18a49c",
+        "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+        "native_client_world_present": true,
+        "server_registry_null": true,
+        "client_registry_present": true,
+        "client_palette_size_before": 30806,
+        "existing_palette_node_zero_present": true,
+        "existing_native_empty_flag_nodes": 1,
+        "empty_factory_success": true,
+        "empty_in_basic_mode": true,
+        "empty_in_advanced_mode": true,
+        "empty_node_id_in_client_palette": 1,
+        "existing_palette_node_zero_identity_preserved": true,
+        "client_palette_size_after": 30806,
+        "all_existing_palette_ids_identity_preserved": true,
+        "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+        "native_builder_success": true,
+        "native_builder_is_nonempty": true,
+        "native_builder_has_key": true,
+        "native_builder_components_contain_control_key": true,
+        "native_builder_id_in_client_palette": 30806,
+        "client_palette_size_after_owned_builder_control": 30807,
+        "all_existing_palette_ids_preserved_after_builder_control": true,
+        "server_registry_identity_preserved": true,
+        "total_emi_recipes": 66994,
+        "ali_emi_recipes_by_category": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:gameplay_loot": 553,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1
+        },
+        "ali_emi_recipe_count": 12246,
+        "ali_emi_category_api_recipe_counts": {
+          "ali:archaeology_loot": 15,
+          "ali:block_loot": 11152,
+          "ali:cat_morning_gift": 1,
+          "ali:chest_loot": 208,
+          "ali:entity_loot": 267,
+          "ali:fishing_loot": 0,
+          "ali:gameplay_loot": 553,
+          "ali:hero_loot": 0,
+          "ali:piglin_bartering": 1,
+          "ali:plant_loot": 48,
+          "ali:sniffer_digging": 1,
+          "ali:trade_loot": 0
+        },
+        "ali_emi_category_api_recipe_classes": {
+          "com.yanny.ali.emi.compatibility.emi.EmiBlockLoot": 11200,
+          "com.yanny.ali.emi.compatibility.emi.EmiEntityLoot": 267,
+          "com.yanny.ali.emi.compatibility.emi.EmiGameplayLoot": 779
+        },
+        "probe_completed": true
+      }
+    },
+    "native_observer": {
+      "files": 12,
+      "sha256": "de4c1a6f3e3adec28611ad310cd3c0f0187bca644626c3d14becb8b1879f9fca",
+      "bytes": 20650,
+      "fingerprint_same_as_server_r5": true,
+      "source_sha256": {
+        "tests/forge-ali-resync/AliPaletteFingerprint.java": "b5f80bfd9dd3342d8f9b6b5297b4d621672898a80e8ad6bb7171e810343cddc0",
+        "tests/forge-ali-resync/TraceMod.java": "69a2c4ab100121ce2b562ab5ad9e86476503bef27a57530db34a4af92265a4ab",
+        "tests/forge-ali-resync/TracePlugin.java": "958effeac7064823d19acb54efe2224f822d9b95ea079a3e0a1fb708ba86d60d",
+        "tests/forge-ali-resync/TraceState.java": "5aab3d56eaaa4b2cf2d6f0a3cf4549d14ceb04d4f21c9d4c042ffcc3a6e4bee8",
+        "tests/forge-ali-resync/mixin/PaletteTraceMixin.java": "56e5ccb02ef8bbb6c3d532df9a3a229737013cfcf9354a353ccfc2662a94c3bb",
+        "tests/forge-ali-resync/mixin/RegistrationTraceMixin.java": "c9122c6f4ae5d17d77022b6dc3b14f53781c237c7284739d9e876d5b88dd3bcd",
+        "tests/forge-ali-resync/resources/META-INF/mods.toml": "7159b1cbfba0a5dfda0ef59c82c5c0cfa1254f868ddb0926a6e5a5acf152f53b",
+        "tests/forge-ali-resync/resources/pack.mcmeta": "77e2c4d59406e0baba38181127d689c984cbcb1dc7b0afe8b08e2677d37b1f13",
+        "tests/forge-ali-resync/resources/psa-ali-resync.mixins.json": "52e1a5d8b897a3733c68b401983fc904074e994196eb626d2510cdc7b3bf14a9"
+      },
+      "stress_scope": "Explicitly armed QA-only one-second registration delay and native render palette read / connection disconnect; not production performance measurements"
+    },
+    "observer_independent_byte_equal": true,
+    "control_build": {
+      "files": 2,
+      "sha256": "3b1710131a75528d9940c0e29a2719ea0a248c338ba287972f51e2b271814682",
+      "bytes": 5888,
+      "source_sha256": "c9242e74bba536fd6e5da640c719126d011f25ef38ca83f9b78acfe685c3594f",
+      "manifest_sha256": "ffeee500b80094d62d5dc2810accaeda8a0b5429c41bef32a568915897d71322",
+      "manifest_source_sha256": "69c91c32963c4950d4fb28f0a8abae4c2ae7519d681262e3d58e50c0dc31c35d",
+      "javac_version": "javac 17.0.21",
+      "agent_class": "dev.psa.aliresyncqa.v2.AliResyncQaControl",
+      "production_mod": false
+    },
+    "client_stress": {
+      "events": [
+        {
+          "event": "registration_begin",
+          "observed_at_epoch_ms": 1794285041156,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 0,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_begin",
+          "observed_at_epoch_ms": 1794285041169,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "observed_at_epoch_ms": 1794285041182,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_complete",
+          "observed_at_epoch_ms": 1794285041274,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "6aa6ec73322275107ace9f49aca2eb1c0ba03bfbe428672a0628f9b27d1cf218",
+          "transport_indexed_key_nodes": 10375
+        },
+        {
+          "event": "registration_complete",
+          "observed_at_epoch_ms": 1794285042162,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-56",
+          "thread_id": 284,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "registration_begin",
+          "observed_at_epoch_ms": 1794285081634,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "render_stress_render_begin",
+          "observed_at_epoch_ms": 1794285081639,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 1,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "queued_wait_ms": 4
+        },
+        {
+          "event": "decode_begin",
+          "observed_at_epoch_ms": 1794285082644,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "observed_at_epoch_ms": 1794285082652,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "decode_complete",
+          "observed_at_epoch_ms": 1794285082691,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "6aa6ec73322275107ace9f49aca2eb1c0ba03bfbe428672a0628f9b27d1cf218",
+          "transport_indexed_key_nodes": 10375
+        },
+        {
+          "event": "registration_complete",
+          "observed_at_epoch_ms": 1794285082869,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-81",
+          "thread_id": 315,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "render_stress_native_palette_read_complete",
+          "observed_at_epoch_ms": 1794285082869,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "palette_wait_ms": 1229,
+          "native_node_present": true
+        },
+        {
+          "event": "first_native_create_on_thread",
+          "observed_at_epoch_ms": 1794285112602,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 1,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "registration_begin",
+          "observed_at_epoch_ms": 1794285137360,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-126",
+          "thread_id": 361,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "disconnect_stress_render_begin",
+          "observed_at_epoch_ms": 1794285137364,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          },
+          "queued_wait_ms": 2
+        },
+        {
+          "event": "disconnect_stress_native_disconnect_requested",
+          "observed_at_epoch_ms": 1794285137367,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Render thread",
+          "thread_id": 1,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 1,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        },
+        {
+          "event": "registration_complete",
+          "observed_at_epoch_ms": 1794285138363,
+          "run": "73a47f86-ad92-44a9-b237-d4196c7adddf",
+          "epoch": 2,
+          "palette_identity": "63d9fc22",
+          "thread": "Thread-126",
+          "thread_id": 361,
+          "palette_monitor_held": true,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "getNodeId": true,
+            "getOrCreate": true,
+            "getNodeById": true,
+            "clear": true,
+            "decode": true,
+            "encode": true
+          }
+        }
+      ],
+      "registration_success_logs": 3,
+      "registration_failure_logs": 0,
+      "decoded_generations": 2,
+      "failed_stress_actions": [],
+      "private_log_sha256": "c17836d76600bddc35eff6a3c3a0c15f79d22c4165934ff6f00ae372ae6c4879",
+      "actual_compat_sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
+      "third_registration_scope": "Native disconnect requested while active_registrations1; registration completes after world is cleared without another decode. Not a third data-generation pass."
+    },
+    "server_original_prefix": {
+      "events": [
+        {
+          "event": "encode_prefix",
+          "run": "56d95ccd-aa19-42ce-8bd3-ca302576a4a6",
+          "epoch": 0,
+          "palette_identity": "6b9148c",
+          "thread": "Server thread",
+          "thread_id": 114,
+          "palette_monitor_held": false,
+          "overlap_observed": false,
+          "active_native_create_calls": 0,
+          "active_registrations": 0,
+          "native_method_synchronized_flags": {
+            "clear": false,
+            "decode": false,
+            "encode": false,
+            "getNodeId": false,
+            "getNodeById": false,
+            "getOrCreate": false
+          },
+          "ordered_native_nodes": 30801,
+          "ordered_semantic_sha256": "6aa6ec73322275107ace9f49aca2eb1c0ba03bfbe428672a0628f9b27d1cf218",
+          "transport_indexed_key_nodes": 0
+        }
+      ],
+      "actual_auths": 1,
+      "actual_entries": 1,
+      "crashes": 0
+    },
+    "native_disconnection_completed": {
+      "native_probe_sha256": "3b1710131a75528d9940c0e29a2719ea0a248c338ba287972f51e2b271814682",
+      "report": {
+        "run": "057175cd-26eb-49c9-9df9-ef64f20c7198",
+        "action": "disconnected_status",
+        "result": "native_world_and_player_absent",
+        "error_class": ""
+      }
+    },
+    "qa_before_stop": {
+      "qa_auths": 1,
+      "qa_entries": 1,
+      "qa_logouts": 1,
+      "qa_crashes": 0,
+      "qa_alive": true,
+      "production_running": true,
+      "production_mods": 313,
+      "production_inventory_sha256": "656ed8324d609a944102efca705bfab17e8143657be4c2760329eb05d8a14545"
+    },
+    "qa_normal_exit": {
+      "qa_process_exited": true,
+      "qa_auths": 1,
+      "qa_entries": 1,
+      "qa_logouts": 1,
+      "qa_crashes": 0,
+      "qa_stop_logged": true,
+      "qa_saved_all_dimensions": true,
+      "qa_final_log_sha256": "895a235ce0da5835a59799c8fd286837697a28cc2cf02af2304b3ea9eb89239c",
+      "production_running": true
+    },
+    "render_native_palette_wait_ms_with_explicit_qa_1000ms_delay": 1229,
+    "two_actual_decode_prefixes_match_server": true,
+    "limitations": [
+      "Explicit1000ms delay only in separately marked diagnostic; not production latency benchmark",
+      "One real authenticated QA client, not six-player concurrency",
+      "Disconnect requested while batch active; subsequent completion without third decode is cancellation/unload path, not third data generation",
+      "No exhaustive scheduling/deadlock proof and no actual trade GUI interaction"
+    ]
+  },
+  "reload_failure_causal_clarification": {
+    "loot_manager_error": "Missing replace/entries in original KubeJS global modifier override; native manager catches and logs at startup and reload, not the fatal reload abort",
+    "fatal_full_reload_abort": "SerializerDebugCommon.onPlayerDatapackSync sends to null player on all-player reload event; untouched in this ALI phase; next phase audit pending"
+  },
+  "independent_review_acceptance": "task17-review-acceptance.json"
+}

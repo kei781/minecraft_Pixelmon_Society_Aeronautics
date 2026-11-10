@@ -1,8 +1,12 @@
 # Windows 플레이어 설치
 
-현재 시험 패키지는 **`PSA-Forge-Full-Experimental-v16.mrpack`**이다. 세 프로젝트, 모드 JAR 354개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. v16의 새 Windows 가져오기·실행은 아직 확인하지 않았다.
+현재 시험 후보는 **`PSA-Forge-Full-Experimental-v19.mrpack`**이다. 세 프로젝트, 모드 JAR 355개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. Task18 독립 리뷰는 수락했으며 v19의 새 Windows 가져오기·실행은 아직 확인하지 않았다.
 
-Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. v16은 기존 메뉴·Jade 보정과 원래 리소스를 사용한 아이템 모델 연결 여섯 개에 누케닌 다이맥스 최대 HP 보정을 더한 후보다. 같은 공통 보정본의 서버를 사용한다. [구성과 검증 범위](forge-candidate.md), [HP 보정](pixelmon-dynamax-hitpoints.md).
+Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. v18은 기존 보정에 원격 접속 후 ALI 툴팁 등록 오류를 고치는 클라이언트 전용 모드 하나를 더했다. 서버는 v17과 같은 공통 보정본·313개 모드를 사용한다. [구성과 검증 범위](forge-candidate.md), [ALI 수정](ali-client-tooltips.md), [스타터 오류 수정](pixelmon-starter-disconnect.md).
+
+v19는 v18의 모드들을 유지하고 잘못된 전리품 목록 JSON만 보정한다. 같은 리소스와
+서버 전용 갱신 보정을 사용하는 새 서버 후보는 314개 모드로 준비했다. 실제 운영은
+v17·313개를 유지한다. [수정·변경/복원 검사](datapack-reload-recovery.md).
 
 ## 한 번 준비하기
 
@@ -12,26 +16,44 @@ Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타
 
 ## 파일 하나 가져오기
 
-1. 전달받은 v16 파일을 저장한다. 이전 인스턴스는 보존하고 새 인스턴스로 가져온다.
+1. 전달받은 v19 파일을 저장한다. 이전 인스턴스는 보존하고 새 인스턴스로 가져온다.
 2. **Add Instance → Import → 파일 선택 → OK**를 누른다. [공식 가져오기 안내](https://prismlauncher.org/wiki/getting-started/download-modpacks/).
 3. 외부 모드 확인창이 나오면 파일을 관리자에게서 받았는지, 아래 SHA256과 일치하는지 확인한 뒤 신뢰 체크를 하고 진행한다.
 4. Minecraft **1.20.1**, Forge **47.4.20**인지 확인한다. 첫 설치에는 Minecraft·로더·Java 다운로드용 인터넷이 필요하다.
 5. **Edit → Settings → Java**에서 메모리를 정한다. 16 GB 이상 PC에서는 최대 8192 MB를 첫 시작값으로 사용할 수 있다. [메모리 설정 안내](https://prismlauncher.org/wiki/help-pages/java-settings/).
 6. **Launch → Multiplayer → Add Server**에서 관리자가 별도로 전달한 서버 주소를 입력한다. 실제 사용자 서버 주소와 SSH 정보는 공개 저장소·패키지에 넣지 않았다.
 
-현재 파일은 1,137,798,911바이트이며 SHA256은 다음과 같다.
+현재 파일은 1,137,811,877바이트이며 SHA256은 다음과 같다.
 
 ```text
-6fb68d036d989ea3e88f12000478f06df65923a89c84814acf6f5dc4964d4531
+72f814d0acf7fa57928d011552114c1c2165e69704818d7afe82560a899abbf7
 ```
 
 ```powershell
-Get-FileHash ".\PSA-Forge-Full-Experimental-v16.mrpack" -Algorithm SHA256
+Get-FileHash ".\PSA-Forge-Full-Experimental-v19.mrpack" -Algorithm SHA256
 ```
 
 설치 경로와 인스턴스 이름은 짧게 쓴다. 가장 긴 상대 경로는 108자다.
 
 ## 실제 확인한 범위
+
+v19는 v18과 같은 355개 모드와 진단 제외를 확인했다. JSON·색인·프로필 외 파일은
+모두 같다. 같은 구성을 적용한 Mac QA의 실제 인증 입장과 서버 데이터 변경·복원
+수신을 확인했다. 기존 인스턴스 갱신이며 새 Windows 가져오기 검증은 아니다.
+[패키지·네이티브 실행 기록](../evidence/datapack-reload-recovery.json).
+
+v18은 기존 v17에서 클라이언트 전용 ALI 보정 JAR 하나만 더했고, 기존 항목 7,931개는
+같다. 진단은 포함하지 않는다. 실제 Mac QA 클라이언트의 배포 JAR 355개 해시 일치,
+원격 접속 후 두 툴팁 경로와 데이터 등록 성공을 확인했다. 원래 Society가 숨기는 거래·낚시·
+영웅 카테고리 설정은 보존한다. [구분된 원본·중간·최종 결과](../evidence/ali-client-tooltips.json).
+이전 후보 둘은 로딩 메타데이터 누락과 남은 일반 빌더 오류로 거부했다. 새 Windows
+가져오기·실제 거래 화면 육안 검수·6인 합격으로 확대하지 않는다.
+
+v17의 354개 모드·7,932개 override와 진단 도구 부재를 확인했다. v16에서 공통
+JAR·가져오기 색인·프로필만 달라졌고 나머지 7,930개 항목은 같다. Mac QA 클라이언트의
+배포 모드 354개를 새 팩과 해시 대조했다. 서버 대조와 실제 로그인 결과는
+[스타터 오류 기록](../evidence/pixelmon-starter-disconnect.json)을 따른다.
+Windows는 꺼진 상태로 두었으므로 v17의 새 Windows 설치는 미검증이다.
 
 v16의 354개 모드와 7,932개 override 파일을 검사했다. v15와 비교해 공통 호환 JAR·가져오기 색인·프로필 정보만 달라지고 나머지 파일은 같다. 진단 도구는 포함하지 않는다. N100의 전체 313개 모드 후보에서 같은 공통 JAR의 HP 대조 20개와 원본 누케닌 검사가 통과했다. 이는 v16의 Windows 새 가져오기·GUI·실제 6인 부하 확인을 뜻하지 않는다. [v16 패키지 기록](../evidence/player-pack-v16-candidate.json).
 
@@ -47,7 +69,7 @@ Windows 인증 접속, 큰 번호의 탱크 수레 1000→2000→1000mB 표시�
 
 ## 개발자 재생성
 
-공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c`이고, 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. [공통 JAR 재생성](pixelmon-dynamax-hitpoints.md)을 먼저 수행한다.
+공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db`이고, 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. [공통 JAR 재생성](pixelmon-starter-disconnect.md)을 먼저 수행한다.
 
 ```bash
 python3 tools/export_forge_client.py \
@@ -55,7 +77,8 @@ python3 tools/export_forge_client.py \
   --extras /path/to/verified-client-only-cache \
   --society-client /path/to/Society-Sunlit-Valley-4.1.5A.zip \
   --menu-fix /path/to/PSA-Client-Menu-Compat-1.1.jar \
+  --ali-fix /path/to/PSA-ALI-Client-Compat-0.1.jar \
   --output /path/to/new-full-client.mrpack
 ```
 
-공식 manifest의 모드 351개에 Pixelmon·포팅 JAR·메뉴 보정을 더해 354개다. 나머지 15개는 리소스팩, 1개는 셰이더다. 필수 파일·해시·경로·스크립트가 다르면 중단한다. 테스트용 JAR·임시 QA 스크립트·계정·세이브는 내보내지 않는다.
+공식 manifest의 모드 351개에 Pixelmon·포팅 JAR·메뉴 보정·ALI 클라이언트 보정을 더해 355개다. 나머지 15개는 리소스팩, 1개는 셰이더다. 필수 파일·해시·경로·스크립트가 다르면 중단한다. 테스트용 JAR·임시 QA 스크립트·계정·세이브는 내보내지 않는다.

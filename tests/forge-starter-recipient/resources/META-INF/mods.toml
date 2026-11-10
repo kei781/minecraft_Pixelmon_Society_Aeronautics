@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psastarterprobe"
+version="0.1"
+displayTest="IGNORE_ALL_VERSION"
+displayName="PSA Disposable Starter Recipient Probe"
+description="Synthetic offline queue input and native tick observation; excluded from player/server production packs."
+[[dependencies.psastarterprobe]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.psastarterprobe]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.20]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.psastarterprobe]]
+modId="pixelmon"
+mandatory=true
+versionRange="[9.2.3]"
+ordering="AFTER"
+side="BOTH"
