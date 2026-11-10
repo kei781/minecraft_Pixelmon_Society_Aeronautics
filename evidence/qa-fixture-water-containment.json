@@ -1,0 +1,25 @@
+{
+  "scope": "Authored disposable QA arena setup defect, not a production mod failure.",
+  "world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+  "first_observation": "Player repeatedly moved from z8.5 to the north wall at z3.3; client observed water flow.",
+  "cause": "Water sources were placed at feet level100 above the floor99, allowing flow across the arena.",
+  "fix": "Remove arena water at100 and recess pool sources into99, bounded laterally by99 solid blocks and below by98 stone.",
+  "actual_correction_utc": "2026-11-09 06:58:08",
+  "removed_water_blocks_at100": 115,
+  "recessed_source_blocks_at99": 25,
+  "native_regression_queries": [
+    {
+      "condition": "execute if block 8 100 8 minecraft:air",
+      "response": "Test passed",
+      "utc": "2026-11-09 07:00:53"
+    },
+    {
+      "condition": "execute if block 8 99 11 minecraft:water",
+      "response": "Test passed",
+      "utc": "2026-11-09 07:00:54"
+    }
+  ],
+  "related_authored_probe_source_audit": "Searched authored tests Java/Python for world-water placement. MenuIdProbe only writes FluidName=minecraft:water into a container tag; no other authored probe places open source water. The defective session-native arena setup is the affected family.",
+  "production_code_or_artifacts_changed": false,
+  "camera_sync_bug_proven": false
+}

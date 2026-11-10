@@ -1,0 +1,27 @@
+{
+  "jade_entity_accessor_call": {
+    "owner": "net.minecraft.server.level.ServerPlayer",
+    "method": "m_20280_",
+    "descriptor": "(Lnet/minecraft/world/entity/Entity;)D",
+    "count": 1
+  },
+  "minecraft_entity_distance_entity_delegates_to": "distanceToSqr(Vec3); production SRG m_20238_",
+  "sable_existing_overwrite": {
+    "configured_in": "sable.mixins.json",
+    "class": "dev.ryanhcode.sable.mixin.interaction_distance.EntityMixin",
+    "class_sha256": "120ec1f29b27da36a43a3940228241f738c9af14964ebf20979d73729dc8a807",
+    "overwritten_srg_methods": [
+      "m_20270_(Entity)F",
+      "m_20275_(DDD)D",
+      "m_20238_(Vec3)D"
+    ],
+    "implementation": "Calls existing ActiveSableCompanion.distanceSquaredWithSubLevels with both entity positions."
+  },
+  "new_entity_distance_wrapper_added": false,
+  "runtime_entity_data_response": "PENDING",
+  "other_jade_candidates": {
+    "DistanceProvider": "Raw Vec3.distanceTo of eye and unchanged native hit; add render-pose world distance adapter.",
+    "DatapackBlockManager": "Single BlockPos AABB for item-frame fake block lookup, not mixed endpoints; real ship item-frame lookup remains unverified."
+  },
+  "raw_upstream_code_included": false
+}

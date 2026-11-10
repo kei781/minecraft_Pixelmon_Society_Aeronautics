@@ -1,0 +1,101 @@
+{
+  "artifact": "psa-render-probe-0.7.jar",
+  "sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310",
+  "bytes": 35466,
+  "independent_builds_byte_identical": true,
+  "minecraft_calls_reobfuscated": true,
+  "macos_protocol_negative_controls_pass": true,
+  "n100_protocol_negative_controls_pass": true,
+  "n100_qa_inventory_negative_controls": [
+    "extra mod file rejected",
+    "wrong diagnostic SHA rejected",
+    "online-mode=false rejected"
+  ],
+  "production_source_or_artifacts_changed": false,
+  "live_authenticated_render_sample_passed": true,
+  "full_item_traversal_complete": false,
+  "scope": "Preparation and guard records plus separately identified native and authenticated runtime certificates. Full client registry rendering and gameplay are still pending.",
+  "previous_artifact": {
+    "version": "0.1",
+    "sha256": "92f5151243ef50e03928624044a4b9eddc9077512c6abd9f3bb8af4bec99c5bf",
+    "actual_n100_dedicated_boot_done": true,
+    "source_console_status_idle": true,
+    "linkage_errors": 0
+  },
+  "native_spawn_mode_available": true,
+  "native_spawn_mode_does_not_increment_render_returns": true,
+  "source_sha256": {
+    "tests/forge-render-probe/DropStackView.java": "83ede94bcaf00186aab33dc39f4cae80500d2bafff6080e9b4328a1ccfa50090",
+    "tests/forge-render-probe/RenderClient.java": "47ffb82f09dba49e7f84033a489e747a81917d43bb299cdf285b8cda4de9c52c",
+    "tests/forge-render-probe/RenderNetwork.java": "9f067e82f0be0fa759a4b2f636f75603909a06ca3dad24673e6068fde6c835e5",
+    "tests/forge-render-probe/RenderProbe.java": "0e64b569b9d2f76fab9bef4a43884dbafdd0094a782982281ba519ef730c4bce",
+    "tests/forge-render-probe/RenderProtocol.java": "6dab2795dc0f9b03e620037ffb1cef2940ed7384bbe9fb13b61d96ff50387549",
+    "tests/forge-render-probe/RenderProtocolTest.java": "17489115b6365735950028a21da46e55250573d512deab996091b304ca3807bd",
+    "tests/forge-render-probe/mixin/ForgeDropFactoryMixin.java": "dc98c804c5cc02485b1636d00f89845d164706c73f28481be59c350993ac2a78",
+    "tests/forge-render-probe/mixin/ItemModelProbeMixin.java": "a8f054698b9b832b5b2a88291b2ec55fc44c934db5cb84f89631a038745e28b2",
+    "tests/forge-render-probe/mixin/RendererProbeMixin.java": "5fb4bdad62fb14cd843f79873207a773c6de65945e058bfe338923ad52c17acc",
+    "tests/forge-render-probe/render-qa-control.py": "df5fc289f46a423e445c6d9dd99bdd971b0f282a4f298a96d455dfe12a3ff4a7",
+    "tests/forge-render-probe/resources/META-INF/mods.toml": "5f4e56e4231fb79199507a3b16655c7552fa09c52aed5f5609a4fbebf2344c74",
+    "tests/forge-render-probe/resources/pack.mcmeta": "51971f75019d28f93e5819a996a88fdbf6e8b333a263012921d73a9d4ae33b4b",
+    "tests/forge-render-probe/resources/psa-render-probe.mixins.json": "e34c72c05759ef046fe7ecec697fcb2b2d33fe477adbcab489a1ec6429ad2234"
+  },
+  "gradle_recipe_sha256": "a3e3ac9cd86f57959d5befb0508458d4036d85e7c16a1b451d17e06a13823c3b",
+  "n100_qa_guard_tests_artifact_version": "0.1; version0.2 changes diagnostic filename only in the controller; post-upgrade strict314 verify passed",
+  "original_qa_saved_stopped_and_backed_up": true,
+  "original_qa_world_backup_bytes": 4493868,
+  "previous_native_artifact": {
+    "version": "0.2",
+    "sha256": "6cce75b49a77cf5b47f32b1f3e6aa0a46be84b243e7d0bcd158ed17b84720f49",
+    "bytes": 27118,
+    "baseline_unloaded_chunk_timeout_reproduced": true,
+    "same_artifact_loaded_chunk_16_native_pass": true
+  },
+  "same_family_lifecycle_fix": [
+    "native-only chunk activation",
+    "render fixture chunks kept during disconnect",
+    "owned object/UUID cleanup before ticket release",
+    "server stopping cleanup",
+    "preexisting forced chunk tickets preserved"
+  ],
+  "previous_custom_observer_artifact": {
+    "version": "0.4",
+    "sha256": "87b4fc0a312066760e856f0d78e86759109f4327bc0c841dbaebd200c2a00a06",
+    "native_factory_result_observed_in_ownership_ledger": true,
+    "create32767_pickup_sentinel_conflict_found": true,
+    "actual_deliberate_crash_executed": true
+  },
+  "protocol_version": 2,
+  "protocol_exact_boundary_tests_macos_and_ubuntu": true,
+  "recovery_boundary_unit_tests": 5,
+  "rcon_enabled_rejected_on_actual_n100": true,
+  "actual_crash_recovery_evidence": "item-render-crash-recovery.json",
+  "recovery_test_source_sha256": "05f2d5283b59d8d15a7a7871e48ef96a0a4f04c064e03572bff02679ca9e8c21",
+  "actual05_boot_and_decoder_negative_controls_passed": true,
+  "same_jar_pickup_baseline_and_44_family_defaults_passed": true,
+  "previous_full_native_artifact": {
+    "version": "0.6",
+    "sha256": "d0307911edccd9762be20f0a63e2d809e712528402dc084832c9b4e92e2f3acc",
+    "native_unique_items_passed": 17239,
+    "native_batches": 4310,
+    "certificate": "item-render-native-full.json"
+  },
+  "recovery_boundary_tests_macos_and_actual_ubuntu_passed": true,
+  "partial_cleanup_injection_and_recovery_passed": true,
+  "partial_cleanup_evidence": "item-render-cleanup-failure.json",
+  "unchanged_protocol_client_carrier_class_entries": [
+    "dev/psa/renderprobe/DropStackView.class",
+    "dev/psa/renderprobe/RenderClient.class",
+    "dev/psa/renderprobe/RenderNetwork.class",
+    "dev/psa/renderprobe/RenderProtocol$Ack.class",
+    "dev/psa/renderprobe/RenderProtocol$Batch.class",
+    "dev/psa/renderprobe/RenderProtocol$Token.class",
+    "dev/psa/renderprobe/RenderProtocol.class"
+  ],
+  "previous_actual_protocol_tests_apply_by_byte_identity": true,
+  "authenticated_cleanup_fault_command_added": true,
+  "normal_session_javap_unchanged_from06_sha256": "a9cd8afe8a2fea865b42c32bb9428d3b5089accea4211ef25408721c76527cbd",
+  "normal07_native_smoke_passed": 16,
+  "actual_authenticated_sample_evidence": "item-render-authenticated-sample.json",
+  "actual_authenticated_ack_fault_and_recovery_passed": true,
+  "actual_authenticated_ack_fault_evidence": "item-render-authenticated-ack-failure.json"
+}

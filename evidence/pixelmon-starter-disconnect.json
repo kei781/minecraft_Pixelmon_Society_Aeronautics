@@ -1,0 +1,615 @@
+{
+  "scope": "Task16 starter-disconnect crash only; both overall goals remain incomplete",
+  "observed_production_failure": {
+    "primary_utc": "2026-11-09T17:39:17Z",
+    "error": "NullPointerException in PacketDistributor.playerConsumer from TickHandler.onServerTick starter retry",
+    "host_reboot": false,
+    "shutdown_watchdog_secondary": true,
+    "watchdog_disabled": false,
+    "backup": {
+      "bytes": 49108601,
+      "members": 1806,
+      "sha256": "cf8095afbf0a3d5ca0dfb8712b7f9a9bc5f583fb326387962f14a5f733f747e8",
+      "original_world_preserved": true
+    }
+  },
+  "inputs": {
+    "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "production_common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+    "probe_builds": {
+      "baseline": {
+        "files": 3,
+        "sha256": "4c06bb9c28aecefd39f54e162eb6b281d2dd8ae782107c8bcf382b405668a0d1",
+        "independent_byte_equal": true
+      },
+      "patched": {
+        "files": 5,
+        "sha256": "aa87c196293e2a818ebf56b595e27c70b89536d00fe7c89ae6f339dc985a806b",
+        "independent_byte_equal": true
+      }
+    }
+  },
+  "minimal_original": {
+    "role": "baseline",
+    "receipt": {
+      "owner": "psa-disposable-starter-probe-v1",
+      "role": "baseline",
+      "probe_sha256": "bc786b37e6901f28aa02d9adc9134ad52242043c1247354a450b74555da6df4b",
+      "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+      "online_mode": true,
+      "synthetic_offline_queue_input": true,
+      "actual_authenticated_players": 0
+    },
+    "reproduced_actual_null_recipient_crash": true,
+    "actual_authenticated_players": 0,
+    "reports": [
+      {
+        "run": "ade802b0-cce7-4bed-94b6-bbdbfb193ea6",
+        "phase": "armed",
+        "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+        "pass": false,
+        "server_ticks_survived": 0,
+        "owned_offline_ids": 2,
+        "actual_online_players": 0,
+        "owned_ids_pruned_before_cleanup": false,
+        "owned_ids_still_pending": 2
+      }
+    ],
+    "process_stopped_after_native_crash": true,
+    "raw_log_sha256": "5a621bd78039e72d73364ffc25d3560a8031edf687170e91c4cbbd3432843085",
+    "crash_report_sha256": [
+      "9f05a1a9871e3e798c274a9ad96f4d86e2a25a454f9d5d623a1cb796955735e4"
+    ],
+    "scope": "Two synthetic offline queue UUIDs; native server tick and packet distributor crash, no authenticated player simulation"
+  },
+  "minimal_patched_original_revision": {
+    "receipt": {
+      "owner": "psa-disposable-starter-probe-v1",
+      "role": "patched",
+      "probe_sha256": "cbd51b89667187ccce9f5beafd27dd6461ab8aedfcc17963af4dd319f1fe880b",
+      "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+      "online_mode": true,
+      "synthetic_offline_queue_input": true,
+      "actual_authenticated_players": 0
+    },
+    "result": {
+      "run": "c4404006-25a3-4ac6-91c2-600634724f65",
+      "phase": "finished",
+      "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+      "pass": true,
+      "server_ticks_survived": 220,
+      "owned_offline_ids": 2,
+      "actual_online_players": 0,
+      "owned_ids_pruned_before_cleanup": true,
+      "owned_ids_still_pending": 0
+    },
+    "normal_stop_complete": true,
+    "raw_log_sha256": "72032f341a0feb1a7094cefece721e90848faf4912824cfb8bc715c02acf6f21",
+    "crash_report_count": 0
+  },
+  "minimal_patched_final_revision": {
+    "receipt": {
+      "owner": "psa-disposable-starter-probe-v1",
+      "role": "patched",
+      "probe_sha256": "aa87c196293e2a818ebf56b595e27c70b89536d00fe7c89ae6f339dc985a806b",
+      "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+      "online_mode": true,
+      "synthetic_offline_queue_input": true,
+      "actual_authenticated_players": 0
+    },
+    "result": {
+      "run": "88150cb4-fbd9-4c51-af39-8c44e6ddb4e6",
+      "phase": "finished",
+      "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+      "pass": true,
+      "server_ticks_survived": 220,
+      "owned_offline_ids": 2,
+      "actual_online_players": 0,
+      "owned_ids_pruned_before_cleanup": true,
+      "owned_ids_still_pending": 0
+    },
+    "normal_stop_complete": true,
+    "raw_log_sha256": "abaac7d62079d44450d83cb0551a9f7d378415c33afad3d5f18caee92062454d",
+    "crash_report_count": 0
+  },
+  "common_overlay": {
+    "files": 4184,
+    "sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+    "bytes": 44465167,
+    "added": [
+      "dev/psa/startercompat/mixin/PixelmonStarterRecipientMixin.class",
+      "psa-starter-recipient.mixins.json"
+    ],
+    "changed": [
+      "META-INF/MANIFEST.MF",
+      "PSA_PROVENANCE.txt"
+    ],
+    "unchanged_entries": 4180,
+    "inputs": {
+      "base_common_sha256": "53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c",
+      "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+      "source_sha256": "e532a4395143226db85b14219a98fccacf4c24091d1d9f5dcd310e768b242328",
+      "config_sha256": "fc317dfd75afcea22a2e67924f92a9427e7f3ea93e5a2926f14437d01f733cec",
+      "class_sha256": "3fe8e9fd616d2e4429b97a39c4968e5854897f8c2dab1246f6d48996d83e27a1"
+    }
+  },
+  "full_qa": {
+    "first_login": {
+      "receipt": {
+        "owner": "psa-disposable-starter-probe-v1",
+        "production_mod_count": 313,
+        "diagnostic_mod_count": 1,
+        "probe_sha256": "4c06bb9c28aecefd39f54e162eb6b281d2dd8ae782107c8bcf382b405668a0d1",
+        "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+        "world_cloned_from_stopped_v16": true,
+        "online_mode": true,
+        "rcon": false
+      },
+      "reports": [
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "armed",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": false,
+          "server_ticks_survived": 0,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": false,
+          "owned_ids_still_pending": 2
+        },
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "finished",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": true,
+          "server_ticks_survived": 220,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": true,
+          "owned_ids_still_pending": 0
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1278
+        }
+      ],
+      "running": true,
+      "crashes": 0,
+      "auth_verifications": 1,
+      "world_entries": 1,
+      "world_exits": 0,
+      "log_sha256": "c9132255c2ac8f8ec9f7e0cee2f88c7792c9d31d526a24e9a41bd6010253682a"
+    },
+    "online_retained": {
+      "receipt": {
+        "owner": "psa-disposable-starter-probe-v1",
+        "production_mod_count": 313,
+        "diagnostic_mod_count": 1,
+        "probe_sha256": "4c06bb9c28aecefd39f54e162eb6b281d2dd8ae782107c8bcf382b405668a0d1",
+        "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+        "world_cloned_from_stopped_v16": true,
+        "online_mode": true,
+        "rcon": false
+      },
+      "reports": [
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "armed",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": false,
+          "server_ticks_survived": 0,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": false,
+          "owned_ids_still_pending": 2
+        },
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "finished",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": true,
+          "server_ticks_survived": 220,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": true,
+          "owned_ids_still_pending": 0
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1278
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1851
+        }
+      ],
+      "running": true,
+      "crashes": 0,
+      "auth_verifications": 1,
+      "world_entries": 1,
+      "world_exits": 0,
+      "log_sha256": "7989fcffeefba9bd65b3dd162a2844a4c7d13efd0777b02ae7b2a67e05b9f9fa"
+    },
+    "first_logout": {
+      "receipt": {
+        "owner": "psa-disposable-starter-probe-v1",
+        "production_mod_count": 313,
+        "diagnostic_mod_count": 1,
+        "probe_sha256": "4c06bb9c28aecefd39f54e162eb6b281d2dd8ae782107c8bcf382b405668a0d1",
+        "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+        "world_cloned_from_stopped_v16": true,
+        "online_mode": true,
+        "rcon": false
+      },
+      "reports": [
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "armed",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": false,
+          "server_ticks_survived": 0,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": false,
+          "owned_ids_still_pending": 2
+        },
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "finished",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": true,
+          "server_ticks_survived": 220,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": true,
+          "owned_ids_still_pending": 0
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1278
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1851
+        },
+        {
+          "pending": 0,
+          "online_pending": 0,
+          "offline_pending": 0,
+          "actual_online_players": 0,
+          "server_tick": 2691
+        }
+      ],
+      "running": true,
+      "crashes": 0,
+      "auth_verifications": 1,
+      "world_entries": 1,
+      "world_exits": 1,
+      "log_sha256": "643024755d5688a9cd5e6a2c0f18c441d3be52643400fcf74e37b59c44127b31"
+    },
+    "reconnect": {
+      "receipt": {
+        "owner": "psa-disposable-starter-probe-v1",
+        "production_mod_count": 313,
+        "diagnostic_mod_count": 1,
+        "probe_sha256": "4c06bb9c28aecefd39f54e162eb6b281d2dd8ae782107c8bcf382b405668a0d1",
+        "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+        "world_cloned_from_stopped_v16": true,
+        "online_mode": true,
+        "rcon": false
+      },
+      "reports": [
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "armed",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": false,
+          "server_ticks_survived": 0,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": false,
+          "owned_ids_still_pending": 2
+        },
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "finished",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": true,
+          "server_ticks_survived": 220,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": true,
+          "owned_ids_still_pending": 0
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1278
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1851
+        },
+        {
+          "pending": 0,
+          "online_pending": 0,
+          "offline_pending": 0,
+          "actual_online_players": 0,
+          "server_tick": 2691
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 5343
+        }
+      ],
+      "running": true,
+      "crashes": 0,
+      "auth_verifications": 2,
+      "world_entries": 2,
+      "world_exits": 1,
+      "log_sha256": "2e2801e1f44d76e691f37eef71ee8cf65286ffc99a6f35929ec9e7fc3fd7ee99"
+    },
+    "second_logout": {
+      "receipt": {
+        "owner": "psa-disposable-starter-probe-v1",
+        "production_mod_count": 313,
+        "diagnostic_mod_count": 1,
+        "probe_sha256": "4c06bb9c28aecefd39f54e162eb6b281d2dd8ae782107c8bcf382b405668a0d1",
+        "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+        "world_cloned_from_stopped_v16": true,
+        "online_mode": true,
+        "rcon": false
+      },
+      "reports": [
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "armed",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": false,
+          "server_ticks_survived": 0,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": false,
+          "owned_ids_still_pending": 2
+        },
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "finished",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": true,
+          "server_ticks_survived": 220,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": true,
+          "owned_ids_still_pending": 0
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1278
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1851
+        },
+        {
+          "pending": 0,
+          "online_pending": 0,
+          "offline_pending": 0,
+          "actual_online_players": 0,
+          "server_tick": 2691
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 5343
+        },
+        {
+          "pending": 0,
+          "online_pending": 0,
+          "offline_pending": 0,
+          "actual_online_players": 0,
+          "server_tick": 7866
+        }
+      ],
+      "running": true,
+      "crashes": 0,
+      "auth_verifications": 2,
+      "world_entries": 2,
+      "world_exits": 2,
+      "log_sha256": "6e8d73c7e4e607b96d0dbe80086530db79368b229da1df5178982f2d9d138189"
+    },
+    "normal_stop": {
+      "receipt": {
+        "owner": "psa-disposable-starter-probe-v1",
+        "production_mod_count": 313,
+        "diagnostic_mod_count": 1,
+        "probe_sha256": "4c06bb9c28aecefd39f54e162eb6b281d2dd8ae782107c8bcf382b405668a0d1",
+        "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+        "world_cloned_from_stopped_v16": true,
+        "online_mode": true,
+        "rcon": false
+      },
+      "reports": [
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "armed",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": false,
+          "server_ticks_survived": 0,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": false,
+          "owned_ids_still_pending": 2
+        },
+        {
+          "run": "f650eedd-ad01-47ff-a384-51a158c878e7",
+          "phase": "finished",
+          "scope": "Two synthetic offline pending-starter UUIDs; zero authenticated players, not a login/load simulation",
+          "pass": true,
+          "server_ticks_survived": 220,
+          "owned_offline_ids": 2,
+          "actual_online_players": 0,
+          "owned_ids_pruned_before_cleanup": true,
+          "owned_ids_still_pending": 0
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1278
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 1851
+        },
+        {
+          "pending": 0,
+          "online_pending": 0,
+          "offline_pending": 0,
+          "actual_online_players": 0,
+          "server_tick": 2691
+        },
+        {
+          "pending": 1,
+          "online_pending": 1,
+          "offline_pending": 0,
+          "actual_online_players": 1,
+          "server_tick": 5343
+        },
+        {
+          "pending": 0,
+          "online_pending": 0,
+          "offline_pending": 0,
+          "actual_online_players": 0,
+          "server_tick": 7866
+        }
+      ],
+      "running": false,
+      "crashes": 0,
+      "auth_verifications": 2,
+      "world_entries": 2,
+      "world_exits": 2,
+      "log_sha256": "2422fcee396c09478cf820729930e3fd39bca9913c7fe9b6c545800faac144b5"
+    }
+  },
+  "package": {
+    "filename": "PSA-Forge-Full-Experimental-v17.mrpack",
+    "sha256": "9cc234ace776c98fbe7cca8e039dabe74d662dbdc90cb551c0f88d0059a33c98",
+    "size": 1137801000,
+    "version_id": "psa-forge-d2be03f1c832",
+    "mod_jars": 354,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7932,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "package_delta": {
+    "same_inventory": true,
+    "changed": [
+      "modrinth.index.json",
+      "overrides/mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+      "overrides/psa-forge-client-profile.json"
+    ],
+    "unchanged_entries": 7930,
+    "production_mods": 354,
+    "diagnostic_mods": 0,
+    "sha256": "9cc234ace776c98fbe7cca8e039dabe74d662dbdc90cb551c0f88d0059a33c98"
+  },
+  "actual_mac_client_inventory": {
+    "production_jars_verified": 354,
+    "qa_extra_jars": 1,
+    "pack_version": "v17",
+    "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+    "normal_game_exit": true
+  },
+  "same_family_audit": {
+    "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "pending_starter_utf8_candidates": [
+      "com/pixelmonmod/pixelmon/TickHandler.class",
+      "com/pixelmonmod/pixelmon/api/storage/PixelmonStorageManager.class",
+      "com/pixelmonmod/pixelmon/command/impl/PokeRestartCommand.class",
+      "com/pixelmonmod/pixelmon/command/impl/StarterCommand.class",
+      "com/pixelmonmod/pixelmon/config/starter/StarterList.class"
+    ],
+    "player_uuid_lookup_and_network_helper_utf8_candidates": [
+      "com/pixelmonmod/pixelmon/TickHandler.class",
+      "com/pixelmonmod/pixelmon/api/economy/BankAccount.class",
+      "com/pixelmonmod/pixelmon/api/pokedex/PlayerPokedex.class",
+      "com/pixelmonmod/pixelmon/api/storage/PlayerPartyStorage.class",
+      "com/pixelmonmod/pixelmon/blocks/tileentity/BellTileEntity.class",
+      "com/pixelmonmod/pixelmon/comm/packetHandlers/pokemoneditor/RequestCloseEditedPlayerPacket.class",
+      "com/pixelmonmod/pixelmon/comm/packetHandlers/pokemoneditor/RequestCloseEditingPlayerPacket.class",
+      "com/pixelmonmod/pixelmon/comm/packetHandlers/pokemoneditor/RespondPokemonEditorAllowed.class",
+      "com/pixelmonmod/tcg/tileentity/ServerOwnedTileEntityBattleController.class"
+    ],
+    "scope": "Class UTF8 reference candidate inventory; not proof of every dynamic caller. Native TickHandler exact call/dataflow inspected privately.",
+    "additional_unproven_candidates": [
+      "PlayerPartyStorage.resetQuestData",
+      "PlayerPartyStorage.closeBattleSafely",
+      "PlayerPartyStorage.sendClientUpdateSelectedPacket",
+      "TCG ServerOwnedTileEntityBattleController.playCardFromHandToActive via distinct TCG NetworkHelper"
+    ],
+    "note": "Null guard missing at these local call sites; dynamic reachability and native reproduction remain follow-up work, not claimed fixed."
+  },
+  "packaging_tests": {
+    "starter_overlay": 6,
+    "existing_hp_overlay": 5,
+    "staging": 5,
+    "passed": 16
+  },
+  "limitations": [
+    "No latest Windows fresh import: Windows is off",
+    "SSH loopback authentication/world entry is not direct LAN or Aeronautics UDP flight",
+    "No six-player load or long-session stability claim",
+    "ALI, ReliableEmi, remaining models and native Dancer/ShellTrap questions remain open",
+    "Synthetic offline UUID queue test never authenticates or manufactures players",
+    "Online queue retention does not prove starter-screen rendering or successful starter selection"
+  ],
+  "negative_owner_gate": {
+    "missing_owner_marker": true,
+    "process_exited": true,
+    "observed_native_exit_code": 0,
+    "refused_before_world": true,
+    "probe_reports": 0,
+    "ready": false,
+    "mod_constructor_failed": true,
+    "initial_controller_assertion_failed": "Assumed Forge startup failure has nonzero process exit. Actual exit was zero. Readiness, constructor exception, no world/reports and stopped PID checked independently; no rerun or fabricated nonzero exit.",
+    "log_sha256": "e521a5ed213046756bcdfeb76003e427a8c6273c96a8354414e016bff12df3af"
+  }
+}

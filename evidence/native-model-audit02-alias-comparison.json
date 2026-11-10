@@ -1,0 +1,71 @@
+{
+  "audit_version": "0.2",
+  "control_sha256": "b6ffd918acf0b00f9c6253e55ec320108f94d421597598fbbefc78f427bc1637",
+  "cases": [
+    {
+      "label": "alias_absent",
+      "control_run": "54a742c4-1dae-4273-8ac6-cee42545604d",
+      "audit_run": "7d4ea15d-6b9c-43f3-a121-b881b1436b86",
+      "catalog_sha256": "32af2e9be25cb5f8f14e75e4dc9426d1f4b68f0eb90385a8e6a70aa81a8fa533",
+      "processed": 17239,
+      "missing_models": [
+        "decorative_blocks:blockstate_copy_item",
+        "displaydelight:beetroot_soup",
+        "displaydelight:mushroom_stew",
+        "displaydelight:rabbit_stew",
+        "pixelmon:boss_music_disc",
+        "pixelmon:christmas_ball",
+        "pixelmon:custom_music_disc",
+        "pixelmon:gym_music_disc",
+        "pixelmon:legendary_music_disc",
+        "pixelmon:loaded_dice",
+        "pixelmon:no_item",
+        "pixelmon:player_music_disc",
+        "pixelmon:poke_center_music_disc",
+        "pixelmon:punching_glove",
+        "pixelmon:raid_music_disc",
+        "pixelmon:trainer_music_disc",
+        "pixelmon:ultra_space_music_disc",
+        "pixelmon:wild_music_disc",
+        "tcg:battle_spectator",
+        "verdantvibes:potted_burnweed",
+        "via_romana:warp_block",
+        "vintagedelight:vinegar_jar"
+      ],
+      "report_sha256": "ce284781cc3e6bc2ac04008bd0bc58ff345fcb1f65237cd0147f7dd09c57a1b8"
+    },
+    {
+      "label": "alias_restored",
+      "control_run": "4bba66cf-ab98-4479-a1bc-372a30946f56",
+      "audit_run": "92931820-2764-4dde-83d9-67529a4e4709",
+      "catalog_sha256": "32af2e9be25cb5f8f14e75e4dc9426d1f4b68f0eb90385a8e6a70aa81a8fa533",
+      "processed": 17239,
+      "missing_models": [
+        "displaydelight:beetroot_soup",
+        "displaydelight:mushroom_stew",
+        "displaydelight:rabbit_stew",
+        "pixelmon:boss_music_disc",
+        "pixelmon:christmas_ball",
+        "pixelmon:custom_music_disc",
+        "pixelmon:gym_music_disc",
+        "pixelmon:legendary_music_disc",
+        "pixelmon:loaded_dice",
+        "pixelmon:no_item",
+        "pixelmon:player_music_disc",
+        "pixelmon:poke_center_music_disc",
+        "pixelmon:punching_glove",
+        "pixelmon:raid_music_disc",
+        "pixelmon:trainer_music_disc",
+        "pixelmon:ultra_space_music_disc",
+        "pixelmon:wild_music_disc",
+        "tcg:battle_spectator",
+        "verdantvibes:potted_burnweed",
+        "via_romana:warp_block",
+        "vintagedelight:vinegar_jar"
+      ],
+      "report_sha256": "15781b4ffe4a8ae92779439be91a2a0fee3d869483c60eb10ecc06db2f27cb1c"
+    }
+  ],
+  "alias_restored": true,
+  "scope": "Reproduced current-source helper and diagnostic0.2: actual native resource reload and all default-stack models. Not a pixel/use test."
+}

@@ -1,6 +1,6 @@
 # 플레이어 데이터 동기화와 같은 유형 조사
 
-이 문서는 Task 6와 6bdf 후보 당시의 구현·검증 기록이다. 해당 보정은 현재 v8에도 포함되며, 새 설치와 서버 짝 버전은 [Windows 안내](windows-client.md)와 [최신 진행 상태](progress.md)를 따른다.
+이 문서는 Task 6와 6bdf 후보 당시의 구현·검증 기록이다. 해당 보정은 후속 통합 팩에도 포함되며, 최신 설치와 서버 짝 버전은 [Windows 안내](windows-client.md)와 [최신 진행 상태](progress.md)를 따른다.
 
 실제 Windows v6 인증 접속에서 반복된 필드 22 오류는 두 모드의 등록 순서 차이였다. 클라이언트의 Carry On `CARRY_DATA_KEY`는 22번 compound, Pixelmon `dwPokeballs`는 23번 string이었다. 서버는 각각 31번 compound와 22번 string이었다. 따라서 서버의 포켓볼 문자열이 클라이언트에서 compound 자리로 들어갔다. 나머지 Pixelmon byte 필드 8개도 한 칸씩 달랐다. 접속이 유지됐다는 사실을 동기화 통과로 세지 않는다.
 

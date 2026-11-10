@@ -1,0 +1,58 @@
+{
+  "scope": "Exact native Create PackageRenderer/PackageVisual constant-pool references across pinned pack. API metadata only; not dynamic registration, reachability or GPU pixel proof.",
+  "inventory": {
+    "top_level_jars": 354,
+    "nested_jars": 75,
+    "classes": 79472
+  },
+  "candidates": [
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/AllEntityTypes.class",
+      "references": [
+        "PackageRenderer",
+        "PackageVisual"
+      ],
+      "renderBox_reference": false
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/equipment/armor/CardboardArmorHandlerClient.class",
+      "references": [
+        "PackageRenderer"
+      ],
+      "renderBox_reference": true
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/logistics/box/PackageRenderer.class",
+      "references": [
+        "PackageRenderer"
+      ],
+      "renderBox_reference": true
+    },
+    {
+      "jar": "create-1.20.1-6.0.8.jar",
+      "class": "com/simibubi/create/content/logistics/box/PackageVisual.class",
+      "references": [
+        "PackageVisual"
+      ],
+      "renderBox_reference": false
+    },
+    {
+      "jar": "create_factory_logistics-1.20.1-1.4.7.jar",
+      "class": "ru/zznty/create_factory_logistics/logistics/jar/JarVisual.class",
+      "references": [
+        "PackageVisual"
+      ],
+      "renderBox_reference": false
+    }
+  ],
+  "known_custom_drop_family": "Prior six classes custom-item-entity-family.json and actual44regressions retained; Create and Factory Logistics use native PackageEntity carrier; backpack descendants use ItemEntity path. Runtime model controls still required for each selected package item.",
+  "followup_api_findings": {
+    "CompositePackageEntityRender": "Native ItemRenderer render overload -> getModel, existing observer path; runtime control required.",
+    "JarPackageRenderer": "Own static renderBox with same CachedBuffers.partial call, now included in candidate fallback adapter; not inherited Create renderer.",
+    "JarVisual": "Extends native PackageVisual, original beginFrame calls super; candidate inherited frame observation; runtime control required.",
+    "baseline_class_count_delta": "Currentv12 has79472classes, four added Jade adapter/math classes versus previous79468baseline."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "pr": 7,
+  "base": "10840a2fdf77fe055576516dd0f72012111733a6",
+  "last_reviewed_head": "251eb07addc433925bce662c9d65cb9c7d8e729a",
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "actual_reported_model_matches": true,
+  "round": 5,
+  "task_round_limit": 5,
+  "verdict": "FINDINGS",
+  "new_code_findings": 0,
+  "new_documentation_findings": 1,
+  "live_unresolved_threads": 1,
+  "remaining_thread": "PRRT_kwDOVm1ZLc61N296",
+  "remaining_priority": "P3",
+  "remaining_issue": "Current N100 QA documentation still said Jade0.3 and previous Done time. Corrected in follow-up; independent disposition pending.",
+  "author_resolved": false,
+  "ci_checks": [],
+  "task_fully_accepted": false,
+  "scope": "R4 core code CLEAN, R5 observer metadata code no findings. Post-review actual authenticated04 reconnect and controlled survival flight verified by controller, not retrospectively part of reviewed251eb07 snapshot. No Task10round6, no full-goal completion."
+}

@@ -1,0 +1,93 @@
+{
+  "state": {
+    "run": "a6005eb7-bb79-49b6-a257-42feb3a8115e",
+    "result": "owned_cleanup_exception:java.lang.IllegalStateException:PSA_RENDER deliberate EntityLeaveLevelEvent cleanup failure",
+    "world_generation": "a6eccefa-6640-4608-9d85-ea2c1d79edc9",
+    "dimension": "minecraft:overworld",
+    "cleanup_complete": false,
+    "cleanup_failed": true,
+    "cleanup_injection_triggered": true,
+    "first_failure": "owned_cleanup_exception:java.lang.IllegalStateException:PSA_RENDER deliberate EntityLeaveLevelEvent cleanup failure",
+    "failed_cleanup_entity_uuids": [
+      "856669da-acba-44ad-bc9d-ec37324b79a6"
+    ],
+    "deliberate_crash_test": false,
+    "fixture_pickup_delay": 32766,
+    "catalog_total": 17239,
+    "catalog_start": 0,
+    "selected_count": 4,
+    "completed_render_returns": 4,
+    "completed_model_verified_returns": 4,
+    "completed_native_spawns": 4,
+    "mode": "authenticated_client_render",
+    "batch": 0,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:aeronautics:black_envelope",
+    "owned_fixture_chunk_ticket_count": 1,
+    "owned_entities": [],
+    "owned_fixture_chunks": [
+      {
+        "x": 0,
+        "z": 0
+      }
+    ],
+    "attempted_ids": [
+      "aeronautics:adjustable_burner",
+      "aeronautics:andesite_propeller",
+      "aeronautics:aviators_goggles",
+      "aeronautics:black_envelope"
+    ],
+    "scope": "native default item entity spawn/network/render RETURN only; not texture, placement or functional-use proof"
+  },
+  "diagnostic_version": "0.7",
+  "diagnostic_sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310",
+  "checkpoint_sha256": "9876177f42ffdbd25e881ed9ee00b8c430d2aed3c09b7beaab99de3a92e0071a",
+  "journal_sha256": "6b9dcb90ded2b487fbf5c52ebabd7df9c1b699afc19891b841fa7fb18879d670",
+  "ownership_ledger_sha256": "dfe8b73b4e7c33c1ee75eb5a02709f7c9e0414d3f5912519d27ddc458dc1f88f",
+  "actual_acknowledge_acceptAcknowledgement_stack_verified": true,
+  "ack_batches": 1,
+  "model_observed_mask": 15,
+  "missing_model_mask": 0,
+  "scope": "Deliberate own-diagnostic second-removal exception after four real authenticated model-verified render returns. Not a spontaneous game failure.",
+  "new_in_process_run_rejected": true,
+  "restart_rejected": true,
+  "owned_world_recovery_verified": true,
+  "windows_receipt_pending": false,
+  "recovery": {
+    "failed_run": "a6005eb7-bb79-49b6-a257-42feb3a8115e",
+    "new_in_process_run_rejected": true,
+    "controller_restart_rejected": true,
+    "failed_checkpoint_preserved": true,
+    "failed_checkpoint_sha256": "9876177f42ffdbd25e881ed9ee00b8c430d2aed3c09b7beaab99de3a92e0071a",
+    "owned_world_archive_tree_before": {
+      "sha256": "9d15e1c8a44c2fc2d339b277767af3fa6b08730362627472e87be99728e68919",
+      "files": 308,
+      "bytes": 116828088
+    },
+    "owned_world_archive_tree_after": {
+      "sha256": "9d15e1c8a44c2fc2d339b277767af3fa6b08730362627472e87be99728e68919",
+      "files": 308,
+      "bytes": 116828088
+    },
+    "fresh_world_generation": "50e90d46-0f40-4de8-ad21-b95d0e62de7d",
+    "no_forced_termination": true,
+    "production313_and_diagnostic_unchanged": true,
+    "fresh_server_boot_done_utc": "2026-11-09 06:38:30",
+    "fresh_server_crashed": false
+  },
+  "windows_client_observation": {
+    "same_run_and_batch": true,
+    "last_batch": 0,
+    "status": "ack_all_native_returns_and_models",
+    "begun": 4,
+    "native_return": 4,
+    "model_observed_mask": 15,
+    "missing_model_mask": 0,
+    "checkpoint_bytes": 1110,
+    "checkpoint_sha256": "be4927d479b60b7ecc313499d2e8685cb65c9cce59f3f1462948260e76a311a5",
+    "report_bytes": 1755,
+    "report_sha256": "c6f83804b50b1bc4596fe5cdca89362026b58de9c48a2b7e8bc903c95deb18b5",
+    "client_crashed": false,
+    "raw_windows_files_transferred": false
+  }
+}

@@ -30,7 +30,7 @@ Society 4.1.5A의 공개 Modrinth 클라이언트팩과 CurseForge 서버팩도 
 고정 소스의 새 복사본을 `PORT`, 이 저장소의 절대 경로를 `PSA`, JDK 17 경로를 `JDK17`, Gradle 7.6.4 실행 파일을 `GRADLE`로 준비한다. 전역 Maven 대신 개인 작업 폴더 Maven 저장소에 Create 6.0.8, Flywheel 1.0.5, Ponder 1.0.91, Registrate 1.3.3, MixinExtras Forge/common 0.4.1의 JAR/POM이 있어야 한다. 좌표는 포팅 소스의 build.gradle에 고정돼 있다. 이들은 확인한 공식 Create와 내장 라이브러리에서 준비했다. 해당 경로로 패치의 자리표시자를 바꾼 뒤 다음 순서를 따른다.
 
 1. 고정 커밋의 깨끗한 소스에 `candidate-build.patch`와 `renderer-locals.patch`를 차례로 적용한다. `META-INF/mods.toml` 수정도 이때 적용된다.
-2. 이 저장소의 `compat/forge-port/`에 있는 Java 믹신 소스를 `PORT/src/main/java/dev/psa/compat/`에 복사한다. 같은 디렉터리의 `psa-forge.mixins.json`, `PSA_PROVENANCE.txt`, `licenses/`는 `PORT/src/main/resources/`에 복사한다. 플레이어/광산수레 동기화 보정은 [별도 기록](player-data-compatibility.md)에 설명한다.
+2. 이 저장소의 `compat/forge-port/` Java 파일은 선언한 패키지에 맞춰 복사한다. 믹신은 `PORT/src/main/java/dev/psa/compat/`, `MenuIntData.java`는 `dev/psa/menudata/`, `JadeCoordinateMath.java`는 `dev/psa/jademath/` 아래에 둔다. 기존 같은 클래스 복사본을 중복으로 남기지 않는다. `psa-forge.mixins.json`, `PSA_PROVENANCE.txt`, `licenses/`는 `PORT/src/main/resources/`에 복사한다. 플레이어/광산수레 동기화 보정은 [별도 기록](player-data-compatibility.md)에 설명한다.
 3. 공식 아트 파일을 검증·복원한다. 새 소스에서 실제 신규 파일 1,291개를 쓰고, 같은 내용 103개와 수작업 번역 43개를 보존했다.
 4. 아래 데이터 생성·평탄화·결합·빌드를 차례로 실행한다. 모든 명령이 성공했을 때만 다음 명령으로 진행한다. 출력 디렉터리는 새 경로여야 한다.
 
@@ -64,7 +64,7 @@ v5 당시 배치용 정규화 JAR SHA256은 `cc31e4ab2684567361aab8fedc0be25bf43
 
 v6 당시 준비 도구는 Pixelmon 셰이더 패킷 보정을 포함한 `a59a0f5cd89f319fb8280191388ab11752fefdf5553f864780c95bb479081b74`를 고정했다. 위 `cc31e4…`와 함께 이전 운영본의 보존 기록이다. [v6 변경 범위](pixelmon-shader-compatibility.md)를 참조한다.
 
-현재 준비·내보내기 도구의 포팅 JAR 고정값은 `59466e8555cb442e3aa042d8c673cb05b8a2bcdf3a3931494920829156bc58fe`, 44,453,781바이트다. v6에 플레이어·광산수레 등록 보정과 [수레·게시판 메뉴 정수 보정](menu-data-compatibility.md)을 추가한 검증 후보이며 같은 JAR를 양쪽에 설치해야 한다. 기존 v6 프로필은 새 도구의 입력 해시 검사에 통과하지 않는다. [동기화 변경과 검증 범위](player-data-compatibility.md)를 참조한다.
+현재 준비·내보내기 도구의 공통 JAR 고정값은 `351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db`, 44,465,167바이트다. 기존 등록·메뉴·[Jade](jade-sublevel-coordinates.md)·[누케닌 HP](pixelmon-dynamax-hitpoints.md) 보정에 [스타터 로그아웃 보정](pixelmon-starter-disconnect.md)을 더한 v17 후보이며 같은 JAR를 양쪽에 설치해야 한다. 이전 `53429378ccb8f591936736aee47da3b414222203b4e7650aa695b98d1f116e8c`는 v16 HP 단계 이력이자 starter overlay의 기준 입력이다. 이전 `31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5`는 v12~v15 이력과 HP overlay의 기준 입력이다. 이전 `59466e…` 메뉴 수락 파일도 현재 준비 도구 입력으로는 거부한다. 최신 N100 기동·검증은 [운영 기록](n100-server.md)에 구분한다.
 
 해시를 고정한 세 입력이 로컬에 있을 때 다음 도구로 새로운 프로필을 준비한다. `forge-candidate-lock.json`의 실제 공식 다운로드 URL·배포처 SHA1/SHA512·크기도 확인하고 입력 검증 결과를 프로필 영수증에 남긴다. 원본 311개 JAR, Pixelmon 교체 데이터 68개를 확인한다. 기존 경로를 덮어쓰지 않는다.
 

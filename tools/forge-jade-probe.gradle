@@ -1,0 +1,32 @@
+// Test-only client observer; never included by the player-pack exporter.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaJadeProbeSource')
+    if (!sourceRoot) throw new GradleException('psaJadeProbeSource is required')
+    def directory = new File(sourceRoot.toString())
+    if (!new File(directory, 'JadeProbe.java').isFile()) throw new GradleException('Missing Jade observer source')
+    def apiPath = project.findProperty('psaJadeApiJar')
+    if (!apiPath) throw new GradleException('psaJadeApiJar is required')
+    def jadeApi = new File(apiPath.toString())
+    if (!jadeApi.isFile() || java.security.MessageDigest.getInstance('SHA-256').digest(jadeApi.bytes).encodeHex().toString() != '31949971a7a8d5a5bc95ad9d400cbedfd2d65ffbfb3cea7c0b2fa3b47431a0a5')
+        throw new GradleException('Exact pinned Jade API JAR required')
+    def compiler = project.tasks.register('compilePsaJadeProbe', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java' }
+        classpath = project.sourceSets.main.compileClasspath + project.files(jadeApi)
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-jade-probe/classes'))
+        options.release.set(17)
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaJadeProbeJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-jade-probe-0.4.jar')
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': 'psa-jade-probe.mixins.json')
+        preserveFileTimestamps = false
+        reproducibleFileOrder = true
+    }
+    project.reobf.create('psaJadeProbeJar')
+}

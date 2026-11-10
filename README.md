@@ -1,14 +1,14 @@
 # Pixelmon + Society + Aeronautics
 
-**현재 상태: 세 프로젝트 전체 실험 팩 생성 및 N100 전체 서버 기동·저장·재시작 확인. Windows 장치의 인증 접속은 서버 로그에서 확인했으며, 화면·게임 기능·6인 검증은 진행 중입니다.**
+**현재 상태: 세 프로젝트 전체 실험 팩과 N100 서버를 구성했고 실제 포획·전투, 농사·판매, 조립·수직 비행을 확인했습니다. 전체 아이템·추가 생존 동작·수평 비행·6인 부하와 최신 패키지의 Windows 새 설치 검증은 진행 중입니다.**
 
-새로 찾은 **Society 정식 4.1.5A + Pixelmon 9.2.3 베타 + Aeronautics 비공식 Forge 포팅본**으로 전체 월드 기동에 성공했습니다. Minecraft 1.20.1 / Forge 47.4.20 / Java 17의 별도 실험 후보입니다. 아래 1.21.1 개발 조합의 누락 파일을 확보한 것은 아닙니다. [후보 구성·수정·검증 범위](docs/forge-candidate.md)를 참고하세요. N100에서도 전체 팩을 시작하고 시험 몹·물리 구조물의 저장/복구를 확인했습니다. 같은 최신 공통 보정본의 Windows 인증 접속과 수레·깃발 메뉴 검증을 확인했습니다. v8 새 인스턴스 가져오기·게임 주요 기능·6인 검증은 남아 있습니다.
+**Society 정식 4.1.5A + Pixelmon 9.2.3 베타 + Aeronautics 비공식 Forge 포팅본**으로 전체 월드 기동에 성공했습니다. Minecraft 1.20.1 / Forge 47.4.20 / Java 17의 별도 실험 후보입니다. 아래 1.21.1 개발 조합의 누락 파일을 확보한 것은 아닙니다. [후보 구성·수정·검증 범위](docs/forge-candidate.md)를 참고하세요. N100에서 전체 팩과 물리 구조물의 저장·복구, Windows v9의 새 가져오기·정품 접속·메뉴 검증을 확인했습니다. [Jade 비행체 좌표 보정](docs/jade-sublevel-coordinates.md) 뒤 실제 수직 비행과 정지를 확인했고, 후속 원본 모델·전투 API 검증을 진행하고 있습니다. 최신 공통 JAR도 N100 전체 모드 후보에서 부팅·수치 검사를 통과했습니다.
 
 요청 구성은 Pixelmon + Society: Sunlit Valley + Create Aeronautics이며, 디지몬 데이터팩과 다른 대체 모드는 사용하지 않습니다. 서버 목표는 N100 / Ubuntu / RAM 16 GB / 동시 접속 최대 6명입니다.
 
 Windows 설치는 런처·Java 같은 선행 프로그램을 안내에 따라 설치하고 준비된 모드팩을 가져오는 방식도 허용합니다. 모든 준비 과정을 자동화한 단일 실행 파일은 필수 조건이 아닙니다. 같은 구성의 클라이언트를 설치하고 실제 서버에 접속하는 것이 완료 조건입니다.
 
-현재 전체 시험 파일은 `PSA-Forge-Full-Experimental-v8.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. v8에는 플레이어 동기화·수레·게시판 메뉴 보정이 포함되며 서버 공통 313개 파일을 N100 후보와 맞췄습니다. 아카이브 파일 해시는 모두 확인했고 v8 자체의 새 GUI 가져오기는 아직 검증 전입니다. 이전 v7의 실제 가져오기 기록은 보존합니다. [메뉴 정수 보정](docs/menu-data-compatibility.md), [패키지 검사](evidence/forge-client-v8-package.json), [진행 상태](docs/progress.md).
+현재 전체 시험 후보는 `PSA-Forge-Full-Experimental-v19.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 모드355개이며 진단은 포함하지 않습니다. 기존 [스타터 오류 수정](docs/pixelmon-starter-disconnect.md)·[ALI 툴팁 수정](docs/ali-client-tooltips.md)에 전리품 JSON 보정을 반영했습니다. 별도 QA 서버에서 [전체 데이터 갱신·변경·복원](docs/datapack-reload-recovery.md)을 통과했고 최신 Opus 독립 리뷰도 수락했습니다. 새 314개 모드 서버 후보는 N100의 별도 준비 경로에서 정지 상태입니다. 현재 운영은 v17·313개로 계속 실행합니다. 운영 교체·새 Windows 가져오기는 아직입니다. 이전 v9은 새 가져오기·7,925개 파일 해시 대조·정품 접속·아이템16개 렌더를 통과했습니다. [당시 실행 기록](evidence/forge-client-v9-launch-windows.json), [진행 상태](docs/progress.md).
 
 ## 보존한 최초 1.21.1 조사 기준
 

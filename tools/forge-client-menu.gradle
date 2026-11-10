@@ -18,7 +18,7 @@ gradle.projectsEvaluated {
         def taskName = "psaMenu${mode}Jar"
         project.tasks.register(taskName, Jar) {
             dependsOn compiler
-            archiveFileName.set(mode == 'Fix' ? 'PSA-Client-Menu-Compat-1.0.jar' : 'psa-menu-probe-1.0.jar')
+            archiveFileName.set(mode == 'Fix' ? 'PSA-Client-Menu-Compat-1.1.jar' : 'psa-menu-probe-1.0.jar')
             from compiler.flatMap { it.destinationDirectory }
             from new File(directory, 'resources')
             manifest.attributes('FMLModType': 'MOD')

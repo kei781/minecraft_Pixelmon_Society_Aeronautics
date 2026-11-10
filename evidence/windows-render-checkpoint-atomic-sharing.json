@@ -1,0 +1,30 @@
+{
+  "scope": "Owned Windows same-NTFS fixture, each reader holds handle5ms; reproduces move AccessDenied under both share modes, not sole causal proof of prior game crash. No game files/JAR changed.",
+  "iterations_per_mode": 200,
+  "read": {
+    "successful": 8,
+    "failed": 192
+  },
+  "read_write_delete": {
+    "successful": 9,
+    "failed": 191
+  },
+  "first_failure_type": "java.nio.file.AccessDeniedException",
+  "report": {
+    "bytes": 3249,
+    "sha256": "d519068e93e92fb82ef287a44ffaf7fb31d8861caf4eedec41240a2185cf64dc"
+  },
+  "operation_and_reader_audit": {
+    "bytes": 13576,
+    "sha256": "555fe9ca039f18b24108594fa1f2a22fa01a6c278f6e90419d47b29d44d51f6f",
+    "operation": "Files.move temporary -> current JSON",
+    "target_and_parent_read_only": false,
+    "explicit_deny_ace_found": false,
+    "ntfs": true,
+    "reparse_points": 0,
+    "other_oneoff_hot_readers_found_in_thread_window": false,
+    "other_processes_excluded": false
+  },
+  "original_collector_already_shared_delete": true,
+  "disposition": "Stop optional live Windows hot-JSON polling. Preserve exception guard and exact825540candidate. Use Linux authoritative server ACK journals and quiescent client results; no-collector actual native regression pending. No fix claimed from change of share flags."
+}
