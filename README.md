@@ -1,12 +1,16 @@
 # Pixelmon + Society + Aeronautics
 
-**현재 상태: 통합 개발 중. 플레이 가능한 완성 모드팩이나 검증된 Windows 설치 절차를 배포한 상태가 아닙니다.**
+**현재 상태: 세 프로젝트 전체 실험 팩과 N100 서버를 구성했고 실제 포획·전투, 농사·판매, 조립·수직 비행을 확인했습니다. 전체 아이템·추가 생존 동작·수평 비행·6인 부하와 최신 패키지의 Windows 새 설치 검증은 진행 중입니다.**
+
+**Society 정식 4.1.5A + Pixelmon 9.2.3 베타 + Aeronautics 비공식 Forge 포팅본**으로 전체 월드 기동에 성공했습니다. Minecraft 1.20.1 / Forge 47.4.20 / Java 17의 별도 실험 후보입니다. 아래 1.21.1 개발 조합의 누락 파일을 확보한 것은 아닙니다. [후보 구성·수정·검증 범위](docs/forge-candidate.md)를 참고하세요. N100에서 전체 팩과 물리 구조물의 저장·복구, Windows v9의 새 가져오기·정품 접속·메뉴 검증을 확인했습니다. [Jade 비행체 좌표 보정](docs/jade-sublevel-coordinates.md) 뒤 실제 수직 비행과 정지를 확인했고, 후속 원본 모델·전투 API 검증을 진행하고 있습니다. 최신 공통 JAR도 N100 전체 모드 후보에서 부팅·수치 검사를 통과했습니다.
 
 요청 구성은 Pixelmon + Society: Sunlit Valley + Create Aeronautics이며, 디지몬 데이터팩과 다른 대체 모드는 사용하지 않습니다. 서버 목표는 N100 / Ubuntu / RAM 16 GB / 동시 접속 최대 6명입니다.
 
 Windows 설치는 런처·Java 같은 선행 프로그램을 안내에 따라 설치하고 준비된 모드팩을 가져오는 방식도 허용합니다. 모든 준비 과정을 자동화한 단일 실행 파일은 필수 조건이 아닙니다. 같은 구성의 클라이언트를 설치하고 실제 서버에 접속하는 것이 완료 조건입니다.
 
-## 확인한 공통 기반
+현재 전체 시험 후보는 `PSA-Forge-Full-Experimental-v19.mrpack`(약 1.14 GB)입니다. [Windows 설치 안내](docs/windows-client.md)와 [N100 운영 안내](docs/n100-server.md)를 제공합니다. 모드355개이며 진단은 포함하지 않습니다. 기존 [스타터 오류 수정](docs/pixelmon-starter-disconnect.md)·[ALI 툴팁 수정](docs/ali-client-tooltips.md)에 전리품 JSON 보정을 반영했습니다. 별도 QA 서버에서 [전체 데이터 갱신·변경·복원](docs/datapack-reload-recovery.md)을 통과했고 최신 Opus 독립 리뷰도 수락했습니다. 새 314개 모드 서버 후보는 N100의 별도 준비 경로에서 정지 상태입니다. 현재 운영은 v17·313개로 계속 실행합니다. 운영 교체·새 Windows 가져오기는 아직입니다. 이전 v9은 새 가져오기·7,925개 파일 해시 대조·정품 접속·아이템16개 렌더를 통과했습니다. [당시 실행 기록](evidence/forge-client-v9-launch-windows.json), [진행 상태](docs/progress.md).
+
+## 보존한 최초 1.21.1 조사 기준
 
 - Minecraft 1.21.1 / NeoForge 21.1.262 / Java 21
 - Pixelmon 9.4.1 (사용자가 지정한 공식 사이트의 recommended 배포본)
@@ -29,7 +33,7 @@ Society의 이 개발 브랜치는 정식 1.20.1 모드팩 4.1.5와 동일한 �
 - Pixelmon의 일반 몹 교체도 코드와 실제 실행으로 확인했습니다. 설정만 바꾸면 소·닭·돼지·양·좀비의 월드 추가가 모두 거부됐고, 설정과 데이터 수정을 함께 적용하면 모두 유지됐습니다. 포켓몬 엔티티 추가는 양쪽에서 통과했습니다. `stage`는 고정 Pixelmon JAR의 교체 데이터 71개에 대응하는 KubeJS 수정 데이터와 설정을 생성하고, 생성 파일의 해시를 기록합니다. [범위와 재현 절차](docs/mob-compatibility.md)를 참고하세요. 전체 Society 게임플레이나 자연 스폰 빈도를 검증한 것은 아닙니다.
 - 실제 N100의 새 임시 폴더에 휴대용 Java 21과 NeoForge를 설치하고 Pixelmon + Create + Aeronautics + Sable의 최소 조합을 실행했습니다. 서버 `Done`, 5개 차원의 Rapier 물리 엔진 초기화, 일반 몹 유지 및 포켓몬 엔티티 추가를 확인했습니다. 콘솔 `stop`으로 정상 종료하고 TCP·UDP 시험 포트가 닫힌 것을 확인했습니다. Society를 포함한 전체 팩, 비행·클라이언트 접속·6인 부하 시험은 아니며 서비스도 등록하지 않았습니다. 상세 범위는 `evidence/n100-minimal-smoke.json`에 있습니다.
 
-## 현재 외부 의존성
+## 1.21.1 개발 경로의 외부 의존성
 
 Society 개발자의 설치 기록에는 아래 네 파일이 있지만 공개 다운로드 lock에는 없습니다. 인터넷에서 소스를 추가 조사해 두 개는 빌드했고, 두 개는 아직 확보하지 못했습니다.
 
@@ -52,7 +56,7 @@ Society 개발자의 설치 기록에는 아래 네 파일이 있지만 공개 �
 
 ## 남은 완료 조건
 
-필수 개발 파일 확보 → 전체 서버 기동 → 농사/상점/퀘스트 및 Pixelmon 몹 교체 충돌 검증 → Windows 설치 안내 또는 스크립트 마련과 실제 클라이언트 접속 → Aeronautics 조립/비행 시험 → N100에서 6명 부하 검증.
+최신 클라이언트의 실제 Windows 로그인/접속 재검증 → Pixelmon 포획/전투·Society 농사/경제/진행·Aeronautics 조종 비행 → N100 실제 6인 부하 검증. 1.21.1 경로의 누락 파일은 별도 보존하며 새 Forge 내보내기를 차단하지 않습니다.
 
 현재의 `tools/prepare.py`는 개발용 다운로드/검증 도구입니다. 최종 Windows 원샷 설치기가 아닙니다.
 

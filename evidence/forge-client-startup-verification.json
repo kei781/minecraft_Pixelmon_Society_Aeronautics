@@ -1,0 +1,17 @@
+{
+  "platform": "macOS ARM64; not Windows",
+  "launcher": "Prism 11.1.1 official demo mode",
+  "client_port_sha256": "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de",
+  "heap_max_gib": 8,
+  "old_renderer_verify_error_reproduced": true,
+  "old_realms_button_npe_reproduced": true,
+  "new_verify_error_present": false,
+  "new_realms_button_npe_present": false,
+  "new_crash_reports": 0,
+  "late_fancymenu_initialization_reached": true,
+  "game_window_visually_verified": false,
+  "ui_limitation": "CUA app inventory listed Java Boot, but getApp could not select it by listed ID/name or runtime bundle path. No alternate UI automation used.",
+  "authenticated_connection_tested": false,
+  "demo_restrictions_changed": false,
+  "raw_log_sha256": "473285c35c7fc814440a6f71903a0698f0ae7402211627cb7484d5fe5de0cf82"
+}

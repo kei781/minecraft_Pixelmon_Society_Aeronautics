@@ -1,0 +1,16 @@
+{
+  "macos": {
+    "discovered": 47,
+    "passed": 44,
+    "linux_only_skips": 3,
+    "log_sha256": "e9a5abb16f6e7e77fd03d8793cc9073c1dccfd1a769666c3ad5605a2c5967d36"
+  },
+  "n100_ubuntu": {
+    "discovered": 47,
+    "passed": 47,
+    "skips": 0,
+    "log_sha256": "69183f25a85ede60696436de820a90e9648add98b01093535cf566a06e26c9a1"
+  },
+  "unit_test_fixtures_launched_as_game": false,
+  "real_forge_probe_is_separate_from_fixtures": true
+}

@@ -5,6 +5,7 @@ import io
 import json
 from pathlib import Path
 import tempfile
+import subprocess
 import unittest
 import zipfile
 from unittest.mock import patch
@@ -67,6 +68,7 @@ class ExternalArtifactsTest(unittest.TestCase):
         (self.root / "inputs/orchard.jar").write_bytes(b"candidate orchard")
         for folder in ["config", "defaultconfigs", "kubejs"]:
             (self.root / "upstream/society" / folder).mkdir(parents=True)
+        subprocess.run(["git", "init", "-q", str(self.root / "upstream/society")], check=True)
         # One already-cached file exercises real staging without network access.
         archive_bytes = io.BytesIO()
         with zipfile.ZipFile(archive_bytes, "w") as archive:

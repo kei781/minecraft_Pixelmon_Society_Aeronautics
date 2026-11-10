@@ -1,0 +1,53 @@
+{
+  "official_society_only": {
+    "done": true,
+    "saved_and_stopped": true,
+    "authenticated_players": 0,
+    "error_lines": 459,
+    "error_loggers": {
+      "AllTheLeaks": 1,
+      "AttributeFix": 322,
+      "Every Compat": 2,
+      "mixin": 5,
+      "net.blay09.mods.farmingforblockheads.FarmingForBlockheads": 1,
+      "net.minecraft.advancements.AdvancementList": 53,
+      "net.minecraft.server.ServerAdvancementManager": 19,
+      "net.minecraft.tags.TagLoader": 16,
+      "net.minecraftforge.common.ForgeHooks": 10,
+      "net.minecraftforge.common.loot.LootModifierManager": 1,
+      "net.minecraftforge.fml.loading.RuntimeDistCleaner": 27,
+      "top.theillusivec4.curios.Curios": 2
+    },
+    "raw_log_sha256": "03b1703940efba38dccd263d3344f9baf9376b73a9ef5869f2dbaf130646703a"
+  },
+  "integration_candidate": {
+    "done": true,
+    "saved_and_stopped": true,
+    "authenticated_players": 0,
+    "error_lines": 481,
+    "error_loggers": {
+      "AllTheLeaks": 1,
+      "AttributeFix": 322,
+      "Every Compat": 2,
+      "com.pixelmonmod.pixelmon.Pixelmon": 2,
+      "mixin": 5,
+      "net.blay09.mods.farmingforblockheads.FarmingForBlockheads": 1,
+      "net.minecraft.advancements.AdvancementList": 53,
+      "net.minecraft.server.ServerAdvancementManager": 19,
+      "net.minecraft.tags.TagLoader": 17,
+      "net.minecraft.world.entity.decoration.HangingEntity": 5,
+      "net.minecraftforge.common.ForgeHooks": 10,
+      "net.minecraftforge.common.loot.LootModifierManager": 1,
+      "net.minecraftforge.fml.loading.RuntimeDistCleaner": 41,
+      "top.theillusivec4.curios.Curios": 2
+    },
+    "raw_log_sha256": "25058315c9c3c5999fb1f930384bdb06028213620e09a7177b6ceda4dcfadecf"
+  },
+  "differences": {
+    "com.pixelmonmod.pixelmon.Pixelmon": 2,
+    "net.minecraft.tags.TagLoader": 1,
+    "net.minecraft.world.entity.decoration.HangingEntity": 5,
+    "net.minecraftforge.fml.loading.RuntimeDistCleaner": 14
+  },
+  "scope": "Same Forge 47.4.20, separate fresh worlds on local macOS, not player gameplay. Hanging-entity counts may differ with world generation; a count difference alone is not causal proof."
+}

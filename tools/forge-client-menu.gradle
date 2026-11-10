@@ -1,0 +1,31 @@
+// Reproducible client-only fix and separate diagnostic, using the pinned Forge build.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaClientMenuSource')
+    if (!sourceRoot) throw new GradleException('psaClientMenuSource is required')
+    def root = new File(sourceRoot.toString())
+    [Fix: 'compat/client-menu', Probe: 'tests/forge-menu-probe'].each { mode, relative ->
+        def directory = new File(root, relative)
+        if (!directory.isDirectory()) throw new GradleException('Missing menu sources')
+        def compiler = project.tasks.register("compilePsaMenu${mode}", JavaCompile) {
+            source project.fileTree(directory) { include '**/*.java' }
+            classpath = project.sourceSets.main.compileClasspath
+            destinationDirectory.set(project.layout.buildDirectory.dir("psa-menu-${mode.toLowerCase()}/classes"))
+            options.release.set(17)
+            options.encoding = 'UTF-8'
+            options.compilerArgs += ['-proc:none']
+        }
+        def taskName = "psaMenu${mode}Jar"
+        project.tasks.register(taskName, Jar) {
+            dependsOn compiler
+            archiveFileName.set(mode == 'Fix' ? 'PSA-Client-Menu-Compat-1.1.jar' : 'psa-menu-probe-1.0.jar')
+            from compiler.flatMap { it.destinationDirectory }
+            from new File(directory, 'resources')
+            manifest.attributes('FMLModType': 'MOD')
+            if (mode == 'Fix') manifest.attributes('MixinConfigs': 'psa-client-menu.mixins.json')
+            preserveFileTimestamps = false
+            reproducibleFileOrder = true
+        }
+        project.reobf.create(taskName)
+    }
+}

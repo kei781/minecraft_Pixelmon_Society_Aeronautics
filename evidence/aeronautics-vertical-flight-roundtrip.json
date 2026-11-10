@@ -1,0 +1,247 @@
+{
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "common_sha256": "31e38f3be687d1fa5f95570599abd3ee8e28e65506b2ac872fc3428ecd8426a5",
+  "observer_version": "0.3",
+  "rig_mass": 392.5,
+  "scope": "Actual native hot-air balloon vertical lift carrying a player, with QA height-cap physics pause. Creative game mode with flying=false, not survival or uninterrupted flight. No horizontal steering/propeller validation.",
+  "mode_at_test": {
+    "playerGameType": 1,
+    "flying": false,
+    "mayfly": true,
+    "invulnerable": true
+  },
+  "scripted_lift_or_velocity_changes": false,
+  "camera_reset": "Second run zero-relative-coordinate orientation reset only while landed and lever OFF before ON. No player teleport during lift.",
+  "first_run": {
+    "journal_sha256": "d8b15edec770cab673a47b7079246c8055295a502b931136e3af900d812f4d89",
+    "journal_bytes": 52642,
+    "sample_count": 180,
+    "ready": {
+      "event": "ready",
+      "body": [
+        23.500059127807617,
+        110.3866195678711,
+        7.500049114227295
+      ],
+      "player": [
+        23.50000649536632,
+        104.00000034467442,
+        6.499995413097043
+      ],
+      "mass": 392.5,
+      "lever": "OFF",
+      "elapsed_seconds": 0.475
+    },
+    "first_on": {
+      "event": "sample",
+      "body": [
+        23.500059127807617,
+        110.3866195678711,
+        7.500049114227295
+      ],
+      "player": [
+        23.500006477990517,
+        104.00000161237327,
+        6.499997994665037
+      ],
+      "body_rise": 0.0,
+      "pilot_rise": 1.2676988490056829e-06,
+      "lever": "ON",
+      "physics_paused_by_monitor": false,
+      "elapsed_seconds": 78.463
+    },
+    "maximum_body_rise": 7.5580596923828125,
+    "sample_at_maximum": {
+      "event": "sample",
+      "body": [
+        23.566162109375,
+        117.9446792602539,
+        7.449979305267334
+      ],
+      "player": [
+        23.541995934803253,
+        111.55787054067957,
+        6.462639034464803
+      ],
+      "body_rise": 7.5580596923828125,
+      "pilot_rise": 7.557870196005155,
+      "lever": "ON",
+      "physics_paused_by_monitor": true,
+      "elapsed_seconds": 108.468
+    },
+    "events": [
+      {
+        "event": "ready",
+        "body": [
+          23.500059127807617,
+          110.3866195678711,
+          7.500049114227295
+        ],
+        "player": [
+          23.50000649536632,
+          104.00000034467442,
+          6.499995413097043
+        ],
+        "mass": 392.5,
+        "lever": "OFF",
+        "elapsed_seconds": 0.475
+      },
+      {
+        "event": "height_cap_hold",
+        "body_rise": 6.6723480224609375,
+        "pilot_rise": 6.832307456588538,
+        "elapsed_seconds": 107.613
+      },
+      {
+        "event": "native_safety_off",
+        "not_player_interaction": true,
+        "elapsed_seconds": 180.078
+      },
+      {
+        "event": "monitor_finished",
+        "on_observed": true,
+        "off_after_on_observed": false,
+        "landed_observed": false,
+        "cleanup_errors": [],
+        "elapsed_seconds": 180.138
+      }
+    ]
+  },
+  "second_run": {
+    "journal_sha256": "4517d4ebbad84fc850a9013cbf68798fb8840e0f43526bce13d0a108cc561aba",
+    "journal_bytes": 113245,
+    "sample_count": 403,
+    "first_on": {
+      "event": "sample",
+      "body": [
+        23.55965805053711,
+        110.3866195678711,
+        7.45162296295166
+      ],
+      "player": [
+        23.55914662570512,
+        104.0001621138146,
+        6.451231793103341
+      ],
+      "body_rise": 0.0,
+      "pilot_rise": 6.253698359159898e-07,
+      "lever": "ON",
+      "physics_paused_by_monitor": false,
+      "elapsed_seconds": 350.491
+    },
+    "first_off_after_on": {
+      "event": "sample",
+      "body": [
+        23.489459991455078,
+        118.50902557373047,
+        7.445614337921143
+      ],
+      "player": [
+        23.511698312754834,
+        112.12353815846329,
+        6.445582817851767
+      ],
+      "body_rise": 8.122406005859375,
+      "pilot_rise": 8.12337667001853,
+      "lever": "OFF",
+      "physics_paused_by_monitor": true,
+      "elapsed_seconds": 397.499
+    },
+    "max_body_rise": 8.802139282226562,
+    "sample_at_max": {
+      "event": "sample",
+      "body": [
+        23.488704681396484,
+        119.18875885009766,
+        7.445614337921143
+      ],
+      "player": [
+        23.508602263882363,
+        112.84228153667762,
+        6.445445656635981
+      ],
+      "body_rise": 8.802139282226562,
+      "pilot_rise": 8.842120048232857,
+      "lever": "OFF",
+      "physics_paused_by_monitor": false,
+      "elapsed_seconds": 398.49
+    },
+    "events": [
+      {
+        "event": "ready",
+        "body": [
+          23.55965805053711,
+          110.3866195678711,
+          7.451623439788818
+        ],
+        "player": [
+          23.559146594469706,
+          104.00016148844476,
+          6.4512314071597086
+        ],
+        "mass": 392.5,
+        "lever": "OFF",
+        "elapsed_seconds": 0.438
+      },
+      {
+        "event": "height_cap_hold",
+        "body_rise": 7.3879547119140625,
+        "pilot_rise": 7.470698404597371,
+        "elapsed_seconds": 379.558
+      },
+      {
+        "event": "off_observed_physics_resumed",
+        "elapsed_seconds": 397.552
+      },
+      {
+        "event": "landed_after_off",
+        "body_rise": 0.0503082275390625,
+        "pilot_rise": 0.09334133372391307,
+        "elapsed_seconds": 402.491
+      },
+      {
+        "event": "monitor_finished",
+        "on_observed": true,
+        "off_after_on_observed": true,
+        "landed_observed": true,
+        "cleanup_errors": [],
+        "elapsed_seconds": 402.548
+      }
+    ]
+  },
+  "second_run_client_f8_local_kst": {
+    "on": "2026-11-09 19:10:09.410",
+    "off": "2026-11-09 19:10:56.015"
+  },
+  "second_run_settled_native_control": {
+    "utc": "2026-11-09 10:13:47",
+    "body": [
+      23.497739791870117,
+      110.3866195678711,
+      7.44552755355835
+    ],
+    "player": [
+      23.497427604769538,
+      104.00006970497618,
+      6.4450810060959105
+    ],
+    "velocity_zero": true,
+    "lever": "OFF"
+  },
+  "first_run_result": "Real lift/carry; 180-second timeout used native safety OFF. Later client OFF is not relabelled as cause. Later native pose confirmed landing.",
+  "second_run_result": "Actual client ON/OFF, monitor observed OFF, resumed physics and confirmed landing before600second deadline; no native safety OFF.",
+  "normal_exit_after_tests": {
+    "windows_exit_code": 0,
+    "java_processes_remaining": 0,
+    "kst": "2026-11-09 19:20:36",
+    "shutdown_exception": "One Pixelmon Discord SDK TRANSACTION_ABORTED during cleanup matched earlier baseline; not counted as flight error."
+  },
+  "remaining": [
+    "Survival-mode flight",
+    "Uninterrupted flight",
+    "Horizontal steering",
+    "Six authenticated players/load",
+    "Full item render traversal"
+  ]
+}

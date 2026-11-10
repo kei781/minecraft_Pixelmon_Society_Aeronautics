@@ -1,0 +1,41 @@
+{
+  "head_sha": "2c2a82af2a0bc06569ca4a72df0f7288c5537e6b",
+  "verdict": "FINDINGS",
+  "summary": "대상 커밋 2c2a82a(diff 65600fb..2c2a82a)를 requirements.md, threads.json, 스냅샷의 실제 코드와 대조했다. 미해결 스레드 2건은 모두 코드 수정으로 해소된 것을 확인해 resolve했다. 새 지적은 P3 두 건이다.\n\n해소 확인:\n- R1 P2(공식 입력 근거): `forge-candidate-lock.json`에 Modrinth CDN URL, 배포처 sha1/sha512, 크기가 들어갔다(Pixelmon 9.2.3, Aeronautics 1.3.0 리소스 원본). CurseForge 파일 8980858의 URL, 공개 sha1, 크기도 고정됐다. `stage()`는 기존 로컬 해시 검사 뒤 `verify_published()`로 크기와 모든 배포처 해시를 대조한다. 이 검사는 대상 디렉터리를 만들기 전에 끝나고, 결과와 lock SHA256은 영수증에 남는다. `restore_forge_assets.py`도 같은 함수로 Aeronautics 원본 JAR을 검증한다. requirements.md에는 배포처 해시 검증 문장이 다시 명시됐다.\n- R1 P3(리소스 생성 순서): `forge_resources.py`에 `flatten`/`combine`/`canonical-jar` 서브커맨드가 생겼고, CLI 테스트가 flatten→combine 결과 수와 내용을 실제로 단언한다. `run_forge_datagen.py`는 항상 `-PpsaDataRecipe`를 넘긴다. 패치된 Gradle은 이 속성이 있으면 `src/main/resources`를 쓰므로 complete-resources 없이 데이터 생성 준비가 된다. 최종 build는 complete-resources만 쓰므로 순환 문제가 사라졌다. forge-candidate.md에는 패치 → 호환 소스 복사 → 아트 복원 → datagen → flatten → combine → build → canonical-jar 순서가 적혔다.\n\n그 밖에 확인한 점:\n- `canonical_jar`는 중복 항목과 MANIFEST 누락을 거부한다. `xb` 모드로 써서 기존 파일을 덮지 않고, 타임스탬프와 권한을 고정한다. 테스트는 바이트 보존, 서로 다른 타임스탬프 입력에서 같은 출력, 기존 출력 거부를 단언한다.\n- `restore()`는 모든 충돌과 심볼릭 링크를 먼저 검사한 뒤에 쓰기를 시작한다. 수작업 lang만 보존하고, 기존 파일은 덮지 않는다.\n- KubeJS probe는 FULL 청크 큐가 null이면 실패시킨다. 첫 실행에서 미래 틱을 넣고, 재시작 뒤 `hasScheduledTick`가 false이면 예외로 실패시키는 실제 단언이 있다.\n\n새 지적:\n- P3: `verify_published`에 단위 테스트가 없다. lock 항목의 해시가 비어 있으면 크기만 맞아도 `verified: True`가 된다.\n- P3: 정규화 전 첫 빌드의 원본 SHA256이 evidence에 없다. 그래서 핵심 기동 증거(5ac3cda9…)와 현재 스테이저가 받는 JAR(0f7d5724…)의 연결을 저장소 자료로 확인할 수 없다.\n\n실행이 필요한 검증 요청(Codex):\n(1) 25개 단위 테스트와 새 `verify_published` 테스트를 실행해 결과를 보고해 달라.\n(2) 기존 5ac3cda9… JAR에 `canonical-jar`를 적용해 SHA256이 0f7d5724…인지 확인하고 기록해 달라. 다르면 0f7d5724… JAR로 새 월드 전체 기동(퀘스트 수, 스크립트 오류 수, 몹 공존)을 다시 확인해 달라.\n\n이 리뷰에서는 테스트와 빌드를 실행하지 않았다.",
+  "resolve_thread_ids": [
+    "PRRT_kwDOVm1ZLc60_smI",
+    "PRRT_kwDOVm1ZLc60_smM"
+  ],
+  "replies": [
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc60_smI",
+      "body": "2c2a82a에서 해소된 것을 확인했다. `forge-candidate-lock.json`에 Modrinth 버전 KjmzoXMR의 CDN URL, sha1/sha512, 크기와 CurseForge 8980858의 URL, 공개 sha1, 크기가 고정됐다. `stage_forge_candidate.stage()`는 대상 디렉터리를 만들기 전에 `verify_published()`로 크기와 모든 배포처 해시를 대조하고, 그 결과와 lock SHA256을 영수증에 기록한다. requirements.md에도 배포처 해시 검증 요구가 다시 명시됐다. 남은 개선점(빈 해시 집합 허용, 테스트 부재)은 별도 P3로 남긴다."
+    },
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc60_smM",
+      "body": "2c2a82a에서 해소된 것을 확인했다. `forge_resources.py`에 `combine`/`canonical-jar` 서브커맨드가 추가됐고, `test_cli_supports_flatten_then_combine`이 CLI 결과를 단언한다. `run_forge_datagen.py`가 항상 `-PpsaDataRecipe`를 넘기므로, 패치된 sourceSets는 datagen 준비 때 `src/main/resources`를 쓴다. 따라서 complete-resources가 없어도 순환 없이 실행된다. forge-candidate.md에 패치부터 canonical-jar까지의 순서와 명령이 명시됐다. 새 소스 재빌드의 실제 실행 결과는 리뷰어가 직접 재현하지 않았고, evidence 기록을 근거로 했다."
+    }
+  ],
+  "new_comments": [
+    {
+      "path": "tools/stage_forge_candidate.py",
+      "line": 32,
+      "priority": "P3",
+      "title": "verify_published가 빈 해시 집합을 통과시키고 테스트가 없음",
+      "body": "`hashes = file.get(\"hashes\", file.get(\"upstream_hashes\"))` 다음의 `for algorithm, expected in hashes.items()`는 해시 dict가 비어 있으면 한 번도 돌지 않는다. 그러면 크기만 맞아도 `\"verified\": True`를 돌려준다. 이후 lock을 갱신하다가 `upstream_hashes: {}`가 들어가거나 키 이름이 바뀌면 배포처 해시 검증이 조용히 빠진다. requirements.md의 'Verify official input files against their distribution metadata's published hashes and sizes'가 보장되지 않는 셈이다. 지금 lock의 세 항목에는 해시가 있어 실제 결함은 아니다.\n\n이 함수에는 `item`/`file` 분기와 `hashes`/`upstream_hashes` 분기가 있다. 그런데 `tests/test_stage_forge_candidate.py`는 이 함수를 직접 호출하지 않는다. 기존 `stage()` 테스트는 로컬 해시 단계에서 먼저 실패하므로 이 코드에 닿지 않는다.\n\n제안: (1) `hashes`가 비어 있지 않은 dict이고 최소한 sha1 또는 sha512를 포함하는지 확인하고, 아니면 실패시킨다. (2) LOCK을 임시 파일로 바꾼 단위 테스트를 추가한다. 여기서 크기 불일치, 해시 불일치, 빈 해시 실패, 그리고 society_server(`upstream_hashes`)와 pixelmon(`file.hashes`) 두 형태의 성공을 단언한다."
+    },
+    {
+      "path": "evidence/forge-clean-rebuild.json",
+      "line": 12,
+      "priority": "P3",
+      "title": "정규화 전 첫 빌드 원본 해시가 없어 기동 증거와 현재 핀의 연결을 확인할 수 없음",
+      "body": "스테이저의 `PORT_SHA256`은 5ac3cda9…에서 정규화 JAR 0f7d5724…로 바뀌었다. 하지만 이 파일에는 `\"same_as_first_build\": false`와 `canonical_first_sha256`만 있고, 정규화 전 첫 빌드의 원본 SHA256이 없다. 퀘스트 1,142개, 스크립트 오류 0건, 몹 공존, 태그 같은 핵심 Phase 2 기동 증거는 여전히 5ac3cda9…를 대상으로 한다(`evidence/forge-full-startup.json` 11행, `evidence/forge-build-verification.json` 12행).\n\n그런데 이번 커밋에서 `PSA_PROVENANCE.txt`와 `licenses/AERONAUTICS-MIT.txt`가 새로 추가됐고, 문서는 이 파일들을 리소스에 복사하라고 한다. 그래서 '첫 빌드'가 5ac3cda9…였는지, 이 파일들이 들어간 새 빌드였는지 저장소 자료만으로는 알 수 없다. 첫 빌드가 5ac3cda9…가 아니라면, 현재 스테이저가 받는 JAR로 실행한 증거는 저장 월드 재시작(`forge-saved-world-verification.json`)뿐이다. 이 증거에는 퀘스트 수, 스크립트 오류 수, 몹 공존 결과가 없다.\n\n제안: `first_build_raw_sha256`(또는 `canonical-jar`에 5ac3cda9…를 넣은 결과)을 기록해 두 해시를 연결한다. 연결되지 않으면 0f7d5724…로 새 월드 기동 증거를 갱신한다."
+    }
+  ],
+  "out_of_scope": [
+    "forge-candidate-lock.json의 society_server `metadata_url`은 공식 CurseForge API가 아니라 서드파티 프록시(api.curse.tools)다. sha1 값이 CurseForge 공식 파일 페이지나 공식 API의 값과 같은지는 외부 접속이 필요해 확인하지 못했다. 공식 출처와 한 번 대조한 기록을 남기기를 권한다.",
+    "R1 out_of_scope에서 지적한 `eula.txt` 자동 기록은 그대로다. 격리 시험 범위에서는 허용되지만, N100 배포 경로에서 재사용할 때는 운영자가 명시적으로 동의하도록 분리해야 한다.",
+    "`/sable` 외에 권한 0으로 등록된 포팅 명령이 있는지는 제삼자 소스가 스냅샷에 없어 여전히 확인하지 못했다."
+  ],
+  "blocked_reasons": []
+}

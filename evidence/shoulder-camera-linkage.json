@@ -1,0 +1,25 @@
+{
+  "original_version": "4.16.0",
+  "replacement_version": "1.20.1-5.0.4+forge",
+  "original_required_classes": {
+    "com/github/exopandora/shouldersurfing/client/ShoulderSurfing.class": false,
+    "com/github/exopandora/shouldersurfing/api/client/Perspective.class": false
+  },
+  "replacement_required_classes": {
+    "com/github/exopandora/shouldersurfing/client/ShoulderSurfing.class": true,
+    "com/github/exopandora/shouldersurfing/api/client/Perspective.class": true
+  },
+  "published_hashes": {
+    "sha1": "18d9c31cd3412bee1ea01d053b242319fab5551b",
+    "sha512": "447fbf26ac9578c6c76af9064b19ee680f6b76d5e342ab914f96050e4a0fa6e229f1a34e3becf47f0d5dc70561453998a2376953f8e582c8f5acad457c3fee5f"
+  },
+  "replacement_url": "https://cdn.modrinth.com/data/kepjj2sy/versions/3GtgLS8j/ShoulderSurfing-Forge-1.20.1-5.0.4.jar",
+  "source_metadata_url": "https://api.modrinth.com/v2/version/3GtgLS8j",
+  "game_runtime_tested": false,
+  "class_major_versions": [
+    61
+  ],
+  "java_17_compatible_bytecode": true,
+  "perspective_of_descriptor": "(Lnet/minecraft/client/CameraType;Z)Lcom/github/exopandora/shouldersurfing/api/client/Perspective;",
+  "togglePerspective_void_descriptor_verified": true
+}

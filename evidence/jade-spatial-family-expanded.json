@@ -1,0 +1,248 @@
+{
+  "scope": "Constant-pool candidates only; method bodies and runtime controls required.",
+  "expanded_family": true,
+  "top_level_jars": 1,
+  "nested_jars": 0,
+  "class_entries": 242,
+  "hit_location_classes": 3,
+  "candidate_classes": 5,
+  "category_class_counts": {
+    "point_distance": 3,
+    "entity_distance": 1,
+    "aabb_constructor": 2,
+    "entity_query": 2,
+    "aabb_clip": 1,
+    "aabb_contains": 1
+  },
+  "jar_candidate_counts": {
+    "Jade-1.20.1-Forge-11.13.2.jar": 5
+  },
+  "matching_limits": "SRG identifiers match any owner, including client and mod subclasses. Named distance APIs match Minecraft owners only; mod-owned named wrappers are not resolved by hierarchy. AABB-to-List query signatures match any owner.",
+  "candidates": [
+    {
+      "jar": "Jade-1.20.1-Forge-11.13.2.jar",
+      "class": "snownee/jade/addon/core/DistanceProvider.class",
+      "class_sha256": "44ab0bd9982d63cc6071bcaa5047f49e154cc78fb5030c5a1a20538eae775b1f",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [],
+      "family_references": [
+        [
+          "point_distance",
+          "net/minecraft/world/phys/Vec3",
+          "m_82554_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ]
+      ],
+      "family_method_candidates": [
+        {
+          "method": "public static java.lang.String distance(snownee.jade.api.Accessor<?>);",
+          "hit_reads": 1,
+          "math_calls": 0,
+          "query_calls": 0,
+          "family_category_calls": {
+            "point_distance": 1
+          }
+        }
+      ]
+    },
+    {
+      "jar": "Jade-1.20.1-Forge-11.13.2.jar",
+      "class": "snownee/jade/impl/BlockAccessorImpl.class",
+      "class_sha256": "448a46c6f452c05fdcbb05c6e6fbbc882de2952bdd581f8375143580db7cc9c7",
+      "hit_location_references": [],
+      "math_references": [
+        [
+          "net/minecraft/core/BlockPos",
+          "m_123331_",
+          "(Lnet/minecraft/core/Vec3i;)D"
+        ]
+      ],
+      "family_references": [
+        [
+          "point_distance",
+          "net/minecraft/core/BlockPos",
+          "m_123331_",
+          "(Lnet/minecraft/core/Vec3i;)D"
+        ]
+      ],
+      "family_method_candidates": [
+        {
+          "method": "private static void lambda$handleRequest$0(snownee.jade.api.BlockAccessor, net.minecraft.server.level.ServerPlayer, java.util.function.Consumer);",
+          "hit_reads": 0,
+          "math_calls": 1,
+          "query_calls": 0,
+          "family_category_calls": {
+            "point_distance": 1
+          }
+        }
+      ]
+    },
+    {
+      "jar": "Jade-1.20.1-Forge-11.13.2.jar",
+      "class": "snownee/jade/impl/EntityAccessorImpl.class",
+      "class_sha256": "9a0e1a8adaacb4488310b1f142a408efb58adb4eb08f20d9ebce9ba1b5a07b5c",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/EntityHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [],
+      "family_references": [
+        [
+          "entity_distance",
+          "net/minecraft/server/level/ServerPlayer",
+          "m_20280_",
+          "(Lnet/minecraft/world/entity/Entity;)D"
+        ]
+      ],
+      "family_method_candidates": [
+        {
+          "method": "private static void lambda$handleRequest$0(snownee.jade.api.EntityAccessor, net.minecraft.server.level.ServerPlayer, java.util.function.Consumer);",
+          "hit_reads": 0,
+          "math_calls": 0,
+          "query_calls": 0,
+          "family_category_calls": {
+            "entity_distance": 1
+          }
+        }
+      ]
+    },
+    {
+      "jar": "Jade-1.20.1-Forge-11.13.2.jar",
+      "class": "snownee/jade/overlay/DatapackBlockManager.class",
+      "class_sha256": "09b3abc30ef38ee853459877f90f766efe197d37c1f9cc847bd34e6bf706ed76",
+      "hit_location_references": [],
+      "math_references": [],
+      "family_references": [
+        [
+          "aabb_constructor",
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/core/BlockPos;)V"
+        ],
+        [
+          "entity_query",
+          "net/minecraft/world/level/LevelAccessor",
+          "m_6443_",
+          "(Ljava/lang/Class;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;)Ljava/util/List;"
+        ]
+      ],
+      "family_method_candidates": [
+        {
+          "method": "public static net.minecraft.world.item.ItemStack getFakeBlock(net.minecraft.world.level.LevelAccessor, net.minecraft.core.BlockPos);",
+          "hit_reads": 0,
+          "math_calls": 1,
+          "query_calls": 0,
+          "family_category_calls": {
+            "aabb_constructor": 1,
+            "entity_query": 1
+          }
+        }
+      ]
+    },
+    {
+      "jar": "Jade-1.20.1-Forge-11.13.2.jar",
+      "class": "snownee/jade/overlay/RayTracing.class",
+      "class_sha256": "935633dae36c15b4f0009b857e3504342b2b0b95b820d4d01828f1f7f52dd689",
+      "hit_location_references": [
+        [
+          "net/minecraft/world/phys/HitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/EntityHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ],
+        [
+          "net/minecraft/world/phys/BlockHitResult",
+          "m_82450_",
+          "()Lnet/minecraft/world/phys/Vec3;"
+        ]
+      ],
+      "math_references": [
+        [
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ],
+        [
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ],
+      "family_references": [
+        [
+          "entity_query",
+          "net/minecraft/world/level/Level",
+          "m_6249_",
+          "(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;)Ljava/util/List;"
+        ],
+        [
+          "aabb_contains",
+          "net/minecraft/world/phys/AABB",
+          "m_82390_",
+          "(Lnet/minecraft/world/phys/Vec3;)Z"
+        ],
+        [
+          "aabb_clip",
+          "net/minecraft/world/phys/AABB",
+          "m_82371_",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)Ljava/util/Optional;"
+        ],
+        [
+          "point_distance",
+          "net/minecraft/world/phys/Vec3",
+          "m_82557_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ],
+        [
+          "point_distance",
+          "net/minecraft/world/phys/Vec3",
+          "m_82554_",
+          "(Lnet/minecraft/world/phys/Vec3;)D"
+        ],
+        [
+          "aabb_constructor",
+          "net/minecraft/world/phys/AABB",
+          "<init>",
+          "(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V"
+        ]
+      ],
+      "family_method_candidates": [
+        {
+          "method": "public static net.minecraft.world.phys.EntityHitResult getEntityHitResult(net.minecraft.world.level.Level, net.minecraft.world.entity.Entity, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.AABB, java.util.function.Predicate<net.minecraft.world.entity.Entity>);",
+          "hit_reads": 0,
+          "math_calls": 1,
+          "query_calls": 1,
+          "family_category_calls": {
+            "entity_query": 1,
+            "aabb_contains": 1,
+            "aabb_clip": 1,
+            "point_distance": 1
+          }
+        },
+        {
+          "method": "public net.minecraft.world.phys.HitResult rayTrace(net.minecraft.world.entity.Entity, double);",
+          "hit_reads": 5,
+          "math_calls": 3,
+          "query_calls": 1,
+          "family_category_calls": {
+            "point_distance": 3,
+            "aabb_constructor": 1
+          }
+        }
+      ]
+    }
+  ]
+}

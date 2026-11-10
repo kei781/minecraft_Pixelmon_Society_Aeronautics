@@ -1,0 +1,77 @@
+{
+  "scope": "authenticated Windows local hash/trace results plus independently checked N100 mod hashes and authentication log aggregates; no raw Windows files transferred",
+  "common_mod_count": 313,
+  "common_mismatches": 0,
+  "canonical_manifest_format": "UTF8 without BOM; LF; ordinal relative path order; sha256 + two spaces + relative path + LF",
+  "n100_common_jar_set_sha256": "fd39fefd2b6c5f9408108d96603629e2a438c289169f1100168ea66cce5b5e74",
+  "windows_common_jar_set_sha256": "fd39fefd2b6c5f9408108d96603629e2a438c289169f1100168ea66cce5b5e74",
+  "n100_port_sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+  "windows_port_sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+  "candidate_install_verified_utc": "2026-11-09T00:28:40.086877+00:00",
+  "authentication_link": {
+    "scope": "aggregate links only; no account/address/device identifiers",
+    "candidate_install_verified_utc": "2026-11-09T00:28:40.086877+00:00",
+    "authenticated_joins_after_candidate_install": 4,
+    "all_observed_join_sources_match_designated_windows_device": true,
+    "join_timestamps_utc": [
+      "2026-11-09T00:32:17.099000+00:00",
+      "2026-11-09T00:36:54.825000+00:00",
+      "2026-11-09T01:18:54.162000+00:00",
+      "2026-11-09T01:20:54.423000+00:00"
+    ],
+    "server_log_timezone_utc_verified": true,
+    "current_production_mod_hashes_verified": true,
+    "private_log_sha256": "4ac15eacc45ec3be8e06151d3e093624d57868c3e6bbe7745bbce40144770d07"
+  },
+  "trace_comparison": {
+    "probe_version": "0.3",
+    "windows_trace_sha256": "1bed9269373ea519df6857828d45e25f5d31a9e1ee9cce4cafc13d13ee8cdbbf",
+    "reference_trace_sha256": "3fcaf3888dd33d9ccf5ae5a68457a200633463fcec2ee8839be1918a22e91316",
+    "comparator_sha256": "cebc38f6512bc607baf9022d5dbefc9ba03eb6b038550858ee22a4de13f2ac5d",
+    "reference": "pinned full common-mod Mac dedicated server, not a full N100 registration trace",
+    "shared_owners": 339,
+    "different_owners": 0,
+    "missing_required_owners": [],
+    "left_only_owners": [],
+    "right_only_owners": [],
+    "allocator_identity_includes_static_initializer": true
+  },
+  "probe_04_runtime": {
+    "probe_sha256": "faca1432a3d688be283ce6da470edf974d32b6beca2f29cd29699b54928b151d",
+    "same_jvm_confirmed": true,
+    "jvm_started_utc": "2026-11-09T01:17:45+00:00",
+    "first_join_utc": "2026-11-09T01:18:54+00:00",
+    "disconnect_utc": "2026-11-09T01:20:15+00:00",
+    "second_join_utc": "2026-11-09T01:20:55+00:00",
+    "snapshots": [
+      {
+        "filename": "player-sync-session-1-player-1.json",
+        "connection_session": 1,
+        "player_snapshot": 1,
+        "sha256": "edba1ef962f705ec75dc9b71cecaa0e89b1db7faa111527779ce813cf5ad8d84"
+      },
+      {
+        "filename": "player-sync-session-2-player-1.json",
+        "connection_session": 2,
+        "player_snapshot": 1,
+        "sha256": "4bf0843dee6986eea01844e0894d91a60b76e9977f3ba2ca15b54bf38ad40c6e"
+      }
+    ],
+    "player_fields_equal": 10,
+    "field_type_or_packet_processing_failures": 0,
+    "party_and_inventory_persisted": true
+  },
+  "ubuntu_controller_tests": {
+    "commit": "8373bccce71b3991da850f1ccec956f6f8ad9837",
+    "discovered": 56,
+    "passed": 56,
+    "skipped": 0,
+    "private_log_sha256": "61e36c31b6312fc04c952117485cc363463e4f6ec72329ab16f1531c56e3275e"
+  },
+  "remaining_work": [
+    "Tank GUI reports zero despite server1000mB; menu-width investigation remains open.",
+    "Flag UI and physical CarryOn input remain unverified.",
+    "Bulk content, capture/battle, farming/economy/progression, piloted flight, actual six-player load and final overall review remain open."
+  ],
+  "all_gameplay_or_overall_goals_complete": false
+}

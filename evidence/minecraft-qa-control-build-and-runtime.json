@@ -1,0 +1,30 @@
+{
+  "files": 2,
+  "sha256": "b6ffd918acf0b00f9c6253e55ec320108f94d421597598fbbefc78f427bc1637",
+  "bytes": 3833,
+  "source_sha256": "a320a8a966e489e88d562649a5d638b050c8bd171fde8378cd3cc52ecc955da9",
+  "manifest_sha256": "1feab07cd467a3fcb932520df747c6fd66e96e21acc6d64e9b33b2d58a87865d",
+  "javac_version": "javac 17.0.21",
+  "agent_class": "dev.psa.qacontrol.MinecraftQaControl",
+  "production_mod": false,
+  "actual_runtime_artifact_byte_identical": true,
+  "private_player_pack_excluded": true,
+  "qa_mods_directory_excluded": true,
+  "native_actions": [
+    "status",
+    "reload",
+    "stop"
+  ],
+  "scope": "Local opt-in QA helper, native callbacks only; not a player mod or authentication tool.",
+  "actual_02_reload_controls": [
+    "921e8299-9f62-421b-9231-45501db430d0",
+    "7e55b91e-9eb7-4a1a-ac3a-2f315273c657"
+  ],
+  "existing_output_preserved_negative": true,
+  "mods_output_rejected_negative": true,
+  "actual_02_alias_controls": [
+    "54a742c4-1dae-4273-8ac6-cee42545604d",
+    "4bba66cf-ab98-4479-a1bc-372a30946f56"
+  ],
+  "manifest_source_sha256": "2b0bb017b8050ddc37b35edd241a2d47f521cf0e9353d9a89ad0d7f29973d1bc"
+}

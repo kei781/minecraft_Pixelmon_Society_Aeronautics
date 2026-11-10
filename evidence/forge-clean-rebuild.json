@@ -1,0 +1,28 @@
+{
+  "prepare_exit_code": 0,
+  "generator_exit_code": 0,
+  "launcher_sha256": "a98f8a269bb5b462851f28310cbf934b2a48f34a8d1140ec7c212d055257a3ec",
+  "generator_log_sha256": "9acac048f469494c0d01d91238e25eb2dfe929b8b5344b5bf870fbbc3f63f7eb",
+  "source_commit": "c026749ab4d2c7a29693d8f67617be76bac73601",
+  "fresh_git_archive": true,
+  "complete_resources_absent_before_datagen": true,
+  "build_exit_code": 0,
+  "derived_jar_sha256": "8d4f08af4ede3008365272d55dfc83d16d6e2937ef5fbc9d168a41a4dd051d8b",
+  "same_as_first_build": false,
+  "jar_metadata_sha256": {
+    "META-INF/mods.toml": "05f45015e6f80b480b18a92d7f252263ecf56475ba9d76c8bdec797b21314e88",
+    "psa-forge.mixins.json": "8a479bc49ecf8109311638c385e76bb24444860d2a9abee0dae508829a262d02"
+  },
+  "all_4166_file_contents_identical": true,
+  "zip_metadata_differed": true,
+  "canonical_first_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
+  "canonical_rebuild_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
+  "canonical_byte_identical": true,
+  "first_build_raw_sha256": "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367",
+  "canonical_first_input_sha256": "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367",
+  "canonical_identity_recheck": {
+    "input_sha256": "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367",
+    "output_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
+    "files": 4166
+  }
+}

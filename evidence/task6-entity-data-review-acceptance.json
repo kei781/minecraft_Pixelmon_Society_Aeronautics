@@ -1,0 +1,37 @@
+{
+  "task": 6,
+  "scope": "Player/CarryOn allocation order, TankCart allocation owner, same-pattern audit and diagnostic evidence; not full game acceptance",
+  "base": "394798c096c0a9fd5ef104e697a992e95213f391",
+  "reviewed_head": "ea8cf339765fa3b657f72c22fb6005cf4dc7ec2d",
+  "reviewed_code_head": "8373bccce71b3991da850f1ccec956f6f8ad9837",
+  "pr": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/pull/3",
+  "review_rounds": 3,
+  "requested_model": "claude-opus-5-5",
+  "reported_models": [
+    "claude-opus-5-5"
+  ],
+  "model_policy": {
+    "policy": "latest-opus",
+    "source": "https://www.anthropic.com/claude/opus",
+    "source_sha256": "829e4b158e365c1da7bdb8335f9352ba43c96db9a564264783f2c2ec43dd9eb9",
+    "checked_at": "2026-11-09T01:35:17.071684+00:00"
+  },
+  "verdict": "CLEAN",
+  "bridge_applied": true,
+  "actual_unresolved_threads": 0,
+  "ci_checks_configured": false,
+  "controller_final_tests": {
+    "ubuntu_passed": 56,
+    "ubuntu_skipped": 0,
+    "macos_passed": 53,
+    "macos_linux_only_skipped": 3,
+    "ubuntu_private_log_sha256": "38e202233292a5a24744594bea21c20b7ab5c716034529766e5217227531f4cc",
+    "macos_log_sha256": "0f2f1e962ccda0b6d42999d38fe2c36f3ad2c31cd5cccb829975115460971801"
+  },
+  "production_port_sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+  "paired_common_jar_set_sha256": "fd39fefd2b6c5f9408108d96603629e2a438c289169f1100168ea66cce5b5e74",
+  "windows_verification": "evidence/windows-entity-data-verification.json",
+  "next_open_fault": "Tank GUI zero at server1000mB; runtime entity ID251992 crosses signed16bit menu property range. Battery uses same path; inspect all menu-data candidates.",
+  "overall_goals_complete": false,
+  "default_branch_merged": false
+}

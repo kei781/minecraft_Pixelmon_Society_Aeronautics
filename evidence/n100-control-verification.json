@@ -1,0 +1,7 @@
+{
+  "linux_tests_run": 2,
+  "exit_code": 0,
+  "eula_implicit_acceptance_rejected": true,
+  "foreign_tmux_session_preserved": true,
+  "real_game_session_changed_by_test": false
+}

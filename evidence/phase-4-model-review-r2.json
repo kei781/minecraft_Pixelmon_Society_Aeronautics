@@ -1,0 +1,21 @@
+{
+  "head_sha": "da039597a890a0e87e8f15b8c091f03cf82fd9e7",
+  "verdict": "CLEAN",
+  "summary": "대상 커밋 da03959(PR #2, 증분 BASE 4b637b7, 전체 BASE 303935e)를 R1 P2 스레드와 요구사항에 대조했다. 이번 증분은 tests/forge-model-probe/ModelProbe.java 한 곳의 코드 변경과 문서·증거 갱신으로 이뤄져 있다.\n\nP2 판정: 실제 코드로 해소되었다.\n- 새 `geometry(BakedModel)`는 null 면과 6방향 면의 quad를 고정 시드 `RandomSource.create(0)`로 모은다. 각 quad의 서명은 정수 꼭짓점 배열 전체, sprite 이름, tint, 방향, shade로 만들고, 서명 목록을 정렬해 반환한다.\n- `missingGeometry`는 `event.getModelManager().getMissingModel()`에서 같은 방식으로 구한다. 대상 모델의 서명 목록이 이와 같으면 `missing=true`가 된다.\n- 최종 조건은 `real && quads > 0 && !missing && loader.equals(\"forge:obj\")`다. `missing`의 기본값은 true다. JSON 읽기나 베이크 중 예외가 나면 catch로 넘어가 missing=true, quads=0이 유지되므로 실패 쪽으로 닫힌다. `geometry(missingModel)`는 try 밖에 있어 예외가 나면 SUMMARY 행이 아예 찍히지 않는다. 이것도 거짓 통과가 아니라 드러나는 실패다.\n- R1이 지적한 흐름은 이렇다. JSON은 `forge:obj`인데 OBJ 베이크가 실패해 ModernFix 래퍼가 6면 큐브를 돌려주는 경우다. 이 경우 이제 서명이 같아져 `passed=false`가 된다. 증거의 baseline 17개는 모두 `matches_missing_geometry=true`다. 이는 ModernFix 래퍼의 기하가 기준 누락 모델과 실제로 같다는 전제와 맞는다. `negative_obj_control`에서는 steering_wheel/wheel이 forge:obj·팩 선택 상태에서도 6면/true/false이고 전체 16/17로 기록되어, 수정이 요구한 음성 대조군도 포함됐다.\n- 증거의 `pass_conditions` 4개 항목과 문서의 판정 설명은 코드 조건과 일치한다. 문서의 재현 절차(SUMMARY 행 확인)도 이제 자동 판정만으로 충분하다.\n\n새로 생긴 문제는 찾지 못했다. 이번 증분은 플레이어 내보내기 도구나 서버 쪽 코드를 건드리지 않는다. 진단 프로브가 배포물에 없다는 증거 필드도 그대로다.\n\n실행 검증 한계: 리뷰어는 빌드·테스트·게임을 실행하지 않았다. 다음 항목은 모두 작성자 보고일 뿐 이 리뷰에서 확인하지 않았다.\n- Java 프로브 재빌드 성공\n- 실제 클라이언트 세 번 재측정(v4 0/17, v5 17/17, 손상 대조군 16/17)\n- Ubuntu/macOS 집중 회귀 검사 13/13\n필요하면 원본 로그 해시(db99bc73…, 239f199b…, eabe8b33…)와 실제 로그의 `PSA_MODEL_PROBE` 행을 Codex가 대조하기를 권한다.",
+  "resolve_thread_ids": [
+    "PRRT_kwDOVm1ZLc61AsDs"
+  ],
+  "replies": [
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc61AsDs",
+      "body": "da03959에서 실제 코드로 해소된 것을 확인했다. ModelProbe.java:79-90의 `geometry()`는 null 면과 6방향 면의 quad 서명(int 꼭짓점 배열, sprite 이름, tint, 방향, shade)을 정렬해 만든다. :53에서 기준 missing model의 서명을 구하고, :67에서 대상 모델과 비교한다. :72는 `!missing`을 통과 조건에 추가했다. `missing`의 기본값은 true이므로 JSON 읽기나 베이크 중 예외가 나도 실패로 처리된다. 지적한 흐름(JSON은 forge:obj, OBJ 베이크 실패, ModernFix 6면 래퍼)은 서명 일치로 passed=false가 된다. 증거에도 baseline 17개 전부 matches_missing_geometry=true, 손상 OBJ 대조군 wheel 6면/true/false, SUMMARY 16/17이 기록돼 있다. 재측정 실행과 로그 내용은 리뷰어가 직접 실행해 확인하지 않았다. 판정 근거는 코드 흐름과 공개 증거의 정합성이다."
+    }
+  ],
+  "new_comments": [],
+  "out_of_scope": [
+    "Windows 정품 로그인·접속, Pixelmon 포획/전투, Society 농사·경제·진행, Aeronautics 조종 비행·셰이더 외곽선, N100 실제 6인 부하, 최종 전체 리뷰는 이번 변경 범위 밖이며 여전히 미완료다. 문서와 증거도 그렇게 명시한다.",
+    "프로브는 누락 모델 큐브와 정확히 같은 경우만 실패로 잡는다. 예를 들어 MTL·텍스처 일부가 빠져 기하는 생성되고 sprite만 missingno인 부분 실패는 통과할 수 있다. 문서가 시각적 텍스처·모양 검증이 아니라고 밝히고 있으므로 결함으로 보지 않는다. 실제 화면 확인은 이후 phase에서 필요하다.",
+    "R1에서 남긴 내용이 그대로 남아 있다. Society zip에 최상위 overrides/options.txt가 있으면 configureddefaults보다 우선할 수 있다. 리뷰어는 고정된 zip 내용을 볼 수 없어 이를 확인하지 못했다. 실제 v5 가져오기에서는 compatibility_pack_selected=true로 기록됐다."
+  ],
+  "blocked_reasons": []
+}

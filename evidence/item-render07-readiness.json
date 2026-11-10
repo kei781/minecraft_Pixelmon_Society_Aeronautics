@@ -1,0 +1,42 @@
+{
+  "artifact_sha256": "c84e8a2bb83b07ce54cedb644ffea953bf0a7335978f9fb1819ce5af43a80310",
+  "normal_session_javap_comparison": "a9cd8afe8a2fea865b42c32bb9428d3b5089accea4211ef25408721c76527cbd",
+  "controller_results": [
+    {
+      "state": {
+        "run": "71e6df8d-8590-463e-b26b-f413670c0b1a",
+        "result": "complete",
+        "world_generation": "a6eccefa-6640-4608-9d85-ea2c1d79edc9",
+        "dimension": "minecraft:overworld",
+        "cleanup_complete": true,
+        "cleanup_failed": false,
+        "cleanup_injection_triggered": false,
+        "failed_cleanup_entity_uuids": [],
+        "deliberate_crash_test": false,
+        "fixture_pickup_delay": 32766,
+        "catalog_total": 17239,
+        "catalog_start": 0,
+        "selected_count": 16,
+        "completed_render_returns": 0,
+        "completed_model_verified_returns": 0,
+        "completed_native_spawns": 16,
+        "mode": "native_server_spawn_only",
+        "batch": 4,
+        "active": false,
+        "last_operation": "default_stack_and_spawn:aeronautics:green_envelope_encased_shaft",
+        "owned_fixture_chunk_ticket_count": 0,
+        "owned_entities": [],
+        "owned_fixture_chunks": [],
+        "attempted_ids": [],
+        "scope": "native server item spawning only; no client/render attempt"
+      },
+      "summary_sha256": "3ce25f0237798d21d725fd3b99671cfd7cd2071fda5a7ff8273004364e752630",
+      "wire_header_negative_controls_pass": true
+    },
+    {
+      "missing_real_player_does_not_create_new_session": true,
+      "actual_render_ack_not_executed": true
+    }
+  ],
+  "authenticated_render_ack_fault_execution_complete": false
+}

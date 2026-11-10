@@ -1,0 +1,22 @@
+{
+  "society_server": {
+    "source_page": "https://www.curseforge.com/minecraft/modpacks/society-sunlit-valley/files/8980858",
+    "download_url": "https://edge.forgecdn.net/files/8980/858/SERVER-PACK-Society-Sunlit-Valley-4.1.5A.zip",
+    "size": 555156026,
+    "upstream_hashes": {
+      "sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
+    },
+    "verified": true
+  },
+  "pixelmon": {
+    "source_page": "https://modrinth.com/mod/pixelmon/version/KjmzoXMR",
+    "download_url": "https://cdn.modrinth.com/data/59ZceYlU/versions/KjmzoXMR/Pixelmon-1.20.1-9.2.3-universal.jar",
+    "size": 411152237,
+    "upstream_hashes": {
+      "sha512": "3a9c6f375214c6d93c6cce8235e8a206e8f9731be8e168a254e78539087080796d97f0b22cb9a6db09d901c72e2e1ae53b9f2484761fb310479ce9f84ac9b145",
+      "sha1": "d1505ce56f683053e5f4b69b2c61374d1ea54f9d"
+    },
+    "verified": true
+  },
+  "lock_sha256": "f5590d2e2658a84769bf9487e2cfa971c53222dca7031bde4670751c8ee7ed9b"
+}

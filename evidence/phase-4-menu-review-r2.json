@@ -1,0 +1,27 @@
+{
+  "head_sha": "8b7c91d9f10993a26a57aa9bfbc22d53f17cb258",
+  "verdict": "CLEAN",
+  "summary": "Task 5 R2(BASE 762d002 → HEAD 8b7c91d)를 읽기 전용으로 검토했다. 빌드·테스트·게임은 실행하지 않았다.\n\n확인한 내용:\n- `PixelmonPauseMenuMixin.java:30`: 메서드 첫머리에서 `PauseScreen`이 아니면 바로 반환한다. 이 검사는 ModList 조회·리플렉션·파일 I/O·위젯 변경보다 앞에 있다. 따라서 `@At(\"RETURN\")`이 모든 return 지점에 주입돼도 다른 화면에는 영향이 없다(R1 P3 해소).\n- `:34-36`: FancyMenu의 `ScreenCustomization.isCustomizationEnabledForScreen(Screen)`를 리플렉션으로 호출하고, 결과가 `Boolean.TRUE`일 때만 다음 단계로 간다. 해시 검사는 그 뒤에 있다. 클래스나 메서드가 없거나 호출에서 예외가 나면 catch(Exception)에서 반환하고, null이나 false가 와도 반환한다. 즉 어떤 실패에서도 보정을 하지 않아 원본 동작이 유지된다. Forge 1.20.1 런타임은 Mojang 클래스 이름을 쓰므로 `Screen.class` 인자 타입이 맞는다. 리플렉션 대상인 FancyMenu 메서드 이름도 난독화되지 않는다.\n- 증거(`evidence/pause-menu-review-controls.json`)의 해시를 직접 대조했다.\n  - 보정본 changed-layout 배율 2·3·4의 `widget_state_sha256`(97391d…, b372ab…, 25b33a…)이 원본 해시와 같다.\n  - disabled-layout과 disabled-screen(c70ad2…, 7d641b…, 6fb125…)도 원본 해시와 같다.\n  - disabled-screen은 레이아웃 해시가 원본 9ff6…인데도 API가 false다. 그래서 Feedback·Report가 원본처럼 표시·활성 상태로 남는다. R1 P2의 재현 경로(해시는 일치하지만 화면 사용자 지정이 꺼진 경우)가 실제로 차단됐다.\n  - 기본 상태는 보정본에서 겹침 0/0/0이고, Wiki·Credits·Pixelmon·Discord가 1/1/1/1로 남았다. 이 결과는 리플렉션 호출이 실제로 성공해 true를 반환했다는 간접 근거도 된다. 호출이 실패했다면 기본 상태에서도 보정이 적용되지 않았을 것이다.\n- MenuProbe의 4가지 시나리오 처리:\n  - 1바이트 추가, `is_enabled` 치환, PauseScreen 블록 제거를 수행한다. 치환할 표시가 없으면 예외로 실패한다.\n  - 시나리오마다 공개 reload API를 호출한다.\n  - 정상 완료와 실패 양쪽에서 원본 파일을 복원한다.\n  - 진단 코드는 테스트 경로에만 있고 exporter에는 들어가지 않는다.\n- exporter의 고정 해시는 512ca9ea…로 바뀌었다. 단위 테스트는 `patch.object`로 해시를 바꿔 넣으므로 이번 고정값 변경의 영향을 받지 않는다.\n\n비차단 참고:\n- `docs/pause-menu-compatibility.md:34`가 링크하는 `evidence/pause-menu-verification.json`은 이전 helper 564a…로 측정한 기록이다. 이 helper는 대체됐다. 최신 helper의 측정은 40행에서 링크한 새 증거가 담당한다. 34행 근처에 '이전 helper 기준' 표시를 덧붙이면 혼동이 줄 것이다.\n\n추가 실행 검증 요청(작성자 측):\n- 최신 v7(SHA256 1d244e9b…)을 GUI로 가져온 뒤 payload 해시를 검증하고, 실제로 포함된 helper가 512ca9ea…인지 확인해 달라.\n- Windows에서 v6에 단독 JAR를 추가한 경우와 v7을 가져온 경우 각각 일시정지 메뉴를 다시 확인해 달라.\n\n두 스레드는 코드 수정과 증거 해시로 해소를 확인했다. 새 지적은 없다. 최종 병합 권한은 없다.",
+  "resolve_thread_ids": [
+    "PRRT_kwDOVm1ZLc61B-RR",
+    "PRRT_kwDOVm1ZLc61B-RU"
+  ],
+  "replies": [
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc61B-RR",
+      "body": "8b7c91d에서 해소를 확인했다. `PixelmonPauseMenuMixin.java:34-36`이 FancyMenu `isCustomizationEnabledForScreen(Screen)`의 결과가 `Boolean.TRUE`일 때만 해시 검사로 넘어간다. 클래스·메서드가 없거나 예외, null, false가 나오면 모두 반환해 원본 동작을 유지한다.\n\n증거 해시를 직접 대조했다. 보정본의 changed-layout, disabled-layout, disabled-screen × 배율 2·3·4, 모두 9개의 `widget_state_sha256`이 원본 기준과 같다. disabled-screen은 레이아웃 해시가 원본 9ff6…인데도 API가 false여서 Feedback·Report가 원본처럼 유지된다. 이는 R1에서 지적한 재현 경로다. 기본 상태는 겹침 2/2/2→0/0/0이고 네 버튼이 보존됐다. 원시 로그는 비공개라 독립 확인하지 못했다. 다만 코드 흐름과 공개 해시가 서로 맞는다."
+    },
+    {
+      "thread_id": "PRRT_kwDOVm1ZLc61B-RU",
+      "body": "8b7c91d에서 해소를 확인했다. `PixelmonPauseMenuMixin.java:30`의 `if (!(event.getScreen() instanceof PauseScreen)) return;`이 ModList 조회·리플렉션·파일 I/O·위젯 변경보다 앞에 있다. 그래서 RETURN 주입이 다른 화면의 return 지점에서 실행돼도 아무것도 하지 않는다."
+    }
+  ],
+  "new_comments": [],
+  "out_of_scope": [
+    "최신 v7 .mrpack(SHA256 1d244e9b…, helper 512ca9ea…)의 GUI 가져오기·payload 해시 검증이 아직 끝나지 않았다. 앞서 검증한 8b663c77…은 대체된 helper 564a…를 담고 있었다.",
+    "Windows에서 v6에 단독 helper를 추가했을 때와 v7을 가져왔을 때의 일시정지 메뉴 시각 재확인, 그리고 실제 URL 클릭 확인이 미완료다(증거의 windows_visual_retest_done=false).",
+    "`evidence/pause-menu-verification.json`은 대체된 helper 564a…의 측정 기록이다. 이 PR의 diff 범위 밖 문서(docs/pause-menu-compatibility.md:34)가 이 파일을 최종 측정처럼 링크하고 있어, 이전 helper 기준이라는 표시가 있으면 좋겠다.",
+    "두 완료 목표 전체(포획·전투, 농사·경제·진행, 조종 비행, 실제 6인 부하, 최종 전체 리뷰)는 Task 5 범위 밖이며 아직 미완료다."
+  ],
+  "blocked_reasons": []
+}

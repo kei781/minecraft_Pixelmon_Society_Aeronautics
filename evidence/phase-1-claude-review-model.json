@@ -1,0 +1,39 @@
+{
+  "scope": "Phase 1 source/exporter only; not complete three-project integration",
+  "reviews": [
+    {
+      "round": 1,
+      "head_sha": "df239b6884669af3aaa63d8c9a8072b08150e563",
+      "requested_model": "claude-opus-5-5",
+      "reported_models": [
+        "claude-opus-5-5"
+      ],
+      "model_policy": {
+        "policy": "latest-opus",
+        "source": "https://www.anthropic.com/claude/opus",
+        "source_sha256": "829e4b158e365c1da7bdb8335f9352ba43c96db9a564264783f2c2ec43dd9eb9",
+        "checked_at": "2026-11-08T08:24:16.266690+00:00"
+      },
+      "effort": "high",
+      "result_sha256": "43b46bd5e808c0ace1c7307deb18a5549e9ec1b679465072f2cd74b74d24ee03",
+      "raw_sha256": "2ba258f12fcbaee584c7b107a0fa4b4a5cec4252ccf4a60d87ec51f19ad76463"
+    },
+    {
+      "round": 2,
+      "head_sha": "395a36ca203d14d8198d0f6e862b5c95183dddf6",
+      "requested_model": "claude-opus-5-5",
+      "reported_models": [
+        "claude-opus-5-5"
+      ],
+      "model_policy": {
+        "policy": "latest-opus",
+        "source": "https://www.anthropic.com/claude/opus",
+        "source_sha256": "829e4b158e365c1da7bdb8335f9352ba43c96db9a564264783f2c2ec43dd9eb9",
+        "checked_at": "2026-11-08T08:29:23.565742+00:00"
+      },
+      "effort": "high",
+      "result_sha256": "ddcb82a8dacdccb51b22c7c8bb61beb9900e49a96966a528eed185bd98d18692",
+      "raw_sha256": "62fea0f6d7f9bf1fdc41a51f0da426b115c8ee739f6fc5dd2168d24cbff1af7c"
+    }
+  ]
+}

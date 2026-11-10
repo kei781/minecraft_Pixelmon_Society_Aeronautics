@@ -1,0 +1,49 @@
+// Diagnostic artifacts built against the pinned Forge mapped classpath.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaShaderProbeSource')
+    if (!sourceRoot) throw new GradleException('psaShaderProbeSource is required')
+    def directory = new File(sourceRoot.toString())
+    def compatibility = new File(directory, '../../compat/forge-port')
+    def pixelmonPath = project.findProperty('psaShaderPixelmonJar')
+    if (!pixelmonPath) throw new GradleException('psaShaderPixelmonJar is required')
+    def pixelmon = new File(pixelmonPath.toString())
+    if (!pixelmon.isFile() || java.nio.file.Files.isSymbolicLink(pixelmon.toPath()))
+        throw new GradleException('A regular pinned Pixelmon JAR is required')
+    def digest = java.security.MessageDigest.getInstance('SHA-256')
+    pixelmon.withInputStream { input ->
+        byte[] buffer = new byte[65536]
+        int count
+        while ((count = input.read(buffer)) != -1) digest.update(buffer, 0, count)
+    }
+    if (digest.digest().encodeHex().toString() != '8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a')
+        throw new GradleException('Unexpected Pixelmon input identity')
+    def compiler = project.tasks.register('compilePsaShaderProbe', JavaCompile) {
+        source new File(directory, 'ShaderProbe.java')
+        source new File(compatibility, 'PixelmonShaderCodecMixin.java')
+        source new File(compatibility, 'PixelmonShaderColorMixin.java')
+        classpath = project.sourceSets.main.compileClasspath + project.files(pixelmon)
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-shader-probe/classes'))
+        options.release.set(17)
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-proc:none']
+    }
+    ['Baseline', 'Patched'].each { mode ->
+        def taskName = "psaShader${mode}Jar"
+        project.tasks.register(taskName, Jar) {
+            dependsOn compiler
+            archiveFileName.set("psa-shader-${mode.toLowerCase()}-probe-1.0.jar")
+            from(compiler.flatMap { it.destinationDirectory }) {
+                if (mode == 'Baseline') include 'dev/psa/shaderprobe/**'
+            }
+            from(new File(directory, 'resources')) {
+                if (mode == 'Baseline') exclude 'psa-shader-probe.mixins.json'
+            }
+            manifest.attributes('FMLModType': 'MOD')
+            if (mode == 'Patched') manifest.attributes('MixinConfigs': 'psa-shader-probe.mixins.json')
+            preserveFileTimestamps = false
+            reproducibleFileOrder = true
+        }
+        project.reobf.create(taskName)
+    }
+}

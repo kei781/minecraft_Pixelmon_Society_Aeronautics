@@ -1,0 +1,31 @@
+{
+  "previous_port_sha256": "0f7d57241f73b3de723a8c7fd2a7dba89e2d415323a9a49e0bd1c8ea66d12d08",
+  "canonical_port_sha256": "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de",
+  "independent_source_tree_rebuild_same_bytes": true,
+  "files": 4167,
+  "changed_entries": [
+    "PSA_PROVENANCE.txt",
+    "aeronautics.refmap.json",
+    "dev/ryanhcode/sable/forge/mixin/block_outline_render/LevelRendererMixin.class",
+    "psa-forge.mixins.json"
+  ],
+  "added_entries": [
+    "dev/psa/compat/PixelmonMenuCompatMixin.class"
+  ],
+  "patch_sha256": "49499f37f59f882c3d047c5f97e9cc2efe7e80d1e8a3b769865910f5f1d06f4c",
+  "raw_build_sha256": "911e5061bbb59ef3a9caae2df6392242db16f72a9dca4066c9fdfe3b067e3c53",
+  "repro_raw_build_sha256": "f973e6f95b287e4e37e43ccb25d8c8351d3a2c940e29fca12dfd0f4b812e3120",
+  "full_datagen_rerun": false,
+  "note": "Generated game data unchanged; rebuilt changed client sources and compatibility metadata in two previously prepared independent source trees.",
+  "fresh_pinned_archive_build": {
+    "both_patches_apply_cleanly": true,
+    "java_source_files": 1702,
+    "all_java_sources_match_rebuilt_tree": true,
+    "pinned_source_archive_sha256": "2903b21ff4e4de5967453853d8fcff1139dab0e7f81bcba3a39e15f88a05d002",
+    "build_exit_code": 0,
+    "all_gradle_tasks_executed": 13,
+    "build_seconds": 38,
+    "canonical_sha256": "cc31e4ab2684567361aab8fedc0be25bf437ea29f3b8626fa412ad16bd01a8de",
+    "generated_resources_reused": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-08T08:31:26.216267+00:00",
+  "scope": "Possible source lineage only; neither missing original has been acquired.",
+  "sunrise_source_hint": "Pinned sunrisegardening-common.toml contains a dewdrop:waterable comment; this is a possible lineage clue, not identity proof.",
+  "upstream": {
+    "repo": "https://github.com/Chakyl/Dew-Drop-Farmland-growth",
+    "commit": "610f117103a652bae309385b5e21c753feaeeb37",
+    "minecraft": "1.20.1",
+    "loader": "Forge 47.3.5",
+    "mod_id": "dew_drop_farmland_growth",
+    "license": "CC-BY-NC-SA-4.0",
+    "branches": [
+      "master",
+      "patch-1"
+    ]
+  },
+  "port": {
+    "repo": "https://github.com/yansunsky/Dew-Drop-Farmland-growth-NeoForge1.21.1",
+    "branch": "1.21.1-neoforge",
+    "commit": "2f3a44faac49b02f9a68fe01b849e357a5e44838",
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.235",
+    "mod_id": "dew_drop_farmland_growth",
+    "version": "10.0.0",
+    "readme_declares_incomplete_port": true,
+    "same_as_sunrisegardening": false,
+    "installed_as_replacement": false
+  },
+  "other_forks_observed": [
+    "TheGoldenD/Dew-Drop-Farmland-port",
+    "SiZai/Dew-Drop-Farmland-growth",
+    "Momoirosch/Dew-Drop-Farmland-growth",
+    "2ds-community-l10n/Dew-Drop-Farmland-growth"
+  ],
+  "decision": "No lock or original external artifact hashes were changed. A renamed or incomplete alternative does not establish the requested Sunrise behavior. Existing required-artifact gate remains."
+}

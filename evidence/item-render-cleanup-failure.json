@@ -1,0 +1,47 @@
+{
+  "diagnostic_sha256": "d0307911edccd9762be20f0a63e2d809e712528402dc084832c9b4e92e2f3acc",
+  "state": {
+    "run": "d5efd394-8b73-4cc0-924c-dab14713fe13",
+    "result": "owned_cleanup_exception:java.lang.IllegalStateException:PSA_RENDER deliberate EntityLeaveLevelEvent cleanup failure",
+    "world_generation": "46a414fc-5594-4c07-82b6-51e422db09a1",
+    "dimension": "minecraft:overworld",
+    "cleanup_complete": false,
+    "cleanup_failed": true,
+    "cleanup_injection_triggered": true,
+    "first_failure": "owned_cleanup_exception:java.lang.IllegalStateException:PSA_RENDER deliberate EntityLeaveLevelEvent cleanup failure",
+    "failed_cleanup_entity_uuids": [
+      "6a5a8677-1f5c-4f47-afa5-160e1d804fc5"
+    ],
+    "deliberate_crash_test": false,
+    "fixture_pickup_delay": 32766,
+    "catalog_total": 17239,
+    "catalog_start": 0,
+    "selected_count": 4,
+    "completed_render_returns": 0,
+    "completed_model_verified_returns": 0,
+    "completed_native_spawns": 4,
+    "mode": "native_server_spawn_only",
+    "batch": 0,
+    "active": false,
+    "last_operation": "default_stack_and_spawn:aeronautics:black_envelope",
+    "owned_fixture_chunk_ticket_count": 1,
+    "owned_entities": [],
+    "owned_fixture_chunks": [
+      {
+        "x": 0,
+        "z": 0
+      }
+    ],
+    "attempted_ids": [
+      "aeronautics:adjustable_burner",
+      "aeronautics:andesite_propeller",
+      "aeronautics:aviators_goggles",
+      "aeronautics:black_envelope"
+    ],
+    "scope": "native server item spawning only; no client/render attempt"
+  },
+  "checkpoint_sha256": "acf1fe71ee9a6c99c6e330b6917690235eb0debdd3a115c4901199ce4664055f",
+  "new_in_process_run_rejection_logged": true,
+  "restart_rejected_after_partial_cleanup": true,
+  "failed_checkpoint_preserved_in_owned_world_recovery": true
+}

@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "filename": "PSA-Forge-Full-Experimental-v7.mrpack",
+    "sha256": "1d244e9b40d3791b66ab4e1114a66f164f06bbfa4398819cab0ff3e1ffc00224",
+    "size": 1137777993,
+    "version_id": "psa-forge-1e71edba47bc",
+    "mod_jars": 354,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7926,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "actual_final_macos_prism_gui_import": true,
+  "returned_to_instance_list_after_import": true,
+  "payload_sha256_checked": 7925,
+  "mismatches": [],
+  "mod_jars": 354,
+  "test_probe_jars": 0,
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "client_only_menu_mod_sha256": "512ca9eaedd2120a01e40a1cdbcf9550a986aeb46c4c3808ff414032071f924e",
+  "v6_payload_delta": {
+    "added": [
+      "mods/PSA-Client-Menu-Compat-1.0.jar"
+    ],
+    "removed": [],
+    "changed": []
+  },
+  "shared_server_mods_changed": false,
+  "windows_visual_or_gameplay_proven_by_import": false,
+  "checked_at": "2026-11-08T15:57:16.248503+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "phase": 4,
+  "task": 5,
+  "scope": "Client pause-menu fix preparation and file delivery only",
+  "status": "code-reviewed-and-artifacts-delivered-windows-retest-pending",
+  "reviewed_code_sha": "8b7c91d9f10993a26a57aa9bfbc22d53f17cb258",
+  "review_model": "claude-opus-5-5",
+  "review_round": 2,
+  "verdict": "CLEAN",
+  "pr": 2,
+  "actual_unresolved_pr_threads": 0,
+  "ci_checks_configured": false,
+  "ci_observation": "gh pr checks: no checks reported; not claimed as CI pass",
+  "actual_full_client_snapshots": 24,
+  "default_visible_overlaps_baseline": [
+    2,
+    2,
+    2
+  ],
+  "default_visible_overlaps_fixed": [
+    0,
+    0,
+    0
+  ],
+  "control_states": [
+    "changed-layout",
+    "disabled-layout",
+    "disabled-screen"
+  ],
+  "control_widget_states_exactly_matching_reference": 9,
+  "original_test_configs_restored": true,
+  "python_tests": {
+    "discovered": 49,
+    "passed": 46,
+    "linux_only_skipped": 3
+  },
+  "standalone_client_helper": {
+    "filename": "PSA-Client-Menu-Compat-1.0.jar",
+    "size": 3952,
+    "sha256": "512ca9eaedd2120a01e40a1cdbcf9550a986aeb46c4c3808ff414032071f924e",
+    "same_in_test_export_and_import": true,
+    "independent_builds_match": true
+  },
+  "client_artifact": {
+    "filename": "PSA-Forge-Full-Experimental-v7.mrpack",
+    "sha256": "1d244e9b40d3791b66ab4e1114a66f164f06bbfa4398819cab0ff3e1ffc00224",
+    "size": 1137777993,
+    "version_id": "psa-forge-1e71edba47bc",
+    "mod_jars": 354,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7926,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "actual_final_gui_import_payload_hashes_matched": 7925,
+  "actual_final_gui_import_test_probe_jars": 0,
+  "windows_taildrop_transfers_succeeded": 4,
+  "windows_receiver_hash_directly_verified": false,
+  "windows_after_fix_visual_retest_done": false,
+  "n100_game_profile_changed_for_menu_fix": false,
+  "phase4_complete": false,
+  "all_final_goals_complete": false,
+  "remaining": [
+    "Windows standalone helper on v6 and fresh v7 same-screen/URL retests",
+    "Windows final artifact filehash and screenshot evidence",
+    "Pixelmon capture/battle",
+    "Society farming/economy/progression",
+    "Piloted Aeronautics flight",
+    "Actual six-player N100 load",
+    "Final overall review"
+  ],
+  "checked_at": "2026-11-08T16:00:27.574230+00:00"
+}

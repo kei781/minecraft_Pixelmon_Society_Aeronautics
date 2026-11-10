@@ -1,0 +1,33 @@
+{
+  "society_commit": "5e7c8fa9073a86f9ac74c7cbf087551e5872016c",
+  "tracked_config_data_files": 2996,
+  "tracked_config_data_symlinks": 0,
+  "scope": "config, defaultconfigs, kubejs; tracked_files uses git ls-files --stage -z and rejects symlinks including parent directories",
+  "windows_example_prefix": "C:\\Users\\Player\\AppData\\Roaming\\PrismLauncher\\instances\\PSA-integration\\minecraft\\",
+  "longest_relative_path": "kubejs/assets/buildinggadgets2/patchouli_books/buildinggadgets2book/ko_kr/entries/mech_build_animations.json",
+  "longest_relative_length": 108,
+  "example_absolute_length": 190,
+  "over_259_in_example": 0,
+  "limitation": "Measured sample path, not a guarantee for arbitrary usernames, install roots or instance names. Windows execution is still untested.",
+  "resource_files": 89,
+  "resource_sha256_after_tracked_copy_change": "90e4c21ccbb5f86e2e77beee47d5be5f3f508464330382a6dbb2a925cc297eee",
+  "regressions_passed": [
+    "Git ignored local marker file is absent from the archive",
+    "Git ignored symlink to an external marker is absent from the archive",
+    "Tracked symlink is rejected before output creation",
+    "Parent directory symlink is rejected",
+    "Real git-index fixture contains original tracked configuration"
+  ],
+  "unit_tests_passed": 14,
+  "real_ignored_marker_check": {
+    "path": "config/.psa-export-probe.bak",
+    "git_check_ignore": true,
+    "verify_upstream_clean_with_marker": true,
+    "tracked_selection_excluded_marker": true,
+    "tracked_configuration_copy_excluded_marker": true,
+    "diagnostic_export_excluded_marker": true,
+    "marker_removed_and_upstream_clean": true,
+    "full_staging_not_executed": "Two real mandatory artifacts remain missing; test did not bypass their gate."
+  },
+  "test_log_sha256": "00db2898ac22c9f33d7f32021534ca33bf6a27a336e80ea070c53f6f418ed4de"
+}

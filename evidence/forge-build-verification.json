@@ -1,0 +1,18 @@
+{
+  "prepare_exit_code": 0,
+  "generator_exit_code": 0,
+  "launcher_sha256": "4038a61645af0561e8a2f0986f11c02a7f422eee4872a938d9827ecc51c5ba14",
+  "generator_log_sha256": "4df35070947b77d49b27f952520c545970d6c10d4ca27fb634414ab7a6446c57",
+  "flattened_resources": 901,
+  "shared_generated_tags_merged": 3,
+  "combined_resources": 2113,
+  "official_art_files_restored_privately": 1394,
+  "authored_language_files_preserved": 43,
+  "private_candidate_binary": {
+    "sha256": "5ac3cda9475e3623429daa368d54c751294c0fdd5f05eab97826be601731c367",
+    "size": 44726220,
+    "constructor_patch": true,
+    "sable_admin_permission": 2,
+    "build_exit_code": 0
+  }
+}

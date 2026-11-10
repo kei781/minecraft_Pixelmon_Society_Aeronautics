@@ -1,0 +1,51 @@
+// Diagnostic only; invoke reobfPsaDiscountProbeJar for the actual Forge runtime.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaDiscountProbeSource')
+    if (!sourceRoot) throw new GradleException('psaDiscountProbeSource is required')
+    def directory = new File(sourceRoot.toString())
+    def compiler = project.tasks.register('compilePsaDiscountProbe', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java' }
+        classpath = project.sourceSets.main.compileClasspath
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-discount-probe/classes'))
+        options.release.set(17)
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-proc:none']
+    }
+    [Baseline: 'psaDiscountProbeJar', Patched: 'psaDiscountPatchedProbeJar'].each { mode, taskName ->
+        project.tasks.register(taskName, Jar) {
+            dependsOn compiler
+            archiveFileName.set(mode == 'Baseline' ? 'psa-discount-probe-0.1.jar' : 'psa-discount-patched-probe-0.1.jar')
+            duplicatesStrategy = DuplicatesStrategy.FAIL
+            from compiler.flatMap { it.destinationDirectory }
+            from(new File(directory, 'resources')) {
+                if (mode == 'Baseline') exclude 'psa-discount-patched.mixins.json'
+            }
+            if (mode == 'Patched') {
+                // Resolve only for this variant; baseline builds require no helper artifact.
+                from({
+                    def argument = project.findProperty('psaDiscountHelperJar')
+                    if (!argument) throw new GradleException('psaDiscountHelperJar is required for patched probe')
+                    def helper = project.file(argument.toString())
+                    if (!helper.isFile() || java.nio.file.Files.isSymbolicLink(helper.toPath()))
+                        throw new GradleException('A regular pinned helper JAR is required')
+                    def digest = java.security.MessageDigest.getInstance('SHA-256')
+                    helper.withInputStream { input ->
+                        byte[] buffer = new byte[65536]
+                        int length
+                        while ((length = input.read(buffer)) != -1) digest.update(buffer, 0, length)
+                    }
+                    if (digest.digest().encodeHex().toString() != '44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9')
+                        throw new GradleException('Unexpected discount helper identity')
+                    project.zipTree(helper)
+                }) { include 'dev/psa/clientmenu/mixin/BountifulDiscountMixin.class' }
+            }
+            manifest.attributes('FMLModType': 'MOD', 'MixinConfigs': mode == 'Baseline'
+                    ? 'psa-discount-probe.mixins.json'
+                    : 'psa-discount-probe.mixins.json,psa-discount-patched.mixins.json')
+            preserveFileTimestamps = false
+            reproducibleFileOrder = true
+        }
+        project.reobf.create(taskName)
+    }
+}

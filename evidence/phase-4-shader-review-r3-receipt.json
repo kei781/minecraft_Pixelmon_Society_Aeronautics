@@ -1,0 +1,39 @@
+{
+  "context": {
+    "repo": "kei781/minecraft_Pixelmon_Society_Aeronautics",
+    "pr": 2,
+    "url": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/pull/2",
+    "head_sha": "eeb70b8375d341e8407f62e88dc50ec1378690b9",
+    "base_sha": "3f5c33c2fe0d7525c488f9e919c983c49b3b8536",
+    "pr_base_sha": "303935e8d214a1ffb252a97a2fa26343522233ea",
+    "tag": "[Task 4]",
+    "run_id": "06cae71eeaef49da851bd59ab676ff76",
+    "skipped_symlinks": [],
+    "author_worktree_included": false
+  },
+  "model_policy": {
+    "policy": "latest-opus",
+    "source": "https://www.anthropic.com/claude/opus",
+    "source_sha256": "829e4b158e365c1da7bdb8335f9352ba43c96db9a564264783f2c2ec43dd9eb9",
+    "checked_at": "2026-11-08T14:32:58.630383+00:00"
+  },
+  "requested_model": "claude-opus-5-5",
+  "reported_models": [
+    "claude-opus-5-5"
+  ],
+  "requested_effort": "high",
+  "cli_version": "2.1.319 (Claude Code)",
+  "session_id": "715328a0-b580-4997-b26a-f2085b7bbb59",
+  "total_cost_usd": 0.8562667999999999,
+  "result_sha256": "d88efb99f0e2ef76f169b43054755dbdd794ac040bbafe088aa91cc6b1efa8c4",
+  "raw_sha256": "f311e201935b5a27359ea119f598f9baa86a4503b54ce6053bbeb11f5cbaf9f1",
+  "packet_hashes": {
+    "context.json": "d2f65eb5cbfbae180489367a616837af87819d149738ffce97b17e10823e9aee",
+    "pr.json": "936535cd718d845107afcc2feb0b28da9490d130472812949880c40153816cb3",
+    "pr.diff": "ec35b6f39374b39904771d193f2ea0349184d55e98f8a960d99e5abc10d33956",
+    "pr-full.diff": "ed42b97b3a2e51829d705dfb2b43d9e1a84658cca5e720951740c1721d030f56",
+    "threads.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "prompt.md": "048142b155e2e1dfe212281116d2148a46c44cb7982cf9c47addb3040b76b0c3",
+    "requirements.md": "1575739fe062dd737557fe744d50c5682c7c424d91880ee93ed8028a6e97ac6e"
+  }
+}

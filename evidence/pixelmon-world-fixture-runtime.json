@@ -1,0 +1,171 @@
+{
+  "scope": "Adapted original native battle assertions with real world entities; not an all-gameplay pass",
+  "diagnostic_build": {
+    "artifact_sha256": "879335050172ec9c013bce85465e56072979e69ba63080a8a695a989bb37e213",
+    "bytes": 25148,
+    "prepared_build_projects": 2,
+    "byte_identical": true,
+    "guard_class_bytes_same_as_four_real_refusal_controls": true,
+    "sources": {
+      "tests/forge-pixelmon-fixture/FixtureMixinPlugin.java": "33dc48cdf01ab5d9cf22e3fe95559bc07bfb7bdff2be4d043d9121fe3ca9097f",
+      "tests/forge-pixelmon-fixture/PixelmonFixture.java": "b0fc1c975ea7409f315496b120290294dedcd58c53ae21a7032a52471cfde046",
+      "tests/forge-pixelmon-fixture/mixin/ClangorousSoulblazeCorrectBoostAmountTestFixtureMixin.java": "35e9dac1e60dc68c6278df5279b14a9d640effb801a92daf9a3b7e5cc3f7a1a6",
+      "tests/forge-pixelmon-fixture/mixin/DancerTestFixtureMixin.java": "9b0f4a2bccc3e657a2939ebe75773799a52138f48751ed14eb27d397cc34ed33",
+      "tests/forge-pixelmon-fixture/mixin/HiddenPowerMaxMoveTypingTestFixtureMixin.java": "550dd1752e170da2d14c466ad2c86f23ea4de56de96f8d5c0ca62032752043e2",
+      "tests/forge-pixelmon-fixture/mixin/NonExtremeWeatherFailsDuringDeltaStreamTestFixtureMixin.java": "28e6a5d3699a71067ec20980a6b90386afb392cc20fcddeb810a6a4e842a7c1b",
+      "tests/forge-pixelmon-fixture/mixin/ShedinjaHPDynamaxTestFixtureMixin.java": "b79ca855e340b164cd09cba1e8da86afbf9b604ea68d846eb6b2a11b9a12b6f7",
+      "tests/forge-pixelmon-fixture/mixin/ShellTrapTestFixtureMixin.java": "2bc088b3436c7b595712bdd5fa0ef7bd44ffe6aa52cd5c61f397ec41c095ab3f",
+      "tests/forge-pixelmon-fixture/mixin/ShieldsDownRemovesHazardsTestFixtureMixin.java": "55580d22ee85331b9b55c10c7182271fd7def14fa863b87dc397ea194d5ef145",
+      "tests/forge-pixelmon-fixture/mixin/SpammableDestinyBondTestFixtureMixin.java": "62932ca934aab5f381822dff285939d8147f4c96e1030b975c87445eb4ce12fd",
+      "tests/forge-pixelmon-fixture/mixin/SplashTestFixtureMixin.java": "ca7a6607242381676e9f8b5025f1c41b6a482b3244096b2ab8c94ee5e5307f68",
+      "tests/forge-pixelmon-fixture/mixin/TypeTestingFixtureMixin.java": "e99e9faad9e10e02bad197bc4a950d0575b8eee7e41d2eb27cd54335ab71ff04",
+      "tests/forge-pixelmon-fixture/resources/META-INF/mods.toml": "3ca1d30cf4034f78f86845c30c8697cd5dd5f6e60fde5755f57401066a8ef6fe",
+      "tests/forge-pixelmon-fixture/resources/pack.mcmeta": "efeabac0b452e6e9114ccb1a702405676a9b07241067fca81bf03c8a65a1192d",
+      "tests/forge-pixelmon-fixture/resources/psa-pixelmon-fixture.mixins.json": "7e918bcdc0dce9e93850a2820fce66d436942515f7b67528e0a735d0a7233b4d"
+    }
+  },
+  "guards": [
+    {
+      "case": "optout",
+      "exit_code": 0,
+      "result": "PASS real fixture preflight refused: Owned disposable"
+    },
+    {
+      "case": "no-marker",
+      "exit_code": 0,
+      "result": "PASS real fixture preflight refused: NoSuchFileException"
+    },
+    {
+      "case": "wrong-marker",
+      "exit_code": 0,
+      "result": "PASS real fixture preflight refused: Owned disposable"
+    },
+    {
+      "case": "wrong-binary",
+      "exit_code": 0,
+      "result": "PASS real fixture preflight refused: Pinned Pixelmon binary differs"
+    },
+    {
+      "production_pack": "v15",
+      "diagnostic_present": false,
+      "sha256": "d93e7ad8f0fd78c5b4e418c56af91634d2ceafbbe4d1dca0c8a2698552a12933"
+    }
+  ],
+  "integrated_world_fixture": {
+    "run": "9c7c69a2-a9d5-48b5-8421-1e8e5a6add58",
+    "started_time": "2026-11-09T15:01:56.240278198Z",
+    "time": "2026-11-09T15:01:57.202448740Z",
+    "scope": "Original ten test methods/assertions; world-backed participants; no player authentication tested",
+    "pass": false,
+    "scene_ready": true,
+    "closed": true,
+    "cleanup_complete": true,
+    "live_owned_actor_count": 0,
+    "actor_count": 31,
+    "participants": 31,
+    "results": {
+      "Normal doesn't damage ghost": {
+        "status": "success"
+      },
+      "clangorous_soulblaze_correct_boost_amount": {
+        "status": "success"
+      },
+      "dancer_copies_damage_dealing_dance_moves": {
+        "status": "success"
+      },
+      "hidden_power_max_move_typing": {
+        "status": "success"
+      },
+      "non_extreme_weather_fails_during_delta_stream": {
+        "status": "success"
+      },
+      "shedinja_hp_dynamax": {
+        "status": "failure",
+        "reason": "Shedinja does not have 1 HP while Dynamaxed!"
+      },
+      "shell_trap_damages_opponents_not_user": {
+        "status": "success"
+      },
+      "shields_down_should_not_remove_hazards": {
+        "status": "failure",
+        "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "spammable_destiny_bond": {
+        "status": "success"
+      },
+      "splash_no_damage": {
+        "status": "success"
+      }
+    },
+    "errors": [],
+    "cleanup_errors": [],
+    "test_log_null_pointer_exceptions": 0,
+    "test_log_null_trainer_errors": 0,
+    "test_log_null_pokemon_errors": 0,
+    "log_sha256": "6719f7433bc720c44812505134faf2a41e95d8aa497913639b07010d43665867"
+  },
+  "production_mod_count": 313,
+  "fixture_mod_count": 1,
+  "input_pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+  "source_forge_args_sha256": "a69bda5e8147a18560690321087f0373f61c9f8cbcdf71da038929064de24e0b",
+  "production_inventory_sha256": "cab85a5eb79e127b86315dbbb47666f3a2ca4d3f69554ec133442865d0ca6ba1",
+  "original_virtual_results": "7success/2fail/1unfinished; see stock controls",
+  "known_legacy_diagnostic_failures": [
+    "Parameterized example mistakenly counted; corrected native eligibility filter",
+    "Inherited vanilla method owner was not reobfuscated; mapped vanilla owner used",
+    "Global countInjections debug flag conflicts with optional upstream hook; disabled globally, own require/allow strict",
+    "Chunk ticket alone did not establish entity tracking; wait for loaded+ticking state. Legacy untracked-actor cleanup flag is not accepted as proof; those profiles quarantined and stopped."
+  ],
+  "pixelmon_only_world_fixture": {
+    "run": "9ffcd88a-ca64-416c-bd60-a099ce7c2558",
+    "started_time": "2026-11-09T15:03:06.732213317Z",
+    "time": "2026-11-09T15:03:07.193175204Z",
+    "scope": "Original ten test methods/assertions; world-backed participants; no player authentication tested",
+    "pass": false,
+    "scene_ready": true,
+    "closed": true,
+    "cleanup_complete": true,
+    "live_owned_actor_count": 0,
+    "actor_count": 31,
+    "participants": 31,
+    "results": {
+      "Normal doesn't damage ghost": {
+        "status": "success"
+      },
+      "clangorous_soulblaze_correct_boost_amount": {
+        "status": "success"
+      },
+      "dancer_copies_damage_dealing_dance_moves": {
+        "status": "success"
+      },
+      "hidden_power_max_move_typing": {
+        "status": "success"
+      },
+      "non_extreme_weather_fails_during_delta_stream": {
+        "status": "success"
+      },
+      "shedinja_hp_dynamax": {
+        "status": "failure",
+        "reason": "Shedinja does not have 1 HP while Dynamaxed!"
+      },
+      "shell_trap_damages_opponents_not_user": {
+        "status": "success"
+      },
+      "shields_down_should_not_remove_hazards": {
+        "status": "failure",
+        "reason": "Minior wasn't damaged by Spikes or Stealth Rock for some reason."
+      },
+      "spammable_destiny_bond": {
+        "status": "success"
+      },
+      "splash_no_damage": {
+        "status": "success"
+      }
+    },
+    "errors": [],
+    "cleanup_errors": [],
+    "test_log_null_pointer_exceptions": 0,
+    "log_sha256": "df43f6508c473cd4a8bd442bb2b2cd33dedc18cffcb06b5971fcf2fccb9b1110"
+  },
+  "same_ten_native_results": true
+}

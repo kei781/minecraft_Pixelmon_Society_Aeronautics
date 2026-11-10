@@ -1,0 +1,11 @@
+{
+  "headRefOid": "395a36ca203d14d8198d0f6e862b5c95183dddf6",
+  "reviewDecision": "",
+  "state": "OPEN",
+  "statusCheckRollup": [],
+  "url": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/pull/1",
+  "checked_at": "2026-11-08T08:33:38.027649+00:00",
+  "open_review_threads": 0,
+  "scope": "Verified source review head before adding documentation/evidence-only commits",
+  "no_ci_checks_reported": true
+}

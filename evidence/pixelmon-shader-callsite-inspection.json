@@ -1,0 +1,58 @@
+{
+  "scope": "Pinned original Pixelmon JAR static callsite inspection only",
+  "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+  "classes_scanned": 4998,
+  "candidate_classes_disassembled": 7,
+  "private_javap_sha256": "7352e15edd6041e130f16dadee40f9a0892bb6c8e1df0fc0b6e0abc04a7eb9de",
+  "parameter_generation_paths": [
+    {
+      "class": "AbstractClientEntity",
+      "method": "setDynamaxed(boolean)",
+      "codecs": [
+        "Codec.FLOAT",
+        "Codec.FLOAT.listOf()"
+      ]
+    },
+    {
+      "class": "AbstractHasStatsEntity",
+      "method": "setBossTier(BossTier)",
+      "codecs": [
+        "Codec.FLOAT",
+        "Codec.FLOAT.listOf()"
+      ]
+    },
+    {
+      "class": "PixelmonEntity",
+      "method": "startEvolution(Evolution,String)",
+      "codecs": [
+        "Codec.FLOAT",
+        "Codec.FLOAT.listOf()"
+      ]
+    }
+  ],
+  "direct_value_constructor_paths": [
+    "ShaderParameters.Builder.withParameter: supplied codec and value",
+    "ShaderParameters.Value.read: codec selected from named registry"
+  ],
+  "other_setter_callers": [
+    "Pokemon.lambda$evolve$18: restore previously read shader parameters after species update",
+    "AbstractClientEntity.setEvoStage: null reset"
+  ],
+  "sync_accessor_references": [
+    "AbstractClientEntity.defineSynchedData: empty initial value",
+    "AbstractClientEntity.setShaderParameters: Optional.ofNullable",
+    "AbstractClientEntity.resetDataWatchers: empty reset",
+    "AbstractClientEntity static initializer: accessor definition"
+  ],
+  "unknown_builtin_generated_codec_found": false,
+  "runtime_tested_paths": [
+    "All nine registered boss tiers using Pikachu in isolated Forge and full pack"
+  ],
+  "not_claimed": [
+    "Actual Windows runtime after v6 upgrade",
+    "Evolution or Dynamax runtime execution",
+    "Reflection or external addon coverage",
+    "Original disconnect entity being a boss"
+  ],
+  "checked_at": "2026-11-08T15:10:33.566372+00:00"
+}

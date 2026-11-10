@@ -1,0 +1,19 @@
+{
+  "macos": {
+    "discovered": 42,
+    "passed": 39,
+    "skipped_linux_only": 3
+  },
+  "n100_ubuntu": {
+    "discovered": 42,
+    "passed": 42,
+    "skipped": 0
+  },
+  "forge_client_build_fixture_cases": 8,
+  "fixtures_launched_as_game": false,
+  "actual_game_server_untouched_by_unit_tests": true,
+  "macos_log_sha256": "af67e34d7857b7fffa0b0cbab77ea90adc7c15a13586439edc7aa1914c90df05",
+  "n100_log_sha256": "5c95c072c2904b275a92ca69e894dad26d3dbdc33c54f59438cc504c93c78ecb",
+  "final_source_rechecked_after_client_fixes": true,
+  "deterministic_concurrent_start_regression_passed": true
+}

@@ -1,0 +1,32 @@
+{
+  "launcher": "Prism 11.1.1",
+  "platform": "macOS ARM64; not Windows",
+  "actual_gui_import_completed": true,
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "mod_jars_verified": 353,
+  "indexed_resourcepacks_verified": 15,
+  "indexed_shaderpacks_verified": 1,
+  "resource_zips_in_mods_folder": 0,
+  "all_three_projects_included": true,
+  "payload_files_verified": 7923,
+  "all_sha256_matched": true,
+  "game_launched": true,
+  "authenticated_connection_tested": false,
+  "artifact": {
+    "filename": "PSA-Forge-Full-Experimental-v4.mrpack",
+    "sha256": "753076589fd5c320c8d0d935ce13e0e437dbaa27313acf047b75d601b02f5e48",
+    "size": 1137764777,
+    "version_id": "psa-forge-7db77bf55074",
+    "mod_jars": 353,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7924,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false
+  },
+  "shoulder_surfing_version": "5.0.4",
+  "game_launch_attempted": true,
+  "game_launch_state": "Same client JAR inventory tested in isolated official demo; both earlier crashes resolved; see startup verification.",
+  "game_launch_scope": "official demo startup on macOS, not authenticated play or Windows"
+}

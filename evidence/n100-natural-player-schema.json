@@ -1,0 +1,75 @@
+{
+  "scope": "actual N100 naturally initialized common accessors, read after authenticated joins; no field values read",
+  "fields": [
+    {
+      "field": "CARRY_DATA_KEY",
+      "id": 22,
+      "serializer": "compound"
+    },
+    {
+      "field": "dwPokeballs",
+      "id": 23,
+      "serializer": "string"
+    },
+    {
+      "field": "dwMegaItem",
+      "id": 24,
+      "serializer": "byte"
+    },
+    {
+      "field": "dwMegaItemsUnlocked",
+      "id": 25,
+      "serializer": "byte"
+    },
+    {
+      "field": "dwShinyCharm",
+      "id": 26,
+      "serializer": "byte"
+    },
+    {
+      "field": "dwOvalCharm",
+      "id": 27,
+      "serializer": "byte"
+    },
+    {
+      "field": "dwExpCharm",
+      "id": 28,
+      "serializer": "byte"
+    },
+    {
+      "field": "dwCatchingCharm",
+      "id": 29,
+      "serializer": "byte"
+    },
+    {
+      "field": "dwMarkCharm",
+      "id": 30,
+      "serializer": "byte"
+    },
+    {
+      "field": "dwHween",
+      "id": 31,
+      "serializer": "byte"
+    }
+  ],
+  "flags": {
+    "online_mode": true,
+    "max_players": 6,
+    "production_mod_jars": 313,
+    "catalog_probe_installed": false,
+    "forced_player_order_in_user_args": false,
+    "forced_cart_order_in_user_args": false
+  },
+  "authenticated_join_events": 2,
+  "disconnect_events": 1,
+  "inspector_source_sha256": "a18e940c861fbfb5bb5a8cac7155cb43b8768a875887d6a877bccf0b1bf4fcd0",
+  "private_log_sha256": "894d2aa67be0d9347ca0194f3c938c951ea607c4401ef012a412043045a25290",
+  "normal_player_data_and_auth_unchanged": true,
+  "temporary_inspector_removed": true,
+  "all_gameplay_or_six_player_verified": false,
+  "original_script_set_restored": true,
+  "script_reload_errors_after_cleanup": 0,
+  "common_jar_set_sha256": "fd39fefd2b6c5f9408108d96603629e2a438c289169f1100168ea66cce5b5e74",
+  "port_sha256": "6bdfbc9d293ebbc53c859d9541c70eff96194e8f27a37701c7ae505d9f2c5b99",
+  "linked_windows_verification": "evidence/windows-entity-data-verification.json"
+}

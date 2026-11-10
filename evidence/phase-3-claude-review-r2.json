@@ -1,0 +1,31 @@
+{
+  "head_sha": "35959cab95792ae042c37df5ce826891e0f0f1a6",
+  "verdict": "FINDINGS",
+  "summary": "대상: head 35959ca. Task 3 범위 diff(base c710244)를 검토했다. 미해결 스레드는 없다(threads.json이 빈 배열).\n\n머지를 막는 결함(P1)이나 고쳐야 할 결함(P2)은 찾지 못했다. 근거는 다음과 같다.\n- export_forge_client.py\n  - CF 기본 팩의 크기와 SHA1, manifest의 (projectID, fileID) 집합, 367/311 수량을 대조한다.\n  - 공통 JAR와 클라이언트 전용 JAR의 SHA1·SHA512, 서버 mods 집합이 정확히 같은지를 확인한다.\n  - KubeJS 원본과 중립 교체 데이터가 바이트 단위로 같은지, 서버 kubejs 집합이 같은지를 확인한다.\n  - 같은 경로의 인덱스 파일과 번들 파일이 다르면 거부한다. Windows 대소문자 충돌, 심볼릭 링크, 허용되지 않은 overrides 경로도 거부한다.\n  - 클라이언트 전용 교체는 원본이 side=client·kind=mod일 때만 허용하고, 대상 클래스의 Java 버전(major 61 이하)도 확인한다.\n  - 기존 출력은 os.link로 보존하므로 덮어쓰지 않는다. 검증에 실패하면 출력 디렉터리도 만들지 않는다.\n- install_forge_runtime.py\n  - 손상된 캐시는 덮어쓰지 않고 중단한다. 해시가 없으면 거부한다.\n  - tar 항목의 경로와 링크가 디렉터리 밖으로 나가지 않는지 검사한다.\n  - JDK 영수증으로 기존 런타임의 정체성을 다시 확인한다.\n- server-control.sh\n  - 전용 tmux 소켓을 쓰고, @psa-root가 일치하는 세션만 제어한다.\n  - EULA를 묵시적으로 동의하지 않는다. 시작 전에 모드 해시·수량과 온라인 인증을 확인한다.\n  - 정지 시간이 초과돼도 프로세스를 강제 종료하지 않는다.\n- stage_forge_candidate.py: smoke/player 모드 분리와 eula=false가 테스트와 문서에 일치한다.\n- 클라이언트 수정 두 건\n  - WrapOperation의 x/y/z 인수 위치(3/4/5)가 기존 ModifyArg의 인덱스와 일치한다.\n  - 메뉴 가드는 1.20.1 TitleScreen의 menu.singleplayer, menu.multiplayer, menu.online 키를 확인하는 범위로 한정돼 있다.\n- 테스트 단언이 실제 실패 경로를 확인한다. 출력 미생성, 캐시 보존, 외부 세션 유지가 그 예다.\n\n새 지적은 P3 두 건이다.\n1. 동시에 start를 실행하면 실행 중인 서버의 console.log가 이동될 수 있다.\n2. 보존용 1.21 진단 문서의 안내 문구가 현행 v4가 아닌 v2를 가리킨다.\n\n이 리뷰는 읽기 전용이며 테스트를 실행하지 않았다. 다음 실행 검증을 요청한다.\n- `python3 -m unittest discover -s tests -p 'test_*.py' -v`를 macOS와 N100에서 다시 실행한다.\n- 고정 포팅 소스에 candidate-build.patch와 renderer-locals.patch를 차례로 적용해, 패치가 깨끗하게 적용되고 컴파일되는지 확인한다. 패치는 WrapOperation/Operation import를 추가하지 않으므로 원본에 이미 있는지 봐야 한다.\n- 재빌드 결과의 정규화 SHA256이 cc31e4ab…인지 확인한다.",
+  "resolve_thread_ids": [],
+  "replies": [],
+  "new_comments": [
+    {
+      "path": "server-control.sh",
+      "line": 23,
+      "priority": "P3",
+      "title": "동시에 start를 실행하면 실행 중인 서버의 console.log가 이동될 수 있음",
+      "body": "`start`는 15행의 `running` 확인부터 25행의 `new-session`까지 잠금 없이 진행한다. 두 셸(운영자 두 명, 또는 운영자와 자동화 스크립트)이 거의 동시에 `start`를 실행하면 다음 순서가 가능하다.\n\n1. A와 B 모두 15행에서 아직 세션이 없다고 판단한다.\n2. A가 23행에서 이전 로그를 옮긴 뒤 25행에서 세션을 만든다. Java가 리다이렉트로 새 `console.log`를 연다.\n3. B가 23행에서 `[[ -f console.log ]]`를 참으로 보고, A 서버가 쓰고 있는 `console.log`를 `logs/console-previous-*`로 옮긴다.\n4. B는 25행에서 `duplicate session`으로 실패한다(`set -e`).\n\n결과적으로 서버는 정상 실행 중인데 `console.log`가 없다. 문서(docs/n100-server.md)가 안내하는 \"`console.log`의 새 `Done` 줄로 확인\" 절차도 따를 수 없다. `start`부터 `set-option`까지를 `flock`(예: `exec 9>.psa-control.lock; flock -n 9 || exit 1`)으로 직렬화하는 것을 권한다. 또는 세션 생성에 성공한 뒤에만 로그를 회전하도록 순서를 바꾼다."
+    },
+    {
+      "path": "docs/windows-client-1.21-diagnostic.md",
+      "line": 1,
+      "priority": "P3",
+      "title": "보존 문서의 안내 문구가 현행 v4가 아닌 'v2'를 가리킴",
+      "body": "새 보존 문서의 첫 줄은 \"현재 전체 Forge v2 설치는 [현행 안내](windows-client.md)를 사용한다\"이다. 그런데 같은 PR의 docs/windows-client.md는 현재 파일을 `PSA-Forge-Full-Experimental-v4.mrpack`으로 지정한다. 또 \"v1~v3 시험 파일은 이 서버에 사용하지 않는다\"고 명시한다. README와 progress.md도 v4를 기준으로 한다. 예전 진단 문서로 들어온 플레이어가 v2를 현행 버전으로 오해할 수 있다. 버전 표기를 v4로 고치거나, 버전을 빼고 '현행 전체 Forge 팩'으로 쓰는 것을 권한다."
+    }
+  ],
+  "out_of_scope": [
+    "실제 Windows 인증 접속, Pixelmon 포획/전투, Society 농사/경제/진행, Aeronautics 조종 비행, N100 실제 6인 부하는 요구사항상 최종 단계 작업이며 이 PR에서 검증되지 않았다(작성자도 미검증으로 명시).",
+    "PixelmonMenuCompatMixin은 데모 화면에서만 실제로 실행해 확인했다. Society의 FancyMenu 사용자 지정 타이틀 화면에서 정상 인증 상태일 때 Pixelmon 메뉴 꾸미기가 다른 버튼 가정(예: Mods/Options 버튼)으로 다시 실패하지 않는지는 실제 인증 클라이언트로 확인해야 한다.",
+    "renderer-locals.patch의 WrapOperation이 Oculus 셰이더 활성 상태에서 서브레벨 블록 외곽선 좌표를 올바르게 그리는지는 화면으로 확인하지 않았다(game_window_visually_verified=false).",
+    "N100 서버를 player 모드에서 모든 인터페이스에 바인딩하고 whitelist 없이 공개할지, 공유기 포트 전달을 할지는 운영 정책 결정이다. 이 PR은 직접 상태 핑까지만 확인했다.",
+    "install_forge_runtime.py는 서버 실행 여부를 확인하지 않고 매번 Forge 설치기를 다시 실행한다. 이번 PR 문서는 새 장비에만 쓰도록 안내하지만, 운영 중인 프로필에서 다시 실행할 때의 절차(먼저 stop)는 별도 운영 문서로 명확히 해 둘 필요가 있다."
+  ],
+  "blocked_reasons": []
+}

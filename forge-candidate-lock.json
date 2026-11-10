@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "artifacts": {
+    "pixelmon": {
+      "version": "9.2.3",
+      "file": {
+        "id": "eMO0TDhS",
+        "hashes": {
+          "sha512": "3a9c6f375214c6d93c6cce8235e8a206e8f9731be8e168a254e78539087080796d97f0b22cb9a6db09d901c72e2e1ae53b9f2484761fb310479ce9f84ac9b145",
+          "sha1": "d1505ce56f683053e5f4b69b2c61374d1ea54f9d"
+        },
+        "url": "https://cdn.modrinth.com/data/59ZceYlU/versions/KjmzoXMR/Pixelmon-1.20.1-9.2.3-universal.jar",
+        "filename": "Pixelmon-1.20.1-9.2.3-universal.jar",
+        "primary": true,
+        "size": 411152237,
+        "file_type": null
+      },
+      "actual_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+      "metadata_url": "https://api.modrinth.com/v2/version/KjmzoXMR",
+      "source_page": "https://modrinth.com/mod/pixelmon/version/KjmzoXMR",
+      "verified_against_upstream": true
+    },
+    "aeronautics_resources": {
+      "version": "1.3.0+mc1.21.1",
+      "file": {
+        "id": "gYepUGEo",
+        "hashes": {
+          "sha512": "2abba2e166a0ec8d42ab06108b63070d61f985420ecca8739c5b2300561b31486b69b3ad13310b0c459edb9edebeffb55a4cdf4ce493805833d32f5bde9ce778",
+          "sha1": "a2b08963ebc9f331f52c626aebcd65013e100d69"
+        },
+        "url": "https://cdn.modrinth.com/data/oWaK0Q19/versions/w7zlLnea/create-aeronautics-bundled-1.21.1-1.3.0.jar",
+        "filename": "create-aeronautics-bundled-1.21.1-1.3.0.jar",
+        "primary": true,
+        "size": 33120013,
+        "file_type": null
+      },
+      "actual_sha256": "482c90e0e6fe72f33fe7abb079e5fda581cd660ee53c38c44448a64283e1044c",
+      "metadata_url": "https://api.modrinth.com/v2/version/w7zlLnea",
+      "source_page": "https://modrinth.com/mod/create-aeronautics/versions",
+      "verified_against_upstream": true
+    },
+    "society_server": {
+      "project_id": 1093382,
+      "file_id": 8980858,
+      "version": "4.1.5A",
+      "metadata_url": "https://api.curse.tools/v1/cf/mods/1093382/files/8980858",
+      "source_page": "https://www.curseforge.com/minecraft/modpacks/society-sunlit-valley/files/8980858",
+      "url": "https://edge.forgecdn.net/files/8980/858/SERVER-PACK-Society-Sunlit-Valley-4.1.5A.zip",
+      "filename": "SERVER-PACK-Society-Sunlit-Valley-4.1.5A.zip",
+      "size": 555156026,
+      "upstream_hashes": {
+        "sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
+      },
+      "verified_against_upstream": true
+    }
+  }
+}
