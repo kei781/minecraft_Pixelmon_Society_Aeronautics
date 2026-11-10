@@ -132,8 +132,10 @@
     "independent_byte_equal": true
   },
   "python_related_tests": {
-    "passed": 30,
-    "scope": "File/schema/staging/client-export fixtures, not game execution"
+    "passed": 33,
+    "scope": "File/schema/actual staging/client-export fixtures, not native game execution",
+    "r1_passed": 30,
+    "new_stage_cases": "313/314 actual stage success; missing/changed resource and changed module refuse before output"
   },
   "linux_control_tests": {
     "scope": "Isolated shell-process fixtures only, never Minecraft/authentication",
@@ -416,5 +418,50 @@
     "No production cutover of server-only compatibility module",
     "Independent latest-stable Claude review pending"
   ],
-  "both_overall_goals_complete": false
+  "both_overall_goals_complete": false,
+  "compiled_guards_reexecution": {
+    "scope": "Compiled guard/ASM metadata fixtures only; never native game execution",
+    "artifact_sha256": "02ef84d99f5cbd086624403160a6e0ba4cd2c87516874692f1e1cdcc4f5d948d",
+    "target_sha256": "fe77df10d803e08c95b9d47608444982629d2a426d1f74ac41ec569eb8fe96a8",
+    "probe_source_sha256": "20458238d032b2f482c92b6fb93ae3a8f999b0a77dca00766f00870aa99b980b",
+    "dependency_sha256": {
+      "asm-9.6.jar": "3c6fac2424db3d4a853b669f4e3d1d9c3c552235e19a319673f887083c2303a1",
+      "asm-tree-9.6.jar": "c43ecf17b539c777e15da7b5b86553b377e2d39a683de6285567d5283888e7ef",
+      "mixin-0.8.5.jar": "ca15a907e4d1f6b38cefed51d7df96a83347dcfb0bc8ced53111519e991d887d"
+    },
+    "results": {
+      "valid": "PINNED_INPUT_ACCEPTED",
+      "missing": "INVALID_PINNED_INPUT_REFUSED",
+      "changed": "INVALID_PINNED_INPUT_REFUSED",
+      "symlink": "INVALID_PINNED_INPUT_REFUSED",
+      "symlink-mods": "INVALID_PINNED_INPUT_REFUSED",
+      "unapplied": "UNAPPLIED_REDIRECT_REFUSED",
+      "wrong-target": "INVALID_REDIRECT_METADATA_REFUSED",
+      "original": "INVALID_REDIRECT_METADATA_REFUSED",
+      "merged-only": "INVALID_REDIRECT_METADATA_REFUSED",
+      "missing-handler": "INVALID_REDIRECT_METADATA_REFUSED",
+      "extra-send": "INVALID_REDIRECT_METADATA_REFUSED",
+      "wrong-descriptor": "INVALID_REDIRECT_METADATA_REFUSED",
+      "static-native": "INVALID_REDIRECT_METADATA_REFUSED",
+      "completed-metadata": "COMPLETED_REDIRECT_METADATA_ACCEPTED_NOT_GAME_EXECUTION"
+    },
+    "runner_source_sha256": "d0bb17824cf92c65fdc020b8176e8ebaa81563e8374f3eaa84ff90bf13a94169"
+  },
+  "forge_event_api_static": {
+    "forge_version": "47.4.20",
+    "source_archive_sha256": "de56d18d759d17d780416e47fb01b72c38633bdd2e2d071cdedfe486eab35d7b",
+    "getPlayers_return_type": "java.util.List<net.minecraft.server.level.ServerPlayer>",
+    "getPlayer_return_type": "net.minecraft.server.level.ServerPlayer",
+    "getPlayer_nullable": true,
+    "source_body_not_exported": true
+  },
+  "independent_review": {
+    "round": 1,
+    "model": "claude-opus-5-5",
+    "effort": "high",
+    "reviewed_head": "49a8dea1c669e95a885e4365fd95dc3572cd89be",
+    "verdict": "FINDINGS",
+    "p3_comments": 1,
+    "fix": "Actual stage fixtures and guard rerun procedure added; R2 pending"
+  }
 }

@@ -81,11 +81,34 @@ python3 tools/forge_resources.py canonical-jar \
 staging에 `--datapack-fix`로 전달한다. 런처는 정확한 추가 파일·원본·선언을 검증한
 경우에만 314개를 허용하고, 선언된 보정이 빠졌을 때 313개로 낮춰 시작하지 않는다.
 
-컴파일 가드 14개와 파일·스키마·staging·클라이언트 내보내기 검사 30개를 통과했다.
+컴파일 가드 14개와 파일·스키마·staging·클라이언트 내보내기 검사 33개를 통과했다.
+R1 리뷰 뒤 새 `stage()` 성공 경로 313/314와 전리품 누락/변경·보정 파일 변경의
+출력 전 거부를 추가했다. 실제 생성된 리소스·프로필 선언·모드 해시 목록을 검사한다.
 Linux 제어 검사 6개도 통과했다. 이는 별도 셸 프로세스 픽스처이며 실제 Minecraft 실행 결과와 구분한다.
 진단 Future 관찰기는 `tests/forge-datapack-reload`와 별도 빌드 레시피로 재생성하며
 명시적 플래그·소유 마커·정확한 루프백 포트 없이는 적용하지 않는다. 원본 Future를
 바꾸지 않으며 관찰된 반환 후 시간은 전체 갱신 지연 시간이 아니다.
 
-최신 안정 Claude 독립 리뷰는 진행 전이다. 최신 Windows 신규 가져오기, 실제 6명·
+가드 14개는 저장소의 실행기로 다시 컴파일·실행할 수 있다. 아래 의존 JAR는 기존
+로더/빌드의 로컬 파일을 사용한다. 실행기 자체는 다운로드하지 않으며 새 출력 폴더를
+요구한다. 원본 클래스는 ASM 메타데이터로만 읽고 수정한 원본 클래스를 로딩하지 않는다.
+
+```bash
+python3 tools/run_datapack_sync_guards.py \
+  --java-home /path/to/jdk17 \
+  --module /path/to/PSA-Datapack-Sync-Compat-0.1.jar \
+  --target /path/to/serializer_debug-1.0.1.jar \
+  --dependency /path/to/asm-9.6.jar \
+  --dependency /path/to/asm-tree-9.6.jar \
+  --dependency /path/to/mixin-0.8.5.jar \
+  --output /path/to/new-guard-results
+```
+
+소스·모듈·원본·의존성 해시와 각 결과는 `result.json`에 남긴다. 이 실행기로 현재
+보정 JAR에 대해 14개를 다시 통과했다. 고정 Forge 47.4.20 원본 이벤트의
+`getPlayers(): java.util.List`와 nullable `getPlayer()` 선언도 로컬 원본 API에서
+확인했다. 게임 원문·바이너리는 공개 저장소나 외부 리뷰에 제공하지 않는다.
+
+최신 안정 Claude Opus 5.5/high R1의 검사 보강 P3 한 건을 수정하고 재리뷰를 준비했다.
+최신 Windows 신규 가져오기, 실제 6명·
 장시간 부하, 모든 화면·아이템 사용과 운영 서버 교체는 이 결과의 완료 범위가 아니다.
