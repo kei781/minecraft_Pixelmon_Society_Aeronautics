@@ -62,6 +62,13 @@ class ForgeClientBuildTest(unittest.TestCase):
             'config/resourcepackoverrides.json':json.dumps({'schema_version':2,'default_packs':['vanilla'],
                 'pack_overrides':{}}).encode(),
             'configureddefaults/options.txt':b'lang:en_us\nresourcePacks:["vanilla"]\n'}
+        self.loot_original = b'{"forge:conditions":[{"type":"forge:false"}]}'
+        context = patch.object(client.forge_datapack_compat, 'RESOURCE_SHA256', hashlib.sha256(self.loot_original).hexdigest())
+        context.start(); self.addCleanup(context.stop)
+        self.overrides[client.forge_datapack_compat.RESOURCE] = self.loot_original
+        loot_target = self.server/client.forge_datapack_compat.RESOURCE
+        loot_target.parent.mkdir(parents=True)
+        loot_target.write_bytes(client.forge_datapack_compat.normalize_resource(self.loot_original)[0])
         self.society=self.root/'society.zip';self.output=self.root/'out/full.mrpack'
         self.lock={'minecraft':'1.20.1','forge':'47.4.20','society':'fixture','files':self.files}
         self.write_base()
@@ -269,6 +276,43 @@ class ForgeClientBuildTest(unittest.TestCase):
                 EXPECTED_FILES=len(self.files), EXPECTED_SHARED=sum(f['side']=='both' for f in self.files)), self.assertRaisesRegex(ValueError, 'Pinned ALI target'):
             client.build(self.server,self.extras,self.society,self.output,ali_fix=ali)
         self.assertFalse(self.output.exists());self.assertFalse(self.output.parent.exists())
+
+    def test_corrected_loot_resource_matches_staged_server(self):
+        self.build()
+        name = client.forge_datapack_compat.RESOURCE
+        with zipfile.ZipFile(self.output) as archive:
+            data = archive.read('overrides/'+name)
+            self.assertEqual(data, (self.server/name).read_bytes())
+            self.assertFalse(json.loads(data)['replace'])
+            self.assertEqual(json.loads(data)['entries'], [])
+
+    def test_changed_loot_input_even_with_relocked_archive_is_refused(self):
+        self.overrides[client.forge_datapack_compat.RESOURCE] = b'{}'
+        self.write_base()
+        self.assert_no_export()
+
+    def test_declared_missing_server_only_module_is_refused(self):
+        (self.server/'.psa-forge-candidate.json').write_text(json.dumps({
+            'datapack_sync_compatibility':client.forge_datapack_compat.module_receipt()}))
+        self.assert_no_export()
+
+    def test_verified_server_only_module_is_not_in_client_payload(self):
+        helper = client.forge_datapack_compat
+        target = self.server/helper.TARGET_PATH; target.write_bytes(self.archive_bytes({'fixture.txt':b'not a game mod'}))
+        data = target.read_bytes()
+        self.files.append({'path':helper.TARGET_PATH,'kind':'mod','side':'both','project_id':100,'file_id':200,
+            'size':len(data),'hashes':self.hashes(data),'url':'https://example.test/serializer-fixture.jar'})
+        module = self.server/helper.MODULE_PATH; module.write_bytes(b'authored module packaging fixture only')
+        self.write_base()
+        with patch.multiple(helper, MODULE_SHA256=helper.digest(module), TARGET_SHA256=helper.digest(target)), patch.multiple(
+                client, EXPECTED_FILES=len(self.files), EXPECTED_SHARED=sum(f['side']=='both' for f in self.files)):
+            declaration = helper.module_receipt()
+            (self.server/'.psa-forge-candidate.json').write_text(json.dumps({'datapack_sync_compatibility':declaration}))
+            self.build()
+            with zipfile.ZipFile(self.output) as archive:
+                self.assertNotIn('overrides/'+helper.MODULE_PATH, archive.namelist())
+                profile = json.loads(archive.read('overrides/psa-forge-client-profile.json'))
+                self.assertEqual(profile['server_datapack_sync_compatibility'], declaration)
 
 
 if __name__=='__main__':unittest.main()

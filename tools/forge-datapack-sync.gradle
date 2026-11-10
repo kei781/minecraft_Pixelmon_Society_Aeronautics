@@ -1,0 +1,33 @@
+// Compile only the authored dedicated-server overlay; no upstream class bodies are bundled.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourcePath = project.findProperty('psaDatapackSource')
+    def target = project.findProperty('psaSerializerDebugJar')
+    if (!sourcePath || !target) throw new GradleException('Authored datapack source and pinned SerializerDebug input required')
+    def input = new File(target.toString())
+    if (!input.isFile() || java.nio.file.Files.isSymbolicLink(input.toPath())) throw new GradleException('Regular SerializerDebug input required')
+    def hash = java.security.MessageDigest.getInstance('SHA-256')
+    input.withInputStream { stream ->
+        byte[] buffer = new byte[65536]; int count
+        while ((count = stream.read(buffer)) != -1) hash.update(buffer, 0, count)
+    }
+    if (hash.digest().encodeHex().toString() != 'fe77df10d803e08c95b9d47608444982629d2a426d1f74ac41ec569eb8fe96a8')
+        throw new GradleException('Pinned SerializerDebug compile target required')
+    def directory = new File(sourcePath.toString())
+    def compiler = project.tasks.register('compilePsaDatapackSync', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java' }
+        classpath = project.sourceSets.main.compileClasspath
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-datapack-sync/classes'))
+        options.release.set(17); options.encoding = 'UTF-8'; options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaDatapackSyncJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('PSA-Datapack-Sync-Compat-0.1.jar')
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType':'MOD', 'MixinConfigs':'psa-datapack-sync.mixins.json')
+        preserveFileTimestamps = false; reproducibleFileOrder = true
+    }
+    project.reobf.create('psaDatapackSyncJar')
+}
