@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.psa.startercompat.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": ["PixelmonStarterRecipientMixin"],
+  "injectors": {"defaultRequire": 1}
+}
