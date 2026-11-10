@@ -4,12 +4,14 @@ import io
 import json
 from pathlib import Path
 import stat
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
 spec = importlib.util.spec_from_file_location("stage_forge", ROOT / "tools/stage_forge_candidate.py")
 stage_forge = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(stage_forge)

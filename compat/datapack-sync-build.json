@@ -1,0 +1,26 @@
+{
+  "files": 7,
+  "sha256": "02ef84d99f5cbd086624403160a6e0ba4cd2c87516874692f1e1cdcc4f5d948d",
+  "bytes": 7350,
+  "entry_sha256": {
+    "META-INF/MANIFEST.MF": "8f2ea4fdf4d9e59a56ee32fcbbb08f07e0f2072c828285be28497ab799326b7b",
+    "META-INF/mods.toml": "babaf943892a744447b8c5c846324108cb43c87d045cdd31fe70e57bad0a5f1e",
+    "dev/psa/datapacksync/DatapackSyncCompat.class": "69d211390e1a5ddc12f2f3ed2ee38855e43cb73799dd697552100f55255f1b36",
+    "dev/psa/datapacksync/DatapackSyncPlugin.class": "05809bf21d3fb11fadde2dd5d28d2b57777392593f55a819d21ac9933d7fcfe7",
+    "dev/psa/datapacksync/mixin/SerializerDebugDatapackMixin.class": "e00911f90bd888dfc90ac71e900e0c6075775c81e46a4310e7d5979a18a29922",
+    "pack.mcmeta": "c7aa4c00f46e5b79ee103fab507a5ea1b1a851178b24a0e21f7678cbe9936d0f",
+    "psa-datapack-sync.mixins.json": "c6ddde54ac24a4686f36545ca8b85d741ec5cbd47ad39316c9d10c55b757dd22"
+  },
+  "source_sha256": {
+    "compat/datapack-sync/DatapackSyncCompat.java": "efc6a9d5993580e286ac61ba1e26dd9cca78f61439978e3f513f70af1c9a7caf",
+    "compat/datapack-sync/DatapackSyncPlugin.java": "6cbc99fc869bdfd31caeb450e11b1be374c1a9e27b0f225be246eb4470907333",
+    "compat/datapack-sync/mixin/SerializerDebugDatapackMixin.java": "715d24c310972ebebb5e48e017931d227d834a48a7c3944df0b4944f50f56e74",
+    "compat/datapack-sync/resources/META-INF/mods.toml": "babaf943892a744447b8c5c846324108cb43c87d045cdd31fe70e57bad0a5f1e",
+    "compat/datapack-sync/resources/pack.mcmeta": "c7aa4c00f46e5b79ee103fab507a5ea1b1a851178b24a0e21f7678cbe9936d0f",
+    "compat/datapack-sync/resources/psa-datapack-sync.mixins.json": "c6ddde54ac24a4686f36545ca8b85d741ec5cbd47ad39316c9d10c55b757dd22"
+  },
+  "recipe_sha256": "6ff7e918736526d8f72f6a60da11dda45502818b496cf451391d5785f698497d",
+  "original_target_sha256": "fe77df10d803e08c95b9d47608444982629d2a426d1f74ac41ec569eb8fe96a8",
+  "independent_byte_equal": true,
+  "scope": "Authored dedicated-server recipient correction; minimal original failure/patched success and full genuine one-player changed/restored reload verified; independent source review pending"
+}

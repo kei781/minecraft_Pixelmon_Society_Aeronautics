@@ -1,0 +1,420 @@
+{
+  "task": 18,
+  "scope": "Native datapack reload recovery, pinned no-op schema correction, private player candidates; production remains unchanged",
+  "target": {
+    "filename": "serializer_debug-1.0.1.jar",
+    "sha256": "fe77df10d803e08c95b9d47608444982629d2a426d1f74ac41ec569eb8fe96a8"
+  },
+  "minimal_original": {
+    "scope": "Actual original zero-player minimal reload future, unchanged SerializerDebug plus QA observer only",
+    "native_future_records": [
+      {
+        "run": "b44cf1a5-485a-4470-9fb8-8e373819b1dc",
+        "event": "native_reload_future_observed",
+        "observed_at_epoch_ms": 1794286846413,
+        "native_player_count": 0,
+        "thread": "Server thread",
+        "original_future_not_replaced": true
+      },
+      {
+        "run": "b44cf1a5-485a-4470-9fb8-8e373819b1dc",
+        "event": "native_reload_failed",
+        "observed_at_epoch_ms": 1794286846414,
+        "native_player_count": 0,
+        "thread": "Server thread",
+        "original_future_not_replaced": true,
+        "elapsed_ms_after_return": 1,
+        "error_class": "java.lang.NullPointerException",
+        "public_stack_method_names": [
+          "net.minecraftforge.network.PacketDistributor.lambda$playerConsumer$1",
+          "net.minecraftforge.network.PacketDistributor$PacketTarget.send",
+          "net.minecraftforge.network.simple.SimpleChannel.send",
+          "com.dairymoose.sd.SerializerDebugCommon.onPlayerDatapackSync",
+          "com.dairymoose.sd.__SerializerDebugCommon_onPlayerDatapackSync_OnDatapackSyncEvent.invoke",
+          "net.minecraftforge.eventbus.ASMEventHandler.invoke",
+          "net.minecraftforge.eventbus.EventBus.post",
+          "net.minecraftforge.eventbus.EventBus.post"
+        ]
+      }
+    ],
+    "failed_reload_logged": true,
+    "crashes": 0,
+    "process_alive": true,
+    "auths": 0,
+    "native_log_sha256": "cf39e431671b03be14fc1f1f4a1d660a8e3d707098feb5757f84435a0b2a34c3"
+  },
+  "minimal_patched": {
+    "scope": "Actual original zero-player reload future with only authored recipient correction and QA observer added",
+    "native_future_records": [
+      {
+        "run": "c0c47011-4ae3-424a-b63e-0ed60abc2ca0",
+        "event": "native_reload_future_observed",
+        "observed_at_epoch_ms": 1794287040527,
+        "native_player_count": 0,
+        "thread": "Server thread",
+        "original_future_not_replaced": true
+      },
+      {
+        "run": "c0c47011-4ae3-424a-b63e-0ed60abc2ca0",
+        "event": "native_reload_completed",
+        "observed_at_epoch_ms": 1794287040528,
+        "native_player_count": 0,
+        "thread": "Server thread",
+        "original_future_not_replaced": true,
+        "elapsed_ms_after_return": 1
+      }
+    ],
+    "failed_reload_logged": false,
+    "crashes": 0,
+    "process_alive": true,
+    "auths": 0,
+    "native_log_sha256": "5529c504998adc99671a96c2cec9436f19641c880c7d62c1c2e0ce7d93f47089",
+    "compat_sha256": "02ef84d99f5cbd086624403160a6e0ba4cd2c87516874692f1e1cdcc4f5d948d"
+  },
+  "native_observer": {
+    "sha256": "3ecaa00643eb64cdd8ed684c65c320ccef1bc2b156f84aa85e0143d849159203",
+    "original_future_not_replaced": true,
+    "qa_only": true,
+    "elapsed_ms_after_return_is_not_total_reload_latency": true
+  },
+  "same_family_audit": {
+    "top_level_jars": 313,
+    "nested_jars": 150,
+    "maximum_nested_depth": 4,
+    "event_reference_class_candidates": 26,
+    "direct_getPlayer_plus_PacketDistributor_candidates": 3,
+    "unsafe_native_sender_found": [
+      "SerializerDebugCommon.onPlayerDatapackSync"
+    ],
+    "other_direct_sender_findings": {
+      "Placebo DynamicRegistry": "Null branch uses ALL.noArg",
+      "CuriosEventHandler": "Null branch iterates actual player list"
+    },
+    "forwarded_sender_helpers_checked": [
+      "Species CruncherPelletManager",
+      "Species GooberGooManager",
+      "Exposure Lenses",
+      "Sawmill RecipeSorter"
+    ],
+    "forwarded_sender_null_policy": "Native broadcast branches present",
+    "scope_limit": "Pinned direct bytecode references and named forwarded helpers; not exhaustive reflection or every possible downstream callback/runtime path"
+  },
+  "global_modifier_resource": {
+    "path": "kubejs/data/forge/loot_modifiers/global_loot_modifiers.json",
+    "original_sha256": "46c89c99252c03e37a923ac4a0f78b92cb59622a4cf8fc762eb11babde0a3f76",
+    "corrected_sha256": "a6f062dc2de0231f2a2d10cf6d34f86351a818b72b98614ac8fad00b05d4bb0c",
+    "original_error_was_logged_nonfatal": true,
+    "replace": false,
+    "entries": 0,
+    "original_conditions_preserved": true,
+    "other_native_modifier_lists_checked": 24,
+    "other_native_lists_unchanged": true
+  },
+  "compiled_guards": {
+    "scope": "Compiled pure guard and ASM instruction metadata fixtures; native before/after checked separately. No modified upstream class is defined or executed.",
+    "artifact_sha256": "02ef84d99f5cbd086624403160a6e0ba4cd2c87516874692f1e1cdcc4f5d948d",
+    "results": {
+      "valid": "PINNED_INPUT_ACCEPTED",
+      "missing": "INVALID_PINNED_INPUT_REFUSED",
+      "changed": "INVALID_PINNED_INPUT_REFUSED",
+      "symlink": "INVALID_PINNED_INPUT_REFUSED",
+      "symlink-mods": "INVALID_PINNED_INPUT_REFUSED",
+      "unapplied": "UNAPPLIED_REDIRECT_REFUSED",
+      "wrong-target": "INVALID_REDIRECT_METADATA_REFUSED",
+      "original": "INVALID_REDIRECT_METADATA_REFUSED",
+      "merged-only": "INVALID_REDIRECT_METADATA_REFUSED",
+      "missing-handler": "INVALID_REDIRECT_METADATA_REFUSED",
+      "extra-send": "INVALID_REDIRECT_METADATA_REFUSED",
+      "wrong-descriptor": "INVALID_REDIRECT_METADATA_REFUSED",
+      "static-native": "INVALID_REDIRECT_METADATA_REFUSED",
+      "completed-metadata": "COMPLETED_REDIRECT_METADATA_ACCEPTED_NOT_GAME_EXECUTION"
+    },
+    "independent_byte_equal": true
+  },
+  "python_related_tests": {
+    "passed": 30,
+    "scope": "File/schema/staging/client-export fixtures, not game execution"
+  },
+  "linux_control_tests": {
+    "scope": "Isolated shell-process fixtures only, never Minecraft/authentication",
+    "exit_code": 0,
+    "test_output": "test_concurrent_start_preserves_live_console_and_releases_lock (test_server_control_linux.ServerControlTest.test_concurrent_start_preserves_live_console_and_releases_lock) ... ok\ntest_declared_module_removed_and_relocked_does_not_downgrade_to_313 (test_server_control_linux.ServerControlTest.test_declared_module_removed_and_relocked_does_not_downgrade_to_313) ... ok\ntest_foreign_session_is_not_stopped (test_server_control_linux.ServerControlTest.test_foreign_session_is_not_stopped) ... ok\ntest_pinned_optional_module_fixture_starts_and_stops (test_server_control_linux.ServerControlTest.test_pinned_optional_module_fixture_starts_and_stops) ... ok\ntest_relocked_but_unpinned_optional_module_is_not_started (test_server_control_linux.ServerControlTest.test_relocked_but_unpinned_optional_module_is_not_started) ... ok\ntest_start_does_not_accept_eula_implicitly (test_server_control_linux.ServerControlTest.test_start_does_not_accept_eula_implicitly) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.522s\n\nOK\n",
+    "controller_sha256": "164b70a17f5fa20d691d2dc8286d5c6571d6aa0909867a12477ff4dea3b152f4",
+    "production_control_source_untouched": true
+  },
+  "full_native": {
+    "native_future_records": [
+      {
+        "run": "386b2a97-9083-4cb2-ac24-201f5d18259f",
+        "event": "native_reload_future_observed",
+        "observed_at_epoch_ms": 1794289022171,
+        "native_player_count": 0,
+        "thread": "Server thread",
+        "original_future_not_replaced": true
+      },
+      {
+        "run": "386b2a97-9083-4cb2-ac24-201f5d18259f",
+        "event": "native_reload_completed",
+        "observed_at_epoch_ms": 1794289022174,
+        "native_player_count": 0,
+        "thread": "Server thread",
+        "original_future_not_replaced": true,
+        "elapsed_ms_after_return": 3
+      },
+      {
+        "run": "f8a58329-425f-489a-afa4-ba9047facb0a",
+        "event": "native_reload_completed",
+        "observed_at_epoch_ms": 1794289863062,
+        "native_player_count": 1,
+        "thread": "Server thread",
+        "original_future_not_replaced": true,
+        "elapsed_ms_after_return": 0
+      },
+      {
+        "run": "f8a58329-425f-489a-afa4-ba9047facb0a",
+        "event": "native_reload_future_observed",
+        "observed_at_epoch_ms": 1794289863062,
+        "native_player_count": 1,
+        "thread": "Server thread",
+        "original_future_not_replaced": true
+      },
+      {
+        "run": "70efd9cf-8210-4c3e-9d2b-8e807a3a27a1",
+        "event": "native_reload_future_observed",
+        "observed_at_epoch_ms": 1794291688751,
+        "native_player_count": 1,
+        "thread": "Server thread",
+        "original_future_not_replaced": true
+      },
+      {
+        "run": "70efd9cf-8210-4c3e-9d2b-8e807a3a27a1",
+        "event": "native_reload_completed",
+        "observed_at_epoch_ms": 1794291688752,
+        "native_player_count": 1,
+        "thread": "Server thread",
+        "original_future_not_replaced": true,
+        "elapsed_ms_after_return": 0
+      },
+      {
+        "run": "2e937d47-b381-42c6-8c7f-44231ffb4dbc",
+        "event": "native_reload_future_observed",
+        "observed_at_epoch_ms": 1794291930836,
+        "native_player_count": 1,
+        "thread": "Server thread",
+        "original_future_not_replaced": true
+      },
+      {
+        "run": "2e937d47-b381-42c6-8c7f-44231ffb4dbc",
+        "event": "native_reload_completed",
+        "observed_at_epoch_ms": 1794291930837,
+        "native_player_count": 1,
+        "thread": "Server thread",
+        "original_future_not_replaced": true,
+        "elapsed_ms_after_return": 0
+      }
+    ],
+    "actual_auths": 1,
+    "world_entries": 1,
+    "logouts": 1,
+    "failed_reload_logged": 0,
+    "global_list_read_errors": 0,
+    "crash_files": 0,
+    "qa_running": false,
+    "normal_saved": true,
+    "control_pack_unknown_count": 1,
+    "paper_native_counts": [
+      40
+    ],
+    "log_sha256": "c2058197e3a8f66c145773875a8208a3bcdfb55d6cda6e3acce9ede5ae26b431",
+    "production_mods": 313,
+    "production_qa_mods": [],
+    "production_common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db"
+  },
+  "client_native": {
+    "native_serializer_packet_handles": 4,
+    "crash_files_today": 0
+  },
+  "server_client_prefix_generations": [
+    {
+      "case": "initial_join_after_zero_player_reload",
+      "client_epoch": 1,
+      "ordered_nodes": 30801,
+      "ordered_semantic_sha256": "4e3c69d72faa34e6aac1aae44dd9955216028ce7e46c7bdbab4b79282c26f7e7",
+      "native_server_client_equal": true,
+      "client_palette_monitor_held": true,
+      "all_six_client_native_palette_methods_synchronized": true
+    },
+    {
+      "case": "unchanged_data_reload",
+      "client_epoch": 2,
+      "ordered_nodes": 30801,
+      "ordered_semantic_sha256": "1ee8294db64f88e226850468c53d24267d88284080a0bb5bfc5563e09b33d2cc",
+      "native_server_client_equal": true,
+      "client_palette_monitor_held": true,
+      "all_six_client_native_palette_methods_synchronized": true
+    },
+    {
+      "case": "controlled_loot_change",
+      "client_epoch": 3,
+      "ordered_nodes": 30778,
+      "ordered_semantic_sha256": "7ec8ff1a5e86cd51b4c825222ce53c8b67826560ee6d66317c36c3edf46c3c4a",
+      "native_server_client_equal": true,
+      "client_palette_monitor_held": true,
+      "all_six_client_native_palette_methods_synchronized": true
+    },
+    {
+      "case": "original_loot_restored",
+      "client_epoch": 4,
+      "ordered_nodes": 30801,
+      "ordered_semantic_sha256": "1ee8294db64f88e226850468c53d24267d88284080a0bb5bfc5563e09b33d2cc",
+      "native_server_client_equal": true,
+      "client_palette_monitor_held": true,
+      "all_six_client_native_palette_methods_synchronized": true
+    }
+  ],
+  "client_completed_registrations": 4,
+  "client_overlaps_observed": false,
+  "controlled_loot_change": {
+    "qa_only": true,
+    "native_table": "minecraft:chests/simple_dungeon",
+    "controlled_output": "minecraft:paper",
+    "controlled_uniform_range": [
+      37,
+      41
+    ],
+    "actual_native_item_count": 40,
+    "original_native_assets_edited": false,
+    "owned_control_pack_disabled_and_preserved_outside_world": true
+  },
+  "factory_probe_after_changed_data": {
+    "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+    "report": {
+      "run": "7862df76-8f07-485a-856b-cc99428c0f7b",
+      "current_screen_class": "com.pixelmonmod.pixelmon.client.gui.starter.ChooseStarterScreen",
+      "native_client_world_present": true,
+      "server_registry_null": true,
+      "client_registry_present": true,
+      "client_palette_size_before": 30783,
+      "existing_palette_node_zero_present": true,
+      "existing_native_empty_flag_nodes": 1,
+      "empty_factory_success": true,
+      "empty_in_basic_mode": true,
+      "empty_in_advanced_mode": true,
+      "empty_node_id_in_client_palette": 1,
+      "existing_palette_node_zero_identity_preserved": true,
+      "client_palette_size_after": 30783,
+      "all_existing_palette_ids_identity_preserved": true,
+      "builder_control_scope": "One owned native key-only tooltip; may append one local cache entry, never changes existing IDs or sends a packet",
+      "native_builder_success": true,
+      "native_builder_is_nonempty": true,
+      "native_builder_has_key": true,
+      "native_builder_components_contain_control_key": true,
+      "native_builder_id_in_client_palette": 30783,
+      "client_palette_size_after_owned_builder_control": 30784,
+      "all_existing_palette_ids_preserved_after_builder_control": true,
+      "server_registry_identity_preserved": true,
+      "total_emi_recipes": 66429,
+      "ali_emi_recipes_by_category": {
+        "ali:archaeology_loot": 15,
+        "ali:block_loot": 11152,
+        "ali:cat_morning_gift": 1,
+        "ali:chest_loot": 208,
+        "ali:entity_loot": 267,
+        "ali:gameplay_loot": 553,
+        "ali:piglin_bartering": 1,
+        "ali:plant_loot": 48,
+        "ali:sniffer_digging": 1
+      },
+      "ali_emi_recipe_count": 12246,
+      "ali_emi_category_api_recipe_counts": {
+        "ali:archaeology_loot": 15,
+        "ali:block_loot": 11152,
+        "ali:cat_morning_gift": 1,
+        "ali:chest_loot": 208,
+        "ali:entity_loot": 267,
+        "ali:fishing_loot": 0,
+        "ali:gameplay_loot": 553,
+        "ali:hero_loot": 0,
+        "ali:piglin_bartering": 1,
+        "ali:plant_loot": 48,
+        "ali:sniffer_digging": 1,
+        "ali:trade_loot": 0
+      },
+      "ali_emi_category_api_recipe_classes": {
+        "com.yanny.ali.emi.compatibility.emi.EmiBlockLoot": 11200,
+        "com.yanny.ali.emi.compatibility.emi.EmiEntityLoot": 267,
+        "com.yanny.ali.emi.compatibility.emi.EmiGameplayLoot": 779
+      },
+      "probe_completed": true
+    }
+  },
+  "post_restore_snapshot_limit": {
+    "final_capture": {
+      "run": "b28e4052-5bf4-432d-be74-29c59abd1123",
+      "action": "final",
+      "result": "failed",
+      "error_class": "java.lang.IllegalStateException"
+    },
+    "factory_probe": {
+      "native_probe_sha256": "5620cdbfbab39212210158f97a49ce7cf34073910aaafac1158d0403b0779f62",
+      "report": {
+        "run": "39fa29b6-b0a9-4617-ba55-6d9907b9c6ff",
+        "current_screen_class": "net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen",
+        "native_client_world_present": false,
+        "probe_completed": false,
+        "probe_error_class": "java.lang.IllegalStateException"
+      }
+    },
+    "interpretation": "Both correctly refused after actual world was already absent. Successful native decode/registration of restored data was collected before these attempts. Not claimed as a successful post-restore factory probe.",
+    "subsequent_client_process_absent": true,
+    "native_stopping_log_seen": true,
+    "qa_client_stop_command_not_executed_because_no_process_remained": true
+  },
+  "qa_controller_corrections": {
+    "initial_minimal_baseline_console_file_read_race": "Recovered existing process after readiness; no restart or mod-bug claim",
+    "control_pack_enable_before_repository_discovery": "Unknown pack; next native reload discovered and auto-enabled it. Later enable correctly reported already enabled. Both refusals preserved, not counted as extra reloads."
+  },
+  "package": {
+    "filename": "PSA-Forge-Full-Experimental-v19.mrpack",
+    "sha256": "72f814d0acf7fa57928d011552114c1c2165e69704818d7afe82560a899abbf7",
+    "size": 1137811877,
+    "version_id": "psa-forge-475f053c9951",
+    "mod_jars": 355,
+    "indexed_resourcepacks": 15,
+    "indexed_shaderpacks": 1,
+    "override_files": 7933,
+    "longest_relative_path": 108,
+    "full_gameplay_validated": false,
+    "v18_to_v19_changed_entries": [
+      "modrinth.index.json",
+      "overrides/kubejs/data/forge/loot_modifiers/global_loot_modifiers.json",
+      "overrides/psa-forge-client-profile.json"
+    ],
+    "all_355_mod_jars_equal_to_v18": true,
+    "qa_or_server_only_compat_in_client": false
+  },
+  "server_candidate": {
+    "version": "v18",
+    "mod_jars": 314,
+    "server_only_compat_sha256": "02ef84d99f5cbd086624403160a6e0ba4cd2c87516874692f1e1cdcc4f5d948d",
+    "original_313_mod_jars_unchanged": true,
+    "staged_only": true,
+    "deployed_to_production": false
+  },
+  "production": {
+    "version": "v17",
+    "running_after_qa": true,
+    "mod_jars": 313,
+    "qa_mod_jars": [],
+    "common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+    "stop_not_requested": true
+  },
+  "limitations": [
+    "No latest Windows fresh import: Windows is off",
+    "One genuine player, not six real clients or long-session load",
+    "Native loot result and ALI ordered semantic/ID checks, not every tooltip GUI/render or all gameplay",
+    "No production cutover of server-only compatibility module",
+    "Independent latest-stable Claude review pending"
+  ],
+  "both_overall_goals_complete": false
+}

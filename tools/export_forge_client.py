@@ -8,6 +8,7 @@ from pathlib import Path
 import stat
 import tempfile
 import zipfile
+import forge_datapack_compat
 
 from export_client import safe_path, add_zip_file, data_bytes
 from stage_forge_candidate import PORT_SHA256, PIXELMON_SHA256, digest
@@ -109,6 +110,9 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
             raise ValueError("Client ALI compatibility hash mismatch")
     if not (server / ".psa-forge-candidate.json").is_file():
         raise ValueError("An owned full candidate is required")
+    server_profile = json.loads((server / ".psa-forge-candidate.json").read_text())
+    server_datapack_module = forge_datapack_compat.verify_staged_module(
+        server, server_profile.get("datapack_sync_compatibility"))
     lock_path = ROOT / "forge-client-lock.json"
     lock = json.loads(lock_path.read_text())
     base = lock["base_pack"]
@@ -136,6 +140,8 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
             raise ValueError("Integration mod identity mismatch")
         files[name] = source
     expected_server = {f["path"] for f in lock["files"] if f["side"] == "both"} | set(additions)
+    if server_datapack_module is not None:
+        expected_server.add(forge_datapack_compat.MODULE_PATH)
     actual_server = {p.relative_to(server).as_posix() for p in (server / "mods").rglob("*") if p.is_file()}
     if actual_server != expected_server:
         raise ValueError("Unexpected or missing server mod files")
@@ -158,6 +164,7 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
         if {(f["projectID"], f["fileID"]) for f in manifest["files"]} != {(f["project_id"], f["file_id"]) for f in lock["files"]}:
             raise ValueError("Client lock does not match the official manifest")
         overrides = overrides_from(archive)
+    loot_list_compatibility = forge_datapack_compat.apply_overrides(overrides)
     for name, data in overrides.items():
         if name.startswith("kubejs/"):
             source = server / name
@@ -209,6 +216,8 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
                                                    for item in lock.get("client_overrides", [])],
                 "port_sha256": PORT_SHA256, "overrides": checks}
     metadata["forge_model_compatibility"] = model_receipt
+    metadata["global_loot_modifier_compatibility"] = loot_list_compatibility
+    metadata["server_datapack_sync_compatibility"] = server_datapack_module
     metadata["item_model_aliases"] = [item_model_alias] + additional_item_models
     if menu_fix is not None:
         metadata["client_menu_compatibility"] = {
