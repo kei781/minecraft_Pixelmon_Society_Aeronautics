@@ -1,0 +1,39 @@
+// Owned, disposable native server/client observer; never a production module.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def directory = new File(project.findProperty('psaAliResyncSource').toString())
+    def ali = new File(project.findProperty('psaAliJar').toString())
+    def emi = new File(project.findProperty('psaEmiJar').toString())
+    def hash = java.security.MessageDigest.getInstance('SHA-256')
+    if (!ali.isFile() || java.nio.file.Files.isSymbolicLink(ali.toPath())) throw new GradleException('Regular ALI input required')
+    ali.withInputStream { input ->
+        byte[] buffer = new byte[65536]; int count
+        while ((count = input.read(buffer)) != -1) hash.update(buffer, 0, count)
+    }
+    if (hash.digest().encodeHex().toString() != '6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8')
+        throw new GradleException('Pinned ALI input required')
+    if (!emi.isFile() || java.nio.file.Files.isSymbolicLink(emi.toPath())) throw new GradleException('Regular EMI compile input required')
+    def emiHash = java.security.MessageDigest.getInstance('SHA-256')
+    emi.withInputStream { input ->
+        byte[] buffer = new byte[65536]; int count
+        while ((count = input.read(buffer)) != -1) emiHash.update(buffer, 0, count)
+    }
+    if (emiHash.digest().encodeHex().toString() != '92784dcf5222d72983a420c90f2e9240468ee0fece96f757c82d7884b6cbdb72')
+        throw new GradleException('Pinned EMI compile input required')
+    def compiler = project.tasks.register('compilePsaAliResync', JavaCompile) {
+        source project.fileTree(directory) { include '**/*.java' }
+        classpath = project.sourceSets.main.compileClasspath + project.files(ali, emi)
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-ali-resync/classes'))
+        options.release.set(17); options.encoding = 'UTF-8'; options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaAliResyncJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-ali-resync-trace-0.1.jar')
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'resources')
+        manifest.attributes('FMLModType':'MOD', 'MixinConfigs':'psa-ali-resync.mixins.json')
+        preserveFileTimestamps = false; reproducibleFileOrder = true
+    }
+    project.reobf.create('psaAliResyncJar')
+}
