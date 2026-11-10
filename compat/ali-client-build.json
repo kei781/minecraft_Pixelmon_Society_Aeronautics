@@ -44,5 +44,6 @@
     "pack.mcmeta",
     "psa-ali-client.mixins.json"
   ],
-  "scope": "Authored client compatibility with active pinned WrapMethod injector and actually defined wrapper metadata checked in mandatory constructor; independent R3 review pending"
+  "scope": "Authored client compatibility; actual native startup/refusal/resync/render/disconnect checks, latest stable Claude Opus5.5/high R3 CLEAN on source091d7fc; live PR14 unresolved0; no CI configured",
+  "accepted_source_head": "091d7fc5271c918bb1c121c420c7f4d22e5ee7dc"
 }

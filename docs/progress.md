@@ -48,7 +48,7 @@ R2 CLEAN, [PR #12](https://github.com/kei781/minecraft_Pixelmon_Society_Aeronaut
 [수락 기록](../evidence/task15-review-acceptance.json). 기존 v16 설치물과 운영 서버는 그대로다.
 
 남은 항목은 춤 기술/셸트랩 간헐 실패의 원인 및 실제 교체 경로,
-모델 누락 16개와 넓은 실제 렌더·사용 검사, 접속 후 ALI 캐시 NPE·ReliableEmi
+모델 누락 16개와 넓은 실제 렌더·사용 검사, 전체 데이터팩 갱신 오류·ReliableEmi
 그룹 오류 11건, 생존 포획 세부 조건·수평 비행·장시간·실제 6인 부하,
 최신 Windows 신규 설치와 최종 통합 리뷰다. 두 사용자 목표는 최종 완료로 표시하지 않는다.
 
@@ -227,7 +227,7 @@ Task16 수락: 소스 `46f22a5`를 최신 실제 Claude Opus5.5/high R2가 CLEAN
 [실제 배치](../evidence/n100-v17-player-deployment.json). 최신 Windows 가져오기·6인·장시간
 합격으로 확대하지 않는다. 다음은 실제 접속 후 관찰한 ALI/EMI 오류다.
 
-### Task 17 — ALI 원격 클라이언트 툴팁 수정·독립 리뷰 준비
+### Task 17 — ALI 원격 클라이언트 툴팁 수정·독립 리뷰 완료
 
 원래 클라이언트의 `TooltipNode.empty()` NPE를 실제 네이티브 API로 재현했다. 빈 노드
 경로만 고친 중간본에서는 일반 `TooltipBuilder.build()`가 같은 이유로 실패해, 관련 조회
@@ -250,4 +250,8 @@ Python포장15개·컴파일된 가드16개가 통과했다.
 v18은 자체 클라이언트 모드 하나만
 추가한355개이며 서버313개·공통351ecb는 유지한다. N100크래시0·정품접속·TPS20을
 확인했다. [원인·범위](ali-client-tooltips.md), [직접 결과](../evidence/ali-client-tooltips.json).
-단계별 Claude 독립 리뷰와 지적 처리를 진행한다. 두 최종 목표는 여전히 미완료다.
+소스 `091d7fc`는 최신 안정 Claude Opus 5.5/high 3차 리뷰에서 CLEAN이며 실제 PR14
+미해결 스레드는 0개다. CI는 설정되지 않았으므로 통과로 기록하지 않는다.
+[리뷰·현재 산출물 재검증 기록](../evidence/task17-review-acceptance.json).
+다음은 전체 `/reload`의 null 플레이어 전송과 원래 전리품 목록 설정 오류다.
+두 최종 목표는 여전히 미완료다.

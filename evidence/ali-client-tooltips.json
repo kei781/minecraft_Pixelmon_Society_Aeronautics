@@ -610,7 +610,8 @@
       "pack.mcmeta",
       "psa-ali-client.mixins.json"
     ],
-    "scope": "Authored client compatibility with active pinned WrapMethod injector and actually defined wrapper metadata checked in mandatory constructor; independent R3 review pending"
+    "scope": "Authored client compatibility; actual native startup/refusal/resync/render/disconnect checks, latest stable Claude Opus5.5/high R3 CLEAN on source091d7fc; live PR14 unresolved0; no CI configured",
+    "accepted_source_head": "091d7fc5271c918bb1c121c420c7f4d22e5ee7dc"
   },
   "independent_rebuild": {
     "sha256": "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055",
@@ -2150,5 +2151,6 @@
   "reload_failure_causal_clarification": {
     "loot_manager_error": "Missing replace/entries in original KubeJS global modifier override; native manager catches and logs at startup and reload, not the fatal reload abort",
     "fatal_full_reload_abort": "SerializerDebugCommon.onPlayerDatapackSync sends to null player on all-player reload event; untouched in this ALI phase; next phase audit pending"
-  }
+  },
+  "independent_review_acceptance": "task17-review-acceptance.json"
 }
