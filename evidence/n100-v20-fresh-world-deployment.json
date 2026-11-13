@@ -1,0 +1,113 @@
+{
+ "eula": "The new profile was started with --accept-eula on the owner's instruction; the owner's earlier server on the same machine already ran with eula=true",
+ "local_confirmation_of_the_same_staged_profile": {
+  "assembly_sweep_duplicated": 0,
+  "checks_failed": [],
+  "kubejs_server_script_errors": [],
+  "port_repairs_passed": [
+   "redstone_contact",
+   "physics_beside_pixelmon_machine"
+  ],
+  "probe_failure": null
+ },
+ "new_server": {
+  "candidate": {
+   "datapack_sync_compatibility": true,
+   "global_loot_modifier_compatibility": true,
+   "loot_compatibility": true,
+   "overlay_compatibility": true,
+   "village_compatibility": true
+  },
+  "checked_at_utc": "2026-11-13T12:49:18.416386+00:00",
+  "common_sha256": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c",
+  "console_log_sha256_at_check": "83f1361050338f0e261d64cbdd570be533518015f2e86d2b6847d86c91c39852",
+  "crash_report_count": 0,
+  "done_line": "Done (22.850s)! For help, type \"help\"",
+  "kubejs_server_log_errors": 0,
+  "mod_inventory_sha256": "b481c3dd4cd3d9d076722396674b44a4e5d2df569861834a6cae4adfd8fe3012",
+  "mods": 314,
+  "native_tps_overall_lines": [
+   "Overall: Mean tick time: 2.449 ms. Mean TPS: 20.000"
+  ],
+  "players_line": [
+   "There are 0 of a max of 6 players online: "
+  ],
+  "runtime": {
+   "forge_installer_hashes": {
+    "sha1": "237c5a17d941bfe793ff5780a4f330914d2c9f57"
+   },
+   "forge_version": "1.20.1-47.4.20",
+   "installed_in_owned_profile": true,
+   "java_archive_hashes": {
+    "sha256": "8f9a2ddb131ec5317419f2b0769240fe22ce27f8a0ae43f5346d53e1c8aec6a0"
+   },
+   "java_version": "17.0.21.0.11",
+   "server_started": false
+  },
+  "server_properties": {
+   "allow-flight": "true",
+   "difficulty": "easy",
+   "enable-rcon": "false",
+   "gamemode": "survival",
+   "level-name": "world",
+   "max-players": "6",
+   "online-mode": "true",
+   "simulation-distance": "4",
+   "view-distance": "4"
+  },
+  "start_script_decision": {
+   "changed": true,
+   "origin": [
+    576,
+    71,
+    192
+   ],
+   "outcome": "moved-to-village",
+   "reason": "new-world",
+   "spawn": [
+    576,
+    65,
+    208
+   ],
+   "village": {
+    "centre_x": 580,
+    "centre_z": 214,
+    "chunk_x": 36,
+    "chunk_z": 13,
+    "structure": "minecraft:village_plains"
+   },
+   "village_distance": 22.0,
+   "villages_examined": 2.0
+  }
+ },
+ "not_verified": [
+  "No player has connected to this server or installed the v20 pack",
+  "The two port repairs were not exercised on this world (the identical profile passed them in a disposable local world)",
+  "Six-player load, long uptime, direct LAN and internet reachability"
+ ],
+ "player_pack": {
+  "filename": "PSA-Forge-Full-Experimental-v20.mrpack",
+  "full_gameplay_validated": false,
+  "indexed_resourcepacks": 15,
+  "indexed_shaderpacks": 1,
+  "longest_relative_path": 108,
+  "mod_jars": 355,
+  "override_files": 8006,
+  "sha256": "80febd9a8c8cc1c60e48f44f08e029b117c7e2fa10e70daf5b761646de01502c",
+  "size": 1137884479,
+  "version_id": "psa-forge-88e8893e42c7"
+ },
+ "previous_v17_server": {
+  "folder_untouched_otherwise": true,
+  "players_online_before_stop": 0,
+  "status_after": "Stopped",
+  "stopped_with_server_control": true,
+  "world_left_in_its_own_folder": true,
+  "world_size": "135M"
+ },
+ "requested_by": "The owner asked for a fresh server setup on 2026-11-13; the earlier world was not deleted",
+ "scope": "Server start, script and tick-rate lines and the start-point decision read from the server's own logs with nobody connected",
+ "source_commit": "8adc7a49964531271db1620621459d803a80adf1 (shipped bytes unchanged since 9e7bad3)",
+ "task": "Task 19 fresh-world deployment on the N100",
+ "version": "v20"
+}
