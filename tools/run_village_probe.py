@@ -551,9 +551,10 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
 
 def exit_code(outcome, allow_failed_checks=False):
     """0 only for a run that finished, stopped cleanly and failed no check. An unrepaired profile is
-    expected to fail checks and to stop uncleanly; --allow-failed-checks records it with 0 anyway,
-    but never when the run itself did not finish."""
-    if outcome["failure"] is not None:
+    expected to fail checks and to end in a crash; --allow-failed-checks records it with 0 anyway,
+    but never when the run did not finish or the server could not be stopped (no exit code: it was
+    left running and the saved world was not read back)."""
+    if outcome["failure"] is not None or outcome["stop_exit_code"] is None:
         return 1
     if allow_failed_checks:
         return 0
