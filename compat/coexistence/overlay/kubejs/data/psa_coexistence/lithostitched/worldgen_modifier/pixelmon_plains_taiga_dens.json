@@ -1,0 +1,14 @@
+{
+  "entries": [
+    {
+      "structure": "pixelmon:den/plains",
+      "weight": 1
+    },
+    {
+      "structure": "pixelmon:den/taiga",
+      "weight": 1
+    }
+  ],
+  "structure_sets": "pixelmon:dens",
+  "type": "lithostitched:add_structure_set_entries"
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "pixelmon:pixelmon",
+      "required": false
+    },
+    {
+      "id": "pixelmon:statue",
+      "required": false
+    },
+    {
+      "id": "pixelmon:bike",
+      "required": false
+    }
+  ]
+}

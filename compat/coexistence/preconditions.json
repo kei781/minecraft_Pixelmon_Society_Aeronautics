@@ -1,0 +1,1350 @@
+[
+ {
+  "file": "config/supplementaries-common.toml",
+  "sha256": "49633145057443db4fea79a57861252ac53eb2b4cb8a7371a756dddfeb55b236"
+ },
+ {
+  "file": "kubejs/config/common.properties",
+  "sha256": "45f460b13a2007e2c9ab061ca3e274823b159f6338db1e0275a48fc31917ce4b"
+ },
+ {
+  "file": "kubejs/data/functionalstorage/tags/blocks/drawer.json",
+  "sha256": "e721cc542c1639f5493d03d6c54f391fb05aaf775020919a544abaf525afcdb2"
+ },
+ {
+  "file": "kubejs/server_scripts/playerEvents/milkBan.js",
+  "sha256": "1b49afff4a729392cf38cfda8b14406db6267fd6b98d35e1c79bb6e54c52c3e3"
+ },
+ {
+  "file": "kubejs/server_scripts/recipes/addMiscRecipes.js",
+  "sha256": "3f1e0db6080a71da6777504e2f287ed700c4ee9d2582966fbe4b2e1483354b16"
+ },
+ {
+  "file": "kubejs/server_scripts/recipes/addMissingSlabRecipes.js",
+  "sha256": "8008c961f042b2db927a7301e3f5479c3cd9e3df79a1a9dfc9ae29bb3bd8e9d1"
+ },
+ {
+  "file": "kubejs/server_scripts/recipes/removeRecipes.js",
+  "sha256": "61b3b2ddeeaf8016ff61d3db167acf72a12448f8fc6de3c31298f11e9b4406a0"
+ },
+ {
+  "file": "kubejs/server_scripts/tags/handleItemBlockFluidTags.js",
+  "sha256": "b8c332a711fbbafd2213738fa25ec866a45a9c2bdbce5601ab13918190f8a017"
+ },
+ {
+  "file": "kubejs/startup_scripts/customMachines/iridiumClock.js",
+  "sha256": "40b9d5b80a87ee6a6c0f7cd751f16dc3e0ec3338e992b21fc9f99b6dce584d57"
+ },
+ {
+  "file": "kubejs/startup_scripts/globalArtisanMachineDefinitions.js",
+  "sha256": "74b7a4006d36a817e21c1b1ee60db14f88ffba22f2043f89cc97c5d1d3fad302"
+ },
+ {
+  "file": "kubejs/startup_scripts/globalFurniturePlushies.js",
+  "sha256": "5d00d3c6e0f0d72de88ec1cd8ca7088a1dae57bedbfb0e5e4bffd1059e4e8eda"
+ },
+ {
+  "file": "kubejs/startup_scripts/globalRemovedItems.js",
+  "sha256": "d46432cc768a70bf01404c9907043235acc201c40bb50a90ee3e72a5ec8d06b5"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/artisanHopper.js",
+  "sha256": "5096a8726b1e964928243d7d827f4d4d73ada7d9ff807aa85abf9c28076cea89"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/autoGrabber.js",
+  "sha256": "3588ec5aa94ce7af08732c8409f4567a4fb51a1c85bd278e3a32319fd610fef2"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/autoWormFarm.js",
+  "sha256": "e0a7311bb26b41f2e8d99fa0d3bae630ccd3dff130ff3286d1ca263c96fe1900"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/basicShippingBin.js",
+  "sha256": "296128d97ea08881c12a3165385e5ac1b3373d2c1c53b79f9efc2aae795813f7"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/caterpillarBox.js",
+  "sha256": "24c694125df2c987c058f4a84511a7c7d6b8c5a3e1f6da159c889b1185f07255"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/feedingTrough.js",
+  "sha256": "d9e1212ae91b9a2c62ca3089b5bb334fa0c429988d85aceeed3486e8fb5d76ba"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/fishPondBasket.js",
+  "sha256": "7e08bd506957872bcd73c77bbedf5e2690c2aeb8009b2e1c1aa0c08e7497a45c"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/fishPondQuestManager.js",
+  "sha256": "5eb8371cd3b5d9dbc5545713b1f6771518a209a44c4e9b2ccf6383afd4dbc25b"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/growthObelisk.js",
+  "sha256": "adc9367fcdd25c00a59c0e2b7afc8674eb5c628ccc69789e53156f1b56504805"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/manaMilker.js",
+  "sha256": "e42b81fc9c393f86fd4ee4bf4b9a57345db73676ac7282c769fab8b261ca80a6"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/picklingCan.js",
+  "sha256": "984f89f055eba6acbbb5a83edbff6a3016715381b9c8f68a4b5e0cadaaae8a0e"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/qualityWasher.js",
+  "sha256": "fbefeedf6283722483cb638167cd8d5d2b620ae60c3838abd4f6c69ea26fd710"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/ribbitHut.js",
+  "sha256": "8ab1406145f827faa338f7b107be607fc6a53f50df968a13b940a9c04645c920"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/roeRecycler.js",
+  "sha256": "00e1ddce2623170e7fa795fb0868fd20ce0e68a05628811ce68b002ab0a4abfe"
+ },
+ {
+  "file": "kubejs/startup_scripts/powerfulMachines/smartShippingBin.js",
+  "sha256": "07c4713d37217bec3ff20516ddfd4c32097ef53516fc7a412cfb0d17723bff39"
+ },
+ {
+  "jar": "mods/Botania-1.20.1-454-FORGE.jar",
+  "entry": "data/botania/recipes/crafty_crate.json",
+  "sha256": "9cf14a1e3e5d83076beefe26b749db5aa252f4028795dac45ba63d53cdc32e9f"
+ },
+ {
+  "jar": "mods/Botania-1.20.1-454-FORGE.jar",
+  "entry": "data/botania/recipes/dreamwood_slab.json",
+  "sha256": "ee4fcd9febe5c0e6326916560be908a958674a3515c4527494503462928434a4"
+ },
+ {
+  "jar": "mods/Botania-1.20.1-454-FORGE.jar",
+  "entry": "data/botania/recipes/livingwood_slab.json",
+  "sha256": "2c96944fa678be26f21e2f90a43aa5eebaff3dba57419e03c4f4beb7446da573"
+ },
+ {
+  "jar": "mods/Botania-1.20.1-454-FORGE.jar",
+  "entry": "data/botania/recipes/stripped_dreamwood_slab.json",
+  "sha256": "d0b403e641a9ce1746f97431fed9cefa5810a5e130af61031f618e81b15ce5a7"
+ },
+ {
+  "jar": "mods/Botania-1.20.1-454-FORGE.jar",
+  "entry": "data/botania/recipes/stripped_livingwood_slab.json",
+  "sha256": "f16e10aa2f58b375cd310a9bb189e9c30eea6dd087402be99fc72657501a6a92"
+ },
+ {
+  "jar": "mods/CrabbersDelight-1.20.1-1.1.7d.jar",
+  "entry": "alabaster/crabbersdelight/common/block/CrabTrapBlock.class",
+  "sha256": "3fe22c1f482a6bdaf4cd891baefe98d435fcf34ced5774b69b897929804015d1"
+ },
+ {
+  "jar": "mods/CrabbersDelight-1.20.1-1.1.7d.jar",
+  "entry": "alabaster/crabbersdelight/common/block/entity/CrabTrapBlockEntity.class",
+  "sha256": "8ff4f085e0649c24ae5e244793b4d82848f9af862a1a0400a752170d845aa8d9"
+ },
+ {
+  "jar": "mods/MobLassos-v8.0.1-1.20.1-Forge.jar",
+  "entry": "data/moblassos/tags/entity_types/diamond_lasso_blacklist.json",
+  "sha256": "b83114c23eeec820ce7eca52011f13013fb6c64002254be7aebe1e4b36244d48"
+ },
+ {
+  "jar": "mods/MobLassos-v8.0.1-1.20.1-Forge.jar",
+  "entry": "data/moblassos/tags/entity_types/golden_lasso_blacklist.json",
+  "sha256": "b83114c23eeec820ce7eca52011f13013fb6c64002254be7aebe1e4b36244d48"
+ },
+ {
+  "jar": "mods/MobLassos-v8.0.1-1.20.1-Forge.jar",
+  "entry": "fuzs/moblassos/world/item/LassoItem$Type.class",
+  "sha256": "a057c180f325cd7a805d780397c87694d047daf67f1aee26e43337bfc18ba43f"
+ },
+ {
+  "jar": "mods/Oreganized 1.20.1-4.3.2.jar",
+  "entry": "data/oreganized/recipes/blast_deepslate_silver_ore.json",
+  "sha256": "06bbcd166930a7140546ad521c02657a944f1b90c9ad96c4b44302bebd516932"
+ },
+ {
+  "jar": "mods/Oreganized 1.20.1-4.3.2.jar",
+  "entry": "data/oreganized/recipes/blast_silver_ore.json",
+  "sha256": "f4e86a0222dda3373f8909c610d6b390edd54a8c127c0f69295bc40a416fe766"
+ },
+ {
+  "jar": "mods/Oreganized 1.20.1-4.3.2.jar",
+  "entry": "data/oreganized/recipes/silver_block.json",
+  "sha256": "b0326b543749053cd8c012fbda2aaeaaa39467281f22011e5bf38e4d5a28b7e5"
+ },
+ {
+  "jar": "mods/Oreganized 1.20.1-4.3.2.jar",
+  "entry": "data/oreganized/recipes/smelt_deepslate_silver_ore.json",
+  "sha256": "09abc9fd302625997796acd765e097b4b4605b40940f59841f453a9a00f3332c"
+ },
+ {
+  "jar": "mods/Oreganized 1.20.1-4.3.2.jar",
+  "entry": "data/oreganized/recipes/smelt_silver_ore.json",
+  "sha256": "84c6a9f790f206a68d68199094dfea4ff03b1b07d610e2655f4fdc61715a6d34"
+ },
+ {
+  "jar": "mods/Quark-4.0-462.jar",
+  "entry": "org/violetmoon/quark/addons/oddities/block/be/PipeBlockEntity.class",
+  "sha256": "c0c982f6f62723501e53e4075938ec6fd9973d633b9a7dbee025d1c11f32d62a"
+ },
+ {
+  "jar": "mods/Quark-4.0-462.jar",
+  "entry": "org/violetmoon/quark/addons/oddities/block/pipe/CopperPipeBlock.class",
+  "sha256": "eca585dee5bed3978e361f23fd5a616a1ae7c48e89075781661461facb2a65f1"
+ },
+ {
+  "jar": "mods/Quark-4.0-462.jar",
+  "entry": "org/violetmoon/quark/addons/oddities/block/pipe/EncasedPipeBlock.class",
+  "sha256": "77e1252dfa523ed8336452f86514b865f617c53991b8d45e2ec66d54619578af"
+ },
+ {
+  "jar": "mods/SewingKit-1.20.1-1.8.1.jar",
+  "entry": "dev/gigaherz/sewingkit/table/StoringSewingTableBlock.class",
+  "sha256": "e9e3a462ab976e69adb8b192e65177970b45110fb236ea382ff4320a969bf6f4"
+ },
+ {
+  "jar": "mods/SewingKit-1.20.1-1.8.1.jar",
+  "entry": "dev/gigaherz/sewingkit/table/StoringSewingTableBlockEntity.class",
+  "sha256": "7d991893b5336920de22e6c78c3425990870c54aef582da3b90fb933c8c2299f"
+ },
+ {
+  "jar": "mods/Trials-2.3.3.jar",
+  "entry": "net/salju/trialstowers/block/CrafterBlock.class",
+  "sha256": "7db9cc4fe7e1279ed4791f6883fbd9b419d9c45414398a2fb8894ccf2348f9b2"
+ },
+ {
+  "jar": "mods/Trials-2.3.3.jar",
+  "entry": "net/salju/trialstowers/block/CrafterEntity.class",
+  "sha256": "40d9a288f32cf2e6b64082f7ebe8d86b92cd6156dd67bb97f6e8a32f2b077491"
+ },
+ {
+  "jar": "mods/betterarcheology-1.2.1-1.20.1.jar",
+  "entry": "net/Pandarix/betterarcheology/block/custom/ArchelogyTable.class",
+  "sha256": "45132ac335790d0f3f96f1fd3af7a4d4d3a2ee899cd0a102d17d3d97e8542e82"
+ },
+ {
+  "jar": "mods/betterarcheology-1.2.1-1.20.1.jar",
+  "entry": "net/Pandarix/betterarcheology/block/custom/VillagerFossilBlock.class",
+  "sha256": "0c33f3553d19913145f831c93b23e473ebfe3c95601e099fb51f82c547b6d6c3"
+ },
+ {
+  "jar": "mods/betterarcheology-1.2.1-1.20.1.jar",
+  "entry": "net/Pandarix/betterarcheology/block/entity/ArcheologyTableBlockEntity.class",
+  "sha256": "0581ac4ec746b4ecac4e0e42512efee19a940b2483de6e0b29485daa2a98d2ad"
+ },
+ {
+  "jar": "mods/betterarcheology-1.2.1-1.20.1.jar",
+  "entry": "net/Pandarix/betterarcheology/block/entity/VillagerFossilBlockEntity.class",
+  "sha256": "863a6eeefe47432ca1eb89d3edc665459d2bec26d0a7be63cc9c80a45d8e9d58"
+ },
+ {
+  "jar": "mods/buildinggadgets2-1.0.7.jar",
+  "entry": "com/direwolf20/buildinggadgets2/common/blockentities/TemplateManagerBE.class",
+  "sha256": "c7f7b4403a557e483ea091d3d78bc1aea4f2ed0a68ea490fab917d34d061feb4"
+ },
+ {
+  "jar": "mods/buildinggadgets2-1.0.7.jar",
+  "entry": "com/direwolf20/buildinggadgets2/common/blocks/TemplateManager.class",
+  "sha256": "f159ac14f71de669c22470c95c6f727f14ded52b1240c52f31f6cae7f60c35af"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/fluids/drain/ItemDrainBlock.class",
+  "sha256": "c2413df75a38ce825bfe63f0dabd4bde52a8b18d81d8d90d897f37ae1acc2b32"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/fluids/drain/ItemDrainBlockEntity.class",
+  "sha256": "9efbe6058ea4e59c5978f9bf1b3bbc8eef6bf171b4c81b7cb9678c756636db9f"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/kinetics/millstone/MillstoneBlock.class",
+  "sha256": "241ad9884ec4f04e58c3c54ce7619fd4bdc1e3694a76f5f5c2e09f7db57dcdd6"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/kinetics/millstone/MillstoneBlockEntity.class",
+  "sha256": "fa0a6cab0e3f1335c48305ce09c0ac79777ba2e437c3822fe4d79b4f054d3840"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/kinetics/saw/SawBlock.class",
+  "sha256": "42617f192846d498565bd0c9d78ee8a57a007c56c684858e9fbb679168070e92"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/kinetics/saw/SawBlockEntity.class",
+  "sha256": "99e2be4c2214b66bbc5090a799fae01851b03f69b61d8a47ccacddadc6f536ac"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/chute/ChuteBlock.class",
+  "sha256": "d29715a7029904f2919110ceca223d68cefb726f39c9957b0549c1ba6a5a107d"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/chute/ChuteBlockEntity.class",
+  "sha256": "31852d5ce9136ab50faedb8b849f74a24a491d0010cc8d2c9ca44774d55bca47"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/depot/DepotBlock.class",
+  "sha256": "61236890a8f32d0ecbe61252c7b0c895bd5a05589852abc4a094a5556dc1ee61"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/depot/DepotBlockEntity.class",
+  "sha256": "faf5d73405b36906d1aca81bba9824b3c1192d8bfcd249a75af76f08263676cf"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/depot/EjectorBlock.class",
+  "sha256": "ad26bd3caa8af5ba40e407fe6015eb16150300c5eb74737f7892537b337ae737"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/depot/EjectorBlockEntity.class",
+  "sha256": "2f31293038f5f2bca60b79b578e90e2a65a05647038ec12bc59466dccbf6c411"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/packagePort/frogport/FrogportBlock.class",
+  "sha256": "83c175e87eca846305a53f8e25503725daaa1fc8108ab0e79fe54b6b8e16b62a"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/packagePort/frogport/FrogportBlockEntity.class",
+  "sha256": "e62f21e85f3457ded0e2bf880f8efdef8bc8ada031663f1a591313e10484a1ab"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/packagePort/postbox/PostboxBlock.class",
+  "sha256": "1f234ee3d9b44816c9c1019f36713bd191fa5122898f844ca2ca92d8ca4d38ca"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/packagePort/postbox/PostboxBlockEntity.class",
+  "sha256": "d2affc7835e924fe956edc72c587ad21de40b00c99d7040d62af0d39b9f66da9"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/stockTicker/StockTickerBlock.class",
+  "sha256": "93d0829e7edfe07539927620ed5dfd9c3b4e5e59b39999c32ea24fdd59b51247"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/stockTicker/StockTickerBlockEntity.class",
+  "sha256": "8333c73437a3f549cb3c843045db065403c4c4b70037ec88e9a406c5507d8c5c"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/tableCloth/TableClothBlock.class",
+  "sha256": "acc56317d0d0c0aa2eee154ce23747008a3ae6836844c6b7761a4674497e657e"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/tableCloth/TableClothBlockEntity.class",
+  "sha256": "11f6327b07fe175d6ec58caeda937f4d0b9e9698212d3296fe4edb5c2837c852"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/vault/ItemVaultBlock.class",
+  "sha256": "a56dd56886d139d0632c8115c73010ae75fade4869ee038bb762b7444426a255"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/logistics/vault/ItemVaultBlockEntity.class",
+  "sha256": "e658f60b532783057f51df1ba8d654650b166ca8297e2e126eaf6955822291ed"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/processing/basin/BasinBlock.class",
+  "sha256": "ef7ae4b045c1f888f96b2766b24894371f5140944c91380e255989c29bbe8c1a"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/processing/basin/BasinBlockEntity.class",
+  "sha256": "88ec72b2c5275024c018021ab01b7e770b48ca73dc4d29652d8e3688f1069e9e"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/schematics/cannon/SchematicannonBlock.class",
+  "sha256": "c27e3e035be8426ab45f11bb4fd3e21e0abb94a72a7485f05003cda7dda85e93"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/schematics/cannon/SchematicannonBlockEntity.class",
+  "sha256": "0c355f473bbdc0933ba3d04812a8b709e0c8547a8b816b038123276cb2762a74"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/schematics/table/SchematicTableBlock.class",
+  "sha256": "2cefcf71d6ad58c0d24027c35e511937f03f9e72283769d9fe8f6f583f23d6b3"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/schematics/table/SchematicTableBlockEntity.class",
+  "sha256": "3d62ba09041fd3009dfaf24cf077a587db6e820cef99cec42b34edc7084275cb"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/trains/station/StationBlock.class",
+  "sha256": "433e5b22ec44d6d0204f066abea9a6add8aab1723732de16db3cb14b1b89960c"
+ },
+ {
+  "jar": "mods/create-1.20.1-6.0.8.jar",
+  "entry": "com/simibubi/create/content/trains/station/StationBlockEntity.class",
+  "sha256": "49fe65e38862399ece5f53b991db0b88ec485b45506b23fdbcbe381f076a2835"
+ },
+ {
+  "jar": "mods/create_central_kitchen-1.20.1-for-create-6.0.8-1.5.0.jar",
+  "entry": "plus/dragons/createcentralkitchen/content/contraptions/blazeStove/BlazeStoveBlock.class",
+  "sha256": "b5f2c718d64db2401485688dbda6231741646e94505986fdf86b69cd44b13c11"
+ },
+ {
+  "jar": "mods/create_central_kitchen-1.20.1-for-create-6.0.8-1.5.0.jar",
+  "entry": "plus/dragons/createcentralkitchen/content/contraptions/blazeStove/BlazeStoveBlockEntity.class",
+  "sha256": "0cf4070d70886160d90bb697f3beefbfaa588ea30acff8c7b0f35e0908a5af70"
+ },
+ {
+  "jar": "mods/create_enchantment_industry-1.3.3-for-create-6.0.6.jar",
+  "entry": "plus/dragons/createenchantmentindustry/content/contraptions/enchanting/disenchanter/DisenchanterBlock.class",
+  "sha256": "83255b1a4b380f4050367e44490ef11ce95d8abc939eafe402bc5bee39c697cb"
+ },
+ {
+  "jar": "mods/create_enchantment_industry-1.3.3-for-create-6.0.6.jar",
+  "entry": "plus/dragons/createenchantmentindustry/content/contraptions/enchanting/disenchanter/DisenchanterBlockEntity.class",
+  "sha256": "1c53ead14ec92ef140a5ffb83f8bce93021afac6755c546cad44c5aace8b537d"
+ },
+ {
+  "jar": "mods/create_enchantment_industry-1.3.3-for-create-6.0.6.jar",
+  "entry": "plus/dragons/createenchantmentindustry/content/contraptions/enchanting/enchanter/BlazeEnchanterBlock.class",
+  "sha256": "19035f8981368ad124c1a23c43bb9ec8ee8b2cf549b52734b1e5bf0dae4b2ff6"
+ },
+ {
+  "jar": "mods/create_enchantment_industry-1.3.3-for-create-6.0.6.jar",
+  "entry": "plus/dragons/createenchantmentindustry/content/contraptions/enchanting/enchanter/BlazeEnchanterBlockEntity.class",
+  "sha256": "1b8c0907806479b4a636cb4e8fcda001bee46ef5db43805ac3d1bfedf346367a"
+ },
+ {
+  "jar": "mods/create_mecanical_extruder-1.20.1-1.6.11-6.0.6.jar",
+  "entry": "com/oierbravo/createmechanicalextruder/components/extruder/ExtruderBlock.class",
+  "sha256": "9559ae240015c22281af535b0f9601f696f6d5168209a54edc849a173a60258c"
+ },
+ {
+  "jar": "mods/create_mecanical_extruder-1.20.1-1.6.11-6.0.6.jar",
+  "entry": "com/oierbravo/createmechanicalextruder/components/extruder/ExtruderBlockEntity.class",
+  "sha256": "4888e07aab1efa946c4549b403a90c1b458cbca091d1b94f7cb45b19f32bbf47"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/decorations/CookieJarBlock.class",
+  "sha256": "8aea159b857932930201afcd3357023df6e7102299d1fed9b2f32bd10f228bd1"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/decorations/StockingBlock.class",
+  "sha256": "ee34d2532a4f9708bd11537f8d988e541bbb7affa0e78d7cce783a22d863ca41"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/BookshelfBlockEntity.class",
+  "sha256": "c2254623a8ff9e3953b7ce7c5c90dd41567a9651c4ad6b62fb2f17379af5255b"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/ChestBlockEntity.class",
+  "sha256": "8373824f5a3df30962eb4076e51b182a8097f96a3f3b6d90d9316fbe4fb73549"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/CookieJarBlockEntity.class",
+  "sha256": "c0305815879408b0c380cb4b4d1875272b3a3a36df78c2f126f64ea347d0ce73"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/CounterBlockEntity.class",
+  "sha256": "1777a89f4ad9e07a1864c6bb09e74198c7306de704cf47fa36c71cf064fd443c"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/DeskBlockEntity.class",
+  "sha256": "a1acf29607eda83a69016fb34c68e1b4bd7578ca35bc2ea75bf97de3c51c7d7b"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/DrawerBlockEntity.class",
+  "sha256": "3ae399fba35850b52d236c1b9518baaef12a16257515b0448ab72f2190ac71ce"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/DresserBlockEntity.class",
+  "sha256": "da940c96a34e54840441b5c482f4a334af5f0617cc1b24072f60b985c9eb4f5b"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/LockboxBlockEntity.class",
+  "sha256": "d7bbdf5d398685ad710e08f59f470625ff848b4332af55156b1ca9cc67a43c68"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/OvenBlockEntity.class",
+  "sha256": "7410df3a7e2e8d17e586150e25df4a7f70fcea70dc56a926e35c033ea40cbe46"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/StockingBlockEntity.class",
+  "sha256": "63bf92241bb79221821a0ec562e3fa62e4c30cc8e117d87c69aed50b06c37993"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/entity/WardrobeBlockEntity.class",
+  "sha256": "e8dfb1df7dd62f34d3bd40bf529cac7d75ff500c6c068e231d9314e54596aa95"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/BookshelfBlock$Dyeable.class",
+  "sha256": "dec4c7f01541d395db5d9097e5a18b7d1e2430a79d9d39514e27741d43801279"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/BookshelfBlock.class",
+  "sha256": "148025c709ee2b6ec37904a6d5069adf86d9cc86d903cb253453f81c3767b582"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/ChestBlock$Dyeable.class",
+  "sha256": "dc9abf9e538d718de31e94488c5c3ea7253fdfea3e0dffd9982282a52f0a37f1"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/ChestBlock.class",
+  "sha256": "6c2a4dc0cbdde8dfd050f1a3d2780d1c70508b733c8300a4cbaa6b7723aad664"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/CounterBlock$Dyeable.class",
+  "sha256": "5fe8a5d8c53257e428e426459e7b5823500b658b5203d03926beea8b2a48ec5e"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/CounterBlock.class",
+  "sha256": "1f13a9df238758008ed6d71edfa32e1af7d9d80ada6e2856e8653b2575240716"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/DeskBlock$Dyeable.class",
+  "sha256": "a26cab74b18b4ca42d903358b8cb06faa51d0e9d92f890dc0c3fc19b73b1d1a2"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/DeskBlock.class",
+  "sha256": "ca945843b559ce0bf21bd5f18a871da67613e7c4c4fb7cc44518549ed9be40ce"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/DrawerBlock$Dyeable.class",
+  "sha256": "53728478034c0d6155abacf6e43335b52ed49d91d84178784e62daf318f1d9fb"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/DrawerBlock.class",
+  "sha256": "c4ad098dd42972771ee606e052b63a04c20200f72833e69680940c56c368f04d"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/DresserBlock$Dyeable.class",
+  "sha256": "abece342d4ab1d255805bdb52e3370563c01c13d714e6ea2b171e7fd1b545fd3"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/DresserBlock.class",
+  "sha256": "f3553e38424d8bb032131f31da07cec8c3b9b94b09aba62adca5cb7bc19b8043"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/LockboxBlock$Dyeable.class",
+  "sha256": "0bcaf698047a19043131e557c6bdb5f6b0eec41c5f83d81fdbe6ab8f11e3cb06"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/LockboxBlock.class",
+  "sha256": "32205e3a88ef0cabc412f72971f9455c6093c2c1ce4c8925449c8245692d648a"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/OvenBlock$Dyeable.class",
+  "sha256": "c5df117a5d02f2d8a6ad9d138a90fd4f574fd35882b19164a7c40363a907d47b"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/OvenBlock.class",
+  "sha256": "48f928bc0e937bf00f1a226319ac216777332ea9b30a75bd77cf818fd19a1211"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/OvenMultiBlock.class",
+  "sha256": "8d3cc2f86e39dbf0dda80191b91ad2fcdb9f98e067da5068b1d73e8c7e260380"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/WardrobeBottomBlock$Dyeable.class",
+  "sha256": "292a5802e0fdc88acc6ce494b7ce3d3ef81abd3594d8e60ccb26d24ede681fa1"
+ },
+ {
+  "jar": "mods/fantasyfurniture-1.20.1-9.0.0.jar",
+  "entry": "xyz/apex/forge/fantasyfurniture/common/block/furniture/WardrobeBottomBlock.class",
+  "sha256": "3d7264c9b2892bc8a9505223e354691fd308ec5e473569b0c814201beea908c8"
+ },
+ {
+  "jar": "mods/farmingforblockheads-forge-1.20.1-14.0.2.jar",
+  "entry": "net/blay09/mods/farmingforblockheads/block/ChickenNestBlock.class",
+  "sha256": "aab71b9a3862b2ca6449b11b218b8f188480c4a1b6f728c69ac8248d0911d201"
+ },
+ {
+  "jar": "mods/farmingforblockheads-forge-1.20.1-14.0.2.jar",
+  "entry": "net/blay09/mods/farmingforblockheads/block/FeedingTroughBlock.class",
+  "sha256": "94b8896713ca2d6ebfa3bd8fd81c1665df10e62c9bc367a223b12147ebfe118f"
+ },
+ {
+  "jar": "mods/farmingforblockheads-forge-1.20.1-14.0.2.jar",
+  "entry": "net/blay09/mods/farmingforblockheads/block/entity/ChickenNestBlockEntity.class",
+  "sha256": "0c8e46f7a0f6b4d84942993f4c50d5b6caf17a6d3ed348ebfe8f36ca577d6faa"
+ },
+ {
+  "jar": "mods/farmingforblockheads-forge-1.20.1-14.0.2.jar",
+  "entry": "net/blay09/mods/farmingforblockheads/block/entity/FeedingTroughBlockEntity.class",
+  "sha256": "c2e5f81b70701fde2823348ab9d853b30d82c021673cdc33f1b069420f614476"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/ControllerExtensionBlock.class",
+  "sha256": "633f74a84c7bb9b0d4711b3467de40337b96bdc82db4559a02100b244817ae3f"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/DrawerBlock.class",
+  "sha256": "d6f816e74f26fcef2a9730bc183af250921b61870e8185d7cf3a5e51d0ee7a06"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/DrawerControllerBlock.class",
+  "sha256": "84e3544c5be606030d5a2c301872af8f5065326decd1ca3a6f7c3b8d1e6e3e3e"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/FramedControllerExtensionBlock.class",
+  "sha256": "a4d127d003593dea318f4f189dcefe27969b1ff4ba83dbbe714c225380aee81f"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/FramedDrawerControllerBlock.class",
+  "sha256": "0666a033dbceafa10229b687966b94c780730612eaae78e41d6d771680649806"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/StorageControllerBlock.class",
+  "sha256": "2e3e10ebbb61791036c5c85b7fa5dda3a9c188cadeb97210987c85f5d9c2d0b3"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/StorageControllerExtensionBlock.class",
+  "sha256": "570a3112dc06285b6dfe472bd95452fbacc28ff15d5c409e6f1a32a6fb6847ef"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/tile/ControllableDrawerTile.class",
+  "sha256": "4718cf24d6a6d6ea1aaa8400a7778e341d84b562ecccf24656fb901f98291f92"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/tile/ControllerExtensionTile.class",
+  "sha256": "de8cf4197e0e6c269988f2750136a26c31810cd7148e346fc10892c96bc05930"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/tile/DrawerControllerTile.class",
+  "sha256": "2410d95a569de2f8c8735def1977e9bce73d74a4be8123c139fbc847ca91c00d"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/tile/FramedControllerExtensionTile.class",
+  "sha256": "562d7f4edd660938397b8459ff0080bd4740253d74be489cb8075aafd961988e"
+ },
+ {
+  "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+  "entry": "com/buuz135/functionalstorage/block/tile/FramedDrawerControllerTile.class",
+  "sha256": "93c1f71238cc2c98922a885fc9128b0fe203a98b9ba35d0a92e77e3f8994170b"
+ },
+ {
+  "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+  "entry": "dev/latvian/mods/kubejs/block/custom/BasicBlockJS.class",
+  "sha256": "bdbd15b85214dee372cda4415ae3045523518b16c9863d78777bd4a512e0f8ab"
+ },
+ {
+  "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+  "entry": "dev/latvian/mods/kubejs/block/entity/BlockEntityJS.class",
+  "sha256": "801a2b0ed815a2578ca5c5b945fc62023f3a7213c3ee6c41b442009cd908f17a"
+ },
+ {
+  "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+  "entry": "dev/latvian/mods/kubejs/block/entity/InventoryAttachment.class",
+  "sha256": "b567d78e78b4111f99636d21d5e3e3a2cf433957fb6dd5c791b182532ddb3bda"
+ },
+ {
+  "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+  "entry": "dev/latvian/mods/kubejs/server/tag/PreTagEventJS.class",
+  "sha256": "b00eb107def2c913ea30297c3d845d8d756eb78afccf1a94ee131a476e0797a0"
+ },
+ {
+  "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+  "entry": "dev/latvian/mods/kubejs/server/tag/TagEventFilter$ID.class",
+  "sha256": "753038738289f1dc145f92b311195624bc733701ca6126f9db4b4e0f3bdd33bf"
+ },
+ {
+  "jar": "mods/letsdo-API-forge-1.2.15-forge.jar",
+  "entry": "de/cristelknight/doapi/common/block/entity/StorageBlockEntity.class",
+  "sha256": "9648db7475fa26e3ce778a9589403a60c971d262625d0c293fbe13c219258a9f"
+ },
+ {
+  "jar": "mods/letsdo-bakery-forge-2.0.3.jar",
+  "entry": "net/satisfy/bakery/block/storage/BreadBox.class",
+  "sha256": "c510f41a60167c5ce3520291fb3328012051eca234d5dfc96065948b8f3fb4ff"
+ },
+ {
+  "jar": "mods/letsdo-bakery-forge-2.0.3.jar",
+  "entry": "net/satisfy/bakery/block/storage/CakeDisplayBlock.class",
+  "sha256": "a3ca37e1eaaa829c6ad1faffa646822ce7577efa560c843f4050cc3861f30d65"
+ },
+ {
+  "jar": "mods/letsdo-bakery-forge-2.0.3.jar",
+  "entry": "net/satisfy/bakery/block/storage/CakeStandBlock.class",
+  "sha256": "f9323526dfdb1c2d1254e6a8c2c545546921063985aa2aa80bf591710c045210"
+ },
+ {
+  "jar": "mods/letsdo-bakery-forge-2.0.3.jar",
+  "entry": "net/satisfy/bakery/block/storage/CupcakeDisplayBlock.class",
+  "sha256": "6fa8fdde2d70589dfa5750db9ad9ac797f454fbc2a6a2d4d3569678c5820bf89"
+ },
+ {
+  "jar": "mods/letsdo-bakery-forge-2.0.3.jar",
+  "entry": "net/satisfy/bakery/block/storage/TrayBlock.class",
+  "sha256": "2f6614f02562057d9f18ffb5a928de00c66e9f845496e9d4e63a04bfac89034b"
+ },
+ {
+  "jar": "mods/letsdo-bakery-forge-2.0.3.jar",
+  "entry": "net/satisfy/bakery/block/storage/WallDisplayBlock.class",
+  "sha256": "cb7f49458698046e8eb8c196c1c0de9a9f1f631b23152ba54ae54327e87c30bd"
+ },
+ {
+  "jar": "mods/letsdo-brewery-forge-2.0.3.jar",
+  "entry": "net/satisfy/brewery/block/BeverageBlock.class",
+  "sha256": "1bcd440ef3eaca0a9553bb286766185f034d44c695599aa5ab7cafb68cceee6d"
+ },
+ {
+  "jar": "mods/letsdo-candlelight-forge-2.0.2.jar",
+  "entry": "net/satisfy/candlelight/block/JewelryBoxBlock.class",
+  "sha256": "b228fb177a2c09393fd47237164b298727ff04896b2412432687cabd6f4bba55"
+ },
+ {
+  "jar": "mods/letsdo-candlelight-forge-2.0.2.jar",
+  "entry": "net/satisfy/candlelight/block/ShelfBlock.class",
+  "sha256": "b6e84b44021916a90e28603821e341ae744f7b441c5722cfe54054c5e6c7cd79"
+ },
+ {
+  "jar": "mods/letsdo-candlelight-forge-2.0.2.jar",
+  "entry": "net/satisfy/candlelight/block/TableSetBlock.class",
+  "sha256": "e1597aec4cee2379e245bdd27fb43526c5741354cfbd70e5e53550ea0a5ecccb"
+ },
+ {
+  "jar": "mods/letsdo-farm_and_charm-forge-1.0.4.jar",
+  "entry": "net/satisfy/farm_and_charm/block/ToolRackBlock.class",
+  "sha256": "4af64cecd4866a3b3a810685af8b634d76f6c64b074d33bdeae0cc9ff1003bc8"
+ },
+ {
+  "jar": "mods/letsdo-farm_and_charm-forge-1.0.4.jar",
+  "entry": "net/satisfy/farm_and_charm/block/WindowSillBlock.class",
+  "sha256": "dbb441e775e799d5a55b9577d66bf1d9c56d68393f33e49bfa70c13502792efb"
+ },
+ {
+  "jar": "mods/letsdo-meadow-forge-1.3.23.jar",
+  "entry": "net/satisfy/meadow/core/block/CheeseRackBlock.class",
+  "sha256": "9b4e5d5ddc857334bc42742ccb70ceb696d174bc6813b923e2e25c679dd67c07"
+ },
+ {
+  "jar": "mods/letsdo-meadow-forge-1.3.23.jar",
+  "entry": "net/satisfy/meadow/core/block/FlowerBoxBlock.class",
+  "sha256": "3f67ec4cf38dab3161cb9c9e6b311d7e37518a222d424f058687f5723049f775"
+ },
+ {
+  "jar": "mods/letsdo-meadow-forge-1.3.23.jar",
+  "entry": "net/satisfy/meadow/core/block/FlowerPotBigBlock.class",
+  "sha256": "4d41012b2e94176b2d129461f9ddf998f869c3221839b59831570122d55f5662"
+ },
+ {
+  "jar": "mods/letsdo-meadow-forge-1.3.23.jar",
+  "entry": "net/satisfy/meadow/core/block/FlowerPotSmallBlock.class",
+  "sha256": "87d4f95fc8ce5af64928968070e5a5df392fb337f25d76269bf7c9152d275fdc"
+ },
+ {
+  "jar": "mods/letsdo-meadow-forge-1.3.23.jar",
+  "entry": "net/satisfy/meadow/core/block/WheelBarrowBlock.class",
+  "sha256": "bf23cd5861b8d581755c45b8d76b32204990e18d551b191734c9f71c4242996c"
+ },
+ {
+  "jar": "mods/letsdo-meadow-forge-1.3.23.jar",
+  "entry": "net/satisfy/meadow/core/block/entity/StorageBlockEntity.class",
+  "sha256": "401b6a7fb03f68aecb01c260bda57c6d40be0be5748b9909d36a2f90dcbfc8b1"
+ },
+ {
+  "jar": "mods/letsdo-nethervinery-forge-1.2.19.jar",
+  "entry": "net/satisfy/nethervinery/core/block/NetherBigBottleStorageBlock.class",
+  "sha256": "2b15ecfbdd820ca26b5c9c6c1ddade36818f8564de30023eb4521b8fd2a13871"
+ },
+ {
+  "jar": "mods/letsdo-nethervinery-forge-1.2.19.jar",
+  "entry": "net/satisfy/nethervinery/core/block/NetherFourBottleStorageBlock.class",
+  "sha256": "4bb7b83c39de96618ebc6ee29c40f0acd09ba4ad3a7e4684549fe7e9a4016c8c"
+ },
+ {
+  "jar": "mods/letsdo-nethervinery-forge-1.2.19.jar",
+  "entry": "net/satisfy/nethervinery/core/block/NetherNineBottleStorageBlock.class",
+  "sha256": "14dd0f1dde97e71690e72c5f6f26e634faa879e00db9d5f1a3a76948f9c318f3"
+ },
+ {
+  "jar": "mods/letsdo-nethervinery-forge-1.2.19.jar",
+  "entry": "net/satisfy/nethervinery/core/block/NetherWineBottleBlock.class",
+  "sha256": "8bbd603d6a787e2d4aaaea71063884f1897b7ae00ecaa3d6d62ee235edc85042"
+ },
+ {
+  "jar": "mods/letsdo-nethervinery-forge-1.2.19.jar",
+  "entry": "net/satisfy/nethervinery/core/block/entity/NetherStorageBlockEntity.class",
+  "sha256": "8cbfd249443aa62ad041794cea0bd2e51643fb895de9fe6f3b2f32e8a1e82c5c"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/BigBottleStorageBlock.class",
+  "sha256": "e328c4a7b609d4f948e3bde0401b4259f8700c6e286713145e67f02f088095a7"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/FlowerBoxBlock.class",
+  "sha256": "647275d0155d675b0fb150576b3eb0485be2fa0d488f2f6724bc8c77739fd778"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/FlowerPotBigBlock.class",
+  "sha256": "8a21afbdad5307c473e2f7994036bf66438caa9eb4d4d787d6365d33be6148c6"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/FourBottleStorageBlock.class",
+  "sha256": "203c94abaeb87ff397f38bca88509a9706b1b6adf828479a5edea78d638f44ac"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/NineBottleStorageBlock.class",
+  "sha256": "3aac17c91f3c7442dccd5a40d2ffb8cb3fdee71155b891e14bac3ae8ae5dc725"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/ShelfBlock.class",
+  "sha256": "8e20d1ecc568c50124c7670ddf700e18ea8830722e906c094e9dcc222bc36fa3"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/WineBottleBlock.class",
+  "sha256": "98539d002d08655e9181d20bcbacc02f355707a74dd5fa1fbb2f707eadac3fe4"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/WineBoxBlock.class",
+  "sha256": "c7521fedbdf2b34e0dc5ab62413a6231ed3cb21a2f4064afa3969267c75e61ec"
+ },
+ {
+  "jar": "mods/letsdo-vinery-forge-1.4.41.jar",
+  "entry": "net/satisfy/vinery/core/block/entity/StorageBlockEntity.class",
+  "sha256": "7e42a69d41015004d2f4b6efcb31b0073ba32e615a1fcc15ab96e07a93bb3b97"
+ },
+ {
+  "jar": "mods/lithostitched-forge-1.20.1-1.4.11.jar",
+  "entry": "dev/worldgen/lithostitched/mixin/server/DedicatedServerMixin.class",
+  "sha256": "fc62c8dcac331ae4f0283bbd90146ca6e6b4c86ec90b8d44ba57945d26952bc3"
+ },
+ {
+  "jar": "mods/lithostitched-forge-1.20.1-1.4.11.jar",
+  "entry": "dev/worldgen/lithostitched/worldgen/modifier/AddStructureSetEntriesModifier.class",
+  "sha256": "b9b92d3039fa74622a4781dc9705b781d4929c8ff8edb539497063e253a46fbc"
+ },
+ {
+  "jar": "mods/plonk-1.20.1-10.0.5-forge.jar",
+  "entry": "com/breakinblocks/plonk/common/block/BlockPlacedItems.class",
+  "sha256": "7fddfb8a60975d283686257705c46c6657844188c160ab0671a60571789cffa5"
+ },
+ {
+  "jar": "mods/plonk-1.20.1-10.0.5-forge.jar",
+  "entry": "com/breakinblocks/plonk/common/tile/TilePlacedItems.class",
+  "sha256": "fde0662935e2858dc391e21c69858368cb529b32f276d7152d1dc9d960e36fbb"
+ },
+ {
+  "jar": "mods/society_trading-1.2.9.jar",
+  "entry": "io/github/chakyl/societytrading/block/AutoTraderBlock.class",
+  "sha256": "0959209b750b07fbec438f03ea20190127910a5c05ae5c7c1d063dd33cd4984b"
+ },
+ {
+  "jar": "mods/society_trading-1.2.9.jar",
+  "entry": "io/github/chakyl/societytrading/blockentity/AutoTraderBlockEntity.class",
+  "sha256": "277077ddcfe3f70ed82273675ddb101c5a4a7f29294a49d18fd0d4d61147c66f"
+ },
+ {
+  "jar": "mods/sophisticatedstorage-1.20.1-1.4.74.1997.jar",
+  "entry": "net/p3pp3rf1y/sophisticatedstorage/block/StorageBlockEntity.class",
+  "sha256": "071273b51d7e0dfcaf1d982fd5189af698835ebd706e841774b61033ab7aabc6"
+ },
+ {
+  "jar": "mods/splendid_slimes-0.20.5.jar",
+  "entry": "io/github/chakyl/splendidslimes/block/PlortPressBlock.class",
+  "sha256": "a41b581f16199964f0551bbbd01122d6b84d3102a59a79daa9cbf77133fb1536"
+ },
+ {
+  "jar": "mods/splendid_slimes-0.20.5.jar",
+  "entry": "io/github/chakyl/splendidslimes/blockentity/PlortPressBlockEntity.class",
+  "sha256": "4e78488a89f0a4166ef4658a4634f2ab06760a942657491b068b8ac096294f4d"
+ },
+ {
+  "jar": "mods/supplementaries-1.20-3.1.43-forge.jar",
+  "entry": "data/supplementaries/recipes/item_shelf.json",
+  "sha256": "2422a8d46c4e83183627ce2932ecdf1255540c379b109adc43e09d0bdf108146"
+ },
+ {
+  "jar": "mods/supplementaries-1.20-3.1.43-forge.jar",
+  "entry": "data/supplementaries/recipes/present.json",
+  "sha256": "8029c3bdc5b08f4c776f96a2c54d3e2831bdd8f795cb1de726ef9c32a92bc7c4"
+ },
+ {
+  "jar": "mods/titanium-1.20.1-3.8.32.jar",
+  "entry": "com/hrznstudio/titanium/block/BasicBlock.class",
+  "sha256": "c25f9ca3a39ff8cd0f9b42f94bbbc6943874bdcb50de423cd58bc6e84a86984a"
+ },
+ {
+  "jar": "mods/vintagedelight-0.1.6.jar",
+  "entry": "net/ribs/vintagedelight/block/custom/FermentingJarBlock.class",
+  "sha256": "86628357822f1795d4c94be720c620d5e8e01701234cfb0dd7065a6d5ebda65b"
+ },
+ {
+  "jar": "mods/vintagedelight-0.1.6.jar",
+  "entry": "net/ribs/vintagedelight/block/entity/FermentingJarBlockEntity.class",
+  "sha256": "b5706d5eec03fd2e9f31e35244ed918eb393c939d3ffb917336693a441f3321b"
+ },
+ {
+  "jar": "mods/whimsy_deco-1.2.jar",
+  "entry": "data/whimsy_deco/recipes/cast_iron_trapdoor.json",
+  "sha256": "c2d7efea5213f2beb3183cde8dae2d35ba76e967054cf967d527221acd53d0d0"
+ },
+ {
+  "jar": "mods/zetter-1.20.1-0.21.7.jar",
+  "entry": "me/dantaeusb/zetter/block/ArtistTableBlock.class",
+  "sha256": "1893e7fab69eb7ae87f3e6005883490c31926eea6c6be395c8ca54b67e78d268"
+ },
+ {
+  "jar": "mods/zetter-1.20.1-0.21.7.jar",
+  "entry": "me/dantaeusb/zetter/block/entity/ArtistTableBlockEntity.class",
+  "sha256": "1fe640d85da219d1f1063378bd09259e152d28d4cd920bfd2da4d2209728d0b8"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/api/util/helpers/BlockHelper.class",
+  "sha256": "a654560e7bb0a176cfed35a949a35b9a73577ec3b7feabf33fc7d11dd8cd72a1"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/furniture/GymSignBlock.class",
+  "sha256": "a17102c15be6f1ea45ab2545d4f004d83ee368805f37156a35aceb1cc9bce89f"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/machines/CloningMachineBlock.class",
+  "sha256": "9449de0416897ea2b1602985f05dcadac05b071ca2cbbb7fde533fa0af6cd471"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/machines/InfuserBlock.class",
+  "sha256": "b210d399086d4a5cde70023609d109502dbe5eabb84065d3b2ab146be5f739a9"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/multi/FossilDisplayBlock.class",
+  "sha256": "76f3fd1d277da318e21815392b60e29e333e73ed0b34a01a5a153f6efd4ae2e9"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/CloningMachineTileEntity.class",
+  "sha256": "8aa1cf64a55058e82ba91e5982679ae7bfb36c4a81f6e1fdc7ece65a1252478b"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/FossilDisplayTileEntity.class",
+  "sha256": "ae3933bce3123d2453f8a0c07cc0820931fdf98132be79ca697d8fea5c026682"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/GymSignTileEntity.class",
+  "sha256": "3416c0a415d2beb0df3cf87a894bed715832d2c6ac19082142e5f11b150b7472"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/IBasicInventory.class",
+  "sha256": "e9bb95e89cb65178f6c2302c083b730ff7a0a8e9fa4ab447e08e33c9e14e7999"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/InfuserTileEntity.class",
+  "sha256": "00cb052fb58fc829fa5bf98bbc24fe6195dd1933702bbde65ffd32979b07374b"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "com/pixelmonmod/pixelmon/init/registry/EntityRegistration.class",
+  "sha256": "c24106fbe38959c2bceb1908a2e76877beafa2968bc46738297f13c13ed73939"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/recipes/blast_furnace/silver_ore.json",
+  "sha256": "917a95c0a6228bd79dc9f746d5d8fb5819655a19aedf6fc7fddf1214abe7a708"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/recipes/decor/building_infrastructure/bridge_block.json",
+  "sha256": "c47e7a732a2e0d9e32ad7b794d1d0108b1b403d030588acbe60fa8000c1c89ff"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/recipes/decor/household_items/box.json",
+  "sha256": "41d78d0a595a119d0008122e261ea961abba995b0ddc244dc3c64635531f9282"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/recipes/decor/household_items/end_table.json",
+  "sha256": "35d6bf84fb7a728bb15a1046baf58f4494bc91191bd8fd0d39fab201d3490111"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/recipes/equipment/silver/silver_block.json",
+  "sha256": "821400fc60ce743c37bc54a13c93decbea228091fd5371c2718465d1627abb37"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/recipes/furnace/silver_ore.json",
+  "sha256": "24cb85d16c148a73dd8b6e046a67510706aa4cdd2f5acea592e783e716a569ea"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/recipes/pokeball/base/iron_base.json",
+  "sha256": "080e284e4d8dfbdc02f7be33ef6273d204ed24c29c7a3f7c2165b5f47e9f66fa"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/recipes/pokeball/base/wooden_base.json",
+  "sha256": "64c23127a25229d699b096c059b470a8e6b2d31b3f47fcf2fb42281fb6ddd5ab"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy.nbt",
+  "sha256": "b63b0492ec1f0c920fe4438bfd9d12a50b8c1db558ce74196ab4325355dcff5c"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_a.nbt",
+  "sha256": "006ba38c7f700e7a1ad5c1b4f7a54da3d2b1e8b2fd3624ca43dcf86c8b31d613"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_b.nbt",
+  "sha256": "c89f6d7d4338277d9f79c68e07cc6c69cd43269228ec6f4ed7480558a0ab7c1e"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_c.nbt",
+  "sha256": "16022e2a689ba130b52381f791d91fd37809785d3f9b81c851fcd127ceb58b30"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_d.nbt",
+  "sha256": "59724151ec8d67fc49223f52af3f45c1d949d2ffbf9d384e1c4ad69032dd4642"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_e.nbt",
+  "sha256": "35e1921541b8d8d9a89ecf84b52a8415d75b97924a9a9ed0305c16b8cb2f6f27"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_f.nbt",
+  "sha256": "80333b90ad76b19ed2e3a77b85b68fd1f8945cc65eaf467deefd8220b5486590"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_a.nbt",
+  "sha256": "87af29b74fb7805d031e465d3d0fbfd1fd68ee7d94b5d9788802479a981c0e78"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_b.nbt",
+  "sha256": "3ac02f1caac5ea2583f8a922f9653e6ed54dfc6c40b300bf58d31e7adbfcda70"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_c.nbt",
+  "sha256": "a985c37fef22aa02e8a20819d5b505be60f1e8b6c8b5b37eb834e6f48d897883"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_d.nbt",
+  "sha256": "cd63b00b34fef09d6fb497ddfd7ad6dc9bcbe1d3cdf3e81c6fdd0263b50dcec1"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_e.nbt",
+  "sha256": "6a9ed34322b5e8b7a9dba3ab512f629b6d655d05cc371e2d682702783bc96852"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_f.nbt",
+  "sha256": "63426e292537a603d10f6f3c7831344b490456e2eb9abb9bc9ad78bf3a0b2800"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_g.nbt",
+  "sha256": "d3c0cffcfdd5f108ed550ee33dcabb3d7e2fa101fa93c37792dc60c92824f3ad"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_h.nbt",
+  "sha256": "fb6ea3be9d428a20a7e5c73388e29c369ff0ab789329a605fee4323f100fd70d"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_i.nbt",
+  "sha256": "065eef6cbf8ab9ec6b4edb5c43c6ff6a9944c50678a509a2b3de56d533d9c224"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_a.nbt",
+  "sha256": "1f1dafa926f5e780fbeaaff87bad8879f31f2d0b722313eaed1f31a02cd25a22"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_b.nbt",
+  "sha256": "3a7ce862323a4723320d53a4278e73d9a29d8e2c613832746fa85a712d83587b"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_c.nbt",
+  "sha256": "bee89873d130528ad4034444c1cc89a765fdb8a849e0edcc19bbc73e23cd4fa6"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_d.nbt",
+  "sha256": "d387ed90097b466254ea2e8161286be5c46750b5f274d51ddabdd82a6f6733d6"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_e.nbt",
+  "sha256": "5062ae8e11890ff3429d92749eccc61f2322f3931a6a3a46c275d02634f69e1f"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_f.nbt",
+  "sha256": "1ed02fb6de7e5b01b7b81bef0c046bd3694946915761fe7fa359129a97d6fe5f"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/worldgen/structure/den/plains.json",
+  "sha256": "aa45823faccfa902b8cdadf1f3ae2ad9e276a13c8d38fc0dc670f4018f738e81"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/worldgen/structure/den/taiga.json",
+  "sha256": "ac5910362fdb788a8e7338574b91143ed7328bc894d86ff7d0ed36934aa49abe"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/worldgen/structure/gyms/fairy.json",
+  "sha256": "e92c3c20460a826199e1155bf4f540db24b18bed3565175fd68d649313ee8d52"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/worldgen/structure_set/dens.json",
+  "sha256": "18825ccfaa6ccfdb5f3e861183e54776b058b13351fc1c97c77446aa2a87b255"
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/worldgen/template_pool/npc/gyms/fairy.json",
+  "absent": true
+ },
+ {
+  "jar": "pixelmon",
+  "entry": "data/pixelmon/worldgen/template_pool/npc/gyms/grass.json",
+  "sha256": "d6612b5cb4f94a9de2a9af3b983259b100c2579bb35abe56bbf8fe46802cfd61"
+ },
+ {
+  "jar": "port",
+  "entry": "data/aeronautics/recipes/aviators_goggles.json",
+  "sha256": "896cbe00ab6d0803499e7820febd90510025c4f0d411d6555e8327b3993980fb"
+ },
+ {
+  "jar": "port",
+  "entry": "data/aeronautics/recipes/steam_vent.json",
+  "sha256": "2d99bb3f941764e688f2b6b88c3188c805d90a35805a1770b73f733c13ca48be"
+ },
+ {
+  "jar": "port",
+  "entry": "data/create/tags/blocks/non_movable.json",
+  "sha256": "ccb7d569c63b3a14ef0592dc698f65baf14211c9a7b5c8b023527b1d2c5e4a52"
+ },
+ {
+  "jar": "port",
+  "entry": "data/sable/tags/blocks/silent_assembly_removal.json",
+  "sha256": "b8038ac2cc88a5bb838ff5824402ff5bf944651a5e5fa323673a8be7f43a8116"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/advancements/recipes/misc/redstone_accumulator.json",
+  "sha256": "db07744993b9e29b28fcfcd643b653fe41e37d83be565c4cd935fcc73378ab7a"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/advancements/recipes/misc/redstone_inductor.json",
+  "sha256": "79fbbe823a87ab73f527ddaf66c48ad0a3a12f09a83df5e4b75f12876d276151"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/advancements/recipes/misc/rope_coupling.json",
+  "sha256": "94f7c588f3bbcd82f2d78ede1046a77699649a400073b6f41f126cbcbca85a0a"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/black_nameplate_from_other_nameplate.json",
+  "sha256": "6d722d14ad66eef113a2c880bde7e37149f98b12e36685fb772bdc89b06c5d92"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/blue_nameplate_from_other_nameplate.json",
+  "sha256": "e6dec765e1938a30be30c056aa9e19742bf32f0914464111cf32a72acbae731b"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/brown_nameplate_from_other_nameplate.json",
+  "sha256": "ea2342e3e003f184e1e95a600a57c99f3b77ef27332e6ab01fc6661738f947a5"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/cyan_nameplate_from_other_nameplate.json",
+  "sha256": "cec91b1a5a7a80cd80ab2a98702de34e297da41941c7ba8b0f52790f21f15ad4"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/gray_nameplate_from_other_nameplate.json",
+  "sha256": "13bf0500a19ff40a714e7e9b88ccbe2187a889cd978c5c64969573590f9a9a26"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/green_nameplate_from_other_nameplate.json",
+  "sha256": "5424c4eb33ed0a08df7d8b6e35b8aa80a597ab2df20cf32cfa1a368b8ff6738c"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/light_blue_nameplate_from_other_nameplate.json",
+  "sha256": "ba6ac4906faf5dd74d97268cca8ec4729ed1733e7335e69a7b754491f089b24f"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/light_gray_nameplate_from_other_nameplate.json",
+  "sha256": "95ce0399fb5108ba9c1267a431f7c37bde2a32353c2ae9a74b765fd2f3bea6ef"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/lime_nameplate_from_other_nameplate.json",
+  "sha256": "4d34b22a1b3d5cbf6f4c0a1c18965df714618cd58dca8626bb685593bd9be1b9"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/magenta_nameplate_from_other_nameplate.json",
+  "sha256": "12a50a498b275f78f988ee3159761e0a1ef5f7e637034e60cff0c5dd9c583d7b"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/orange_nameplate_from_other_nameplate.json",
+  "sha256": "59643deaa231b31c0a09fdfdfd7b708606e1fdc311a58f532230a4036a8a51a9"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/pink_nameplate_from_other_nameplate.json",
+  "sha256": "1cae6b551686444312f8f8d66d5e5acac61c2ed3d52855866eed03b9d02a07ce"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/purple_nameplate_from_other_nameplate.json",
+  "sha256": "0f5cd59d44cfe353540498e4edc356eaf3408026b00c28a4180870e9d3055d7b"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/red_nameplate_from_other_nameplate.json",
+  "sha256": "9c5a50c2506b1958932e70824ad2e314f1172a749a2badf8ae7370be1b61f6cb"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/white_nameplate_from_other_nameplate.json",
+  "sha256": "2cc78395dfac10752ed8c7e173696f4c214ca5fea535828871f0cd3e05cb04a8"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/crafting/yellow_nameplate_from_other_nameplate.json",
+  "sha256": "da595519df285cb5239919cb09cd04ce26922f6c6309250cf15538d51641ce0d"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/redstone_accumulator.json",
+  "sha256": "8a6e49d01f42b1504e43cefd6161459562577ec95c9d24bf4fef2e3eea5dcb1e"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/redstone_inductor.json",
+  "sha256": "a7c9ddc70744b47e630324327364779ae8b1a6b1667a5d29eedda6acaddb9882"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/recipes/rope_coupling.json",
+  "sha256": "f9e70478f50910da3d873a04f1dd1a234d004b5a91df465c38cf4719a3d48f25"
+ },
+ {
+  "jar": "port",
+  "entry": "data/simulated/tags/blocks/non_movable.json",
+  "sha256": "b83114c23eeec820ce7eca52011f13013fb6c64002254be7aebe1e4b36244d48"
+ },
+ {
+  "jar": "port",
+  "entry": "dev/eriksonn/aeronautics/content/blocks/hot_air/steam_vent/SteamVentBlock$Variant.class",
+  "sha256": "0772d1dd8cfbd026028c51906ecab743f2d3e5e07d81abc762acef8aca22e811"
+ },
+ {
+  "jar": "port",
+  "entry": "dev/eriksonn/aeronautics/index/AeroTags$ItemTags.class",
+  "sha256": "2e21000a22e5caf4e2bfab86a23d8af252265b9ae5ddbac65456e4ba77c2ed90"
+ },
+ {
+  "jar": "port",
+  "entry": "dev/ryanhcode/sable/api/SubLevelAssemblyHelper.class",
+  "sha256": "c37c0e8a5999399e53c728f58144fb5d249c8a24c1c73f47108cd034120736e2"
+ },
+ {
+  "jar": "port",
+  "entry": "dev/ryanhcode/sable/forge/mixin/compatibility/create/redstone_contacts/RedstoneContactBlockMixin.class",
+  "sha256": "44619d2accc9518abe7900439f9baa73fb674b20ceca1ac1ca48d873597f196f"
+ },
+ {
+  "jar": "port",
+  "entry": "dev/simulated_team/simulated/util/assembly/SimAssemblyContraption.class",
+  "sha256": "dae82ad4f62375214df52b7b39b1c27283646c9278c8dfa8e6cc196a21a0d08d"
+ }
+]

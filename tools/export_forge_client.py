@@ -9,6 +9,9 @@ import stat
 import tempfile
 import zipfile
 import forge_datapack_compat
+import forge_loot_compat
+import forge_overlay_compat
+import forge_village_compat
 
 from export_client import safe_path, add_zip_file, data_bytes
 from stage_forge_candidate import PORT_SHA256, PIXELMON_SHA256, digest
@@ -94,7 +97,7 @@ def apply_client_overrides(files, lock, extras):
         files[name] = source
 
 
-def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
+def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vanilla_data=None):
     server, extras, society_zip, output = map(Path, [server, extras, society_zip, output])
     if output.exists() or output.is_symlink() or output.suffix.lower() != ".mrpack":
         raise ValueError("A fresh .mrpack output is required")
@@ -165,6 +168,28 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
             raise ValueError("Client lock does not match the official manifest")
         overrides = overrides_from(archive)
     loot_list_compatibility = forge_datapack_compat.apply_overrides(overrides)
+    # Single-player worlds of the client pack use the same coexistence data as the server.
+    pixelmon_jar = server / "mods/Pixelmon-1.20.1-9.2.3-universal.jar"
+    port_jar = server / "mods/psa-aeronautics-experimental-forge-1.20.1.jar"
+    server_mod = lambda path: (server / path).read_bytes() if (server / path).is_file() else None
+    appliers = {
+        "village_compatibility": (forge_village_compat, lambda: forge_village_compat.apply_overrides(overrides, pixelmon_jar)),
+        "loot_compatibility": (forge_loot_compat, lambda: forge_loot_compat.apply_overrides(overrides, pixelmon_jar, vanilla_data)),
+        "overlay_compatibility": (forge_overlay_compat, lambda: forge_overlay_compat.apply_overrides(
+            overrides, pixelmon_jar, port_jar, server_mod)),
+    }
+    coexistence = {}
+    for key, (helper, apply) in appliers.items():
+        coexistence[key] = helper.verify_staged(server, server_profile.get(key))
+        if coexistence[key] is None:
+            continue
+        if key == "loot_compatibility" and vanilla_data is None:
+            raise ValueError("The vanilla data JAR is required to reproduce the server's loot tables")
+        if apply() != coexistence[key]:
+            raise ValueError("Server %s differs from this exporter" % key)
+    for name in (forge_overlay_compat.LITHIUM_PATH,):
+        if coexistence["overlay_compatibility"] is not None and (server / name).read_bytes() != overrides[name]:
+            raise ValueError("Server and client Radium configuration differ")
     for name, data in overrides.items():
         if name.startswith("kubejs/"):
             source = server / name
@@ -218,6 +243,7 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None):
     metadata["forge_model_compatibility"] = model_receipt
     metadata["global_loot_modifier_compatibility"] = loot_list_compatibility
     metadata["server_datapack_sync_compatibility"] = server_datapack_module
+    metadata.update(coexistence)
     metadata["item_model_aliases"] = [item_model_alias] + additional_item_models
     if menu_fix is not None:
         metadata["client_menu_compatibility"] = {
@@ -260,5 +286,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--menu-fix", type=Path, help="Pinned client-only menu and discount display compatibility JAR")
     parser.add_argument("--ali-fix", type=Path, help="Pinned client-only ALI empty-tooltip compatibility JAR")
+    parser.add_argument("--vanilla-data", type=Path,
+                        help="Pinned vanilla data JAR; required when the server profile carries merged loot tables")
     args = parser.parse_args()
-    print(json.dumps(build(args.server, args.extras, args.society_client, args.output, args.menu_fix, args.ali_fix), indent=2))
+    print(json.dumps(build(args.server, args.extras, args.society_client, args.output, args.menu_fix, args.ali_fix,
+                           args.vanilla_data), indent=2))

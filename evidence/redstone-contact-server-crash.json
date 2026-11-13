@@ -1,0 +1,74 @@
+{
+ "cause": "dev.ryanhcode.sable.forge.mixin.compatibility.create.redstone_contacts.RedstoneContactBlockMixin.getTicker calls IBE.super.getTicker; after the mixin is merged the call names RedstoneContactBlock itself with an interface method reference, which the JVM rejects",
+ "first_start": {
+  "crash_reports": {
+   "crash-2026-11-13_11.35.41-server.txt": [
+    "Description: Exception in server tick loop",
+    "",
+    "java.lang.IncompatibleClassChangeError: Method 'net.minecraft.world.level.block.entity.BlockEntityTicker com.simibubi.create.content.redstone.contact.RedstoneContactBlock.m_142354_(net.minecraft.world.level.Level, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.entity.BlockEntityType)' must be Methodref constant",
+    "\tat com.simibubi.create.content.redstone.contact.RedstoneContactBlock.m_142354_(RedstoneContactBlock.java:541) ~[create-1.20.1-6.0.8.jar%23468!/:6.0.8] {re:mixin,re:classloading,pl:mixin:A}",
+    "\tat net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.m_155944_(BlockBehaviour.java:848) ~[server-1.20.1-20230612.114412-srg.jar%23729!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.reduce_blockstate_cache_rebuilds.BlockStateBaseMixin,pl:mixin:APP:snowrealmagic.mixins.json:BlockStateMixin,pl:mixin:APP:mixins.dewdropfarmland.json:RandomTickMixin,pl:mixin:APP:lithium.mixins.json:ai.pathing.AbstractBlockStateMixin,pl:mixin:APP:lithium.mixins.json:util.block_tracking.AbstractBlockStateMixin,pl:mixin:APP:passablefoliage.mixins.json:BlockStateMixin,pl:mixin:APP:passablefoliage.mixins.json:forge.BlockStateMixin,pl:mixin:APP:sereneseasons.mixins.json:MixinBlockStateBase,pl:mixin:APP:twigs.mixins.json:BlockStateBaseMixin,pl:mixin:APP:copycats-common.mixins.json:foundation.copycat.BlockStateBaseMixin,pl:mixin:APP:watut.mixins.json:BlockBehaviorUse,pl:mixin:APP:kubejs-common.mixins.json:BlockStateBaseMixin,pl:mixin:APP:ferritecore.blockstatecache.mixin.json:BlockStateBaseMixin,pl:mixin:APP:etcetera.mixins.json:AbstractBlockStateMixin,pl:mixin:APP:expandability-common.mixins.json:fluidcollision.BlockStateBaseMixin,pl:mixin:A}"
+   ]
+  },
+  "reached_done": true,
+  "steps": [
+   {
+    "command": "forceload add 8 264",
+    "console": [
+     "Tooltip ali.property.branch.tags could be merged if defined singular form in null",
+     "Tooltip ali.property.branch.tags could be merged if defined singular form in null",
+     "Tooltip ali.property.branch.tags could be merged if defined singular form in null"
+    ],
+    "server_crashed": false
+   },
+   {
+    "command": "fill 5 199 261 11 199 267 minecraft:stone",
+    "console": [
+     "Successfully filled 49 block(s)"
+    ],
+    "server_crashed": false
+   },
+   {
+    "command": "setblock 8 200 264 create:redstone_contact",
+    "console": [
+     "Encountered an unexpected exception",
+     "java.lang.IncompatibleClassChangeError: Method 'net.minecraft.world.level.block.entity.BlockEntityTicker com.simibubi.create.content.redstone.contact.RedstoneContactBlock.m_142354_(net.minecraft.world.level.Level, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.enti",
+     "\tat com.simibubi.create.content.redstone.contact.RedstoneContactBlock.m_142354_(RedstoneContactBlock.java:541) ~[create-1.20.1-6.0.8.jar%23468!/:6.0.8] {re:mixin,re:classloading,pl:mixin:A}"
+    ],
+    "server_crashed": true
+   }
+  ]
+ },
+ "limitations": [
+  "Loopback disposable world, no player connected",
+  "The crashed JVM stayed alive after saving and was ended by the test driver (exit -9)",
+  "A player's placement was not exercised; the console setblock and the chunk load reach the same LevelChunk code"
+ ],
+ "port_jar_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+ "restart_of_the_same_world": {
+  "crash_reports": {
+   "crash-2026-11-13_11.37.28-server.txt": [
+    "Description: Exception during promotion of chunk to FULL status",
+    "",
+    "java.lang.IncompatibleClassChangeError: Method 'net.minecraft.world.level.block.entity.BlockEntityTicker com.simibubi.create.content.redstone.contact.RedstoneContactBlock.m_142354_(net.minecraft.world.level.Level, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.entity.BlockEntityType)' must be Methodref constant",
+    "\tat com.simibubi.create.content.redstone.contact.RedstoneContactBlock.m_142354_(RedstoneContactBlock.java:541) ~[create-1.20.1-6.0.8.jar%23468!/:6.0.8] {re:mixin,re:classloading,pl:mixin:A}",
+    "\tat net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.m_155944_(BlockBehaviour.java:848) ~[server-1.20.1-20230612.114412-srg.jar%23729!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.reduce_blockstate_cache_rebuilds.BlockStateBaseMixin,pl:mixin:APP:snowrealmagic.mixins.json:BlockStateMixin,pl:mixin:APP:mixins.dewdropfarmland.json:RandomTickMixin,pl:mixin:APP:lithium.mixins.json:ai.pathing.AbstractBlockStateMixin,pl:mixin:APP:lithium.mixins.json:util.block_tracking.AbstractBlockStateMixin,pl:mixin:APP:passablefoliage.mixins.json:BlockStateMixin,pl:mixin:APP:passablefoliage.mixins.json:forge.BlockStateMixin,pl:mixin:APP:sereneseasons.mixins.json:MixinBlockStateBase,pl:mixin:APP:twigs.mixins.json:BlockStateBaseMixin,pl:mixin:APP:copycats-common.mixins.json:foundation.copycat.BlockStateBaseMixin,pl:mixin:APP:watut.mixins.json:BlockBehaviorUse,pl:mixin:APP:kubejs-common.mixins.json:BlockStateBaseMixin,pl:mixin:APP:ferritecore.blockstatecache.mixin.json:BlockStateBaseMixin,pl:mixin:APP:etcetera.mixins.json:AbstractBlockStateMixin,pl:mixin:APP:expandability-common.mixins.json:fluidcollision.BlockStateBaseMixin,pl:mixin:A}"
+   ]
+  },
+  "reached_done": true,
+  "steps": [
+   {
+    "command": "forceload query",
+    "console": [
+     "Registering server plugin data...",
+     "Registered 8/12 entry factories",
+     "Registered 4/4 number converters"
+    ],
+    "server_crashed": true
+   }
+  ]
+ },
+ "same_class_scan": "All 314 mod JARs (nested JARs included) were scanned for an invokespecial of an interface method inside a @Mixin class: six sites, five of them target a class without mixins in its superclasses or an interface (curios MixinInventory, KubeJS ContainerMixin x2 and IItemHandlerMixin, quality_food ItemMixin); only this one fails",
+ "scope": "Unrepaired v18 staging (314 mods), fresh world, no test scripts; plain console commands, then a restart of the same world",
+ "task": "Task 19 Create redstone contact on the combined pack"
+}

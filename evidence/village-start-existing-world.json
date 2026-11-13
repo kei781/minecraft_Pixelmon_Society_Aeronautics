@@ -1,0 +1,54 @@
+{
+ "limitations": [
+  "Loopback disposable copy of a probe world, no player connected",
+  "Not the N100 production server or world",
+  "Run with the village repair only; the start script is byte-identical in the full coexistence staging"
+ ],
+ "result": {
+  "apply": {
+   "changed": true,
+   "origin": [
+    448,
+    63,
+    -1184
+   ],
+   "outcome": "moved-to-village",
+   "reason": "operator-command",
+   "spawn": [
+    224,
+    70,
+    -880
+   ],
+   "village": {
+    "centre_x": 229,
+    "centre_z": -868,
+    "chunk_x": 14,
+    "chunk_z": -54,
+    "structure": "minecraft:village_plains"
+   },
+   "village_distance": 384.0,
+   "villages_examined": 4.0
+  },
+  "level_dat_spawn_after": {
+   "x": 224,
+   "y": 70,
+   "z": -880
+  },
+  "on_start": {
+   "changed": false,
+   "outcome": "existing-world-unchanged",
+   "reason": "server-start"
+  },
+  "status_after": "PSA village spawn: moved-to-village, world spawn 224 70 -880",
+  "status_before": "PSA village spawn: existing-world-unchanged, world spawn 448 63 -1184",
+  "stop_exit_code": 0,
+  "world_created_without_script_spawn": {
+   "x": 448,
+   "y": 63,
+   "z": -1184
+  }
+ },
+ "scope": "A world created by the unrepaired pack (no start script) was opened with the village repair; then the operator command was run from the console",
+ "start_script_sha256": "5db11166e1cf4a70bb9df7f05d7488146b0c47aaed6aed793e899f73dd18415a",
+ "task": "Task 19 start point on an existing world"
+}

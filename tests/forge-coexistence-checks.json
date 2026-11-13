@@ -1,0 +1,1088 @@
+{
+ "tags": [
+  {
+   "registry": "item",
+   "tag": "c:dusts/redstone",
+   "expect_contains": [
+    "minecraft:redstone"
+   ]
+  },
+  {
+   "registry": "item",
+   "tag": "c:stones",
+   "expect_contains": [
+    "minecraft:stone"
+   ]
+  },
+  {
+   "registry": "item",
+   "tag": "c:leathers",
+   "expect_contains": [
+    "minecraft:leather"
+   ]
+  },
+  {
+   "registry": "item",
+   "tag": "c:plates/gold",
+   "expect_contains": [
+    "create:golden_sheet"
+   ]
+  },
+  {
+   "registry": "item",
+   "tag": "c:plates/iron",
+   "expect_contains": [
+    "create:iron_sheet"
+   ]
+  },
+  {
+   "registry": "item",
+   "tag": "c:dyes/red",
+   "expect_contains": [
+    "minecraft:red_dye"
+   ]
+  },
+  {
+   "registry": "item",
+   "tag": "c:dyes/light_blue",
+   "expect_contains": [
+    "minecraft:light_blue_dye"
+   ]
+  },
+  {
+   "registry": "item",
+   "tag": "forge:strings",
+   "expect_contains": [
+    "minecraft:string"
+   ]
+  },
+  {
+   "registry": "entity_type",
+   "tag": "moblassos:diamond_lasso_blacklist",
+   "expect_contains": [
+    "pixelmon:pixelmon",
+    "pixelmon:statue",
+    "pixelmon:bike"
+   ]
+  },
+  {
+   "registry": "block",
+   "tag": "create:non_movable",
+   "expect_contains": [
+    "shippingbin:basic_shipping_bin"
+   ]
+  },
+  {
+   "registry": "block",
+   "tag": "simulated:non_movable",
+   "expect_contains": [
+    "shippingbin:basic_shipping_bin",
+    "shippingbin:smart_shipping_bin",
+    "society:aging_cask",
+    "society:ancient_cask",
+    "society:artisan_hopper",
+    "society:auto_grabber",
+    "society:auto_tapper",
+    "society:auto_worm_farm",
+    "society:bait_maker",
+    "society:caterpillar_box",
+    "society:charging_rod",
+    "society:cheese_press",
+    "society:coin_leaderboard",
+    "society:crystalarium",
+    "society:dehydrator",
+    "society:deluxe_worm_farm",
+    "society:espresso_machine",
+    "society:feeding_trough",
+    "society:fish_pond",
+    "society:fish_pond_basket",
+    "society:fish_pond_hatchery",
+    "society:fish_pond_manager",
+    "society:fish_smoker",
+    "society:golden_clock",
+    "society:growth_obelisk",
+    "society:growth_obelisk_upper",
+    "society:iridium_clock",
+    "society:juice_inserter",
+    "society:loom",
+    "society:mana_clock",
+    "society:mana_fruit_crop",
+    "society:mana_milker",
+    "society:mana_sprinkler",
+    "society:mayonnaise_machine",
+    "society:mini_artisan_hopper",
+    "society:mushroom_log",
+    "society:oil_maker",
+    "society:pickling_can",
+    "society:preserves_jar",
+    "society:quality_washer",
+    "society:recycling_machine",
+    "society:ribbit_hut",
+    "society:ribbit_hut_block",
+    "society:roe_recycler",
+    "society:seed_maker",
+    "society:shipping_bin_monitor",
+    "society:snow_melter",
+    "society:sparkstone_recycler",
+    "society:tapper",
+    "society:villager_home",
+    "society:wine_keg",
+    "society_trading:auto_trader"
+   ]
+  },
+  {
+   "registry": "block",
+   "tag": "sable:silent_assembly_removal",
+   "expect_contains": [
+    "bakery:breadbox",
+    "bakery:cake_display",
+    "bakery:cake_stand",
+    "bakery:cupcake_display",
+    "bakery:tray",
+    "bakery:wall_display",
+    "betterarcheology:archeology_table",
+    "betterarcheology:villager_fossil",
+    "brewery:beer_barley",
+    "brewery:beer_haley",
+    "brewery:beer_hops",
+    "brewery:beer_nettle",
+    "brewery:beer_oat",
+    "brewery:beer_wheat",
+    "brewery:whiskey_ak",
+    "brewery:whiskey_carrasconlabel",
+    "brewery:whiskey_cristelwalker",
+    "brewery:whiskey_highland_hearth",
+    "brewery:whiskey_jamesons_malt",
+    "brewery:whiskey_jojannik",
+    "brewery:whiskey_lilitusinglemalt",
+    "brewery:whiskey_maggoallan",
+    "brewery:whiskey_smokey_reverie",
+    "buildinggadgets2:template_manager",
+    "candlelight:acacia_shelf",
+    "candlelight:bamboo_shelf",
+    "candlelight:birch_shelf",
+    "candlelight:cherry_shelf",
+    "candlelight:crimson_shelf",
+    "candlelight:dark_oak_shelf",
+    "candlelight:jewelry_box",
+    "candlelight:jungle_shelf",
+    "candlelight:mangrove_shelf",
+    "candlelight:oak_shelf",
+    "candlelight:spruce_shelf",
+    "candlelight:table_set",
+    "candlelight:warped_shelf",
+    "crabbersdelight:crab_trap",
+    "create:andesite_table_cloth",
+    "create:basin",
+    "create:black_postbox",
+    "create:blue_postbox",
+    "create:brass_table_cloth",
+    "create:brown_postbox",
+    "create:chute",
+    "create:copper_table_cloth",
+    "create:cyan_postbox",
+    "create:depot",
+    "create:gray_postbox",
+    "create:green_postbox",
+    "create:item_drain",
+    "create:item_vault",
+    "create:light_blue_postbox",
+    "create:light_gray_postbox",
+    "create:lime_postbox",
+    "create:magenta_postbox",
+    "create:mechanical_saw",
+    "create:millstone",
+    "create:orange_postbox",
+    "create:package_frogport",
+    "create:pink_postbox",
+    "create:purple_postbox",
+    "create:red_postbox",
+    "create:schematic_table",
+    "create:schematicannon",
+    "create:stock_ticker",
+    "create:track_station",
+    "create:weighted_ejector",
+    "create:white_postbox",
+    "create:yellow_postbox",
+    "create_central_kitchen:blaze_stove",
+    "create_enchantment_industry:blaze_enchanter",
+    "create_enchantment_industry:disenchanter",
+    "create_mechanical_extruder:mechanical_extruder",
+    "fantasyfurniture:bone/skeleton/bookshelf",
+    "fantasyfurniture:bone/skeleton/chest",
+    "fantasyfurniture:bone/skeleton/counter",
+    "fantasyfurniture:bone/skeleton/desk_left",
+    "fantasyfurniture:bone/skeleton/desk_right",
+    "fantasyfurniture:bone/skeleton/drawer",
+    "fantasyfurniture:bone/skeleton/dresser",
+    "fantasyfurniture:bone/skeleton/lockbox",
+    "fantasyfurniture:bone/skeleton/oven",
+    "fantasyfurniture:bone/skeleton/wardrobe_bottom",
+    "fantasyfurniture:bone/wither/bookshelf",
+    "fantasyfurniture:bone/wither/chest",
+    "fantasyfurniture:bone/wither/counter",
+    "fantasyfurniture:bone/wither/desk_left",
+    "fantasyfurniture:bone/wither/desk_right",
+    "fantasyfurniture:bone/wither/drawer",
+    "fantasyfurniture:bone/wither/dresser",
+    "fantasyfurniture:bone/wither/lockbox",
+    "fantasyfurniture:bone/wither/oven",
+    "fantasyfurniture:bone/wither/wardrobe_bottom",
+    "fantasyfurniture:decorations/cookie_jar",
+    "fantasyfurniture:decorations/stocking",
+    "fantasyfurniture:dunmer/bookshelf",
+    "fantasyfurniture:dunmer/chest",
+    "fantasyfurniture:dunmer/counter",
+    "fantasyfurniture:dunmer/desk_left",
+    "fantasyfurniture:dunmer/desk_right",
+    "fantasyfurniture:dunmer/drawer",
+    "fantasyfurniture:dunmer/dresser",
+    "fantasyfurniture:dunmer/lockbox",
+    "fantasyfurniture:dunmer/oven",
+    "fantasyfurniture:dunmer/wardrobe_bottom",
+    "fantasyfurniture:necrolord/bookshelf",
+    "fantasyfurniture:necrolord/chest",
+    "fantasyfurniture:necrolord/counter",
+    "fantasyfurniture:necrolord/desk_left",
+    "fantasyfurniture:necrolord/desk_right",
+    "fantasyfurniture:necrolord/drawer",
+    "fantasyfurniture:necrolord/dresser",
+    "fantasyfurniture:necrolord/lockbox",
+    "fantasyfurniture:necrolord/oven",
+    "fantasyfurniture:necrolord/wardrobe_bottom",
+    "fantasyfurniture:nordic/bookshelf",
+    "fantasyfurniture:nordic/chest",
+    "fantasyfurniture:nordic/counter",
+    "fantasyfurniture:nordic/desk_left",
+    "fantasyfurniture:nordic/desk_right",
+    "fantasyfurniture:nordic/drawer",
+    "fantasyfurniture:nordic/dresser",
+    "fantasyfurniture:nordic/lockbox",
+    "fantasyfurniture:nordic/oven",
+    "fantasyfurniture:nordic/wardrobe_bottom",
+    "fantasyfurniture:royal/bookshelf",
+    "fantasyfurniture:royal/chest",
+    "fantasyfurniture:royal/counter",
+    "fantasyfurniture:royal/desk_left",
+    "fantasyfurniture:royal/desk_right",
+    "fantasyfurniture:royal/drawer",
+    "fantasyfurniture:royal/dresser",
+    "fantasyfurniture:royal/lockbox",
+    "fantasyfurniture:royal/oven",
+    "fantasyfurniture:royal/wardrobe_bottom",
+    "fantasyfurniture:venthyr/bookshelf",
+    "fantasyfurniture:venthyr/chest",
+    "fantasyfurniture:venthyr/counter",
+    "fantasyfurniture:venthyr/desk_left",
+    "fantasyfurniture:venthyr/desk_right",
+    "fantasyfurniture:venthyr/drawer",
+    "fantasyfurniture:venthyr/dresser",
+    "fantasyfurniture:venthyr/lockbox",
+    "fantasyfurniture:venthyr/oven",
+    "fantasyfurniture:venthyr/wardrobe_bottom",
+    "farm_and_charm:tool_rack",
+    "farm_and_charm:window_sill",
+    "farmingforblockheads:chicken_nest",
+    "farmingforblockheads:feeding_trough",
+    "functionalstorage:controller_extension",
+    "functionalstorage:framed_controller_extension",
+    "functionalstorage:framed_storage_controller",
+    "functionalstorage:storage_controller",
+    "meadow:cheese_rack",
+    "meadow:wheelbarrow",
+    "meadow:wooden_flower_box",
+    "meadow:wooden_flower_pot_big",
+    "meadow:wooden_flower_pot_small",
+    "nethervinery:blazewine_pinot",
+    "nethervinery:crimson_wine_rack_big",
+    "nethervinery:crimson_wine_rack_mid",
+    "nethervinery:crimson_wine_rack_small",
+    "nethervinery:ghastly_grenache",
+    "nethervinery:improved_lava_fizz",
+    "nethervinery:improved_nether_fizz",
+    "nethervinery:lava_fizz",
+    "nethervinery:nether_fizz",
+    "nethervinery:netherite_nectar",
+    "nethervinery:warped_wine_rack_big",
+    "nethervinery:warped_wine_rack_mid",
+    "nethervinery:warped_wine_rack_small",
+    "pixelmon:black_floor_gym_sign",
+    "pixelmon:black_hanging_gym_sign",
+    "pixelmon:black_wall_gym_sign",
+    "pixelmon:blue_floor_gym_sign",
+    "pixelmon:blue_hanging_gym_sign",
+    "pixelmon:blue_wall_gym_sign",
+    "pixelmon:brown_floor_gym_sign",
+    "pixelmon:brown_hanging_gym_sign",
+    "pixelmon:brown_wall_gym_sign",
+    "pixelmon:cloning_machine",
+    "pixelmon:cyan_floor_gym_sign",
+    "pixelmon:cyan_hanging_gym_sign",
+    "pixelmon:cyan_wall_gym_sign",
+    "pixelmon:fossil_display",
+    "pixelmon:gray_floor_gym_sign",
+    "pixelmon:gray_hanging_gym_sign",
+    "pixelmon:gray_wall_gym_sign",
+    "pixelmon:green_floor_gym_sign",
+    "pixelmon:green_hanging_gym_sign",
+    "pixelmon:green_wall_gym_sign",
+    "pixelmon:infuser",
+    "pixelmon:light_blue_floor_gym_sign",
+    "pixelmon:light_blue_hanging_gym_sign",
+    "pixelmon:light_blue_wall_gym_sign",
+    "pixelmon:light_gray_floor_gym_sign",
+    "pixelmon:light_gray_hanging_gym_sign",
+    "pixelmon:light_gray_wall_gym_sign",
+    "pixelmon:lime_floor_gym_sign",
+    "pixelmon:lime_hanging_gym_sign",
+    "pixelmon:lime_wall_gym_sign",
+    "pixelmon:magenta_floor_gym_sign",
+    "pixelmon:magenta_hanging_gym_sign",
+    "pixelmon:magenta_wall_gym_sign",
+    "pixelmon:orange_floor_gym_sign",
+    "pixelmon:orange_hanging_gym_sign",
+    "pixelmon:orange_wall_gym_sign",
+    "pixelmon:pink_floor_gym_sign",
+    "pixelmon:pink_hanging_gym_sign",
+    "pixelmon:pink_wall_gym_sign",
+    "pixelmon:purple_floor_gym_sign",
+    "pixelmon:purple_hanging_gym_sign",
+    "pixelmon:purple_wall_gym_sign",
+    "pixelmon:red_floor_gym_sign",
+    "pixelmon:red_hanging_gym_sign",
+    "pixelmon:red_wall_gym_sign",
+    "pixelmon:white_floor_gym_sign",
+    "pixelmon:white_hanging_gym_sign",
+    "pixelmon:white_wall_gym_sign",
+    "pixelmon:yellow_floor_gym_sign",
+    "pixelmon:yellow_hanging_gym_sign",
+    "pixelmon:yellow_wall_gym_sign",
+    "plonk:placed_items",
+    "quark:encased_pipe",
+    "quark:pipe",
+    "sewingkit:storing_sewing_station",
+    "shippingbin:basic_shipping_bin",
+    "shippingbin:smart_shipping_bin",
+    "society:artisan_hopper",
+    "society:auto_grabber",
+    "society:auto_worm_farm",
+    "society:caterpillar_box",
+    "society:feeding_trough",
+    "society:fish_pond_basket",
+    "society:fish_pond_hatchery",
+    "society:fish_pond_manager",
+    "society:growth_obelisk",
+    "society:iridium_clock",
+    "society:mana_milker",
+    "society:mini_artisan_hopper",
+    "society:pickling_can",
+    "society:quality_washer",
+    "society:ribbit_hut",
+    "society:roe_recycler",
+    "society_trading:auto_trader",
+    "splendid_slimes:plort_press",
+    "trials:crafter",
+    "vinery:acacia_wine_rack_big",
+    "vinery:acacia_wine_rack_mid",
+    "vinery:acacia_wine_rack_small",
+    "vinery:aegis_wine",
+    "vinery:apple_cider",
+    "vinery:apple_wine",
+    "vinery:bamboo_wine_rack_big",
+    "vinery:bamboo_wine_rack_mid",
+    "vinery:bamboo_wine_rack_small",
+    "vinery:birch_wine_rack_big",
+    "vinery:birch_wine_rack_mid",
+    "vinery:birch_wine_rack_small",
+    "vinery:bolvar_wine",
+    "vinery:bottle_mojang_noir",
+    "vinery:chenet_wine",
+    "vinery:cherry_wine",
+    "vinery:cherry_wine_rack_big",
+    "vinery:cherry_wine_rack_mid",
+    "vinery:cherry_wine_rack_small",
+    "vinery:chorus_wine",
+    "vinery:clark_wine",
+    "vinery:creepers_crush",
+    "vinery:cristel_wine",
+    "vinery:dark_cherry_shelf",
+    "vinery:dark_cherry_wine_rack_big",
+    "vinery:dark_cherry_wine_rack_mid",
+    "vinery:dark_cherry_wine_rack_small",
+    "vinery:dark_oak_wine_rack_big",
+    "vinery:dark_oak_wine_rack_mid",
+    "vinery:dark_oak_wine_rack_small",
+    "vinery:eiswein",
+    "vinery:flower_box",
+    "vinery:flower_pot_big",
+    "vinery:glowing_wine",
+    "vinery:jellie_wine",
+    "vinery:jo_special_mixture",
+    "vinery:jungle_wine_rack_big",
+    "vinery:jungle_wine_rack_mid",
+    "vinery:jungle_wine_rack_small",
+    "vinery:kelp_cider",
+    "vinery:lilitu_wine",
+    "vinery:magnetic_wine",
+    "vinery:mangrove_wine_rack_big",
+    "vinery:mangrove_wine_rack_mid",
+    "vinery:mangrove_wine_rack_small",
+    "vinery:mead",
+    "vinery:mellohi_wine",
+    "vinery:noir_wine",
+    "vinery:oak_wine_rack_big",
+    "vinery:oak_wine_rack_mid",
+    "vinery:oak_wine_rack_small",
+    "vinery:red_wine",
+    "vinery:solaris_wine",
+    "vinery:spruce_wine_rack_big",
+    "vinery:spruce_wine_rack_mid",
+    "vinery:spruce_wine_rack_small",
+    "vinery:stal_wine",
+    "vinery:strad_wine",
+    "vinery:villagers_fright",
+    "vinery:wine_box",
+    "vintagedelight:fermenting_jar",
+    "zetter:artist_table"
+   ]
+  }
+ ],
+ "crafting": [
+  {
+   "name": "00 iron_base / cast_iron_trapdoor",
+   "grid": [
+    [
+     "minecraft:iron_ingot",
+     "minecraft:iron_ingot",
+     "minecraft:iron_ingot"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "pixelmon:iron_base",
+   "expect_count": 5
+  },
+  {
+   "name": "01 iron_base / cast_iron_trapdoor",
+   "grid": [
+    [
+     "minecraft:iron_ingot",
+     "minecraft:iron_ingot",
+     "minecraft:iron_ingot"
+    ],
+    [
+     null,
+     "minecraft:iron_nugget",
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "whimsy_deco:cast_iron_trapdoor",
+   "expect_count": 1
+  },
+  {
+   "name": "02 wooden_base / item_shelf",
+   "grid": [
+    [
+     "minecraft:oak_slab",
+     "minecraft:oak_slab",
+     "minecraft:oak_slab"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "pixelmon:wooden_base",
+   "expect_count": 5
+  },
+  {
+   "name": "03 wooden_base / item_shelf",
+   "grid": [
+    [
+     "minecraft:spruce_slab",
+     "minecraft:spruce_slab",
+     "minecraft:spruce_slab"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "pixelmon:wooden_base",
+   "expect_count": 5
+  },
+  {
+   "name": "04 wooden_base / item_shelf",
+   "grid": [
+    [
+     "minecraft:oak_slab",
+     "minecraft:oak_slab",
+     "minecraft:oak_slab"
+    ],
+    [
+     null,
+     "minecraft:stick",
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "supplementaries:item_shelf",
+   "expect_count": 2
+  },
+  {
+   "name": "05 present / box",
+   "grid": [
+    [
+     "minecraft:paper",
+     "minecraft:paper",
+     "minecraft:paper"
+    ],
+    [
+     "minecraft:paper",
+     null,
+     "minecraft:paper"
+    ],
+    [
+     "minecraft:paper",
+     "minecraft:paper",
+     "minecraft:paper"
+    ]
+   ],
+   "expect_result": "supplementaries:present",
+   "expect_count": 1
+  },
+  {
+   "name": "06 present / box",
+   "grid": [
+    [
+     "minecraft:paper",
+     null,
+     "minecraft:paper"
+    ],
+    [
+     "minecraft:paper",
+     null,
+     "minecraft:paper"
+    ],
+    [
+     "minecraft:paper",
+     "minecraft:paper",
+     "minecraft:paper"
+    ]
+   ],
+   "expect_result": "pixelmon:box",
+   "expect_count": 1
+  },
+  {
+   "name": "07 bridge_block / botania slabs",
+   "grid": [
+    [
+     "minecraft:oak_log",
+     "minecraft:oak_log",
+     "minecraft:oak_log"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "pixelmon:bridge_block",
+   "expect_count": 3
+  },
+  {
+   "name": "08 bridge_block / botania slabs",
+   "grid": [
+    [
+     "botania:livingwood",
+     "botania:livingwood",
+     "botania:livingwood"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "botania:livingwood_slab",
+   "expect_count": 6
+  },
+  {
+   "name": "09 bridge_block / botania slabs",
+   "grid": [
+    [
+     "botania:dreamwood",
+     "botania:dreamwood",
+     "botania:dreamwood"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "botania:dreamwood_slab",
+   "expect_count": 6
+  },
+  {
+   "name": "10 bridge_block / botania slabs",
+   "grid": [
+    [
+     "botania:stripped_livingwood",
+     "botania:stripped_livingwood",
+     "botania:stripped_livingwood"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "botania:stripped_livingwood_slab",
+   "expect_count": 6
+  },
+  {
+   "name": "11 bridge_block / botania slabs",
+   "grid": [
+    [
+     "botania:stripped_dreamwood",
+     "botania:stripped_dreamwood",
+     "botania:stripped_dreamwood"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "botania:stripped_dreamwood_slab",
+   "expect_count": 6
+  },
+  {
+   "name": "12 bridge_block / botania slabs",
+   "grid": [
+    [
+     "minecraft:oak_log",
+     "botania:livingwood",
+     "minecraft:oak_log"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": null,
+   "expect_count": 0
+  },
+  {
+   "name": "13 end_table / crafty_crate",
+   "grid": [
+    [
+     "minecraft:oak_planks",
+     "minecraft:crafting_table",
+     "minecraft:oak_planks"
+    ],
+    [
+     "minecraft:oak_planks",
+     null,
+     "minecraft:oak_planks"
+    ],
+    [
+     "minecraft:oak_planks",
+     null,
+     "minecraft:oak_planks"
+    ]
+   ],
+   "expect_result": "pixelmon:end_table",
+   "expect_count": 1
+  },
+  {
+   "name": "14 end_table / crafty_crate",
+   "grid": [
+    [
+     "botania:dreamwood_planks",
+     "minecraft:crafting_table",
+     "botania:dreamwood_planks"
+    ],
+    [
+     "botania:dreamwood_planks",
+     null,
+     "botania:dreamwood_planks"
+    ],
+    [
+     "botania:dreamwood_planks",
+     null,
+     "botania:dreamwood_planks"
+    ]
+   ],
+   "expect_result": "botania:crafty_crate",
+   "expect_count": 1
+  },
+  {
+   "name": "15 silver_block",
+   "grid": [
+    [
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot"
+    ],
+    [
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot"
+    ],
+    [
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot"
+    ]
+   ],
+   "expect_result": "pixelmon:silver_block",
+   "expect_count": 1
+  },
+  {
+   "name": "16 silver_block",
+   "grid": [
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ],
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ],
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ]
+   ],
+   "expect_result": "oreganized:silver_block",
+   "expect_count": 1
+  },
+  {
+   "name": "17 silver_block",
+   "grid": [
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ],
+    [
+     "oreganized:silver_ingot",
+     "pixelmon:silver_ingot",
+     "oreganized:silver_ingot"
+    ],
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ]
+   ],
+   "expect_result": null,
+   "expect_count": 0
+  },
+  {
+   "name": "18 redstone_contact (temporary guard)",
+   "grid": [
+    [
+     null,
+     "oreganized:silver_sheet",
+     null
+    ],
+    [
+     "minecraft:cobblestone",
+     "minecraft:redstone",
+     "minecraft:cobblestone"
+    ],
+    [
+     "minecraft:cobblestone",
+     "minecraft:cobblestone",
+     "minecraft:cobblestone"
+    ]
+   ],
+   "expect_result": null,
+   "expect_count": 0
+  }
+ ],
+ "cooking": [
+  {
+   "name": "00 smelting pixelmon:silver_ore",
+   "type": "minecraft:smelting",
+   "input": "pixelmon:silver_ore",
+   "expect_result": "pixelmon:silver_ingot",
+   "expect_count": 1
+  },
+  {
+   "name": "01 blasting pixelmon:silver_ore",
+   "type": "minecraft:blasting",
+   "input": "pixelmon:silver_ore",
+   "expect_result": "pixelmon:silver_ingot",
+   "expect_count": 1
+  },
+  {
+   "name": "02 smelting oreganized:silver_ore",
+   "type": "minecraft:smelting",
+   "input": "oreganized:silver_ore",
+   "expect_result": "oreganized:silver_ingot",
+   "expect_count": 1
+  },
+  {
+   "name": "03 smelting oreganized:deepslate_silver_ore",
+   "type": "minecraft:smelting",
+   "input": "oreganized:deepslate_silver_ore",
+   "expect_result": "oreganized:silver_ingot",
+   "expect_count": 1
+  },
+  {
+   "name": "04 blasting oreganized:silver_ore",
+   "type": "minecraft:blasting",
+   "input": "oreganized:silver_ore",
+   "expect_result": "oreganized:silver_ingot",
+   "expect_count": 1
+  },
+  {
+   "name": "05 blasting oreganized:deepslate_silver_ore",
+   "type": "minecraft:blasting",
+   "input": "oreganized:deepslate_silver_ore",
+   "expect_result": "oreganized:silver_ingot",
+   "expect_count": 1
+  }
+ ],
+ "structure_sets": [
+  "pixelmon:dens"
+ ],
+ "expect_structure_set_members": {
+  "pixelmon:dens": [
+   "pixelmon:den/plains",
+   "pixelmon:den/taiga",
+   "pixelmon:den/forest"
+  ]
+ },
+ "assemble": [
+  {
+   "structure": "pixelmon:gyms/fairy",
+   "chunk": [
+    300,
+    300
+   ],
+   "samples": 3,
+   "count_pieces_containing": [
+    "gym_fairy_leader_",
+    "gym_fairy_elite_",
+    "gym_fairy_grunt_"
+   ],
+   "expect_min_matched": 6
+  },
+  {
+   "structure": "pixelmon:gyms/grass",
+   "chunk": [
+    300,
+    300
+   ],
+   "samples": 3,
+   "count_pieces_containing": [
+    "gym_grass_leader_",
+    "gym_grass_elite_",
+    "gym_grass_grunt_"
+   ],
+   "expect_min_matched": 5
+  }
+ ],
+ "loot_tables": [
+  {
+   "table": "minecraft:chests/bastion_treasure",
+   "rolls": 300,
+   "expect_namespaces": [
+    "numismatics",
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:netherite_upgrade_smithing_template"
+   ]
+  },
+  {
+   "table": "minecraft:chests/bastion_other",
+   "rolls": 300,
+   "expect_namespaces": [
+    "numismatics",
+    "pixelmon"
+   ]
+  },
+  {
+   "table": "minecraft:chests/bastion_hoglin_stable",
+   "rolls": 300,
+   "expect_namespaces": [
+    "numismatics",
+    "pixelmon"
+   ]
+  },
+  {
+   "table": "minecraft:chests/nether_bridge",
+   "rolls": 600,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:rib_armor_trim_smithing_template"
+   ]
+  },
+  {
+   "table": "minecraft:chests/woodland_mansion",
+   "rolls": 300,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:vex_armor_trim_smithing_template"
+   ]
+  },
+  {
+   "table": "minecraft:chests/desert_pyramid",
+   "rolls": 600,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:dune_armor_trim_smithing_template"
+   ]
+  },
+  {
+   "table": "minecraft:chests/jungle_temple",
+   "rolls": 600,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:wild_armor_trim_smithing_template"
+   ]
+  },
+  {
+   "table": "minecraft:chests/pillager_outpost",
+   "rolls": 600,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:sentry_armor_trim_smithing_template",
+    "minecraft:goat_horn"
+   ]
+  },
+  {
+   "table": "minecraft:chests/shipwreck_treasure",
+   "rolls": 600,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:coast_armor_trim_smithing_template"
+   ]
+  },
+  {
+   "table": "minecraft:chests/bastion_bridge",
+   "rolls": 600,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:netherite_upgrade_smithing_template",
+    "minecraft:snout_armor_trim_smithing_template"
+   ]
+  },
+  {
+   "table": "minecraft:chests/abandoned_mineshaft",
+   "rolls": 300,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:rail"
+   ]
+  },
+  {
+   "table": "minecraft:chests/village/village_weaponsmith",
+   "rolls": 300,
+   "expect_namespaces": [
+    "pixelmon"
+   ],
+   "expect_items": [
+    "minecraft:bread"
+   ]
+  }
+ ],
+ "assembly_sweep_skip": {
+  "create:redstone_contact": "Placing it brings the server down (IncompatibleClassChangeError in the port's RedstoneContactBlockMixin.getTicker); checked separately by redstone_contact_guard"
+ },
+ "right_click": [
+  {
+   "item": "create:redstone_contact",
+   "expect_refused": true
+  },
+  {
+   "item": "minecraft:cobblestone",
+   "expect_refused": false
+  }
+ ]
+}

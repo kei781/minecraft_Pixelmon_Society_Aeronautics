@@ -4,6 +4,8 @@
 
 **Society 정식 4.1.5A + Pixelmon 9.2.3 베타 + Aeronautics 비공식 Forge 포팅본**으로 전체 월드 기동에 성공했습니다. Minecraft 1.20.1 / Forge 47.4.20 / Java 17의 별도 실험 후보입니다. 아래 1.21.1 개발 조합의 누락 파일을 확보한 것은 아닙니다. [후보 구성·수정·검증 범위](docs/forge-candidate.md)를 참고하세요. N100에서 전체 팩과 물리 구조물의 저장·복구, Windows v9의 새 가져오기·정품 접속·메뉴 검증을 확인했습니다. [Jade 비행체 좌표 보정](docs/jade-sublevel-coordinates.md) 뒤 실제 수직 비행과 정지를 확인했고, 후속 원본 모델·전투 API 검증을 진행하고 있습니다. 최신 공통 JAR도 N100 전체 모드 후보에서 부팅·수치 검사를 통과했습니다.
 
+**알려진 치명 문제(2026-11-13).** 현재 포팅 JAR에서는 Pixelmon의 PC·교환기 같은 기계 근처에 Aeronautics 물리 구조물이 오면 서버가 중단되고, Create 레드스톤 접점을 설치해도 중단됩니다. 둘 다 재시작해도 반복됩니다. [마을·시작 지점 보정](docs/village-structure-compatibility.md)과 [공존 전수 조사](docs/coexistence-audit.md)는 데이터로 고칠 수 있는 문제(마을 건물 누락, 물리 조립 시 아이템 복제 등 12건)만 다루며, 이 두 가지는 포팅 JAR 수정이 필요해 다음 단계로 남아 있습니다.
+
 요청 구성은 Pixelmon + Society: Sunlit Valley + Create Aeronautics이며, 디지몬 데이터팩과 다른 대체 모드는 사용하지 않습니다. 서버 목표는 N100 / Ubuntu / RAM 16 GB / 동시 접속 최대 6명입니다.
 
 Windows 설치는 런처·Java 같은 선행 프로그램을 안내에 따라 설치하고 준비된 모드팩을 가져오는 방식도 허용합니다. 모든 준비 과정을 자동화한 단일 실행 파일은 필수 조건이 아닙니다. 같은 구성의 클라이언트를 설치하고 실제 서버에 접속하는 것이 완료 조건입니다.

@@ -56,6 +56,13 @@ python3 tools/stage_forge_candidate.py \
   --destination /path/to/new-player-profile --mode player
 ```
 
+마을·전리품·레시피·물리 조립 공존 보정([마을](village-structure-compatibility.md),
+[전체 목록](coexistence-audit.md))을 함께 넣으려면 같은 명령에
+`--coexistence-fix /path/to/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-extra.jar`
+를 더한다. 모드 JAR 구성은 그대로이고 `kubejs/` 아래 파일과 `config/lithium.properties`만
+달라진다. 이미 생성된 청크의 마을은 바뀌지 않으며, 기존 월드의 시작 지점은 운영자가 콘솔에서
+`psa_village_spawn apply`를 실행할 때만 옮겨진다.
+
 `server-control.sh`, `.psa-mods.sha256`, 두 소유/구성 마커가 있는지 확인한다. Linux x64 장비의 전용 폴더로 프로필을 옮기고, `tools/install_forge_runtime.py`와 `forge-runtime-lock.json`도 상대 경로를 유지해 복사한 뒤 해당 프로필 폴더에서 실행한다.
 
 ```bash

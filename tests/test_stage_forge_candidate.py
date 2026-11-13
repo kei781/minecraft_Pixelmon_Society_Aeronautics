@@ -82,6 +82,46 @@ class StageForgeTest(unittest.TestCase):
                 stage_forge.stage(server,pixelmon,port,destination,datapack_fix=module)
             self.assertFalse(destination.exists())
 
+    def test_coexistence_repairs_are_validated_before_creation_and_recorded(self):
+        with tempfile.TemporaryDirectory() as scratch:
+            root=Path(scratch); server,pixelmon,port,module,_=self.prepare_stage_inputs(root)
+            vanilla=root/"vanilla-data.jar"; vanilla.write_bytes(b"vanilla data fixture, never opened")
+            destination=root/"must-not-exist"
+            # The archive fixtures contain none of the pinned inputs, so the real planners refuse them.
+            with self.assertRaisesRegex(ValueError,"village"):
+                stage_forge.stage(server,pixelmon,port,destination,coexistence=vanilla)
+            self.assertFalse(destination.exists())
+            calls=[]
+            def planner(name):
+                def plan(*arguments):
+                    read=arguments[-1]
+                    calls.append((name,"plan",arguments[:-1],read("kubejs/absent.json"),
+                        read(stage_forge.forge_datapack_compat.RESOURCE) is not None,read("mods/fixture0.jar")))
+                return plan
+            def applier(name):
+                def apply(*arguments):
+                    calls.append((name,"apply",arguments));return {"fixture":name}
+                return apply
+            helpers={"village":stage_forge.forge_village_compat,"loot":stage_forge.forge_loot_compat,
+                "overlay":stage_forge.forge_overlay_compat}
+            with ExitStack() as stack:
+                for name,helper in helpers.items():
+                    stack.enter_context(patch.multiple(helper,plan=planner(name),apply_directory=applier(name)))
+                target=root/"with-coexistence"
+                receipt=stage_forge.stage(server,pixelmon,port,target,"player",coexistence=vanilla)
+                legacy=stage_forge.stage(server,pixelmon,port,root/"without","player")
+            mod=b"not a game mod"
+            self.assertEqual(calls,[
+                ("village","plan",(pixelmon,),None,True,mod),("loot","plan",(pixelmon,vanilla),None,True,mod),
+                ("overlay","plan",(pixelmon,port),None,True,mod),
+                ("village","apply",(target,pixelmon)),("loot","apply",(target,pixelmon,vanilla)),
+                ("overlay","apply",(target,pixelmon,port))])
+            for name in helpers:
+                self.assertEqual(receipt[name+"_compatibility"],{"fixture":name})
+                self.assertIsNone(legacy[name+"_compatibility"])
+            self.assertEqual(receipt["top_level_mod_jars"],313)
+            self.assertEqual(json.loads((target/".psa-forge-candidate.json").read_text()),receipt)
+
     def test_published_hashes_verify_both_metadata_shapes(self):
         with tempfile.TemporaryDirectory() as scratch:
             root = Path(scratch)

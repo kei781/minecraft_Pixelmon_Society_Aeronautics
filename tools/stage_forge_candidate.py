@@ -9,6 +9,9 @@ import shutil
 import stat
 import zipfile
 import forge_datapack_compat
+import forge_loot_compat
+import forge_overlay_compat
+import forge_village_compat
 
 SERVER_SHA1 = "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
 PIXELMON_SHA256 = "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a"
@@ -63,7 +66,8 @@ def selected_entries(archive):
     return entries
 
 
-def stage(server_pack, pixelmon, port, destination, mode="smoke", datapack_fix=None):
+def stage(server_pack, pixelmon, port, destination, mode="smoke", datapack_fix=None, coexistence=None):
+    """`coexistence` is the pinned vanilla 1.20.1 data JAR; giving it applies the village, loot and overlay repairs."""
     destination = Path(destination)
     if mode not in {"smoke", "player"}:
         raise ValueError("Unknown server profile mode")
@@ -91,6 +95,13 @@ def stage(server_pack, pixelmon, port, destination, mode="smoke", datapack_fix=N
             forge_datapack_compat.normalize_resource(archive.read(forge_datapack_compat.RESOURCE))
         except KeyError as failure:
             raise ValueError("Pinned original global loot modifier list missing") from failure
+        if coexistence is not None:
+            # Validate every pinned coexistence input before anything is written.
+            names = {item.filename for item in entries}
+            original = lambda path: archive.read(path) if path in names else None
+            forge_village_compat.plan(pixelmon, original)
+            forge_loot_compat.plan(pixelmon, coexistence, original)
+            forge_overlay_compat.plan(pixelmon, port, original)
         destination.mkdir(parents=True)
         (destination / ".psa-owned-smoke-test").write_text("Experimental Forge 1.20.1 candidate; not final validation.\n")
         for item in entries:
@@ -103,6 +114,11 @@ def stage(server_pack, pixelmon, port, destination, mode="smoke", datapack_fix=N
         with Path(source).open("rb") as stream, (destination / "mods" / name).open("xb") as output:
             shutil.copyfileobj(stream, output)
     loot_list = forge_datapack_compat.apply_directory(destination)
+    village = loot = overlay = None
+    if coexistence is not None:
+        village = forge_village_compat.apply_directory(destination, pixelmon)
+        loot = forge_loot_compat.apply_directory(destination, pixelmon, coexistence)
+        overlay = forge_overlay_compat.apply_directory(destination, pixelmon, port)
     datapack_module = forge_datapack_compat.install_module(destination, datapack_fix) if datapack_fix is not None else None
     neutral = {"enabled": False, "detection_logic": "simple", "replaced_mobs": [],
                "replacement_logic": "simple", "specs": []}
@@ -134,7 +150,9 @@ def stage(server_pack, pixelmon, port, destination, mode="smoke", datapack_fix=N
                "official_inputs": official_inputs, "lock_sha256": digest(LOCK),
                "neutral_replacement_files": 68, "final_gameplay_validated": False,
                "global_loot_modifier_compatibility": loot_list,
-               "datapack_sync_compatibility": datapack_module}
+               "datapack_sync_compatibility": datapack_module,
+               "village_compatibility": village, "loot_compatibility": loot,
+               "overlay_compatibility": overlay}
     receipt["mode"] = mode
     (destination / ".psa-forge-candidate.json").write_text(json.dumps(receipt, indent=2) + "\n")
     return receipt
@@ -148,5 +166,10 @@ if __name__ == "__main__":
     parser.add_argument("--destination", type=Path, required=True)
     parser.add_argument("--mode", choices=["smoke", "player"], default="smoke")
     parser.add_argument("--datapack-fix", type=Path, help="Pinned authored dedicated-server recipient compatibility JAR")
+    parser.add_argument("--coexistence-fix", type=Path, metavar="VANILLA_DATA_JAR",
+                        help="Apply the village, loot and overlay repairs that let the three projects coexist; "
+                             "takes the pinned vanilla data JAR of the Forge install "
+                             "(libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-extra.jar)")
     args = parser.parse_args()
-    print(json.dumps(stage(args.server_pack, args.pixelmon, args.port, args.destination, args.mode, args.datapack_fix), indent=2))
+    print(json.dumps(stage(args.server_pack, args.pixelmon, args.port, args.destination, args.mode,
+                           args.datapack_fix, args.coexistence_fix), indent=2))
