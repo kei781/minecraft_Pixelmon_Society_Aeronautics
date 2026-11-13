@@ -120,6 +120,16 @@ class PortRepairCheckTest(unittest.TestCase):
         self.assertFalse(outcome["results"]["physics_beside_pixelmon_machine"]["server_alive"])
 
 
+class ExitCodeTest(unittest.TestCase):
+    def test_a_failed_check_fails_the_command_unless_an_unrepaired_profile_is_being_recorded(self):
+        clean = {"failure": None, "stop_exit_code": 0, "checks": {"failed": []}}
+        failed = {"failure": None, "stop_exit_code": 0, "checks": {"failed": ["crafting:box"]}}
+        crashed = {"failure": None, "stop_exit_code": -9, "checks": {"failed": ["port_repairs:redstone_contact"]}}
+        unfinished = {"failure": "Timed out", "stop_exit_code": 0, "checks": {"failed": []}}
+        self.assertEqual([driver.exit_code(outcome) for outcome in (clean, failed, crashed, unfinished)], [0, 1, 1, 1])
+        self.assertEqual([driver.exit_code(outcome, True) for outcome in (clean, failed, crashed, unfinished)], [0, 0, 0, 1])
+
+
 class ProbeRecordTest(unittest.TestCase):
     def test_a_registry_part_that_never_arrived_is_reported(self):
         line = "[INFO] psa_village_probe.js#25: PSA_VILLAGE_PROBE registry %s"

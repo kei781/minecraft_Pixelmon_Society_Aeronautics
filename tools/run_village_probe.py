@@ -549,6 +549,17 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
     return outcome
 
 
+def exit_code(outcome, allow_failed_checks=False):
+    """0 only for a run that finished, stopped cleanly and failed no check. An unrepaired profile is
+    expected to fail checks and to stop uncleanly; --allow-failed-checks records it with 0 anyway,
+    but never when the run itself did not finish."""
+    if outcome["failure"] is not None:
+        return 1
+    if allow_failed_checks:
+        return 0
+    return 0 if outcome["stop_exit_code"] == 0 and not outcome["checks"]["failed"] else 1
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True, help="staged profile to copy (never modified)")
@@ -562,6 +573,8 @@ def main():
     parser.add_argument("--margin", type=int, default=24)
     parser.add_argument("--timeout", type=int, default=1500)
     parser.add_argument("--accept-eula", action="store_true")
+    parser.add_argument("--allow-failed-checks", action="store_true",
+                        help="exit 0 although checks failed; for recording an unrepaired profile")
     parser.add_argument("--skip-in-sweep", action="append", default=[], metavar="BLOCK",
                         help="block id the assembly sweep must not place (it stops this profile's server)")
     args = parser.parse_args()
@@ -577,7 +590,7 @@ def main():
         "failure", "probe_done", "stop_exit_code", "spawn_before_start_script", "start_script_decision",
         "level_dat_spawn", "start_village", "census", "radium", "kubejs_server_script_errors")}, indent=1))
     print("checks failed:", outcome["checks"]["failed"])
-    return 0 if outcome["failure"] is None and outcome["stop_exit_code"] == 0 else 1
+    return exit_code(outcome, args.allow_failed_checks)
 
 
 if __name__ == "__main__":

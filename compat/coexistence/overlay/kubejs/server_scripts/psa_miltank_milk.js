@@ -26,6 +26,11 @@
 //   present the copy is left alone and Society's handler removes that one as always.
 // - KubeJS also posts this event for a crafted or smelted stack (slot -1), and that stack is the
 //   real one, not a copy. It is never emptied here: only a stack reported with a menu slot is.
+// - With several empty buckets in hand and no free slot, Pixelmon cannot put the milk bucket into
+//   the inventory and drops it at the player's feet (MiltankInteraction -> DropItemHelper
+//   .giveItemStack -> Player.drop). Picked up later it would meet Society's rule with no remembered
+//   interaction left. That drop is exchanged where it happens: the item about to be dropped
+//   becomes society:milk and the empty bucket goes back to the stack it was just taken from.
 // - Nothing is given unless a vanilla milk bucket was really taken out of the inventory.
 // - Every handler body is guarded: an error here must not stop Society's handlers for the event.
 // - The header line is a KubeJS file property: the file is skipped when Pixelmon is not installed.
@@ -83,6 +88,22 @@
     if (found.others === 0 && event.slot >= 0 && '' + event.item.id === MILK_BUCKET) event.item.count = 0;
   };
 
+  const exchangeDropped = event => {
+    const player = event.player;
+    const key = '' + player.getUuid();
+    const since = remembered[key];
+    if (since === undefined) return;
+    delete remembered[key];
+    const age = event.level.getTime() - since;
+    if (!(age >= 0 && age <= WINDOW_TICKS)) return;
+    const dropped = event.itemEntity.getItem();
+    if ('' + dropped.id !== MILK_BUCKET) return;
+    const milk = Item.of(SOCIETY_MILK, dropped.count);
+    if ('' + milk.id !== SOCIETY_MILK) return;
+    event.itemEntity.setItem(milk);
+    player.give(Item.of(BUCKET, 1));
+  };
+
   ItemEvents.entityInteracted(BUCKET, event => {
     try {
       remember(event);
@@ -96,6 +117,14 @@
       exchange(event);
     } catch (failure) {
       warnOnce('exchange', failure);
+    }
+  });
+
+  ItemEvents.dropped(MILK_BUCKET, event => {
+    try {
+      exchangeDropped(event);
+    } catch (failure) {
+      warnOnce('exchange of the dropped bucket', failure);
     }
   });
 })();

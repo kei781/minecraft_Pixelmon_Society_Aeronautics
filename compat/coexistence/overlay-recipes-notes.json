@@ -1563,5 +1563,8 @@
   "psa_recipe_coexistence_js": "unchanged (sha256 0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c)",
   "builder_note": "scratchpad/fixes/overlay-recipes/build_notes.py was not updated by the reviewer; its test_notes_are_what_the_builder_writes compares against the pre-review text.",
   "reviewer_checks": "scratchpad/fixes/overlay-recipes-review/: own CFR decompilation of the KubeJS/Pixelmon classes used, an independent recipe universe (scan/universe.py, scan/analyze.py: 20366 recipe ids incl. vanilla, Forge, nested JARs, kubejs/data, conditional alternatives) and harness/scenario_review.js (crafted-stack event, menu path, stack of five) run in the pack's Rhino."
- }
+ },
+ "later_changes": [
+  "After the Codex review (round 1) psa_miltank_milk.js also exchanges the milk bucket Pixelmon drops when the inventory has no free slot (ItemEvents.dropped for minecraft:milk_bucket): the dropped item becomes society:milk and the empty bucket goes back into the inventory. Logic test: tests/test_overlay_scripts.py. Hashes of the script quoted in this note are the earlier ones."
+ ]
 }

@@ -50,7 +50,7 @@
 | 8 | 비행체 재로딩 시 NPE 가능 경로 | 포팅본이 `mods.toml` 최상위에 선언한 Radium 비호환 옵션 4개를 Radium이 읽지 않음 (수정 전 로그: 설정으로 꺼진 옵션 1개뿐) | `config/lithium.properties`에 같은 네 옵션을 직접 지정 |
 | 9 | 페어리 체육관에 관장·트레이너 없음 (Pixelmon 자체 버그) | NPC 풀 `pixelmon:npc/gyms/fairy` 파일 누락 | 풀 파일 추가 |
 | 10 | 평원·타이가 레이드 굴이 생성되지 않음 (Pixelmon 자체 누락) | 구조물은 있으나 구조물 세트에 미등록 | Lithostitched `add_structure_set_entries`로 `pixelmon:dens`에 두 구조물 등록(13 → 15종). 굴 격자 위치는 그대로이고 새로 생성되는 청크부터 적용 |
-| 11 | Miltank에게 빈 양동이를 쓰면 우유가 사라지고 빈 양동이만 돌아옴 | Pixelmon은 바닐라 우유 양동이를 주는데 Society `milkBan.js`가 바닐라 우유 양동이를 금지 | Miltank 상호작용 직후(2틱 이내)에 생긴 우유 양동이만 `society:milk` 1개 + 빈 양동이로 교환. Society의 우유 금지는 그대로 |
+| 11 | Miltank에게 빈 양동이를 쓰면 우유가 사라지고 빈 양동이만 돌아옴 | Pixelmon은 바닐라 우유 양동이를 주는데 Society `milkBan.js`가 바닐라 우유 양동이를 금지 | Miltank 상호작용 직후(2틱 이내)에 생긴 우유 양동이만 `society:milk` 1개 + 빈 양동이로 교환. 인벤토리에 빈칸이 없어 Pixelmon이 우유 양동이를 바닥에 떨어뜨리는 경우에는 떨어지는 아이템을 `society:milk`로 바꾸고 빈 양동이를 돌려줌. Society의 우유 금지는 그대로 |
 
 ## 포팅 JAR 수정
 
@@ -131,6 +131,10 @@ python3 tools/forge_portfix_compat.py --base /path/to/accepted-starter-common.ja
   문자열이 없지만 코덱을 고치고 정확한 바이트를 검사한다.
 - 문서의 수치와 표현 8곳(측정 범위, 태그 구성, 검사 수, 조합 모양 등)을 추적된 기록에 맞췄다.
 
+PR의 Codex 리뷰 루프(리뷰어 `gpt-6-astra`)에서 받은 지적과 조치는 PR 스레드에 있다. 1회차:
+인벤토리가 가득 차 바닥에 떨어진 Miltank 우유도 교환하도록 했고, 검사 드라이버가 실패한
+검사를 종료 코드에 반영하도록 했다.
+
 ## 검증
 
 | 검사 (실제 게임, 새 월드) | 수정 전 | 수정 후 |
@@ -159,10 +163,10 @@ python3 tools/forge_portfix_compat.py --base /path/to/accepted-starter-common.ja
 전수 조립에서는 레드스톤 접점을 빼고 돌렸다(`--skip-in-sweep create:redstone_contact`).
 
 Miltank 우유 교환은 플레이어 상호작용이 필요해 게임에서 실행하지 못했다. 스크립트는 팩의
-Rhino 엔진과 대역 객체로만 검증했다.
+Rhino 엔진과 대역 객체, 그리고 Node.js 대역 검사(`tests/test_overlay_scripts.py`)로만 검증했다.
 
-Python 검사는 160개를 실행해 154개가 통과한다. 6개는 Linux tmux 제어
-검사라 macOS에서 생략되고, 고정된 비공개 입력이 없으면 4개가 더 생략된다.
+Python 검사는 163개를 실행해 157개가 통과한다. 6개는 Linux tmux 제어
+검사라 macOS에서 생략되고, 고정된 비공개 입력이 없으면 4개가, Node.js가 없으면 2개가 더 생략된다.
 
 ## 재현
 
