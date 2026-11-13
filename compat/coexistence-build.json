@@ -1,0 +1,177 @@
+{
+  "scope": "Coexistence overlay (tags, one template pool, worldgen modifier, KubeJS server scripts) and the Radium options the Aeronautics port declares; derived data only, no mod JAR changes",
+  "inputs": {
+    "pixelmon_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "port_jar_sha256": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c",
+    "society_server_pack_sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
+  },
+  "output_sha256": {
+    "config/lithium.properties": "9da37a16fdd959e775f9d61cabf77fddfecd7aae486c021f337d7ebb02eb3419",
+    "kubejs/data/c/tags/items/dusts/redstone.json": "562c2c08b2e726b0cdd5c294cd6e6d7a96f70022ce5c6df89644ec80cbafa5ef",
+    "kubejs/data/c/tags/items/dyes/black.json": "67daa6f82e43472ae7dfd78dce21afe59429f6bfddf1c1027221b53ef8b953e3",
+    "kubejs/data/c/tags/items/dyes/blue.json": "74044e4b11866cea4d02f6b238713806a9438a8726d1a068c2be2b5257187b42",
+    "kubejs/data/c/tags/items/dyes/brown.json": "80283283e3589a836733fcdc86bcf5e98fc01822f2f45a570383623ea3d8c75d",
+    "kubejs/data/c/tags/items/dyes/cyan.json": "3729dbee061fc8d2e0a4b1281b4544aac0b88f363409090766de907ce1ed4e13",
+    "kubejs/data/c/tags/items/dyes/gray.json": "94eb88618f3639a3d914dc1756e061b20eae0192f217fcf8b3c5da44fb51bae3",
+    "kubejs/data/c/tags/items/dyes/green.json": "fa73cde70839365bf6406fd9cbd6cc4219490e23aa040c7e1e8966bd6c3d53e2",
+    "kubejs/data/c/tags/items/dyes/light_blue.json": "6787a79f0239ff4143feb07fd6ed0c336ba41de548bb478a9fc5059953d57d6a",
+    "kubejs/data/c/tags/items/dyes/light_gray.json": "14f13a0d55627cb6f8fcea42ed3b88bc6658352e8e6b2597fb7048c69c197a5c",
+    "kubejs/data/c/tags/items/dyes/lime.json": "a6c5d2c2f1fac3541a6ff2bbaaacabe789810c96aeb5ba2abc7436b0f684dc03",
+    "kubejs/data/c/tags/items/dyes/magenta.json": "a4f308842ef4f6e19f1cb1166d02a6972b2ea6d71771c0c8b13a146ad33f628f",
+    "kubejs/data/c/tags/items/dyes/orange.json": "97d589ef618b431e202ff671b7816fbeb988761fac4d85a1981cd2fb8cc2befc",
+    "kubejs/data/c/tags/items/dyes/pink.json": "795ae91abda359a1b3bf4f9b12dfbbc262655726d1edc5cc19fca34d3914befb",
+    "kubejs/data/c/tags/items/dyes/purple.json": "bfd90c5310eed27544d6623f468c3bbf7273b8ac23584ee77871237965c72aef",
+    "kubejs/data/c/tags/items/dyes/red.json": "bc6ee12f7560066d5db215de60001e002f73a602a776847bb625fe0117f3aa72",
+    "kubejs/data/c/tags/items/dyes/white.json": "24fd16651ba329ad591bd6285bb88b7f3247336505141b2f5b7b0cd2065f9b82",
+    "kubejs/data/c/tags/items/dyes/yellow.json": "b7b98aec5774835f7341d895f35a2c957f83016f37b668d18ac7cd882711805a",
+    "kubejs/data/c/tags/items/leathers.json": "a0a6e1d5529b2da18918ad7c447581f6bd94923eec5969987f0816b90ce84e8a",
+    "kubejs/data/c/tags/items/plates/gold.json": "b225084c84a0ec3aa485c25226a718cdcffbfba448bfd9907588cabaf294daf2",
+    "kubejs/data/c/tags/items/plates/iron.json": "d90487a87921603c2fb9be0017af1ebe565a83a16c7b2cfe5ccfa48e7c5daadc",
+    "kubejs/data/c/tags/items/stones.json": "ac5ce1c11f6355445ee2be47fdfdbf7959d659d8499a7fbc6fe635cf49f8df53",
+    "kubejs/data/forge/tags/items/strings.json": "be0e9b919798edc2333468f39458190e26ab878f2d1223fc73a76bdbaf939eac",
+    "kubejs/data/moblassos/tags/entity_types/diamond_lasso_blacklist.json": "2e8b4549abbcfcaf6cfa4f3b41ea141911b7ce0141ee3cf6c35f0dc56f0a5fe1",
+    "kubejs/data/moblassos/tags/entity_types/golden_lasso_blacklist.json": "2e8b4549abbcfcaf6cfa4f3b41ea141911b7ce0141ee3cf6c35f0dc56f0a5fe1",
+    "kubejs/data/pixelmon/worldgen/template_pool/npc/gyms/fairy.json": "49cde05ab8444566607e4c44889946ed9be0c467815118b0a314482c3ae20c48",
+    "kubejs/data/psa_coexistence/lithostitched/worldgen_modifier/pixelmon_plains_taiga_dens.json": "1b8179531ad43a68976df1d4238244c2053fa43c5af7d99da40e1c3cb585831e",
+    "kubejs/data/sable/tags/blocks/silent_assembly_removal.json": "5a7da02a0addb1cb08cdb62319c4f148ca5f6f83dfc447694d1b8c73f0751ec1",
+    "kubejs/server_scripts/psa_miltank_milk.js": "26c05195914adc0ec2d4557835676e8475282298f436fc15a9251492ff60d90f",
+    "kubejs/server_scripts/psa_physics_immovable.js": "4d4a7d275bc38e87453fe89ef2d3feedae6966e6470fa066b934c9a1f10a5c02",
+    "kubejs/server_scripts/psa_recipe_coexistence.js": "0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c"
+  },
+  "receipt": {
+    "files": [
+      {
+        "path": "kubejs/data/c/tags/items/dusts/redstone.json",
+        "sha256": "562c2c08b2e726b0cdd5c294cd6e6d7a96f70022ce5c6df89644ec80cbafa5ef"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/black.json",
+        "sha256": "67daa6f82e43472ae7dfd78dce21afe59429f6bfddf1c1027221b53ef8b953e3"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/blue.json",
+        "sha256": "74044e4b11866cea4d02f6b238713806a9438a8726d1a068c2be2b5257187b42"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/brown.json",
+        "sha256": "80283283e3589a836733fcdc86bcf5e98fc01822f2f45a570383623ea3d8c75d"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/cyan.json",
+        "sha256": "3729dbee061fc8d2e0a4b1281b4544aac0b88f363409090766de907ce1ed4e13"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/gray.json",
+        "sha256": "94eb88618f3639a3d914dc1756e061b20eae0192f217fcf8b3c5da44fb51bae3"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/green.json",
+        "sha256": "fa73cde70839365bf6406fd9cbd6cc4219490e23aa040c7e1e8966bd6c3d53e2"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/light_blue.json",
+        "sha256": "6787a79f0239ff4143feb07fd6ed0c336ba41de548bb478a9fc5059953d57d6a"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/light_gray.json",
+        "sha256": "14f13a0d55627cb6f8fcea42ed3b88bc6658352e8e6b2597fb7048c69c197a5c"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/lime.json",
+        "sha256": "a6c5d2c2f1fac3541a6ff2bbaaacabe789810c96aeb5ba2abc7436b0f684dc03"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/magenta.json",
+        "sha256": "a4f308842ef4f6e19f1cb1166d02a6972b2ea6d71771c0c8b13a146ad33f628f"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/orange.json",
+        "sha256": "97d589ef618b431e202ff671b7816fbeb988761fac4d85a1981cd2fb8cc2befc"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/pink.json",
+        "sha256": "795ae91abda359a1b3bf4f9b12dfbbc262655726d1edc5cc19fca34d3914befb"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/purple.json",
+        "sha256": "bfd90c5310eed27544d6623f468c3bbf7273b8ac23584ee77871237965c72aef"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/red.json",
+        "sha256": "bc6ee12f7560066d5db215de60001e002f73a602a776847bb625fe0117f3aa72"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/white.json",
+        "sha256": "24fd16651ba329ad591bd6285bb88b7f3247336505141b2f5b7b0cd2065f9b82"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/dyes/yellow.json",
+        "sha256": "b7b98aec5774835f7341d895f35a2c957f83016f37b668d18ac7cd882711805a"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/leathers.json",
+        "sha256": "a0a6e1d5529b2da18918ad7c447581f6bd94923eec5969987f0816b90ce84e8a"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/plates/gold.json",
+        "sha256": "b225084c84a0ec3aa485c25226a718cdcffbfba448bfd9907588cabaf294daf2"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/plates/iron.json",
+        "sha256": "d90487a87921603c2fb9be0017af1ebe565a83a16c7b2cfe5ccfa48e7c5daadc"
+      },
+      {
+        "path": "kubejs/data/c/tags/items/stones.json",
+        "sha256": "ac5ce1c11f6355445ee2be47fdfdbf7959d659d8499a7fbc6fe635cf49f8df53"
+      },
+      {
+        "path": "kubejs/data/forge/tags/items/strings.json",
+        "sha256": "be0e9b919798edc2333468f39458190e26ab878f2d1223fc73a76bdbaf939eac"
+      },
+      {
+        "path": "kubejs/data/moblassos/tags/entity_types/diamond_lasso_blacklist.json",
+        "sha256": "2e8b4549abbcfcaf6cfa4f3b41ea141911b7ce0141ee3cf6c35f0dc56f0a5fe1"
+      },
+      {
+        "path": "kubejs/data/moblassos/tags/entity_types/golden_lasso_blacklist.json",
+        "sha256": "2e8b4549abbcfcaf6cfa4f3b41ea141911b7ce0141ee3cf6c35f0dc56f0a5fe1"
+      },
+      {
+        "path": "kubejs/data/pixelmon/worldgen/template_pool/npc/gyms/fairy.json",
+        "sha256": "49cde05ab8444566607e4c44889946ed9be0c467815118b0a314482c3ae20c48"
+      },
+      {
+        "path": "kubejs/data/psa_coexistence/lithostitched/worldgen_modifier/pixelmon_plains_taiga_dens.json",
+        "sha256": "1b8179531ad43a68976df1d4238244c2053fa43c5af7d99da40e1c3cb585831e"
+      },
+      {
+        "path": "kubejs/data/sable/tags/blocks/silent_assembly_removal.json",
+        "sha256": "5a7da02a0addb1cb08cdb62319c4f148ca5f6f83dfc447694d1b8c73f0751ec1"
+      },
+      {
+        "path": "kubejs/server_scripts/psa_miltank_milk.js",
+        "sha256": "26c05195914adc0ec2d4557835676e8475282298f436fc15a9251492ff60d90f"
+      },
+      {
+        "path": "kubejs/server_scripts/psa_physics_immovable.js",
+        "sha256": "4d4a7d275bc38e87453fe89ef2d3feedae6966e6470fa066b934c9a1f10a5c02"
+      },
+      {
+        "path": "kubejs/server_scripts/psa_recipe_coexistence.js",
+        "sha256": "0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c"
+      }
+    ],
+    "preconditions_checked": 274,
+    "radium_config": {
+      "path": "config/lithium.properties",
+      "original_sha256": "09759af4787e05f7d6f2eac3bd19fe5c79f4676444f568820814a93ca7e6b265",
+      "sha256": "9da37a16fdd959e775f9d61cabf77fddfecd7aae486c021f337d7ebb02eb3419",
+      "disabled_options": [
+        "mixin.entity.collisions.unpushable_cramming",
+        "mixin.world.chunk_access",
+        "mixin.world.chunk_ticking",
+        "mixin.world.tick_scheduler"
+      ]
+    }
+  }
+}

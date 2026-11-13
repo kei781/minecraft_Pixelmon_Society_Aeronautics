@@ -131,6 +131,59 @@ class ForgeClientBuildTest(unittest.TestCase):
             self.assertEqual(len(profile['item_model_aliases']), 1)
         self.assertFalse((self.server/'kubejs'/client.forge_item_model_alias.TARGET).exists())
 
+    def test_declared_coexistence_repairs_are_applied_to_the_client_and_must_match(self):
+        village, loot, overlay = client.forge_village_compat, client.forge_loot_compat, client.forge_overlay_compat
+        vanilla = self.root/'vanilla-data.jar'; vanilla.write_bytes(b'vanilla data fixture, never opened')
+        radium = b'radium options fixture'
+        added = {village.SPAWN_PATH: b'// start script fixture', 'kubejs/data/minecraft/loot_tables/chests/x.json': b'{}',
+                 'kubejs/data/c/tags/items/stones.json': b'{}', overlay.LITHIUM_PATH: radium}
+        receipts = {'village_compatibility': {'fixture': 'village'}, 'loot_compatibility': {'fixture': 'loot'},
+                    'overlay_compatibility': {'fixture': 'overlay'}}
+        seen = []
+        def applier(key, paths):
+            def apply(files, *arguments):
+                seen.append((key, arguments[:2] if key != 'overlay_compatibility' else arguments[:2] + (arguments[2]('mods/shared.jar'),)))
+                for path in paths: files[path] = added[path]
+                return receipts[key]
+            return apply
+        (self.server/'.psa-forge-candidate.json').write_text(json.dumps(receipts))
+        for path, data in added.items():
+            target = self.server/path; target.parent.mkdir(parents=True, exist_ok=True); target.write_bytes(data)
+        declared = lambda root, declaration: declaration
+        patches = [patch.multiple(village, verify_staged=declared, apply_overrides=applier('village_compatibility', [village.SPAWN_PATH])),
+                   patch.multiple(loot, verify_staged=declared, apply_overrides=applier('loot_compatibility', ['kubejs/data/minecraft/loot_tables/chests/x.json'])),
+                   patch.multiple(overlay, verify_staged=declared, apply_overrides=applier('overlay_compatibility', ['kubejs/data/c/tags/items/stones.json', overlay.LITHIUM_PATH]))]
+        for context in patches: context.start()
+        try:
+            with self.assertRaisesRegex(ValueError, 'vanilla data JAR'):
+                client.build(self.server, self.extras, self.society, self.output)
+            self.assertFalse(self.output.parent.exists())
+            seen.clear()
+            client.build(self.server, self.extras, self.society, self.output, vanilla_data=vanilla)
+            self.assertEqual(seen, [('village_compatibility', (self.pixel,)), ('loot_compatibility', (self.pixel, vanilla)),
+                                    ('overlay_compatibility', (self.pixel, self.port, self.fixture_data['shared.jar']))])
+            with zipfile.ZipFile(self.output) as z:
+                for path, data in added.items():
+                    self.assertEqual(z.read('overrides/' + path), data)
+                profile = json.loads(z.read('overrides/psa-forge-client-profile.json'))
+                for key, receipt in receipts.items():
+                    self.assertEqual(profile[key], receipt)
+            self.output.unlink(); self.output.parent.rmdir()
+            # The server must carry exactly the bytes this exporter derives.
+            (self.server/overlay.LITHIUM_PATH).write_bytes(radium + b' changed')
+            with self.assertRaisesRegex(ValueError, 'Radium configuration differ'):
+                client.build(self.server, self.extras, self.society, self.output, vanilla_data=vanilla)
+            (self.server/overlay.LITHIUM_PATH).write_bytes(radium)
+            with patch.object(loot, 'apply_overrides', lambda files, *arguments: {'different': True}):
+                with self.assertRaisesRegex(ValueError, 'differs from this exporter'):
+                    client.build(self.server, self.extras, self.society, self.output, vanilla_data=vanilla)
+            self.assertFalse(self.output.parent.exists())
+        finally:
+            for context in patches: context.stop()
+        # A server that carries the start script without declaring it is refused by the real check.
+        (self.server/'.psa-forge-candidate.json').write_text('{}')
+        self.assert_no_export()
+
     def test_kubejs_mismatch_fails_before_output(self):
         (self.server/'kubejs/server_scripts/init.js').write_bytes(b'changed')
         self.assert_no_export()

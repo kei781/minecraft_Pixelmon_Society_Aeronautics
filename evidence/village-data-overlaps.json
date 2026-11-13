@@ -1,0 +1,820 @@
+{
+ "profile": "v18 staging without the coexistence repairs (314 mods)",
+ "mods_list_sha256": "5eebc72dd95199348906486cc5199fc818b2a98b19a30e6321f1e93ee661aeec",
+ "overlapping_files": 2058,
+ "involving_added_projects": 78,
+ "involving_added_projects_by_category": {
+  "loot_tables": 3,
+  "spawn_replacement": 68,
+  "structures": 2,
+  "worldgen/template_pool": 5
+ },
+ "added_project_overlaps": [
+  {
+   "path": "data/minecraft/loot_tables/chests/bastion_hoglin_stable.json",
+   "category": "loot_tables",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/loot_tables/chests/bastion_other.json",
+   "category": "loot_tables",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/loot_tables/chests/bastion_treasure.json",
+   "category": "loot_tables",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/structures/village/desert/town_centers/desert_meeting_point_1.nbt",
+   "category": "structures",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/structures/village/desert/town_centers/desert_meeting_point_2.nbt",
+   "category": "structures",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/worldgen/template_pool/village/plains/houses.json",
+   "category": "worldgen/template_pool",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/worldgen/template_pool/village/savanna/houses.json",
+   "category": "worldgen/template_pool",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/worldgen/template_pool/village/savanna/streets.json",
+   "category": "worldgen/template_pool",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/worldgen/template_pool/village/snowy/houses.json",
+   "category": "worldgen/template_pool",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/minecraft/worldgen/template_pool/village/taiga/houses.json",
+   "category": "worldgen/template_pool",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/allay.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/axolotl.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/bat.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/bee.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/blaze.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/camel.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/cat.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/cave_spider.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/chicken.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/cod.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/cow.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/creeper.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/dolphin.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/donkey.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/drowned.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/elder_guardian.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/enderman.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/endermite.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/evoker.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/fox.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/frog.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/ghast.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/glow_squid.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/goat.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/guardian.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/hoglin.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/horse.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/husk.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/illusioner.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/iron_golem.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/llama.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/magma_cube.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/ocelot.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/panda.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/parrot.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/phantom.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/pig.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/piglin.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/piglin_brute.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/pillager.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/polar_bear.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/pufferfish.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/rabbit.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/ravager.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/salmon.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/sheep.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/shulker.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/silverfish.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/skeleton.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/skeleton_horse.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/slime.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/sniffer.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/snow_golem.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/spider.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/squid.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/stray.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/strider.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/tadpole.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/tropical_fish.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/turtle.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/vex.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/villager.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/witch.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/wolf.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/zoglin.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/zombie.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/zombie_horse.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  },
+  {
+   "path": "data/pixelmon/spawn_replacement/zombified_piglin.json",
+   "category": "spawn_replacement",
+   "sources": [
+    "pixelmon",
+    "KubeJS data"
+   ],
+   "involves_added_project": true,
+   "kubejs_wins": true
+  }
+ ],
+ "original_pack_overlaps_by_category": {
+  "advancements": 59,
+  "blocks": 1,
+  "curios": 1,
+  "farmingforblockheads_compat": 8,
+  "fish_behaviors.json": 1,
+  "forge": 17,
+  "items": 1,
+  "loot_modifiers": 33,
+  "loot_table": 1,
+  "loot_tables": 382,
+  "menu": 481,
+  "minigame_modifiers.json": 1,
+  "modifiers": 1,
+  "moonlight": 13,
+  "processes": 2,
+  "recipes": 780,
+  "slimes": 20,
+  "structures": 26,
+  "tags (replace)": 63,
+  "worldgen/biome": 2,
+  "worldgen/configured_feature": 6,
+  "worldgen/placed_feature": 66,
+  "worldgen/processor_list": 1,
+  "worldgen/structure": 14
+ }
+}

@@ -1,5 +1,11 @@
 # N100 통합 서버 운영
 
+**현재 운영(2026-11-13): v20, 모드 314개, 새 월드.** 공통 JAR
+`28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`([포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)),
+[공존 보정](coexistence-audit.md) 포함. 플레이어는 v20 팩이 필요하다. 이전 v17은 정상 정지했고
+월드는 그 폴더에 그대로 있다. [반영 기록](../evidence/n100-v20-fresh-world-deployment.json).
+아래 v16·v17 문단은 그 이전의 이력이다.
+
 서버는 기존 데이터와 분리한 새 전용 폴더에 준비한다. 런타임과 라이브러리도 그 안에 설치하며 시스템 Java·기존 서비스·월드를 바꾸지 않는다. 실제 접속 주소와 SSH 설정은 공개 저장소에 포함하지 않는다.
 
 v16 접속용 서버는 2026-11-09 17:39:17 UTC에 스타터 선택 대기자의 로그아웃으로
@@ -55,6 +61,14 @@ python3 tools/stage_forge_candidate.py \
   --datapack-fix /path/to/PSA-Datapack-Sync-Compat-0.1.jar \
   --destination /path/to/new-player-profile --mode player
 ```
+
+`--port`에는 [포팅 결함 두 건을 고친 공통 JAR](coexistence-audit.md#포팅-jar-수정)(`28e19585…`)을 준다.
+마을·전리품·레시피·물리 조립 공존 보정([마을](village-structure-compatibility.md),
+[전체 목록](coexistence-audit.md))을 함께 넣으려면 같은 명령에
+`--coexistence-fix /path/to/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-extra.jar`
+를 더한다. 모드 JAR 구성은 그대로이고 `kubejs/` 아래 파일과 `config/lithium.properties`만
+달라진다. 이미 생성된 청크의 마을은 바뀌지 않으며, 기존 월드의 시작 지점은 운영자가 콘솔에서
+`psa_village_spawn apply`를 실행할 때만 옮겨진다.
 
 `server-control.sh`, `.psa-mods.sha256`, 두 소유/구성 마커가 있는지 확인한다. Linux x64 장비의 전용 폴더로 프로필을 옮기고, `tools/install_forge_runtime.py`와 `forge-runtime-lock.json`도 상대 경로를 유지해 복사한 뒤 해당 프로필 폴더에서 실행한다.
 

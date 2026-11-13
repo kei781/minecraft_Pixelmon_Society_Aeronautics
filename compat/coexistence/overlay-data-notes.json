@@ -1,0 +1,1914 @@
+{
+ "deliverable": "overlay-data",
+ "scope": "Data files and one tag script copied verbatim into the server profile; no mod JAR and no Society file is changed",
+ "path_mapping": "compat/coexistence/overlay/kubejs/<x> -> <profile>/kubejs/<x>",
+ "pinned_inputs": {
+  "jars": {
+   "mods/psa-aeronautics-experimental-forge-1.20.1.jar": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+   "mods/Pixelmon-1.20.1-9.2.3-universal.jar": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "mods/MobLassos-v8.0.1-1.20.1-Forge.jar": "c94ce226c2bab2ece2e53a2c4f2bef0868deca29ac8a86e64b291b4fdc12eebf",
+   "mods/lithostitched-forge-1.20.1-1.4.11.jar": "c19a5a36c0e6cb3782cf7ca5b9648fb1bce5fc41fd737bed423a1f4971bccf75",
+   "mods/kubejs-forge-2001.6.5-build.16.jar": "3de6b7267d3aab981848ed54d3afe7edf20532fa4060631fd6fffcd99ac5f3d5",
+   "mods/create-1.20.1-6.0.8.jar": "6fbb910c367dbce8e4fc7e5bf64b6edd4de980906ed00af8e47e4af843c0d9b0",
+   "mods/society_trading-1.2.9.jar": "95c6a6b616ab6a0edfbc012c917845b7a3493dbf127a583591510a1f4da6ffab"
+  },
+  "society_server_pack_sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495",
+  "society_files": {
+   "kubejs/server_scripts/tags/handleItemBlockFluidTags.js": "b8c332a711fbbafd2213738fa25ec866a45a9c2bdbce5601ab13918190f8a017",
+   "kubejs/startup_scripts/globalArtisanMachineDefinitions.js": "74b7a4006d36a817e21c1b1ee60db14f88ffba22f2043f89cc97c5d1d3fad302"
+  }
+ },
+ "society_lists_mirrored_by_script": {
+  "explicit_immovable": {
+   "file": "kubejs/server_scripts/tags/handleItemBlockFluidTags.js",
+   "sha256": "b8c332a711fbbafd2213738fa25ec866a45a9c2bdbce5601ab13918190f8a017",
+   "lines": "765-808",
+   "applied_tags": [
+    "buildinggadgets2:deny",
+    "c:relocation_not_supported",
+    "create:non_movable"
+   ],
+   "ids": [
+    "society:fish_pond",
+    "society:coin_leaderboard",
+    "society:iridium_clock",
+    "society:golden_clock",
+    "society:mana_clock",
+    "society:sparkstone_recycler",
+    "society:artisan_hopper",
+    "society:mini_artisan_hopper",
+    "society:auto_grabber",
+    "society:auto_tapper",
+    "society:auto_worm_farm",
+    "society:feeding_trough",
+    "society:fish_pond_basket",
+    "society:growth_obelisk",
+    "society:juice_inserter",
+    "society:mana_milker",
+    "society:mana_sprinkler",
+    "society:quality_washer",
+    "society:snow_melter",
+    "society:villager_home",
+    "society:shipping_bin_monitor",
+    "society:ribbit_hut",
+    "society:ribbit_hut_block",
+    "society:roe_recycler",
+    "society:pickling_can",
+    "society:mana_fruit_crop",
+    "shippingbin:smart_shipping_bin",
+    "shippingbin:basic_shipping_bin",
+    "society_trading:auto_trader",
+    "society:fish_pond_manager",
+    "society:fish_pond_hatchery",
+    "society:caterpillar_box",
+    "society:growth_obelisk_upper"
+   ]
+  },
+  "artisan_machines": {
+   "file": "kubejs/startup_scripts/globalArtisanMachineDefinitions.js",
+   "sha256": "74b7a4006d36a817e21c1b1ee60db14f88ffba22f2043f89cc97c5d1d3fad302",
+   "global": "global.artisanMachineIds",
+   "applied_at": "kubejs/server_scripts/tags/handleItemBlockFluidTags.js lines 854-860",
+   "ids": [
+    "society:loom",
+    "society:cheese_press",
+    "society:wine_keg",
+    "society:aging_cask",
+    "society:ancient_cask",
+    "society:crystalarium",
+    "society:deluxe_worm_farm",
+    "society:fish_smoker",
+    "society:bait_maker",
+    "society:dehydrator",
+    "society:mayonnaise_machine",
+    "society:preserves_jar",
+    "society:seed_maker",
+    "society:charging_rod",
+    "society:espresso_machine",
+    "society:tapper",
+    "society:recycling_machine",
+    "society:oil_maker",
+    "society:mushroom_log"
+   ]
+  }
+ },
+ "society_immovable_not_mirrored": {
+  "unbreakable_blocks": {
+   "ids": [
+    "society:cavern_air",
+    "society:skull_stone",
+    "society:skull_permafrost",
+    "society:skull_sandstone",
+    "society:skull_arid_sandstone",
+    "society:skull_blackstone",
+    "society:skull_end_stone"
+   ],
+   "society_tags": [
+    "minecraft:wither_immune",
+    "buildinggadgets2:deny",
+    "minecraft:lava_pool_stone_cannot_replace",
+    "forge:relocation_not_supported",
+    "c:relocation_not_supported",
+    "create:non_movable",
+    "create:non_breakable",
+    "quark:iron_rod_immune"
+   ],
+   "reason": "already immovable for the physics assembler: SimAssemblyContraption.movementAllowed refuses a block whose destroy speed is -1, and Society registers all seven with hardness -1",
+   "preconditions": [
+    {
+     "check": "profile_file_sha256",
+     "path": "kubejs/server_scripts/tags/handleItemBlockFluidTags.js",
+     "sha256": "b8c332a711fbbafd2213738fa25ec866a45a9c2bdbce5601ab13918190f8a017",
+     "note": "the array applied with unbreakableTags, lines 809-830"
+    },
+    {
+     "check": "profile_file_sha256",
+     "path": "kubejs/startup_scripts/registration/registerBlocks.js",
+     "sha256": "1c298a1b4760dabf01a36eba41a738f1f1c0158a1339051cdd23af14382fcd5f",
+     "note": "createSkullVariant ends with .unbreakable() (KubeJS BlockBuilder: hardness -1) for the six society:skull_* blocks; society:cavern_air has .hardness(-1)"
+    }
+   ]
+  },
+  "storage_blocks_in_society_data_tags": {
+   "ids": [
+    "sophisticatedstorage:chest",
+    "sophisticatedstorage:copper_chest",
+    "sophisticatedstorage:iron_chest",
+    "sophisticatedstorage:gold_chest",
+    "sophisticatedstorage:diamond_chest",
+    "sophisticatedstorage:netherite_chest",
+    "#functionalstorage:drawer"
+   ],
+   "drawer_tag_members": 142,
+   "reason": "outside the two lists of handleItemBlockFluidTags.js that the script mirrors, so the physics assembler still moves them. A physics move does not duplicate their contents: the Sophisticated Storage block entity is Clearable, so moveBlocks empties it after saving its NBT, and the Functional Storage drawer blocks drop nothing in onRemove. The four controller blocks of the drawer tag do drop their upgrade slots; they are covered by sable:silent_assembly_removal instead. Adding the storage blocks to simulated:non_movable would only decide whether such storage may be part of a physics contraption.",
+   "covered_by_silent_assembly_removal": [
+    "functionalstorage:controller_extension",
+    "functionalstorage:framed_controller_extension",
+    "functionalstorage:framed_storage_controller",
+    "functionalstorage:storage_controller"
+   ],
+   "preconditions": [
+    {
+     "check": "profile_file_sha256",
+     "path": "kubejs/data/create/tags/blocks/non_movable.json",
+     "sha256": "fb768e92070bb0be5b74c2e8c8f3f191d5b98ad666db190fa2dcf634fd59f808",
+     "note": "create:non_movable gets the six Sophisticated Storage chests and #functionalstorage:drawer"
+    },
+    {
+     "check": "profile_file_sha256",
+     "path": "kubejs/data/c/tags/blocks/relocation_not_supported.json",
+     "sha256": "38386c1f094eb2239dc048c40755be41207337b72937ce040ff24d8b5a22f852",
+     "note": "c:relocation_not_supported gets #functionalstorage:drawer"
+    },
+    {
+     "check": "profile_file_sha256",
+     "path": "kubejs/data/functionalstorage/tags/blocks/drawer.json",
+     "sha256": "e721cc542c1639f5493d03d6c54f391fb05aaf775020919a544abaf525afcdb2",
+     "note": "block tag functionalstorage:drawer, 142 ids"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/sophisticatedstorage-1.20.1-1.4.74.1997.jar",
+     "entry": "net/p3pp3rf1y/sophisticatedstorage/block/StorageBlockEntity.class",
+     "sha256": "071273b51d7e0dfcaf1d982fd5189af698835ebd706e841774b61033ab7aabc6",
+     "note": "implements Clearable; clearContent empties the inventory and the upgrade handler"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+     "entry": "com/buuz135/functionalstorage/block/DrawerBlock.class",
+     "sha256": "d6f816e74f26fcef2a9730bc183af250921b61870e8185d7cf3a5e51d0ee7a06",
+     "note": "getDynamicDrops returns an empty list, so Titanium BasicBlock.onRemove drops nothing; the same override is in CompactingDrawerBlock, SimpleCompactingDrawerBlock, EnderDrawerBlock, FluidDrawerBlock and ArmoryCabinetBlock"
+    }
+   ]
+  }
+ },
+ "files": [
+  {
+   "path": "kubejs/data/c/tags/items/dusts/redstone.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dusts/redstone.json",
+   "sha256": "562c2c08b2e726b0cdd5c294cd6e6d7a96f70022ce5c6df89644ec80cbafa5ef",
+   "purpose": "Defines item tag c:dusts/redstone as #forge:dusts/redstone. Nothing in the pack defines c:dusts/redstone, but the Aeronautics port uses it: port data data/simulated/advancements/recipes/misc/redstone_accumulator.json, data/simulated/advancements/recipes/misc/redstone_inductor.json, data/simulated/recipes/redstone_accumulator.json, data/simulated/recipes/redstone_inductor.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dusts/redstone.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dusts/redstone",
+     "note": "no data/c/tags/items/dusts/redstone.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dusts/redstone",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:redstone"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/advancements/recipes/misc/redstone_accumulator.json",
+     "sha256": "db07744993b9e29b28fcfcd643b653fe41e37d83be565c4cd935fcc73378ab7a"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/advancements/recipes/misc/redstone_inductor.json",
+     "sha256": "79fbbe823a87ab73f527ddaf66c48ad0a3a12f09a83df5e4b75f12876d276151"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/redstone_accumulator.json",
+     "sha256": "8a6e49d01f42b1504e43cefd6161459562577ec95c9d24bf4fef2e3eea5dcb1e"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/redstone_inductor.json",
+     "sha256": "a7c9ddc70744b47e630324327364779ae8b1a6b1667a5d29eedda6acaddb9882"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dusts/redstone exists and contains minecraft:redstone (equal to the contents of forge:dusts/redstone)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:redstone_accumulator, simulated:redstone_inductor no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/black.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/black.json",
+   "sha256": "67daa6f82e43472ae7dfd78dce21afe59429f6bfddf1c1027221b53ef8b953e3",
+   "purpose": "Defines item tag c:dyes/black as #forge:dyes/black. Nothing in the pack defines c:dyes/black, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/black_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/black.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/black",
+     "note": "no data/c/tags/items/dyes/black.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/black",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:black_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/black_nameplate_from_other_nameplate.json",
+     "sha256": "6d722d14ad66eef113a2c880bde7e37149f98b12e36685fb772bdc89b06c5d92"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/black exists and contains minecraft:black_dye (equal to the contents of forge:dyes/black)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:black_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/blue.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/blue.json",
+   "sha256": "74044e4b11866cea4d02f6b238713806a9438a8726d1a068c2be2b5257187b42",
+   "purpose": "Defines item tag c:dyes/blue as #forge:dyes/blue. Nothing in the pack defines c:dyes/blue, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/blue_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/blue.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/blue",
+     "note": "no data/c/tags/items/dyes/blue.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/blue",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:blue_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/blue_nameplate_from_other_nameplate.json",
+     "sha256": "e6dec765e1938a30be30c056aa9e19742bf32f0914464111cf32a72acbae731b"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/blue exists and contains minecraft:blue_dye (equal to the contents of forge:dyes/blue)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:blue_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/brown.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/brown.json",
+   "sha256": "80283283e3589a836733fcdc86bcf5e98fc01822f2f45a570383623ea3d8c75d",
+   "purpose": "Defines item tag c:dyes/brown as #forge:dyes/brown. Nothing in the pack defines c:dyes/brown, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/brown_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/brown.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/brown",
+     "note": "no data/c/tags/items/dyes/brown.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/brown",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:brown_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/brown_nameplate_from_other_nameplate.json",
+     "sha256": "ea2342e3e003f184e1e95a600a57c99f3b77ef27332e6ab01fc6661738f947a5"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/brown exists and contains minecraft:brown_dye (equal to the contents of forge:dyes/brown)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:brown_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/cyan.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/cyan.json",
+   "sha256": "3729dbee061fc8d2e0a4b1281b4544aac0b88f363409090766de907ce1ed4e13",
+   "purpose": "Defines item tag c:dyes/cyan as #forge:dyes/cyan. Nothing in the pack defines c:dyes/cyan, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/cyan_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/cyan.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/cyan",
+     "note": "no data/c/tags/items/dyes/cyan.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/cyan",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:cyan_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/cyan_nameplate_from_other_nameplate.json",
+     "sha256": "cec91b1a5a7a80cd80ab2a98702de34e297da41941c7ba8b0f52790f21f15ad4"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/cyan exists and contains minecraft:cyan_dye (equal to the contents of forge:dyes/cyan)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:cyan_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/gray.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/gray.json",
+   "sha256": "94eb88618f3639a3d914dc1756e061b20eae0192f217fcf8b3c5da44fb51bae3",
+   "purpose": "Defines item tag c:dyes/gray as #forge:dyes/gray. Nothing in the pack defines c:dyes/gray, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/gray_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/gray.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/gray",
+     "note": "no data/c/tags/items/dyes/gray.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/gray",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:gray_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/gray_nameplate_from_other_nameplate.json",
+     "sha256": "13bf0500a19ff40a714e7e9b88ccbe2187a889cd978c5c64969573590f9a9a26"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/gray exists and contains minecraft:gray_dye (equal to the contents of forge:dyes/gray)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:gray_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/green.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/green.json",
+   "sha256": "fa73cde70839365bf6406fd9cbd6cc4219490e23aa040c7e1e8966bd6c3d53e2",
+   "purpose": "Defines item tag c:dyes/green as #forge:dyes/green. Nothing in the pack defines c:dyes/green, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/green_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/green.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/green",
+     "note": "no data/c/tags/items/dyes/green.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/green",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:green_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/green_nameplate_from_other_nameplate.json",
+     "sha256": "5424c4eb33ed0a08df7d8b6e35b8aa80a597ab2df20cf32cfa1a368b8ff6738c"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/green exists and contains minecraft:green_dye (equal to the contents of forge:dyes/green)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:green_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/light_blue.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/light_blue.json",
+   "sha256": "6787a79f0239ff4143feb07fd6ed0c336ba41de548bb478a9fc5059953d57d6a",
+   "purpose": "Defines item tag c:dyes/light_blue as #forge:dyes/light_blue. Nothing in the pack defines c:dyes/light_blue, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/light_blue_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/light_blue.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/light_blue",
+     "note": "no data/c/tags/items/dyes/light_blue.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/light_blue",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:light_blue_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/light_blue_nameplate_from_other_nameplate.json",
+     "sha256": "ba6ac4906faf5dd74d97268cca8ec4729ed1733e7335e69a7b754491f089b24f"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/light_blue exists and contains minecraft:light_blue_dye (equal to the contents of forge:dyes/light_blue)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:light_blue_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/light_gray.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/light_gray.json",
+   "sha256": "14f13a0d55627cb6f8fcea42ed3b88bc6658352e8e6b2597fb7048c69c197a5c",
+   "purpose": "Defines item tag c:dyes/light_gray as #forge:dyes/light_gray. Nothing in the pack defines c:dyes/light_gray, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/light_gray_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/light_gray.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/light_gray",
+     "note": "no data/c/tags/items/dyes/light_gray.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/light_gray",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:light_gray_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/light_gray_nameplate_from_other_nameplate.json",
+     "sha256": "95ce0399fb5108ba9c1267a431f7c37bde2a32353c2ae9a74b765fd2f3bea6ef"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/light_gray exists and contains minecraft:light_gray_dye (equal to the contents of forge:dyes/light_gray)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:light_gray_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/lime.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/lime.json",
+   "sha256": "a6c5d2c2f1fac3541a6ff2bbaaacabe789810c96aeb5ba2abc7436b0f684dc03",
+   "purpose": "Defines item tag c:dyes/lime as #forge:dyes/lime. Nothing in the pack defines c:dyes/lime, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/lime_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/lime.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/lime",
+     "note": "no data/c/tags/items/dyes/lime.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/lime",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:lime_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/lime_nameplate_from_other_nameplate.json",
+     "sha256": "4d34b22a1b3d5cbf6f4c0a1c18965df714618cd58dca8626bb685593bd9be1b9"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/lime exists and contains minecraft:lime_dye (equal to the contents of forge:dyes/lime)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:lime_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/magenta.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/magenta.json",
+   "sha256": "a4f308842ef4f6e19f1cb1166d02a6972b2ea6d71771c0c8b13a146ad33f628f",
+   "purpose": "Defines item tag c:dyes/magenta as #forge:dyes/magenta. Nothing in the pack defines c:dyes/magenta, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/magenta_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/magenta.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/magenta",
+     "note": "no data/c/tags/items/dyes/magenta.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/magenta",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:magenta_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/magenta_nameplate_from_other_nameplate.json",
+     "sha256": "12a50a498b275f78f988ee3159761e0a1ef5f7e637034e60cff0c5dd9c583d7b"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/magenta exists and contains minecraft:magenta_dye (equal to the contents of forge:dyes/magenta)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:magenta_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/orange.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/orange.json",
+   "sha256": "97d589ef618b431e202ff671b7816fbeb988761fac4d85a1981cd2fb8cc2befc",
+   "purpose": "Defines item tag c:dyes/orange as #forge:dyes/orange. Nothing in the pack defines c:dyes/orange, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/orange_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/orange.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/orange",
+     "note": "no data/c/tags/items/dyes/orange.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/orange",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:orange_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/orange_nameplate_from_other_nameplate.json",
+     "sha256": "59643deaa231b31c0a09fdfdfd7b708606e1fdc311a58f532230a4036a8a51a9"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/orange exists and contains minecraft:orange_dye (equal to the contents of forge:dyes/orange)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:orange_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/pink.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/pink.json",
+   "sha256": "795ae91abda359a1b3bf4f9b12dfbbc262655726d1edc5cc19fca34d3914befb",
+   "purpose": "Defines item tag c:dyes/pink as #forge:dyes/pink. Nothing in the pack defines c:dyes/pink, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/pink_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/pink.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/pink",
+     "note": "no data/c/tags/items/dyes/pink.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/pink",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:pink_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/pink_nameplate_from_other_nameplate.json",
+     "sha256": "1cae6b551686444312f8f8d66d5e5acac61c2ed3d52855866eed03b9d02a07ce"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/pink exists and contains minecraft:pink_dye (equal to the contents of forge:dyes/pink)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:pink_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/purple.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/purple.json",
+   "sha256": "bfd90c5310eed27544d6623f468c3bbf7273b8ac23584ee77871237965c72aef",
+   "purpose": "Defines item tag c:dyes/purple as #forge:dyes/purple. Nothing in the pack defines c:dyes/purple, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/purple_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/purple.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/purple",
+     "note": "no data/c/tags/items/dyes/purple.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/purple",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:purple_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/purple_nameplate_from_other_nameplate.json",
+     "sha256": "0f5cd59d44cfe353540498e4edc356eaf3408026b00c28a4180870e9d3055d7b"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/purple exists and contains minecraft:purple_dye (equal to the contents of forge:dyes/purple)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:purple_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/red.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/red.json",
+   "sha256": "bc6ee12f7560066d5db215de60001e002f73a602a776847bb625fe0117f3aa72",
+   "purpose": "Defines item tag c:dyes/red as #forge:dyes/red. Nothing in the pack defines c:dyes/red, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/red_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/red.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/red",
+     "note": "no data/c/tags/items/dyes/red.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/red",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:red_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/red_nameplate_from_other_nameplate.json",
+     "sha256": "9c5a50c2506b1958932e70824ad2e314f1172a749a2badf8ae7370be1b61f6cb"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/red exists and contains minecraft:red_dye (equal to the contents of forge:dyes/red)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:red_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/white.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/white.json",
+   "sha256": "24fd16651ba329ad591bd6285bb88b7f3247336505141b2f5b7b0cd2065f9b82",
+   "purpose": "Defines item tag c:dyes/white as #forge:dyes/white. Nothing in the pack defines c:dyes/white, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/white_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/white.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/white",
+     "note": "no data/c/tags/items/dyes/white.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/white",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:white_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/white_nameplate_from_other_nameplate.json",
+     "sha256": "2cc78395dfac10752ed8c7e173696f4c214ca5fea535828871f0cd3e05cb04a8"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/white exists and contains minecraft:white_dye (equal to the contents of forge:dyes/white)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:white_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/dyes/yellow.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/dyes/yellow.json",
+   "sha256": "b7b98aec5774835f7341d895f35a2c957f83016f37b668d18ac7cd882711805a",
+   "purpose": "Defines item tag c:dyes/yellow as #forge:dyes/yellow. Nothing in the pack defines c:dyes/yellow, but the Aeronautics port uses it: port data data/simulated/recipes/crafting/yellow_nameplate_from_other_nameplate.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/dyes/yellow.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:dyes/yellow",
+     "note": "no data/c/tags/items/dyes/yellow.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:dyes/yellow",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:yellow_dye"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/crafting/yellow_nameplate_from_other_nameplate.json",
+     "sha256": "da595519df285cb5239919cb09cd04ce26922f6c6309250cf15538d51641ce0d"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:dyes/yellow exists and contains minecraft:yellow_dye (equal to the contents of forge:dyes/yellow)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:yellow_nameplate_from_other_nameplate no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/leathers.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/leathers.json",
+   "sha256": "a0a6e1d5529b2da18918ad7c447581f6bd94923eec5969987f0816b90ce84e8a",
+   "purpose": "Defines item tag c:leathers as #forge:leather. Nothing in the pack defines c:leathers, but the Aeronautics port uses it: port data data/aeronautics/recipes/aviators_goggles.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/leathers.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:leathers",
+     "note": "no data/c/tags/items/leathers.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:leather",
+     "defined_by": [
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:leather"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/aeronautics/recipes/aviators_goggles.json",
+     "sha256": "896cbe00ab6d0803499e7820febd90510025c4f0d411d6555e8327b3993980fb"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:leathers exists and contains minecraft:leather (equal to the contents of forge:leather)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of aeronautics:aviators_goggles no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/plates/gold.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/plates/gold.json",
+   "sha256": "b225084c84a0ec3aa485c25226a718cdcffbfba448bfd9907588cabaf294daf2",
+   "purpose": "Defines item tag c:plates/gold as #forge:plates/gold. Nothing in the pack defines c:plates/gold, but the Aeronautics port uses it: port data data/aeronautics/recipes/steam_vent.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival); port code SteamVentBlock$Variant.getConversionFromItem (the right-click variant change of a placed steam vent never matched).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/plates/gold.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:plates/gold",
+     "note": "no data/c/tags/items/plates/gold.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:plates/gold",
+     "defined_by": [
+      "create-1.20.1-6.0.8.jar"
+     ],
+     "members_from_files": [
+      "create:golden_sheet"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/aeronautics/recipes/steam_vent.json",
+     "sha256": "2d99bb3f941764e688f2b6b88c3188c805d90a35805a1770b73f733c13ca48be"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "dev/eriksonn/aeronautics/content/blocks/hot_air/steam_vent/SteamVentBlock$Variant.class",
+     "sha256": "0772d1dd8cfbd026028c51906ecab743f2d3e5e07d81abc762acef8aca22e811",
+     "note": "getConversionFromItem tests AeroTags.ItemTags.GOLD_SHEET (c:plates/gold) and IRON_SHEET (c:plates/iron)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "dev/eriksonn/aeronautics/index/AeroTags$ItemTags.class",
+     "sha256": "2e21000a22e5caf4e2bfab86a23d8af252265b9ae5ddbac65456e4ba77c2ed90"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:plates/gold exists and contains create:golden_sheet (equal to the contents of forge:plates/gold)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of aeronautics:steam_vent no longer resolve to minecraft:barrier",
+    "right-clicking a placed aeronautics:steam_vent with create:golden_sheet switches its variant"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/plates/iron.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/plates/iron.json",
+   "sha256": "d90487a87921603c2fb9be0017af1ebe565a83a16c7b2cfe5ccfa48e7c5daadc",
+   "purpose": "Defines item tag c:plates/iron as #forge:plates/iron. Nothing in the pack defines c:plates/iron, but the Aeronautics port uses it: port code SteamVentBlock$Variant.getConversionFromItem (the right-click variant change of a placed steam vent never matched).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/plates/iron.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:plates/iron",
+     "note": "no data/c/tags/items/plates/iron.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:plates/iron",
+     "defined_by": [
+      "create-1.20.1-6.0.8.jar"
+     ],
+     "members_from_files": [
+      "create:iron_sheet"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "dev/eriksonn/aeronautics/content/blocks/hot_air/steam_vent/SteamVentBlock$Variant.class",
+     "sha256": "0772d1dd8cfbd026028c51906ecab743f2d3e5e07d81abc762acef8aca22e811",
+     "note": "getConversionFromItem tests AeroTags.ItemTags.GOLD_SHEET (c:plates/gold) and IRON_SHEET (c:plates/iron)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "dev/eriksonn/aeronautics/index/AeroTags$ItemTags.class",
+     "sha256": "2e21000a22e5caf4e2bfab86a23d8af252265b9ae5ddbac65456e4ba77c2ed90"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:plates/iron exists and contains create:iron_sheet (equal to the contents of forge:plates/iron)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "right-clicking a placed aeronautics:steam_vent with create:iron_sheet switches its variant"
+   ]
+  },
+  {
+   "path": "kubejs/data/c/tags/items/stones.json",
+   "source": "compat/coexistence/overlay/kubejs/data/c/tags/items/stones.json",
+   "sha256": "ac5ce1c11f6355445ee2be47fdfdbf7959d659d8499a7fbc6fe635cf49f8df53",
+   "purpose": "Defines item tag c:stones as #forge:stone. Nothing in the pack defines c:stones, but the Aeronautics port uses it: port data data/simulated/recipes/redstone_accumulator.json, data/simulated/recipes/redstone_inductor.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/c/tags/items/stones.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "c:stones",
+     "note": "no data/c/tags/items/stones.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:stone",
+     "defined_by": [
+      "Quark-4.0-462.jar",
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": "22 items incl. minecraft:stone"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/redstone_accumulator.json",
+     "sha256": "8a6e49d01f42b1504e43cefd6161459562577ec95c9d24bf4fef2e3eea5dcb1e"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/redstone_inductor.json",
+     "sha256": "a7c9ddc70744b47e630324327364779ae8b1a6b1667a5d29eedda6acaddb9882"
+    }
+   ],
+   "runtime_checks": [
+    "item tag c:stones exists and contains minecraft:stone (equal to the contents of forge:stone)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:redstone_accumulator, simulated:redstone_inductor no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/forge/tags/items/strings.json",
+   "source": "compat/coexistence/overlay/kubejs/data/forge/tags/items/strings.json",
+   "sha256": "be0e9b919798edc2333468f39458190e26ab878f2d1223fc73a76bdbaf939eac",
+   "purpose": "Defines item tag forge:strings as #forge:string. Nothing in the pack defines forge:strings, but the Aeronautics port uses it: port data data/simulated/advancements/recipes/misc/rope_coupling.json, data/simulated/recipes/rope_coupling.json (an ingredient with an undefined tag is an empty tag that only a barrier placeholder satisfies, so the item cannot be crafted in survival).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/forge/tags/items/strings.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "item_tag_undefined",
+     "tag": "forge:strings",
+     "note": "no data/forge/tags/items/strings.json in any mod JAR (nested JARs included), Forge, vanilla or kubejs/data; no KubeJS script adds it"
+    },
+    {
+     "check": "item_tag_defined",
+     "tag": "forge:string",
+     "defined_by": [
+      "CreateNumismatics-1.1.0+forge-mc1.20.1.jar",
+      "Steam_Rails-1.7.2+forge-mc1.20.1.jar",
+      "forge-1.20.1-47.4.20-universal.jar"
+     ],
+     "members_from_files": [
+      "minecraft:string"
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/advancements/recipes/misc/rope_coupling.json",
+     "sha256": "94f7c588f3bbcd82f2d78ede1046a77699649a400073b6f41f126cbcbca85a0a"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/recipes/rope_coupling.json",
+     "sha256": "f9e70478f50910da3d873a04f1dd1a234d004b5a91df465c38cf4719a3d48f25"
+    }
+   ],
+   "runtime_checks": [
+    "item tag forge:strings exists and contains minecraft:string (equal to the contents of forge:string)",
+    "KubeJS server.log: \"[minecraft:item] Found N tags\" rises by 22 in total for the 22 tag files (2589 -> 2611 against run fixed-r2, if nothing else adds item tags)",
+    "recipe ingredients of simulated:rope_coupling no longer resolve to minecraft:barrier"
+   ]
+  },
+  {
+   "path": "kubejs/data/moblassos/tags/entity_types/diamond_lasso_blacklist.json",
+   "source": "compat/coexistence/overlay/kubejs/data/moblassos/tags/entity_types/diamond_lasso_blacklist.json",
+   "sha256": "2e8b4549abbcfcaf6cfa4f3b41ea141911b7ce0141ee3cf6c35f0dc56f0a5fe1",
+   "purpose": "Adds pixelmon:pixelmon, pixelmon:statue and pixelmon:bike to moblassos:diamond_lasso_blacklist so the diamond lasso cannot store them in an item. All three extend AbstractHorse (an Animal, not an Enemy), which is exactly what LassoItem$Type.DIAMOND accepts; canPlayerPickUp rejects entity types in this tag. The diamond lasso is sold by Society (kubejs/data/society_trading/shops/shepherd.json, trade shepherd_mob_lasso_for_sun); config/moblassos-server.toml diamond_lasso_time = -1.",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/moblassos/tags/entity_types/diamond_lasso_blacklist.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/MobLassos-v8.0.1-1.20.1-Forge.jar",
+     "entry": "data/moblassos/tags/entity_types/diamond_lasso_blacklist.json",
+     "sha256": "b83114c23eeec820ce7eca52011f13013fb6c64002254be7aebe1e4b36244d48",
+     "note": "values is empty; the tag id and folder are the ones Mob Lassos registers (ModRegistry.registerEntityTypeTag(\"diamond_lasso_blacklist\"), namespace moblassos)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/MobLassos-v8.0.1-1.20.1-Forge.jar",
+     "entry": "fuzs/moblassos/world/item/LassoItem$Type.class",
+     "sha256": "a057c180f325cd7a805d780397c87694d047daf67f1aee26e43337bfc18ba43f",
+     "note": "canPlayerPickUp: !entityType.is(blacklist) && mobFilter"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/init/registry/EntityRegistration.class",
+     "sha256": "c24106fbe38959c2bceb1908a2e76877beafa2968bc46738297f13c13ed73939",
+     "note": "registers entity types pixelmon:pixelmon, pixelmon:statue, pixelmon:bike"
+    },
+    {
+     "check": "no_other_definition",
+     "note": "only the Mob Lassos JAR defines moblassos:*_lasso_blacklist; kubejs/data has no moblassos folder"
+    }
+   ],
+   "runtime_checks": [
+    "entity type tag moblassos:diamond_lasso_blacklist contains pixelmon:pixelmon, pixelmon:statue, pixelmon:bike",
+    "using a diamond lasso on a wild Pokemon, a statue or a bike leaves the entity in the world and the item without a StoredEntity tag",
+    "a Society animal (e.g. minecraft:cow) can still be picked up with the diamond lasso"
+   ]
+  },
+  {
+   "path": "kubejs/data/moblassos/tags/entity_types/golden_lasso_blacklist.json",
+   "source": "compat/coexistence/overlay/kubejs/data/moblassos/tags/entity_types/golden_lasso_blacklist.json",
+   "sha256": "2e8b4549abbcfcaf6cfa4f3b41ea141911b7ce0141ee3cf6c35f0dc56f0a5fe1",
+   "purpose": "Adds pixelmon:pixelmon, pixelmon:statue and pixelmon:bike to moblassos:golden_lasso_blacklist so the golden lasso cannot store them in an item. All three extend AbstractHorse (an Animal, not an Enemy), which is exactly what LassoItem$Type.GOLDEN accepts; canPlayerPickUp rejects entity types in this tag. The golden lasso is removed by Society (kubejs/startup_scripts/globalRemovedItems.js) but has the same Animal filter; covered in case it is re-enabled.",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/moblassos/tags/entity_types/golden_lasso_blacklist.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/MobLassos-v8.0.1-1.20.1-Forge.jar",
+     "entry": "data/moblassos/tags/entity_types/golden_lasso_blacklist.json",
+     "sha256": "b83114c23eeec820ce7eca52011f13013fb6c64002254be7aebe1e4b36244d48",
+     "note": "values is empty; the tag id and folder are the ones Mob Lassos registers (ModRegistry.registerEntityTypeTag(\"golden_lasso_blacklist\"), namespace moblassos)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/MobLassos-v8.0.1-1.20.1-Forge.jar",
+     "entry": "fuzs/moblassos/world/item/LassoItem$Type.class",
+     "sha256": "a057c180f325cd7a805d780397c87694d047daf67f1aee26e43337bfc18ba43f",
+     "note": "canPlayerPickUp: !entityType.is(blacklist) && mobFilter"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/init/registry/EntityRegistration.class",
+     "sha256": "c24106fbe38959c2bceb1908a2e76877beafa2968bc46738297f13c13ed73939",
+     "note": "registers entity types pixelmon:pixelmon, pixelmon:statue, pixelmon:bike"
+    },
+    {
+     "check": "no_other_definition",
+     "note": "only the Mob Lassos JAR defines moblassos:*_lasso_blacklist; kubejs/data has no moblassos folder"
+    }
+   ],
+   "runtime_checks": [
+    "entity type tag moblassos:golden_lasso_blacklist contains pixelmon:pixelmon, pixelmon:statue, pixelmon:bike",
+    "using a golden lasso on a wild Pokemon, a statue or a bike leaves the entity in the world and the item without a StoredEntity tag",
+    "a Society animal (e.g. minecraft:cow) can still be picked up with the golden lasso"
+   ]
+  },
+  {
+   "path": "kubejs/data/pixelmon/worldgen/template_pool/npc/gyms/fairy.json",
+   "source": "compat/coexistence/overlay/kubejs/data/pixelmon/worldgen/template_pool/npc/gyms/fairy.json",
+   "sha256": "49cde05ab8444566607e4c44889946ed9be0c467815118b0a314482c3ae20c48",
+   "purpose": "Template pool pixelmon:npc/gyms/fairy, missing from Pixelmon 9.2.3. The Fairy gym building has 8 jigsaws that draw from it, so without the pool the gym generates with no leader and no trainers. The file is Pixelmon's npc/gyms/grass.json with every \"grass\" replaced by \"fairy\": 21 single_pool_element entries, weight 1, processors minecraft:empty, projection rigid, fallback minecraft:empty.",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/pixelmon/worldgen/template_pool/npc/gyms/fairy.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "jar_entry_absent",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "data/pixelmon/worldgen/template_pool/npc/gyms/fairy.json"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "data/pixelmon/worldgen/template_pool/npc/gyms/grass.json",
+     "sha256": "d6612b5cb4f94a9de2a9af3b983259b100c2579bb35abe56bbf8fe46802cfd61",
+     "note": "pattern source"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "data/pixelmon/structures/gyms/fairy/gym_fairy.nbt",
+     "sha256": "b63b0492ec1f0c920fe4438bfd9d12a50b8c1db558ce74196ab4325355dcff5c",
+     "note": "8 jigsaws with pool pixelmon:npc/gyms/fairy",
+     "npc_jigsaws": [
+      {
+       "pos": [
+        9,
+        4,
+        33
+       ],
+       "target": "pixelmon:trainer_equal"
+      },
+      {
+       "pos": [
+        17,
+        4,
+        11
+       ],
+       "target": "pixelmon:trainer_equal"
+      },
+      {
+       "pos": [
+        28,
+        4,
+        27
+       ],
+       "target": "pixelmon:trainer_equal"
+      },
+      {
+       "pos": [
+        16,
+        5,
+        21
+       ],
+       "target": "pixelmon:trainer_epic"
+      },
+      {
+       "pos": [
+        7,
+        13,
+        35
+       ],
+       "target": "pixelmon:trainer_legendary"
+      },
+      {
+       "pos": [
+        29,
+        13,
+        23
+       ],
+       "target": "pixelmon:trainer_epic"
+      },
+      {
+       "pos": [
+        6,
+        14,
+        11
+       ],
+       "target": "pixelmon:trainer_equal"
+      },
+      {
+       "pos": [
+        17,
+        24,
+        13
+       ],
+       "target": "pixelmon:gym_leader"
+      }
+     ]
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "data/pixelmon/worldgen/structure/gyms/fairy.json",
+     "sha256": "e92c3c20460a826199e1155bf4f540db24b18bed3565175fd68d649313ee8d52",
+     "note": "jigsaw structure, biomes minecraft:birch_forest"
+    },
+    {
+     "check": "jar_entries_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "note": "the 21 NPC templates (1x3x1, one pixelmon:npc_trainer, one jigsaw)",
+     "entries": {
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_a.nbt": "1f1dafa926f5e780fbeaaff87bad8879f31f2d0b722313eaed1f31a02cd25a22",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_b.nbt": "3a7ce862323a4723320d53a4278e73d9a29d8e2c613832746fa85a712d83587b",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_c.nbt": "bee89873d130528ad4034444c1cc89a765fdb8a849e0edcc19bbc73e23cd4fa6",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_d.nbt": "d387ed90097b466254ea2e8161286be5c46750b5f274d51ddabdd82a6f6733d6",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_e.nbt": "5062ae8e11890ff3429d92749eccc61f2322f3931a6a3a46c275d02634f69e1f",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_leader_f.nbt": "1ed02fb6de7e5b01b7b81bef0c046bd3694946915761fe7fa359129a97d6fe5f",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_a.nbt": "006ba38c7f700e7a1ad5c1b4f7a54da3d2b1e8b2fd3624ca43dcf86c8b31d613",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_b.nbt": "c89f6d7d4338277d9f79c68e07cc6c69cd43269228ec6f4ed7480558a0ab7c1e",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_c.nbt": "16022e2a689ba130b52381f791d91fd37809785d3f9b81c851fcd127ceb58b30",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_d.nbt": "59724151ec8d67fc49223f52af3f45c1d949d2ffbf9d384e1c4ad69032dd4642",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_e.nbt": "35e1921541b8d8d9a89ecf84b52a8415d75b97924a9a9ed0305c16b8cb2f6f27",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_elite_f.nbt": "80333b90ad76b19ed2e3a77b85b68fd1f8945cc65eaf467deefd8220b5486590",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_a.nbt": "87af29b74fb7805d031e465d3d0fbfd1fd68ee7d94b5d9788802479a981c0e78",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_b.nbt": "3ac02f1caac5ea2583f8a922f9653e6ed54dfc6c40b300bf58d31e7adbfcda70",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_c.nbt": "a985c37fef22aa02e8a20819d5b505be60f1e8b6c8b5b37eb834e6f48d897883",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_d.nbt": "cd63b00b34fef09d6fb497ddfd7ad6dc9bcbe1d3cdf3e81c6fdd0263b50dcec1",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_e.nbt": "6a9ed34322b5e8b7a9dba3ab512f629b6d655d05cc371e2d682702783bc96852",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_f.nbt": "63426e292537a603d10f6f3c7831344b490456e2eb9abb9bc9ad78bf3a0b2800",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_g.nbt": "d3c0cffcfdd5f108ed550ee33dcabb3d7e2fa101fa93c37792dc60c92824f3ad",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_h.nbt": "fb6ea3be9d428a20a7e5c73388e29c369ff0ab789329a605fee4323f100fd70d",
+      "data/pixelmon/structures/gyms/fairy/gym_fairy_grunt_i.nbt": "065eef6cbf8ab9ec6b4edb5c43c6ff6a9944c50678a509a2b3de56d533d9c224"
+     }
+    }
+   ],
+   "runtime_checks": [
+    "template_pool registry contains pixelmon:npc/gyms/fairy (649 -> 650 ids against run fixed-r2)",
+    "a newly generated pixelmon:gyms/fairy (birch forest; e.g. /place structure pixelmon:gyms/fairy) holds 8 pixelmon:npc_trainer entities inside the gym building: gym_leader x1 (template position [17,24,13]), trainer_equal x4, trainer_epic x2, trainer_legendary x1",
+    "no \"Non-existent template pool reference\" log line for pixelmon:npc/gyms/fairy",
+    "jigsaw names offered by the pool: pixelmon:gym_leader x6 (leader_a..f), pixelmon:trainer_equal x9 (grunt_a..i), pixelmon:trainer_epic x3 (elite_a..c), pixelmon:trainer_legendary x2 (elite_e, elite_f); elite_d is named minecraft:trainer_legendary in the JAR and can never attach",
+    "gyms generated before the change stay without NPCs"
+   ],
+   "template_jigsaw_names": {
+    "pixelmon:gyms/fairy/gym_fairy_leader_a": "pixelmon:gym_leader",
+    "pixelmon:gyms/fairy/gym_fairy_leader_b": "pixelmon:gym_leader",
+    "pixelmon:gyms/fairy/gym_fairy_leader_c": "pixelmon:gym_leader",
+    "pixelmon:gyms/fairy/gym_fairy_leader_d": "pixelmon:gym_leader",
+    "pixelmon:gyms/fairy/gym_fairy_leader_e": "pixelmon:gym_leader",
+    "pixelmon:gyms/fairy/gym_fairy_leader_f": "pixelmon:gym_leader",
+    "pixelmon:gyms/fairy/gym_fairy_elite_a": "pixelmon:trainer_epic",
+    "pixelmon:gyms/fairy/gym_fairy_elite_b": "pixelmon:trainer_epic",
+    "pixelmon:gyms/fairy/gym_fairy_elite_c": "pixelmon:trainer_epic",
+    "pixelmon:gyms/fairy/gym_fairy_elite_d": "minecraft:trainer_legendary",
+    "pixelmon:gyms/fairy/gym_fairy_elite_e": "pixelmon:trainer_legendary",
+    "pixelmon:gyms/fairy/gym_fairy_elite_f": "pixelmon:trainer_legendary",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_a": "pixelmon:trainer_equal",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_b": "pixelmon:trainer_equal",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_c": "pixelmon:trainer_equal",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_d": "pixelmon:trainer_equal",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_e": "pixelmon:trainer_equal",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_f": "pixelmon:trainer_equal",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_g": "pixelmon:trainer_equal",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_h": "pixelmon:trainer_equal",
+    "pixelmon:gyms/fairy/gym_fairy_grunt_i": "pixelmon:trainer_equal"
+   }
+  },
+  {
+   "path": "kubejs/data/psa_coexistence/lithostitched/worldgen_modifier/pixelmon_plains_taiga_dens.json",
+   "source": "compat/coexistence/overlay/kubejs/data/psa_coexistence/lithostitched/worldgen_modifier/pixelmon_plains_taiga_dens.json",
+   "sha256": "1b8179531ad43a68976df1d4238244c2053fa43c5af7d99da40e1c3cb585831e",
+   "purpose": "Lithostitched modifier (type lithostitched:add_structure_set_entries) appending pixelmon:den/plains and pixelmon:den/taiga, weight 1 each, to structure set pixelmon:dens. Pixelmon defines both structures but lists them in no structure set, so they never generate. Pixelmon's dens.json is not overridden: salt, spacing and separation stay.",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/psa_coexistence/lithostitched/worldgen_modifier/pixelmon_plains_taiga_dens.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "data/pixelmon/worldgen/structure_set/dens.json",
+     "sha256": "18825ccfaa6ccfdb5f3e861183e54776b058b13351fc1c97c77446aa2a87b255",
+     "note": "13 structures, neither den/plains nor den/taiga"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "data/pixelmon/worldgen/structure/den/plains.json",
+     "sha256": "aa45823faccfa902b8cdadf1f3ae2ad9e276a13c8d38fc0dc670f4018f738e81",
+     "note": "biomes #minecraft:has_structure/village_plains"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "data/pixelmon/worldgen/structure/den/taiga.json",
+     "sha256": "ac5910362fdb788a8e7338574b91143ed7328bc894d86ff7d0ed36934aa49abe",
+     "note": "biomes #minecraft:is_taiga"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/lithostitched-forge-1.20.1-1.4.11.jar",
+     "entry": "dev/worldgen/lithostitched/worldgen/modifier/AddStructureSetEntriesModifier.class",
+     "sha256": "b9b92d3039fa74622a4781dc9705b781d4929c8ff8edb539497063e253a46fbc",
+     "note": "codec: optional predicate, structure_set or structure_sets (id, list or #tag), entries [{structure, weight}]; phase ADD; appends to StructureSet.structures"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/lithostitched-forge-1.20.1-1.4.11.jar",
+     "entry": "dev/worldgen/lithostitched/mixin/server/DedicatedServerMixin.class",
+     "sha256": "fc62c8dcac331ae4f0283bbd90146ca6e6b4c86ec90b8d44ba57945d26952bc3",
+     "note": "modifiers are applied in DedicatedServer.initServer before loadLevel"
+    },
+    {
+     "check": "no_other_definition",
+     "note": "no structure set of any mod JAR, vanilla or kubejs/data references the two structures; the only worldgen_modifier file in the staged profile is lithostitched:compile_raw_templates (the PSA village fix adds add_template_pool_elements modifiers only)"
+    },
+    {
+     "check": "requires_mod",
+     "mod": "pixelmon",
+     "note": "the file references Pixelmon registry entries; without Pixelmon the modifier fails to decode and registry loading stops"
+    }
+   ],
+   "runtime_checks": [
+    "registry lithostitched:worldgen_modifier contains psa_coexistence:pixelmon_plains_taiga_dens and the server starts without a registry loading error",
+    "structure set pixelmon:dens lists 15 structures at runtime, the last two pixelmon:den/plains and pixelmon:den/taiga",
+    "/locate structure pixelmon:den/plains and /locate structure pixelmon:den/taiga find a position in a new world",
+    "den grid positions are unchanged (salt 1843589878, spacing 53, separation 31); which den type is tried first at a grid point can differ from before in chunks generated afterwards"
+   ]
+  },
+  {
+   "path": "kubejs/data/sable/tags/blocks/silent_assembly_removal.json",
+   "source": "compat/coexistence/overlay/kubejs/data/sable/tags/blocks/silent_assembly_removal.json",
+   "sha256": "4ed406f64c1c3396360eaa95ae22a690b6d3a42c290934c05ed7a831a084ed7e",
+   "purpose": "Adds 74 blocks to sable:silent_assembly_removal. 23 are blocks that Society marks immovable: the 18 KubeJS blocks whose block entity has an inventory attachment, society_trading:auto_trader (a Java block of the Society Trading mod with four item slots) and the four Functional Storage controller blocks of Society's block tag functionalstorage:drawer (storage controller and controller extension, plain and framed; their block entity holds upgrade items). SubLevelAssemblyHelper.moveBlocks copies each block entity as NBT to the new position; for a block in this tag it removes the old block entity first, so when the old block is later replaced by air the block's onRemove finds no block entity and drops nothing (KubeJS BasicBlockJS.onRemove -> InventoryAttachment.onRemove = Containers.dropContents; AutoTraderBlock.onRemove -> AutoTraderBlockEntity.drops; Titanium BasicBlock.onRemove -> Containers.dropContents of getDynamicDrops, which the two controller block classes do not override). Without the tag the items stay in the old block entity too (none of BlockEntityJS, AutoTraderBlockEntity and ControllableDrawerTile is Clearable) and are dropped as well. moveBlocks is the only block mover of the port: assembly (SimAssemblyHelper.assembleFromSingleBlock -> assembleBlocks), disassembly (SimAssemblyHelper.disassembleSubLevel, also used by merging glue), sub-level split (SubLevelHeatMapManager -> assembleBlocks) and Sable's assemble command (SableAssembleCommands) all go through it. The other 51 ids are Pixelmon blocks with the same defect (added by the second review): the 48 gym signs (GymSignBlock.onRemove drops the item shown in the sign when GymSignTileEntity.itemDrops is true, the default), pixelmon:fossil_display (FossilDisplayBlock.onRemove spawns the displayed fossil item), pixelmon:cloning_machine (CloningMachineBlock.onRemove spawns a cloning_machine item, or an aluminium ingot when broken, and calls CloningMachineTileEntity.onDestroy, which puts the stored Mew back into the owner's party) and pixelmon:infuser (InfuserBlock.onRemove drops getInfuserItemStacks(); InfuserTileEntity is a WorldlyContainer, but its clearContent is an empty method, so Sable's Clearable.tryClear leaves the items in place). The gym sign, fossil display and cloning machine block entities are not Clearable. Each of the four saves that state in its NBT (ItemIn / ItemIn / Mew / Items), so without the tag a physics move leaves the item or the Mew at the old position and in the moved block. Pixelmon's remaining onRemove droppers (box, end table, fridge, mower) extend InventoryTileEntity, whose clearContent (IBasicInventory default) empties every slot; Sable clears them before the old block is removed, so they are left out. These ten are all the onRemove overrides in the Pixelmon JAR. Not covered by this file: block entities of other mods that drop in onRemove and are not Clearable (see physics_assembly_duplication_not_covered).",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/data/sable/tags/blocks/silent_assembly_removal.json",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/sable/tags/blocks/silent_assembly_removal.json",
+     "sha256": "b8038ac2cc88a5bb838ff5824402ff5bf944651a5e5fa323673a8be7f43a8116",
+     "note": "replace false; 17 third-party ids, none of Society's"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/society_trading-1.2.9.jar",
+     "entry": "io/github/chakyl/societytrading/block/AutoTraderBlock.class",
+     "sha256": "0959209b750b07fbec438f03ea20190127910a5c05ae5c7c1d063dd33cd4984b",
+     "note": "onRemove: level.getBlockEntity(pos) instanceof AutoTraderBlockEntity -> drops()"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/society_trading-1.2.9.jar",
+     "entry": "io/github/chakyl/societytrading/blockentity/AutoTraderBlockEntity.class",
+     "sha256": "277077ddcfe3f70ed82273675ddb101c5a4a7f29294a49d18fd0d4d61147c66f",
+     "note": "extends BlockEntity, implements TickingBlockEntity and MenuProvider (not Clearable); saveAdditional writes the four ItemStackHandlers; drops() = Containers.dropContents of their stacks. The only id of Society's 52 immovable blocks that is not a KubeJS block"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "dev/ryanhcode/sable/api/SubLevelAssemblyHelper.class",
+     "sha256": "c37c0e8a5999399e53c728f58144fb5d249c8a24c1c73f47108cd034120736e2",
+     "note": "moveBlocks: saveWithFullMetadata; if state.is(sable:silent_assembly_removal) removeBlockEntity else Clearable.tryClear; new chunk setBlockState + load(tag); later old chunk setBlockState(air, true). The only class reading SableTags.SILENT_ASSEMBLY_REMOVAL"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+     "entry": "dev/latvian/mods/kubejs/block/custom/BasicBlockJS.class",
+     "sha256": "bdbd15b85214dee372cda4415ae3045523518b16c9863d78777bd4a512e0f8ab",
+     "note": "onRemove: level.getBlockEntity(pos) instanceof BlockEntityJS -> attachment.onRemove(newState)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+     "entry": "dev/latvian/mods/kubejs/block/entity/InventoryAttachment.class",
+     "sha256": "b567d78e78b4111f99636d21d5e3e3a2cf433957fb6dd5c791b182532ddb3bda",
+     "note": "onRemove = Containers.dropContents"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+     "entry": "dev/latvian/mods/kubejs/block/entity/BlockEntityJS.class",
+     "sha256": "801a2b0ed815a2578ca5c5b945fc62023f3a7213c3ee6c41b442009cd908f17a",
+     "note": "extends BlockEntity, implements nothing (not Clearable); saveAdditional writes the attachments"
+    },
+    {
+     "check": "profile_files_sha256",
+     "files": {
+      "kubejs/startup_scripts/customMachines/iridiumClock.js": "40b9d5b80a87ee6a6c0f7cd751f16dc3e0ec3338e992b21fc9f99b6dce584d57",
+      "kubejs/startup_scripts/powerfulMachines/artisanHopper.js": "5096a8726b1e964928243d7d827f4d4d73ada7d9ff807aa85abf9c28076cea89",
+      "kubejs/startup_scripts/powerfulMachines/autoGrabber.js": "3588ec5aa94ce7af08732c8409f4567a4fb51a1c85bd278e3a32319fd610fef2",
+      "kubejs/startup_scripts/powerfulMachines/autoWormFarm.js": "e0a7311bb26b41f2e8d99fa0d3bae630ccd3dff130ff3286d1ca263c96fe1900",
+      "kubejs/startup_scripts/powerfulMachines/basicShippingBin.js": "296128d97ea08881c12a3165385e5ac1b3373d2c1c53b79f9efc2aae795813f7",
+      "kubejs/startup_scripts/powerfulMachines/caterpillarBox.js": "24c694125df2c987c058f4a84511a7c7d6b8c5a3e1f6da159c889b1185f07255",
+      "kubejs/startup_scripts/powerfulMachines/feedingTrough.js": "d9e1212ae91b9a2c62ca3089b5bb334fa0c429988d85aceeed3486e8fb5d76ba",
+      "kubejs/startup_scripts/powerfulMachines/fishPondBasket.js": "7e08bd506957872bcd73c77bbedf5e2690c2aeb8009b2e1c1aa0c08e7497a45c",
+      "kubejs/startup_scripts/powerfulMachines/fishPondQuestManager.js": "5eb8371cd3b5d9dbc5545713b1f6771518a209a44c4e9b2ccf6383afd4dbc25b",
+      "kubejs/startup_scripts/powerfulMachines/growthObelisk.js": "adc9367fcdd25c00a59c0e2b7afc8674eb5c628ccc69789e53156f1b56504805",
+      "kubejs/startup_scripts/powerfulMachines/manaMilker.js": "e42b81fc9c393f86fd4ee4bf4b9a57345db73676ac7282c769fab8b261ca80a6",
+      "kubejs/startup_scripts/powerfulMachines/picklingCan.js": "984f89f055eba6acbbb5a83edbff6a3016715381b9c8f68a4b5e0cadaaae8a0e",
+      "kubejs/startup_scripts/powerfulMachines/qualityWasher.js": "fbefeedf6283722483cb638167cd8d5d2b620ae60c3838abd4f6c69ea26fd710",
+      "kubejs/startup_scripts/powerfulMachines/ribbitHut.js": "8ab1406145f827faa338f7b107be607fc6a53f50df968a13b940a9c04645c920",
+      "kubejs/startup_scripts/powerfulMachines/roeRecycler.js": "00e1ddce2623170e7fa795fb0868fd20ce0e68a05628811ce68b002ab0a4abfe",
+      "kubejs/startup_scripts/powerfulMachines/smartShippingBin.js": "07c4713d37217bec3ff20516ddfd4c32097ef53516fc7a412cfb0d17723bff39"
+     },
+     "note": "the 16 Society startup scripts that call blockInfo.inventory( (18 calls, 53 block entity callbacks in total, no other attachment call); same bytes in the official server pack ZIP"
+    },
+    {
+     "check": "profile_file_sha256",
+     "path": "kubejs/data/functionalstorage/tags/blocks/drawer.json",
+     "sha256": "e721cc542c1639f5493d03d6c54f391fb05aaf775020919a544abaf525afcdb2",
+     "note": "Society's block tag functionalstorage:drawer (142 ids, in create:non_movable and c:relocation_not_supported through kubejs/data); holds the four controller ids"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/titanium-1.20.1-3.8.32.jar",
+     "entry": "com/hrznstudio/titanium/block/BasicBlock.class",
+     "sha256": "c25f9ca3a39ff8cd0f9b42f94bbbc6943874bdcb50de423cd58bc6e84a86984a",
+     "note": "onRemove = Containers.dropContents(getDynamicDrops); the default getDynamicDrops returns the stacks of every inventory component of the ActiveTile"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+     "entry": "com/buuz135/functionalstorage/block/StorageControllerBlock.class",
+     "sha256": "2e3e10ebbb61791036c5c85b7fa5dda3a9c188cadeb97210987c85f5d9c2d0b3",
+     "note": "extends RotatableBlock, does not override getDynamicDrops (storage_controller, framed_storage_controller)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+     "entry": "com/buuz135/functionalstorage/block/StorageControllerExtensionBlock.class",
+     "sha256": "570a3112dc06285b6dfe472bd95452fbacc28ff15d5c409e6f1a32a6fb6847ef",
+     "note": "extends RotatableBlock, does not override getDynamicDrops (controller_extension, framed_controller_extension)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/functionalstorage-1.20.1-1.2.13.jar",
+     "entry": "com/buuz135/functionalstorage/block/tile/ControllableDrawerTile.class",
+     "sha256": "4718cf24d6a6d6ea1aaa8400a7778e341d84b562ecccf24656fb901f98291f92",
+     "note": "extends ActiveTile (not Clearable); the storage and utility upgrade inventories are saved fields added with addInventory; the controller has 4 storage upgrade slots, the extension 1 storage and 3 utility upgrade slots"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/furniture/GymSignBlock.class",
+     "sha256": "a17102c15be6f1ea45ab2545d4f004d83ee368805f37156a35aceb1cc9bce89f",
+     "note": "onRemove: BlockHelper.getTileEntity(GymSignTileEntity) != null && getItemInSign() != null && isDroppable() -> Containers.dropContents(getContents()); the only block class that names GymSignTileEntity, no subclass"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/GymSignTileEntity.class",
+     "sha256": "3416c0a415d2beb0df3cf87a894bed715832d2c6ac19082142e5f11b150b7472",
+     "note": "extends BlockEntity, implements ISpecialTexture (not Clearable); saveAdditional writes ItemIn and ItemDrops, load reads them; itemDrops defaults to true"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/multi/FossilDisplayBlock.class",
+     "sha256": "76f3fd1d277da318e21815392b60e29e333e73ed0b34a01a5a153f6efd4ae2e9",
+     "note": "onRemove: level.getBlockEntity(pos) instanceof FossilDisplayTileEntity with an item in display -> spawns an ItemEntity of that fossil"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/FossilDisplayTileEntity.class",
+     "sha256": "ae3933bce3123d2453f8a0c07cc0820931fdf98132be79ca697d8fea5c026682",
+     "note": "extends BlockEntity, implements IFrameCounter (not Clearable); saveAdditional writes ItemIn (numeric item id), load reads it"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/machines/CloningMachineBlock.class",
+     "sha256": "9449de0416897ea2b1602985f05dcadac05b071ca2cbbb7fde533fa0af6cd471",
+     "note": "onRemove: level.getBlockEntity(pos) instanceof CloningMachineTileEntity -> onDestroy() and an ItemEntity of pixelmon:cloning_machine (aluminium ingot when broken)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/CloningMachineTileEntity.class",
+     "sha256": "8aa1cf64a55058e82ba91e5982679ae7bfb36c4a81f6e1fdc7ece65a1252478b",
+     "note": "extends DecorativeBaseTileEntity extends BlockEntity (not Clearable); saveAdditional writes Mew, load reads it; onDestroy adds the stored Mew to the owner's party storage"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/api/util/helpers/BlockHelper.class",
+     "sha256": "a654560e7bb0a176cfed35a949a35b9a73577ec3b7feabf33fc7d11dd8cd72a1",
+     "note": "getTileEntity = level.getBlockEntity(pos) with a class check; returns null when the block entity is gone"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/machines/InfuserBlock.class",
+     "sha256": "b210d399086d4a5cde70023609d109502dbe5eabb84065d3b2ab146be5f739a9",
+     "note": "onRemove: BlockHelper.getTileEntity(InfuserTileEntity) != null -> Containers.dropContents(getInfuserItemStacks()), then tile.clearContent()"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/InfuserTileEntity.class",
+     "sha256": "00cb052fb58fc829fa5bf98bbc24fe6195dd1933702bbde65ffd32979b07374b",
+     "note": "implements WorldlyContainer; clearContent (m_6211_) has an empty body; saveAdditional writes the Items list, load reads it"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/Pixelmon-1.20.1-9.2.3-universal.jar",
+     "entry": "com/pixelmonmod/pixelmon/blocks/tileentity/IBasicInventory.class",
+     "sha256": "e9bb95e89cb65178f6c2302c083b730ff7a0a8e9fa4ab447e08e33c9e14e7999",
+     "note": "extends Container; default clearContent removes every slot (box, end table, fridge, mower through InventoryTileEntity)"
+    },
+    {
+     "check": "all_ids_registered",
+     "registry": "minecraft:block",
+     "ids": [
+      "functionalstorage:controller_extension",
+      "functionalstorage:framed_controller_extension",
+      "functionalstorage:framed_storage_controller",
+      "functionalstorage:storage_controller",
+      "pixelmon:black_floor_gym_sign",
+      "pixelmon:black_hanging_gym_sign",
+      "pixelmon:black_wall_gym_sign",
+      "pixelmon:blue_floor_gym_sign",
+      "pixelmon:blue_hanging_gym_sign",
+      "pixelmon:blue_wall_gym_sign",
+      "pixelmon:brown_floor_gym_sign",
+      "pixelmon:brown_hanging_gym_sign",
+      "pixelmon:brown_wall_gym_sign",
+      "pixelmon:cloning_machine",
+      "pixelmon:cyan_floor_gym_sign",
+      "pixelmon:cyan_hanging_gym_sign",
+      "pixelmon:cyan_wall_gym_sign",
+      "pixelmon:fossil_display",
+      "pixelmon:gray_floor_gym_sign",
+      "pixelmon:gray_hanging_gym_sign",
+      "pixelmon:gray_wall_gym_sign",
+      "pixelmon:green_floor_gym_sign",
+      "pixelmon:green_hanging_gym_sign",
+      "pixelmon:green_wall_gym_sign",
+      "pixelmon:infuser",
+      "pixelmon:light_blue_floor_gym_sign",
+      "pixelmon:light_blue_hanging_gym_sign",
+      "pixelmon:light_blue_wall_gym_sign",
+      "pixelmon:light_gray_floor_gym_sign",
+      "pixelmon:light_gray_hanging_gym_sign",
+      "pixelmon:light_gray_wall_gym_sign",
+      "pixelmon:lime_floor_gym_sign",
+      "pixelmon:lime_hanging_gym_sign",
+      "pixelmon:lime_wall_gym_sign",
+      "pixelmon:magenta_floor_gym_sign",
+      "pixelmon:magenta_hanging_gym_sign",
+      "pixelmon:magenta_wall_gym_sign",
+      "pixelmon:orange_floor_gym_sign",
+      "pixelmon:orange_hanging_gym_sign",
+      "pixelmon:orange_wall_gym_sign",
+      "pixelmon:pink_floor_gym_sign",
+      "pixelmon:pink_hanging_gym_sign",
+      "pixelmon:pink_wall_gym_sign",
+      "pixelmon:purple_floor_gym_sign",
+      "pixelmon:purple_hanging_gym_sign",
+      "pixelmon:purple_wall_gym_sign",
+      "pixelmon:red_floor_gym_sign",
+      "pixelmon:red_hanging_gym_sign",
+      "pixelmon:red_wall_gym_sign",
+      "pixelmon:white_floor_gym_sign",
+      "pixelmon:white_hanging_gym_sign",
+      "pixelmon:white_wall_gym_sign",
+      "pixelmon:yellow_floor_gym_sign",
+      "pixelmon:yellow_hanging_gym_sign",
+      "pixelmon:yellow_wall_gym_sign",
+      "shippingbin:basic_shipping_bin",
+      "shippingbin:smart_shipping_bin",
+      "society:artisan_hopper",
+      "society:auto_grabber",
+      "society:auto_worm_farm",
+      "society:caterpillar_box",
+      "society:feeding_trough",
+      "society:fish_pond_basket",
+      "society:fish_pond_hatchery",
+      "society:fish_pond_manager",
+      "society:growth_obelisk",
+      "society:iridium_clock",
+      "society:mana_milker",
+      "society:mini_artisan_hopper",
+      "society:pickling_can",
+      "society:quality_washer",
+      "society:ribbit_hut",
+      "society:roe_recycler",
+      "society_trading:auto_trader"
+     ],
+     "kubejs_blocks": [
+      "shippingbin:basic_shipping_bin",
+      "shippingbin:smart_shipping_bin",
+      "society:artisan_hopper",
+      "society:auto_grabber",
+      "society:auto_worm_farm",
+      "society:caterpillar_box",
+      "society:feeding_trough",
+      "society:fish_pond_basket",
+      "society:fish_pond_hatchery",
+      "society:fish_pond_manager",
+      "society:growth_obelisk",
+      "society:iridium_clock",
+      "society:mana_milker",
+      "society:mini_artisan_hopper",
+      "society:pickling_can",
+      "society:quality_washer",
+      "society:ribbit_hut",
+      "society:roe_recycler"
+     ],
+     "mod_blocks": [
+      "society_trading:auto_trader"
+     ],
+     "drawer_tag_blocks": [
+      "functionalstorage:controller_extension",
+      "functionalstorage:framed_controller_extension",
+      "functionalstorage:framed_storage_controller",
+      "functionalstorage:storage_controller"
+     ],
+     "pixelmon_blocks": [
+      "pixelmon:black_floor_gym_sign",
+      "pixelmon:black_hanging_gym_sign",
+      "pixelmon:black_wall_gym_sign",
+      "pixelmon:blue_floor_gym_sign",
+      "pixelmon:blue_hanging_gym_sign",
+      "pixelmon:blue_wall_gym_sign",
+      "pixelmon:brown_floor_gym_sign",
+      "pixelmon:brown_hanging_gym_sign",
+      "pixelmon:brown_wall_gym_sign",
+      "pixelmon:cloning_machine",
+      "pixelmon:cyan_floor_gym_sign",
+      "pixelmon:cyan_hanging_gym_sign",
+      "pixelmon:cyan_wall_gym_sign",
+      "pixelmon:fossil_display",
+      "pixelmon:gray_floor_gym_sign",
+      "pixelmon:gray_hanging_gym_sign",
+      "pixelmon:gray_wall_gym_sign",
+      "pixelmon:green_floor_gym_sign",
+      "pixelmon:green_hanging_gym_sign",
+      "pixelmon:green_wall_gym_sign",
+      "pixelmon:infuser",
+      "pixelmon:light_blue_floor_gym_sign",
+      "pixelmon:light_blue_hanging_gym_sign",
+      "pixelmon:light_blue_wall_gym_sign",
+      "pixelmon:light_gray_floor_gym_sign",
+      "pixelmon:light_gray_hanging_gym_sign",
+      "pixelmon:light_gray_wall_gym_sign",
+      "pixelmon:lime_floor_gym_sign",
+      "pixelmon:lime_hanging_gym_sign",
+      "pixelmon:lime_wall_gym_sign",
+      "pixelmon:magenta_floor_gym_sign",
+      "pixelmon:magenta_hanging_gym_sign",
+      "pixelmon:magenta_wall_gym_sign",
+      "pixelmon:orange_floor_gym_sign",
+      "pixelmon:orange_hanging_gym_sign",
+      "pixelmon:orange_wall_gym_sign",
+      "pixelmon:pink_floor_gym_sign",
+      "pixelmon:pink_hanging_gym_sign",
+      "pixelmon:pink_wall_gym_sign",
+      "pixelmon:purple_floor_gym_sign",
+      "pixelmon:purple_hanging_gym_sign",
+      "pixelmon:purple_wall_gym_sign",
+      "pixelmon:red_floor_gym_sign",
+      "pixelmon:red_hanging_gym_sign",
+      "pixelmon:red_wall_gym_sign",
+      "pixelmon:white_floor_gym_sign",
+      "pixelmon:white_hanging_gym_sign",
+      "pixelmon:white_wall_gym_sign",
+      "pixelmon:yellow_floor_gym_sign",
+      "pixelmon:yellow_hanging_gym_sign",
+      "pixelmon:yellow_wall_gym_sign"
+     ]
+    }
+   ],
+   "runtime_checks": [
+    "block tag sable:silent_assembly_removal contains the 74 ids of all_ids_registered",
+    "place a filled shippingbin:basic_shipping_bin on an assembled contraption (or glue it and assemble with the simulated:non_movable tag emptied), then disassemble: no item entities appear and the bin still holds its items",
+    "same check for a sub-level split (break the connection so the bin ends on the split-off part)",
+    "same check for a society_trading:auto_trader holding items in its slots",
+    "same check for a functionalstorage:storage_controller holding storage upgrades (they stay in the controller, no upgrade item entity appears)",
+    "no \"Failed to move block\" error from Sable for these blocks",
+    "setblock a pixelmon:red_floor_gym_sign with block entity data {ItemIn:{id:\"minecraft:diamond\",Count:1b},ItemDrops:1b}, then \"sable assemble area\" over it: no minecraft:diamond item entity at the old position and the moved block entity still has ItemIn minecraft:diamond (without the tag: one dropped diamond plus the copy)",
+    "same command on a pixelmon:fossil_display holding a fossil and on a pixelmon:cloning_machine: no item entity at the old position; a Mew stored in the machine is not returned to the owner's party by the move",
+    "setblock a pixelmon:infuser with block entity data {Items:[{Slot:0b,id:\"minecraft:diamond\",Count:6b}]}, then \"sable assemble area\" over it: no item entity at the old position and the moved block entity still has the 6 diamonds in Items"
+   ]
+  },
+  {
+   "path": "kubejs/server_scripts/psa_physics_immovable.js",
+   "source": "compat/coexistence/overlay/kubejs/server_scripts/psa_physics_immovable.js",
+   "sha256": "74fe6066b6b50d2506a776aa714e69982df5d36b5352040f797ae43cc75047d2",
+   "purpose": "Server script: ServerEvents.tags(\"block\") handler adding Society's 52 immovable blocks (33 listed with immovableTags plus the 19 global.artisanMachineIds) to simulated:non_movable, the only tag the port's physics assembler (SimAssemblyContraption.movementAllowed) consults. The ids are listed in the script and global.artisanMachineIds is additionally read when the handler runs; both sources are unioned. The listed ids are added before the global is read, so a missing or unreadable global cannot drop them. Nothing is read from or removed from any tag, so handler order does not matter. The wider tags create:non_movable / c:relocation_not_supported are not forwarded.",
+   "preconditions": [
+    {
+     "check": "profile_path_absent",
+     "path": "kubejs/server_scripts/psa_physics_immovable.js",
+     "note": "also absent from the official server pack ZIP"
+    },
+    {
+     "check": "profile_file_sha256",
+     "path": "kubejs/server_scripts/tags/handleItemBlockFluidTags.js",
+     "sha256": "b8c332a711fbbafd2213738fa25ec866a45a9c2bdbce5601ab13918190f8a017",
+     "note": "same bytes in the official server pack ZIP"
+    },
+    {
+     "check": "profile_file_sha256",
+     "path": "kubejs/startup_scripts/globalArtisanMachineDefinitions.js",
+     "sha256": "74b7a4006d36a817e21c1b1ee60db14f88ffba22f2043f89cc97c5d1d3fad302",
+     "note": "same bytes in the official server pack ZIP"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/simulated/tags/blocks/non_movable.json",
+     "sha256": "b83114c23eeec820ce7eca52011f13013fb6c64002254be7aebe1e4b36244d48",
+     "note": "content is {\"values\": []}"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "dev/simulated_team/simulated/util/assembly/SimAssemblyContraption.class",
+     "sha256": "dae82ad4f62375214df52b7b39b1c27283646c9278c8dfa8e6cc196a21a0d08d",
+     "note": "movementAllowed = destroySpeed != -1 && !state.is(simulated:non_movable); the only reader of the tag; no class of the port contains relocation_not_supported or isMovementAllowed"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+     "entry": "data/create/tags/blocks/non_movable.json",
+     "sha256": "ccb7d569c63b3a14ef0592dc698f65baf14211c9a7b5c8b023527b1d2c5e4a52",
+     "note": "the port puts its own bearings, winches and connectors into create:non_movable, so that tag must not be forwarded"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+     "entry": "dev/latvian/mods/kubejs/server/tag/TagEventFilter$ID.class",
+     "sha256": "753038738289f1dc145f92b311195624bc733701ca6126f9db4b4e0f3bdd33bf",
+     "note": "an id missing from the registry is skipped (returns 0) unless dev property strictTags is true (default false)"
+    },
+    {
+     "check": "jar_entry_sha256",
+     "jar": "mods/kubejs-forge-2001.6.5-build.16.jar",
+     "entry": "dev/latvian/mods/kubejs/server/tag/PreTagEventJS.class",
+     "sha256": "b00eb107def2c913ea30297c3d845d8d756eb78afccf1a94ee131a476e0797a0",
+     "note": "handlers run once against a recording event; the recorded add calls are replayed when tags load"
+    },
+    {
+     "check": "all_ids_registered",
+     "registry": "minecraft:block",
+     "ids": [
+      "society:fish_pond",
+      "society:coin_leaderboard",
+      "society:iridium_clock",
+      "society:golden_clock",
+      "society:mana_clock",
+      "society:sparkstone_recycler",
+      "society:artisan_hopper",
+      "society:mini_artisan_hopper",
+      "society:auto_grabber",
+      "society:auto_tapper",
+      "society:auto_worm_farm",
+      "society:feeding_trough",
+      "society:fish_pond_basket",
+      "society:growth_obelisk",
+      "society:juice_inserter",
+      "society:mana_milker",
+      "society:mana_sprinkler",
+      "society:quality_washer",
+      "society:snow_melter",
+      "society:villager_home",
+      "society:shipping_bin_monitor",
+      "society:ribbit_hut",
+      "society:ribbit_hut_block",
+      "society:roe_recycler",
+      "society:pickling_can",
+      "society:mana_fruit_crop",
+      "shippingbin:smart_shipping_bin",
+      "shippingbin:basic_shipping_bin",
+      "society_trading:auto_trader",
+      "society:fish_pond_manager",
+      "society:fish_pond_hatchery",
+      "society:caterpillar_box",
+      "society:growth_obelisk_upper",
+      "society:loom",
+      "society:cheese_press",
+      "society:wine_keg",
+      "society:aging_cask",
+      "society:ancient_cask",
+      "society:crystalarium",
+      "society:deluxe_worm_farm",
+      "society:fish_smoker",
+      "society:bait_maker",
+      "society:dehydrator",
+      "society:mayonnaise_machine",
+      "society:preserves_jar",
+      "society:seed_maker",
+      "society:charging_rod",
+      "society:espresso_machine",
+      "society:tapper",
+      "society:recycling_machine",
+      "society:oil_maker",
+      "society:mushroom_log"
+     ]
+    }
+   ],
+   "runtime_checks": [
+    "KubeJS server.log: \"Loaded script server_scripts:psa_physics_immovable.js\"",
+    "KubeJS server.log line containing PSA_PHYSICS_IMMOVABLE {\"tag\":\"simulated:non_movable\",\"requested\":52.0,\"mirrored\":52.0,\"society_global_read\":true,\"only_in_society_global\":[],\"rejected\":[]} (this engine prints script numbers as 52.0)",
+    "KubeJS server.log: \"[minecraft:block] Found 1027 tags, added 2355 objects, removed 27 objects\" (run fixed-r2 had added 2303; +52 if no other overlay script adds block tags)",
+    "block tag simulated:non_movable contains exactly the 52 ids of all_ids_registered",
+    "simulated:swivel_bearing, simulated:rope_winch and create:track are not in simulated:non_movable",
+    "a physics assembler next to glued blocks that touch a shippingbin:basic_shipping_bin assembles without the bin; starting the assembly on the bin itself fails with the unmovable-block message"
+   ]
+  }
+ ],
+ "physics_assembly_duplication_not_covered": {
+  "scope": "sable:silent_assembly_removal in this overlay lists Society's inventory blocks, the four Functional Storage controllers and the Pixelmon blocks above. Sable's moveBlocks duplicates the contents of every other block whose block entity is not Clearable and whose Block.onRemove drops them; the port ships its own list of 17 third-party ids for the same reason.",
+  "proven_from_bytes_not_fixed_here": [
+   {
+    "block": "create:item_vault",
+    "jar": "mods/create-1.20.1-6.0.8.jar",
+    "evidence": "ItemVaultBlock.onRemove: level.getBlockEntity(pos) instanceof ItemVaultBlockEntity -> ItemHelper.dropContents(vaultBE.inventory); ItemVaultBlockEntity extends SmartBlockEntity and is not Clearable; no class of create-1.20.1-6.0.8.jar implements net.minecraft.world.Clearable (only CloneCommand references it); the port has no mixin on a Create onRemove or destroy path. Create's own Contraption.removeBlocksFromWorld calls level.removeBlockEntity before setting air, which is what the silent tag makes Sable do."
+   }
+  ],
+  "leads_not_verified": "Create blocks that end in IBE.onRemove -> SmartBlockEntity.destroy() or drop in their own onRemove were not read one by one. A pack-wide byte scan by the first review lists 57 block classes whose onRemove references a drop call next to a block entity that is not a Container or Clearable, 14 of them in create-1.20.1-6.0.8.jar (CopycatBlock, PlacardBlock, ItemDrainBlock, FluidPipeBlock, BeltBlock, MechanicalCrafterBlock, CrushingWheelControllerBlock, AbstractChuteBlock, FactoryPanelBlock, ItemVaultBlock, BasinBlock, LecternControllerBlock, SchematicannonBlock, SchematicTableBlock): <scratch>/fixes/overlay-data-review/onremove_triage.json. The scan is heuristic in both directions: it lists Pixelmon MysteryBoxBlock, which drops nothing in onRemove, and it clears every Container block entity, although a Container with an empty clearContent (Pixelmon InfuserTileEntity) still duplicates.",
+  "runtime_probe": "setblock create:item_vault, insert 6 minecraft:diamond through a hopper, \"sable assemble area\" over the vault: count minecraft:diamond item entities at the old position (0 = no duplication) and read the Inventory of the moved block entity."
+ },
+ "later_changes": [
+  "After this note was written, sable:silent_assembly_removal was extended from 74 to 310 ids: every block the in-game sweep (tests/forge-assembly-probe.js, evidence/assembly-inventory-sweep-baseline.json) saw duplicating its contents was added. The sweep confirmed the 48 Pixelmon gym signs and the Society blocks at run time; pixelmon:cloning_machine, fossil_display and infuser stay on the bytecode proof alone, because Pixelmon's multi-block machines cannot be placed next to the port's physics (evidence/pixelmon-multiblock-physics-crash.json).",
+  "The current tag hash and preconditions are in compat/coexistence-build.json and compat/coexistence/preconditions.json; hashes of that file quoted in this note are the earlier ones.",
+  "create:track_station was added to simulated:non_movable by psa_physics_immovable.js (53 ids, log field other: 1) after the independent review: silent removal leaves its old railway-graph entry behind."
+ ]
+}

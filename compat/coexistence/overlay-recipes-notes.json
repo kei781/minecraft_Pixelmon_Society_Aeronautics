@@ -1,0 +1,1570 @@
+{
+ "deliverable": "overlay-recipes",
+ "scope": "Two KubeJS server scripts, copied verbatim to <profile>/kubejs/server_scripts/. No mod JAR, no Society file and no config is changed; the file names do not exist in Society 4.1.5A.",
+ "status": "Static only: proven from the bytes listed under inputs and exercised in the pack's own Rhino engine with stand-in bindings. Not yet run in the game; crafting_checks, cooking_checks, expected_log and miltank_milk.runtime_probe are for that run.",
+ "inputs": {
+  "pixelmon_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+  "aeronautics_port_jar_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+  "society_server_pack_sha256": "65884c3f085b81a9ec419c6f3592b8fc02bc4035865e032bde5f749866274f82",
+  "society_server_pack_sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495",
+  "mod_jars_sha256": {
+   "Botania-1.20.1-454-FORGE.jar": "4b12d7be6a6bc1e121a222ab8ea4f680306b1aaa2369cccd4a49441e3c2024c5",
+   "Oreganized 1.20.1-4.3.2.jar": "7caf4fb46a0780c4135594080f9376163103739b4ea784e399c8037d76285326",
+   "Pixelmon-1.20.1-9.2.3-universal.jar": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "cluttered-[Forge]-3.0.3-1.20.1.jar": "c910256a0b14a9dd0eb0395201730d12fdd5cb793b5bc3f3ecc58566485f26af",
+   "kubejs-forge-2001.6.5-build.16.jar": "3de6b7267d3aab981848ed54d3afe7edf20532fa4060631fd6fffcd99ac5f3d5",
+   "psa-aeronautics-experimental-forge-1.20.1.jar": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+   "rhino-forge-2001.2.3-build.10.jar": "fed2211429301bf043864183cab9ab8e92d4cc4dbb9e488ce6c75217c54584a6",
+   "supplementaries-1.20-3.1.43-forge.jar": "6132fc23a2fe1da0ca57439b35526ee9a1a8d898397ff8e61b2d08fb951cdf6a",
+   "whimsy_deco-1.2.jar": "49879cacfdc0dcc3ee758abf801b069a619bf9cab106946298744dc9c4169b8e"
+  },
+  "society_files_sha256": {
+   "config/supplementaries-common.toml": "49633145057443db4fea79a57861252ac53eb2b4cb8a7371a756dddfeb55b236",
+   "kubejs/config/common.properties": "45f460b13a2007e2c9ab061ca3e274823b159f6338db1e0275a48fc31917ce4b",
+   "kubejs/server_scripts/playerEvents/milkBan.js": "1b49afff4a729392cf38cfda8b14406db6267fd6b98d35e1c79bb6e54c52c3e3",
+   "kubejs/server_scripts/recipes/addMiscRecipes.js": "3f1e0db6080a71da6777504e2f287ed700c4ee9d2582966fbe4b2e1483354b16",
+   "kubejs/server_scripts/recipes/addMissingSlabRecipes.js": "8008c961f042b2db927a7301e3f5479c3cd9e3df79a1a9dfc9ae29bb3bd8e9d1",
+   "kubejs/server_scripts/recipes/removeRecipes.js": "61b3b2ddeeaf8016ff61d3db167acf72a12448f8fc6de3c31298f11e9b4406a0",
+   "kubejs/server_scripts/tags/handleItemBlockFluidTags.js": "b8c332a711fbbafd2213738fa25ec866a45a9c2bdbce5601ab13918190f8a017",
+   "kubejs/startup_scripts/globalFurniturePlushies.js": "5d00d3c6e0f0d72de88ec1cd8ca7088a1dae57bedbfb0e5e4bffd1059e4e8eda",
+   "kubejs/startup_scripts/globalRemovedItems.js": "d46432cc768a70bf01404c9907043235acc201c40bb50a90ee3e72a5ec8d06b5"
+  },
+  "society_files_note": "each staged file is byte-identical to the entry of the same name in the official server pack ZIP"
+ },
+ "scripts": [
+  {
+   "file": "compat/coexistence/overlay/kubejs/server_scripts/psa_recipe_coexistence.js",
+   "install_as": "kubejs/server_scripts/psa_recipe_coexistence.js",
+   "sha256": "0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c",
+   "kubejs_file_properties": {
+    "priority": -100,
+    "requires": [
+     "pixelmon"
+    ]
+   },
+   "priority_note": "Defensive only. Society's scripts remove none of the 16 recipes this script looks at and cannot remove script-added recipes, so the result is the same in any handler order; loading last lets the script notice a recipe a later Society version removes.",
+   "console_line_on_every_recipe_load": "PSA_RECIPE_COEXISTENCE {\"separated\":[\"whimsy_deco:cast_iron_trapdoor\",\"supplementaries:item_shelf\",\"pixelmon:decor/household_items/box\"],\"narrowed\":[\"pixelmon:decor/building_infrastructure/bridge_block\",\"pixelmon:decor/household_items/end_table\",\"pixelmon:equipment/silver/silver_block\",\"pixelmon:furnace/silver_ore\",\"pixelmon:blast_furnace/silver_ore\"],\"untouched\":[],\"failed\":[]}"
+  },
+  {
+   "file": "compat/coexistence/overlay/kubejs/server_scripts/psa_miltank_milk.js",
+   "install_as": "kubejs/server_scripts/psa_miltank_milk.js",
+   "sha256": "fa565e4b4ffa05be6bf9c9b2173d50e2535b161677debcdb53b43cbfd4853d23",
+   "kubejs_file_properties": {
+    "priority": 0,
+    "requires": [
+     "pixelmon"
+    ]
+   }
+  }
+ ],
+ "recipes_changed": [
+  {
+   "id": "whimsy_deco:cast_iron_trapdoor",
+   "change": "removed",
+   "registered_again_as": "psa_coexistence:cast_iron_trapdoor",
+   "side": "society",
+   "source_jar": "whimsy_deco-1.2.jar",
+   "source_jar_sha256": "49879cacfdc0dcc3ee758abf801b069a619bf9cab106946298744dc9c4169b8e",
+   "entry": "data/whimsy_deco/recipes/cast_iron_trapdoor.json",
+   "original_sha256": "c2d7efea5213f2beb3183cde8dae2d35ba76e967054cf967d527221acd53d0d0",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+     "AAA",
+     "   ",
+     "   "
+    ],
+    "key": {
+     "A": {
+      "item": "minecraft:iron_ingot"
+     }
+    },
+    "result": {
+     "item": "whimsy_deco:cast_iron_trapdoor",
+     "count": 1
+    },
+    "show_notification": true
+   }
+  },
+  {
+   "id": "supplementaries:item_shelf",
+   "change": "removed",
+   "registered_again_as": "psa_coexistence:item_shelf",
+   "side": "society",
+   "source_jar": "supplementaries-1.20-3.1.43-forge.jar",
+   "source_jar_sha256": "6132fc23a2fe1da0ca57439b35526ee9a1a8d898397ff8e61b2d08fb951cdf6a",
+   "entry": "data/supplementaries/recipes/item_shelf.json",
+   "original_sha256": "2422a8d46c4e83183627ce2932ecdf1255540c379b109adc43e09d0bdf108146",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+     "000"
+    ],
+    "key": {
+     "0": {
+      "tag": "minecraft:wooden_slabs"
+     }
+    },
+    "result": {
+     "item": "supplementaries:item_shelf",
+     "count": 2
+    },
+    "conditions": [
+     {
+      "type": "supplementaries:flag",
+      "flag": "item_shelf"
+     },
+     {
+      "type": "forge:not",
+      "value": {
+       "modid": "suppsquared",
+       "type": "forge:mod_loaded"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "pixelmon:decor/household_items/box",
+   "change": "removed",
+   "registered_again_as": "psa_coexistence:box",
+   "side": "pixelmon",
+   "source_jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+   "source_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "entry": "data/pixelmon/recipes/decor/household_items/box.json",
+   "original_sha256": "41d78d0a595a119d0008122e261ea961abba995b0ddc244dc3c64635531f9282",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+     "XXX",
+     "X X",
+     "XXX"
+    ],
+    "key": {
+     "X": {
+      "item": "minecraft:paper"
+     }
+    },
+    "result": {
+     "item": "pixelmon:box",
+     "count": 1
+    }
+   }
+  },
+  {
+   "id": "pixelmon:decor/building_infrastructure/bridge_block",
+   "change": "ingredient narrowed in place",
+   "side": "pixelmon",
+   "json_path": "key.X",
+   "before": {
+    "tag": "minecraft:logs"
+   },
+   "after": {
+    "type": "forge:difference",
+    "base": {
+     "tag": "minecraft:logs"
+    },
+    "subtracted": [
+     {
+      "item": "botania:livingwood"
+     },
+     {
+      "item": "botania:dreamwood"
+     },
+     {
+      "item": "botania:stripped_livingwood"
+     },
+     {
+      "item": "botania:stripped_dreamwood"
+     }
+    ]
+   },
+   "kubejs_call": "event.replaceInput({id}, '#minecraft:logs', Ingredient.of('#minecraft:logs').subtract(Ingredient.of([...])))",
+   "source_jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+   "source_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "entry": "data/pixelmon/recipes/decor/building_infrastructure/bridge_block.json",
+   "original_sha256": "c47e7a732a2e0d9e32ad7b794d1d0108b1b403d030588acbe60fa8000c1c89ff",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+     "XXX"
+    ],
+    "key": {
+     "X": {
+      "tag": "minecraft:logs"
+     }
+    },
+    "result": {
+     "item": "pixelmon:bridge_block",
+     "count": 3
+    }
+   }
+  },
+  {
+   "id": "pixelmon:decor/household_items/end_table",
+   "change": "ingredient narrowed in place",
+   "side": "pixelmon",
+   "json_path": "key.W",
+   "before": {
+    "tag": "minecraft:planks"
+   },
+   "after": {
+    "type": "forge:difference",
+    "base": {
+     "tag": "minecraft:planks"
+    },
+    "subtracted": {
+     "item": "botania:dreamwood_planks"
+    }
+   },
+   "kubejs_call": "event.replaceInput({id}, '#minecraft:planks', Ingredient.of('#minecraft:planks').subtract(Ingredient.of(['botania:dreamwood_planks'])))",
+   "source_jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+   "source_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "entry": "data/pixelmon/recipes/decor/household_items/end_table.json",
+   "original_sha256": "35d6bf84fb7a728bb15a1046baf58f4494bc91191bd8fd0d39fab201d3490111",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+     "WCW",
+     "W W",
+     "W W"
+    ],
+    "key": {
+     "W": {
+      "tag": "minecraft:planks"
+     },
+     "C": {
+      "item": "minecraft:crafting_table"
+     }
+    },
+    "result": {
+     "item": "pixelmon:end_table",
+     "count": 1
+    }
+   }
+  },
+  {
+   "id": "pixelmon:equipment/silver/silver_block",
+   "change": "ingredient narrowed in place",
+   "side": "pixelmon",
+   "json_path": "key.X",
+   "before": {
+    "tag": "forge:ingots/silver"
+   },
+   "after": {
+    "item": "pixelmon:silver_ingot"
+   },
+   "kubejs_call": "event.replaceInput({id}, '#forge:ingots/silver', 'pixelmon:silver_ingot')",
+   "source_jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+   "source_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "entry": "data/pixelmon/recipes/equipment/silver/silver_block.json",
+   "original_sha256": "821400fc60ce743c37bc54a13c93decbea228091fd5371c2718465d1627abb37",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+     "XXX",
+     "XXX",
+     "XXX"
+    ],
+    "key": {
+     "X": {
+      "tag": "forge:ingots/silver"
+     }
+    },
+    "result": {
+     "item": "pixelmon:silver_block",
+     "count": 1
+    }
+   }
+  },
+  {
+   "id": "pixelmon:furnace/silver_ore",
+   "change": "ingredient narrowed in place",
+   "side": "pixelmon",
+   "json_path": "ingredient",
+   "before": {
+    "tag": "forge:ores/silver"
+   },
+   "after": {
+    "item": "pixelmon:silver_ore"
+   },
+   "kubejs_call": "event.replaceInput({id}, '#forge:ores/silver', 'pixelmon:silver_ore')",
+   "source_jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+   "source_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "entry": "data/pixelmon/recipes/furnace/silver_ore.json",
+   "original_sha256": "24cb85d16c148a73dd8b6e046a67510706aa4cdd2f5acea592e783e716a569ea",
+   "original": {
+    "type": "minecraft:smelting",
+    "ingredient": {
+     "tag": "forge:ores/silver"
+    },
+    "result": "pixelmon:silver_ingot",
+    "experience": 0.7,
+    "cookingtime": 200
+   }
+  },
+  {
+   "id": "pixelmon:blast_furnace/silver_ore",
+   "change": "ingredient narrowed in place",
+   "side": "pixelmon",
+   "json_path": "ingredient",
+   "before": {
+    "tag": "forge:ores/silver"
+   },
+   "after": {
+    "item": "pixelmon:silver_ore"
+   },
+   "kubejs_call": "event.replaceInput({id}, '#forge:ores/silver', 'pixelmon:silver_ore')",
+   "source_jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+   "source_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "entry": "data/pixelmon/recipes/blast_furnace/silver_ore.json",
+   "original_sha256": "917a95c0a6228bd79dc9f746d5d8fb5819655a19aedf6fc7fddf1214abe7a708",
+   "original": {
+    "type": "minecraft:blasting",
+    "ingredient": {
+     "tag": "forge:ores/silver"
+    },
+    "result": "pixelmon:silver_ingot",
+    "experience": 0.7,
+    "cookingtime": 100
+   }
+  }
+ ],
+ "recipes_changed_note": "original is the parsed JSON of the entry whose bytes hash to original_sha256. For narrowed recipes, before/after are the ingredient at json_path: after is the JSON Forge writes for the ingredient KubeJS puts there (Ingredient.toJson / DifferenceIngredient.toJson); id, pattern, result and count are not touched.",
+ "recipes_kept_as_is": [
+  {
+   "id": "pixelmon:pokeball/base/iron_base",
+   "role": "keeps the grid whimsy_deco:cast_iron_trapdoor used to share",
+   "source_jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+   "source_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "entry": "data/pixelmon/recipes/pokeball/base/iron_base.json",
+   "original_sha256": "080e284e4d8dfbdc02f7be33ef6273d204ed24c29c7a3f7c2165b5f47e9f66fa",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+     "###"
+    ],
+    "key": {
+     "#": {
+      "tag": "forge:ingots/iron"
+     }
+    },
+    "result": {
+     "item": "pixelmon:iron_base",
+     "count": 5
+    }
+   }
+  },
+  {
+   "id": "pixelmon:pokeball/base/wooden_base",
+   "role": "keeps the grid supplementaries:item_shelf used to share",
+   "source_jar": "Pixelmon-1.20.1-9.2.3-universal.jar",
+   "source_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+   "entry": "data/pixelmon/recipes/pokeball/base/wooden_base.json",
+   "original_sha256": "64c23127a25229d699b096c059b470a8e6b2d31b3f47fcf2fb42281fb6ddd5ab",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+     "###"
+    ],
+    "key": {
+     "#": {
+      "tag": "minecraft:wooden_slabs"
+     }
+    },
+    "result": {
+     "item": "pixelmon:wooden_base",
+     "count": 5
+    }
+   }
+  },
+  {
+   "id": "supplementaries:present",
+   "role": "keeps the grid pixelmon:box used to share",
+   "source_jar": "supplementaries-1.20-3.1.43-forge.jar",
+   "source_jar_sha256": "6132fc23a2fe1da0ca57439b35526ee9a1a8d898397ff8e61b2d08fb951cdf6a",
+   "entry": "data/supplementaries/recipes/present.json",
+   "original_sha256": "8029c3bdc5b08f4c776f96a2c54d3e2831bdd8f795cb1de726ef9c32a92bc7c4",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+     "000",
+     "0 0",
+     "000"
+    ],
+    "key": {
+     "0": {
+      "item": "minecraft:paper"
+     }
+    },
+    "result": {
+     "item": "supplementaries:present",
+     "count": 1
+    },
+    "conditions": [
+     {
+      "type": "supplementaries:flag",
+      "flag": "present"
+     }
+    ]
+   }
+  },
+  {
+   "id": "botania:livingwood_slab",
+   "role": "its wood is excluded from the bridge block",
+   "source_jar": "Botania-1.20.1-454-FORGE.jar",
+   "source_jar_sha256": "4b12d7be6a6bc1e121a222ab8ea4f680306b1aaa2369cccd4a49441e3c2024c5",
+   "entry": "data/botania/recipes/livingwood_slab.json",
+   "original_sha256": "2c96944fa678be26f21e2f90a43aa5eebaff3dba57419e03c4f4beb7446da573",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+     "Q": {
+      "item": "botania:livingwood"
+     }
+    },
+    "pattern": [
+     "QQQ"
+    ],
+    "result": {
+     "count": 6,
+     "item": "botania:livingwood_slab"
+    },
+    "show_notification": true
+   }
+  },
+  {
+   "id": "botania:dreamwood_slab",
+   "role": "its wood is excluded from the bridge block",
+   "source_jar": "Botania-1.20.1-454-FORGE.jar",
+   "source_jar_sha256": "4b12d7be6a6bc1e121a222ab8ea4f680306b1aaa2369cccd4a49441e3c2024c5",
+   "entry": "data/botania/recipes/dreamwood_slab.json",
+   "original_sha256": "ee4fcd9febe5c0e6326916560be908a958674a3515c4527494503462928434a4",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+     "Q": {
+      "item": "botania:dreamwood"
+     }
+    },
+    "pattern": [
+     "QQQ"
+    ],
+    "result": {
+     "count": 6,
+     "item": "botania:dreamwood_slab"
+    },
+    "show_notification": true
+   }
+  },
+  {
+   "id": "botania:stripped_livingwood_slab",
+   "role": "its wood is excluded from the bridge block",
+   "source_jar": "Botania-1.20.1-454-FORGE.jar",
+   "source_jar_sha256": "4b12d7be6a6bc1e121a222ab8ea4f680306b1aaa2369cccd4a49441e3c2024c5",
+   "entry": "data/botania/recipes/stripped_livingwood_slab.json",
+   "original_sha256": "f16e10aa2f58b375cd310a9bb189e9c30eea6dd087402be99fc72657501a6a92",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+     "Q": {
+      "item": "botania:stripped_livingwood"
+     }
+    },
+    "pattern": [
+     "QQQ"
+    ],
+    "result": {
+     "count": 6,
+     "item": "botania:stripped_livingwood_slab"
+    },
+    "show_notification": true
+   }
+  },
+  {
+   "id": "botania:stripped_dreamwood_slab",
+   "role": "its wood is excluded from the bridge block",
+   "source_jar": "Botania-1.20.1-454-FORGE.jar",
+   "source_jar_sha256": "4b12d7be6a6bc1e121a222ab8ea4f680306b1aaa2369cccd4a49441e3c2024c5",
+   "entry": "data/botania/recipes/stripped_dreamwood_slab.json",
+   "original_sha256": "d0b403e641a9ce1746f97431fed9cefa5810a5e130af61031f618e81b15ce5a7",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+     "Q": {
+      "item": "botania:stripped_dreamwood"
+     }
+    },
+    "pattern": [
+     "QQQ"
+    ],
+    "result": {
+     "count": 6,
+     "item": "botania:stripped_dreamwood_slab"
+    },
+    "show_notification": true
+   }
+  },
+  {
+   "id": "botania:crafty_crate",
+   "role": "its planks are excluded from the end table",
+   "source_jar": "Botania-1.20.1-454-FORGE.jar",
+   "source_jar_sha256": "4b12d7be6a6bc1e121a222ab8ea4f680306b1aaa2369cccd4a49441e3c2024c5",
+   "entry": "data/botania/recipes/crafty_crate.json",
+   "original_sha256": "9cf14a1e3e5d83076beefe26b749db5aa252f4028795dac45ba63d53cdc32e9f",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "category": "redstone",
+    "key": {
+     "C": {
+      "item": "minecraft:crafting_table"
+     },
+     "W": {
+      "item": "botania:dreamwood_planks"
+     }
+    },
+    "pattern": [
+     "WCW",
+     "W W",
+     "W W"
+    ],
+    "result": {
+     "item": "botania:crafty_crate"
+    },
+    "show_notification": true
+   }
+  },
+  {
+   "id": "oreganized:silver_block",
+   "role": "only recipe left for nine Oreganized silver ingots",
+   "source_jar": "Oreganized 1.20.1-4.3.2.jar",
+   "source_jar_sha256": "7caf4fb46a0780c4135594080f9376163103739b4ea784e399c8037d76285326",
+   "entry": "data/oreganized/recipes/silver_block.json",
+   "original_sha256": "b0326b543749053cd8c012fbda2aaeaaa39467281f22011e5bf38e4d5a28b7e5",
+   "original": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+     "A": {
+      "item": "oreganized:silver_ingot"
+     }
+    },
+    "pattern": [
+     "AAA",
+     "AAA",
+     "AAA"
+    ],
+    "result": {
+     "item": "oreganized:silver_block"
+    },
+    "show_notification": true
+   }
+  },
+  {
+   "id": "oreganized:smelt_silver_ore",
+   "role": "only smelting recipe left for oreganized:silver_ore",
+   "source_jar": "Oreganized 1.20.1-4.3.2.jar",
+   "source_jar_sha256": "7caf4fb46a0780c4135594080f9376163103739b4ea784e399c8037d76285326",
+   "entry": "data/oreganized/recipes/smelt_silver_ore.json",
+   "original_sha256": "84c6a9f790f206a68d68199094dfea4ff03b1b07d610e2655f4fdc61715a6d34",
+   "original": {
+    "type": "minecraft:smelting",
+    "category": "misc",
+    "cookingtime": 200,
+    "experience": 1.0,
+    "group": "oreganized:silver_ingot",
+    "ingredient": {
+     "item": "oreganized:silver_ore"
+    },
+    "result": "oreganized:silver_ingot"
+   }
+  },
+  {
+   "id": "oreganized:smelt_deepslate_silver_ore",
+   "role": "only smelting recipe left for oreganized:deepslate_silver_ore",
+   "source_jar": "Oreganized 1.20.1-4.3.2.jar",
+   "source_jar_sha256": "7caf4fb46a0780c4135594080f9376163103739b4ea784e399c8037d76285326",
+   "entry": "data/oreganized/recipes/smelt_deepslate_silver_ore.json",
+   "original_sha256": "09abc9fd302625997796acd765e097b4b4605b40940f59841f453a9a00f3332c",
+   "original": {
+    "type": "minecraft:smelting",
+    "category": "misc",
+    "cookingtime": 200,
+    "experience": 1.0,
+    "group": "oreganized:silver_ingot",
+    "ingredient": {
+     "item": "oreganized:deepslate_silver_ore"
+    },
+    "result": "oreganized:silver_ingot"
+   }
+  },
+  {
+   "id": "oreganized:blast_silver_ore",
+   "role": "only blasting recipe left for oreganized:silver_ore",
+   "source_jar": "Oreganized 1.20.1-4.3.2.jar",
+   "source_jar_sha256": "7caf4fb46a0780c4135594080f9376163103739b4ea784e399c8037d76285326",
+   "entry": "data/oreganized/recipes/blast_silver_ore.json",
+   "original_sha256": "f4e86a0222dda3373f8909c610d6b390edd54a8c127c0f69295bc40a416fe766",
+   "original": {
+    "type": "minecraft:blasting",
+    "category": "misc",
+    "cookingtime": 100,
+    "experience": 1.0,
+    "group": "oreganized:silver_ingot",
+    "ingredient": {
+     "item": "oreganized:silver_ore"
+    },
+    "result": "oreganized:silver_ingot"
+   }
+  },
+  {
+   "id": "oreganized:blast_deepslate_silver_ore",
+   "role": "only blasting recipe left for oreganized:deepslate_silver_ore",
+   "source_jar": "Oreganized 1.20.1-4.3.2.jar",
+   "source_jar_sha256": "7caf4fb46a0780c4135594080f9376163103739b4ea784e399c8037d76285326",
+   "entry": "data/oreganized/recipes/blast_deepslate_silver_ore.json",
+   "original_sha256": "06bbcd166930a7140546ad521c02657a944f1b90c9ad96c4b44302bebd516932",
+   "original": {
+    "type": "minecraft:blasting",
+    "category": "misc",
+    "cookingtime": 100,
+    "experience": 1.0,
+    "group": "oreganized:silver_ingot",
+    "ingredient": {
+     "item": "oreganized:deepslate_silver_ore"
+    },
+    "result": "oreganized:silver_ingot"
+   }
+  }
+ ],
+ "new_grids": [
+  {
+   "id": "psa_coexistence:cast_iron_trapdoor",
+   "replaces": "whimsy_deco:cast_iron_trapdoor",
+   "type": "minecraft:crafting_shaped",
+   "pattern": [
+    "III",
+    " N "
+   ],
+   "key": {
+    "I": {
+     "item": "minecraft:iron_ingot"
+    },
+    "N": {
+     "item": "minecraft:iron_nugget"
+    }
+   },
+   "result": "whimsy_deco:cast_iron_trapdoor",
+   "count": 1,
+   "difference_to_original": "one iron nugget below the middle ingot"
+  },
+  {
+   "id": "psa_coexistence:item_shelf",
+   "replaces": "supplementaries:item_shelf",
+   "type": "minecraft:crafting_shaped",
+   "pattern": [
+    "SSS",
+    " T "
+   ],
+   "key": {
+    "S": {
+     "tag": "minecraft:wooden_slabs"
+    },
+    "T": {
+     "item": "minecraft:stick"
+    }
+   },
+   "result": "supplementaries:item_shelf",
+   "count": 2,
+   "difference_to_original": "one stick below the middle slab"
+  },
+  {
+   "id": "psa_coexistence:box",
+   "replaces": "pixelmon:decor/household_items/box",
+   "type": "minecraft:crafting_shaped",
+   "pattern": [
+    "P P",
+    "P P",
+    "PPP"
+   ],
+   "key": {
+    "P": {
+     "item": "minecraft:paper"
+    }
+   },
+   "result": "pixelmon:box",
+   "count": 1,
+   "difference_to_original": "open box of seven paper instead of a ring of eight (top middle left empty)"
+  }
+ ],
+ "crafting_checks": [
+  {
+   "pair": "iron_base / cast_iron_trapdoor",
+   "grid": [
+    [
+     "minecraft:iron_ingot",
+     "minecraft:iron_ingot",
+     "minecraft:iron_ingot"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "pixelmon:iron_base",
+   "expect_count": 5,
+   "note": "Pixelmon recipe pixelmon:pokeball/base/iron_base, unchanged; before the overlay whimsy_deco:cast_iron_trapdoor matched the same grid",
+   "static_model_recipe": "pixelmon:pokeball/base/iron_base",
+   "static_model_without_overlay": [
+    "pixelmon:iron_base x5",
+    "whimsy_deco:cast_iron_trapdoor x1"
+   ]
+  },
+  {
+   "pair": "iron_base / cast_iron_trapdoor",
+   "grid": [
+    [
+     "minecraft:iron_ingot",
+     "minecraft:iron_ingot",
+     "minecraft:iron_ingot"
+    ],
+    [
+     null,
+     "minecraft:iron_nugget",
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "whimsy_deco:cast_iron_trapdoor",
+   "expect_count": 1,
+   "note": "new recipe psa_coexistence:cast_iron_trapdoor (three iron ingots above one iron nugget)",
+   "static_model_recipe": "psa_coexistence:cast_iron_trapdoor",
+   "static_model_without_overlay": []
+  },
+  {
+   "pair": "wooden_base / item_shelf",
+   "grid": [
+    [
+     "minecraft:oak_slab",
+     "minecraft:oak_slab",
+     "minecraft:oak_slab"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "pixelmon:wooden_base",
+   "expect_count": 5,
+   "note": "Pixelmon recipe pixelmon:pokeball/base/wooden_base, unchanged; before the overlay supplementaries:item_shelf matched the same grid",
+   "static_model_recipe": "pixelmon:pokeball/base/wooden_base",
+   "static_model_without_overlay": [
+    "pixelmon:wooden_base x5",
+    "supplementaries:item_shelf x2"
+   ]
+  },
+  {
+   "pair": "wooden_base / item_shelf",
+   "grid": [
+    [
+     "minecraft:spruce_slab",
+     "minecraft:spruce_slab",
+     "minecraft:spruce_slab"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "pixelmon:wooden_base",
+   "expect_count": 5,
+   "note": "spruce slabs also fit cluttered:small_shelf, whose recipe Society removes (global.lootFurniture); proves that removal still wins",
+   "static_model_recipe": "pixelmon:pokeball/base/wooden_base",
+   "static_model_without_overlay": [
+    "pixelmon:wooden_base x5",
+    "supplementaries:item_shelf x2"
+   ]
+  },
+  {
+   "pair": "wooden_base / item_shelf",
+   "grid": [
+    [
+     "minecraft:oak_slab",
+     "minecraft:oak_slab",
+     "minecraft:oak_slab"
+    ],
+    [
+     null,
+     "minecraft:stick",
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "supplementaries:item_shelf",
+   "expect_count": 2,
+   "note": "new recipe psa_coexistence:item_shelf (three wooden slabs above one stick)",
+   "static_model_recipe": "psa_coexistence:item_shelf",
+   "static_model_without_overlay": []
+  },
+  {
+   "pair": "present / box",
+   "grid": [
+    [
+     "minecraft:paper",
+     "minecraft:paper",
+     "minecraft:paper"
+    ],
+    [
+     "minecraft:paper",
+     null,
+     "minecraft:paper"
+    ],
+    [
+     "minecraft:paper",
+     "minecraft:paper",
+     "minecraft:paper"
+    ]
+   ],
+   "expect_result": "supplementaries:present",
+   "expect_count": 1,
+   "note": "Supplementaries recipe supplementaries:present, unchanged; before the overlay pixelmon:box matched the same grid",
+   "static_model_recipe": "supplementaries:present",
+   "static_model_without_overlay": [
+    "pixelmon:box x1",
+    "supplementaries:present x1"
+   ]
+  },
+  {
+   "pair": "present / box",
+   "grid": [
+    [
+     "minecraft:paper",
+     null,
+     "minecraft:paper"
+    ],
+    [
+     "minecraft:paper",
+     null,
+     "minecraft:paper"
+    ],
+    [
+     "minecraft:paper",
+     "minecraft:paper",
+     "minecraft:paper"
+    ]
+   ],
+   "expect_result": "pixelmon:box",
+   "expect_count": 1,
+   "note": "new recipe psa_coexistence:box (open box of seven paper)",
+   "static_model_recipe": "psa_coexistence:box",
+   "static_model_without_overlay": []
+  },
+  {
+   "pair": "bridge_block / botania slabs",
+   "grid": [
+    [
+     "minecraft:oak_log",
+     "minecraft:oak_log",
+     "minecraft:oak_log"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "pixelmon:bridge_block",
+   "expect_count": 3,
+   "note": "Pixelmon recipe pixelmon:decor/building_infrastructure/bridge_block keeps its shape for every log that is not Botania wood",
+   "static_model_recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+   "static_model_without_overlay": [
+    "pixelmon:bridge_block x3"
+   ]
+  },
+  {
+   "pair": "bridge_block / botania slabs",
+   "grid": [
+    [
+     "botania:livingwood",
+     "botania:livingwood",
+     "botania:livingwood"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "botania:livingwood_slab",
+   "expect_count": 6,
+   "note": "Botania wood is excluded from the bridge block ingredient",
+   "static_model_recipe": "botania:livingwood_slab",
+   "static_model_without_overlay": [
+    "botania:livingwood_slab x6",
+    "pixelmon:bridge_block x3"
+   ]
+  },
+  {
+   "pair": "bridge_block / botania slabs",
+   "grid": [
+    [
+     "botania:dreamwood",
+     "botania:dreamwood",
+     "botania:dreamwood"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "botania:dreamwood_slab",
+   "expect_count": 6,
+   "note": "Botania wood is excluded from the bridge block ingredient",
+   "static_model_recipe": "botania:dreamwood_slab",
+   "static_model_without_overlay": [
+    "botania:dreamwood_slab x6",
+    "pixelmon:bridge_block x3"
+   ]
+  },
+  {
+   "pair": "bridge_block / botania slabs",
+   "grid": [
+    [
+     "botania:stripped_livingwood",
+     "botania:stripped_livingwood",
+     "botania:stripped_livingwood"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "botania:stripped_livingwood_slab",
+   "expect_count": 6,
+   "note": "Botania wood is excluded from the bridge block ingredient",
+   "static_model_recipe": "botania:stripped_livingwood_slab",
+   "static_model_without_overlay": [
+    "botania:stripped_livingwood_slab x6",
+    "pixelmon:bridge_block x3"
+   ]
+  },
+  {
+   "pair": "bridge_block / botania slabs",
+   "grid": [
+    [
+     "botania:stripped_dreamwood",
+     "botania:stripped_dreamwood",
+     "botania:stripped_dreamwood"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": "botania:stripped_dreamwood_slab",
+   "expect_count": 6,
+   "note": "Botania wood is excluded from the bridge block ingredient",
+   "static_model_recipe": "botania:stripped_dreamwood_slab",
+   "static_model_without_overlay": [
+    "botania:stripped_dreamwood_slab x6",
+    "pixelmon:bridge_block x3"
+   ]
+  },
+  {
+   "pair": "bridge_block / botania slabs",
+   "grid": [
+    [
+     "minecraft:oak_log",
+     "botania:livingwood",
+     "minecraft:oak_log"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "expect_result": null,
+   "expect_count": 0,
+   "note": "a mixed row must give nothing: livingwood no longer counts as a bridge block log and one livingwood is not a Botania slab row",
+   "static_model_recipe": null,
+   "static_model_without_overlay": [
+    "pixelmon:bridge_block x3"
+   ]
+  },
+  {
+   "pair": "end_table / crafty_crate",
+   "grid": [
+    [
+     "minecraft:oak_planks",
+     "minecraft:crafting_table",
+     "minecraft:oak_planks"
+    ],
+    [
+     "minecraft:oak_planks",
+     null,
+     "minecraft:oak_planks"
+    ],
+    [
+     "minecraft:oak_planks",
+     null,
+     "minecraft:oak_planks"
+    ]
+   ],
+   "expect_result": "pixelmon:end_table",
+   "expect_count": 1,
+   "note": "Pixelmon recipe pixelmon:decor/household_items/end_table keeps its shape for every plank except dreamwood planks",
+   "static_model_recipe": "pixelmon:decor/household_items/end_table",
+   "static_model_without_overlay": [
+    "pixelmon:end_table x1"
+   ]
+  },
+  {
+   "pair": "end_table / crafty_crate",
+   "grid": [
+    [
+     "botania:dreamwood_planks",
+     "minecraft:crafting_table",
+     "botania:dreamwood_planks"
+    ],
+    [
+     "botania:dreamwood_planks",
+     null,
+     "botania:dreamwood_planks"
+    ],
+    [
+     "botania:dreamwood_planks",
+     null,
+     "botania:dreamwood_planks"
+    ]
+   ],
+   "expect_result": "botania:crafty_crate",
+   "expect_count": 1,
+   "note": "dreamwood planks are excluded from the end table ingredient",
+   "static_model_recipe": "botania:crafty_crate",
+   "static_model_without_overlay": [
+    "botania:crafty_crate x1",
+    "pixelmon:end_table x1"
+   ]
+  },
+  {
+   "pair": "silver_block",
+   "grid": [
+    [
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot"
+    ],
+    [
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot"
+    ],
+    [
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot",
+     "pixelmon:silver_ingot"
+    ]
+   ],
+   "expect_result": "pixelmon:silver_block",
+   "expect_count": 1,
+   "note": "Pixelmon silver still compacts into Pixelmon silver",
+   "static_model_recipe": "pixelmon:equipment/silver/silver_block",
+   "static_model_without_overlay": [
+    "pixelmon:silver_block x1"
+   ]
+  },
+  {
+   "pair": "silver_block",
+   "grid": [
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ],
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ],
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ]
+   ],
+   "expect_result": "oreganized:silver_block",
+   "expect_count": 1,
+   "note": "Oreganized silver can only become Oreganized silver",
+   "static_model_recipe": "oreganized:silver_block",
+   "static_model_without_overlay": [
+    "oreganized:silver_block x1",
+    "pixelmon:silver_block x1"
+   ]
+  },
+  {
+   "pair": "silver_block",
+   "grid": [
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ],
+    [
+     "oreganized:silver_ingot",
+     "pixelmon:silver_ingot",
+     "oreganized:silver_ingot"
+    ],
+    [
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot",
+     "oreganized:silver_ingot"
+    ]
+   ],
+   "expect_result": null,
+   "expect_count": 0,
+   "note": "mixed silver must give nothing; before the overlay this grid gave pixelmon:silver_block",
+   "static_model_recipe": null,
+   "static_model_without_overlay": [
+    "pixelmon:silver_block x1"
+   ]
+  }
+ ],
+ "crafting_checks_note": "grid is the 3x3 crafting grid, row by row, top row first; null is an empty slot; expect_result null means the result slot must stay empty. Every check was also resolved in a static model of the pack (all recipe JSON + Society script recipes, Society removals, this overlay): it returns exactly the expected recipe, and without the overlay it returns the listed pair. recipeessentials 4.0 switches to a per-grid cache after 10 lookups of one grid; repeating a check 12 times covers both lookup paths.",
+ "cooking_checks": [
+  {
+   "type": "minecraft:smelting",
+   "input": "pixelmon:silver_ore",
+   "expect_result": "pixelmon:silver_ingot",
+   "expect_count": 1,
+   "recipe": "pixelmon:furnace/silver_ore",
+   "static_model_without_overlay": [
+    "pixelmon:furnace/silver_ore -> pixelmon:silver_ingot"
+   ]
+  },
+  {
+   "type": "minecraft:blasting",
+   "input": "pixelmon:silver_ore",
+   "expect_result": "pixelmon:silver_ingot",
+   "expect_count": 1,
+   "recipe": "pixelmon:blast_furnace/silver_ore",
+   "static_model_without_overlay": [
+    "pixelmon:blast_furnace/silver_ore -> pixelmon:silver_ingot"
+   ]
+  },
+  {
+   "type": "minecraft:smelting",
+   "input": "oreganized:silver_ore",
+   "expect_result": "oreganized:silver_ingot",
+   "expect_count": 1,
+   "recipe": "oreganized:smelt_silver_ore",
+   "static_model_without_overlay": [
+    "oreganized:smelt_silver_ore -> oreganized:silver_ingot",
+    "pixelmon:furnace/silver_ore -> pixelmon:silver_ingot"
+   ]
+  },
+  {
+   "type": "minecraft:smelting",
+   "input": "oreganized:deepslate_silver_ore",
+   "expect_result": "oreganized:silver_ingot",
+   "expect_count": 1,
+   "recipe": "oreganized:smelt_deepslate_silver_ore",
+   "static_model_without_overlay": [
+    "oreganized:smelt_deepslate_silver_ore -> oreganized:silver_ingot",
+    "pixelmon:furnace/silver_ore -> pixelmon:silver_ingot"
+   ]
+  },
+  {
+   "type": "minecraft:blasting",
+   "input": "oreganized:silver_ore",
+   "expect_result": "oreganized:silver_ingot",
+   "expect_count": 1,
+   "recipe": "oreganized:blast_silver_ore",
+   "static_model_without_overlay": [
+    "oreganized:blast_silver_ore -> oreganized:silver_ingot",
+    "pixelmon:blast_furnace/silver_ore -> pixelmon:silver_ingot"
+   ]
+  },
+  {
+   "type": "minecraft:blasting",
+   "input": "oreganized:deepslate_silver_ore",
+   "expect_result": "oreganized:silver_ingot",
+   "expect_count": 1,
+   "recipe": "oreganized:blast_deepslate_silver_ore",
+   "static_model_without_overlay": [
+    "oreganized:blast_deepslate_silver_ore -> oreganized:silver_ingot",
+    "pixelmon:blast_furnace/silver_ore -> pixelmon:silver_ingot"
+   ]
+  }
+ ],
+ "recipe_manager_checks": {
+  "must_exist": [
+   "psa_coexistence:cast_iron_trapdoor",
+   "psa_coexistence:item_shelf",
+   "psa_coexistence:box",
+   "pixelmon:decor/building_infrastructure/bridge_block",
+   "pixelmon:decor/household_items/end_table",
+   "pixelmon:equipment/silver/silver_block",
+   "pixelmon:furnace/silver_ore",
+   "pixelmon:blast_furnace/silver_ore",
+   "pixelmon:pokeball/base/iron_base",
+   "pixelmon:pokeball/base/wooden_base",
+   "supplementaries:present",
+   "botania:livingwood_slab",
+   "botania:dreamwood_slab",
+   "botania:stripped_livingwood_slab",
+   "botania:stripped_dreamwood_slab",
+   "botania:crafty_crate",
+   "oreganized:silver_block",
+   "oreganized:smelt_silver_ore",
+   "oreganized:smelt_deepslate_silver_ore",
+   "oreganized:blast_silver_ore",
+   "oreganized:blast_deepslate_silver_ore"
+  ],
+  "must_not_exist": [
+   "whimsy_deco:cast_iron_trapdoor",
+   "supplementaries:item_shelf",
+   "pixelmon:decor/household_items/box"
+  ],
+  "ingredient_tests": [
+   {
+    "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+    "item": "minecraft:oak_log",
+    "accepted": true
+   },
+   {
+    "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+    "item": "botania:livingwood",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+    "item": "botania:dreamwood",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+    "item": "botania:stripped_livingwood",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+    "item": "botania:stripped_dreamwood",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:decor/household_items/end_table",
+    "item": "minecraft:oak_planks",
+    "accepted": true
+   },
+   {
+    "recipe": "pixelmon:decor/household_items/end_table",
+    "item": "botania:dreamwood_planks",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:equipment/silver/silver_block",
+    "item": "pixelmon:silver_ingot",
+    "accepted": true
+   },
+   {
+    "recipe": "pixelmon:equipment/silver/silver_block",
+    "item": "oreganized:silver_ingot",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:furnace/silver_ore",
+    "item": "pixelmon:silver_ore",
+    "accepted": true
+   },
+   {
+    "recipe": "pixelmon:furnace/silver_ore",
+    "item": "oreganized:silver_ore",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:furnace/silver_ore",
+    "item": "oreganized:deepslate_silver_ore",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:blast_furnace/silver_ore",
+    "item": "pixelmon:silver_ore",
+    "accepted": true
+   },
+   {
+    "recipe": "pixelmon:blast_furnace/silver_ore",
+    "item": "oreganized:silver_ore",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:blast_furnace/silver_ore",
+    "item": "oreganized:deepslate_silver_ore",
+    "accepted": false
+   },
+   {
+    "recipe": "pixelmon:pokeball/base/silver_base",
+    "item": "oreganized:silver_ingot",
+    "accepted": true
+   }
+  ],
+  "note": "For a probe that reads the server RecipeManager: must_exist / must_not_exist are recipe ids (byKey); accepted means that at least one ingredient of the recipe returns true from Ingredient.test for one item of that id. The last test is a control: Pixelmon recipes other than the three narrowed ones keep the shared silver tag."
+ },
+ "expected_log": {
+  "kubejs_server_log": [
+   "[INFO] Loaded script server_scripts:psa_recipe_coexistence.js in",
+   "[INFO] Loaded script server_scripts:psa_miltank_milk.js in",
+   "[INFO] psa_recipe_coexistence.js#163: PSA_RECIPE_COEXISTENCE {\"separated\":[\"whimsy_deco:cast_iron_trapdoor\",\"supplementaries:item_shelf\",\"pixelmon:decor/household_items/box\"],\"narrowed\":[\"pixelmon:decor/building_infrastructure/bridge_block\",\"pixelmon:decor/household_items/end_table\",\"pixelmon:equipment/silver/silver_block\",\"pixelmon:furnace/silver_ore\",\"pixelmon:blast_furnace/silver_ore\"],\"untouched\":[],\"failed\":[]}"
+  ],
+  "kubejs_server_log_note": "logs/kubejs/server.log; the third line is printed once per recipe load (server start and every /reload), between \"Processing recipes...\" and \"Posted recipe events\"",
+  "kubejs_recipe_summary_delta": {
+   "reference": "run fixed-final without this overlay: \"Added 2245 recipes, removed 2039 recipes, modified 4 recipes, with 12 failed recipes\"",
+   "added": 3,
+   "removed": 3,
+   "modified": 5,
+   "failed": 0,
+   "expected_if_nothing_else_changed": "Added 2248 recipes, removed 2042 recipes, modified 9 recipes, with 12 failed recipes"
+  },
+  "must_not_appear": [
+   "PSA_MILTANK_MILK",
+   "Error in 'ServerEvents.recipes'",
+   "Skipped server_scripts:psa_recipe_coexistence.js",
+   "Skipped server_scripts:psa_miltank_milk.js"
+  ],
+  "must_not_appear_note": "PSA_MILTANK_MILK is only printed (once per script load, as a [WARN]) when the interaction check or the exchange throws; no [WARN] or [ERROR] line may carry the prefix psa_recipe_coexistence.js# or psa_miltank_milk.js#. In the recipe line every id must be under separated or narrowed; anything under untouched or failed is a finding."
+ },
+ "collision_scan": {
+  "compared_with": {
+   "recipe_json_files": 20367,
+   "shaped_like": 7928,
+   "ingredient_list_like": 6177,
+   "of_which_society_script_shaped": 135,
+   "of_which_society_script_shapeless": 90,
+   "society_script_calls_not_parsed": []
+  },
+  "rules": [
+   "every data/<ns>/recipes/**.json of the staged mods and kubejs/data, any recipe type; where several sources ship one id the last one wins in the order vanilla, Forge, mod JARs by file name, kubejs/data (a kubejs/data file without a type, Society's way of disabling a recipe, drops the id); forge:conditional, meadow:conditional, doapi:conditional, botania:nbt_output_wrapper and botania:gog_alternation are unwrapped and every alternative is kept",
+   "conditions are ignored and Society removals are not applied, so the set is a superset of the active recipes",
+   "a JSON with pattern+key is a shaped grid, a JSON with an ingredients list is a shapeless set, whatever its type",
+   "every e.shaped / e.shapeless call of Society's server scripts is included (their e.custom calls are machine recipes only); a non-literal ingredient is a wildcard",
+   "a tag that a Society tag script fills from variables, or that nothing in the staged profile defines, is a wildcard that matches anything; tags changed only with literal ids are resolved exactly",
+   "shaped against shaped: same trimmed size and every cell pair overlaps, also mirrored; shaped against shapeless: same number of filled cells and a perfect matching"
+  ],
+  "new_grids": {
+   "psa_coexistence:cast_iron_trapdoor": {
+    "same_shape_recipes_examined": 48,
+    "collisions": 0
+   },
+   "psa_coexistence:item_shelf": {
+    "same_shape_recipes_examined": 48,
+    "collisions": 0
+   },
+   "psa_coexistence:box": {
+    "same_shape_recipes_examined": 10,
+    "collisions": 0
+   }
+  },
+  "box_shapes_rejected": {
+   "ring of eight paper plus a centre item": "Society wallpapers (addMiscRecipes.js, pink_tulip / honeycomb / honey_bottle / cotton_flower / fine_wool in the centre) and vanilla map extending use that family",
+   "2x2 paper": "candlelight:note_paper, labels:label",
+   "3x2 paper": "candlelight:letter_open, cluttered:scattered_papers",
+   "P P / PPP": "cluttered:cardboard_box_open"
+  },
+  "kept_grids_rechecked": {
+   "pixelmon:iron_base row of three #forge:ingots/iron": "after the trapdoor moved: no other crafting recipe",
+   "pixelmon:wooden_base row of three #minecraft:wooden_slabs": "after the shelf moved: cluttered:small_shelf (spruce slabs) and cluttered:small_shelf_pink (crabapple slabs) have the same grid, but Society removes both recipes by output (global.lootFurniture), so nothing else is active",
+   "supplementaries:present ring of eight paper": "after the box moved: no other crafting recipe",
+   "pixelmon:bridge_block row of three #minecraft:logs": "collides with exactly the four Botania slab recipes; none left once their wood is excluded",
+   "pixelmon:end_table": "collides with exactly botania:crafty_crate; none left once dreamwood planks are excluded",
+   "pixelmon:silver_block 3x3 #forge:ingots/silver": "collides with exactly oreganized:silver_block; none left once narrowed",
+   "wildcard hits read by hand": "addMissingSlabRecipes.js rows of three planks and rings of eight planks use the literal plank ids of that script, never ingots, slabs, logs or paper"
+  },
+  "code_only_recipes": "Recipe types without ingredients in JSON (vanilla crafting_special_*, Quark, Supplementaries, Botania, Refined Storage, Sophisticated, Create and others) were listed; the three that take generic materials were decompiled: refinedstorage CoverRecipe needs exactly two stacks (one iron nugget and one block), HollowCoverRecipe exactly one cover, quark SlabToBlockRecipe exactly two equal slabs and no other matching recipe; vanilla map extending needs a filled map in the centre and firework rockets exactly one paper with gunpowder. None accepts three ingots and a nugget, three slabs and a stick, or seven paper.",
+  "full_rescan_of_pixelmon_and_aeronautics_recipes": {
+   "what": "every crafting recipe of the Pixelmon and Aeronautics port JARs against the same universe, counting only overlaps that do not depend on a wildcard; Society removals and the modelled conditions (forge:mod_loaded, forge:not, forge:item_exists, the two supplementaries:flag values read from the staged config) applied to the other recipe",
+   "pairs_with_definite_overlap": 52,
+   "between_pixelmon_or_aeronautics_recipes_themselves": 39,
+   "other_recipe_removed_by_society": [
+    "pixelmon:decor/terrain/poke_dirt / decorative_blocks:rocky_dirt",
+    "pixelmon:pokeball/base/wooden_base / cluttered:small_shelf",
+    "pixelmon:pokeball/base/wooden_base / cluttered:small_shelf_pink"
+   ],
+   "live_against_other_mods": [
+    "pixelmon:decor/building_infrastructure/bridge_block / botania:dreamwood_slab",
+    "pixelmon:decor/building_infrastructure/bridge_block / botania:livingwood_slab",
+    "pixelmon:decor/building_infrastructure/bridge_block / botania:stripped_dreamwood_slab",
+    "pixelmon:decor/building_infrastructure/bridge_block / botania:stripped_livingwood_slab",
+    "pixelmon:decor/household_items/box / supplementaries:present",
+    "pixelmon:decor/household_items/end_table / botania:crafty_crate",
+    "pixelmon:equipment/silver/silver_block / oreganized:silver_block",
+    "pixelmon:pokeball/base/iron_base / whimsy_deco:cast_iron_trapdoor",
+    "pixelmon:pokeball/base/wooden_base / supplementaries:item_shelf"
+   ],
+   "behind_a_condition_that_is_off": [
+    "pixelmon:equipment/vanilla/iron_hammer / quark:experimental/trowel (quark:flag hammer; config/quark-common.toml \"Enable Hammer\" = false and \"Variant Selector\" = false)"
+   ],
+   "result": "the nine live pairs are exactly the pairs this overlay separates; the sweep's list was complete although its scanner skipped forge:conditional recipes"
+  },
+  "optional_packs_and_nested_jars": {
+   "recipe_json_outside_data_ns_recipes": 169,
+   "by_jar": {
+    "create_central_kitchen-1.20.1-for-create-6.0.8-1.5.0.jar": 169
+   },
+   "fitting_a_new_grid": 0,
+   "note": "recipe files a mod ships outside data/<ns>/recipes/ (built-in optional packs) or inside nested JARs are not loaded unless a mod enables them; they were compared with the three new grids as well"
+  },
+  "not_covered": "recipes that only exist at run time (EveryCompat / Moonlight wood variants generated from the JAR recipes; they keep the base recipe's shape and non-wood ingredients, and none of the same-shape base recipes has cells that fit iron ingots over a nugget, slabs over a stick or paper; the registry snapshot holds no item shelf other than supplementaries:item_shelf), and anything a later mod or pack update adds"
+ },
+ "miltank_milk": {
+  "problem": "Pixelmon 9.2.3 MiltankInteraction.processInteract shrinks the held minecraft:bucket and puts a new minecraft:milk_bucket into the selected slot (last bucket) or adds it to the inventory; Society's milkBan.js then zeroes every vanilla milk bucket and gives an empty bucket back.",
+  "design": [
+   "ItemEvents.entityInteracted registered for minecraft:bucket: when the hand is MAIN_HAND, the target type is pixelmon:pixelmon, the bucket is not on cooldown, target.getSpecies().getName() is Miltank and target.getNumInteractions() > 0, the player's uuid is remembered with the level game time. These are the conditions under which Pixelmon produces the bucket in the same call (PixelmonEntity.mobInteract returns early for a cooling item, AbstractInteractionsEntity.mobInteract needs the main hand, an interaction object and numInteractions > 0, MiltankInteraction needs Items.BUCKET).",
+   "PlayerEvents.inventoryChanged registered for minecraft:milk_bucket: a remembered interaction not older than 2 game ticks is used up; the first vanilla milk bucket in player.inventory.items loses one item; the player is given 1 society:milk and 1 minecraft:bucket. Without a remembered interaction the handler returns at once.",
+   "After the two items were given: when no other vanilla milk bucket is left and the event carries a menu slot (slot >= 0), the stack passed with the event is emptied as well. A stack reported with slot -1 is never emptied."
+  ],
+  "proof_from_bytes": [
+   "Handler order: dev.latvian.mods.kubejs.event.EventHandler.post runs the containers registered for the event's extra id (extraEventContainers.get(extraId)) before the generic eventContainers. PlayerEvents.INVENTORY_CHANGED and ItemEvents.ENTITY_INTERACTED both carry ItemEvents.SUPPORTS_ITEM, and KubeJSInventoryListener.slotChanged posts with stack.getItem() as extra id. milkBan.js registers without an id, so the overlay handler always runs first, whatever the file load order (which is file-system order for equal priorities: the fixed-final log does not load scripts alphabetically).",
+   "What milkBan.js sees: AbstractContainerMenu.broadcastChanges builds one memoized copy per slot (Suppliers.memoize(itemstack::copy)); triggerSlotListeners stores that copy in lastSlots and passes it to the listeners; synchronizeSlotToRemote sends the same copy to the client. InventoryChangedEventJS.getItem returns that copy. ItemStack.getItem returns Items.AIR when count <= 0, and ItemStackKJS.kjs$getId is getItem().kjs$getId(), so after the overlay empties the copy milkBan.js reads e.item.id as minecraft:air, fails its bannedItems check and returns before the chat line. The slot itself was emptied by the overlay, so menu state, client and inventory agree.",
+   "If milkBan.js does run (another vanilla milk bucket is present, or society:milk is missing) it loops over player.inventory.items and only touches stacks whose id equals the banned id; the exchanged stack has count 0 and id minecraft:air.",
+   "An exception inside a handler ends the handler chain of that event (EventHandlerContainer.handle throws EventExit and post skips the remaining containers), so both handler bodies are wrapped; on failure nothing is remembered or exchanged and Society's handlers run as before.",
+   "Timing: PacketUtils.ensureRunningOnSameThread queues the interaction packet as a task of the server thread, so it runs outside ServerLevel.tick; ServerLevel.tick calls tickTime() before it ticks entities, and ServerPlayer.tick calls containerMenu.broadcastChanges() every tick. The bucket is therefore reported one game tick after the remembered time (never more); the window of 2 leaves one tick of slack. KubeJS exposes Level.getGameTime as getTime (LevelMixin @RemapForJS).",
+   "Script access to Pixelmon objects: ScriptManager.visibleToScripts only filters ClassShutter.TYPE_CLASS_IN_PACKAGE (2), i.e. Java.loadClass; members of objects handed to a script are reachable. PixelmonEntity is public; getSpecies() (AbstractBaseEntity), Species.getName() and getNumInteractions() (AbstractInteractionsEntity) are public.",
+   "Pixelmon absent: the file has the KubeJS property \"requires: pixelmon\" (ScriptFileInfo.skipLoading -> Platform.isModLoaded) and is not loaded at all.",
+   "Second source of the event: KubeJSItemEventHandler.crafted and .smelted also post PlayerEvents.INVENTORY_CHANGED, with the real crafted or smelted stack and slot -1 (not a menu copy). The script therefore empties event.item only when event.slot >= 0, the value KubeJSInventoryListener.slotChanged passes (the menu slot index); with slot -1 the exchange itself still runs on player.inventory.items and the passed stack is left untouched, so Society's handler prints its line and finds nothing to confiscate."
+  ],
+  "never_affects_other_milk": "A vanilla milk bucket is exchanged only while a remembered Miltank interaction of the same player is at most 2 game ticks old, and each one pays for one bucket. Residual case: the remembered interaction is cancelled by another mod after the script saw it (so Pixelmon gives nothing) and an unrelated vanilla milk bucket reaches the same player within those 2 ticks; that bucket would become society:milk plus a bucket instead of a bucket.",
+  "rhino_scenarios": "harness/scenario_miltank.js with Society's real milkBan.js, both load orders, identical results: single bucket, repeat by the same player, stack of three buckets, foreign milk without interaction, other Pokemon, Miltank without milkings, off hand, bucket on cooldown, cow, expired interaction, Miltank milk plus foreign milk in one tick, missing Pixelmon methods, missing society:milk, full inventory. harness/scenario_miltank_java.js repeats them with Java objects behind every value the scripts touch (Fakes.java: bean getters, a Java list of stacks, enum hand, java.util.UUID, long game time), so the property access, list iteration, string comparison and arithmetic of both scripts run through Rhino's Java interop.",
+  "runtime_probe": [
+   "A wild Miltank cannot be milked in Pixelmon 9.2.3: PixelmonInteraction.getInteraction is only called from AbstractInteractionsEntity.onSendout, and onSendout is only referenced by PokeBallEntity, OccupiedPokeBallEntity and ExecuteActionGoal. Use a Miltank owned by the player and sent out of its ball (for example give one with Pixelmon's /pokegive, then send it out); for a Miltank that was never milked the first milking becomes available on the first tick after send-out, the second after 800 to 1399 more ticks (PixelmonInteraction.resetCounter).",
+   "Hold exactly one minecraft:bucket in the main hand and right-click the Miltank: expect 1 society:milk and 1 minecraft:bucket in the inventory, no minecraft:milk_bucket, and no \"need milk pail\" chat line.",
+   "Hold a stack of several buckets and repeat when a milking is available: expect the stack unchanged in total (one bucket taken, one given back) plus 1 society:milk.",
+   "Control: /give <player> minecraft:milk_bucket must still be turned into an empty bucket with Society's \"need milk pail\" chat line.",
+   "Control: right-click a Miltank with no milking left (third try within a minute) and a non-Miltank Pokemon with a bucket: nothing is given and nothing is printed."
+  ],
+  "limits": [
+   "With a full inventory Pixelmon drops the milk bucket at the player's feet (DropItemHelper.giveItemStack); picked up later it is outside the 2 tick window and Society's rule turns it into an empty bucket, as before this overlay.",
+   "milkBan.js and this script look at player.inventory.items (the 36 main slots) only; Pixelmon never places the bucket elsewhere.",
+   "The script gives plain society:milk (the small cow milk of Society's husbandryDefinitions.js, cowMilk.sm) without quality data."
+  ]
+ },
+ "api_facts_from_bytes": [
+  "RecipesEventJS.remove(IDFilter) marks originalRecipes.get(id) as removed; remove, replaceInput and countRecipes only ever see originalRecipes, never script-added recipes.",
+  "RecipesEventJS.countRecipes(RecipeFilter) returns an int; a filter object with id and input becomes AndFilter(IDFilter, InputFilter) (RecipeFilter.of).",
+  "RecipesEventJS.shaped is kubejs:shaped (common.properties serverOnly=false); ShapedRecipeJS.getSerializationTypeFunction writes minecraft:crafting_shaped when no kubejs: flag is set. RecipeJS.id(ResourceLocation) only sets the id.",
+  "RecipeJS.replaceInput replaces every input component the match overlaps (ItemComponents.INPUT.isInput -> IngredientMatch.contains -> Ingredient.test); only changed components are written back into the original JSON, so pattern, result, count and id stay.",
+  "IngredientKJS.kjs$subtract (exposed as subtract through @RemapPrefixForJS) -> IngredientForgeHelper.subtract -> net.minecraftforge.common.crafting.DifferenceIngredient.of(base, subtracted); its toJson writes {\"type\":\"forge:difference\",\"base\":...,\"subtracted\":...}, test() is base.test && !subtracted.test, and DifferenceIngredientMixin keeps it usable for KubeJS input matching.",
+  "Type wrappers registered by BuiltinKubeJSPlugin: RecipeFilter, ReplacementMatch, InputReplacement, Ingredient, InputItem, OutputItem, ItemStack, Item, ResourceLocation; NativeJavaObject.coerceTypeImpl applies the wrapper of the parameter type to the unwrapped argument, also when the argument is a Java object.",
+  "ScriptFileInfo.preload: a line starting with // that matches ^(\\w+)\\s*[:=]?\\s*(-?\\w+)$ is a file property; priority, requires, ignored, ignore and packmode are read. ScriptFile.compareTo sorts by descending priority (stable), so priority -100 loads after every priority 0 file.",
+  "No recipe of the staged profile uses forge:difference yet. recipeessentials 4.0 (the RecipeManager in use according to the sweep verifier's reading of debug.log) keys its cache on the grid contents and calls Recipe.matches on the candidates; it does not look inside ingredients."
+ ],
+ "corrections_to_sweep_claims": [
+  "Verifier, miltank-milk fix assessment: \"milkBan.js will still print the need-milk-pail line unless that file is edited\" does not hold. The event carries the menu's copy of the stack; emptying it makes milkBan.js return on its first line. No Society file is edited and no line is printed.",
+  "Verifier, same assessment: a \"// priority:\" header to load before milkBan.js is not needed and would not be the mechanism; handlers registered with an item id run before handlers registered without one.",
+  "Auditor, pokeball-base-recipe-collisions: the scanner skipped forge:conditional recipes and applied Society removals first. Re-scanned without those filters: cluttered:small_shelf and cluttered:small_shelf_pink also share the wooden base grid, but Society removes both recipes, so the proven pair list (trapdoor, item shelf, present/box, four Botania slabs, crafty crate, Oreganized silver block) is complete for crafting recipes found in JARs, kubejs/data and Society scripts.",
+  "Task text, item 4: the Botania ingredients are wood blocks (botania:livingwood, botania:dreamwood and the stripped forms), not logs, as the verifier already noted; exactly these four ids and botania:dreamwood_planks are excluded."
+ ],
+ "behaviour_changes_to_document": [
+  "whimsy_deco:cast_iron_trapdoor now needs three iron ingots above one iron nugget (official Society: three iron ingots in a row).",
+  "supplementaries:item_shelf now needs three wooden slabs above one stick (official Society: three wooden slabs in a row); still gives 2.",
+  "pixelmon:box now needs seven paper in an open-box shape (Pixelmon: ring of eight paper).",
+  "pixelmon:bridge_block no longer accepts Botania livingwood / dreamwood (plain or stripped); a row mixing those with other logs gives nothing.",
+  "pixelmon:end_table no longer accepts Botania dreamwood planks.",
+  "pixelmon:silver_block, and Pixelmon's silver ore smelting and blasting, accept Pixelmon silver only; Pixelmon tools, armour and ball parts still accept any #forge:ingots/silver.",
+  "The re-registered recipes have new ids (namespace psa_coexistence). The recipe-unlock advancements of supplementaries:item_shelf and pixelmon:decor/household_items/box name the old ids and no longer unlock anything; crafting, JEI and EMI are unaffected, and the pack ships Not Enough Recipe Book."
+ ],
+ "limits": [
+  "The scripts were not run in the game. The script logic ran in the pack's Rhino build against stand-ins; the Java side (type wrappers, recipe JSON round trip of forge:difference, client sync, JEI/EMI display) is proven from decompiled bytes only.",
+  "The static scan cannot see run-time generated recipes (see collision_scan.not_covered).",
+  "All hashes under inputs are the versions these facts were read from; a different Pixelmon, Whimsy Deco, Supplementaries, Botania, Oreganized, KubeJS or Rhino build needs a new scan before the scripts are installed."
+ ],
+ "verification": {
+  "static_tests": "cd <scratch>/fixes/overlay-recipes/tests && python3 -m unittest test_overlay_recipes",
+  "rhino_harness": "RhinoHarness.java evaluates prelude.js or prelude_java.js (stand-ins for the KubeJS bindings), the scripts as KubeJS preloads them, Society's milkBan.js and the scenario files with dev.latvian.mods.rhino from rhino-forge-2001.2.3-build.10.jar; no Minecraft, Forge or KubeJS class is loaded",
+  "rhino_recipe_scenarios": "full pack, reload, Pixelmon absent, a Society removal of the trapdoor, Botania absent, one Botania slab recipe removed, Oreganized absent, replacement not created, replaceInput without effect, result item missing",
+  "working_files": "<scratch>/fixes/overlay-recipes/"
+ },
+ "review": {
+  "reviewer_changes": [
+   {
+    "file": "compat/coexistence/overlay/kubejs/server_scripts/psa_miltank_milk.js",
+    "sha256_before": "7c28371a035aed1bb33f2524ddecd20cb741b6d6d06db85ffa41f25c0eae0f32",
+    "sha256_after": "fa565e4b4ffa05be6bf9c9b2173d50e2535b161677debcdb53b43cbfd4853d23",
+    "change": "(1) event.item is emptied only when event.slot >= 0: KubeJS posts PlayerEvents.inventoryChanged from its crafted and smelted hooks with the real result stack and slot -1, and emptying that stack would delete an item. (2) The two player.give calls now run before the copy is emptied, so nothing after the bucket was taken can prevent the hand-out. (3) Two comment lines describe (1). Behaviour on the menu path is unchanged."
+   },
+   {
+    "file": "compat/coexistence/overlay-recipes-notes.json",
+    "change": "scripts[1].sha256, miltank_milk.design[2], one added miltank_milk.proof_from_bytes entry, verification.static_tests (the absolute-path form fails to import under the system python3 3.9), this review block."
+   }
+  ],
+  "psa_recipe_coexistence_js": "unchanged (sha256 0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c)",
+  "builder_note": "scratchpad/fixes/overlay-recipes/build_notes.py was not updated by the reviewer; its test_notes_are_what_the_builder_writes compares against the pre-review text.",
+  "reviewer_checks": "scratchpad/fixes/overlay-recipes-review/: own CFR decompilation of the KubeJS/Pixelmon classes used, an independent recipe universe (scan/universe.py, scan/analyze.py: 20366 recipe ids incl. vanilla, Forge, nested JARs, kubejs/data, conditional alternatives) and harness/scenario_review.js (crafted-stack event, menu path, stack of five) run in the pack's Rhino."
+ },
+ "later_changes": [
+  "After the Codex review (round 1) psa_miltank_milk.js also exchanges the milk bucket Pixelmon drops when the inventory has no free slot (ItemEvents.dropped for minecraft:milk_bucket): the dropped item becomes society:milk and the empty bucket goes back into the inventory. Logic test: tests/test_overlay_scripts.py. Hashes of the script quoted in this note are the earlier ones."
+ ]
+}

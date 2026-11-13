@@ -1,0 +1,457 @@
+{
+  "scope": "Vanilla, Society and Pixelmon chest loot merged per table; derived data only, no mod JAR changes",
+  "inputs": {
+    "pixelmon_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "vanilla_data_jar_sha256": "16c690f52a92ef272f3e3a5a841cbb24dadff19da5a895885b9520c5a108be38",
+    "society_server_pack_sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
+  },
+  "output_sha256": {
+    "kubejs/data/minecraft/loot_tables/chests/abandoned_mineshaft.json": "5504b552b86a8ae61986464cbe67c81ffa849b819dc782871e1b74f33aced056",
+    "kubejs/data/minecraft/loot_tables/chests/bastion_bridge.json": "db586e7358f3836477c2c036aaad980d4cf8ffd64a4cefcfb2797e04c09b7b16",
+    "kubejs/data/minecraft/loot_tables/chests/bastion_hoglin_stable.json": "34a57771244f0d812432e7d6b34ad6e857cddfa27f89ee0db9695736f67d4fa9",
+    "kubejs/data/minecraft/loot_tables/chests/bastion_other.json": "ad1ed2a9423e06286160dab21ff81d722018b70183777fc9f40b4d434a9c67e8",
+    "kubejs/data/minecraft/loot_tables/chests/bastion_treasure.json": "d13cf2ca320a2dc84bdd2b0bfd4d0caaede5806c8c4e9a5d7d76918b0d68dfd2",
+    "kubejs/data/minecraft/loot_tables/chests/buried_treasure.json": "3f40bc88a658c2b5406cfde5d4f6152854985d87d9c7bbccb78854bd85dee694",
+    "kubejs/data/minecraft/loot_tables/chests/desert_pyramid.json": "f37f3b5f832a50791b9d9c429b5643eba63e985a47ad0c2de94555ac01ac37df",
+    "kubejs/data/minecraft/loot_tables/chests/end_city_treasure.json": "eb7ec3aec0f2e5bd1d038c6889e77d0de0561ae6b1f21a3f4f44b6f68ef055b4",
+    "kubejs/data/minecraft/loot_tables/chests/igloo_chest.json": "66c89782b24ff562e43f92efd86de2d688ab4182326a110881a575112b8d5c97",
+    "kubejs/data/minecraft/loot_tables/chests/jungle_temple.json": "18952308ac2de7ea07c357d01d8d65f77fb1bb8670c197f1ba5f1775a1746cfa",
+    "kubejs/data/minecraft/loot_tables/chests/nether_bridge.json": "71e22f0d74a40e7fc175a6ccea71058796915f59b38228180ba02674577c3b8d",
+    "kubejs/data/minecraft/loot_tables/chests/pillager_outpost.json": "2e5baa02c212ad2e24d856bb5261b144a85e46e4f78c01222ab92cefc8681d95",
+    "kubejs/data/minecraft/loot_tables/chests/ruined_portal.json": "a59277b124dcefa6c6a9b4266ab9148989f3017a7e2d9f75387d431c8cf555da",
+    "kubejs/data/minecraft/loot_tables/chests/shipwreck_map.json": "22b76fb071bcd11e9bdb556283ea752f88f12166f32dd80da6d7a5658118a23b",
+    "kubejs/data/minecraft/loot_tables/chests/shipwreck_supply.json": "c90c91d54f758b036aa3df65dd840e44e63abe064f05f785ae62b9c19323a2fa",
+    "kubejs/data/minecraft/loot_tables/chests/shipwreck_treasure.json": "9b00ddf41e752ebb94e83a780c683469fe48e0d2a5e7ba74125f83789eb17c3a",
+    "kubejs/data/minecraft/loot_tables/chests/simple_dungeon.json": "7ee06ab890488639d71a7a569fcfecfbdae3b5d01bef4f0c270c101cb591c4ab",
+    "kubejs/data/minecraft/loot_tables/chests/spawn_bonus_chest.json": "3ca5356f44e0f87069a60b5cfe089418219012b24bb7f3ba3880918f48cb6fda",
+    "kubejs/data/minecraft/loot_tables/chests/stronghold_corridor.json": "c64bd9435b1c30a964fc38c5cf12e7acb13de4bf072b8e39acad2791d56fed6b",
+    "kubejs/data/minecraft/loot_tables/chests/stronghold_crossing.json": "28307e7a44c4ca2a3c48ca2b89e01145bb421a5282eb9cc4c05cc9d60f32213a",
+    "kubejs/data/minecraft/loot_tables/chests/stronghold_library.json": "477b1d171596e625266ff450bf68a9e9ba1e4de3ff6d86f30e2ace56b3fdb446",
+    "kubejs/data/minecraft/loot_tables/chests/underwater_ruin_big.json": "da2b83087e149d348ebc2f83c6b6521a6dad43275fb0d9aa21eb4a2cacf285b4",
+    "kubejs/data/minecraft/loot_tables/chests/underwater_ruin_small.json": "ad7fa7185b8edef31eeee59d24c0b52380694ccefdaa4868da0d3b35a2cae5c8",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_armorer.json": "98e23a5b77aabfd60a1a92533df4a4ae77f7bb6f8f8c9fc055871142fb1cf829",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_butcher.json": "297b3693c0c57ab6638d296778a228c189e87d500a6f6a2e0c24cc71b74e6985",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_cartographer.json": "6a437d0d5e2716c29eecd31e56b426f0128b51cf83c20f024e1ad154a07d5343",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_desert_house.json": "6e6521edf7088452e592fe40f4a196ca487fd10b930f52f3929bf13f2622ab68",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_fisher.json": "b1707b9dc7fc18809a5cbbc53a9914a16b9b4e326850fdaaaf95a7768521cb7b",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_fletcher.json": "4ba62b703d609cf6d9c9845f516c1ce4c95850c13357effce4c4d7cd8ba6ca5d",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_mason.json": "e4c75994bac52b517905b322fc9c910b025102a73fcc1b81f4b1776ad1d589f1",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_plains_house.json": "ce065c24cf6a554794e69146655a79e689de6f2db2ff66dbdbd65778e4b7ac2c",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_savanna_house.json": "0a12b9e0b6ce14454037a36b2e9de3309c6533c02333b932109c296bc5988e1e",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_shepherd.json": "835a6035b5b7c98e6390050df1b047fe46e78f13138614ce94b37bdc16008424",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_snowy_house.json": "5a4a4311ad2f566d75785dda2140368db77b69e63072f287b23de474421ac57f",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_taiga_house.json": "31a9f1f8f97b7ae927ccd06b27e7111064eff22668ae2e3af5a1a60ede4472dd",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_tannery.json": "d17679c83b646f219a8b72b25e3f8fe98ca2ecbbce8a8c525b4cb0b798de1c38",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_temple.json": "bb60a88c2ecf6cd74e7ca26b6fbbf280fe710c9153fda80fe8aba3cae5e5d4c5",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_toolsmith.json": "c9d6ec4f0a08e6966939a86ccb9bd333ff778e2a684df9f486724c4e6bb4a2a5",
+    "kubejs/data/minecraft/loot_tables/chests/village/village_weaponsmith.json": "5144ff376009c0899873681022dcfb6c615df9acdc5d654bce0ec8ae8f3a19c6",
+    "kubejs/data/minecraft/loot_tables/chests/woodland_mansion.json": "c835c3965a1bd8aae100abf3b8ede552cb61daa18db39e66b9f9493b3c2c0fdc"
+  },
+  "receipt": {
+    "loot_tables": [
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/bastion_hoglin_stable.json",
+        "table": "minecraft:chests/bastion_hoglin_stable",
+        "original_sha256": "4954ed7d29c2b616f3c76d2466ffb9989c90d6971435d915cbe8fcb6e84e5920",
+        "sha256": "34a57771244f0d812432e7d6b34ad6e857cddfa27f89ee0db9695736f67d4fa9",
+        "society_pools_kept": 4,
+        "pixelmon_pools_added": 4
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/bastion_other.json",
+        "table": "minecraft:chests/bastion_other",
+        "original_sha256": "3c99a4c44c515c271bef6a4b8d711576d1a78eefa12ec96c6827d36633a1ffe1",
+        "sha256": "ad1ed2a9423e06286160dab21ff81d722018b70183777fc9f40b4d434a9c67e8",
+        "society_pools_kept": 5,
+        "pixelmon_pools_added": 3
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/bastion_treasure.json",
+        "table": "minecraft:chests/bastion_treasure",
+        "original_sha256": "aa914e14f62ea6b48f0e26acffa471618ac43f71680e6b9f86c34b6c98507d9c",
+        "sha256": "d13cf2ca320a2dc84bdd2b0bfd4d0caaede5806c8c4e9a5d7d76918b0d68dfd2",
+        "society_pools_kept": 4,
+        "pixelmon_pools_added": 4
+      }
+    ],
+    "vanilla_loot_tables": [
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/abandoned_mineshaft.json",
+        "table": "minecraft:chests/abandoned_mineshaft",
+        "vanilla_sha256": "ac8e330ebb6592f38fc8bd1a5cea144714b600814c50449407128a530a596d1b",
+        "pixelmon_sha256": "c2f418fec6eb15cfdd951a6f3c780ba905f138f72719e2f1c8d98f91942e2b2d",
+        "sha256": "5504b552b86a8ae61986464cbe67c81ffa849b819dc782871e1b74f33aced056",
+        "vanilla_pools_kept": 3,
+        "pixelmon_pools_added": 7,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/bastion_bridge.json",
+        "table": "minecraft:chests/bastion_bridge",
+        "vanilla_sha256": "2c49d500c90944656d66ca36309fd8f28d070962241d41fdca5a2c6c95b25ea9",
+        "pixelmon_sha256": "fe616f4cf898cd2394717ed78f38b0e5bebe7c6b9a2d556891cb8a7d85f21f82",
+        "sha256": "db586e7358f3836477c2c036aaad980d4cf8ffd64a4cefcfb2797e04c09b7b16",
+        "vanilla_pools_kept": 5,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/buried_treasure.json",
+        "table": "minecraft:chests/buried_treasure",
+        "vanilla_sha256": "3e77c8b99c8dc1de679ee807a274624918b1b3e2764c773d1910cb792716fe7e",
+        "pixelmon_sha256": "4ae5315cabe0fa6408c2c142706a2294c15bb2acec2c825b67fea22a494f9e35",
+        "sha256": "3f40bc88a658c2b5406cfde5d4f6152854985d87d9c7bbccb78854bd85dee694",
+        "vanilla_pools_kept": 6,
+        "pixelmon_pools_added": 7,
+        "entries_blanked": 6
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/desert_pyramid.json",
+        "table": "minecraft:chests/desert_pyramid",
+        "vanilla_sha256": "27879bd476495ffe6ce4d76443e914be3c252fc2b9c618982d3b5be2dc2d6301",
+        "pixelmon_sha256": "3b2551e235b951ba47d1e979fffeceadc1ad0ebcc1f1a2b8f79269e5299ca01e",
+        "sha256": "f37f3b5f832a50791b9d9c429b5643eba63e985a47ad0c2de94555ac01ac37df",
+        "vanilla_pools_kept": 3,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/end_city_treasure.json",
+        "table": "minecraft:chests/end_city_treasure",
+        "vanilla_sha256": "21d494c874e1f883c3411562840ac432872748ce894643033c476bf62fa8ce9d",
+        "pixelmon_sha256": "d7c8d8154148d1924819e480caaab400da9cd4ab2f302f322ea3fac90624f1a4",
+        "sha256": "eb7ec3aec0f2e5bd1d038c6889e77d0de0561ae6b1f21a3f4f44b6f68ef055b4",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/igloo_chest.json",
+        "table": "minecraft:chests/igloo_chest",
+        "vanilla_sha256": "6313c3136e575007511e2a573f63cd4d17a6d78fb4ab2b21512cb7f098d6a3b9",
+        "pixelmon_sha256": "8f6af54d68c7f9b4f8946b670a8dfc2f30b020206de6af62d168e344a9ad0d79",
+        "sha256": "66c89782b24ff562e43f92efd86de2d688ab4182326a110881a575112b8d5c97",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/jungle_temple.json",
+        "table": "minecraft:chests/jungle_temple",
+        "vanilla_sha256": "16bf3ee72df14d695fe762f693f9e4d3da2ad3dfa692a0f3c8eb1ba7d5211d50",
+        "pixelmon_sha256": "6f6b41f70df3ecd90e66f7a1f8fa5cfd409f494d22e58b6222bf69b66ceb07dd",
+        "sha256": "18952308ac2de7ea07c357d01d8d65f77fb1bb8670c197f1ba5f1775a1746cfa",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/nether_bridge.json",
+        "table": "minecraft:chests/nether_bridge",
+        "vanilla_sha256": "56fceac267476866f2381335b4ac1b3eeab33993610d854752cd2f011c2062e6",
+        "pixelmon_sha256": "1d6b67afcedc9946c293ad0b44d57c456abac5a542968d4f75b8eedd25f5b116",
+        "sha256": "71e22f0d74a40e7fc175a6ccea71058796915f59b38228180ba02674577c3b8d",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/pillager_outpost.json",
+        "table": "minecraft:chests/pillager_outpost",
+        "vanilla_sha256": "dff1955174fab7f5d0a12970d02650c8cff8a2d99ff4bbf77a734b7a45f64b25",
+        "pixelmon_sha256": "2831a1e4b0ada6f9657272146108db4c96f0f711f26e37cb678bfcd2da9d43ec",
+        "sha256": "2e5baa02c212ad2e24d856bb5261b144a85e46e4f78c01222ab92cefc8681d95",
+        "vanilla_pools_kept": 6,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/ruined_portal.json",
+        "table": "minecraft:chests/ruined_portal",
+        "vanilla_sha256": "3e5e2a0583273236f3f632e8588199cd990602f2b7a1c6336aaa12954b18585f",
+        "pixelmon_sha256": "b10e23d3aeb38fce51d0c712cf320b4e2912bb2439f21f90f773ebb25d2de197",
+        "sha256": "a59277b124dcefa6c6a9b4266ab9148989f3017a7e2d9f75387d431c8cf555da",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 25
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/shipwreck_map.json",
+        "table": "minecraft:chests/shipwreck_map",
+        "vanilla_sha256": "69546cb00de9385bd89b517152130478b0be4d16ee7a52777288d050863cd8b6",
+        "pixelmon_sha256": "769f3db25ac5d3cbe4ac56ebd1c5d24f41e49db77c62f64c7e0ef23a5b18fb66",
+        "sha256": "22b76fb071bcd11e9bdb556283ea752f88f12166f32dd80da6d7a5658118a23b",
+        "vanilla_pools_kept": 3,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/shipwreck_supply.json",
+        "table": "minecraft:chests/shipwreck_supply",
+        "vanilla_sha256": "58a16ea508faac3e6dc77ee1b82f30bc1e4ccbd79a0db6c372fea6eadf482f25",
+        "pixelmon_sha256": "1679f18389357bc60dc7fe2cfbd36beda958be0b8ec1f50030dbe854074c5e1c",
+        "sha256": "c90c91d54f758b036aa3df65dd840e44e63abe064f05f785ae62b9c19323a2fa",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/shipwreck_treasure.json",
+        "table": "minecraft:chests/shipwreck_treasure",
+        "vanilla_sha256": "1861a8f752c80834afa9067a26530175e4cab0df83a89c4107fb47bb30f4a769",
+        "pixelmon_sha256": "f02ad8054798a80671eea7007d5a67b0d617467b69ea360db7dd48894e5f3624",
+        "sha256": "9b00ddf41e752ebb94e83a780c683469fe48e0d2a5e7ba74125f83789eb17c3a",
+        "vanilla_pools_kept": 3,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/simple_dungeon.json",
+        "table": "minecraft:chests/simple_dungeon",
+        "vanilla_sha256": "32f14004ab4d7dea19641411d980b98ad19e1658c8674c272eb13dfac39d7626",
+        "pixelmon_sha256": "822fe7d1b26167fc802db4ea0ef793c4670fd56140a75f91b5c3a7db46a91998",
+        "sha256": "7ee06ab890488639d71a7a569fcfecfbdae3b5d01bef4f0c270c101cb591c4ab",
+        "vanilla_pools_kept": 3,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/spawn_bonus_chest.json",
+        "table": "minecraft:chests/spawn_bonus_chest",
+        "vanilla_sha256": "4c22c342d0675e537b26499bd3fb0887e944b1be912bb3e7b882f75030c31d57",
+        "pixelmon_sha256": "d007d6615b3c29b03d1002f59f1d50443fd82c3cde23a19d58c0e04687a9f0b8",
+        "sha256": "3ca5356f44e0f87069a60b5cfe089418219012b24bb7f3ba3880918f48cb6fda",
+        "vanilla_pools_kept": 4,
+        "pixelmon_pools_added": 1,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/stronghold_corridor.json",
+        "table": "minecraft:chests/stronghold_corridor",
+        "vanilla_sha256": "6937f3ca3d91052c3e8fd2a516725aecfc735d990cfdce5677d13dfad030b8a9",
+        "pixelmon_sha256": "1869d37049f8ed0e35433c035513c9eaec8442155c84ab4e0a3ac202a13f9f24",
+        "sha256": "c64bd9435b1c30a964fc38c5cf12e7acb13de4bf072b8e39acad2791d56fed6b",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/stronghold_crossing.json",
+        "table": "minecraft:chests/stronghold_crossing",
+        "vanilla_sha256": "bce4d5e5399c1141b7c7d9f1cbfeabbfabe99b4e293a4595485af73bc08dfeaf",
+        "pixelmon_sha256": "1869d37049f8ed0e35433c035513c9eaec8442155c84ab4e0a3ac202a13f9f24",
+        "sha256": "28307e7a44c4ca2a3c48ca2b89e01145bb421a5282eb9cc4c05cc9d60f32213a",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/stronghold_library.json",
+        "table": "minecraft:chests/stronghold_library",
+        "vanilla_sha256": "9fde26670b980b52a15969fee9cba958c8f12ea61e75974bd3cd8ee15d0d9722",
+        "pixelmon_sha256": "ba9def35229a22c80cf76d361d55fed2779f018d679be872be5ff93f422be477",
+        "sha256": "477b1d171596e625266ff450bf68a9e9ba1e4de3ff6d86f30e2ace56b3fdb446",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/underwater_ruin_big.json",
+        "table": "minecraft:chests/underwater_ruin_big",
+        "vanilla_sha256": "819d36fc83b1794f09b5d0e79913bcefb4195f3638fbb8336448889ac9108b4e",
+        "pixelmon_sha256": "0412d3bb464962eae749516496914b105844dd81df13e93344dd3fdbd304ac08",
+        "sha256": "da2b83087e149d348ebc2f83c6b6521a6dad43275fb0d9aa21eb4a2cacf285b4",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 2,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/underwater_ruin_small.json",
+        "table": "minecraft:chests/underwater_ruin_small",
+        "vanilla_sha256": "40a121404f2b45897b6ca0a8f1704ca70c4ece690e6e731a6b9beaafdefcc2c9",
+        "pixelmon_sha256": "5c55fb3ad055483b59012602810e7eab15e66399a513a5f6cfa22366731059dc",
+        "sha256": "ad7fa7185b8edef31eeee59d24c0b52380694ccefdaa4868da0d3b35a2cae5c8",
+        "vanilla_pools_kept": 2,
+        "pixelmon_pools_added": 1,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_armorer.json",
+        "table": "minecraft:chests/village/village_armorer",
+        "vanilla_sha256": "65b78046a475686f9580f465e8ab5b4fcb44aeb811bbe792aaae2938fa1518b4",
+        "pixelmon_sha256": "fc3b5722b0d68ad1ea5164104ceaf364432a4f371751bf1b1d46c0c9848a3090",
+        "sha256": "98e23a5b77aabfd60a1a92533df4a4ae77f7bb6f8f8c9fc055871142fb1cf829",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 25
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_butcher.json",
+        "table": "minecraft:chests/village/village_butcher",
+        "vanilla_sha256": "63024111b14df7597f3f53125b1c56dfea827d9875c6d0a59bd66d46f0e04b42",
+        "pixelmon_sha256": "39b2a65dd057fa1e25cd33246be443048e071d2b805347ed38e853f142fc1c04",
+        "sha256": "297b3693c0c57ab6638d296778a228c189e87d500a6f6a2e0c24cc71b74e6985",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_cartographer.json",
+        "table": "minecraft:chests/village/village_cartographer",
+        "vanilla_sha256": "5cd78c92fc4cc9b17e55802217a5d2e4ff2c3e3c6fc07c10cddcb847ae9ad17a",
+        "pixelmon_sha256": "c5fddb0cbeb0b7e53645c16523953ada3daaee47a8edebe41ee26366c3690be6",
+        "sha256": "6a437d0d5e2716c29eecd31e56b426f0128b51cf83c20f024e1ad154a07d5343",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_desert_house.json",
+        "table": "minecraft:chests/village/village_desert_house",
+        "vanilla_sha256": "59c7997207fdcf506c5b0bdc93f2c1e7f179d39e11de247360199ee15da4e623",
+        "pixelmon_sha256": "c9dcc5ee1006aa76514abf54d0ee2c0f8ae2fbe33aa65f227e1674df705e48e3",
+        "sha256": "6e6521edf7088452e592fe40f4a196ca487fd10b930f52f3929bf13f2622ab68",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_fisher.json",
+        "table": "minecraft:chests/village/village_fisher",
+        "vanilla_sha256": "e71e42ba4cd669b4caa9da2096c6594581fb9e35e356d1fa5580caebfc49b8b2",
+        "pixelmon_sha256": "b0275437482f6298d320e11d897bdeb72bf5b84173cfb40b354379ad33061382",
+        "sha256": "b1707b9dc7fc18809a5cbbc53a9914a16b9b4e326850fdaaaf95a7768521cb7b",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 2,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_fletcher.json",
+        "table": "minecraft:chests/village/village_fletcher",
+        "vanilla_sha256": "2b17391015f6d657bc5200b7e00f80a3eb387654d235d63a430184fe63c0cb6a",
+        "pixelmon_sha256": "8a857b5372eba66885d9520ee820f2182fe6e08d1651170359bc4ad764d4b2b5",
+        "sha256": "4ba62b703d609cf6d9c9845f516c1ce4c95850c13357effce4c4d7cd8ba6ca5d",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_mason.json",
+        "table": "minecraft:chests/village/village_mason",
+        "vanilla_sha256": "0bb2b3a23b438bc1e4d9039f5e972c71f5a573bb99c4145d6664b4bbb4ed98fa",
+        "pixelmon_sha256": "018a2c4b71ac445246d61bd47a071f28a17d28f1570ca4e452fecc711f12d290",
+        "sha256": "e4c75994bac52b517905b322fc9c910b025102a73fcc1b81f4b1776ad1d589f1",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_plains_house.json",
+        "table": "minecraft:chests/village/village_plains_house",
+        "vanilla_sha256": "0c22ab83139f89720a92381f486323639f7d0545508cf3ee997e88172c97623e",
+        "pixelmon_sha256": "e7b524d9555e668ece61ebaa7314c9aaa79865770edc1731eb3b5f2e4420655b",
+        "sha256": "ce065c24cf6a554794e69146655a79e689de6f2db2ff66dbdbd65778e4b7ac2c",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_savanna_house.json",
+        "table": "minecraft:chests/village/village_savanna_house",
+        "vanilla_sha256": "5a8927a81811311efb336ec8de74d376cc0eca3cd369eb14e2a343e600ebe5e5",
+        "pixelmon_sha256": "4b7299ba397399dce654d438392b600d2e9d27cda957ff72579de22ae9ec8350",
+        "sha256": "0a12b9e0b6ce14454037a36b2e9de3309c6533c02333b932109c296bc5988e1e",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_shepherd.json",
+        "table": "minecraft:chests/village/village_shepherd",
+        "vanilla_sha256": "4f972dbba3ad6717c129bec51da108e0428d6f014eb84940ebdfeac38d02073c",
+        "pixelmon_sha256": "32e552195e6e46d0cbb8066a7d77df1dccf6ebe879854a86e85397e64596f169",
+        "sha256": "835a6035b5b7c98e6390050df1b047fe46e78f13138614ce94b37bdc16008424",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 8
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_snowy_house.json",
+        "table": "minecraft:chests/village/village_snowy_house",
+        "vanilla_sha256": "7876aef54db402c56e05baa9f239b42f670ab84782d8329fbe2df2537ea764d9",
+        "pixelmon_sha256": "679b3fe28c32a258a6bf48fe3e426277e9214d7f2917489949e603068487464c",
+        "sha256": "5a4a4311ad2f566d75785dda2140368db77b69e63072f287b23de474421ac57f",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_taiga_house.json",
+        "table": "minecraft:chests/village/village_taiga_house",
+        "vanilla_sha256": "49f3d7c1d463e698e72e76894b22645fc9d6046a0f54065770e59fe51e01dbd1",
+        "pixelmon_sha256": "53519b251f2208b0eb9a0fdf47645d697bd75228d54648904d272823c0fb305b",
+        "sha256": "31a9f1f8f97b7ae927ccd06b27e7111064eff22668ae2e3af5a1a60ede4472dd",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_tannery.json",
+        "table": "minecraft:chests/village/village_tannery",
+        "vanilla_sha256": "4374067cf7ad5b290449b4408600bfc6a5fcc834614819f019f6df2590478c3e",
+        "pixelmon_sha256": "55cb225bff37480612c272adfa8d6013bda0a0741b7cedf3223b953e8ddc1e10",
+        "sha256": "d17679c83b646f219a8b72b25e3f8fe98ca2ecbbce8a8c525b4cb0b798de1c38",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 2,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_temple.json",
+        "table": "minecraft:chests/village/village_temple",
+        "vanilla_sha256": "aa5381969739b26c3f10651af03f78696d30470749992a913196f425b43664c5",
+        "pixelmon_sha256": "774cfb73b89e222a8129dc9efa06d2b8a28701821190de4ed5b89039d1184d2a",
+        "sha256": "bb60a88c2ecf6cd74e7ca26b6fbbf280fe710c9153fda80fe8aba3cae5e5d4c5",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_toolsmith.json",
+        "table": "minecraft:chests/village/village_toolsmith",
+        "vanilla_sha256": "38aa8cd5309e671a069eb5a8d293121c5b76a99b3518e4e59a92bd34365ea3f1",
+        "pixelmon_sha256": "1bd58447b4a126b904d1426cb82a45825680d266196b6e76f3ed1c3e8c1b0aea",
+        "sha256": "c9d6ec4f0a08e6966939a86ccb9bd333ff778e2a684df9f486724c4e6bb4a2a5",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 4,
+        "entries_blanked": 14
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/village/village_weaponsmith.json",
+        "table": "minecraft:chests/village/village_weaponsmith",
+        "vanilla_sha256": "79d2965158fbd975b50926378ed3f886fbac08a15f6492a6ba5a3f2c4d0a821f",
+        "pixelmon_sha256": "d153a30f104c0090dd0023e6b8deda34b2eb3143ce88eb5f67b28208fa3aca3a",
+        "sha256": "5144ff376009c0899873681022dcfb6c615df9acdc5d654bce0ec8ae8f3a19c6",
+        "vanilla_pools_kept": 1,
+        "pixelmon_pools_added": 3,
+        "entries_blanked": 11
+      },
+      {
+        "path": "kubejs/data/minecraft/loot_tables/chests/woodland_mansion.json",
+        "table": "minecraft:chests/woodland_mansion",
+        "vanilla_sha256": "f18f36c6de72f4a99012553720105862b6e043801b818be404f87764a0e4c03d",
+        "pixelmon_sha256": "72003f0eadbfa34d2cce232a076114eca0674677a8a7fb4daeaed40764f78142",
+        "sha256": "c835c3965a1bd8aae100abf3b8ede552cb61daa18db39e66b9f9493b3c2c0fdc",
+        "vanilla_pools_kept": 4,
+        "pixelmon_pools_added": 5,
+        "entries_blanked": 1
+      }
+    ],
+    "unused_pixelmon_tables": [
+      "minecraft:bastion_hoglin_stable",
+      "minecraft:bastion_other",
+      "minecraft:buried_treasure",
+      "minecraft:ruined_portal",
+      "minecraft:shipwreck_map"
+    ]
+  }
+}

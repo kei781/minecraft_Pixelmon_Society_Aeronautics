@@ -1,0 +1,3929 @@
+{
+ "assembly_inventory_sweep": {
+  "blocks_with_block_entity": 4181,
+  "dropped, not moved": [
+   "create:crushing_wheel_controller"
+  ],
+  "duplicated": [
+   "bakery:breadbox",
+   "bakery:cake_display",
+   "bakery:cake_stand",
+   "bakery:cupcake_display",
+   "bakery:tray",
+   "bakery:wall_display",
+   "betterarcheology:archeology_table",
+   "betterarcheology:villager_fossil",
+   "brewery:beer_barley",
+   "brewery:beer_haley",
+   "brewery:beer_hops",
+   "brewery:beer_nettle",
+   "brewery:beer_oat",
+   "brewery:beer_wheat",
+   "brewery:whiskey_ak",
+   "brewery:whiskey_carrasconlabel",
+   "brewery:whiskey_cristelwalker",
+   "brewery:whiskey_highland_hearth",
+   "brewery:whiskey_jamesons_malt",
+   "brewery:whiskey_jojannik",
+   "brewery:whiskey_lilitusinglemalt",
+   "brewery:whiskey_maggoallan",
+   "brewery:whiskey_smokey_reverie",
+   "buildinggadgets2:template_manager",
+   "candlelight:acacia_shelf",
+   "candlelight:bamboo_shelf",
+   "candlelight:birch_shelf",
+   "candlelight:cherry_shelf",
+   "candlelight:crimson_shelf",
+   "candlelight:dark_oak_shelf",
+   "candlelight:jewelry_box",
+   "candlelight:jungle_shelf",
+   "candlelight:mangrove_shelf",
+   "candlelight:oak_shelf",
+   "candlelight:spruce_shelf",
+   "candlelight:table_set",
+   "candlelight:warped_shelf",
+   "crabbersdelight:crab_trap",
+   "create:andesite_table_cloth",
+   "create:basin",
+   "create:black_postbox",
+   "create:blue_postbox",
+   "create:brass_table_cloth",
+   "create:brown_postbox",
+   "create:chute",
+   "create:copper_table_cloth",
+   "create:cyan_postbox",
+   "create:depot",
+   "create:gray_postbox",
+   "create:green_postbox",
+   "create:item_drain",
+   "create:item_vault",
+   "create:light_blue_postbox",
+   "create:light_gray_postbox",
+   "create:lime_postbox",
+   "create:magenta_postbox",
+   "create:mechanical_saw",
+   "create:millstone",
+   "create:orange_postbox",
+   "create:package_frogport",
+   "create:pink_postbox",
+   "create:purple_postbox",
+   "create:red_postbox",
+   "create:schematic_table",
+   "create:schematicannon",
+   "create:stock_ticker",
+   "create:track_station",
+   "create:weighted_ejector",
+   "create:white_postbox",
+   "create:yellow_postbox",
+   "create_central_kitchen:blaze_stove",
+   "create_enchantment_industry:blaze_enchanter",
+   "create_enchantment_industry:disenchanter",
+   "create_mechanical_extruder:mechanical_extruder",
+   "fantasyfurniture:bone/skeleton/bookshelf",
+   "fantasyfurniture:bone/skeleton/chest",
+   "fantasyfurniture:bone/skeleton/counter",
+   "fantasyfurniture:bone/skeleton/desk_left",
+   "fantasyfurniture:bone/skeleton/desk_right",
+   "fantasyfurniture:bone/skeleton/drawer",
+   "fantasyfurniture:bone/skeleton/dresser",
+   "fantasyfurniture:bone/skeleton/lockbox",
+   "fantasyfurniture:bone/skeleton/oven",
+   "fantasyfurniture:bone/skeleton/wardrobe_bottom",
+   "fantasyfurniture:bone/wither/bookshelf",
+   "fantasyfurniture:bone/wither/chest",
+   "fantasyfurniture:bone/wither/counter",
+   "fantasyfurniture:bone/wither/desk_left",
+   "fantasyfurniture:bone/wither/desk_right",
+   "fantasyfurniture:bone/wither/drawer",
+   "fantasyfurniture:bone/wither/dresser",
+   "fantasyfurniture:bone/wither/lockbox",
+   "fantasyfurniture:bone/wither/oven",
+   "fantasyfurniture:bone/wither/wardrobe_bottom",
+   "fantasyfurniture:decorations/cookie_jar",
+   "fantasyfurniture:decorations/stocking",
+   "fantasyfurniture:dunmer/bookshelf",
+   "fantasyfurniture:dunmer/chest",
+   "fantasyfurniture:dunmer/counter",
+   "fantasyfurniture:dunmer/desk_left",
+   "fantasyfurniture:dunmer/desk_right",
+   "fantasyfurniture:dunmer/drawer",
+   "fantasyfurniture:dunmer/dresser",
+   "fantasyfurniture:dunmer/lockbox",
+   "fantasyfurniture:dunmer/oven",
+   "fantasyfurniture:dunmer/wardrobe_bottom",
+   "fantasyfurniture:necrolord/bookshelf",
+   "fantasyfurniture:necrolord/chest",
+   "fantasyfurniture:necrolord/counter",
+   "fantasyfurniture:necrolord/desk_left",
+   "fantasyfurniture:necrolord/desk_right",
+   "fantasyfurniture:necrolord/drawer",
+   "fantasyfurniture:necrolord/dresser",
+   "fantasyfurniture:necrolord/lockbox",
+   "fantasyfurniture:necrolord/oven",
+   "fantasyfurniture:necrolord/wardrobe_bottom",
+   "fantasyfurniture:nordic/bookshelf",
+   "fantasyfurniture:nordic/chest",
+   "fantasyfurniture:nordic/counter",
+   "fantasyfurniture:nordic/desk_left",
+   "fantasyfurniture:nordic/desk_right",
+   "fantasyfurniture:nordic/drawer",
+   "fantasyfurniture:nordic/dresser",
+   "fantasyfurniture:nordic/lockbox",
+   "fantasyfurniture:nordic/oven",
+   "fantasyfurniture:nordic/wardrobe_bottom",
+   "fantasyfurniture:royal/bookshelf",
+   "fantasyfurniture:royal/chest",
+   "fantasyfurniture:royal/counter",
+   "fantasyfurniture:royal/desk_left",
+   "fantasyfurniture:royal/desk_right",
+   "fantasyfurniture:royal/drawer",
+   "fantasyfurniture:royal/dresser",
+   "fantasyfurniture:royal/lockbox",
+   "fantasyfurniture:royal/oven",
+   "fantasyfurniture:royal/wardrobe_bottom",
+   "fantasyfurniture:venthyr/bookshelf",
+   "fantasyfurniture:venthyr/chest",
+   "fantasyfurniture:venthyr/counter",
+   "fantasyfurniture:venthyr/desk_left",
+   "fantasyfurniture:venthyr/desk_right",
+   "fantasyfurniture:venthyr/drawer",
+   "fantasyfurniture:venthyr/dresser",
+   "fantasyfurniture:venthyr/lockbox",
+   "fantasyfurniture:venthyr/oven",
+   "fantasyfurniture:venthyr/wardrobe_bottom",
+   "farm_and_charm:tool_rack",
+   "farm_and_charm:window_sill",
+   "farmingforblockheads:chicken_nest",
+   "farmingforblockheads:feeding_trough",
+   "functionalstorage:controller_extension",
+   "functionalstorage:framed_controller_extension",
+   "functionalstorage:framed_storage_controller",
+   "functionalstorage:storage_controller",
+   "meadow:cheese_rack",
+   "meadow:wheelbarrow",
+   "meadow:wooden_flower_box",
+   "meadow:wooden_flower_pot_big",
+   "meadow:wooden_flower_pot_small",
+   "nethervinery:blazewine_pinot",
+   "nethervinery:crimson_wine_rack_big",
+   "nethervinery:crimson_wine_rack_mid",
+   "nethervinery:crimson_wine_rack_small",
+   "nethervinery:ghastly_grenache",
+   "nethervinery:improved_lava_fizz",
+   "nethervinery:improved_nether_fizz",
+   "nethervinery:lava_fizz",
+   "nethervinery:nether_fizz",
+   "nethervinery:netherite_nectar",
+   "nethervinery:warped_wine_rack_big",
+   "nethervinery:warped_wine_rack_mid",
+   "nethervinery:warped_wine_rack_small",
+   "pixelmon:black_floor_gym_sign",
+   "pixelmon:black_hanging_gym_sign",
+   "pixelmon:black_wall_gym_sign",
+   "pixelmon:blue_floor_gym_sign",
+   "pixelmon:blue_hanging_gym_sign",
+   "pixelmon:blue_wall_gym_sign",
+   "pixelmon:brown_floor_gym_sign",
+   "pixelmon:brown_hanging_gym_sign",
+   "pixelmon:brown_wall_gym_sign",
+   "pixelmon:cyan_floor_gym_sign",
+   "pixelmon:cyan_hanging_gym_sign",
+   "pixelmon:cyan_wall_gym_sign",
+   "pixelmon:gray_floor_gym_sign",
+   "pixelmon:gray_hanging_gym_sign",
+   "pixelmon:gray_wall_gym_sign",
+   "pixelmon:green_floor_gym_sign",
+   "pixelmon:green_hanging_gym_sign",
+   "pixelmon:green_wall_gym_sign",
+   "pixelmon:light_blue_floor_gym_sign",
+   "pixelmon:light_blue_hanging_gym_sign",
+   "pixelmon:light_blue_wall_gym_sign",
+   "pixelmon:light_gray_floor_gym_sign",
+   "pixelmon:light_gray_hanging_gym_sign",
+   "pixelmon:light_gray_wall_gym_sign",
+   "pixelmon:lime_floor_gym_sign",
+   "pixelmon:lime_hanging_gym_sign",
+   "pixelmon:lime_wall_gym_sign",
+   "pixelmon:magenta_floor_gym_sign",
+   "pixelmon:magenta_hanging_gym_sign",
+   "pixelmon:magenta_wall_gym_sign",
+   "pixelmon:orange_floor_gym_sign",
+   "pixelmon:orange_hanging_gym_sign",
+   "pixelmon:orange_wall_gym_sign",
+   "pixelmon:pink_floor_gym_sign",
+   "pixelmon:pink_hanging_gym_sign",
+   "pixelmon:pink_wall_gym_sign",
+   "pixelmon:purple_floor_gym_sign",
+   "pixelmon:purple_hanging_gym_sign",
+   "pixelmon:purple_wall_gym_sign",
+   "pixelmon:red_floor_gym_sign",
+   "pixelmon:red_hanging_gym_sign",
+   "pixelmon:red_wall_gym_sign",
+   "pixelmon:white_floor_gym_sign",
+   "pixelmon:white_hanging_gym_sign",
+   "pixelmon:white_wall_gym_sign",
+   "pixelmon:yellow_floor_gym_sign",
+   "pixelmon:yellow_hanging_gym_sign",
+   "pixelmon:yellow_wall_gym_sign",
+   "plonk:placed_items",
+   "quark:encased_pipe",
+   "quark:pipe",
+   "sewingkit:storing_sewing_station",
+   "shippingbin:basic_shipping_bin",
+   "shippingbin:smart_shipping_bin",
+   "society:artisan_hopper",
+   "society:auto_grabber",
+   "society:caterpillar_box",
+   "society:feeding_trough",
+   "society:fish_pond_basket",
+   "society:fish_pond_hatchery",
+   "society:fish_pond_manager",
+   "society:growth_obelisk",
+   "society:iridium_clock",
+   "society:mana_milker",
+   "society:mini_artisan_hopper",
+   "society:pickling_can",
+   "society:quality_washer",
+   "society:ribbit_hut",
+   "society:roe_recycler",
+   "society_trading:auto_trader",
+   "splendid_slimes:plort_press",
+   "trials:crafter",
+   "vinery:acacia_wine_rack_big",
+   "vinery:acacia_wine_rack_mid",
+   "vinery:acacia_wine_rack_small",
+   "vinery:aegis_wine",
+   "vinery:apple_cider",
+   "vinery:apple_wine",
+   "vinery:bamboo_wine_rack_big",
+   "vinery:bamboo_wine_rack_mid",
+   "vinery:bamboo_wine_rack_small",
+   "vinery:birch_wine_rack_big",
+   "vinery:birch_wine_rack_mid",
+   "vinery:birch_wine_rack_small",
+   "vinery:bolvar_wine",
+   "vinery:bottle_mojang_noir",
+   "vinery:chenet_wine",
+   "vinery:cherry_wine",
+   "vinery:cherry_wine_rack_big",
+   "vinery:cherry_wine_rack_mid",
+   "vinery:cherry_wine_rack_small",
+   "vinery:chorus_wine",
+   "vinery:clark_wine",
+   "vinery:creepers_crush",
+   "vinery:cristel_wine",
+   "vinery:dark_cherry_shelf",
+   "vinery:dark_cherry_wine_rack_big",
+   "vinery:dark_cherry_wine_rack_mid",
+   "vinery:dark_cherry_wine_rack_small",
+   "vinery:dark_oak_wine_rack_big",
+   "vinery:dark_oak_wine_rack_mid",
+   "vinery:dark_oak_wine_rack_small",
+   "vinery:eiswein",
+   "vinery:flower_box",
+   "vinery:flower_pot_big",
+   "vinery:glowing_wine",
+   "vinery:jellie_wine",
+   "vinery:jo_special_mixture",
+   "vinery:jungle_wine_rack_big",
+   "vinery:jungle_wine_rack_mid",
+   "vinery:jungle_wine_rack_small",
+   "vinery:kelp_cider",
+   "vinery:lilitu_wine",
+   "vinery:magnetic_wine",
+   "vinery:mangrove_wine_rack_big",
+   "vinery:mangrove_wine_rack_mid",
+   "vinery:mangrove_wine_rack_small",
+   "vinery:mead",
+   "vinery:mellohi_wine",
+   "vinery:noir_wine",
+   "vinery:oak_wine_rack_big",
+   "vinery:oak_wine_rack_mid",
+   "vinery:oak_wine_rack_small",
+   "vinery:red_wine",
+   "vinery:solaris_wine",
+   "vinery:spruce_wine_rack_big",
+   "vinery:spruce_wine_rack_mid",
+   "vinery:spruce_wine_rack_small",
+   "vinery:stal_wine",
+   "vinery:strad_wine",
+   "vinery:villagers_fright",
+   "vinery:wine_box",
+   "vintagedelight:fermenting_jar",
+   "zetter:artist_table"
+  ],
+  "error": [
+   "create:lectern_controller",
+   "moreminecarts:pearl_stasis_chamber",
+   "pixelmon:black_couch",
+   "pixelmon:black_pc",
+   "pixelmon:black_rug",
+   "pixelmon:black_trade_machine",
+   "pixelmon:black_vending_machine",
+   "pixelmon:blue_couch",
+   "pixelmon:blue_pc",
+   "pixelmon:blue_rug",
+   "pixelmon:blue_trade_machine",
+   "pixelmon:blue_vending_machine",
+   "pixelmon:brown_couch",
+   "pixelmon:brown_pc",
+   "pixelmon:brown_rug",
+   "pixelmon:brown_trade_machine",
+   "pixelmon:brown_vending_machine",
+   "pixelmon:cloning_machine",
+   "pixelmon:cooking_pot",
+   "pixelmon:cyan_couch",
+   "pixelmon:cyan_pc",
+   "pixelmon:cyan_rug",
+   "pixelmon:cyan_trade_machine",
+   "pixelmon:cyan_vending_machine",
+   "pixelmon:fossil_cleaner",
+   "pixelmon:fossil_display",
+   "pixelmon:fossil_machine",
+   "pixelmon:gray_couch",
+   "pixelmon:gray_pc",
+   "pixelmon:gray_rug",
+   "pixelmon:gray_trade_machine",
+   "pixelmon:gray_vending_machine",
+   "pixelmon:green_couch",
+   "pixelmon:green_pc",
+   "pixelmon:green_rug",
+   "pixelmon:green_trade_machine",
+   "pixelmon:green_vending_machine",
+   "pixelmon:infuser",
+   "pixelmon:light_blue_couch",
+   "pixelmon:light_blue_pc",
+   "pixelmon:light_blue_rug",
+   "pixelmon:light_blue_trade_machine",
+   "pixelmon:light_blue_vending_machine",
+   "pixelmon:light_gray_couch",
+   "pixelmon:light_gray_pc",
+   "pixelmon:light_gray_rug",
+   "pixelmon:light_gray_trade_machine",
+   "pixelmon:light_gray_vending_machine",
+   "pixelmon:lime_couch",
+   "pixelmon:lime_pc",
+   "pixelmon:lime_rug",
+   "pixelmon:lime_trade_machine",
+   "pixelmon:lime_vending_machine",
+   "pixelmon:magenta_couch",
+   "pixelmon:magenta_pc",
+   "pixelmon:magenta_rug",
+   "pixelmon:magenta_trade_machine",
+   "pixelmon:magenta_vending_machine",
+   "pixelmon:orange_couch",
+   "pixelmon:orange_pc",
+   "pixelmon:orange_rug",
+   "pixelmon:orange_trade_machine",
+   "pixelmon:orange_vending_machine",
+   "pixelmon:pink_couch",
+   "pixelmon:pink_pc",
+   "pixelmon:pink_rug",
+   "pixelmon:pink_trade_machine",
+   "pixelmon:pink_vending_machine",
+   "pixelmon:purple_couch",
+   "pixelmon:purple_pc",
+   "pixelmon:purple_rug",
+   "pixelmon:purple_trade_machine",
+   "pixelmon:purple_vending_machine",
+   "pixelmon:red_couch",
+   "pixelmon:red_pc",
+   "pixelmon:red_rug",
+   "pixelmon:red_trade_machine",
+   "pixelmon:red_vending_machine",
+   "pixelmon:tree",
+   "pixelmon:tv",
+   "pixelmon:tv2",
+   "pixelmon:tv3",
+   "pixelmon:white_couch",
+   "pixelmon:white_pc",
+   "pixelmon:white_rug",
+   "pixelmon:white_trade_machine",
+   "pixelmon:white_vending_machine",
+   "pixelmon:yellow_couch",
+   "pixelmon:yellow_pc",
+   "pixelmon:yellow_rug",
+   "pixelmon:yellow_trade_machine",
+   "pixelmon:yellow_vending_machine",
+   "tcg:battle_spectator"
+  ],
+  "failed": null,
+  "lost": [],
+  "not assembled": [],
+  "outcome_counts": {
+   "dropped, not moved": 1,
+   "duplicated": 306,
+   "error": 93,
+   "moved": 1251,
+   "no block entity after placing": 194,
+   "no inventory found for the marked item": 2335,
+   "skipped": 1
+  },
+  "server crash": [],
+  "skipped": [
+   "create:redstone_contact"
+  ],
+  "tested": 4181
+ },
+ "assembly_probe_sha256": "ef47db0d626036735d39fc9c0c37e3215c7497cfca362347c682d731a407d50b",
+ "assembly_sweep_skip": [
+  "create:redstone_contact"
+ ],
+ "candidate": {
+  "loot_compatibility": false,
+  "overlay_compatibility": false,
+  "village_compatibility": false
+ },
+ "census": {
+  "found": {
+   "atmospheric:village_scrubland": 0.0,
+   "minecraft:village_desert": 30.0,
+   "minecraft:village_plains": 30.0,
+   "minecraft:village_savanna": 30.0,
+   "minecraft:village_snowy": 30.0,
+   "minecraft:village_taiga": 30.0
+  },
+  "placement": {
+   "separation": 8,
+   "spacing": 34
+  },
+  "placement_chunks_tried": 14641.0,
+  "searched_region_radius": 60.0,
+  "target_per_structure": 30.0
+ },
+ "checks": {
+  "assemblies": [
+   {
+    "found": {
+     "count_pieces_containing": [
+      "gym_fairy_leader_",
+      "gym_fairy_elite_",
+      "gym_fairy_grunt_"
+     ],
+     "registered": true,
+     "samples": [
+      {
+       "chunk": [
+        300,
+        300
+       ],
+       "matched": 0,
+       "pieces": 166,
+       "valid": true
+      },
+      {
+       "chunk": [
+        340,
+        340
+       ],
+       "matched": 0,
+       "pieces": 137,
+       "valid": true
+      },
+      {
+       "chunk": [
+        380,
+        380
+       ],
+       "matched": 0,
+       "pieces": 115,
+       "valid": true
+      }
+     ]
+    },
+    "pass": false,
+    "structure": "pixelmon:gyms/fairy"
+   },
+   {
+    "found": {
+     "count_pieces_containing": [
+      "gym_grass_leader_",
+      "gym_grass_elite_",
+      "gym_grass_grunt_"
+     ],
+     "registered": true,
+     "samples": [
+      {
+       "chunk": [
+        300,
+        300
+       ],
+       "matched": 6,
+       "pieces": 217,
+       "valid": true
+      },
+      {
+       "chunk": [
+        340,
+        340
+       ],
+       "matched": 6,
+       "pieces": 220,
+       "valid": true
+      },
+      {
+       "chunk": [
+        380,
+        380
+       ],
+       "matched": 6,
+       "pieces": 121,
+       "valid": true
+      }
+     ]
+    },
+    "pass": true,
+    "structure": "pixelmon:gyms/grass"
+   }
+  ],
+  "cooking": [
+   {
+    "expect": [
+     "pixelmon:silver_ingot",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "recipe": "pixelmon:furnace/silver_ore",
+     "result": "pixelmon:silver_ingot"
+    },
+    "name": "00 smelting pixelmon:silver_ore",
+    "pass": true
+   },
+   {
+    "expect": [
+     "pixelmon:silver_ingot",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "recipe": "pixelmon:blast_furnace/silver_ore",
+     "result": "pixelmon:silver_ingot"
+    },
+    "name": "01 blasting pixelmon:silver_ore",
+    "pass": true
+   },
+   {
+    "expect": [
+     "oreganized:silver_ingot",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "recipe": "oreganized:smelt_silver_ore",
+     "result": "oreganized:silver_ingot"
+    },
+    "name": "02 smelting oreganized:silver_ore",
+    "pass": true
+   },
+   {
+    "expect": [
+     "oreganized:silver_ingot",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "recipe": "oreganized:smelt_deepslate_silver_ore",
+     "result": "oreganized:silver_ingot"
+    },
+    "name": "03 smelting oreganized:deepslate_silver_ore",
+    "pass": true
+   },
+   {
+    "expect": [
+     "oreganized:silver_ingot",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "recipe": "pixelmon:blast_furnace/silver_ore",
+     "result": "pixelmon:silver_ingot"
+    },
+    "name": "04 blasting oreganized:silver_ore",
+    "pass": false
+   },
+   {
+    "expect": [
+     "oreganized:silver_ingot",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "recipe": "pixelmon:blast_furnace/silver_ore",
+     "result": "pixelmon:silver_ingot"
+    },
+    "name": "05 blasting oreganized:deepslate_silver_ore",
+    "pass": false
+   }
+  ],
+  "crafting": [
+   {
+    "expect": [
+     "pixelmon:iron_base",
+     5
+    ],
+    "found": {
+     "count": 1,
+     "missing_items": [],
+     "recipe": "whimsy_deco:cast_iron_trapdoor",
+     "result": "whimsy_deco:cast_iron_trapdoor"
+    },
+    "name": "00 iron_base / cast_iron_trapdoor",
+    "pass": false
+   },
+   {
+    "expect": [
+     "whimsy_deco:cast_iron_trapdoor",
+     1
+    ],
+    "found": {
+     "count": 0,
+     "missing_items": [],
+     "recipe": null,
+     "result": null
+    },
+    "name": "01 iron_base / cast_iron_trapdoor",
+    "pass": false
+   },
+   {
+    "expect": [
+     "pixelmon:wooden_base",
+     5
+    ],
+    "found": {
+     "count": 5,
+     "missing_items": [],
+     "recipe": "pixelmon:pokeball/base/wooden_base",
+     "result": "pixelmon:wooden_base"
+    },
+    "name": "02 wooden_base / item_shelf",
+    "pass": true
+   },
+   {
+    "expect": [
+     "pixelmon:wooden_base",
+     5
+    ],
+    "found": {
+     "count": 5,
+     "missing_items": [],
+     "recipe": "pixelmon:pokeball/base/wooden_base",
+     "result": "pixelmon:wooden_base"
+    },
+    "name": "03 wooden_base / item_shelf",
+    "pass": true
+   },
+   {
+    "expect": [
+     "supplementaries:item_shelf",
+     2
+    ],
+    "found": {
+     "count": 0,
+     "missing_items": [],
+     "recipe": null,
+     "result": null
+    },
+    "name": "04 wooden_base / item_shelf",
+    "pass": false
+   },
+   {
+    "expect": [
+     "supplementaries:present",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "missing_items": [],
+     "recipe": "supplementaries:present",
+     "result": "supplementaries:present"
+    },
+    "name": "05 present / box",
+    "pass": true
+   },
+   {
+    "expect": [
+     "pixelmon:box",
+     1
+    ],
+    "found": {
+     "count": 0,
+     "missing_items": [],
+     "recipe": null,
+     "result": null
+    },
+    "name": "06 present / box",
+    "pass": false
+   },
+   {
+    "expect": [
+     "pixelmon:bridge_block",
+     3
+    ],
+    "found": {
+     "count": 3,
+     "missing_items": [],
+     "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+     "result": "pixelmon:bridge_block"
+    },
+    "name": "07 bridge_block / botania slabs",
+    "pass": true
+   },
+   {
+    "expect": [
+     "botania:livingwood_slab",
+     6
+    ],
+    "found": {
+     "count": 6,
+     "missing_items": [],
+     "recipe": "botania:livingwood_slab",
+     "result": "botania:livingwood_slab"
+    },
+    "name": "08 bridge_block / botania slabs",
+    "pass": true
+   },
+   {
+    "expect": [
+     "botania:dreamwood_slab",
+     6
+    ],
+    "found": {
+     "count": 3,
+     "missing_items": [],
+     "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+     "result": "pixelmon:bridge_block"
+    },
+    "name": "09 bridge_block / botania slabs",
+    "pass": false
+   },
+   {
+    "expect": [
+     "botania:stripped_livingwood_slab",
+     6
+    ],
+    "found": {
+     "count": 6,
+     "missing_items": [],
+     "recipe": "botania:stripped_livingwood_slab",
+     "result": "botania:stripped_livingwood_slab"
+    },
+    "name": "10 bridge_block / botania slabs",
+    "pass": true
+   },
+   {
+    "expect": [
+     "botania:stripped_dreamwood_slab",
+     6
+    ],
+    "found": {
+     "count": 3,
+     "missing_items": [],
+     "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+     "result": "pixelmon:bridge_block"
+    },
+    "name": "11 bridge_block / botania slabs",
+    "pass": false
+   },
+   {
+    "expect": [
+     null,
+     0
+    ],
+    "found": {
+     "count": 3,
+     "missing_items": [],
+     "recipe": "pixelmon:decor/building_infrastructure/bridge_block",
+     "result": "pixelmon:bridge_block"
+    },
+    "name": "12 bridge_block / botania slabs",
+    "pass": false
+   },
+   {
+    "expect": [
+     "pixelmon:end_table",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "missing_items": [],
+     "recipe": "pixelmon:decor/household_items/end_table",
+     "result": "pixelmon:end_table"
+    },
+    "name": "13 end_table / crafty_crate",
+    "pass": true
+   },
+   {
+    "expect": [
+     "botania:crafty_crate",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "missing_items": [],
+     "recipe": "pixelmon:decor/household_items/end_table",
+     "result": "pixelmon:end_table"
+    },
+    "name": "14 end_table / crafty_crate",
+    "pass": false
+   },
+   {
+    "expect": [
+     "pixelmon:silver_block",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "missing_items": [],
+     "recipe": "pixelmon:equipment/silver/silver_block",
+     "result": "pixelmon:silver_block"
+    },
+    "name": "15 silver_block",
+    "pass": true
+   },
+   {
+    "expect": [
+     "oreganized:silver_block",
+     1
+    ],
+    "found": {
+     "count": 1,
+     "missing_items": [],
+     "recipe": "oreganized:silver_block",
+     "result": "oreganized:silver_block"
+    },
+    "name": "16 silver_block",
+    "pass": true
+   },
+   {
+    "expect": [
+     null,
+     0
+    ],
+    "found": {
+     "count": 1,
+     "missing_items": [],
+     "recipe": "pixelmon:equipment/silver/silver_block",
+     "result": "pixelmon:silver_block"
+    },
+    "name": "17 silver_block",
+    "pass": false
+   },
+   {
+    "expect": [
+     "create:redstone_contact",
+     2
+    ],
+    "found": {
+     "count": 2,
+     "missing_items": [],
+     "recipe": "create:crafting/logistics/redstone_contact",
+     "result": "create:redstone_contact"
+    },
+    "name": "18 redstone_contact",
+    "pass": true
+   }
+  ],
+  "failed": [
+   "assemblies:pixelmon:gyms/fairy",
+   "cooking:04 blasting oreganized:silver_ore",
+   "cooking:05 blasting oreganized:deepslate_silver_ore",
+   "crafting:00 iron_base / cast_iron_trapdoor",
+   "crafting:01 iron_base / cast_iron_trapdoor",
+   "crafting:04 wooden_base / item_shelf",
+   "crafting:06 present / box",
+   "crafting:09 bridge_block / botania slabs",
+   "crafting:11 bridge_block / botania slabs",
+   "crafting:12 bridge_block / botania slabs",
+   "crafting:14 end_table / crafty_crate",
+   "crafting:17 silver_block",
+   "loot:minecraft:chests/abandoned_mineshaft",
+   "loot:minecraft:chests/bastion_bridge",
+   "loot:minecraft:chests/bastion_hoglin_stable",
+   "loot:minecraft:chests/bastion_other",
+   "loot:minecraft:chests/bastion_treasure",
+   "loot:minecraft:chests/desert_pyramid",
+   "loot:minecraft:chests/jungle_temple",
+   "loot:minecraft:chests/nether_bridge",
+   "loot:minecraft:chests/pillager_outpost",
+   "loot:minecraft:chests/shipwreck_treasure",
+   "loot:minecraft:chests/village/village_weaponsmith",
+   "loot:minecraft:chests/woodland_mansion",
+   "structure_sets:pixelmon:dens",
+   "tags:c:dusts/redstone",
+   "tags:c:dyes/light_blue",
+   "tags:c:dyes/red",
+   "tags:c:leathers",
+   "tags:c:plates/gold",
+   "tags:c:plates/iron",
+   "tags:c:stones",
+   "tags:forge:strings",
+   "tags:moblassos:diamond_lasso_blacklist",
+   "tags:sable:silent_assembly_removal",
+   "tags:simulated:non_movable",
+   "assembly_inventory_sweep",
+   "port_repairs:redstone_contact",
+   "port_repairs:physics_beside_pixelmon_machine"
+  ],
+  "loot": [
+   {
+    "expected_item_stacks": {
+     "minecraft:netherite_upgrade_smithing_template": 300
+    },
+    "missing": [
+     "namespace pixelmon"
+    ],
+    "namespaces": [
+     "etcetera",
+     "gamediscs",
+     "minecraft",
+     "nethervinery",
+     "numismatics",
+     "paraglider",
+     "quark",
+     "simplehats",
+     "splendid_slimes"
+    ],
+    "pass": false,
+    "rolls": 300,
+    "stacks": 3434,
+    "table": "minecraft:chests/bastion_treasure"
+   },
+   {
+    "expected_item_stacks": {},
+    "missing": [
+     "namespace pixelmon"
+    ],
+    "namespaces": [
+     "etcetera",
+     "gamediscs",
+     "minecraft",
+     "nethervinery",
+     "numismatics",
+     "paraglider"
+    ],
+    "pass": false,
+    "rolls": 300,
+    "stacks": 3108,
+    "table": "minecraft:chests/bastion_other"
+   },
+   {
+    "expected_item_stacks": {},
+    "missing": [
+     "namespace pixelmon"
+    ],
+    "namespaces": [
+     "gamediscs",
+     "minecraft",
+     "nethervinery",
+     "numismatics",
+     "paraglider"
+    ],
+    "pass": false,
+    "rolls": 300,
+    "stacks": 2146,
+    "table": "minecraft:chests/bastion_hoglin_stable"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:rib_armor_trim_smithing_template": 0
+    },
+    "missing": [
+     "minecraft:rib_armor_trim_smithing_template"
+    ],
+    "namespaces": [
+     "minecraft",
+     "numismatics",
+     "paraglider",
+     "pixelmon",
+     "quark",
+     "supplementaries"
+    ],
+    "pass": false,
+    "rolls": 600,
+    "stacks": 3435,
+    "table": "minecraft:chests/nether_bridge"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:vex_armor_trim_smithing_template": 0
+    },
+    "missing": [
+     "minecraft:vex_armor_trim_smithing_template"
+    ],
+    "namespaces": [
+     "brewery",
+     "gamediscs",
+     "minecraft",
+     "numismatics",
+     "oreganized",
+     "pixelmon",
+     "quark",
+     "relics",
+     "simplehats",
+     "sophisticatedbackpacks",
+     "supplementaries"
+    ],
+    "pass": false,
+    "rolls": 300,
+    "stacks": 2978,
+    "table": "minecraft:chests/woodland_mansion"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:dune_armor_trim_smithing_template": 0
+    },
+    "missing": [
+     "minecraft:dune_armor_trim_smithing_template"
+    ],
+    "namespaces": [
+     "buzzier_bees",
+     "gamediscs",
+     "minecraft",
+     "numismatics",
+     "paraglider",
+     "pixelmon",
+     "quark",
+     "simplehats"
+    ],
+    "pass": false,
+    "rolls": 600,
+    "stacks": 3754,
+    "table": "minecraft:chests/desert_pyramid"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:wild_armor_trim_smithing_template": 0
+    },
+    "missing": [
+     "minecraft:wild_armor_trim_smithing_template"
+    ],
+    "namespaces": [
+     "buzzier_bees",
+     "gamediscs",
+     "minecraft",
+     "numismatics",
+     "paraglider",
+     "pixelmon",
+     "quark",
+     "simplehats",
+     "supplementaries"
+    ],
+    "pass": false,
+    "rolls": 600,
+    "stacks": 4287,
+    "table": "minecraft:chests/jungle_temple"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:goat_horn": 0,
+     "minecraft:sentry_armor_trim_smithing_template": 0
+    },
+    "missing": [
+     "minecraft:goat_horn",
+     "minecraft:sentry_armor_trim_smithing_template"
+    ],
+    "namespaces": [
+     "etcetera",
+     "farm_and_charm",
+     "minecraft",
+     "numismatics",
+     "oreganized",
+     "pixelmon",
+     "relics",
+     "simplehats",
+     "supplementaries"
+    ],
+    "pass": false,
+    "rolls": 600,
+    "stacks": 5578,
+    "table": "minecraft:chests/pillager_outpost"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:coast_armor_trim_smithing_template": 0
+    },
+    "missing": [
+     "minecraft:coast_armor_trim_smithing_template"
+    ],
+    "namespaces": [
+     "minecraft",
+     "numismatics",
+     "pixelmon",
+     "simplehats",
+     "supplementaries"
+    ],
+    "pass": false,
+    "rolls": 600,
+    "stacks": 4765,
+    "table": "minecraft:chests/shipwreck_treasure"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:netherite_upgrade_smithing_template": 0,
+     "minecraft:snout_armor_trim_smithing_template": 0
+    },
+    "missing": [
+     "minecraft:netherite_upgrade_smithing_template",
+     "minecraft:snout_armor_trim_smithing_template"
+    ],
+    "namespaces": [
+     "gamediscs",
+     "minecraft",
+     "numismatics",
+     "paraglider",
+     "pixelmon"
+    ],
+    "pass": false,
+    "rolls": 600,
+    "stacks": 5501,
+    "table": "minecraft:chests/bastion_bridge"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:rail": 0
+    },
+    "missing": [
+     "minecraft:rail"
+    ],
+    "namespaces": [
+     "cluttered",
+     "exposure",
+     "gamediscs",
+     "minecraft",
+     "numismatics",
+     "pixelmon",
+     "relics",
+     "simplehats",
+     "splendid_slimes",
+     "supplementaries"
+    ],
+    "pass": false,
+    "rolls": 300,
+    "stacks": 4029,
+    "table": "minecraft:chests/abandoned_mineshaft"
+   },
+   {
+    "expected_item_stacks": {
+     "minecraft:bread": 0
+    },
+    "missing": [
+     "minecraft:bread"
+    ],
+    "namespaces": [
+     "minecraft",
+     "pixelmon"
+    ],
+    "pass": false,
+    "rolls": 300,
+    "stacks": 1666,
+    "table": "minecraft:chests/village/village_weaponsmith"
+   }
+  ],
+  "structure_sets": [
+   {
+    "id": "pixelmon:dens",
+    "members": [
+     "pixelmon:den/beach",
+     "pixelmon:den/badlands",
+     "pixelmon:den/desert",
+     "pixelmon:den/end",
+     "pixelmon:den/forest",
+     "pixelmon:den/ice",
+     "pixelmon:den/jungle",
+     "pixelmon:den/snow",
+     "pixelmon:den/swamp",
+     "pixelmon:den/mountain",
+     "pixelmon:den/mushroom",
+     "pixelmon:den/nether",
+     "pixelmon:den/water"
+    ],
+    "missing": [
+     "pixelmon:den/plains",
+     "pixelmon:den/taiga"
+    ],
+    "pass": false
+   }
+  ],
+  "tags": [
+   {
+    "missing": [
+     "minecraft:redstone"
+    ],
+    "pass": false,
+    "registry": "item",
+    "tag": "c:dusts/redstone",
+    "values": []
+   },
+   {
+    "missing": [
+     "minecraft:stone"
+    ],
+    "pass": false,
+    "registry": "item",
+    "tag": "c:stones",
+    "values": []
+   },
+   {
+    "missing": [
+     "minecraft:leather"
+    ],
+    "pass": false,
+    "registry": "item",
+    "tag": "c:leathers",
+    "values": []
+   },
+   {
+    "missing": [
+     "create:golden_sheet"
+    ],
+    "pass": false,
+    "registry": "item",
+    "tag": "c:plates/gold",
+    "values": []
+   },
+   {
+    "missing": [
+     "create:iron_sheet"
+    ],
+    "pass": false,
+    "registry": "item",
+    "tag": "c:plates/iron",
+    "values": []
+   },
+   {
+    "missing": [
+     "minecraft:red_dye"
+    ],
+    "pass": false,
+    "registry": "item",
+    "tag": "c:dyes/red",
+    "values": []
+   },
+   {
+    "missing": [
+     "minecraft:light_blue_dye"
+    ],
+    "pass": false,
+    "registry": "item",
+    "tag": "c:dyes/light_blue",
+    "values": []
+   },
+   {
+    "missing": [
+     "minecraft:string"
+    ],
+    "pass": false,
+    "registry": "item",
+    "tag": "forge:strings",
+    "values": []
+   },
+   {
+    "missing": [
+     "pixelmon:bike",
+     "pixelmon:pixelmon",
+     "pixelmon:statue"
+    ],
+    "pass": false,
+    "registry": "entity_type",
+    "tag": "moblassos:diamond_lasso_blacklist",
+    "values": []
+   },
+   {
+    "missing": [],
+    "pass": true,
+    "registry": "block",
+    "tag": "create:non_movable",
+    "values": [
+     "everycomp:fs/atmospheric/aspen_1",
+     "everycomp:fs/atmospheric/aspen_2",
+     "everycomp:fs/atmospheric/aspen_4",
+     "everycomp:fs/atmospheric/grimwood_1",
+     "everycomp:fs/atmospheric/grimwood_2",
+     "everycomp:fs/atmospheric/grimwood_4",
+     "everycomp:fs/atmospheric/kousa_1",
+     "everycomp:fs/atmospheric/kousa_2",
+     "everycomp:fs/atmospheric/kousa_4",
+     "everycomp:fs/atmospheric/laurel_1",
+     "everycomp:fs/atmospheric/laurel_2",
+     "everycomp:fs/atmospheric/laurel_4",
+     "everycomp:fs/atmospheric/morado_1",
+     "everycomp:fs/atmospheric/morado_2",
+     "everycomp:fs/atmospheric/morado_4",
+     "everycomp:fs/atmospheric/rosewood_1",
+     "everycomp:fs/atmospheric/rosewood_2",
+     "everycomp:fs/atmospheric/rosewood_4",
+     "everycomp:fs/atmospheric/yucca_1",
+     "everycomp:fs/atmospheric/yucca_2",
+     "everycomp:fs/atmospheric/yucca_4",
+     "everycomp:fs/autumnity/maple_1",
+     "everycomp:fs/autumnity/maple_2",
+     "everycomp:fs/autumnity/maple_4",
+     "everycomp:fs/beachparty/palm_1",
+     "everycomp:fs/beachparty/palm_2",
+     "everycomp:fs/beachparty/palm_4",
+     "everycomp:fs/betterarcheology/rotten_1",
+     "everycomp:fs/betterarcheology/rotten_2",
+     "everycomp:fs/betterarcheology/rotten_4",
+     "everycomp:fs/botania/dreamwood_1",
+     "everycomp:fs/botania/dreamwood_2",
+     "everycomp:fs/botania/dreamwood_4",
+     "everycomp:fs/botania/livingwood_1",
+     "everycomp:fs/botania/livingwood_2",
+     "everycomp:fs/botania/livingwood_4",
+     "everycomp:fs/cluttered/blue_mushroom_1",
+     "everycomp:fs/cluttered/blue_mushroom_2",
+     "everycomp:fs/cluttered/blue_mushroom_4",
+     "everycomp:fs/cluttered/crabapple_1",
+     "everycomp:fs/cluttered/crabapple_2",
+     "everycomp:fs/cluttered/crabapple_4",
+     "everycomp:fs/cluttered/flowering_crabapple_1",
+     "everycomp:fs/cluttered/flowering_crabapple_2",
+     "everycomp:fs/cluttered/flowering_crabapple_4",
+     "everycomp:fs/cluttered/flowering_poplar_1",
+     "everycomp:fs/cluttered/flowering_poplar_2",
+     "everycomp:fs/cluttered/flowering_poplar_4",
+     "everycomp:fs/cluttered/flowering_willow_1",
+     "everycomp:fs/cluttered/flowering_willow_2",
+     "everycomp:fs/cluttered/flowering_willow_4",
+     "everycomp:fs/cluttered/fluorescent_maple_1",
+     "everycomp:fs/cluttered/fluorescent_maple_2",
+     "everycomp:fs/cluttered/fluorescent_maple_4",
+     "everycomp:fs/cluttered/poplar_1",
+     "everycomp:fs/cluttered/poplar_2",
+     "everycomp:fs/cluttered/poplar_4",
+     "everycomp:fs/cluttered/red_mushroom_1",
+     "everycomp:fs/cluttered/red_mushroom_2",
+     "everycomp:fs/cluttered/red_mushroom_4",
+     "everycomp:fs/cluttered/sycamore_1",
+     "everycomp:fs/cluttered/sycamore_2",
+     "everycomp:fs/cluttered/sycamore_4",
+     "everycomp:fs/cluttered/willow_1",
+     "everycomp:fs/cluttered/willow_2",
+     "everycomp:fs/cluttered/willow_4",
+     "everycomp:fs/meadow/pine_1",
+     "everycomp:fs/meadow/pine_2",
+     "everycomp:fs/meadow/pine_4",
+     "everycomp:fs/minecraft/pale_oak_1",
+     "everycomp:fs/minecraft/pale_oak_2",
+     "everycomp:fs/minecraft/pale_oak_4",
+     "everycomp:fs/quark/ancient_1",
+     "everycomp:fs/quark/ancient_2",
+     "everycomp:fs/quark/ancient_4",
+     "everycomp:fs/quark/azalea_1",
+     "everycomp:fs/quark/azalea_2",
+     "everycomp:fs/quark/azalea_4",
+     "everycomp:fs/quark/blossom_1",
+     "everycomp:fs/quark/blossom_2",
+     "everycomp:fs/quark/blossom_4",
+     "everycomp:fs/vinery/dark_cherry_1",
+     "everycomp:fs/vinery/dark_cherry_2",
+     "everycomp:fs/vinery/dark_cherry_4",
+     "everycomp:fs/windswept/chestnut_1",
+     "everycomp:fs/windswept/chestnut_2",
+     "everycomp:fs/windswept/chestnut_4",
+     "everycomp:fs/windswept/holly_1",
+     "everycomp:fs/windswept/holly_2",
+     "everycomp:fs/windswept/holly_4",
+     "everycomp:fs/windswept/pine_1",
+     "everycomp:fs/windswept/pine_2",
+     "everycomp:fs/windswept/pine_4",
+     "functionalstorage:acacia_1",
+     "functionalstorage:acacia_2",
+     "functionalstorage:acacia_4",
+     "functionalstorage:armory_cabinet",
+     "functionalstorage:birch_1",
+     "functionalstorage:birch_2",
+     "functionalstorage:birch_4",
+     "functionalstorage:cherry_1",
+     "functionalstorage:cherry_2",
+     "functionalstorage:cherry_4",
+     "functionalstorage:compacting_drawer",
+     "functionalstorage:compacting_framed_drawer",
+     "functionalstorage:controller_extension",
+     "functionalstorage:crimson_1",
+     "functionalstorage:crimson_2",
+     "functionalstorage:crimson_4",
+     "functionalstorage:dark_oak_1",
+     "functionalstorage:dark_oak_2",
+     "functionalstorage:dark_oak_4",
+     "functionalstorage:ender_drawer",
+     "functionalstorage:fluid_1",
+     "functionalstorage:fluid_2",
+     "functionalstorage:fluid_4",
+     "functionalstorage:framed_1",
+     "functionalstorage:framed_2",
+     "functionalstorage:framed_4",
+     "functionalstorage:framed_controller_extension",
+     "functionalstorage:framed_simple_compacting_drawer",
+     "functionalstorage:framed_storage_controller",
+     "functionalstorage:jungle_1",
+     "functionalstorage:jungle_2",
+     "functionalstorage:jungle_4",
+     "functionalstorage:mangrove_1",
+     "functionalstorage:mangrove_2",
+     "functionalstorage:mangrove_4",
+     "functionalstorage:oak_1",
+     "functionalstorage:oak_2",
+     "functionalstorage:oak_4",
+     "functionalstorage:simple_compacting_drawer",
+     "functionalstorage:spruce_1",
+     "functionalstorage:spruce_2",
+     "functionalstorage:spruce_4",
+     "functionalstorage:storage_controller",
+     "functionalstorage:warped_1",
+     "functionalstorage:warped_2",
+     "functionalstorage:warped_4",
+     "shippingbin:basic_shipping_bin",
+     "shippingbin:smart_shipping_bin",
+     "simulated:docking_connector",
+     "simulated:paired_docking_connector",
+     "simulated:rope_connector",
+     "simulated:rope_winch",
+     "simulated:spring",
+     "simulated:swivel_bearing",
+     "simulated:swivel_bearing_link_block",
+     "society:aging_cask",
+     "society:ancient_cask",
+     "society:artisan_hopper",
+     "society:auto_grabber",
+     "society:auto_tapper",
+     "society:auto_worm_farm",
+     "society:bait_maker",
+     "society:caterpillar_box",
+     "society:cavern_air",
+     "society:charging_rod",
+     "society:cheese_press",
+     "society:coin_leaderboard",
+     "society:crystalarium",
+     "society:dehydrator",
+     "society:deluxe_worm_farm",
+     "society:espresso_machine",
+     "society:feeding_trough",
+     "society:fish_pond",
+     "society:fish_pond_basket",
+     "society:fish_pond_hatchery",
+     "society:fish_pond_manager",
+     "society:fish_smoker",
+     "society:golden_clock",
+     "society:growth_obelisk",
+     "society:growth_obelisk_upper",
+     "society:iridium_clock",
+     "society:juice_inserter",
+     "society:loom",
+     "society:mana_clock",
+     "society:mana_fruit_crop",
+     "society:mana_milker",
+     "society:mana_sprinkler",
+     "society:mayonnaise_machine",
+     "society:mini_artisan_hopper",
+     "society:mushroom_log",
+     "society:oil_maker",
+     "society:pickling_can",
+     "society:preserves_jar",
+     "society:quality_washer",
+     "society:recycling_machine",
+     "society:ribbit_hut",
+     "society:ribbit_hut_block",
+     "society:roe_recycler",
+     "society:seed_maker",
+     "society:shipping_bin_monitor",
+     "society:skull_arid_sandstone",
+     "society:skull_blackstone",
+     "society:skull_end_stone",
+     "society:skull_permafrost",
+     "society:skull_sandstone",
+     "society:skull_stone",
+     "society:snow_melter",
+     "society:sparkstone_recycler",
+     "society:tapper",
+     "society:villager_home",
+     "society:wine_keg",
+     "society_trading:auto_trader",
+     "sophisticatedstorage:chest",
+     "sophisticatedstorage:copper_chest",
+     "sophisticatedstorage:diamond_chest",
+     "sophisticatedstorage:gold_chest",
+     "sophisticatedstorage:iron_chest",
+     "sophisticatedstorage:netherite_chest"
+    ]
+   },
+   {
+    "missing": [
+     "create:track_station",
+     "shippingbin:basic_shipping_bin",
+     "shippingbin:smart_shipping_bin",
+     "society:aging_cask",
+     "society:ancient_cask",
+     "society:artisan_hopper",
+     "society:auto_grabber",
+     "society:auto_tapper",
+     "society:auto_worm_farm",
+     "society:bait_maker",
+     "society:caterpillar_box",
+     "society:charging_rod",
+     "society:cheese_press",
+     "society:coin_leaderboard",
+     "society:crystalarium",
+     "society:dehydrator",
+     "society:deluxe_worm_farm",
+     "society:espresso_machine",
+     "society:feeding_trough",
+     "society:fish_pond",
+     "society:fish_pond_basket",
+     "society:fish_pond_hatchery",
+     "society:fish_pond_manager",
+     "society:fish_smoker",
+     "society:golden_clock",
+     "society:growth_obelisk",
+     "society:growth_obelisk_upper",
+     "society:iridium_clock",
+     "society:juice_inserter",
+     "society:loom",
+     "society:mana_clock",
+     "society:mana_fruit_crop",
+     "society:mana_milker",
+     "society:mana_sprinkler",
+     "society:mayonnaise_machine",
+     "society:mini_artisan_hopper",
+     "society:mushroom_log",
+     "society:oil_maker",
+     "society:pickling_can",
+     "society:preserves_jar",
+     "society:quality_washer",
+     "society:recycling_machine",
+     "society:ribbit_hut",
+     "society:ribbit_hut_block",
+     "society:roe_recycler",
+     "society:seed_maker",
+     "society:shipping_bin_monitor",
+     "society:snow_melter",
+     "society:sparkstone_recycler",
+     "society:tapper",
+     "society:villager_home",
+     "society:wine_keg",
+     "society_trading:auto_trader"
+    ],
+    "pass": false,
+    "registry": "block",
+    "tag": "simulated:non_movable",
+    "values": []
+   },
+   {
+    "missing": [
+     "bakery:breadbox",
+     "bakery:cake_display",
+     "bakery:cake_stand",
+     "bakery:cupcake_display",
+     "bakery:tray",
+     "bakery:wall_display",
+     "betterarcheology:archeology_table",
+     "betterarcheology:villager_fossil",
+     "brewery:beer_barley",
+     "brewery:beer_haley",
+     "brewery:beer_hops",
+     "brewery:beer_nettle",
+     "brewery:beer_oat",
+     "brewery:beer_wheat",
+     "brewery:whiskey_ak",
+     "brewery:whiskey_carrasconlabel",
+     "brewery:whiskey_cristelwalker",
+     "brewery:whiskey_highland_hearth",
+     "brewery:whiskey_jamesons_malt",
+     "brewery:whiskey_jojannik",
+     "brewery:whiskey_lilitusinglemalt",
+     "brewery:whiskey_maggoallan",
+     "brewery:whiskey_smokey_reverie",
+     "buildinggadgets2:template_manager",
+     "candlelight:acacia_shelf",
+     "candlelight:bamboo_shelf",
+     "candlelight:birch_shelf",
+     "candlelight:cherry_shelf",
+     "candlelight:crimson_shelf",
+     "candlelight:dark_oak_shelf",
+     "candlelight:jewelry_box",
+     "candlelight:jungle_shelf",
+     "candlelight:mangrove_shelf",
+     "candlelight:oak_shelf",
+     "candlelight:spruce_shelf",
+     "candlelight:table_set",
+     "candlelight:warped_shelf",
+     "crabbersdelight:crab_trap",
+     "create:andesite_table_cloth",
+     "create:basin",
+     "create:black_postbox",
+     "create:blue_postbox",
+     "create:brass_table_cloth",
+     "create:brown_postbox",
+     "create:chute",
+     "create:copper_table_cloth",
+     "create:cyan_postbox",
+     "create:depot",
+     "create:gray_postbox",
+     "create:green_postbox",
+     "create:item_drain",
+     "create:item_vault",
+     "create:light_blue_postbox",
+     "create:light_gray_postbox",
+     "create:lime_postbox",
+     "create:magenta_postbox",
+     "create:mechanical_saw",
+     "create:millstone",
+     "create:orange_postbox",
+     "create:package_frogport",
+     "create:pink_postbox",
+     "create:purple_postbox",
+     "create:red_postbox",
+     "create:schematic_table",
+     "create:schematicannon",
+     "create:stock_ticker",
+     "create:track_station",
+     "create:weighted_ejector",
+     "create:white_postbox",
+     "create:yellow_postbox",
+     "create_central_kitchen:blaze_stove",
+     "create_enchantment_industry:blaze_enchanter",
+     "create_enchantment_industry:disenchanter",
+     "create_mechanical_extruder:mechanical_extruder",
+     "fantasyfurniture:bone/skeleton/bookshelf",
+     "fantasyfurniture:bone/skeleton/chest",
+     "fantasyfurniture:bone/skeleton/counter",
+     "fantasyfurniture:bone/skeleton/desk_left",
+     "fantasyfurniture:bone/skeleton/desk_right",
+     "fantasyfurniture:bone/skeleton/drawer",
+     "fantasyfurniture:bone/skeleton/dresser",
+     "fantasyfurniture:bone/skeleton/lockbox",
+     "fantasyfurniture:bone/skeleton/oven",
+     "fantasyfurniture:bone/skeleton/wardrobe_bottom",
+     "fantasyfurniture:bone/wither/bookshelf",
+     "fantasyfurniture:bone/wither/chest",
+     "fantasyfurniture:bone/wither/counter",
+     "fantasyfurniture:bone/wither/desk_left",
+     "fantasyfurniture:bone/wither/desk_right",
+     "fantasyfurniture:bone/wither/drawer",
+     "fantasyfurniture:bone/wither/dresser",
+     "fantasyfurniture:bone/wither/lockbox",
+     "fantasyfurniture:bone/wither/oven",
+     "fantasyfurniture:bone/wither/wardrobe_bottom",
+     "fantasyfurniture:decorations/cookie_jar",
+     "fantasyfurniture:decorations/stocking",
+     "fantasyfurniture:dunmer/bookshelf",
+     "fantasyfurniture:dunmer/chest",
+     "fantasyfurniture:dunmer/counter",
+     "fantasyfurniture:dunmer/desk_left",
+     "fantasyfurniture:dunmer/desk_right",
+     "fantasyfurniture:dunmer/drawer",
+     "fantasyfurniture:dunmer/dresser",
+     "fantasyfurniture:dunmer/lockbox",
+     "fantasyfurniture:dunmer/oven",
+     "fantasyfurniture:dunmer/wardrobe_bottom",
+     "fantasyfurniture:necrolord/bookshelf",
+     "fantasyfurniture:necrolord/chest",
+     "fantasyfurniture:necrolord/counter",
+     "fantasyfurniture:necrolord/desk_left",
+     "fantasyfurniture:necrolord/desk_right",
+     "fantasyfurniture:necrolord/drawer",
+     "fantasyfurniture:necrolord/dresser",
+     "fantasyfurniture:necrolord/lockbox",
+     "fantasyfurniture:necrolord/oven",
+     "fantasyfurniture:necrolord/wardrobe_bottom",
+     "fantasyfurniture:nordic/bookshelf",
+     "fantasyfurniture:nordic/chest",
+     "fantasyfurniture:nordic/counter",
+     "fantasyfurniture:nordic/desk_left",
+     "fantasyfurniture:nordic/desk_right",
+     "fantasyfurniture:nordic/drawer",
+     "fantasyfurniture:nordic/dresser",
+     "fantasyfurniture:nordic/lockbox",
+     "fantasyfurniture:nordic/oven",
+     "fantasyfurniture:nordic/wardrobe_bottom",
+     "fantasyfurniture:royal/bookshelf",
+     "fantasyfurniture:royal/chest",
+     "fantasyfurniture:royal/counter",
+     "fantasyfurniture:royal/desk_left",
+     "fantasyfurniture:royal/desk_right",
+     "fantasyfurniture:royal/drawer",
+     "fantasyfurniture:royal/dresser",
+     "fantasyfurniture:royal/lockbox",
+     "fantasyfurniture:royal/oven",
+     "fantasyfurniture:royal/wardrobe_bottom",
+     "fantasyfurniture:venthyr/bookshelf",
+     "fantasyfurniture:venthyr/chest",
+     "fantasyfurniture:venthyr/counter",
+     "fantasyfurniture:venthyr/desk_left",
+     "fantasyfurniture:venthyr/desk_right",
+     "fantasyfurniture:venthyr/drawer",
+     "fantasyfurniture:venthyr/dresser",
+     "fantasyfurniture:venthyr/lockbox",
+     "fantasyfurniture:venthyr/oven",
+     "fantasyfurniture:venthyr/wardrobe_bottom",
+     "farm_and_charm:tool_rack",
+     "farm_and_charm:window_sill",
+     "farmingforblockheads:chicken_nest",
+     "farmingforblockheads:feeding_trough",
+     "functionalstorage:controller_extension",
+     "functionalstorage:framed_controller_extension",
+     "functionalstorage:framed_storage_controller",
+     "functionalstorage:storage_controller",
+     "meadow:cheese_rack",
+     "meadow:wheelbarrow",
+     "meadow:wooden_flower_box",
+     "meadow:wooden_flower_pot_big",
+     "meadow:wooden_flower_pot_small",
+     "nethervinery:blazewine_pinot",
+     "nethervinery:crimson_wine_rack_big",
+     "nethervinery:crimson_wine_rack_mid",
+     "nethervinery:crimson_wine_rack_small",
+     "nethervinery:ghastly_grenache",
+     "nethervinery:improved_lava_fizz",
+     "nethervinery:improved_nether_fizz",
+     "nethervinery:lava_fizz",
+     "nethervinery:nether_fizz",
+     "nethervinery:netherite_nectar",
+     "nethervinery:warped_wine_rack_big",
+     "nethervinery:warped_wine_rack_mid",
+     "nethervinery:warped_wine_rack_small",
+     "pixelmon:black_floor_gym_sign",
+     "pixelmon:black_hanging_gym_sign",
+     "pixelmon:black_wall_gym_sign",
+     "pixelmon:blue_floor_gym_sign",
+     "pixelmon:blue_hanging_gym_sign",
+     "pixelmon:blue_wall_gym_sign",
+     "pixelmon:brown_floor_gym_sign",
+     "pixelmon:brown_hanging_gym_sign",
+     "pixelmon:brown_wall_gym_sign",
+     "pixelmon:cloning_machine",
+     "pixelmon:cyan_floor_gym_sign",
+     "pixelmon:cyan_hanging_gym_sign",
+     "pixelmon:cyan_wall_gym_sign",
+     "pixelmon:fossil_display",
+     "pixelmon:gray_floor_gym_sign",
+     "pixelmon:gray_hanging_gym_sign",
+     "pixelmon:gray_wall_gym_sign",
+     "pixelmon:green_floor_gym_sign",
+     "pixelmon:green_hanging_gym_sign",
+     "pixelmon:green_wall_gym_sign",
+     "pixelmon:infuser",
+     "pixelmon:light_blue_floor_gym_sign",
+     "pixelmon:light_blue_hanging_gym_sign",
+     "pixelmon:light_blue_wall_gym_sign",
+     "pixelmon:light_gray_floor_gym_sign",
+     "pixelmon:light_gray_hanging_gym_sign",
+     "pixelmon:light_gray_wall_gym_sign",
+     "pixelmon:lime_floor_gym_sign",
+     "pixelmon:lime_hanging_gym_sign",
+     "pixelmon:lime_wall_gym_sign",
+     "pixelmon:magenta_floor_gym_sign",
+     "pixelmon:magenta_hanging_gym_sign",
+     "pixelmon:magenta_wall_gym_sign",
+     "pixelmon:orange_floor_gym_sign",
+     "pixelmon:orange_hanging_gym_sign",
+     "pixelmon:orange_wall_gym_sign",
+     "pixelmon:pink_floor_gym_sign",
+     "pixelmon:pink_hanging_gym_sign",
+     "pixelmon:pink_wall_gym_sign",
+     "pixelmon:purple_floor_gym_sign",
+     "pixelmon:purple_hanging_gym_sign",
+     "pixelmon:purple_wall_gym_sign",
+     "pixelmon:red_floor_gym_sign",
+     "pixelmon:red_hanging_gym_sign",
+     "pixelmon:red_wall_gym_sign",
+     "pixelmon:white_floor_gym_sign",
+     "pixelmon:white_hanging_gym_sign",
+     "pixelmon:white_wall_gym_sign",
+     "pixelmon:yellow_floor_gym_sign",
+     "pixelmon:yellow_hanging_gym_sign",
+     "pixelmon:yellow_wall_gym_sign",
+     "plonk:placed_items",
+     "quark:encased_pipe",
+     "quark:pipe",
+     "sewingkit:storing_sewing_station",
+     "shippingbin:basic_shipping_bin",
+     "shippingbin:smart_shipping_bin",
+     "society:artisan_hopper",
+     "society:auto_grabber",
+     "society:auto_worm_farm",
+     "society:caterpillar_box",
+     "society:feeding_trough",
+     "society:fish_pond_basket",
+     "society:fish_pond_hatchery",
+     "society:fish_pond_manager",
+     "society:growth_obelisk",
+     "society:iridium_clock",
+     "society:mana_milker",
+     "society:mini_artisan_hopper",
+     "society:pickling_can",
+     "society:quality_washer",
+     "society:ribbit_hut",
+     "society:roe_recycler",
+     "society_trading:auto_trader",
+     "splendid_slimes:plort_press",
+     "trials:crafter",
+     "vinery:acacia_wine_rack_big",
+     "vinery:acacia_wine_rack_mid",
+     "vinery:acacia_wine_rack_small",
+     "vinery:aegis_wine",
+     "vinery:apple_cider",
+     "vinery:apple_wine",
+     "vinery:bamboo_wine_rack_big",
+     "vinery:bamboo_wine_rack_mid",
+     "vinery:bamboo_wine_rack_small",
+     "vinery:birch_wine_rack_big",
+     "vinery:birch_wine_rack_mid",
+     "vinery:birch_wine_rack_small",
+     "vinery:bolvar_wine",
+     "vinery:bottle_mojang_noir",
+     "vinery:chenet_wine",
+     "vinery:cherry_wine",
+     "vinery:cherry_wine_rack_big",
+     "vinery:cherry_wine_rack_mid",
+     "vinery:cherry_wine_rack_small",
+     "vinery:chorus_wine",
+     "vinery:clark_wine",
+     "vinery:creepers_crush",
+     "vinery:cristel_wine",
+     "vinery:dark_cherry_shelf",
+     "vinery:dark_cherry_wine_rack_big",
+     "vinery:dark_cherry_wine_rack_mid",
+     "vinery:dark_cherry_wine_rack_small",
+     "vinery:dark_oak_wine_rack_big",
+     "vinery:dark_oak_wine_rack_mid",
+     "vinery:dark_oak_wine_rack_small",
+     "vinery:eiswein",
+     "vinery:flower_box",
+     "vinery:flower_pot_big",
+     "vinery:glowing_wine",
+     "vinery:jellie_wine",
+     "vinery:jo_special_mixture",
+     "vinery:jungle_wine_rack_big",
+     "vinery:jungle_wine_rack_mid",
+     "vinery:jungle_wine_rack_small",
+     "vinery:kelp_cider",
+     "vinery:lilitu_wine",
+     "vinery:magnetic_wine",
+     "vinery:mangrove_wine_rack_big",
+     "vinery:mangrove_wine_rack_mid",
+     "vinery:mangrove_wine_rack_small",
+     "vinery:mead",
+     "vinery:mellohi_wine",
+     "vinery:noir_wine",
+     "vinery:oak_wine_rack_big",
+     "vinery:oak_wine_rack_mid",
+     "vinery:oak_wine_rack_small",
+     "vinery:red_wine",
+     "vinery:solaris_wine",
+     "vinery:spruce_wine_rack_big",
+     "vinery:spruce_wine_rack_mid",
+     "vinery:spruce_wine_rack_small",
+     "vinery:stal_wine",
+     "vinery:strad_wine",
+     "vinery:villagers_fright",
+     "vinery:wine_box",
+     "vintagedelight:fermenting_jar",
+     "zetter:artist_table"
+    ],
+    "pass": false,
+    "registry": "block",
+    "tag": "sable:silent_assembly_removal",
+    "values": [
+     "createrailwaysnavigator:navigator_lectern"
+    ]
+   }
+  ]
+ },
+ "checks_sha256": "b62de906488fe659ee01e71e20e8237f84c8b8efb7dcf28eef4aa4088cca3ccb",
+ "failure": null,
+ "kubejs_server_script_errors": [],
+ "level_dat_spawn": {
+  "x": -576,
+  "y": 73,
+  "z": -320
+ },
+ "limitations": [
+  "Loopback disposable world, no player connected",
+  "Not the N100 production server or world",
+  "Villages are assembled at real placement chunks; only the listed ones were generated and read back",
+  "Assembly sweep: one block at a time through the port's console command; blocks without a reachable inventory are not exercised; on the earlier common JAR Pixelmon's multi-block machines cannot be placed (error)",
+  "Port repair checks run last; on the earlier common JAR the first one ends the server"
+ ],
+ "mods_list_sha256": "5eebc72dd95199348906486cc5199fc818b2a98b19a30e6321f1e93ee661aeec",
+ "physics_assembly": [
+  {
+   "assembled": true,
+   "block": "shippingbin:basic_shipping_bin",
+   "dropped_item": "Diamond has the following entity data: {id: \"minecraft:diamond\", Count: 6b}",
+   "hopper_emptied_into_block": true,
+   "item_entities_dropped_by_removed_block": 1,
+   "items_in_moved_block_entities": 6,
+   "moved_block_entities": [
+    {
+     "data": "{ForgeCaps:{},attachments:[{items:[{Count:6b,Slot:0b,id:\"minecraft:diamond\"}]}],cycle:34,data:{owner:\"-1\"},tick:339}",
+     "diamonds": 6,
+     "pos": [
+      20481032,
+      128,
+      20481032
+     ]
+    }
+   ],
+   "placed": true,
+   "steps": [
+    {
+     "command": "forceload add 8 8",
+     "console": [
+      "[puffish_skills] Mod configuration loaded successfully!",
+      "[puffish_skills] Data pack `society` loaded successfully!",
+      "[CSC]   _____  _____  _____ ",
+      "[CSC]  / ____|/ ____|/ ____|",
+      "[CSC] | |    | (___ | |        [CSC] Version: v0.21.18",
+      "[CSC] | |     \\___ \\| |        Minecraft Version: 1.20.1 forge"
+     ]
+    },
+    {
+     "command": "fill 5 199 5 11 199 11 minecraft:stone",
+     "console": [
+      "Successfully filled 49 block(s)"
+     ]
+    },
+    {
+     "command": "setblock 8 200 8 shippingbin:basic_shipping_bin",
+     "console": [
+      "Changed the block at 8, 200, 8"
+     ]
+    },
+    {
+     "command": "setblock 8 201 8 minecraft:hopper[facing=down]{Items:[{Slot:0b,id:\"minecraft:diamond\",Count:6b}]}",
+     "console": [
+      "Changed the block at 8, 201, 8"
+     ]
+    },
+    {
+     "command": "data get block 8 201 8 Items",
+     "console": [
+      "8, 201, 8 has the following block data: []"
+     ]
+    },
+    {
+     "command": "data get block 8 200 8",
+     "console": [
+      "8, 200, 8 has the following block data: {z: 8, tick: 160, x: 8, attachments: [{items: [{Slot: 0b, id: \"minecraft:diamond\", Count: 6b}]}], ForgeCaps: {}, id: \"shippingbin:basic_shipping_bin\", y: 200, cycle: 16, TrackedData: {}, data: {owner: \"-1\"}}"
+     ]
+    },
+    {
+     "command": "setblock 8 201 8 minecraft:air",
+     "console": [
+      "Changed the block at 8, 201, 8"
+     ]
+    },
+    {
+     "command": "kill @e[type=item,x=8,y=200,z=8,distance=..8]",
+     "console": [
+      "No entity was found"
+     ]
+    },
+    {
+     "command": "sable assemble area 8 200 8 8 200 8",
+     "console": [
+      "Assembled a region 1 blocks to a new sub-level"
+     ]
+    },
+    {
+     "command": "execute if entity @e[type=item,x=8,y=200,z=8,distance=..8]",
+     "console": [
+      "Test passed, count: 1"
+     ]
+    },
+    {
+     "command": "data get entity @e[type=item,x=8,y=200,z=8,distance=..8,limit=1,sort=nearest] Item",
+     "console": [
+      "Diamond has the following entity data: {id: \"minecraft:diamond\", Count: 6b}"
+     ]
+    },
+    {
+     "command": "kill @e[type=item,x=8,y=200,z=8,distance=..8]",
+     "console": [
+      "Killed Diamond"
+     ]
+    },
+    {
+     "command": "forceload remove 8 8",
+     "console": [
+      "Unmarked chunk [0, 0] in minecraft:overworld for force loading"
+     ]
+    }
+   ]
+  },
+  {
+   "assembled": true,
+   "block": "society:artisan_hopper",
+   "dropped_item": "Diamond has the following entity data: {id: \"minecraft:diamond\", Count: 6b}",
+   "hopper_emptied_into_block": true,
+   "item_entities_dropped_by_removed_block": 1,
+   "items_in_moved_block_entities": 6,
+   "moved_block_entities": [
+    {
+     "data": "{ForgeCaps:{},attachments:[{items:[{Count:6b,Slot:0b,id:\"minecraft:diamond\"}]}],cycle:1,data:{attributes:[],owner:\"-1\",stages:[]},tick:340}",
+     "diamonds": 6,
+     "pos": [
+      20483080,
+      128,
+      20481032
+     ]
+    }
+   ],
+   "placed": true,
+   "steps": [
+    {
+     "command": "forceload add 40 8",
+     "console": [
+      "Marked chunk [2, 0] in minecraft:overworld to be force loaded"
+     ]
+    },
+    {
+     "command": "fill 37 199 5 43 199 11 minecraft:stone",
+     "console": [
+      "Successfully filled 49 block(s)"
+     ]
+    },
+    {
+     "command": "setblock 40 200 8 society:artisan_hopper",
+     "console": [
+      "Changed the block at 40, 200, 8"
+     ]
+    },
+    {
+     "command": "setblock 40 201 8 minecraft:hopper[facing=down]{Items:[{Slot:0b,id:\"minecraft:diamond\",Count:6b}]}",
+     "console": [
+      "Changed the block at 40, 201, 8"
+     ]
+    },
+    {
+     "command": "data get block 40 201 8 Items",
+     "console": [
+      "40, 201, 8 has the following block data: []"
+     ]
+    },
+    {
+     "command": "data get block 40 200 8",
+     "console": [
+      "40, 200, 8 has the following block data: {z: 8, tick: 160, x: 40, attachments: [{items: [{Slot: 0b, id: \"minecraft:diamond\", Count: 6b}]}], ForgeCaps: {}, id: \"society:artisan_hopper\", y: 200, cycle: 1, TrackedData: {}, data: {stages: [], owner: \"-1\", attributes: []}}"
+     ]
+    },
+    {
+     "command": "setblock 40 201 8 minecraft:air",
+     "console": [
+      "Changed the block at 40, 201, 8"
+     ]
+    },
+    {
+     "command": "kill @e[type=item,x=40,y=200,z=8,distance=..8]",
+     "console": [
+      "No entity was found"
+     ]
+    },
+    {
+     "command": "sable assemble area 40 200 8 40 200 8",
+     "console": [
+      "Assembled a region 1 blocks to a new sub-level"
+     ]
+    },
+    {
+     "command": "execute if entity @e[type=item,x=40,y=200,z=8,distance=..8]",
+     "console": [
+      "Test passed, count: 1"
+     ]
+    },
+    {
+     "command": "data get entity @e[type=item,x=40,y=200,z=8,distance=..8,limit=1,sort=nearest] Item",
+     "console": [
+      "Diamond has the following entity data: {id: \"minecraft:diamond\", Count: 6b}"
+     ]
+    },
+    {
+     "command": "kill @e[type=item,x=40,y=200,z=8,distance=..8]",
+     "console": [
+      "Killed Diamond"
+     ]
+    },
+    {
+     "command": "forceload remove 40 8",
+     "console": [
+      "Unmarked chunk [2, 0] in minecraft:overworld for force loading"
+     ]
+    }
+   ]
+  }
+ ],
+ "pixelmon_elements_in_vanilla_village_pools": {
+  "minecraft:village/desert/houses": {
+   "pixelmon:village/desert/berry_farm_1": 4,
+   "pixelmon:village/desert/berry_farm_2": 4,
+   "pixelmon:village/desert/berry_farm_3": 4,
+   "pixelmon:village/desert/berry_farm_4": 9,
+   "pixelmon:village/desert/berry_farm_5": 9,
+   "pixelmon:village/desert/desert_tcg_shop_a": 10,
+   "pixelmon:village/desert/desert_tcg_shop_b": 10
+  },
+  "minecraft:village/desert/streets": {
+   "pixelmon:village/desert/desert_battle_arena_a": 3,
+   "pixelmon:village/desert/desert_battle_arena_b": 3
+  },
+  "minecraft:village/desert/terminators": {
+   "pixelmon:village/desert/desert_daycare": 1
+  },
+  "minecraft:village/desert/zombie/houses": {},
+  "minecraft:village/desert/zombie/streets": {},
+  "minecraft:village/desert/zombie/terminators": {},
+  "minecraft:village/plains/houses": {},
+  "minecraft:village/plains/streets": {
+   "pixelmon:village/plains/plains_battle_arena_a": 3,
+   "pixelmon:village/plains/plains_battle_arena_b": 3
+  },
+  "minecraft:village/plains/terminators": {
+   "pixelmon:village/plains/plains_daycare": 2
+  },
+  "minecraft:village/plains/zombie/houses": {},
+  "minecraft:village/plains/zombie/streets": {},
+  "minecraft:village/savanna/houses": {},
+  "minecraft:village/savanna/streets": {},
+  "minecraft:village/savanna/terminators": {
+   "pixelmon:village/savanna/savanna_daycare": 2
+  },
+  "minecraft:village/savanna/zombie/houses": {},
+  "minecraft:village/savanna/zombie/streets": {},
+  "minecraft:village/savanna/zombie/terminators": {},
+  "minecraft:village/snowy/houses": {},
+  "minecraft:village/snowy/streets": {
+   "pixelmon:village/snowy/snowy_battle_arena_a": 3,
+   "pixelmon:village/snowy/snowy_battle_arena_b": 3
+  },
+  "minecraft:village/snowy/terminators": {
+   "pixelmon:village/snowy/snowy_daycare": 2
+  },
+  "minecraft:village/snowy/zombie/houses": {},
+  "minecraft:village/snowy/zombie/streets": {},
+  "minecraft:village/taiga/houses": {},
+  "minecraft:village/taiga/streets": {
+   "pixelmon:village/taiga/taiga_battle_arena_a": 3,
+   "pixelmon:village/taiga/taiga_battle_arena_b": 3
+  },
+  "minecraft:village/taiga/terminators": {
+   "pixelmon:village/taiga/taiga_daycare": 2
+  },
+  "minecraft:village/taiga/zombie/houses": {},
+  "minecraft:village/taiga/zombie/streets": {}
+ },
+ "pixelmon_hooks_in_town_centres": {
+  "desert_meeting_point_1": {
+   "hooks": 0,
+   "size": [
+    17,
+    6,
+    9
+   ]
+  },
+  "desert_meeting_point_2": {
+   "hooks": 0,
+   "size": [
+    12,
+    6,
+    12
+   ]
+  },
+  "desert_meeting_point_3": {
+   "hooks": 6,
+   "size": [
+    15,
+    6,
+    15
+   ]
+  },
+  "plains_fountain_01": {
+   "hooks": 6,
+   "size": [
+    9,
+    4,
+    12
+   ]
+  },
+  "plains_meeting_point_1": {
+   "hooks": 6,
+   "size": [
+    10,
+    7,
+    11
+   ]
+  },
+  "plains_meeting_point_2": {
+   "hooks": 6,
+   "size": [
+    8,
+    5,
+    15
+   ]
+  },
+  "plains_meeting_point_3": {
+   "hooks": 6,
+   "size": [
+    11,
+    9,
+    13
+   ]
+  },
+  "savanna_meeting_point_1": {
+   "hooks": 6,
+   "size": [
+    14,
+    5,
+    12
+   ]
+  },
+  "savanna_meeting_point_2": {
+   "hooks": 6,
+   "size": [
+    11,
+    6,
+    14
+   ]
+  },
+  "savanna_meeting_point_3": {
+   "hooks": 6,
+   "size": [
+    9,
+    6,
+    11
+   ]
+  },
+  "savanna_meeting_point_4": {
+   "hooks": 6,
+   "size": [
+    10,
+    5,
+    9
+   ]
+  },
+  "snowy_meeting_point_1": {
+   "hooks": 6,
+   "size": [
+    12,
+    8,
+    8
+   ]
+  },
+  "snowy_meeting_point_2": {
+   "hooks": 6,
+   "size": [
+    12,
+    5,
+    9
+   ]
+  },
+  "snowy_meeting_point_3": {
+   "hooks": 6,
+   "size": [
+    7,
+    7,
+    7
+   ]
+  },
+  "taiga_meeting_point_1": {
+   "hooks": 6,
+   "size": [
+    12,
+    3,
+    7
+   ]
+  },
+  "taiga_meeting_point_2": {
+   "hooks": 6,
+   "size": [
+    11,
+    7,
+    9
+   ]
+  }
+ },
+ "port_jar_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+ "port_repairs": {
+  "results": {
+   "physics_beside_pixelmon_machine": {
+    "assembled": false,
+    "machine_placed": false,
+    "neighbour_placed": false,
+    "pass": false,
+    "server_alive": false
+   },
+   "redstone_contact": {
+    "block_entity": false,
+    "pass": false,
+    "placed": false,
+    "server_alive": false
+   }
+  },
+  "steps": [
+   {
+    "command": "forceload add 8 200",
+    "console": [
+     "Unmarked chunk [0, 8] in minecraft:overworld for force loading",
+     "Marked chunk [0, 12] in minecraft:overworld to be force loaded"
+    ],
+    "server_crashed": false
+   },
+   {
+    "command": "fill 5 199 197 11 199 203 minecraft:stone",
+    "console": [
+     "Successfully filled 49 block(s)"
+    ],
+    "server_crashed": false
+   },
+   {
+    "command": "setblock 8 200 200 create:redstone_contact",
+    "console": [
+     "Encountered an unexpected exception",
+     "java.lang.IncompatibleClassChangeError: Method 'net.minecraft.world.level.block.entity.BlockEntityTicker com.simibubi.create.content.redstone.contact.RedstoneContactBlock.m_142354_(net.minecraft.world.level.Level, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.enti",
+     "\tat com.simibubi.create.content.redstone.contact.RedstoneContactBlock.m_142354_(RedstoneContactBlock.java:541) ~[create-1.20.1-6.0.8.jar%23468!/:6.0.8] {re:mixin,re:classloading,pl:mixin:APP:sable-forge.mixins.json:compatibility.create.redstone_contacts.RedstoneContactBlockMixin,pl:mixin:A}",
+     "\tat net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.m_155944_(BlockBehaviour.java:848) ~[server-1.20.1-20230612.114412-srg.jar%23729!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-mode"
+    ],
+    "server_crashed": true
+   }
+  ]
+ },
+ "probe_done": true,
+ "probe_records_incomplete": [],
+ "probe_sha256": "714cd6a9d2716e527b7ae1ac7697be5e735a04e9395dd6cd34ca62822c7e5d09",
+ "profile": "v18 staging (314 mods, earlier common JAR, no coexistence repairs)",
+ "radium": {
+  "disabled_by_configuration": [
+   "mixin.block.moving_block_shapes"
+  ],
+  "loaded": "Loaded configuration file for Radium: 125 options available, 2 override(s) found"
+ },
+ "really_generated_villages": [
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    384,
+    -112
+   ],
+   "chunky": {
+    "centre": [
+     6156,
+     -1783
+    ],
+    "radius": 78
+   },
+   "piece_boxes_identical": true,
+   "pieces": [
+    {
+     "blocks": {
+      "littlejoys:fishing_spot": 1
+     },
+     "box": [
+      6144,
+      65,
+      -1792,
+      6160,
+      70,
+      -1784
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:camel": 1,
+      "minecraft:villager": 4
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/desert/town_centers/desert_meeting_point_1"
+    },
+    {
+     "blocks": {
+      "pixelmon:hidden_cube": 20
+     },
+     "box": [
+      6146,
+      58,
+      -1783,
+      6166,
+      72,
+      -1763
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_trainer": 3
+     },
+     "family": "battle_arena",
+     "piece": "pixelmon:village/desert/desert_battle_arena_a"
+    },
+    {
+     "blocks": {
+      "pixelmon:berry_plant_micle": 1,
+      "pixelmon:berry_plant_starf": 1
+     },
+     "box": [
+      6180,
+      60,
+      -1807,
+      6184,
+      65,
+      -1797
+     ],
+     "chunks_not_full": 0,
+     "entities": {},
+     "family": "berry_farm",
+     "piece": "pixelmon:village/desert/berry_farm_3"
+    }
+   ],
+   "probe_pieces": 61,
+   "saved_pieces": 61,
+   "saved_start_found": true,
+   "spawn_distance": 6889.0,
+   "structure": "minecraft:village_desert"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    409,
+    13
+   ],
+   "chunky": {
+    "centre": [
+     6543,
+     220
+    ],
+    "radius": 88
+   },
+   "piece_boxes_identical": true,
+   "pieces": [
+    {
+     "blocks": {
+      "splendid_slimes:slime_spawner": 1
+     },
+     "box": [
+      6544,
+      74,
+      208,
+      6555,
+      79,
+      219
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:camel": 1,
+      "minecraft:cat": 2,
+      "minecraft:villager": 3
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/desert/town_centers/desert_meeting_point_2"
+    },
+    {
+     "blocks": {
+      "pixelmon:berry_plant_figy": 1,
+      "pixelmon:berry_plant_pamtre": 1
+     },
+     "box": [
+      6544,
+      75,
+      195,
+      6548,
+      80,
+      205
+     ],
+     "chunks_not_full": 0,
+     "entities": {},
+     "family": "berry_farm",
+     "piece": "pixelmon:village/desert/berry_farm_1"
+    },
+    {
+     "blocks": {
+      "pixelmon:berry_plant_micle": 1,
+      "pixelmon:berry_plant_starf": 1
+     },
+     "box": [
+      6502,
+      74,
+      221,
+      6506,
+      79,
+      231
+     ],
+     "chunks_not_full": 0,
+     "entities": {},
+     "family": "berry_farm",
+     "piece": "pixelmon:village/desert/berry_farm_3"
+    },
+    {
+     "blocks": {
+      "pixelmon:hidden_cube": 20,
+      "pixelmon:silver_ore": 1
+     },
+     "box": [
+      6575,
+      65,
+      183,
+      6595,
+      79,
+      203
+     ],
+     "chunks_not_full": 0,
+     "entities": {},
+     "family": "battle_arena",
+     "piece": "pixelmon:village/desert/desert_battle_arena_a"
+    },
+    {
+     "blocks": {
+      "pixelmon:berry_plant_custap": 1,
+      "pixelmon:berry_plant_kelpsy": 1,
+      "pixelmon:berry_plant_touga": 1,
+      "pixelmon:brown_cushion_chair": 2,
+      "pixelmon:cluttered_box": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:orange_day_care": 1,
+      "pixelmon:pink_healer": 1,
+      "pixelmon:pink_pc": 2,
+      "pixelmon:red_day_care": 1,
+      "pixelmon:white_cushion_chair": 3,
+      "pixelmon:yellow_day_care": 1
+     },
+     "box": [
+      6562,
+      73,
+      244,
+      6580,
+      91,
+      262
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 4,
+      "minecraft:painting": 4,
+      "pixelmon:npc_chatting": 2,
+      "pixelmon:npc_shopkeeper": 1
+     },
+     "family": "daycare",
+     "piece": "pixelmon:village/desert/desert_daycare"
+    }
+   ],
+   "probe_pieces": 109,
+   "saved_pieces": 109,
+   "saved_start_found": true,
+   "spawn_distance": 7141.0,
+   "structure": "minecraft:village_desert"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    -9,
+    -24
+   ],
+   "chunky": {
+    "centre": [
+     -153,
+     -399
+    ],
+    "radius": 96
+   },
+   "piece_boxes_identical": true,
+   "pieces": [
+    {
+     "blocks": {},
+     "box": [
+      -154,
+      64,
+      -384,
+      -144,
+      70,
+      -375
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "golemoverhaul:barrel_golem": 1,
+      "golemoverhaul:hay_golem": 1,
+      "minecraft:cat": 2,
+      "minecraft:iron_golem": 1,
+      "minecraft:villager": 2
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/plains/town_centers/plains_meeting_point_1"
+    },
+    {
+     "blocks": {
+      "pixelmon:blue_cash_register": 1,
+      "pixelmon:blue_clock": 1,
+      "pixelmon:blue_folding_chair": 4,
+      "pixelmon:blue_rug": 2,
+      "pixelmon:blue_umbrella": 6,
+      "pixelmon:blue_vending_machine": 4,
+      "pixelmon:box": 1,
+      "pixelmon:cluttered_box": 1,
+      "pixelmon:master_chest": 1,
+      "pixelmon:tv": 2,
+      "pixelmon:white_rug": 2,
+      "pixelmon:white_vending_machine": 2,
+      "quark:oak_chest": 2
+     },
+     "box": [
+      -157,
+      64,
+      -374,
+      -147,
+      74,
+      -361
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_shopkeeper": 2
+     },
+     "family": "mart",
+     "piece": "pixelmon:village/plains/plains_mart"
+    },
+    {
+     "blocks": {
+      "amendments:cauldron_hack": 1,
+      "pixelmon:box": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:red_clock": 1,
+      "pixelmon:red_cushion_chair": 3,
+      "pixelmon:red_healer": 2,
+      "pixelmon:red_pc": 2,
+      "pixelmon:red_trade_machine": 6,
+      "pixelmon:white_rug": 2,
+      "twigs:pebble": 1
+     },
+     "box": [
+      -143,
+      64,
+      -386,
+      -130,
+      74,
+      -376
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 1,
+      "pixelmon:npc_nursejoy": 1
+     },
+     "family": "pokecenter",
+     "piece": "pixelmon:village/plains/plains_pokecenter"
+    },
+    {
+     "blocks": {
+      "farm_and_charm:wild_emmer": 1,
+      "pixelmon:apricorn_leaves_red": 15,
+      "pixelmon:berry_plant_ganlon": 1,
+      "pixelmon:berry_plant_kuo": 1,
+      "pixelmon:berry_plant_topo": 1,
+      "pixelmon:brown_day_care": 1,
+      "pixelmon:green_day_care": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:mower": 1,
+      "pixelmon:pink_healer": 1,
+      "pixelmon:pink_pc": 2,
+      "pixelmon:white_chair": 1,
+      "pixelmon:yellow_day_care": 1,
+      "quark:oak_chest": 3
+     },
+     "box": [
+      -121,
+      60,
+      -428,
+      -103,
+      84,
+      -410
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 4,
+      "pixelmon:npc_chatting": 2,
+      "pixelmon:npc_shopkeeper": 1
+     },
+     "family": "daycare",
+     "piece": "pixelmon:village/plains/plains_daycare"
+    }
+   ],
+   "probe_pieces": 112,
+   "saved_pieces": 112,
+   "saved_start_found": true,
+   "spawn_distance": 431.0,
+   "structure": "minecraft:village_plains"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    -33,
+    -58
+   ],
+   "chunky": {
+    "centre": [
+     -545,
+     -908
+    ],
+    "radius": 92
+   },
+   "piece_boxes_identical": true,
+   "pieces": [
+    {
+     "blocks": {},
+     "box": [
+      -539,
+      62,
+      -928,
+      -528,
+      65,
+      -920
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "golemoverhaul:barrel_golem": 1,
+      "golemoverhaul:hay_golem": 1,
+      "minecraft:cat": 1,
+      "minecraft:iron_golem": 1,
+      "minecraft:villager": 3
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/plains/town_centers/plains_fountain_01"
+    },
+    {
+     "blocks": {
+      "pixelmon:blue_cash_register": 1,
+      "pixelmon:blue_clock": 1,
+      "pixelmon:blue_folding_chair": 4,
+      "pixelmon:blue_rug": 2,
+      "pixelmon:blue_umbrella": 6,
+      "pixelmon:blue_vending_machine": 4,
+      "pixelmon:box": 1,
+      "pixelmon:cluttered_box": 1,
+      "pixelmon:master_chest": 1,
+      "pixelmon:tv": 2,
+      "pixelmon:white_rug": 2,
+      "pixelmon:white_vending_machine": 2,
+      "quark:oak_chest": 2
+     },
+     "box": [
+      -536,
+      62,
+      -942,
+      -526,
+      72,
+      -929
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_shopkeeper": 2
+     },
+     "family": "mart",
+     "piece": "pixelmon:village/plains/plains_mart"
+    },
+    {
+     "blocks": {
+      "amendments:cauldron_hack": 1,
+      "pixelmon:box": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:red_clock": 1,
+      "pixelmon:red_cushion_chair": 3,
+      "pixelmon:red_healer": 2,
+      "pixelmon:red_pc": 2,
+      "pixelmon:red_trade_machine": 6,
+      "pixelmon:white_rug": 2
+     },
+     "box": [
+      -534,
+      62,
+      -919,
+      -524,
+      72,
+      -906
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 1,
+      "pixelmon:npc_nursejoy": 1
+     },
+     "family": "pokecenter",
+     "piece": "pixelmon:village/plains/plains_pokecenter"
+    }
+   ],
+   "probe_pieces": 62,
+   "saved_pieces": 62,
+   "saved_start_found": true,
+   "spawn_distance": 588.0,
+   "structure": "minecraft:village_plains"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    -94,
+    242
+   ],
+   "chunky": {
+    "centre": [
+     -1514,
+     3878
+    ],
+    "radius": 115
+   },
+   "piece_boxes_identical": true,
+   "pieces": [
+    {
+     "blocks": {
+      "oreganized:datura": 1
+     },
+     "box": [
+      -1504,
+      66,
+      3872,
+      -1491,
+      71,
+      3883
+     ],
+     "chunks_not_full": 0,
+     "entities": {},
+     "family": "town_centre",
+     "piece": "minecraft:village/savanna/zombie/town_centers/savanna_meeting_point_1"
+    },
+    {
+     "blocks": {
+      "beachparty:tiki_bar": 1,
+      "windswept:potted_mimosa": 2,
+      "windswept:yellow_petals": 1
+     },
+     "box": [
+      -1483,
+      69,
+      3907,
+      -1473,
+      75,
+      3915
+     ],
+     "chunks_not_full": 0,
+     "entities": {},
+     "family": "society_fletcher_house",
+     "piece": "minecraft:village/savanna/houses/savanna_fletcher_house_1"
+    }
+   ],
+   "probe_pieces": 129,
+   "saved_pieces": 129,
+   "saved_start_found": true,
+   "spawn_distance": 4301.0,
+   "structure": "minecraft:village_savanna"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    257,
+    11
+   ],
+   "chunky": {
+    "centre": [
+     4122,
+     170
+    ],
+    "radius": 108
+   },
+   "piece_boxes_identical": true,
+   "pieces": [
+    {
+     "blocks": {},
+     "box": [
+      4112,
+      68,
+      168,
+      4122,
+      73,
+      176
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "golemoverhaul:barrel_golem": 1,
+      "golemoverhaul:hay_golem": 1,
+      "minecraft:cat": 1,
+      "minecraft:iron_golem": 1,
+      "minecraft:villager": 2
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/savanna/town_centers/savanna_meeting_point_3"
+    },
+    {
+     "blocks": {
+      "farmersdelight:wild_tomatoes": 1,
+      "herbalbrews:wild_rooibos_plant": 1,
+      "pixelmon:blue_cash_register": 1,
+      "pixelmon:blue_clock": 1,
+      "pixelmon:blue_folding_chair": 4,
+      "pixelmon:blue_rug": 2,
+      "pixelmon:blue_umbrella": 4,
+      "pixelmon:blue_vending_machine": 4,
+      "pixelmon:box": 1,
+      "pixelmon:cluttered_box": 1,
+      "pixelmon:master_chest": 1,
+      "pixelmon:picket_fence": 2,
+      "pixelmon:tv": 2,
+      "pixelmon:white_rug": 2,
+      "pixelmon:white_vending_machine": 2,
+      "quark:acacia_chest": 2
+     },
+     "box": [
+      4112,
+      68,
+      154,
+      4122,
+      78,
+      167
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:armor_stand": 1,
+      "minecraft:cat": 1,
+      "minecraft:item": 1,
+      "pixelmon:npc_shopkeeper": 2
+     },
+     "family": "mart",
+     "piece": "pixelmon:village/savanna/savanna_mart"
+    },
+    {
+     "blocks": {
+      "amendments:cauldron_hack": 1,
+      "pixelmon:box": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:red_clock": 1,
+      "pixelmon:red_cushion_chair": 3,
+      "pixelmon:red_healer": 2,
+      "pixelmon:red_pc": 2,
+      "pixelmon:red_trade_machine": 6,
+      "pixelmon:white_rug": 2
+     },
+     "box": [
+      4112,
+      68,
+      177,
+      4122,
+      77,
+      190
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 1,
+      "pixelmon:npc_nursejoy": 1
+     },
+     "family": "pokecenter",
+     "piece": "pixelmon:village/savanna/savanna_pokecenter"
+    },
+    {
+     "blocks": {
+      "pixelmon:bench": 1,
+      "pixelmon:berry_plant_lansat": 1,
+      "pixelmon:berry_plant_pumkin": 1,
+      "pixelmon:box": 1,
+      "pixelmon:brown_day_care": 1,
+      "pixelmon:gray_day_care": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:orange_day_care": 1,
+      "pixelmon:pink_healer": 1,
+      "pixelmon:pink_pc": 2,
+      "pixelmon:white_cushion_chair": 1,
+      "quark:blossom_log": 23,
+      "quark:orange_blossom_leaves": 352,
+      "windswept:potted_mimosa": 9
+     },
+     "box": [
+      4092,
+      61,
+      224,
+      4110,
+      76,
+      242
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 4,
+      "pixelmon:npc_chatting": 2,
+      "pixelmon:npc_shopkeeper": 1
+     },
+     "family": "daycare",
+     "piece": "pixelmon:village/savanna/savanna_daycare"
+    }
+   ],
+   "probe_pieces": 157,
+   "saved_pieces": 157,
+   "saved_start_found": true,
+   "spawn_distance": 4724.0,
+   "structure": "minecraft:village_savanna"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    -118,
+    54
+   ],
+   "chunky": {
+    "centre": [
+     -1914,
+     874
+    ],
+    "radius": 85
+   },
+   "piece_boxes_identical": true,
+   "pieces": [
+    {
+     "blocks": {
+      "windswept:chestnut_fence": 16,
+      "windswept:stripped_chestnut_wood": 10
+     },
+     "box": [
+      -1888,
+      62,
+      864,
+      -1882,
+      68,
+      870
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "golemoverhaul:barrel_golem": 1,
+      "golemoverhaul:hay_golem": 1,
+      "minecraft:cat": 1,
+      "minecraft:iron_golem": 1,
+      "minecraft:villager": 2
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/snowy/town_centers/snowy_meeting_point_3"
+    },
+    {
+     "blocks": {
+      "amendments:cauldron_hack": 1,
+      "pixelmon:box": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:red_clock": 1,
+      "pixelmon:red_cushion_chair": 3,
+      "pixelmon:red_healer": 2,
+      "pixelmon:red_pc": 2,
+      "pixelmon:red_trade_machine": 6,
+      "windswept:chestnut_fence": 7,
+      "windswept:chestnut_planks": 181,
+      "windswept:chestnut_slab": 24,
+      "windswept:chestnut_stairs": 88,
+      "windswept:stripped_chestnut_log": 371
+     },
+     "box": [
+      -1890,
+      62,
+      850,
+      -1880,
+      73,
+      863
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 1,
+      "pixelmon:npc_nursejoy": 1
+     },
+     "family": "pokecenter",
+     "piece": "pixelmon:village/snowy/snowy_pokecenter"
+    },
+    {
+     "blocks": {
+      "create:zinc_ore": 1,
+      "pixelmon:hidden_cube": 20,
+      "pixelmon:silver_ore": 1,
+      "snowrealmagic:slab": 22,
+      "snowrealmagic:snow": 1,
+      "snowrealmagic:stairs": 24,
+      "snowrealmagic:wall": 8
+     },
+     "box": [
+      -1946,
+      55,
+      857,
+      -1926,
+      70,
+      877
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_trainer": 3
+     },
+     "family": "battle_arena",
+     "piece": "pixelmon:village/snowy/snowy_battle_arena_a"
+    },
+    {
+     "blocks": {
+      "create:zinc_ore": 2,
+      "pixelmon:hidden_cube": 20,
+      "pixelmon:silver_ore": 7,
+      "snowrealmagic:slab": 20,
+      "snowrealmagic:snow": 3,
+      "snowrealmagic:stairs": 23,
+      "snowrealmagic:wall": 8,
+      "twigs:opaline_seashell": 1,
+      "twigs:tangerine_seashell": 1
+     },
+     "box": [
+      -1914,
+      55,
+      876,
+      -1894,
+      70,
+      896
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_trainer": 3
+     },
+     "family": "battle_arena",
+     "piece": "pixelmon:village/snowy/snowy_battle_arena_b"
+    }
+   ],
+   "probe_pieces": 54,
+   "saved_pieces": 54,
+   "saved_start_found": true,
+   "spawn_distance": 1793.0,
+   "structure": "minecraft:village_snowy"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    -235,
+    223
+   ],
+   "chunky": {
+    "centre": [
+     -3743,
+     3582
+    ],
+    "radius": 105
+   },
+   "piece_boxes_identical": true,
+   "pieces": [
+    {
+     "blocks": {
+      "pixelmon:apricorn_leaves_black": 18,
+      "pixelmon:apricorn_leaves_red": 13,
+      "pixelmon:apricorn_log": 6,
+      "windswept:chestnut_leaves": 9,
+      "windswept:stripped_chestnut_wood": 12
+     },
+     "box": [
+      -3767,
+      63,
+      3568,
+      -3760,
+      70,
+      3579
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "golemoverhaul:barrel_golem": 1,
+      "golemoverhaul:hay_golem": 1,
+      "minecraft:cat": 2,
+      "minecraft:iron_golem": 1,
+      "minecraft:villager": 2
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/snowy/town_centers/snowy_meeting_point_1"
+    },
+    {
+     "blocks": {
+      "amendments:cauldron_hack": 1,
+      "pixelmon:apricorn_leaves_red": 1,
+      "pixelmon:box": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:red_clock": 1,
+      "pixelmon:red_cushion_chair": 3,
+      "pixelmon:red_healer": 2,
+      "pixelmon:red_pc": 2,
+      "pixelmon:red_trade_machine": 6,
+      "windswept:chestnut_fence": 7,
+      "windswept:chestnut_planks": 181,
+      "windswept:chestnut_slab": 24,
+      "windswept:chestnut_stairs": 88,
+      "windswept:stripped_chestnut_log": 371
+     },
+     "box": [
+      -3781,
+      63,
+      3571,
+      -3768,
+      74,
+      3581
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 1,
+      "pixelmon:npc_nursejoy": 1
+     },
+     "family": "pokecenter",
+     "piece": "pixelmon:village/snowy/snowy_pokecenter"
+    },
+    {
+     "blocks": {
+      "farm_and_charm:wild_nettle": 2,
+      "pixelmon:apricorn_leaves_black": 7,
+      "pixelmon:apricorn_leaves_yellow": 4,
+      "pixelmon:apricorn_log": 3,
+      "pixelmon:blue_cash_register": 1,
+      "pixelmon:blue_clock": 1,
+      "pixelmon:blue_folding_chair": 4,
+      "pixelmon:blue_rug": 2,
+      "pixelmon:blue_vending_machine": 4,
+      "pixelmon:box": 1,
+      "pixelmon:cluttered_box": 1,
+      "pixelmon:master_chest": 1,
+      "pixelmon:tv": 2,
+      "pixelmon:white_rug": 2,
+      "pixelmon:white_vending_machine": 2,
+      "quark:spruce_chest": 2,
+      "snowrealmagic:snow": 1,
+      "vinery:taiga_grape_bush_red": 1,
+      "windswept:chestnut_door": 2,
+      "windswept:chestnut_fence": 19,
+      "windswept:chestnut_leaves": 14,
+      "windswept:chestnut_log": 3,
+      "windswept:chestnut_planks": 169,
+      "windswept:chestnut_slab": 71,
+      "windswept:chestnut_stairs": 88,
+      "windswept:stripped_chestnut_log": 411
+     },
+     "box": [
+      -3769,
+      63,
+      3554,
+      -3759,
+      75,
+      3567
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_shopkeeper": 2
+     },
+     "family": "mart",
+     "piece": "pixelmon:village/snowy/snowy_mart"
+    },
+    {
+     "blocks": {
+      "pixelmon:apricorn_leaves_black": 19,
+      "pixelmon:apricorn_leaves_green": 14,
+      "pixelmon:apricorn_log": 5,
+      "pixelmon:hidden_cube": 20,
+      "snowrealmagic:slab": 20,
+      "snowrealmagic:snow": 10,
+      "snowrealmagic:stairs": 22,
+      "snowrealmagic:wall": 8,
+      "twigs:twig": 1,
+      "verdantvibes:bracket_mushroom": 2,
+      "windswept:chestnut_leaves": 31,
+      "windswept:chestnut_log": 3,
+      "windswept:icicles": 2,
+      "windswept:snowy_sprouts": 2
+     },
+     "box": [
+      -3746,
+      55,
+      3535,
+      -3726,
+      70,
+      3555
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_trainer": 3
+     },
+     "family": "battle_arena",
+     "piece": "pixelmon:village/snowy/snowy_battle_arena_b"
+    },
+    {
+     "blocks": {
+      "create:zinc_ore": 9,
+      "pixelmon:apricorn_leaves_green": 5,
+      "pixelmon:apricorn_leaves_white": 4,
+      "pixelmon:bauxite_ore": 1,
+      "pixelmon:hidden_cube": 20,
+      "pixelmon:silver_ore": 3,
+      "snowrealmagic:slab": 22,
+      "snowrealmagic:snow": 19,
+      "snowrealmagic:stairs": 23,
+      "snowrealmagic:wall": 8,
+      "windswept:bluebells": 2,
+      "windswept:chestnut_leaves": 43,
+      "windswept:chestnut_log": 3,
+      "windswept:shale": 73
+     },
+     "box": [
+      -3739,
+      62,
+      3589,
+      -3719,
+      77,
+      3609
+     ],
+     "chunks_not_full": 0,
+     "entities": {},
+     "family": "battle_arena",
+     "piece": "pixelmon:village/snowy/snowy_battle_arena_a"
+    }
+   ],
+   "probe_pieces": 86,
+   "saved_pieces": 86,
+   "saved_start_found": true,
+   "spawn_distance": 5025.0,
+   "structure": "minecraft:village_snowy"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    -79,
+    -10
+   ],
+   "chunky": {
+    "centre": [
+     -1268,
+     -162
+    ],
+    "radius": 104
+   },
+   "piece_boxes_identical": false,
+   "pieces": [
+    {
+     "blocks": {},
+     "box": [
+      -1270,
+      67,
+      -160,
+      -1264,
+      69,
+      -149
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:villager": 3
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/taiga/town_centers/taiga_meeting_point_1"
+    },
+    {
+     "blocks": {
+      "pixelmon:blue_cash_register": 1,
+      "pixelmon:blue_clock": 1,
+      "pixelmon:blue_folding_chair": 4,
+      "pixelmon:blue_rug": 2,
+      "pixelmon:blue_umbrella": 4,
+      "pixelmon:blue_vending_machine": 4,
+      "pixelmon:box": 1,
+      "pixelmon:cluttered_box": 1,
+      "pixelmon:master_chest": 1,
+      "pixelmon:picket_fence": 2,
+      "pixelmon:tv": 2,
+      "pixelmon:white_rug": 2,
+      "pixelmon:white_vending_machine": 2,
+      "quark:spruce_chest": 2,
+      "twigs:twig": 1
+     },
+     "box": [
+      -1284,
+      67,
+      -159,
+      -1271,
+      78,
+      -149
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_shopkeeper": 2
+     },
+     "family": "mart",
+     "piece": "pixelmon:village/taiga/taiga_mart"
+    },
+    {
+     "blocks": {
+      "pixelmon:box": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:red_clock": 1,
+      "pixelmon:red_cushion_chair": 3,
+      "pixelmon:red_healer": 2,
+      "pixelmon:red_pc": 2,
+      "pixelmon:red_trade_machine": 6,
+      "pixelmon:white_rug": 2
+     },
+     "box": [
+      -1273,
+      67,
+      -148,
+      -1263,
+      77,
+      -135
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 1,
+      "pixelmon:npc_nursejoy": 1
+     },
+     "family": "pokecenter",
+     "piece": "pixelmon:village/taiga/taiga_pokecenter"
+    },
+    {
+     "blocks": {
+      "amendments:cauldron_hack": 1,
+      "pixelmon:berry_plant_drash": 1,
+      "pixelmon:berry_plant_lum": 1,
+      "pixelmon:berry_plant_rawst": 1,
+      "pixelmon:brown_day_care": 1,
+      "pixelmon:gray_day_care": 1,
+      "pixelmon:green_day_care": 1,
+      "pixelmon:pink_healer": 1,
+      "pixelmon:pink_pc": 2,
+      "quark:spruce_chest": 2,
+      "twigs:pebble": 1,
+      "twigs:roseate_seashell": 2,
+      "windswept:red_rose": 5
+     },
+     "box": [
+      -1298,
+      61,
+      -230,
+      -1280,
+      76,
+      -212
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 4,
+      "pixelmon:npc_chatting": 2,
+      "pixelmon:npc_shopkeeper": 1
+     },
+     "family": "daycare",
+     "piece": "pixelmon:village/taiga/taiga_daycare"
+    },
+    {
+     "blocks": {
+      "amendments:cauldron_hack": 1,
+      "pixelmon:berry_plant_drash": 1,
+      "pixelmon:berry_plant_lum": 1,
+      "pixelmon:berry_plant_rawst": 1,
+      "pixelmon:brown_day_care": 1,
+      "pixelmon:gray_day_care": 1,
+      "pixelmon:green_day_care": 1,
+      "pixelmon:pink_healer": 1,
+      "pixelmon:pink_pc": 2,
+      "quark:spruce_chest": 2,
+      "twigs:pebble": 1,
+      "twigs:twig": 2,
+      "windswept:red_rose": 5
+     },
+     "box": [
+      -1245,
+      66,
+      -202,
+      -1227,
+      81,
+      -184
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 4,
+      "pixelmon:npc_chatting": 2,
+      "pixelmon:npc_shopkeeper": 1
+     },
+     "family": "daycare",
+     "piece": "pixelmon:village/taiga/taiga_daycare"
+    }
+   ],
+   "probe_pieces": 74,
+   "saved_pieces": 74,
+   "saved_start_found": true,
+   "spawn_distance": 709.0,
+   "structure": "minecraft:village_taiga"
+  },
+  {
+   "assembly_matches_saved_start": true,
+   "chunk": [
+    -84,
+    1
+   ],
+   "chunky": {
+    "centre": [
+     -1340,
+     42
+    ],
+    "radius": 76
+   },
+   "piece_boxes_identical": false,
+   "pieces": [
+    {
+     "blocks": {},
+     "box": [
+      -1344,
+      71,
+      16,
+      -1334,
+      77,
+      24
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "golemoverhaul:barrel_golem": 1,
+      "golemoverhaul:hay_golem": 1,
+      "minecraft:cat": 1,
+      "minecraft:iron_golem": 1,
+      "minecraft:villager": 3
+     },
+     "family": "town_centre",
+     "piece": "minecraft:village/taiga/town_centers/taiga_meeting_point_2"
+    },
+    {
+     "blocks": {
+      "pixelmon:blue_cash_register": 1,
+      "pixelmon:blue_clock": 1,
+      "pixelmon:blue_folding_chair": 4,
+      "pixelmon:blue_rug": 2,
+      "pixelmon:blue_umbrella": 4,
+      "pixelmon:blue_vending_machine": 4,
+      "pixelmon:box": 1,
+      "pixelmon:cluttered_box": 1,
+      "pixelmon:master_chest": 1,
+      "pixelmon:picket_fence": 2,
+      "pixelmon:tv": 2,
+      "pixelmon:white_rug": 2,
+      "pixelmon:white_vending_machine": 2,
+      "quark:spruce_chest": 2,
+      "twigs:pebble": 1,
+      "windswept:foxglove": 1
+     },
+     "box": [
+      -1347,
+      72,
+      25,
+      -1337,
+      83,
+      38
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_shopkeeper": 2
+     },
+     "family": "mart",
+     "piece": "pixelmon:village/taiga/taiga_mart"
+    },
+    {
+     "blocks": {
+      "pixelmon:box": 1,
+      "pixelmon:lightworkplace": 1,
+      "pixelmon:red_clock": 1,
+      "pixelmon:red_cushion_chair": 3,
+      "pixelmon:red_healer": 2,
+      "pixelmon:red_pc": 2,
+      "pixelmon:red_trade_machine": 6,
+      "pixelmon:white_rug": 2
+     },
+     "box": [
+      -1343,
+      72,
+      2,
+      -1333,
+      82,
+      15
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "minecraft:item_frame": 1,
+      "pixelmon:npc_nursejoy": 1
+     },
+     "family": "pokecenter",
+     "piece": "pixelmon:village/taiga/taiga_pokecenter"
+    },
+    {
+     "blocks": {
+      "create:zinc_ore": 8,
+      "pixelmon:hidden_cube": 19,
+      "pixelmon:silver_ore": 1,
+      "snowrealmagic:slab": 1,
+      "snowrealmagic:stairs": 4,
+      "windswept:foxglove": 4
+     },
+     "box": [
+      -1345,
+      65,
+      41,
+      -1325,
+      85,
+      61
+     ],
+     "chunks_not_full": 0,
+     "entities": {
+      "pixelmon:npc_trainer": 3
+     },
+     "family": "battle_arena",
+     "piece": "pixelmon:village/taiga/taiga_battle_arena_b"
+    }
+   ],
+   "probe_pieces": 59,
+   "saved_pieces": 59,
+   "saved_start_found": true,
+   "spawn_distance": 845.0,
+   "structure": "minecraft:village_taiga"
+  }
+ ],
+ "registry_sizes": {
+  "block": 13878,
+  "entity_type": 677,
+  "loot_table": 12624,
+  "processor_list": 261,
+  "structure": 321,
+  "template_pool": 649
+ },
+ "scope": "combined pack before the repairs",
+ "spawn_seen_by_probe": {
+  "biome": "minecraft:birch_forest",
+  "generate_structures": true,
+  "nearest_village": {
+   "horizontal_distance": 706.0,
+   "structure": "minecraft:village_taiga",
+   "x": -1264,
+   "z": -160
+  },
+  "seed": "20261112",
+  "village_tag": [
+   "minecraft:village_plains",
+   "minecraft:village_desert",
+   "minecraft:village_savanna",
+   "minecraft:village_snowy",
+   "minecraft:village_taiga",
+   "windswept:village_frozen",
+   "atmospheric:village_scrubland"
+  ],
+  "x": -576,
+  "y": 73,
+  "z": -320
+ },
+ "start_script_decision": null,
+ "start_script_ran_after_probe": null,
+ "start_village": null,
+ "stop_exit_code": -9,
+ "task": "Task 19 coexistence of Pixelmon, Society and Aeronautics data",
+ "villages_by_structure": {
+  "minecraft:village_desert": {
+   "namespaces": {
+    "domesticationinnovation": 5,
+    "minecraft": 1715,
+    "paraglider": 47,
+    "pixelmon": 830,
+    "sawmill": 1
+   },
+   "piece_total": {
+    "battle_arena": 45,
+    "berry_farm": 32,
+    "daycare": 9,
+    "mart": 3,
+    "nurse_npc": 3,
+    "pokecenter": 3,
+    "shopkeeper_npc": 6,
+    "society_fletcher_house": 1,
+    "tcg_shop": 6,
+    "town_centre": 30,
+    "vanilla_farm": 30
+   },
+   "pieces": 2669,
+   "town_centres": {
+    "desert_meeting_point_1": {
+     "villages": 14
+    },
+    "desert_meeting_point_2": {
+     "villages": 12
+    },
+    "desert_meeting_point_3": {
+     "mart": 3,
+     "pokecenter": 3,
+     "villages": 4
+    }
+   },
+   "villages": 30,
+   "with": {
+    "battle_arena": 25,
+    "berry_farm": 18,
+    "daycare": 9,
+    "mart": 3,
+    "nurse_npc": 3,
+    "pokecenter": 3,
+    "pokecenter_and_mart": 3,
+    "shopkeeper_npc": 3,
+    "society_fletcher_house": 1,
+    "tcg_shop": 6,
+    "town_centre": 30,
+    "vanilla_farm": 17
+   }
+  },
+  "minecraft:village_plains": {
+   "namespaces": {
+    "domesticationinnovation": 13,
+    "minecraft": 2302,
+    "paraglider": 52,
+    "pixelmon": 637,
+    "sawmill": 5,
+    "verdantvibes": 30
+   },
+   "piece_total": {
+    "battle_arena": 29,
+    "daycare": 24,
+    "mart": 25,
+    "nurse_npc": 26,
+    "pokecenter": 26,
+    "shopkeeper_npc": 50,
+    "society_fletcher_house": 2,
+    "town_centre": 30,
+    "vanilla_farm": 2
+   },
+   "pieces": 3146,
+   "town_centres": {
+    "plains_fountain_01": {
+     "mart": 5,
+     "pokecenter": 4,
+     "villages": 5
+    },
+    "plains_meeting_point_1": {
+     "mart": 6,
+     "pokecenter": 6,
+     "villages": 8
+    },
+    "plains_meeting_point_2": {
+     "mart": 9,
+     "pokecenter": 11,
+     "villages": 12
+    },
+    "plains_meeting_point_3": {
+     "mart": 5,
+     "pokecenter": 5,
+     "villages": 5
+    }
+   },
+   "villages": 30,
+   "with": {
+    "battle_arena": 18,
+    "daycare": 16,
+    "mart": 25,
+    "nurse_npc": 26,
+    "pokecenter": 26,
+    "pokecenter_and_mart": 23,
+    "shopkeeper_npc": 25,
+    "society_fletcher_house": 2,
+    "town_centre": 30,
+    "vanilla_farm": 1
+   }
+  },
+  "minecraft:village_savanna": {
+   "namespaces": {
+    "domesticationinnovation": 3,
+    "minecraft": 2737,
+    "paraglider": 50,
+    "pixelmon": 166,
+    "sawmill": 22
+   },
+   "piece_total": {
+    "daycare": 28,
+    "mart": 28,
+    "nurse_npc": 27,
+    "pokecenter": 27,
+    "shopkeeper_npc": 56,
+    "society_fletcher_house": 3,
+    "town_centre": 30,
+    "vanilla_farm": 2
+   },
+   "pieces": 3107,
+   "town_centres": {
+    "savanna_meeting_point_1": {
+     "mart": 7,
+     "pokecenter": 6,
+     "villages": 8
+    },
+    "savanna_meeting_point_2": {
+     "mart": 3,
+     "pokecenter": 3,
+     "villages": 3
+    },
+    "savanna_meeting_point_3": {
+     "mart": 9,
+     "pokecenter": 9,
+     "villages": 9
+    },
+    "savanna_meeting_point_4": {
+     "mart": 9,
+     "pokecenter": 9,
+     "villages": 10
+    }
+   },
+   "villages": 30,
+   "with": {
+    "daycare": 18,
+    "mart": 28,
+    "nurse_npc": 27,
+    "pokecenter": 27,
+    "pokecenter_and_mart": 27,
+    "shopkeeper_npc": 28,
+    "society_fletcher_house": 3,
+    "town_centre": 30,
+    "vanilla_farm": 1
+   }
+  },
+  "minecraft:village_snowy": {
+   "namespaces": {
+    "domesticationinnovation": 31,
+    "minecraft": 1669,
+    "paraglider": 21,
+    "pixelmon": 473,
+    "sawmill": 8
+   },
+   "piece_total": {
+    "battle_arena": 27,
+    "daycare": 15,
+    "mart": 22,
+    "nurse_npc": 23,
+    "pokecenter": 23,
+    "shopkeeper_npc": 44,
+    "society_fletcher_house": 4,
+    "town_centre": 30
+   },
+   "pieces": 2357,
+   "town_centres": {
+    "snowy_meeting_point_1": {
+     "mart": 6,
+     "pokecenter": 6,
+     "villages": 8
+    },
+    "snowy_meeting_point_2": {
+     "mart": 3,
+     "pokecenter": 4,
+     "villages": 4
+    },
+    "snowy_meeting_point_3": {
+     "mart": 13,
+     "pokecenter": 13,
+     "villages": 18
+    }
+   },
+   "villages": 30,
+   "with": {
+    "battle_arena": 21,
+    "daycare": 10,
+    "mart": 22,
+    "nurse_npc": 23,
+    "pokecenter": 23,
+    "pokecenter_and_mart": 16,
+    "shopkeeper_npc": 22,
+    "society_fletcher_house": 4,
+    "town_centre": 30
+   }
+  },
+  "minecraft:village_taiga": {
+   "namespaces": {
+    "domesticationinnovation": 15,
+    "minecraft": 1910,
+    "paraglider": 49,
+    "pixelmon": 522,
+    "sawmill": 10,
+    "verdantvibes": 15
+   },
+   "piece_total": {
+    "battle_arena": 30,
+    "daycare": 22,
+    "mart": 26,
+    "nurse_npc": 30,
+    "pokecenter": 30,
+    "shopkeeper_npc": 52,
+    "society_fletcher_house": 3,
+    "town_centre": 30
+   },
+   "pieces": 2771,
+   "town_centres": {
+    "taiga_meeting_point_1": {
+     "mart": 16,
+     "pokecenter": 16,
+     "villages": 16
+    },
+    "taiga_meeting_point_2": {
+     "mart": 10,
+     "pokecenter": 14,
+     "villages": 14
+    }
+   },
+   "villages": 30,
+   "with": {
+    "battle_arena": 19,
+    "daycare": 17,
+    "mart": 26,
+    "nurse_npc": 30,
+    "pokecenter": 30,
+    "pokecenter_and_mart": 26,
+    "shopkeeper_npc": 26,
+    "society_fletcher_house": 3,
+    "town_centre": 30
+   }
+  }
+ },
+ "worldgen_log_problems": [
+  "[Server thread/WARN] [lithostitched/]: Non-existent template pool reference: pixelmon:npc/gyms/fairy",
+  "[Worker-Main-1/WARN] [co.fi.mo.MoogsStructuresCommon/]: Moog's Structure Lib: Empty or nonexistent pool: mvs:farm/side_pool which is being called from mvs:other_decoration/wheat_grain_bin",
+  "[Worker-Main-17/WARN] [co.fi.mo.MoogsStructuresCommon/]: Moog's Structure Lib: Empty or nonexistent pool: mvs:farm/side_pool which is being called from mvs:other_decoration/wooden_wheat_farm",
+  "[Worker-Main-2/WARN] [co.fi.mo.MoogsStructuresCommon/]: Moog's Structure Lib: Empty or nonexistent pool: mvs:farm/side_pool which is being called from mvs:other_decoration/wooden_wheat_farm",
+  "[Worker-Main-3/WARN] [co.fi.mo.MoogsStructuresCommon/]: Moog's Structure Lib: Empty or nonexistent pool: mvs:farm/side_pool which is being called from mvs:other_decoration/wheat_grain_bin",
+  "[Worker-Main-4/WARN] [co.fi.mo.MoogsStructuresCommon/]: Moog's Structure Lib: Empty or nonexistent pool: mvs:farm/side_pool which is being called from mvs:other_decoration/wheat_grain_bin",
+  "[Worker-Main-6/WARN] [co.fi.mo.MoogsStructuresCommon/]: Moog's Structure Lib: Empty or nonexistent pool: mvs:farm/side_pool which is being called from mvs:other_decoration/wheat_grain_bin",
+  "[Worker-Main-7/WARN] [co.fi.mo.MoogsStructuresCommon/]: Moog's Structure Lib: Empty or nonexistent pool: mvs:farm/side_pool which is being called from mvs:other_decoration/wooden_wheat_farm",
+  "[Worker-Main-7/WARN] [minecraft/JigsawPlacement]: Empty or non-existent pool: minecraft:",
+  "[Worker-Main-8/WARN] [co.fi.mo.MoogsStructuresCommon/]: Moog's Structure Lib: Empty or nonexistent pool: mvs:farm/side_pool which is being called from mvs:other_decoration/wooden_wheat_farm"
+ ]
+}

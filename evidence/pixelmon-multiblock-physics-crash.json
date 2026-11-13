@@ -1,0 +1,259 @@
+{
+ "blocks_that_fail_the_same_way_when_placed": [
+  "pixelmon:black_couch",
+  "pixelmon:black_pc",
+  "pixelmon:black_rug",
+  "pixelmon:black_trade_machine",
+  "pixelmon:black_vending_machine",
+  "pixelmon:blue_couch",
+  "pixelmon:blue_pc",
+  "pixelmon:blue_rug",
+  "pixelmon:blue_trade_machine",
+  "pixelmon:blue_vending_machine",
+  "pixelmon:brown_couch",
+  "pixelmon:brown_pc",
+  "pixelmon:brown_rug",
+  "pixelmon:brown_trade_machine",
+  "pixelmon:brown_vending_machine",
+  "pixelmon:cloning_machine",
+  "pixelmon:cooking_pot",
+  "pixelmon:cyan_couch",
+  "pixelmon:cyan_pc",
+  "pixelmon:cyan_rug",
+  "pixelmon:cyan_trade_machine",
+  "pixelmon:cyan_vending_machine",
+  "pixelmon:fossil_cleaner",
+  "pixelmon:fossil_display",
+  "pixelmon:fossil_machine",
+  "pixelmon:glass_table",
+  "pixelmon:gray_couch",
+  "pixelmon:gray_pc",
+  "pixelmon:gray_rug",
+  "pixelmon:gray_trade_machine",
+  "pixelmon:gray_vending_machine",
+  "pixelmon:green_couch",
+  "pixelmon:green_pc",
+  "pixelmon:green_rug",
+  "pixelmon:green_trade_machine",
+  "pixelmon:green_vending_machine",
+  "pixelmon:infuser",
+  "pixelmon:light_blue_couch",
+  "pixelmon:light_blue_pc",
+  "pixelmon:light_blue_rug",
+  "pixelmon:light_blue_trade_machine",
+  "pixelmon:light_blue_vending_machine",
+  "pixelmon:light_gray_couch",
+  "pixelmon:light_gray_pc",
+  "pixelmon:light_gray_rug",
+  "pixelmon:light_gray_trade_machine",
+  "pixelmon:light_gray_vending_machine",
+  "pixelmon:lime_couch",
+  "pixelmon:lime_pc",
+  "pixelmon:lime_rug",
+  "pixelmon:lime_trade_machine",
+  "pixelmon:lime_vending_machine",
+  "pixelmon:magenta_couch",
+  "pixelmon:magenta_pc",
+  "pixelmon:magenta_rug",
+  "pixelmon:magenta_trade_machine",
+  "pixelmon:magenta_vending_machine",
+  "pixelmon:orange_couch",
+  "pixelmon:orange_pc",
+  "pixelmon:orange_rug",
+  "pixelmon:orange_trade_machine",
+  "pixelmon:orange_vending_machine",
+  "pixelmon:pink_couch",
+  "pixelmon:pink_pc",
+  "pixelmon:pink_rug",
+  "pixelmon:pink_trade_machine",
+  "pixelmon:pink_vending_machine",
+  "pixelmon:purple_couch",
+  "pixelmon:purple_pc",
+  "pixelmon:purple_rug",
+  "pixelmon:purple_trade_machine",
+  "pixelmon:purple_vending_machine",
+  "pixelmon:red_couch",
+  "pixelmon:red_pc",
+  "pixelmon:red_rug",
+  "pixelmon:red_trade_machine",
+  "pixelmon:red_vending_machine",
+  "pixelmon:tree",
+  "pixelmon:tv",
+  "pixelmon:tv2",
+  "pixelmon:tv3",
+  "pixelmon:white_couch",
+  "pixelmon:white_pc",
+  "pixelmon:white_rug",
+  "pixelmon:white_trade_machine",
+  "pixelmon:white_vending_machine",
+  "pixelmon:yellow_couch",
+  "pixelmon:yellow_pc",
+  "pixelmon:yellow_rug",
+  "pixelmon:yellow_trade_machine",
+  "pixelmon:yellow_vending_machine",
+  "tcg:battle_spectator"
+ ],
+ "blocks_that_fail_the_same_way_when_placed_note": "Placed in the block's default state by the first version of the assembly sweep. Placed by the part whose multipos is base (the later sweep), pixelmon:glass_table does not fail and 91 ids do; see evidence/assembly-inventory-sweep-baseline.json.",
+ "cause": "RapierVoxelColliderBakery.buildPhysicsDataForBlock asks a block state for its collision shape through PhysicsColliderBlockGetter, whose block state is never set (setup is not called anywhere in the port), so the getter answers null at the block's own position. Pixelmon's MultiBlock.getShape reads the level at that position. The bakery runs for every block change in a loaded chunk and its six neighbours, and for every block of a chunk section that a physics structure comes near",
+ "crash_reports": {
+  "crash-2026-11-13_11.29.06-server.txt": [
+   "Description: Exception ticking world",
+   "",
+   "java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
+   "\tat com.pixelmonmod.pixelmon.blocks.MultiBlock.getMultiBlockBoundingBox(MultiBlock.java:116) ~[Pixelmon-1.20.1-9.2.3-universal.jar%23622!/:9.2.3-pipe21439] {re:classloading}",
+   "\tat com.pixelmonmod.pixelmon.blocks.MultiBlock.m_5940_(MultiBlock.java:95) ~[Pixelmon-1.20.1-9.2.3-universal.jar%23622!/:9.2.3-pipe21439] {re:classloading}"
+  ]
+ },
+ "generated_pc": {
+  "base": [
+   410,
+   65,
+   -525
+  ],
+  "block": "pixelmon:red_pc",
+  "top": [
+   410,
+   66,
+   -525
+  ]
+ },
+ "limitations": [
+  "Loopback disposable world, no player connected",
+  "A player's placement and a flown airship were not exercised; the console commands reach the same LevelChunk and physics code",
+  "The crashed JVM stayed alive after saving and was ended by the test driver (exit -9)"
+ ],
+ "port_jar_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+ "restart_of_the_same_world": {
+  "crash_reports": {
+   "crash-2026-11-13_11.33.00-server.txt": [
+    "Description: Exception ticking world",
+    "",
+    "java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
+    "\tat com.pixelmonmod.pixelmon.blocks.MultiBlock.getMultiBlockBoundingBox(MultiBlock.java:116) ~[Pixelmon-1.20.1-9.2.3-universal.jar%23622!/:9.2.3-pipe21439] {re:classloading}",
+    "\tat com.pixelmonmod.pixelmon.blocks.MultiBlock.m_5940_(MultiBlock.java:95) ~[Pixelmon-1.20.1-9.2.3-universal.jar%23622!/:9.2.3-pipe21439] {re:classloading}"
+   ]
+  },
+  "reached_done": true,
+  "steps": [
+   {
+    "command": "forceload query",
+    "server_crashed": true
+   }
+  ]
+ },
+ "scope": "Profile staged with --coexistence-fix (the repairs do not touch this), world of the fixed probe run, no test scripts; console commands at a generated Pokemon Center",
+ "stack_when_the_block_is_placed": [
+  "TRANSFORMER/pixelmon@9.2.3/com.pixelmonmod.pixelmon.blocks.MultiBlock.getMultiBlockBoundingBox(MultiBlock.java:116)",
+  "TRANSFORMER/pixelmon@9.2.3/com.pixelmonmod.pixelmon.blocks.MultiBlock.m_5940_(MultiBlock.java:95)",
+  "TRANSFORMER/minecraft@1.20.1/net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.m_60651_(BlockBehaviour.java:676)",
+  "TRANSFORMER/minecraft@1.20.1/net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.m_60808_(BlockBehaviour.java:672)",
+  "TRANSFORMER/minecraft@1.20.1/net.minecraft.world.level.block.state.BlockBehaviour.m_5939_(BlockBehaviour.java:330)",
+  "TRANSFORMER/minecraft@1.20.1/net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.m_60742_(BlockBehaviour.java:684)",
+  "TRANSFORMER/aeronautics@1.3.0/dev.ryanhcode.sable.physics.impl.rapier.collider.RapierVoxelColliderBakery.buildPhysicsDataForBlock(RapierVoxelColliderBakery.java:72)",
+  "java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)",
+  "TRANSFORMER/minecraft@1.20.1/net.minecraft.Util$10.apply(Util.java:706)",
+  "TRANSFORMER/aeronautics@1.3.0/dev.ryanhcode.sable.physics.impl.rapier.collider.RapierVoxelColliderBakery.getPhysicsDataForBlock(RapierVoxelColliderBakery.java:98)",
+  "TRANSFORMER/aeronautics@1.3.0/dev.ryanhcode.sable.physics.impl.rapier.RapierPhysicsPipeline.handleBlockChange(RapierPhysicsPipeline.java:403)",
+  "TRANSFORMER/aeronautics@1.3.0/dev.ryanhcode.sable.sublevel.system.SubLevelPhysicsSystem.handleBlockChange(SubLevelPhysicsSystem.java:546)",
+  "TRANSFORMER/aeronautics@1.3.0/dev.ryanhcode.sable.SableCommonEvents.handleBlockChange(SableCommonEvents.java:96)",
+  "TRANSFORMER/minecraft@1.20.1/net.minecraft.world.level.chunk.LevelChunk.wrapOperation$eal000$sable$setBlockState(LevelChunk.java:7881)"
+ ],
+ "steps": [
+  {
+   "command": "forceload add 410 -525",
+   "console": [
+    "[puffish_skills] Mod configuration loaded successfully!",
+    "[puffish_skills] Data pack `society` loaded successfully!",
+    "[CSC]   _____  _____  _____ "
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "setblock 420 120 -525 pixelmon:red_pc",
+   "console": [
+    "Command exception: /setblock 420 120 -525 pixelmon:red_pc",
+    "java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
+    "\tat com.pixelmonmod.pixelmon.blocks.MultiBlock.getMultiBlockBoundingBox(MultiBlock.java:116) ~[Pixelmon-1.20.1-9.2.3-universal.jar%23622!/:9.2.3-pipe21439] {re:classloading}"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "execute if block 420 120 -525 pixelmon:red_pc",
+   "console": [
+    "Test passed"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "execute if block 420 121 -525 pixelmon:red_pc",
+   "console": [
+    "Test failed",
+    "Failed to process update information",
+    "java.net.http.HttpConnectTimeoutException: HTTP connect timed out"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "data get block 420 120 -525",
+   "console": [
+    "The target block is not a block entity",
+    "[supplementaries] Found status: OUTDATED Current: 1.20-3.1.43 Target: 1.20-3.1.44-forge",
+    "[diagonalfences] Starting version check at https://raw.githubusercontent.com/Fuzss/modresources/main/update/diagonalfences.json"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "setblock 420 120 -525 minecraft:air",
+   "console": [
+    "Changed the block at 420, 120, -525"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "execute if block 410 65 -525 pixelmon:red_pc",
+   "console": [
+    "Test passed"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "data get block 410 65 -525",
+   "console": [
+    "410, 65, -525 has the following block data: {z: -525, x: 410, owner: [I; -2058372346, -103134148, -2131008715, 1553863529], ForgeCaps: {}, id: \"pixelmon:pc\", y: 65, TrackedData: {}}"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "execute if block 410 67 -525 minecraft:air",
+   "console": [
+    "Test failed"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "setblock 410 67 -525 minecraft:stone",
+   "console": [
+    "Command exception: /setblock 410 67 -525 minecraft:stone",
+    "java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
+    "\tat com.pixelmonmod.pixelmon.blocks.MultiBlock.getMultiBlockBoundingBox(MultiBlock.java:116) ~[Pixelmon-1.20.1-9.2.3-universal.jar%23622!/:9.2.3-pipe21439] {re:classloading}"
+   ],
+   "server_crashed": false
+  },
+  {
+   "command": "sable assemble area 410 67 -525 410 67 -525",
+   "console": [
+    "Failed to destroy old block during assembly BlockPos{x=410, y=67, z=-525}",
+    "java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
+    "\tat com.pixelmonmod.pixelmon.blocks.MultiBlock.getMultiBlockBoundingBox(MultiBlock.java:116) ~[Pixelmon-1.20.1-9.2.3-universal.jar%23622!/:9.2.3-pipe21439] {re:classloading}"
+   ],
+   "server_crashed": true
+  }
+ ],
+ "task": "Task 19 Pixelmon multi-block machines next to the Aeronautics port's physics",
+ "what_was_observed": [
+  "Placing pixelmon:red_pc by console fails with the exception; the block state stays without its upper half and without a block entity",
+  "Changing the block above the generated PC fails with the same exception",
+  "Assembling that block into a physics structure stops the server (Exception ticking world)",
+  "Starting the same world again stops the server again with the same exception"
+ ]
+}

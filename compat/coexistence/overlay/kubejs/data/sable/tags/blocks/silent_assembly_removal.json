@@ -1,0 +1,1245 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "bakery:breadbox",
+      "required": false
+    },
+    {
+      "id": "bakery:cake_display",
+      "required": false
+    },
+    {
+      "id": "bakery:cake_stand",
+      "required": false
+    },
+    {
+      "id": "bakery:cupcake_display",
+      "required": false
+    },
+    {
+      "id": "bakery:tray",
+      "required": false
+    },
+    {
+      "id": "bakery:wall_display",
+      "required": false
+    },
+    {
+      "id": "betterarcheology:archeology_table",
+      "required": false
+    },
+    {
+      "id": "betterarcheology:villager_fossil",
+      "required": false
+    },
+    {
+      "id": "brewery:beer_barley",
+      "required": false
+    },
+    {
+      "id": "brewery:beer_haley",
+      "required": false
+    },
+    {
+      "id": "brewery:beer_hops",
+      "required": false
+    },
+    {
+      "id": "brewery:beer_nettle",
+      "required": false
+    },
+    {
+      "id": "brewery:beer_oat",
+      "required": false
+    },
+    {
+      "id": "brewery:beer_wheat",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_ak",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_carrasconlabel",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_cristelwalker",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_highland_hearth",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_jamesons_malt",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_jojannik",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_lilitusinglemalt",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_maggoallan",
+      "required": false
+    },
+    {
+      "id": "brewery:whiskey_smokey_reverie",
+      "required": false
+    },
+    {
+      "id": "buildinggadgets2:template_manager",
+      "required": false
+    },
+    {
+      "id": "candlelight:acacia_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:bamboo_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:birch_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:cherry_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:crimson_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:dark_oak_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:jewelry_box",
+      "required": false
+    },
+    {
+      "id": "candlelight:jungle_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:mangrove_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:oak_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:spruce_shelf",
+      "required": false
+    },
+    {
+      "id": "candlelight:table_set",
+      "required": false
+    },
+    {
+      "id": "candlelight:warped_shelf",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:crab_trap",
+      "required": false
+    },
+    {
+      "id": "create:andesite_table_cloth",
+      "required": false
+    },
+    {
+      "id": "create:basin",
+      "required": false
+    },
+    {
+      "id": "create:black_postbox",
+      "required": false
+    },
+    {
+      "id": "create:blue_postbox",
+      "required": false
+    },
+    {
+      "id": "create:brass_table_cloth",
+      "required": false
+    },
+    {
+      "id": "create:brown_postbox",
+      "required": false
+    },
+    {
+      "id": "create:chute",
+      "required": false
+    },
+    {
+      "id": "create:copper_table_cloth",
+      "required": false
+    },
+    {
+      "id": "create:cyan_postbox",
+      "required": false
+    },
+    {
+      "id": "create:depot",
+      "required": false
+    },
+    {
+      "id": "create:gray_postbox",
+      "required": false
+    },
+    {
+      "id": "create:green_postbox",
+      "required": false
+    },
+    {
+      "id": "create:item_drain",
+      "required": false
+    },
+    {
+      "id": "create:item_vault",
+      "required": false
+    },
+    {
+      "id": "create:light_blue_postbox",
+      "required": false
+    },
+    {
+      "id": "create:light_gray_postbox",
+      "required": false
+    },
+    {
+      "id": "create:lime_postbox",
+      "required": false
+    },
+    {
+      "id": "create:magenta_postbox",
+      "required": false
+    },
+    {
+      "id": "create:mechanical_saw",
+      "required": false
+    },
+    {
+      "id": "create:millstone",
+      "required": false
+    },
+    {
+      "id": "create:orange_postbox",
+      "required": false
+    },
+    {
+      "id": "create:package_frogport",
+      "required": false
+    },
+    {
+      "id": "create:pink_postbox",
+      "required": false
+    },
+    {
+      "id": "create:purple_postbox",
+      "required": false
+    },
+    {
+      "id": "create:red_postbox",
+      "required": false
+    },
+    {
+      "id": "create:schematic_table",
+      "required": false
+    },
+    {
+      "id": "create:schematicannon",
+      "required": false
+    },
+    {
+      "id": "create:stock_ticker",
+      "required": false
+    },
+    {
+      "id": "create:track_station",
+      "required": false
+    },
+    {
+      "id": "create:weighted_ejector",
+      "required": false
+    },
+    {
+      "id": "create:white_postbox",
+      "required": false
+    },
+    {
+      "id": "create:yellow_postbox",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:blaze_stove",
+      "required": false
+    },
+    {
+      "id": "create_enchantment_industry:blaze_enchanter",
+      "required": false
+    },
+    {
+      "id": "create_enchantment_industry:disenchanter",
+      "required": false
+    },
+    {
+      "id": "create_mechanical_extruder:mechanical_extruder",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/bookshelf",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/chest",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/counter",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/desk_left",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/desk_right",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/drawer",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/dresser",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/lockbox",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/oven",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/skeleton/wardrobe_bottom",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/bookshelf",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/chest",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/counter",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/desk_left",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/desk_right",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/drawer",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/dresser",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/lockbox",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/oven",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:bone/wither/wardrobe_bottom",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:decorations/cookie_jar",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:decorations/stocking",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/bookshelf",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/chest",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/counter",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/desk_left",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/desk_right",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/drawer",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/dresser",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/lockbox",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/oven",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:dunmer/wardrobe_bottom",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/bookshelf",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/chest",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/counter",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/desk_left",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/desk_right",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/drawer",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/dresser",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/lockbox",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/oven",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:necrolord/wardrobe_bottom",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/bookshelf",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/chest",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/counter",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/desk_left",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/desk_right",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/drawer",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/dresser",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/lockbox",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/oven",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:nordic/wardrobe_bottom",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/bookshelf",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/chest",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/counter",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/desk_left",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/desk_right",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/drawer",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/dresser",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/lockbox",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/oven",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:royal/wardrobe_bottom",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/bookshelf",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/chest",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/counter",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/desk_left",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/desk_right",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/drawer",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/dresser",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/lockbox",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/oven",
+      "required": false
+    },
+    {
+      "id": "fantasyfurniture:venthyr/wardrobe_bottom",
+      "required": false
+    },
+    {
+      "id": "farm_and_charm:tool_rack",
+      "required": false
+    },
+    {
+      "id": "farm_and_charm:window_sill",
+      "required": false
+    },
+    {
+      "id": "farmingforblockheads:chicken_nest",
+      "required": false
+    },
+    {
+      "id": "farmingforblockheads:feeding_trough",
+      "required": false
+    },
+    {
+      "id": "functionalstorage:controller_extension",
+      "required": false
+    },
+    {
+      "id": "functionalstorage:framed_controller_extension",
+      "required": false
+    },
+    {
+      "id": "functionalstorage:framed_storage_controller",
+      "required": false
+    },
+    {
+      "id": "functionalstorage:storage_controller",
+      "required": false
+    },
+    {
+      "id": "meadow:cheese_rack",
+      "required": false
+    },
+    {
+      "id": "meadow:wheelbarrow",
+      "required": false
+    },
+    {
+      "id": "meadow:wooden_flower_box",
+      "required": false
+    },
+    {
+      "id": "meadow:wooden_flower_pot_big",
+      "required": false
+    },
+    {
+      "id": "meadow:wooden_flower_pot_small",
+      "required": false
+    },
+    {
+      "id": "nethervinery:blazewine_pinot",
+      "required": false
+    },
+    {
+      "id": "nethervinery:crimson_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "nethervinery:crimson_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "nethervinery:crimson_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "nethervinery:ghastly_grenache",
+      "required": false
+    },
+    {
+      "id": "nethervinery:improved_lava_fizz",
+      "required": false
+    },
+    {
+      "id": "nethervinery:improved_nether_fizz",
+      "required": false
+    },
+    {
+      "id": "nethervinery:lava_fizz",
+      "required": false
+    },
+    {
+      "id": "nethervinery:nether_fizz",
+      "required": false
+    },
+    {
+      "id": "nethervinery:netherite_nectar",
+      "required": false
+    },
+    {
+      "id": "nethervinery:warped_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "nethervinery:warped_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "nethervinery:warped_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "pixelmon:black_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:black_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:black_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:blue_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:blue_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:blue_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:brown_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:brown_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:brown_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:cloning_machine",
+      "required": false
+    },
+    {
+      "id": "pixelmon:cyan_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:cyan_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:cyan_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:fossil_display",
+      "required": false
+    },
+    {
+      "id": "pixelmon:gray_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:gray_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:gray_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:green_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:green_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:green_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:infuser",
+      "required": false
+    },
+    {
+      "id": "pixelmon:light_blue_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:light_blue_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:light_blue_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:light_gray_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:light_gray_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:light_gray_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:lime_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:lime_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:lime_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:magenta_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:magenta_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:magenta_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:orange_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:orange_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:orange_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:pink_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:pink_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:pink_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:purple_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:purple_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:purple_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:red_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:red_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:red_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:white_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:white_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:white_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:yellow_floor_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:yellow_hanging_gym_sign",
+      "required": false
+    },
+    {
+      "id": "pixelmon:yellow_wall_gym_sign",
+      "required": false
+    },
+    {
+      "id": "plonk:placed_items",
+      "required": false
+    },
+    {
+      "id": "quark:encased_pipe",
+      "required": false
+    },
+    {
+      "id": "quark:pipe",
+      "required": false
+    },
+    {
+      "id": "sewingkit:storing_sewing_station",
+      "required": false
+    },
+    {
+      "id": "shippingbin:basic_shipping_bin",
+      "required": false
+    },
+    {
+      "id": "shippingbin:smart_shipping_bin",
+      "required": false
+    },
+    {
+      "id": "society:artisan_hopper",
+      "required": false
+    },
+    {
+      "id": "society:auto_grabber",
+      "required": false
+    },
+    {
+      "id": "society:auto_worm_farm",
+      "required": false
+    },
+    {
+      "id": "society:caterpillar_box",
+      "required": false
+    },
+    {
+      "id": "society:feeding_trough",
+      "required": false
+    },
+    {
+      "id": "society:fish_pond_basket",
+      "required": false
+    },
+    {
+      "id": "society:fish_pond_hatchery",
+      "required": false
+    },
+    {
+      "id": "society:fish_pond_manager",
+      "required": false
+    },
+    {
+      "id": "society:growth_obelisk",
+      "required": false
+    },
+    {
+      "id": "society:iridium_clock",
+      "required": false
+    },
+    {
+      "id": "society:mana_milker",
+      "required": false
+    },
+    {
+      "id": "society:mini_artisan_hopper",
+      "required": false
+    },
+    {
+      "id": "society:pickling_can",
+      "required": false
+    },
+    {
+      "id": "society:quality_washer",
+      "required": false
+    },
+    {
+      "id": "society:ribbit_hut",
+      "required": false
+    },
+    {
+      "id": "society:roe_recycler",
+      "required": false
+    },
+    {
+      "id": "society_trading:auto_trader",
+      "required": false
+    },
+    {
+      "id": "splendid_slimes:plort_press",
+      "required": false
+    },
+    {
+      "id": "trials:crafter",
+      "required": false
+    },
+    {
+      "id": "vinery:acacia_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:acacia_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:acacia_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:aegis_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:apple_cider",
+      "required": false
+    },
+    {
+      "id": "vinery:apple_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:bamboo_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:bamboo_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:bamboo_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:birch_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:birch_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:birch_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:bolvar_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:bottle_mojang_noir",
+      "required": false
+    },
+    {
+      "id": "vinery:chenet_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:cherry_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:cherry_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:cherry_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:cherry_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:chorus_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:clark_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:creepers_crush",
+      "required": false
+    },
+    {
+      "id": "vinery:cristel_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:dark_cherry_shelf",
+      "required": false
+    },
+    {
+      "id": "vinery:dark_cherry_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:dark_cherry_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:dark_cherry_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:dark_oak_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:dark_oak_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:dark_oak_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:eiswein",
+      "required": false
+    },
+    {
+      "id": "vinery:flower_box",
+      "required": false
+    },
+    {
+      "id": "vinery:flower_pot_big",
+      "required": false
+    },
+    {
+      "id": "vinery:glowing_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:jellie_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:jo_special_mixture",
+      "required": false
+    },
+    {
+      "id": "vinery:jungle_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:jungle_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:jungle_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:kelp_cider",
+      "required": false
+    },
+    {
+      "id": "vinery:lilitu_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:magnetic_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:mangrove_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:mangrove_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:mangrove_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:mead",
+      "required": false
+    },
+    {
+      "id": "vinery:mellohi_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:noir_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:oak_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:oak_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:oak_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:red_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:solaris_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:spruce_wine_rack_big",
+      "required": false
+    },
+    {
+      "id": "vinery:spruce_wine_rack_mid",
+      "required": false
+    },
+    {
+      "id": "vinery:spruce_wine_rack_small",
+      "required": false
+    },
+    {
+      "id": "vinery:stal_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:strad_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:villagers_fright",
+      "required": false
+    },
+    {
+      "id": "vinery:wine_box",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:fermenting_jar",
+      "required": false
+    },
+    {
+      "id": "zetter:artist_table",
+      "required": false
+    }
+  ]
+}

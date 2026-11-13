@@ -1,0 +1,109 @@
+{
+  "scope": "Pixelmon village content added beside Society's village overrides; derived data only, no mod JAR changes",
+  "inputs": {
+    "pixelmon_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "society_server_pack_sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
+  },
+  "output_sha256": {
+    "kubejs/data/minecraft/structures/village/desert/town_centers/desert_meeting_point_1.nbt": "810ea9c44071665be97e18432a15ecd2d0d9b47cf2b766f689ad09e57e29f690",
+    "kubejs/data/minecraft/structures/village/desert/town_centers/desert_meeting_point_2.nbt": "fc40183f44bd743aa0c61c4c8f494e6154e2e0792c11b0a0d0fe0167622bd04e",
+    "kubejs/data/psa_village/lithostitched/worldgen_modifier/plains_houses.json": "26059f327843f19ebb4cc551246e39e68c6d26f03cd8c66968d330e6a9063f57",
+    "kubejs/data/psa_village/lithostitched/worldgen_modifier/savanna_houses.json": "490428ce627b9272914efd1cdd372402762bf6eb76347541fabb2515162998a8",
+    "kubejs/data/psa_village/lithostitched/worldgen_modifier/savanna_streets.json": "c27cfbeeffce557fa392879722f81ce8c4720850d09970ef098da0555f7a8c12",
+    "kubejs/data/psa_village/lithostitched/worldgen_modifier/snowy_houses.json": "354f22fac535b43c7f0f9900f703100d5767f6f29ee771f7c622824946aa5f51",
+    "kubejs/data/psa_village/lithostitched/worldgen_modifier/taiga_houses.json": "dc2c743889722b9431e2130e2aea3eb313993e89a65714be1c35b22c7826f1e1",
+    "kubejs/server_scripts/psa_village_spawn.js": "5db11166e1cf4a70bb9df7f05d7488146b0c47aaed6aed793e899f73dd18415a"
+  },
+  "receipt": {
+    "pool_modifiers": [
+      {
+        "path": "kubejs/data/psa_village/lithostitched/worldgen_modifier/plains_houses.json",
+        "sha256": "26059f327843f19ebb4cc551246e39e68c6d26f03cd8c66968d330e6a9063f57",
+        "template_pool": "minecraft:village/plains/houses",
+        "added_elements": [
+          "pixelmon:village/plains/plains_tcg_shop_a",
+          "pixelmon:village/plains/plains_tcg_shop_b",
+          "pixelmon:village/plains/berry_farm_1",
+          "pixelmon:village/plains/berry_farm_2",
+          "pixelmon:village/plains/berry_farm_3",
+          "pixelmon:village/plains/berry_farm_4",
+          "pixelmon:village/plains/berry_farm_5"
+        ]
+      },
+      {
+        "path": "kubejs/data/psa_village/lithostitched/worldgen_modifier/savanna_houses.json",
+        "sha256": "490428ce627b9272914efd1cdd372402762bf6eb76347541fabb2515162998a8",
+        "template_pool": "minecraft:village/savanna/houses",
+        "added_elements": [
+          "pixelmon:village/savanna/savanna_tcg_shop_a",
+          "pixelmon:village/savanna/savanna_tcg_shop_b",
+          "pixelmon:village/savanna/berry_farm_1",
+          "pixelmon:village/savanna/berry_farm_2",
+          "pixelmon:village/savanna/berry_farm_3",
+          "pixelmon:village/savanna/berry_farm_4",
+          "pixelmon:village/savanna/berry_farm_5"
+        ]
+      },
+      {
+        "path": "kubejs/data/psa_village/lithostitched/worldgen_modifier/savanna_streets.json",
+        "sha256": "c27cfbeeffce557fa392879722f81ce8c4720850d09970ef098da0555f7a8c12",
+        "template_pool": "minecraft:village/savanna/streets",
+        "added_elements": [
+          "pixelmon:village/savanna/savanna_battle_arena_a",
+          "pixelmon:village/savanna/savanna_battle_arena_b"
+        ]
+      },
+      {
+        "path": "kubejs/data/psa_village/lithostitched/worldgen_modifier/snowy_houses.json",
+        "sha256": "354f22fac535b43c7f0f9900f703100d5767f6f29ee771f7c622824946aa5f51",
+        "template_pool": "minecraft:village/snowy/houses",
+        "added_elements": [
+          "pixelmon:village/snowy/snowy_tcg_shop_a",
+          "pixelmon:village/snowy/snowy_tcg_shop_b",
+          "pixelmon:village/snowy/berry_farm_1",
+          "pixelmon:village/snowy/berry_farm_2",
+          "pixelmon:village/snowy/berry_farm_3",
+          "pixelmon:village/snowy/berry_farm_4",
+          "pixelmon:village/snowy/berry_farm_5"
+        ]
+      },
+      {
+        "path": "kubejs/data/psa_village/lithostitched/worldgen_modifier/taiga_houses.json",
+        "sha256": "dc2c743889722b9431e2130e2aea3eb313993e89a65714be1c35b22c7826f1e1",
+        "template_pool": "minecraft:village/taiga/houses",
+        "added_elements": [
+          "pixelmon:village/taiga/taiga_tcg_shop_a",
+          "pixelmon:village/taiga/taiga_tcg_shop_b",
+          "pixelmon:village/taiga/berry_farm_1",
+          "pixelmon:village/taiga/berry_farm_2",
+          "pixelmon:village/taiga/berry_farm_3",
+          "pixelmon:village/taiga/berry_farm_4",
+          "pixelmon:village/taiga/berry_farm_5"
+        ]
+      }
+    ],
+    "town_centres": [
+      {
+        "path": "kubejs/data/minecraft/structures/village/desert/town_centers/desert_meeting_point_1.nbt",
+        "original_sha256": "fbdf5e3e0f0483b08551173a1ac7935c8ed817eb6835de6b19a3a51ec95fded9",
+        "sha256": "810ea9c44071665be97e18432a15ecd2d0d9b47cf2b766f689ad09e57e29f690",
+        "pixelmon_hooks": 6,
+        "replaced_streets": 0,
+        "moved_streets": 0
+      },
+      {
+        "path": "kubejs/data/minecraft/structures/village/desert/town_centers/desert_meeting_point_2.nbt",
+        "original_sha256": "ec02c7fe9fca12aca2a42d1870679be9ed177582312ac4227ff1d8510689f26f",
+        "sha256": "fc40183f44bd743aa0c61c4c8f494e6154e2e0792c11b0a0d0fe0167622bd04e",
+        "pixelmon_hooks": 6,
+        "replaced_streets": 1,
+        "moved_streets": 1
+      }
+    ],
+    "spawn_script": {
+      "path": "kubejs/server_scripts/psa_village_spawn.js",
+      "sha256": "5db11166e1cf4a70bb9df7f05d7488146b0c47aaed6aed793e899f73dd18415a",
+      "source": "compat/village/psa_village_spawn.js"
+    }
+  }
+}

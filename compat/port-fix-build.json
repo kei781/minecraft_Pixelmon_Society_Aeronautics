@@ -1,0 +1,19 @@
+{
+  "base_common_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+  "tested_patch_sha256": "dc2443c2c28348097cdaaa81e22db06b8c504b644beabe79dd9ce1159b2ef018",
+  "source_sha256": {
+    "PortColliderShapeMixin": "6c62cb9506cab4536fd813b9e32b12856505f8c97b2d1b71847bc7a829400607",
+    "PortRedstoneContactTickerMixin": "ddff71d092e779c00d90936d50b8cbd67fe2c5d0a68bbbea035b5d0f89a48200"
+  },
+  "config_sha256": "aab37c7853ac738c4eb0d1f3d218f68413d1960bba1d18ed99f9db1adaa889fb",
+  "class_sha256": {
+    "PortColliderShapeMixin": "d421821e89b5e362dd5676b0c7033e015c225317d7afa3906b746c96ff5ff11a",
+    "PortRedstoneContactTickerMixin": "c93155e70b4e7d412c4f3a2a2bf90031233e2e669562d77b5e68c97c723e3932"
+  },
+  "port_class_sha256": {
+    "dev/ryanhcode/sable/physics/impl/rapier/collider/RapierVoxelColliderBakery.class": "ec86e54d7fdf42d9125221a0c45f1b4d786b134ee3b6a2bdc9b0b139c5522783",
+    "dev/ryanhcode/sable/physics/impl/rapier/collider/PhysicsColliderBlockGetter.class": "d07e1997010d89653a20bdc4cb552b614d0590a0c680ef89c34b919fd98b9c55",
+    "dev/ryanhcode/sable/forge/mixin/compatibility/create/redstone_contacts/RedstoneContactBlockMixin.class": "44619d2accc9518abe7900439f9baa73fb674b20ceca1ac1ca48d873597f196f"
+  },
+  "scope": "Only the two authored port repair classes, their mixin configuration and manifest/provenance. Port, Pixelmon and upstream code and assets and the earlier authored corrections are preserved."
+}
