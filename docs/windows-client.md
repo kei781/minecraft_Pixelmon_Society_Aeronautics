@@ -1,12 +1,10 @@
 # Windows 플레이어 설치
 
-현재 시험 후보는 **`PSA-Forge-Full-Experimental-v19.mrpack`**이다. 세 프로젝트, 모드 JAR 355개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. Task18 독립 리뷰는 수락했으며 v19의 새 Windows 가져오기·실행은 아직 확인하지 않았다.
+현재 시험 후보는 **`PSA-Forge-Full-Experimental-v20.mrpack`**이다. 세 프로젝트, 모드 JAR 355개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. v20은 아직 누구도 가져오거나 실행해 보지 않았다.
 
-Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. v18은 기존 보정에 원격 접속 후 ALI 툴팁 등록 오류를 고치는 클라이언트 전용 모드 하나를 더했다. 서버는 v17과 같은 공통 보정본·313개 모드를 사용한다. [구성과 검증 범위](forge-candidate.md), [ALI 수정](ali-client-tooltips.md), [스타터 오류 수정](pixelmon-starter-disconnect.md).
+Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. [구성과 검증 범위](forge-candidate.md).
 
-v19는 v18의 모드들을 유지하고 잘못된 전리품 목록 JSON만 보정한다. 같은 리소스와
-서버 전용 갱신 보정을 사용하는 새 서버 후보는 314개 모드로 준비했다. 실제 운영은
-v17·313개를 유지한다. [수정·변경/복원 검사](datapack-reload-recovery.md).
+v20은 v19와 같은 355개 모드 구성에서 공통 JAR을 [서버 중단 결함 두 건을 고친 것](coexistence-audit.md#포팅-jar-수정)으로 바꾸고, 싱글플레이용으로 서버와 같은 [공존 보정 파일](coexistence-audit.md)을 넣었다. **운영 서버는 2026-11-13부터 v20·314개 모드·새 월드다. v19 이하의 팩은 공통 JAR이 달라 쓰지 않는다.** [반영 기록](../evidence/n100-v20-fresh-world-deployment.json).
 
 ## 한 번 준비하기
 
@@ -16,26 +14,32 @@ v17·313개를 유지한다. [수정·변경/복원 검사](datapack-reload-reco
 
 ## 파일 하나 가져오기
 
-1. 전달받은 v19 파일을 저장한다. 이전 인스턴스는 보존하고 새 인스턴스로 가져온다.
+1. 전달받은 v20 파일을 저장한다. 이전 인스턴스는 보존하고 새 인스턴스로 가져온다.
 2. **Add Instance → Import → 파일 선택 → OK**를 누른다. [공식 가져오기 안내](https://prismlauncher.org/wiki/getting-started/download-modpacks/).
 3. 외부 모드 확인창이 나오면 파일을 관리자에게서 받았는지, 아래 SHA256과 일치하는지 확인한 뒤 신뢰 체크를 하고 진행한다.
 4. Minecraft **1.20.1**, Forge **47.4.20**인지 확인한다. 첫 설치에는 Minecraft·로더·Java 다운로드용 인터넷이 필요하다.
 5. **Edit → Settings → Java**에서 메모리를 정한다. 16 GB 이상 PC에서는 최대 8192 MB를 첫 시작값으로 사용할 수 있다. [메모리 설정 안내](https://prismlauncher.org/wiki/help-pages/java-settings/).
 6. **Launch → Multiplayer → Add Server**에서 관리자가 별도로 전달한 서버 주소를 입력한다. 실제 사용자 서버 주소와 SSH 정보는 공개 저장소·패키지에 넣지 않았다.
 
-현재 파일은 1,137,811,877바이트이며 SHA256은 다음과 같다.
+현재 파일(v20)은 1,137,884,479바이트이며 SHA256은 다음과 같다.
 
 ```text
-72f814d0acf7fa57928d011552114c1c2165e69704818d7afe82560a899abbf7
+80febd9a8c8cc1c60e48f44f08e029b117c7e2fa10e70daf5b761646de01502c
 ```
 
 ```powershell
-Get-FileHash ".\PSA-Forge-Full-Experimental-v19.mrpack" -Algorithm SHA256
+Get-FileHash ".\PSA-Forge-Full-Experimental-v20.mrpack" -Algorithm SHA256
 ```
 
 설치 경로와 인스턴스 이름은 짧게 쓴다. 가장 긴 상대 경로는 108자다.
 
 ## 실제 확인한 범위
+
+v20은 내보내기 도구의 검사(선언 파일·해시·서버와 같은 보정 파일)와 아카이브 안의 공통 JAR·보정 스크립트 해시만 확인했다. 가져오기·실행·접속은 Windows와 Mac 어디에서도 하지 않았다.
+
+이하는 이전 팩의 이력이다. v19 이하는 이전 공통 JAR(`351ecb09…`)을 쓴다.
+
+v18은 원격 접속 후 ALI 툴팁 등록 오류를 고치는 클라이언트 전용 모드 하나를 더했고([ALI 수정](ali-client-tooltips.md), [스타터 오류 수정](pixelmon-starter-disconnect.md)), v19는 v18의 모드들을 유지하고 잘못된 전리품 목록 JSON만 보정했다([수정·변경/복원 검사](datapack-reload-recovery.md)). 당시 운영 서버는 v17·313개 모드였다.
 
 v19는 v18과 같은 355개 모드와 진단 제외를 확인했다. JSON·색인·프로필 외 파일은
 모두 같다. 같은 구성을 적용한 Mac QA의 실제 인증 입장과 서버 데이터 변경·복원
