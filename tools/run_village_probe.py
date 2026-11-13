@@ -44,7 +44,7 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def prepare(source, destination, libraries, port, seed):
+def prepare(source, destination, libraries, port, seed, sweep_skip=()):
     source, destination = Path(source), Path(destination)
     if destination.exists() or destination.is_symlink():
         raise ValueError("A fresh destination is required")
@@ -70,8 +70,12 @@ def prepare(source, destination, libraries, port, seed):
     shutil.copyfile(PROBE, destination / "kubejs/server_scripts/psa_village_probe.js")
     shutil.copyfile(ASSEMBLY_PROBE, destination / "kubejs/server_scripts/psa_assembly_probe.js")
     # JSON is a valid script literal; the probe reads the same check list in every profile.
+    spec = json.loads(CHECKS.read_text())
+    # A block that brings this profile's server down when placed is left out of the assembly sweep
+    # so the sweep can finish; the crash itself is observed by port_repair_checks.
+    spec["assembly_sweep_skip"] = {block: "named on the command line" for block in sweep_skip}
     (destination / "kubejs/server_scripts/psa_probe_spec.js").write_text(
-        "global.psaProbeSpec = " + json.dumps(json.loads(CHECKS.read_text()), sort_keys=True) + ";\n")
+        "global.psaProbeSpec = " + json.dumps(spec, sort_keys=True) + ";\n")
     (destination / "server.properties").write_text(
         "server-ip=127.0.0.1\nserver-port=%d\nonline-mode=true\nenable-query=false\nenable-rcon=false\n"
         "allow-flight=true\nmax-players=6\nview-distance=4\nsimulation-distance=4\nlevel-name=%s\n"
@@ -112,7 +116,9 @@ class Server:
                 position += 1
                 if failure is not None and failure.search(line):
                     raise RuntimeError("Server reported: " + line[:400])
-                if "This crash report has been saved to" in line:
+                if "This crash report has been saved to" in line or "Failed to start the minecraft server" in line:
+                    # The second is a failed mod load (the pack has a rare start-up race between Quark's
+                    # and Supplementaries' event registration); the JVM stays alive after either.
                     self.crashed = True
                     raise RuntimeError("Server crashed: " + line[:400])
                 if matcher.search(line):
@@ -178,8 +184,7 @@ def spawn_village(villages, decision):
 
 def evaluate(spec, probe):
     """Compare what the game reported with what each check expects. Checks without an expectation only record."""
-    results = {"tags": [], "crafting": [], "cooking": [], "structure_sets": [], "assemblies": [], "loot": [],
-               "right_click": []}
+    results = {"tags": [], "crafting": [], "cooking": [], "structure_sets": [], "assemblies": [], "loot": []}
     for check in spec.get("tags", []):
         values = probe["tags"].get(check["registry"] + ":" + check["tag"])
         missing = None if values is None else sorted(set(check.get("expect_contains", [])) - set(values))
@@ -206,10 +211,6 @@ def evaluate(spec, probe):
         results["assemblies"].append({
             "structure": check["structure"], "found": found,
             "pass": bool(valid) and all(sample["matched"] >= check["expect_min_matched"] for sample in valid)})
-    for check in spec.get("right_click", []):
-        canceled = probe["right_clicks"].get(check["item"])
-        results["right_click"].append({"item": check["item"], "expect_refused": check["expect_refused"],
-                                       "refused": canceled, "pass": canceled == check["expect_refused"]})
     for check in spec.get("loot_tables", []):
         found = probe["loot"].get(check["table"])
         items = (found or {}).get("stacks_by_item", {})
@@ -221,7 +222,7 @@ def evaluate(spec, probe):
             "namespaces": namespaces, "expected_item_stacks": {name: items.get(name, 0) for name in check.get("expect_items", [])},
             "missing": missing, "pass": found is not None and not missing})
     results["failed"] = sorted(kind + ":" + str(entry.get("name") or entry.get("tag") or entry.get("id")
-                                                   or entry.get("structure") or entry.get("table") or entry.get("item"))
+                                                   or entry.get("structure") or entry.get("table"))
                                for kind, entries in results.items() if isinstance(entries, list)
                                for entry in entries if not entry["pass"])
     return results
@@ -313,8 +314,7 @@ def assembly_inventory_sweep(server, timeout=900):
     the block alone and see where the marked item is afterwards (tests/forge-assembly-probe.js).
     Returns (summary, one record per block).
 
-    Batch results are read from KubeJS's own log file: one of these long lines was seen to reach
-    that file but not the game console."""
+    Batch results are read from KubeJS's own log file, see probe_lines()."""
     x, y, z = ASSEMBLY_CELL
     for text in ("forceload add %d %d" % (x, z),
                  "fill %d %d %d %d %d %d minecraft:stone" % (x - 3, y - 1, z - 3, x + 3, y - 1, z + 3)):
@@ -378,6 +378,61 @@ def assembly_inventory_sweep(server, timeout=900):
     return summary, records
 
 
+def probe_lines(server):
+    """The probe's lines as KubeJS wrote them to its own log. The pack's log filter (Log Begone)
+    removes console lines that match its phrase list, and long probe lines can contain such a
+    phrase: one registry part and one sweep batch were seen missing from the console only."""
+    log = server.profile / "logs/kubejs/server.log"
+    return log.read_text(errors="replace").splitlines() if log.is_file() else server.lines
+
+
+def port_repair_checks(server, position=(8, 200, 200)):
+    """Two situations in which the unrepaired port stops the server, driven from the console:
+    a placed Create Redstone Contact, and a physics structure beside a Pixelmon multi-block machine.
+    Run last: on the unrepaired port the first one ends the server and the second is not reached."""
+    x, y, z = position
+    steps, results = [], {}
+
+    def command(text, pause):
+        if server.crashed or server.process.poll() is not None:
+            return None
+        start = len(server.lines)
+        server.send(text)
+        time.sleep(pause)
+        fresh = server.lines[start:]
+        lines = [re.sub(r"^\[[0-9:]+\] \[[^]]*\] \[[^]]*\]: ", "", line)[:300] for line in fresh if "[mixin/]" not in line]
+        if any("This crash report has been saved to" in line or "Encountered an unexpected exception" in line for line in fresh):
+            server.crashed = True
+        steps.append({"command": text, "console": lines[:4], "server_crashed": server.crashed})
+        return " ".join(lines)
+
+    def alive():
+        return not server.crashed and server.process.poll() is None
+
+    command("forceload add %d %d" % (x, z), 15)
+    command("fill %d %d %d %d %d %d minecraft:stone" % (x - 3, y - 1, z - 3, x + 3, y - 1, z + 3), 1)
+    placed = command("setblock %d %d %d create:redstone_contact" % (x, y, z), 6)
+    data = command("data get block %d %d %d" % (x, y, z), 1)
+    results["redstone_contact"] = {
+        "placed": placed is not None and "Changed the block" in placed,
+        "block_entity": data is not None and 'id: "create:redstone_contact"' in data, "server_alive": alive()}
+    command("setblock %d %d %d minecraft:air" % (x, y, z), 1)
+    machine = command("setblock %d %d %d pixelmon:red_pc" % (x + 2, y, z), 2)
+    neighbour = command("setblock %d %d %d minecraft:stone" % (x + 2, y, z + 1), 1)
+    command("setblock %d %d %d minecraft:oak_planks" % (x + 2, y, z - 1), 1)
+    assembled = command("sable assemble area %d %d %d %d %d %d" % (x + 2, y, z - 1, x + 2, y, z - 1), 10)
+    results["physics_beside_pixelmon_machine"] = {
+        "machine_placed": machine is not None and "Changed the block" in machine,
+        "neighbour_placed": neighbour is not None and "Changed the block" in neighbour,
+        "assembled": assembled is not None and "Assembled a region" in assembled, "server_alive": alive()}
+    command("sable remove @e", 2)
+    command("fill %d %d %d %d %d %d minecraft:air" % (x - 3, y, z - 3, x + 3, y + 1, z + 3), 1)
+    command("forceload remove %d %d" % (x, z), 1)
+    for result in results.values():
+        result["pass"] = all(result.values())
+    return {"results": results, "steps": steps}
+
+
 def read_back(world, village):
     """Compare the probe's assembly with what the game saved, then count blocks/entities."""
     saved = world.structure_pieces(village["chunk"][0], village["chunk"][1], village["structure"])
@@ -421,7 +476,7 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
     try:
         done = server.wait_for(r"PSA_VILLAGE_PROBE_DONE", timeout,
                                fail=r"PSA_VILLAGE_PROBE_FAILED|psa_village_(probe|spawn)\.js#\d+: Error")
-        probe = village_world.parse_probe_log(server.lines)
+        probe = village_world.parse_probe_log(probe_lines(server))
         if (profile / SPAWN_SCRIPT).is_file():
             position = server.wait_for(SPAWN_LINE.pattern, timeout, fail=r"psa_village_spawn\.js#\d+: Error")
             decision = json.loads(SPAWN_LINE.search(server.lines[position - 1]).group(1))
@@ -442,10 +497,11 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
         # Last, after the save: a block that brings the server down ends only this sweep.
         outcome["assembly_inventory_sweep"], assembly_records = assembly_inventory_sweep(server, timeout)
         (profile / "assembly-probe-blocks.json").write_text(json.dumps(assembly_records, indent=1) + "\n")
+        outcome["port_repairs"] = port_repair_checks(server)
     except (RuntimeError, TimeoutError) as error:
         failure = str(error)
     outcome["stop_exit_code"] = server.stop()
-    probe = village_world.parse_probe_log(server.lines)
+    probe = village_world.parse_probe_log(probe_lines(server))
     outcome.update({
         "failure": failure, "probe_done": probe["done"], "probe_failed": probe["failed"],
         "spawn_before_start_script": probe["spawn"], "start_script_decision": decision, "census": probe["census"],
@@ -467,6 +523,11 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
     sweep = outcome.get("assembly_inventory_sweep")
     if sweep is None or sweep["failed"] or sweep["duplicated"] or sweep["lost"] or sweep["server crash"]:
         outcome["checks"]["failed"].append("assembly_inventory_sweep")
+    repairs = (outcome.get("port_repairs") or {}).get("results", {})
+    outcome["checks"]["failed"] += ["port_repairs:" + name for name in ("redstone_contact", "physics_beside_pixelmon_machine")
+                                    if not repairs.get(name, {}).get("pass")]
+    outcome["probe_records_incomplete"] = probe["incomplete"]
+    outcome["checks"]["failed"] += ["probe records: " + item for item in probe["incomplete"]]
     if world_saved and failure is None and (outcome["stop_exit_code"] == 0 or server.crashed):
         world = village_world.World(profile / WORLD)
         saved = village_world.level_spawn(profile / WORLD)
@@ -501,13 +562,16 @@ def main():
     parser.add_argument("--margin", type=int, default=24)
     parser.add_argument("--timeout", type=int, default=1500)
     parser.add_argument("--accept-eula", action="store_true")
+    parser.add_argument("--skip-in-sweep", action="append", default=[], metavar="BLOCK",
+                        help="block id the assembly sweep must not place (it stops this profile's server)")
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit("Refusing to overwrite an existing result")
     if not args.java.is_file():
         raise SystemExit("Java 17 executable not found")
-    profile = prepare(args.source, args.destination, args.libraries, args.port, args.seed)
+    profile = prepare(args.source, args.destination, args.libraries, args.port, args.seed, args.skip_in_sweep)
     outcome = run(profile, args.java, args.generate_per_structure, args.margin, args.timeout, args.accept_eula)
+    outcome["assembly_sweep_skip"] = sorted(args.skip_in_sweep)
     args.output.write_text(json.dumps(outcome, indent=1, sort_keys=True) + "\n")
     print(json.dumps({key: outcome.get(key) for key in (
         "failure", "probe_done", "stop_exit_code", "spawn_before_start_script", "start_script_decision",

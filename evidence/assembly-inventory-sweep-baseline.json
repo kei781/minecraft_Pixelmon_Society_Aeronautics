@@ -1,5 +1,5 @@
 {
- "assembly_probe_sha256": "331ac97e8b285b825acfb7080afb3bef71ea3fec6a6035739755c9bc4df7198b",
+ "assembly_probe_sha256": "ef47db0d626036735d39fc9c0c37e3215c7497cfca362347c682d731a407d50b",
  "moved_with_contents": [
   "amendments:tool_hook",
   "aquaculture:neptunes_bounty",
@@ -3647,7 +3647,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:brown_couch",
    "outcome": "error"
   },
@@ -3678,22 +3678,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:brown_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:brown_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:brown_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:brown_vending_machine",
    "outcome": "error"
   },
@@ -3711,17 +3711,17 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:cloning_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:cooking_pot",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:cyan_couch",
    "outcome": "error"
   },
@@ -3752,22 +3752,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:cyan_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:cyan_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:cyan_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:cyan_vending_machine",
    "outcome": "error"
   },
@@ -3785,27 +3785,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:fossil_cleaner",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:fossil_display",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:fossil_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because \"state\" is null",
-   "id": "pixelmon:glass_table",
-   "outcome": "error"
-  },
-  {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:gray_couch",
    "outcome": "error"
   },
@@ -3836,22 +3831,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:gray_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:gray_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:gray_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:gray_vending_machine",
    "outcome": "error"
   },
@@ -3869,7 +3864,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:green_couch",
    "outcome": "error"
   },
@@ -3900,22 +3895,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:green_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:green_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:green_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:green_vending_machine",
    "outcome": "error"
   },
@@ -3933,12 +3928,12 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:infuser",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_blue_couch",
    "outcome": "error"
   },
@@ -3969,22 +3964,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_blue_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_blue_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_blue_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_blue_vending_machine",
    "outcome": "error"
   },
@@ -4002,7 +3997,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_gray_couch",
    "outcome": "error"
   },
@@ -4033,22 +4028,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_gray_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_gray_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_gray_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:light_gray_vending_machine",
    "outcome": "error"
   },
@@ -4066,7 +4061,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:lime_couch",
    "outcome": "error"
   },
@@ -4097,22 +4092,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:lime_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:lime_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:lime_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:lime_vending_machine",
    "outcome": "error"
   },
@@ -4130,7 +4125,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:magenta_couch",
    "outcome": "error"
   },
@@ -4161,22 +4156,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:magenta_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:magenta_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:magenta_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:magenta_vending_machine",
    "outcome": "error"
   },
@@ -4194,7 +4189,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:orange_couch",
    "outcome": "error"
   },
@@ -4225,22 +4220,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:orange_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:orange_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:orange_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:orange_vending_machine",
    "outcome": "error"
   },
@@ -4258,7 +4253,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:pink_couch",
    "outcome": "error"
   },
@@ -4289,22 +4284,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:pink_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:pink_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:pink_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:pink_vending_machine",
    "outcome": "error"
   },
@@ -4322,7 +4317,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:purple_couch",
    "outcome": "error"
   },
@@ -4353,22 +4348,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:purple_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:purple_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:purple_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:purple_vending_machine",
    "outcome": "error"
   },
@@ -4386,7 +4381,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:red_couch",
    "outcome": "error"
   },
@@ -4417,22 +4412,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:red_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:red_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:red_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:red_vending_machine",
    "outcome": "error"
   },
@@ -4450,27 +4445,27 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:tree",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:tv",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:tv2",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:tv3",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:white_couch",
    "outcome": "error"
   },
@@ -4501,22 +4496,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:white_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:white_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:white_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:white_vending_machine",
    "outcome": "error"
   },
@@ -4534,7 +4529,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:yellow_couch",
    "outcome": "error"
   },
@@ -4565,22 +4560,22 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:yellow_pc",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:yellow_rug",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:yellow_trade_machine",
    "outcome": "error"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "pixelmon:yellow_vending_machine",
    "outcome": "error"
   },
@@ -4897,7 +4892,7 @@
    "outcome": "duplicated"
   },
   {
-   "error": "JavaException: java.lang.NullPointerException: null",
+   "error": "JavaException: java.lang.NullPointerException: Cannot invoke \"net.minecraft.world.level.block.state.BlockState.m_60734_()\" because the return value of \"net.minecraft.world.level.BlockGetter.m_8055_(net.minecraft.core.BlockPos)\" is null",
    "id": "tcg:battle_spectator",
    "outcome": "error"
   },
@@ -6062,7 +6057,6 @@
    "pixelmon:fossil_cleaner",
    "pixelmon:fossil_display",
    "pixelmon:fossil_machine",
-   "pixelmon:glass_table",
    "pixelmon:gray_couch",
    "pixelmon:gray_pc",
    "pixelmon:gray_rug",
@@ -6136,10 +6130,10 @@
   "outcome_counts": {
    "dropped, not moved": 1,
    "duplicated": 306,
-   "error": 94,
+   "error": 93,
    "moved": 1251,
-   "no block entity after placing": 209,
-   "no inventory found for the marked item": 2319,
+   "no block entity after placing": 194,
+   "no inventory found for the marked item": 2335,
    "skipped": 1
   },
   "server crash": [],

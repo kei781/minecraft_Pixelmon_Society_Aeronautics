@@ -2,7 +2,7 @@
   "scope": "Coexistence overlay (tags, one template pool, worldgen modifier, KubeJS server scripts) and the Radium options the Aeronautics port declares; derived data only, no mod JAR changes",
   "inputs": {
     "pixelmon_jar_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
-    "port_jar_sha256": "351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db",
+    "port_jar_sha256": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c",
     "society_server_pack_sha1": "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
   },
   "output_sha256": {
@@ -35,9 +35,8 @@
     "kubejs/data/psa_coexistence/lithostitched/worldgen_modifier/pixelmon_plains_taiga_dens.json": "1b8179531ad43a68976df1d4238244c2053fa43c5af7d99da40e1c3cb585831e",
     "kubejs/data/sable/tags/blocks/silent_assembly_removal.json": "5a7da02a0addb1cb08cdb62319c4f148ca5f6f83dfc447694d1b8c73f0751ec1",
     "kubejs/server_scripts/psa_miltank_milk.js": "fa565e4b4ffa05be6bf9c9b2173d50e2535b161677debcdb53b43cbfd4853d23",
-    "kubejs/server_scripts/psa_physics_immovable.js": "74fe6066b6b50d2506a776aa714e69982df5d36b5352040f797ae43cc75047d2",
-    "kubejs/server_scripts/psa_recipe_coexistence.js": "0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c",
-    "kubejs/server_scripts/psa_redstone_contact_guard.js": "e002c0802861b7913f4f3ede8fae48d042b5af18ba7aeb63184cd582dddf1f4d"
+    "kubejs/server_scripts/psa_physics_immovable.js": "4d4a7d275bc38e87453fe89ef2d3feedae6966e6470fa066b934c9a1f10a5c02",
+    "kubejs/server_scripts/psa_recipe_coexistence.js": "0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c"
   },
   "receipt": {
     "files": [
@@ -155,18 +154,14 @@
       },
       {
         "path": "kubejs/server_scripts/psa_physics_immovable.js",
-        "sha256": "74fe6066b6b50d2506a776aa714e69982df5d36b5352040f797ae43cc75047d2"
+        "sha256": "4d4a7d275bc38e87453fe89ef2d3feedae6966e6470fa066b934c9a1f10a5c02"
       },
       {
         "path": "kubejs/server_scripts/psa_recipe_coexistence.js",
         "sha256": "0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c"
-      },
-      {
-        "path": "kubejs/server_scripts/psa_redstone_contact_guard.js",
-        "sha256": "e002c0802861b7913f4f3ede8fae48d042b5af18ba7aeb63184cd582dddf1f4d"
       }
     ],
-    "preconditions_checked": 275,
+    "preconditions_checked": 274,
     "radium_config": {
       "path": "config/lithium.properties",
       "original_sha256": "09759af4787e05f7d6f2eac3bd19fe5c79f4676444f568820814a93ca7e6b265",

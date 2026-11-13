@@ -55,8 +55,9 @@ def parse_probe_log(lines):
     """Return {'spawn': {...}, 'pools': {...}, 'templates': {...}, 'villages': [...], 'census': {...}}."""
     result = {"spawn": None, "pools": {}, "templates": {}, "villages": [], "census": None,
               "registries": {}, "loot": {}, "tags": {}, "crafting": {}, "cooking": {}, "structure_sets": {},
-              "assemblies": {}, "right_clicks": {},
+              "assemblies": {}, "incomplete": [],
               "done": False, "failed": None}
+    parts = {}
     for line in lines:
         if "PSA_VILLAGE_PROBE_DONE" in line:
             result["done"] = True
@@ -96,8 +97,6 @@ def parse_probe_log(lines):
                                                 "count": int(data["count"]), "missing_items": data["missing_items"]}
         elif kind == "cooking":
             result["cooking"][data["name"]] = {"recipe": data["recipe"], "result": data["result"], "count": int(data["count"])}
-        elif kind == "right_click":
-            result["right_clicks"][data["item"]] = data["canceled"]
         elif kind == "structure_set":
             result["structure_sets"][data["id"]] = data["structures"]
         elif kind == "assembly":
@@ -106,7 +105,13 @@ def parse_probe_log(lines):
                 "samples": [{"chunk": [int(v) for v in sample["chunk"]], "valid": sample["valid"],
                              "pieces": int(sample["pieces"]), "matched": int(sample["matched"])} for sample in data["samples"]]}
         elif kind == "registry":
-            result["registries"].setdefault(data["name"], []).extend(data["ids"])
+            parts.setdefault(data["name"], {"total": int(data["total"]), "by_offset": {}})["by_offset"][int(data["offset"])] = data["ids"]
+    for name, registry in sorted(parts.items()):
+        ids = [value for offset in sorted(registry["by_offset"]) for value in registry["by_offset"][offset]]
+        result["registries"][name] = ids
+        if len(ids) != registry["total"]:
+            # A part that never arrived: the id list must not pass for the whole registry.
+            result["incomplete"].append("registry %s: %d of %d ids" % (name, len(ids), registry["total"]))
     return result
 
 

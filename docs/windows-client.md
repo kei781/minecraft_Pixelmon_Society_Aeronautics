@@ -69,7 +69,7 @@ Windows 인증 접속, 큰 번호의 탱크 수레 1000→2000→1000mB 표시�
 
 ## 개발자 재생성
 
-공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db`이고, 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. [공통 JAR 재생성](pixelmon-starter-disconnect.md)을 먼저 수행한다.
+공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`이고(v19까지의 팩은 이전 `351ecb09…`이며 [포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)이 없다), 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. [공통 JAR 재생성](pixelmon-starter-disconnect.md)을 먼저 수행한다.
 
 ```bash
 python3 tools/export_forge_client.py \

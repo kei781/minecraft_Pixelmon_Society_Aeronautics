@@ -79,8 +79,10 @@ def tag_list(element_type, values):
 
 
 def _read_string(stream):
+    # Java's modified UTF-8: NUL is C0 80 and a character outside the BMP is two encoded surrogates.
     (length,) = struct.unpack(">H", _exact(stream, 2))
-    return _exact(stream, length).decode("utf-8", "surrogatepass")
+    text = _exact(stream, length).replace(b"\xc0\x80", b"\x00").decode("utf-8", "surrogatepass")
+    return text.encode("utf-16-le", "surrogatepass").decode("utf-16-le", "surrogatepass")
 
 
 def _exact(stream, count):
@@ -127,7 +129,9 @@ def _read_payload(stream, tag_type, depth):
 
 
 def _write_string(stream, value):
-    data = value.encode("utf-8", "surrogatepass")
+    units = value.encode("utf-16-be", "surrogatepass")
+    data = b"".join(chr(struct.unpack(">H", units[index:index + 2])[0]).encode("utf-8", "surrogatepass")
+                    for index in range(0, len(units), 2)).replace(b"\x00", b"\xc0\x80")
     if len(data) > 0xFFFF:
         raise ValueError("NBT string too long")
     stream.write(struct.pack(">H", len(data)))

@@ -1339,11 +1339,6 @@
  },
  {
   "jar": "port",
-  "entry": "dev/ryanhcode/sable/forge/mixin/compatibility/create/redstone_contacts/RedstoneContactBlockMixin.class",
-  "sha256": "44619d2accc9518abe7900439f9baa73fb674b20ceca1ac1ca48d873597f196f"
- },
- {
-  "jar": "port",
   "entry": "dev/simulated_team/simulated/util/assembly/SimAssemblyContraption.class",
   "sha256": "dae82ad4f62375214df52b7b39b1c27283646c9278c8dfa8e6cc196a21a0d08d"
  }

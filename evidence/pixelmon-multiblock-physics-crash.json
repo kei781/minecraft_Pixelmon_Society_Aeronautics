@@ -93,6 +93,7 @@
   "pixelmon:yellow_vending_machine",
   "tcg:battle_spectator"
  ],
+ "blocks_that_fail_the_same_way_when_placed_note": "Placed in the block's default state by the first version of the assembly sweep. Placed by the part whose multipos is base (the later sweep), pixelmon:glass_table does not fail and 91 ids do; see evidence/assembly-inventory-sweep-baseline.json.",
  "cause": "RapierVoxelColliderBakery.buildPhysicsDataForBlock asks a block state for its collision shape through PhysicsColliderBlockGetter, whose block state is never set (setup is not called anywhere in the port), so the getter answers null at the block's own position. Pixelmon's MultiBlock.getShape reads the level at that position. The bakery runs for every block change in a loaded chunk and its six neighbours, and for every block of a chunk section that a physics structure comes near",
  "crash_reports": {
   "crash-2026-11-13_11.29.06-server.txt": [

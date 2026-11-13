@@ -193,13 +193,6 @@ class TrackedOverlayTest(unittest.TestCase):
         expected = [check["expect_contains"] for check in checks["tags"] if check["tag"] == "sable:silent_assembly_removal"]
         self.assertEqual(expected, [self.tagged()])
 
-    def test_the_redstone_contact_guard_is_tied_to_the_unrepaired_port_class(self):
-        # A repaired port JAR changes this class; staging then stops until the guard is taken out.
-        self.assertTrue((compat.OVERLAY / "kubejs/server_scripts/psa_redstone_contact_guard.js").is_file())
-        facts = json.loads(compat.PRECONDITIONS.read_text())
-        self.assertIn(("port", "dev/ryanhcode/sable/forge/mixin/compatibility/create/redstone_contacts/RedstoneContactBlockMixin.class"),
-                      {(fact.get("jar"), fact.get("entry")) for fact in facts if "sha256" in fact})
-
 
 class PinnedArtifactTest(unittest.TestCase):
     """Runs only where the pinned private inputs are present; never downloads them."""

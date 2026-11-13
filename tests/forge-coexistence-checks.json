@@ -127,7 +127,8 @@
     "society:tapper",
     "society:villager_home",
     "society:wine_keg",
-    "society_trading:auto_trader"
+    "society_trading:auto_trader",
+    "create:track_station"
    ]
   },
   {
@@ -845,7 +846,7 @@
    "expect_count": 0
   },
   {
-   "name": "18 redstone_contact (temporary guard)",
+   "name": "18 redstone_contact",
    "grid": [
     [
      null,
@@ -863,8 +864,8 @@
      "minecraft:cobblestone"
     ]
    ],
-   "expect_result": null,
-   "expect_count": 0
+   "expect_result": "create:redstone_contact",
+   "expect_count": 2
   }
  ],
  "cooking": [
@@ -1070,19 +1071,6 @@
    "expect_items": [
     "minecraft:bread"
    ]
-  }
- ],
- "assembly_sweep_skip": {
-  "create:redstone_contact": "Placing it brings the server down (IncompatibleClassChangeError in the port's RedstoneContactBlockMixin.getTicker); checked separately by redstone_contact_guard"
- },
- "right_click": [
-  {
-   "item": "create:redstone_contact",
-   "expect_refused": true
-  },
-  {
-   "item": "minecraft:cobblestone",
-   "expect_refused": false
   }
  ]
 }

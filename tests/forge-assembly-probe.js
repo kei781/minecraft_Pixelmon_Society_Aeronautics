@@ -126,6 +126,19 @@
     sweepItems(classes, world);
   };
 
+  // Pixelmon's multi-block machines keep their block entity in the part whose `multipos` is `base`;
+  // the default state is another part. Every other block is placed in its default state.
+  const baseState = block => {
+    let state = block.defaultBlockState();
+    const property = block.getStateDefinition().getProperty('multipos');
+    if (property !== null) {
+      property.getPossibleValues().forEach(value => {
+        if (str(property.getName(value)) === 'base') state = state.setValue(property, value);
+      });
+    }
+    return state;
+  };
+
   const testBlock = (classes, world, id) => {
     const record = { id: id };
     const skip = (global.psaProbeSpec || {}).assembly_sweep_skip || {};
@@ -134,7 +147,7 @@
       return record;
     }
     const block = classes.ForgeRegistries.BLOCKS.getValue(new classes.ResourceLocation(id));
-    world.level.setBlock(world.pos, block.defaultBlockState(), 18);
+    world.level.setBlock(world.pos, baseState(block), 18);
     const blockEntity = world.level.getBlockEntity(world.pos);
     if (blockEntity === null) {
       record.outcome = 'no block entity after placing';

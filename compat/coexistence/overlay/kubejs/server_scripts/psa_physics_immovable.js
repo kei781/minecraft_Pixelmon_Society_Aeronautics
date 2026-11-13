@@ -3,14 +3,19 @@
 // Society keeps its machines out of Create contraptions with the block tags create:non_movable and
 // c:relocation_not_supported. The Aeronautics physics assembler tests only simulated:non_movable,
 // which ships empty, so those machines could be lifted into a physics sub-level. This script adds
-// to simulated:non_movable exactly the blocks Society marks immovable, and nothing else: the wider
-// tags also hold Aeronautics' own bearings and winches and Create's tracks, which must stay movable.
+// to simulated:non_movable the blocks Society marks immovable and one more block named below, and
+// nothing else: the wider tags also hold Aeronautics' own bearings and winches and Create's tracks,
+// which must stay movable.
 //
 // The two lists hold the same ids, in the same order, as Society 4.1.5A:
 //   SOCIETY_IMMOVABLE: kubejs/server_scripts/tags/handleItemBlockFluidTags.js, the array applied
 //     with immovableTags (file sha256 b8c332a711fbbafd2213738fa25ec866a45a9c2bdbce5601ab13918190f8a017).
 //   SOCIETY_ARTISAN_MACHINES: kubejs/startup_scripts/globalArtisanMachineDefinitions.js, the ids
 //     behind global.artisanMachineIds (file sha256 74b7a4006d36a817e21c1b1ee60db14f88ffba22f2043f89cc97c5d1d3fad302).
+//   OTHER_IMMOVABLE: one block outside Society's lists. Create's train station holds a package
+//     and is registered in the railway graph. Moved the ordinary way it drops a second copy of the
+//     package; moved with sable:silent_assembly_removal (where it also is, for the console command)
+//     its old graph entry is never taken out. It stays on the ground instead.
 // Society's startup scripts fill global.artisanMachineIds before any server script runs, so it is
 // also read when the tag event fires; ids found only there are added as well and are reported.
 // The two lists are added before the global is read, so a missing or unreadable global cannot
@@ -81,6 +86,8 @@
     'society:mushroom_log'
   ];
 
+  const OTHER_IMMOVABLE = ['create:track_station'];
+
   ServerEvents.tags('block', event => {
     const requested = [];
     const seen = {};
@@ -100,6 +107,7 @@
     };
     SOCIETY_IMMOVABLE.forEach(id => { request(id); });
     SOCIETY_ARTISAN_MACHINES.forEach(id => { request(id); });
+    OTHER_IMMOVABLE.forEach(id => { request(id); });
     let globalRead = false;
     try {
       let live = global.artisanMachineIds;
@@ -112,6 +120,7 @@
     }
     console.info('PSA_PHYSICS_IMMOVABLE ' + JSON.stringify({
       tag: TAG, requested: requested.length, mirrored: SOCIETY_IMMOVABLE.length + SOCIETY_ARTISAN_MACHINES.length,
+      other: OTHER_IMMOVABLE.length,
       society_global_read: globalRead, only_in_society_global: extra, rejected: rejected
     }));
   });

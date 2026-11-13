@@ -81,18 +81,53 @@ class AssemblySweepTest(unittest.TestCase):
         self.assertEqual(summary["tested"], 0)
 
 
-class EvaluateTest(unittest.TestCase):
-    def test_right_click_refusals_are_compared_with_the_expectation(self):
-        line = "[KubeJS Server/]: psa_village_probe.js#25: PSA_VILLAGE_PROBE right_click %s"
+class PortRepairCheckTest(unittest.TestCase):
+    class Console:
+        """Answers console commands; `crash_on` names the command that ends the server."""
+
+        def __init__(self, crash_on=None):
+            self.lines, self.sent, self.crashed, self.process, self.crash_on = [], [], False, FakeProcess(), crash_on
+
+        def send(self, command):
+            self.sent.append(command)
+            if self.crash_on and self.crash_on in command:
+                self.lines.append("[minecraft/MinecraftServer]: This crash report has been saved to: crash.txt")
+            elif command.startswith("setblock"):
+                self.lines.append("[Server thread/INFO] [minecraft/MinecraftServer]: Changed the block at 1, 2, 3")
+            elif command.startswith("data get"):
+                self.lines.append('[Server thread/INFO] [minecraft/MinecraftServer]: 1, 2, 3 has the following block data: {id: "create:redstone_contact"}')
+            elif command.startswith("sable assemble"):
+                self.lines.append("[Server thread/INFO] [minecraft/MinecraftServer]: Assembled a region 1 blocks to a new sub-level")
+
+    def check(self, console):
+        with patch.object(driver.time, "sleep", lambda seconds: None):
+            return driver.port_repair_checks(console)
+
+    def test_both_situations_pass_on_a_server_that_survives_them(self):
+        outcome = self.check(self.Console())
+        self.assertEqual({name: result["pass"] for name, result in outcome["results"].items()},
+                         {"redstone_contact": True, "physics_beside_pixelmon_machine": True})
+
+    def test_a_crash_fails_the_step_that_caused_it_and_nothing_is_sent_afterwards(self):
+        console = self.Console(crash_on="create:redstone_contact")
+        outcome = self.check(console)
+        self.assertFalse(outcome["results"]["redstone_contact"]["pass"])
+        self.assertFalse(outcome["results"]["physics_beside_pixelmon_machine"]["pass"])
+        self.assertTrue(console.sent[-1].startswith("setblock") and "create:redstone_contact" in console.sent[-1])
+        later = self.Console(crash_on="sable assemble")
+        outcome = self.check(later)
+        self.assertTrue(outcome["results"]["redstone_contact"]["pass"])
+        self.assertFalse(outcome["results"]["physics_beside_pixelmon_machine"]["server_alive"])
+
+
+class ProbeRecordTest(unittest.TestCase):
+    def test_a_registry_part_that_never_arrived_is_reported(self):
+        line = "[INFO] psa_village_probe.js#25: PSA_VILLAGE_PROBE registry %s"
         probe = village_world.parse_probe_log([
-            line % json.dumps({"item": "create:redstone_contact", "registered": True, "canceled": False}),
-            line % json.dumps({"item": "minecraft:cobblestone", "registered": True, "canceled": False})])
-        spec = {"right_click": [{"item": "create:redstone_contact", "expect_refused": True},
-                                {"item": "minecraft:cobblestone", "expect_refused": False},
-                                {"item": "minecraft:stone", "expect_refused": False}]}
-        results = driver.evaluate(spec, probe)
-        self.assertEqual([entry["pass"] for entry in results["right_click"]], [False, True, False])
-        self.assertEqual(results["failed"], ["right_click:create:redstone_contact", "right_click:minecraft:stone"])
+            line % json.dumps({"name": "block", "total": 4.0, "offset": 0.0, "ids": ["a:a", "a:b"]}),
+            line % json.dumps({"name": "structure", "total": 1.0, "offset": 0.0, "ids": ["a:s"]})])
+        self.assertEqual(probe["incomplete"], ["registry block: 2 of 4 ids"])
+        self.assertEqual(probe["registries"]["structure"], ["a:s"])
 
 
 if __name__ == "__main__":

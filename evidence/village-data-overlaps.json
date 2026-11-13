@@ -1,4 +1,6 @@
 {
+ "profile": "v18 staging without the coexistence repairs (314 mods)",
+ "mods_list_sha256": "5eebc72dd95199348906486cc5199fc818b2a98b19a30e6321f1e93ee661aeec",
  "overlapping_files": 2058,
  "involving_added_projects": 78,
  "involving_added_projects_by_category": {

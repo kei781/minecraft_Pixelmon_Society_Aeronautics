@@ -16,13 +16,19 @@ def sample():
         "float": nbt.Tag(nbt.FLOAT, 0.5), "double": nbt.Tag(nbt.DOUBLE, float("nan")),
         "bytes": nbt.Tag(nbt.BYTE_ARRAY, (1, -1)), "ints": nbt.Tag(nbt.INT_ARRAY, (7, -7)),
         "longs": nbt.Tag(nbt.LONG_ARRAY, (-1, 2)), "empty": nbt.tag_list(nbt.END, []),
-        # Java writes supplementary characters as two three-byte surrogates.
         "text": nbt.string("fire 🔥"),
         "nested": nbt.compound({"name": nbt.string("minecraft:air")}),
     })
 
 
 class NbtCodecTest(unittest.TestCase):
+    def test_strings_use_the_bytes_java_reads_and_writes(self):
+        # DataOutput.writeUTF: a character outside the BMP is two three-byte surrogates, NUL is C0 80.
+        data = nbt.serialize(nbt.compound({"t": nbt.string("a\x00🔥")}))
+        self.assertIn(bytes.fromhex("0009") + b"a" + bytes.fromhex("c080eda0bdedb4a5"), data)
+        self.assertNotIn(bytes.fromhex("f09f94a5"), data)
+        self.assertEqual(nbt.parse(data)[1]["t"].value, "a\x00🔥")
+
     def test_every_tag_type_round_trips_byte_for_byte(self):
         data = nbt.serialize(sample(), "root")
         name, parsed = nbt.parse(data)

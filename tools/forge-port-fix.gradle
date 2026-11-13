@@ -1,0 +1,25 @@
+// Compiles the two authored port repairs against the prepared port workspace; only these classes
+// are later added to the common JAR by tools/forge_portfix_compat.py.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def sourceRoot = project.findProperty('psaPortFixSource')
+    if (!sourceRoot) throw new GradleException('Explicit authored source directory required')
+    def directory = new File(sourceRoot.toString())
+    def compiler = project.tasks.register('compilePsaPortFix', JavaCompile) {
+        dependsOn project.tasks.named('classes')
+        source new File(directory, 'PortColliderShapeMixin.java'), new File(directory, 'PortRedstoneContactTickerMixin.java')
+        classpath = project.sourceSets.main.compileClasspath + project.sourceSets.main.output
+        destinationDirectory.set(project.layout.buildDirectory.dir('psa-port-fix/classes'))
+        options.release.set(17); options.encoding = 'UTF-8'; options.compilerArgs += ['-proc:none']
+    }
+    project.tasks.register('psaPortFixJar', Jar) {
+        dependsOn compiler
+        archiveFileName.set('psa-port-fix-0.1.jar')
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        from compiler.flatMap { it.destinationDirectory }
+        from new File(directory, 'psa-port-fix.mixins.json')
+        manifest.attributes('MixinConfigs': 'psa-port-fix.mixins.json')
+        preserveFileTimestamps = false; reproducibleFileOrder = true
+    }
+    project.reobf.create('psaPortFixJar')
+}

@@ -96,7 +96,7 @@
     });
   };
 
-  // Registry ids used by tools/audit_structure_references.py to check what templates refer to.
+  // Registry ids as the game loaded them, in parts of 1,500 with the total, so a missing part shows.
   const probeRegistries = (classes, world) => {
     const BuiltInRegistries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries');
     const LootDataType = Java.loadClass('net.minecraft.world.level.storage.loot.LootDataType');
@@ -235,33 +235,6 @@
       emit('assembly', { structure: check.structure, registered: structure !== null,
         count_pieces_containing: check.count_pieces_containing, samples: samples });
     });
-    probeRightClicks(classes, world, spec, BuiltInRegistries, ItemStack);
-  };
-
-  // Whether using an item on a block is refused, asked the way Create's deployer asks: Forge's
-  // right-click event for a fake player holding the item. No block is placed or changed.
-  const probeRightClicks = (classes, world, spec, BuiltInRegistries, ItemStack) => {
-    const FakePlayerFactory = Java.loadClass('net.minecraftforge.common.util.FakePlayerFactory');
-    const ForgeHooks = Java.loadClass('net.minecraftforge.common.ForgeHooks');
-    const InteractionHand = Java.loadClass('net.minecraft.world.InteractionHand');
-    const BlockHitResult = Java.loadClass('net.minecraft.world.phys.BlockHitResult');
-    const Vec3 = Java.loadClass('net.minecraft.world.phys.Vec3');
-    const Direction = Java.loadClass('net.minecraft.core.Direction');
-    const checks = spec.right_click || [];
-    if (checks.length === 0) return;
-    const player = FakePlayerFactory.getMinecraft(world.level);
-    const pos = world.level.getSharedSpawnPos().below();
-    const hit = new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false);
-    checks.forEach(check => {
-      let key = new classes.ResourceLocation(check.item);
-      let outcome = { item: check.item, registered: BuiltInRegistries.ITEM.containsKey(key), canceled: null };
-      if (outcome.registered) {
-        player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(BuiltInRegistries.ITEM.get(key)));
-        outcome.canceled = ForgeHooks.onRightClickBlock(player, InteractionHand.MAIN_HAND, pos, hit).isCanceled();
-      }
-      emit('right_click', outcome);
-    });
-    player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
   };
 
   const probeVillages = (classes, world, spawn) => {

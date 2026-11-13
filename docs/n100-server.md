@@ -56,6 +56,7 @@ python3 tools/stage_forge_candidate.py \
   --destination /path/to/new-player-profile --mode player
 ```
 
+`--port`에는 [포팅 결함 두 건을 고친 공통 JAR](coexistence-audit.md#포팅-jar-수정)(`28e19585…`)을 준다.
 마을·전리품·레시피·물리 조립 공존 보정([마을](village-structure-compatibility.md),
 [전체 목록](coexistence-audit.md))을 함께 넣으려면 같은 명령에
 `--coexistence-fix /path/to/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-extra.jar`
