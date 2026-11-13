@@ -82,7 +82,10 @@ python3 tools/export_forge_client.py \
   --society-client /path/to/Society-Sunlit-Valley-4.1.5A.zip \
   --menu-fix /path/to/PSA-Client-Menu-Compat-1.1.jar \
   --ali-fix /path/to/PSA-ALI-Client-Compat-0.1.jar \
+  --vanilla-data /path/to/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-extra.jar \
   --output /path/to/new-full-client.mrpack
 ```
+
+`--server`는 `--coexistence-fix`로 준비한 프로필이다. 그 프로필에는 다시 만든 전리품 표가 있어, 같은 표를 클라이언트용으로 재현하는 데 `--vanilla-data`(staging에 준 것과 같은 바닐라 데이터 JAR)가 필요하다.
 
 공식 manifest의 모드 351개에 Pixelmon·포팅 JAR·메뉴 보정·ALI 클라이언트 보정을 더해 355개다. 나머지 15개는 리소스팩, 1개는 셰이더다. 필수 파일·해시·경로·스크립트가 다르면 중단한다. 테스트용 JAR·임시 QA 스크립트·계정·세이브는 내보내지 않는다.
