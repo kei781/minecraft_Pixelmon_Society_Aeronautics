@@ -50,7 +50,8 @@
    "without_the_tag": "destroy() runs: the port is removed, but the contents drop at the old position while the moved copy keeps them (the measured duplication the tag was added for)",
    "fix": "The 16 postboxes are added to simulated:non_movable by psa_physics_immovable.js (as create:track_station already was). The physics assembler leaves them where they are. They stay in the silent tag for the operator command, which ignores simulated:non_movable.",
    "what_a_player_loses": "A postbox cannot be lifted into a physics structure. Its only link type is a train station, which cannot be resolved from inside a physics structure, so a moved postbox would have been an 18-slot package box.",
-   "left_open": "The operator command `sable assemble area` still moves a station-linked postbox and leaves the port behind."
+   "left_open": "The operator command `sable assemble area` still moves a station-linked postbox and leaves the port behind.",
+   "where_it_takes_effect": "On a server the tag comes from the server's script, so replacing that one file is enough and the v20 player pack keeps working. The player pack carries the same script for single-player worlds (the exporter requires every kubejs/ file to equal the server's); the v20 pack holds the earlier script, so single-player worlds made with it keep this path until the pack is rebuilt."
   },
   {
    "id": "item_vault",
@@ -174,10 +175,10 @@
    },
    "society, society_trading, shippingbin, splendid_slimes, trials, betterarcheology, crabbersdelight, vintagedelight": {
     "ids": 25,
-    "result": "19 are also non-movable; shipping bin contents are stored per owner, not per position; the rest drop only their own contents"
+    "result": "19 are also non-movable; shipping bin contents are stored per owner, not per position; archeology_table, villager_fossil, crab_trap and crafter also skip a comparator update (harmless, listed above); the rest drop only their own contents"
    }
   },
-  "noted": "simulated:non_movable is read only by the player assembler. Splitting an existing physics structure and the operator commands call the move helper directly."
+  "noted": "simulated:non_movable is read only by the player assembler. Splitting an existing physics structure and the operator commands call the move helper directly. Of the 52 Society-side non-movable blocks, 19 are also in the silent tag; the assembly sweep found no inventory to fill in the other 33, so it never moved them. What happens to a non-movable block on a structure that splits was not tested in game."
  },
  "game_check_of_the_fix": {
   "profile": "staged from the pinned inputs with the changed overlay; new world; tools/run_village_probe.py as changed here",
@@ -208,8 +209,12 @@
   "not_checked": "The assembler refusing a postbox was not exercised by a player; the check is that the loaded tag holds the 16 ids, the same check as for the 52 Society machines and the train station."
  },
  "python_tests": {
-  "run": 168,
-  "passed": 162,
+  "run": 169,
+  "passed": 163,
   "skipped_linux_only": 6
+ },
+ "independent_review_of_this_change": {
+  "reviewers": "gpt-6-astra (pull request review loop) and two Claude Opus reviewers (code; statements against sources), each Opus finding re-checked by a further agent",
+  "result": "no code defect; four statements in the documents and this record were corrected (which blocks skip more than a drop, why Society machines on a splitting structure do not duplicate, the non-movable count in the data fix table, the player pack carrying the same script); the read-back verdict became a tested helper"
  }
 }

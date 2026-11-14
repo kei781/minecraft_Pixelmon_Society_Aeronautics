@@ -490,6 +490,14 @@ def read_back_failures(entries):
     return failures
 
 
+def read_back_verdict(generated, failure, entries):
+    """The read-back failures of one run. A run that failed before any village was generated has
+    nothing to read back and fails anyway; every other run answers for its saved world."""
+    if failure is not None and not generated:
+        return []
+    return read_back_failures(entries)
+
+
 def run(profile, java, per_structure, margin, timeout, accept_eula):
     profile = Path(profile)
     if not (profile / MARKER).is_file():
@@ -577,8 +585,7 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
                 "saved_spawn_to_town_centre": round(((saved["x"] - (centre[0] + centre[3]) / 2) ** 2
                                                      + (saved["z"] - (centre[2] + centre[5]) / 2) ** 2) ** 0.5),
                 "pieces": sorted({village_world.family_of(piece[0]) for piece in start["pieces"]} - {None})}
-    if generated or failure is None:
-        outcome["checks"]["failed"] += read_back_failures(outcome.get("generated"))
+    outcome["checks"]["failed"] += read_back_verdict(generated, failure, outcome.get("generated"))
     (profile / "village-probe-villages.json").write_text(json.dumps(probe["villages"]) + "\n")
     (profile / "village-probe-registries.json").write_text(json.dumps(probe["registries"], sort_keys=True) + "\n")
     outcome["registry_sizes"] = {name: len(ids) for name, ids in sorted(probe["registries"].items())}

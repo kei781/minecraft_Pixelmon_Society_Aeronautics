@@ -149,6 +149,20 @@ class ReadBackVerdictTest(unittest.TestCase):
                           "read back: chunks not fully generated" + where])
 
 
+    def test_every_run_that_generated_villages_answers_for_its_saved_world(self):
+        village = {"structure": "minecraft:village_plains", "chunk": [3, -4], "saved_start_found": True,
+                   "assembly_matches_saved_start": True, "pieces": [{"chunks_not_full": 0}]}
+        task = (village, {"task": "done"})
+        self.assertEqual(driver.read_back_verdict([task], None, [village]), [])
+        self.assertEqual(driver.read_back_verdict([], None, []), [])
+        # The server could not be stopped or the world was not saved: nothing was read back.
+        self.assertEqual(driver.read_back_verdict([task], None, None), ["read back: not performed"])
+        self.assertEqual(driver.read_back_verdict([task], "Timed out", None), ["read back: not performed"])
+        self.assertEqual(driver.read_back_verdict([], None, None), ["read back: not performed"])
+        # A probe that failed before generating anything fails the run by itself.
+        self.assertEqual(driver.read_back_verdict([], "PSA_VILLAGE_PROBE_FAILED", None), [])
+
+
 class PrepareTest(unittest.TestCase):
     def setUp(self):
         folder = tempfile.TemporaryDirectory()
