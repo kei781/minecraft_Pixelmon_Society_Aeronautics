@@ -1,0 +1,72 @@
+{
+ "task": "Common JAR with the Pixelmon PC resend on the N100 v20 server",
+ "date_utc": "2026-11-14",
+ "requested_by": "The owner first approved the deployment for 03:00 the next morning, then asked for it at once because nobody was online",
+ "source": {
+  "pull_request": 19,
+  "branch": "claude/player-pack-v21",
+  "merged": false,
+  "profile": "Staged from the branch with tools/stage_forge_candidate.py --mode player"
+ },
+ "before_the_deployment": {
+  "login_path_check_on_a_disposable_local_server": "Same staged profile: Pixelmon's login handler finished for a stand-in player and the new class logged the resend; no warning from the class",
+  "full_game_check": "Passed on the previous build of the class (asynchronous resend). The deployed build resends synchronously and only when the PC is already loaded; its full game check was started after the deployment, see pixelmon-pc-resync.json",
+  "kubejs_mods_patchouli_defaultconfigs_compared_by_checksum": "Only the common JAR differed from the staged profile"
+ },
+ "files_replaced": {
+  "files": [
+   {
+    "path": "mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+    "sha256_before": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c",
+    "sha256_after": "d597065c5fef2abaec1bb01c616a5c5dc0787f672b5428693f23e696c37d23e4"
+   },
+   {
+    "path": ".psa-mods.sha256",
+    "sha256_before": "b481c3dd4cd3d9d076722396674b44a4e5d2df569861834a6cae4adfd8fe3012",
+    "sha256_after": "7da59df241c3e7374afa501ecb20c8a39ed74dfd9607ce1e6c4babc28012077f"
+   },
+   {
+    "path": ".psa-forge-candidate.json",
+    "sha256_before": "5a3f625a7113f5523cfe58e00588aeae1858e16b54eb8f57941ca157f19a862e",
+    "sha256_after": "0b3245929a1395a05da722b39209f5f002f8cf307d88347c699cb7a0c03d3078"
+   }
+  ],
+  "replaced_copies_kept_in": ".psa-replaced-20261114-pc/ inside the server folder",
+  "to_undo": "Stop the server, copy the three kept files back to their places, start the server"
+ },
+ "restart": {
+  "players_online_before_stop": 0,
+  "stopped_with_server_control_at_utc": "10:21:35",
+  "mod_hash_list_check_before_start": "passed",
+  "done_line_at_utc": "10:23:35",
+  "done_line": "Done (3.135s)! For help, type \"help\"",
+  "mixin_configuration_registered": "psa-pc-resync.mixins.json appears in the debug log; no error, warning or failed injection names it",
+  "kubejs_server_log_errors": 0,
+  "crash_report_count": 0,
+  "native_tps_overall_line": "Overall: Mean tick time: 6.649 ms. Mean TPS: 20.000",
+  "startup_error_lines": {
+   "previous_start": 476,
+   "this_start": 475,
+   "difference": "One minecraft/HangingEntity line fewer; no logger has more lines than before"
+  },
+  "console_log_sha256_at_check": "664908f11cf30c99ee8c6dda4b87b9f68ffc57302400a2f536eea44428ea1dad"
+ },
+ "world": {
+  "not_touched": true,
+  "note": "The owner had created a new world on 2026-11-14 at about 03:04 UTC; it was left as it was",
+  "size_after": "271M"
+ },
+ "not_verified": [
+  "Whether the player's PC screen now shows a Pokemon caught with a full party; nobody has reported on it yet",
+  "A login in which the PC is still loading when the handler ends (the class then sends nothing) has not been observed on this server"
+ ],
+ "first_login_after_restart": {
+  "joined_at_utc": "10:27:34",
+  "client_pack": "v20 (previous common JAR), as the owner reported",
+  "resend_logged_at_utc": "10:27:35",
+  "debug_line": "[PSA PC resync/]: PC sent again after login: <player>",
+  "warnings_from_the_class": 0,
+  "crash_report_count": 0,
+  "meaning": "A v20 client joins a server that runs the new common JAR, and for this login Pixelmon had sent the PC before the configuration packet, so the class sent it again"
+ }
+}

@@ -33,16 +33,16 @@
  },
  "fix": {
   "class": "compat/forge-port/PixelmonPcResyncMixin.java",
-  "what": "At the end of PixelmonPlayerTracker.onPlayerLogin the player's PC is sent again through Pixelmon's own StorageProxy.initializePCForPlayer, on the server thread. Any exception is logged as a warning and the login continues. Each resend writes one debug line",
+  "what": "At the end of PixelmonPlayerTracker.onPlayerLogin, when the player's PC is already loaded (Pixelmon has then sent it before the configuration packet), the PC is sent again through Pixelmon's own StorageProxy.initializePCForPlayer, on the server thread that runs the handler. When the PC is still loading nothing is done: Pixelmon sends it when the load ends, after the configuration packet. Any exception is logged as a warning and the login continues. Each resend writes one debug line",
   "build": {
    "base_common_sha256": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c",
-   "tested_patch_sha256": "714109871c54e92ee7e98c929fc67855e9982429eb9bd80e7a868ce2b57c5b2f",
+   "tested_patch_sha256": "f27ca8e6283733490af19db7bcba2085f89f2d984cba3ee296282a93d2c5361a",
    "source_sha256": {
-    "PixelmonPcResyncMixin": "ab49bb2a1506a69f1b7f7ba36cb8f4e0bcf9e181b750688179a80105748bd36e"
+    "PixelmonPcResyncMixin": "07504d83c253c625555b196f2b9903702f2f91853369a26437292222c28ca549"
    },
    "config_sha256": "4b312f0c475f859d9f3d57c54cbf131f33a9c55b2b91a083aa4cb841a02d7a99",
    "class_sha256": {
-    "PixelmonPcResyncMixin": "47ee3e67b2fda23957d421939d56f058bbaa7f6489460f6e65f282cb1fa86d02"
+    "PixelmonPcResyncMixin": "dc0f824f73457ef2117d70518ae675c31dd7d5957d0861e3da5f7bc8777a397e"
    },
    "target": {
     "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
@@ -52,8 +52,8 @@
    "scope": "Only the authored PC resend class, its mixin configuration and manifest/provenance. Port, Pixelmon and upstream code and assets and the earlier authored corrections are preserved."
   },
   "common_jar": {
-   "sha256": "814b13eb950b738d17526b50dc5e19bb6454c486be05b012cd4b78182a98fee3",
-   "bytes": 44471262,
+   "sha256": "d597065c5fef2abaec1bb01c616a5c5dc0787f672b5428693f23e696c37d23e4",
+   "bytes": 44470855,
    "added": [
     "dev/psa/pcsync/mixin/PixelmonPcResyncMixin.class",
     "psa-pc-resync.mixins.json"
@@ -64,7 +64,8 @@
    ],
    "entries_carried_over_unchanged": 4185,
    "two_work_trees_gave_the_same_canonical_patch_jar": true
-  }
+  },
+  "review_changes": "The first build resent through a future and the server's task queue. Two reviews pointed out that a failed PC load would then leave no warning, and that a PC screen opened in the same tick could keep the old copy; the resend was made synchronous and limited to the case that needs it"
  },
  "checks": {
   "full_game_check_on_the_new_profile": {
@@ -89,19 +90,21 @@
    "villages_generated_and_read_back": 10,
    "kubejs_server_script_errors": [],
    "crash_reports": 0,
-   "mods_list_sha256": "8d30a0b02452ecd21586a5462f14b812961a1b019db40de431adb889bf8c5551",
-   "result_file_sha256": "f21c4d36360e60253c955e3f139f3daafd20aed0ae985b4e54e65e7dff760bfb"
+   "mods_list_sha256": "7da59df241c3e7374afa501ecb20c8a39ed74dfd9607ce1e6c4babc28012077f",
+   "result_file_sha256": "3f9c784053054b8ec6e1e996c63caed38aae6957ef0932685e1ad7014df0628c",
+   "when": "After the deployment to the production server; the build before it had passed the same check"
   },
-  "what_pc_resend_shows": "Pixelmon's login handler, run for a server-side stand-in player without posting the login event, finished without an exception, and the new class logged that it sent that player's PC again",
+  "what_pc_resend_shows": "With the stand-in player's PC loaded first, Pixelmon's login handler finished without an exception and the new class logged that it sent that player's PC again",
   "what_it_does_not_show": "That a real client receives the second PC and that the report's symptoms are gone",
   "python_tests": {
-   "run": 188,
-   "passed": 182,
+   "run": 189,
+   "passed": 183,
    "skipped_linux_only": 6
-  }
+  },
+  "production_server": "Deployed on 2026-11-14 10:21 UTC; the first login after it, with a v20 client, was followed by the resend line and no warning. See n100-v20-pc-resync-deployment.json"
  },
  "not_verified": [
-  "No real client login with the new common JAR, and no v20 client (previous common JAR) connecting to a server with the new one",
+  "That the client's PC screen is now right and the reported symptoms are gone; nobody has reported on it yet",
   "The bug was not reproduced in game, before or after the fix",
   "Whether the affected players' client logs contain 'No storage on the client side with UUID'",
   "The same order problem in a single-player world of the pack"
