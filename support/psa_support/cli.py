@@ -44,7 +44,7 @@ def main():
         print(json.dumps({'config_valid':True,'documents':len(knowledge.documents),
                           'snapshot_id':knowledge.manifest['snapshot_id'],
                           'credentials_present': {key:bool(os.environ.get(key)) for key in
-                                                  ('DISCORD_BOT_TOKEN','OPENAI_API_KEY')}}))
+                                                  ('DISCORD_BOT_TOKEN',)}}))
         return
     if args.command == 'search':
         print(json.dumps(Knowledge(cfg.knowledge).search([args.query]),ensure_ascii=False,indent=2))
@@ -59,7 +59,7 @@ def main():
             store.update_ticket(args.ticket,args.status,result['summary'],result['evidence'])
             print(json.dumps({'ticket':args.ticket,'status':args.status}))
         return
-    for key in ('DISCORD_BOT_TOKEN','OPENAI_API_KEY'):
+    for key in ('DISCORD_BOT_TOKEN',):
         if not os.environ.get(key):
             parser.error(f'{key} is not configured')
     from .bot import SupportBot

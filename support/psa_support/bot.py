@@ -9,6 +9,7 @@ from .ai import Advisor
 from .config import Config
 from .knowledge import Knowledge
 from .store import Store
+from .codex_client import CodexClient
 
 log = logging.getLogger("psa_support")
 
@@ -24,7 +25,7 @@ class SupportBot(discord.Client):
         self.knowledge = Knowledge(config.knowledge)
         self.store = Store(config.database)
         self.store.bind(config)
-        self.advisor = advisor or Advisor(config.model, self.knowledge)
+        self.advisor = advisor or Advisor(config.model, self.knowledge, CodexClient(config.codex_bin,config.codex_home,config.database.parent/"codex-work"))
         self.delivery_lock = asyncio.Lock()
 
     async def setup_hook(self):
@@ -74,7 +75,7 @@ class SupportBot(discord.Client):
         try:
             async with message.channel.typing():
                 history = self.store.history(str(message.author.id), now)
-                decision = await asyncio.wait_for(self.advisor.answer(question, history), timeout=180)
+                decision = await asyncio.wait_for(self.advisor.answer(question, history), timeout=330)
                 labels = [f"{self.knowledge.documents[s]['path']}:{self.knowledge.documents[s]['line']}"
                           for s in decision.source_ids]
                 self.store.finish(str(message.id), decision, self.knowledge.manifest['snapshot_id'], labels)

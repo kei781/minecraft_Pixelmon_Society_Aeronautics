@@ -8,7 +8,7 @@ from .knowledge import document_chunks
 
 # Never ingest world/, logs/, player files, secrets, server.properties, or arbitrary configs.
 ROOTS = ('kubejs/server_scripts', 'kubejs/startup_scripts', 'kubejs/data',
-         'kubejs/assets/kubejs/lang', 'config/ftbquests/quests', 'patchouli_books')
+         'kubejs/assets', 'config/ftbquests/quests', 'patchouli_books')
 SUFFIXES = {'.js', '.json', '.snbt', '.md', '.txt'}
 
 
@@ -21,6 +21,8 @@ def build_snapshot(server: Path, notes: Path | None = None):
             continue
         for path in sorted(root.rglob('*')):
             if not path.is_file() or path.is_symlink() or not path.resolve().is_relative_to(server):
+                continue
+            if prefix == 'kubejs/assets' and 'lang' not in path.relative_to(root).parts:
                 continue
             if path.suffix not in SUFFIXES or path.stat().st_size > 2_000_000:
                 continue

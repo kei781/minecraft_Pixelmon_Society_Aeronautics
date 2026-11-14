@@ -11,6 +11,8 @@ class Config(BaseModel):
     model: str = Field(min_length=1)
     database: Path
     knowledge: Path
+    codex_bin: Path = Path("/opt/psa-support/bin/codex")
+    codex_home: Path = Path("/var/lib/psa-support/codex-auth")
     daily_request_limit: int = Field(default=200, ge=1, le=10000)
     user_cooldown_seconds: int = Field(default=20, ge=1, le=3600)
     max_parallel_requests: int = Field(default=2, ge=1, le=4)
@@ -19,7 +21,7 @@ class Config(BaseModel):
     @classmethod
     def real_model(cls, value):
         if value.startswith("REPLACE_"):
-            raise ValueError("Set an available OpenAI model explicitly")
+            raise ValueError("Set an available Codex model explicitly")
         return value
 
     @classmethod

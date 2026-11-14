@@ -51,7 +51,7 @@ class Store:
         day = datetime.fromtimestamp(now, ZoneInfo("Asia/Seoul")).date().isoformat()
         with self.db:
             self.db.execute("BEGIN IMMEDIATE")
-            self.db.execute("UPDATE messages SET status='error' WHERE status='processing' AND created<?", (now-240,))
+            self.db.execute("UPDATE messages SET status='error' WHERE status='processing' AND created<?", (now-390,))
             self.db.execute("DELETE FROM messages WHERE ticket IS NULL AND status IN ('sent','error') AND created<?", (now-7*86400,))
             if self.db.execute("SELECT 1 FROM messages WHERE id=?", (message,)).fetchone():
                 return "duplicate"

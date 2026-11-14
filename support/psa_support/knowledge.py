@@ -7,7 +7,10 @@ from pathlib import Path
 
 
 def tokens(text: str) -> list[str]:
-    return re.findall(r"[a-z0-9_]{2,}|[가-힣]{2,}", text.lower())
+    text = re.sub(r"([a-z])([A-Z])", r"\1 \2", text).lower()
+    words = re.findall(r"[a-z0-9_]{2,}|[가-힣]{2,}", text)
+    # Keep exact item IDs AND components so template-generated stone_${type} recipes match.
+    return words + [part for word in words if '_' in word for part in word.split('_') if len(part)>1]
 
 
 class Knowledge:
@@ -21,15 +24,32 @@ class Knowledge:
                          for key, d in self.documents.items()}
         self.frequency = Counter(word for counts in self.counters.values() for word in counts)
 
-    def search(self, queries: list[str], limit=12):
-        terms = set(tokens(" ".join(queries)))
-        scores = {}
-        for key, counts in self.counters.items():
-            score = sum(min(counts[t], 4) / (self.frequency[t] ** 0.5)
-                        for t in terms if counts[t])
-            if score:
-                scores[key] = score
-        selected = sorted(scores, key=lambda k: (-scores[k], k))[:limit]
+    def search(self, queries: list[str], limit=16):
+        rankings = []
+        for query in queries[:7]:
+            terms = set(tokens(query))
+            scores = {}
+            for key, counts in self.counters.items():
+                score = sum(min(counts[t], 4) / (self.frequency[t] ** 0.5)
+                            for t in terms if counts[t])
+                path = self.documents[key]['path']
+                if '/recipes/' in path or '/shops/' in path:
+                    score *= 2.5
+                if '/dialog/dialogs/' in path:
+                    score *= 0.12
+                if '/loot_tables/' in path:
+                    score *= 0.35
+                if score:
+                    scores[key] = score
+            rankings.append(sorted(scores, key=lambda k: (-scores[k], k)))
+        # Round-robin different questions: an NPC-location premise must not bury the tool recipe.
+        selected = []
+        for rank in range(limit):
+            for ranking in rankings:
+                if rank<len(ranking) and ranking[rank] not in selected:
+                    selected.append(ranking[rank])
+                    if len(selected)>=limit:
+                        return [self.documents[k] for k in selected]
         return [self.documents[k] for k in selected]
 
 

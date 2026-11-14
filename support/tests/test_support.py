@@ -82,10 +82,10 @@ class Fixture(unittest.TestCase):
         self.assertEqual(self.store.reserve(self.cfg,'2','u','q',1001),'cooldown')
         self.assertEqual(self.store.reserve(self.cfg,'2','v','q',1001),'accepted')
         self.assertEqual(self.store.reserve(self.cfg,'3','w','q',1002),'busy')
-        self.assertEqual(self.store.reserve(self.cfg,'3','w','q',1300),'accepted')
+        self.assertEqual(self.store.reserve(self.cfg,'3','w','q',1500),'accepted')
         self.assertEqual(self.store.db.execute("SELECT status FROM messages WHERE id='1'").fetchone()[0],'error')
         self.cfg.daily_request_limit=3
-        self.assertEqual(self.store.reserve(self.cfg,'4','x','q',1400),'daily_limit')
+        self.assertEqual(self.store.reserve(self.cfg,'4','x','q',1600),'daily_limit')
 
     def test_status_requires_evidence(self):
         self.store.reserve(self.cfg,'1','u','q',1000)
@@ -115,6 +115,19 @@ class Fixture(unittest.TestCase):
         docs=list(document_chunks('x',text))
         self.assertEqual(''.join(d['text'] for d in docs),text)
         self.assertTrue(all(len(d['text'])<=3500 for d in docs))
+
+
+    def test_dynamic_recipe_and_shop_not_buried_by_npc_dialogue(self):
+        docs=[]
+        for i in range(30):
+            docs.extend(document_chunks(f'kubejs/data/dialog/dialogs/blacksmith_{i}.json','blacksmith blacksmith reputation'))
+        docs.extend(document_chunks('kubejs/data/society_trading/shops/invitations.json','blacksmith invitation carpenter fire_log'))
+        docs.extend(document_chunks('kubejs/server_scripts/recipes/addToolRecipes.js','pickaxe stone_${type} wooden_${type} smithing cog'))
+        self.cfg.knowledge.write_text(json.dumps({'manifest':{},'documents':docs}))
+        k=Knowledge(self.cfg.knowledge)
+        paths=[d['path'] for d in k.search(['blacksmith reputation','stone_pickaxe smithing'],limit=4)]
+        self.assertIn('kubejs/data/society_trading/shops/invitations.json',paths)
+        self.assertIn('kubejs/server_scripts/recipes/addToolRecipes.js',paths)
 
     def test_snapshot_excludes_players_secrets_and_symlinks(self):
         server=self.root/'server'; recipe=server/'kubejs/server_scripts/a.js'
