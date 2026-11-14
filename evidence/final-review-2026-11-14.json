@@ -1,0 +1,215 @@
+{
+ "scope": "Final review of the merged coexistence work (main at 553b6fa) on 2026-11-13/14: four gpt-6-astra reviewers with different lenses, then independent verification of every finding and a sweep of all 310 blocks in sable:silent_assembly_removal for the defect class of the one serious finding. Static analysis of the shipped JARs unless a game run is named.",
+ "reviewers": {
+  "model": "gpt-6-astra, reasoning effort xhigh",
+  "lenses": [
+   "live behaviour of the shipped scripts, data and mixins",
+   "tools, tests and build records",
+   "documents and evidence against code and artifacts",
+   "player pack against the server profile, default keys"
+  ],
+  "findings": 8
+ },
+ "verification": {
+  "postbox": "two independent Claude Opus agents told to refute it, plus a direct reading of the decompiled Create classes",
+  "same_class_sweep": "five agents by mod group (four Claude Opus, one Claude Fable), each id mapped to its block and block entity class; every serious hit sent to a further agent told to refute it",
+  "keys": "one Claude Opus agent; its claims were then checked against the pack's own default options file and the first reviewer's independent notes",
+  "tools_and_documents": "each reproduced or read directly"
+ },
+ "findings": [
+  {
+   "id": "postbox",
+   "severity": "P1",
+   "verdict": "real",
+   "blocks": [
+    "create:white_postbox",
+    "create:orange_postbox",
+    "create:magenta_postbox",
+    "create:light_blue_postbox",
+    "create:yellow_postbox",
+    "create:lime_postbox",
+    "create:pink_postbox",
+    "create:gray_postbox",
+    "create:light_gray_postbox",
+    "create:cyan_postbox",
+    "create:purple_postbox",
+    "create:blue_postbox",
+    "create:brown_postbox",
+    "create:green_postbox",
+    "create:red_postbox",
+    "create:black_postbox"
+   ],
+   "chain": [
+    "A postbox linked to a train station is registered in the station's saved port list (StationBlockEntity.attachPackagePort -> GlobalStation.connectedPorts).",
+    "Every inventory change copies the postbox's 18 slots into that port (PostboxBlockEntity.setChanged -> GlobalPackagePort.saveOfflineBuffer).",
+    "Only PackagePortBlockEntity.destroy() takes the port out again (TrainStationFrogportTarget.deregister -> StationBlockEntity.removePackagePort). BlockEntity.setRemoved does not.",
+    "sable:silent_assembly_removal removes the block entity before the block's onRemove, so destroy() never runs; the moved postbox keeps the NBT copy of the packages.",
+    "GlobalStation.runMailTransfer uses the port's buffer when no postbox is at the recorded position: packages not addressed to that port go onto the next train although the moved postbox still holds them; packages addressed to it are unloaded into the buffer, where nobody can open them.",
+    "GlobalStation.write saves the port and its buffer, so a restart does not clear it."
+   ],
+   "without_the_tag": "destroy() runs: the port is removed, but the contents drop at the old position while the moved copy keeps them (the measured duplication the tag was added for)",
+   "fix": "The 16 postboxes are added to simulated:non_movable by psa_physics_immovable.js (as create:track_station already was). The physics assembler leaves them where they are. They stay in the silent tag for the operator command, which ignores simulated:non_movable.",
+   "what_a_player_loses": "A postbox cannot be lifted into a physics structure. Its only link type is a train station, which cannot be resolved from inside a physics structure, so a moved postbox would have been an 18-slot package box.",
+   "left_open": "The operator command `sable assemble area` still moves a station-linked postbox and leaves the port behind."
+  },
+  {
+   "id": "item_vault",
+   "severity": "raised as P1 by the sweep, refuted for normal play",
+   "verdict": "not reachable by players",
+   "blocks": [
+    "create:item_vault"
+   ],
+   "what": "ItemVaultBlock.onRemove also splits the multi-block (ConnectivityHandler.splitMulti); silent removal skips that. If only part of a multi-block vault were moved, the part left behind would keep serving the removed part's item handler until the chunk reloads.",
+   "why_not_reachable": "The assembler's structure search treats connected vault blocks as attached to each other (Create BlockMovementChecks: ItemVaultBlock -> ConnectivityHandler.isConnected) and item input/output blocks beside a vault stick to it, so a vault is always taken whole together with its neighbours. Only the operator commands that cut by area (`sable assemble area|cube|sphere`, `shatter`) can cut through a vault.",
+   "fix": "none; noted for operators"
+  },
+  {
+   "id": "stale_links_without_item_effect",
+   "severity": "P3",
+   "verdict": "real, harmless",
+   "blocks": [
+    "create:package_frogport",
+    "create:chute",
+    "functionalstorage:storage_controller",
+    "functionalstorage:framed_storage_controller",
+    "functionalstorage:controller_extension",
+    "functionalstorage:framed_controller_extension",
+    "betterarcheology:archeology_table",
+    "betterarcheology:villager_fossil",
+    "crabbersdelight:crab_trap",
+    "trials:crafter"
+   ],
+   "what": "A chain conveyor keeps the moved frogport's port entry (every use checks for a frogport at the position and falls through); chutes left behind keep their airflow value until a neighbour update; drawers and controllers keep a link to a position that is now air (every use checks the block entity type); a comparator beside the old position is not updated. No item is duplicated or lost.",
+   "fix": "none"
+  },
+  {
+   "id": "key_overlaps",
+   "severity": "P2",
+   "verdict": "real for the keys listed, one claim refuted",
+   "cause": "Pixelmon registers its keys in code and none of them is in the default options file the pack takes from Society (the file is Society's own except for one added resource pack). Forge delivers a key press to every binding on that key whose modifier matches.",
+   "act_together_with_no_screen_open": {
+    "O": [
+     "Pixelmon overlay minimise/maximise",
+     "Oculus shader pack selection screen",
+     "Shoulder Surfing swap shoulder (in that view)"
+    ],
+    "K": [
+     "Pixelmon wiki (opens a browser page for the block looked at)",
+     "Pufferfish Skills screen"
+    ],
+    "M": [
+     "Pixelmon quest cycle",
+     "FTB Chunks map (once its stage is unlocked)",
+     "Simple Magnets toggle (with a magnet)"
+    ],
+    "N": [
+     "Pixelmon quest journal",
+     "JourneyMap waypoint manager"
+    ],
+    "B": [
+     "Pixelmon move skill selection",
+     "JourneyMap create waypoint",
+     "Sophisticated Backpacks open backpack"
+    ],
+    "G": [
+     "Pixelmon use move skill",
+     "Curios inventory"
+    ],
+    "Up/Down": [
+     "Pixelmon previous/next party slot",
+     "Shoulder Surfing camera distance (in that view)"
+    ],
+    "R": [
+     "Pixelmon send out / recall",
+     "Tool Belt radial menu (only while wearing a belt)"
+    ]
+   },
+   "refuted": "U: Crash Utilities is on Ctrl+U in the shipped file (the verifying agent misread the file as having no modifier fields; it has 13 CONTROL, 6 SHIFT and 2 ALT bindings), so the trainer card key is alone on plain U.",
+   "not_done_in_game": "The handlers were traced in bytecode; nobody pressed the keys in a client for this record.",
+   "fix": "none in this change: new defaults need a new player pack and reach fresh installs only (Configured Defaults adds missing lines, never overwrites). The overlaps and how to rebind are listed in docs/windows-client.md."
+  },
+  {
+   "id": "probe_profile_links",
+   "severity": "P2",
+   "verdict": "real, fixed",
+   "what": "tools/run_village_probe.py checked only the top-level profile folders for symbolic links; a link inside one would have sent the probe scripts into the folder the source profile shares."
+  },
+  {
+   "id": "read_back_verdict",
+   "severity": "P2",
+   "verdict": "real, fixed",
+   "what": "The comparison of the saved world with the probe's villages was recorded but did not fail the run."
+  },
+  {
+   "id": "output_path_is_a_folder",
+   "severity": "P2",
+   "verdict": "real, fixed",
+   "what": "forge_village_compat.py (and forge_overlay_compat.py, same pattern) wrote part of their outputs before failing on an output path occupied by a folder; all locations are now checked before the first write, as forge_loot_compat.py already did."
+  },
+  {
+   "id": "documents",
+   "severity": "P2/P3",
+   "verdict": "real, fixed",
+   "what": "Relative Gradle init script path in the port repair build instructions; the common JAR regeneration instructions stopped one step short; README and progress notes still called v17 the running server."
+  }
+ ],
+ "sweep_of_the_silent_removal_tag": {
+  "ids": 310,
+  "by_group": {
+   "create and add-ons": {
+    "ids": 36,
+    "result": "postboxes (above), item vault (operator only), frogport and chute (harmless); the rest drop only their own contents"
+   },
+   "pixelmon": {
+    "ids": 51,
+    "result": "clean: 48 gym signs, infuser, cloning machine, fossil display drop only their own contents; owner data lives in the block entity"
+   },
+   "fantasyfurniture, functionalstorage, farmingforblockheads, quark, buildinggadgets2, plonk, sewingkit, zetter": {
+    "ids": 84,
+    "result": "clean except the functionalstorage links (harmless)"
+   },
+   "vinery, nethervinery, brewery, candlelight, bakery, meadow, farm_and_charm": {
+    "ids": 114,
+    "result": "clean: all are simple storage blocks"
+   },
+   "society, society_trading, shippingbin, splendid_slimes, trials, betterarcheology, crabbersdelight, vintagedelight": {
+    "ids": 25,
+    "result": "19 are also non-movable; shipping bin contents are stored per owner, not per position; the rest drop only their own contents"
+   }
+  },
+  "noted": "simulated:non_movable is read only by the player assembler. Splitting an existing physics structure and the operator commands call the move helper directly."
+ },
+ "game_check_of_the_fix": {
+  "profile": "staged from the pinned inputs with the changed overlay; new world; tools/run_village_probe.py as changed here",
+  "exit_code": 0,
+  "checks_failed": [],
+  "stop_exit_code": 0,
+  "simulated_non_movable": {
+   "ids_in_the_loaded_tag": 69,
+   "expected_ids_missing": 0,
+   "postboxes_in_the_loaded_tag": 16
+  },
+  "script_log": "PSA_PHYSICS_IMMOVABLE requested 69, mirrored 52, other 17, rejected []",
+  "assembly_sweep": {
+   "tested": 4181,
+   "duplicated": 0,
+   "lost": 0
+  },
+  "port_repairs_passed": [
+   "physics_beside_pixelmon_machine",
+   "redstone_contact"
+  ],
+  "villages_read_back": {
+   "generated": 10,
+   "saved_start_found": 10,
+   "assembly_matches_saved_start": 10
+  },
+  "kubejs_server_script_errors": [],
+  "not_checked": "The assembler refusing a postbox was not exercised by a player; the check is that the loaded tag holds the 16 ids, the same check as for the 52 Society machines and the train station."
+ },
+ "python_tests": {
+  "run": 168,
+  "passed": 162,
+  "skipped_linux_only": 6
+ }
+}
