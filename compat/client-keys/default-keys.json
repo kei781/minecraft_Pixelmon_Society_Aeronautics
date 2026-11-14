@@ -1,6 +1,6 @@
 {
   "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
-  "port_sha256": "814b13eb950b738d17526b50dc5e19bb6454c486be05b012cd4b78182a98fee3",
+  "port_sha256": "d597065c5fef2abaec1bb01c616a5c5dc0787f672b5428693f23e696c37d23e4",
   "mods_lock_sha256": "9a2db9267f7cc93a329bd02a351f3170287ed08952b4c4d3bf0a392af61973e7",
   "coded_defaults": {
     "key.attack": "key.mouse.left",

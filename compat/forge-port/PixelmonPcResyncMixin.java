@@ -1,8 +1,9 @@
 package dev.psa.pcsync.mixin;
 
+import com.pixelmonmod.pixelmon.api.storage.PCStorage;
 import com.pixelmonmod.pixelmon.api.storage.StorageProxy;
 import com.pixelmonmod.pixelmon.listener.PixelmonPlayerTracker;
-import net.minecraft.server.MinecraftServer;
+import java.util.concurrent.CompletableFuture;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +15,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Sends the PC to the player once more after Pixelmon's login packets.
+ * Sends the PC to the player once more after Pixelmon's login packets, when Pixelmon has
+ * already sent it before them.
  *
  * Pixelmon 9.2.3 sends the PC from a handler that runs before this one, and the client drops
  * every PC it knows when the configuration packet sent here arrives. When the PC went out
@@ -32,17 +34,14 @@ public abstract class PixelmonPcResyncMixin {
         // behaves as it did before this class existed.
         try {
             if (!(event.getEntity() instanceof ServerPlayer player)) return;
-            MinecraftServer server = player.getServer();
-            if (server == null) return;
-            StorageProxy.getPCForPlayer(player).thenAccept(pc -> server.execute(() -> {
-                try {
-                    if (pc == null || player.hasDisconnected()) return;
-                    StorageProxy.initializePCForPlayer(player, pc);
-                    PSA_PC_RESYNC.debug("PC sent again after login: {}", player.getGameProfile().getName());
-                } catch (Throwable problem) {
-                    PSA_PC_RESYNC.warn("PC was not sent again to a player after login", problem);
-                }
-            }));
+            CompletableFuture<PCStorage> loading = StorageProxy.getPCForPlayer(player);
+            // Still loading: Pixelmon sends the PC when the load ends, which is after the
+            // configuration packet this handler has just sent. Nothing to repair.
+            if (!loading.isDone()) return;
+            PCStorage pc = loading.join();
+            if (pc == null || player.hasDisconnected()) return;
+            StorageProxy.initializePCForPlayer(player, pc);
+            PSA_PC_RESYNC.debug("PC sent again after login: {}", player.getGameProfile().getName());
         } catch (Throwable problem) {
             PSA_PC_RESYNC.warn("PC was not sent again to a player after login", problem);
         }

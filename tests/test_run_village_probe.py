@@ -122,10 +122,11 @@ class PortRepairCheckTest(unittest.TestCase):
 
 class PcResendCheckTest(unittest.TestCase):
     class Console:
-        def __init__(self, record):
-            self.lines, self.record = [], record
+        def __init__(self, record, crashed=False):
+            self.lines, self.record, self.crashed, self.process, self.sent = [], record, crashed, FakeProcess(), []
 
         def send(self, command):
+            self.sent.append(command)
             if self.record is not None:
                 self.lines.append("[KubeJS Server/]: probe.js#24: PSA_PROBE_PC_RESEND " + json.dumps(self.record))
 
@@ -151,6 +152,13 @@ class PcResendCheckTest(unittest.TestCase):
         for reason, (record, lines) in cases.items():
             with self.subTest(reason):
                 self.assertFalse(self.check(record, lines)["pass"])
+
+    def test_a_server_that_has_stopped_is_recorded_as_failed_and_gets_no_command(self):
+        done = {"name": "PSA_PC_Probe", "handler_completed": True, "error": None}
+        console = self.Console(done, crashed=True)
+        with tempfile.TemporaryDirectory() as folder, patch.object(driver.time, "sleep", lambda seconds: None):
+            result = driver.pc_resend_check(console, Path(folder))
+        self.assertEqual((result["pass"], result["error"], console.sent), (False, "server not running", []))
 
 
 class ExitCodeTest(unittest.TestCase):

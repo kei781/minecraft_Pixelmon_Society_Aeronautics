@@ -405,9 +405,11 @@ def probe_lines(server):
 
 
 def pc_resend_check(server, profile, pause=8):
-    """Pixelmon's login handler run for a stand-in player (tests/forge-pc-resync-probe.js). The
-    handler must finish, and the PC resend class must have written its debug line for that player:
-    nothing else asks for the stand-in's PC, because the login event itself is not posted."""
+    """Pixelmon's login handler run for a stand-in player whose PC is already loaded
+    (tests/forge-pc-resync-probe.js). The handler must finish, and the PC resend class must have
+    written its debug line for that player; only that class uses the logger name."""
+    if server.crashed or server.process.poll() is not None:
+        return {"handler_completed": False, "error": "server not running", "resend_logged": False, "pass": False}
     start = len(server.lines)
     server.send("psa_probe_pc_resend")
     time.sleep(pause)

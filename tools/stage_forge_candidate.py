@@ -15,7 +15,7 @@ import forge_village_compat
 
 SERVER_SHA1 = "fe4ed6b00bfec53f917c64fc3ddd5ca91c0d0495"
 PIXELMON_SHA256 = "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a"
-PORT_SHA256 = "814b13eb950b738d17526b50dc5e19bb6454c486be05b012cd4b78182a98fee3"
+PORT_SHA256 = "d597065c5fef2abaec1bb01c616a5c5dc0787f672b5428693f23e696c37d23e4"
 FOLDERS = {"mods", "config", "defaultconfigs", "kubejs", "patchouli_books"}
 LOCK = Path(__file__).resolve().parents[1] / "forge-candidate-lock.json"
 
