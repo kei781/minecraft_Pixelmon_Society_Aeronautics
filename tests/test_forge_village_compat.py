@@ -228,6 +228,28 @@ class VillageCompatibilityTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "differs"):
             compat.verify_staged(staged, receipt)
 
+    def test_profile_with_a_folder_or_file_in_the_wrong_place_is_refused_before_writing(self):
+        def stage(name):
+            staged = self.root / name
+            for path, data in self.society.items():
+                target = staged / path
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(data)
+            return staged
+        files = lambda staged: {item.relative_to(staged).as_posix(): item.read_bytes() if item.is_file() else None
+                                for item in sorted(staged.rglob("*"))}
+        folder = stage("folder")  # a folder where the start script belongs
+        (folder / compat.SPAWN_PATH).mkdir(parents=True)
+        blocked = stage("blocked")  # a file where the folder of the pool modifiers belongs
+        (blocked / compat.MODIFIER_FOLDER.rstrip("/")).parent.mkdir(parents=True, exist_ok=True)
+        (blocked / compat.MODIFIER_FOLDER.rstrip("/")).write_bytes(b"")
+        for staged in (folder, blocked):
+            before = files(staged)
+            with self.subTest(staged=staged.name):
+                with self.assertRaisesRegex(ValueError, "Regular staged village path|already used"):
+                    compat.apply_directory(staged, self.jar)
+                self.assertEqual(files(staged), before)
+
     def test_symlinked_profile_folder_is_refused(self):
         outside, staged = self.root / "outside", self.root / "linked"
         for path, data in self.society.items():

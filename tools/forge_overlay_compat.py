@@ -133,10 +133,11 @@ def apply_overrides(files, pixelmon_jar, port_jar, read_mod=None):
 
 
 def _regular(root, path):
-    target = Path(root)
-    for component in Path(path).parts:
+    """Location below root that is reached through real folders only: no symbolic link, no file in place of a folder."""
+    target, parts = Path(root), Path(path).parts
+    for index, component in enumerate(parts):
         target = target / component
-        if target.is_symlink():
+        if target.is_symlink() or (index + 1 < len(parts) and target.exists() and not target.is_dir()):
             raise ValueError("Regular staged overlay path required")
     return target
 
@@ -145,10 +146,15 @@ def apply_directory(root, pixelmon_jar, port_jar):
     """Apply to an extracted profile whose files are Society's originals."""
     def read(path):
         target = _regular(root, path)
+        if target.exists() and not target.is_file():
+            raise ValueError("Regular staged overlay path required")
         return target.read_bytes() if target.is_file() else None
     outputs, receipt = plan(pixelmon_jar, port_jar, read)
-    for path, data in outputs.items():
-        target = _regular(root, path)
+    # Every location is checked before the first write.
+    targets = [(_regular(root, path), data) for path, data in outputs.items()]
+    if any(target.exists() and not target.is_file() for target, _ in targets):
+        raise ValueError("Regular staged overlay path required")
+    for target, data in targets:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(data)
     return receipt

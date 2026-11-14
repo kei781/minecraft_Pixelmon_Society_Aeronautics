@@ -132,6 +132,67 @@ class ExitCodeTest(unittest.TestCase):
         self.assertEqual([driver.exit_code(outcome, True) for outcome in outcomes], [0, 0, 0, 1, 1])
 
 
+class ReadBackVerdictTest(unittest.TestCase):
+    def test_a_saved_world_that_contradicts_the_probe_fails_the_run(self):
+        def village(found=True, same=True, not_full=0):
+            entry = {"structure": "minecraft:village_plains", "chunk": [3, -4], "saved_start_found": found,
+                     "pieces": [{"chunks_not_full": 0}, {"chunks_not_full": not_full}]}
+            if found:
+                entry["assembly_matches_saved_start"] = same
+            return entry
+        self.assertEqual(driver.read_back_failures([village(), village()]), [])
+        self.assertEqual(driver.read_back_failures([]), [])
+        self.assertEqual(driver.read_back_failures(None), ["read back: not performed"])
+        where = ", minecraft:village_plains at chunk 3,-4"
+        self.assertEqual(driver.read_back_failures([village(found=False), village(same=False), village(not_full=2)]),
+                         ["read back: saved start missing" + where, "read back: saved pieces differ" + where,
+                          "read back: chunks not fully generated" + where])
+
+
+class PrepareTest(unittest.TestCase):
+    def setUp(self):
+        folder = tempfile.TemporaryDirectory()
+        self.addCleanup(folder.cleanup)
+        self.root = Path(folder.name)
+        self.source, self.libraries = self.root / "source", self.root / "libraries"
+        for name in ("mods", "config", "defaultconfigs", "kubejs/server_scripts", "patchouli_books"):
+            (self.source / name).mkdir(parents=True)
+        for name in (".psa-forge-candidate.json", ".psa-mods.sha256", ".psa-owned-smoke-test", "user_jvm_args.txt"):
+            (self.source / name).write_text("{}")
+        (self.source / "kubejs/server_scripts/society.js").write_text("// Society")
+        forge = self.libraries / "net/minecraftforge/forge/1.20.1-47.4.20"
+        forge.mkdir(parents=True)
+        (forge / "unix_args.txt").write_text("")
+
+    def files(self, folder):
+        return sorted(path.relative_to(folder).as_posix() for path in folder.rglob("*"))
+
+    def test_the_copy_gets_the_probe_scripts_and_the_source_stays_as_it_was(self):
+        before = self.files(self.source)
+        profile = driver.prepare(self.source, self.root / "probe", self.libraries, 25591, "1")
+        self.assertEqual(self.files(self.source), before)
+        scripts = sorted(path.name for path in (profile / "kubejs/server_scripts").iterdir())
+        self.assertEqual(scripts, ["psa_assembly_probe.js", "psa_probe_spec.js", "psa_village_probe.js", "society.js"])
+
+    def test_a_link_inside_a_profile_folder_is_refused_before_anything_is_written(self):
+        shared = self.root / "shared"
+        shared.mkdir()
+        (shared / "psa_village_probe.js").write_text("// somebody else's file")
+        (self.source / "kubejs/server_scripts/society.js").unlink()
+        (self.source / "kubejs/server_scripts").rmdir()
+        (self.source / "kubejs/server_scripts").symlink_to(shared, target_is_directory=True)
+        with self.assertRaisesRegex(ValueError, "symbolic link: kubejs/server_scripts"):
+            driver.prepare(self.source, self.root / "probe", self.libraries, 25591, "1")
+        self.assertFalse((self.root / "probe").exists())
+        self.assertEqual(self.files(shared), ["psa_village_probe.js"])
+        self.assertEqual((shared / "psa_village_probe.js").read_text(), "// somebody else's file")
+        (self.source / "kubejs/server_scripts").unlink()
+        (self.source / "kubejs/server_scripts").mkdir()
+        (self.source / "config/linked.toml").symlink_to(self.root / "missing.toml")  # a dangling file link
+        with self.assertRaisesRegex(ValueError, "symbolic link: config/linked.toml"):
+            driver.prepare(self.source, self.root / "probe", self.libraries, 25591, "1")
+
+
 class ProbeRecordTest(unittest.TestCase):
     def test_a_registry_part_that_never_arrived_is_reported(self):
         line = "[INFO] psa_village_probe.js#25: PSA_VILLAGE_PROBE registry %s"

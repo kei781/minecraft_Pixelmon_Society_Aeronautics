@@ -142,6 +142,26 @@ class OverlayCompatibilityTest(unittest.TestCase):
         self.assertEqual(files[compat.LITHIUM_PATH][-len(b"mixin.world.tick_scheduler=false"):], b"mixin.world.tick_scheduler=false")
         self.assertEqual(len(receipt["files"]), 2)
 
+    def test_profile_with_a_folder_or_file_in_the_wrong_place_is_refused_before_writing(self):
+        def stage(name):
+            staged = self.root / name
+            for path, data in self.society.items():
+                (staged / path).parent.mkdir(parents=True, exist_ok=True)
+                (staged / path).write_bytes(data)
+            return staged
+        files = lambda staged: {item.relative_to(staged).as_posix(): item.read_bytes() if item.is_file() else None
+                                for item in sorted(staged.rglob("*"))}
+        folder = stage("folder")  # a folder where the last overlay file belongs
+        (folder / "kubejs/server_scripts/psa_fixture.js").mkdir()
+        blocked = stage("blocked")  # a file where a folder of the overlay belongs
+        (blocked / "kubejs/data").write_bytes(b"")
+        for staged in (folder, blocked):
+            before = files(staged)
+            with self.subTest(staged=staged.name):
+                with self.assertRaisesRegex(ValueError, "Regular staged overlay path"):
+                    compat.apply_directory(staged, self.pixelmon, self.port)
+                self.assertEqual(files(staged), before)
+
     def test_directory_application_declaration_and_symlink_refusal(self):
         staged = self.root / "staged"
         for path, data in self.society.items():

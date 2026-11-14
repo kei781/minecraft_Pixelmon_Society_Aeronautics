@@ -304,6 +304,8 @@ def apply_directory(root, pixelmon_jar, vanilla_jar):
     outputs, receipt = plan(pixelmon_jar, vanilla_jar, read)
     # Every location is checked before the first write.
     targets = [(_regular(root, path), data) for path, data in outputs.items()]
+    if any(target.exists() and not target.is_file() for target, _ in targets):
+        raise ValueError("Regular staged loot path required")
     for target, data in targets:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(data)
