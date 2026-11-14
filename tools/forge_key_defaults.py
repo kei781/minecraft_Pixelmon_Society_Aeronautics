@@ -23,6 +23,11 @@ KEYBOARD_KEYS = frozenset("key.keyboard." + name for name in (
        "scroll.lock semicolon slash space tab up world.1 world.2").split()))
 
 
+def key_and_modifier(value):
+    key, _, modifier = value.partition(":")
+    return key, modifier or "NONE"
+
+
 def bindings(lines):
     """Binding name -> (key, modifier) for the key lines of an options file."""
     found = {}
@@ -30,38 +35,41 @@ def bindings(lines):
         if not line.startswith("key_"):
             continue
         name, _, value = line[len("key_"):].partition(":")
-        key, _, modifier = value.partition(":")
-        if not name or not key or name in found:
+        if not name or not value.partition(":")[0] or name in found:
             raise ValueError("Unreadable default key line: " + line)
-        found[name] = (key, modifier or "NONE")
+        found[name] = key_and_modifier(value)
     return found
 
 
-def apply(overrides, table_path, pixelmon_sha256, port_sha256, expected):
+def apply(overrides, table_path, pixelmon_sha256, port_sha256, mods_lock_sha256, expected):
     table_bytes = Path(table_path).read_bytes()
     table = json.loads(table_bytes)
     # The coded defaults in the table were read from these exact JARs; other JARs need a new look.
-    if table.get("pixelmon_sha256") != pixelmon_sha256 or table.get("port_sha256") != port_sha256:
-        raise ValueError("Default key table belongs to different Pixelmon or port JARs")
-    coded, moves = table["coded_defaults"], table["moved"]
+    pinned = {"pixelmon_sha256": pixelmon_sha256, "port_sha256": port_sha256, "mods_lock_sha256": mods_lock_sha256}
+    if any(table.get(name) != value for name, value in pinned.items()):
+        raise ValueError("Default key table belongs to a different set of mod JARs")
+    coded = {name: key_and_modifier(value) for name, value in table["coded_defaults"].items()}
+    moves = table["moved"]
     if len(moves) != expected or len({move["binding"] for move in moves}) != len(moves):
         raise ValueError("Unexpected default key table")
     lines = overrides[OPTIONS].decode().splitlines()
     shipped = bindings(lines)
     if set(coded) & set(shipped):
-        raise ValueError("Default key file already sets a Pixelmon or port key")
-    taken = {key for key, _ in shipped.values()} | set(coded.values())
+        raise ValueError("Default key file already sets a binding the table lists as coded")
+    defaults = dict(shipped, **coded)
     added = []
     for move in moves:
         name, old, new, others = move["binding"], move["from"], move["to"], move["acts_together_with"]
-        if coded.get(name) != old:
+        if coded.get(name) != (old, "NONE"):
             raise ValueError("Coded default differs: " + name)
         # The move is only justified while a Society binding still sits on the same plain key.
         if not others or any(shipped.get(other) != (old, "NONE") for other in others):
             raise ValueError("Shared default key differs: " + name)
-        if new not in KEYBOARD_KEYS or new in taken:
+        # With any modifier: Forge treats a plain key and the same key with a modifier as a conflict.
+        on_new_key = sorted(other for other, (key, _) in defaults.items() if key == new and other != name)
+        if new not in KEYBOARD_KEYS or on_new_key != sorted(move["shares_new_key_with"]):
             raise ValueError("Free keyboard key required: " + name)
-        taken.add(new)
+        defaults[name] = (new, "NONE")
         added.append("key_%s:%s:NONE" % (name, new))
     if added:
         last = max(index for index, line in enumerate(lines) if line.startswith("key_"))

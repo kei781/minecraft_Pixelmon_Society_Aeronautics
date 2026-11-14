@@ -220,7 +220,7 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vani
         server / "mods/psa-aeronautics-experimental-forge-1.20.1.jar", PORT_SHA256, EXPECTED_MODEL_OVERRIDES)
     forge_model_pack.enable(overrides, model_data)
     default_keys = forge_key_defaults.apply(overrides, ROOT / "compat/client-keys/default-keys.json",
-                                            PIXELMON_SHA256, PORT_SHA256, EXPECTED_KEY_DEFAULTS)
+                                            PIXELMON_SHA256, PORT_SHA256, digest(lock_path), EXPECTED_KEY_DEFAULTS)
     payload = dict(overrides)
     for name in set(payload) & set(files):
         if data_bytes(payload[name]) != data_bytes(files[name]):

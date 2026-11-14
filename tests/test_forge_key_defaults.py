@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -11,6 +12,7 @@ import forge_key_defaults as keys
 from stage_forge_candidate import PIXELMON_SHA256, PORT_SHA256
 
 TABLE = ROOT / 'compat/client-keys/default-keys.json'
+LOCK_SHA256 = hashlib.sha256((ROOT / 'forge-client-lock.json').read_bytes()).hexdigest()
 
 
 class DefaultKeyTest(unittest.TestCase):
@@ -30,7 +32,8 @@ class DefaultKeyTest(unittest.TestCase):
         path = Path(self.temp.name) / 'default-keys.json'
         path.write_text(json.dumps(self.table if table is None else table))
         overrides = {keys.OPTIONS: ('\n'.join(self.lines if lines is None else lines) + '\n').encode()}
-        receipt = keys.apply(overrides, path, PIXELMON_SHA256, PORT_SHA256, self.moves if expected is None else expected)
+        receipt = keys.apply(overrides, path, PIXELMON_SHA256, PORT_SHA256, LOCK_SHA256,
+                             self.moves if expected is None else expected)
         return overrides[keys.OPTIONS].decode().splitlines(), receipt
 
     def changed(self, edit):
@@ -51,14 +54,29 @@ class DefaultKeyTest(unittest.TestCase):
             self.assertEqual(used.count(move['to']), 1)
             self.assertEqual(shipped[move['binding']], (move['to'], 'NONE'))
 
-    def test_shipped_table_is_pinned_to_the_shipped_pixelmon_and_port_jars(self):
+    def test_only_the_quest_journal_shares_its_new_key_and_only_with_the_declared_binding(self):
+        coded = {name: keys.key_and_modifier(value) for name, value in self.table['coded_defaults'].items()}
+        for move in self.table['moved']:
+            on_key = sorted(name for name, (key, _) in coded.items() if key == move['to'])
+            self.assertEqual(on_key, move['shares_new_key_with'])
+            self.assertEqual(bool(on_key), move['binding'] == 'key.questjournal')
+        journal = next(index for index, move in enumerate(self.table['moved']) if move['binding'] == 'key.questjournal')
+        for declared in [[], ['key.scholar.import_book', 'key.scholar.export_book'], ['key.scholar.export_book']]:
+            table = self.changed(lambda table: table['moved'][journal].update(shares_new_key_with=declared))
+            with self.assertRaisesRegex(ValueError, 'Free keyboard key required'):
+                self.apply(table)
+
+    def test_shipped_table_is_pinned_to_the_shipped_pixelmon_and_port_jars_and_the_mod_lock(self):
         self.assertEqual(self.table['pixelmon_sha256'], PIXELMON_SHA256)
         self.assertEqual(self.table['port_sha256'], PORT_SHA256)
+        self.assertEqual(self.table['mods_lock_sha256'], LOCK_SHA256)
         path = Path(self.temp.name) / 'default-keys.json'
         path.write_text(json.dumps(self.table))
-        for pixelmon, port in [('0' * 64, PORT_SHA256), (PIXELMON_SHA256, '0' * 64)]:
-            with self.assertRaisesRegex(ValueError, 'different Pixelmon or port'):
-                keys.apply({keys.OPTIONS: b'lang:en_us\n'}, path, pixelmon, port, self.moves)
+        pinned = [PIXELMON_SHA256, PORT_SHA256, LOCK_SHA256]
+        for index in range(3):
+            other = pinned[:index] + ['0' * 64] + pinned[index + 1:]
+            with self.assertRaisesRegex(ValueError, 'different set of mod JARs'):
+                keys.apply({keys.OPTIONS: b'lang:en_us\n'}, path, *other, self.moves)
 
     def test_every_key_name_the_game_reads_is_known_and_the_unbound_key_is_not_a_target(self):
         self.assertEqual(len(keys.KEYBOARD_KEYS), 120)
@@ -72,6 +90,8 @@ class DefaultKeyTest(unittest.TestCase):
         cases = {'a key line of the file': 'key.keyboard.space',
                  'a key line that needs a modifier': 'key.keyboard.o',
                  'a coded Pixelmon default': 'key.keyboard.i',
+                 'a coded default of a Society mod': 'key.keyboard.f7',
+                 'a coded default that needs a modifier': 'key.keyboard.insert',
                  'another moved binding': self.table['moved'][1]['to']}
         for reason, name in cases.items():
             with self.subTest(reason):
@@ -104,10 +124,12 @@ class DefaultKeyTest(unittest.TestCase):
             self.apply(table)
 
     def test_file_that_already_sets_a_pixelmon_key_or_repeats_a_binding_is_refused(self):
-        with self.assertRaisesRegex(ValueError, 'already sets a Pixelmon or port key'):
-            self.apply(lines=self.lines + ['key_key.wiki:key.keyboard.k:NONE'])
-        with self.assertRaisesRegex(ValueError, 'Unreadable default key line'):
-            self.apply(lines=self.lines + ['key_key.jump:key.keyboard.j:NONE'])
+        for line in ['key_key.wiki:key.keyboard.k:NONE', 'key_key.scholar.import_book:key.keyboard.f6']:
+            with self.assertRaisesRegex(ValueError, 'already sets a binding the table lists as coded'):
+                self.apply(lines=self.lines + [line])
+        for line in ['key_key.jump:key.keyboard.j:NONE', 'key_key.other:', 'key_key.other::NONE', 'key_:key.keyboard.j']:
+            with self.assertRaisesRegex(ValueError, 'Unreadable default key line'):
+                self.apply(lines=self.lines + [line])
 
     def test_file_is_left_alone_when_nothing_is_moved(self):
         table = self.changed(lambda table: table.update(moved=[]))

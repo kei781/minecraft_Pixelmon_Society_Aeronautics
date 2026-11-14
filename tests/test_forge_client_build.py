@@ -81,7 +81,7 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.key_table={'pixelmon_sha256':client.digest(self.pixel),'port_sha256':client.digest(self.port),
             'coded_defaults':{'key.pokemonexternal':'key.keyboard.g'},
             'moved':[{'binding':'key.pokemonexternal','from':'key.keyboard.g','to':'key.keyboard.semicolon',
-                'acts_together_with':['key.curios.open.desc']}]}
+                'acts_together_with':['key.curios.open.desc'],'shares_new_key_with':[]}]}
         (self.root/'compat/client-keys').mkdir()
         self.write_key_table()
         context=patch.object(client.forge_item_model_alias, 'ADDITIONAL_ITEMS', set())
@@ -110,9 +110,12 @@ class ForgeClientBuildTest(unittest.TestCase):
 
     def write_lock(self):
         (self.root/'forge-client-lock.json').write_text(json.dumps(self.lock))
+        if hasattr(self,'key_table'):self.write_key_table()
 
-    def write_key_table(self):
-        (self.root/'compat/client-keys/default-keys.json').write_text(json.dumps(self.key_table))
+    def write_key_table(self,**changed):
+        table=dict(self.key_table,mods_lock_sha256=client.digest(self.root/'forge-client-lock.json'))
+        table.update(changed)
+        (self.root/'compat/client-keys/default-keys.json').write_text(json.dumps(table))
 
     def build(self):
         return client.build(self.server,self.extras,self.society,self.output)
@@ -152,9 +155,13 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.assertEqual(profile['default_key_compatibility']['table_sha256'],
             client.digest(self.root/'compat/client-keys/default-keys.json'))
 
-    def test_key_table_made_for_another_pixelmon_jar_fails_before_output(self):
-        self.key_table['pixelmon_sha256']='0'*64;self.write_key_table()
-        self.assert_no_export()
+    def test_key_table_made_for_another_set_of_mod_jars_fails_before_output(self):
+        for name in ['pixelmon_sha256','port_sha256','mods_lock_sha256']:
+            with self.subTest(name):
+                self.write_key_table(**{name:'0'*64})
+                self.assert_no_export()
+        self.write_key_table()
+        self.build()
 
     def test_moved_key_that_another_binding_already_uses_fails_before_output(self):
         self.key_table['moved'][0]['to']='key.keyboard.g';self.write_key_table()
