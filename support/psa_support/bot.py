@@ -118,14 +118,14 @@ class SupportBot(discord.Client):
                 if update['status']=='needs_information':
                     text += '\n\n추가 정보는 이 메시지에 답장해 주세요. 기존 티켓에 이어서 기록합니다.'
                 try:
-                    sent = await channel.send(text[:1800], reference=discord.MessageReference(
+                    sent = await channel.send(text, reference=discord.MessageReference(
                         message_id=int(update['report_message']),channel_id=channel.id,
                         guild_id=channel.guild.id,fail_if_not_exists=False),
-                        allowed_mentions=discord.AllowedMentions.none())
+                        allowed_mentions=discord.AllowedMentions(everyone=False,roles=False,users=False,replied_user=True))
                 except discord.HTTPException:
                     break
                 self.store.link_reply(str(sent.id),update['ticket'],update['report_author'])
-                self.store.notified(update['id'])
+                self.store.notified(update['id'],update['report_author'])
 
     @tasks.loop(seconds=15)
     async def deliver(self):

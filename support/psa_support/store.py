@@ -35,6 +35,8 @@ class Store:
           notified INTEGER NOT NULL DEFAULT 0);
         CREATE TABLE IF NOT EXISTS reply_links (
           message TEXT PRIMARY KEY, ticket INTEGER NOT NULL, author TEXT NOT NULL);
+        CREATE TABLE IF NOT EXISTS notification_deliveries (
+          update_id INTEGER NOT NULL, author TEXT NOT NULL, PRIMARY KEY(update_id,author));
         CREATE INDEX IF NOT EXISTS messages_author_time ON messages(author, created);
         CREATE INDEX IF NOT EXISTS tickets_fingerprint ON tickets(fingerprint);
         """)
@@ -109,6 +111,8 @@ class Store:
 
     def finish(self, message: str, decision: Decision, snapshot: str, source_labels: list[str], related_ticket=None):
         now = time.time()
+        if decision.category in ('off_topic','benefit_request'):
+            related_ticket = None
         with self.db:
             self.db.execute("BEGIN IMMEDIATE")
             row = self.db.execute("SELECT * FROM messages WHERE id=?", (message,)).fetchone()
@@ -171,7 +175,10 @@ class Store:
         result = []
         for row in self.db.execute(f"SELECT * FROM tickets {clause} ORDER BY created"):
             ticket = dict(row); ticket['details'] = json.loads(ticket['details'])
-            ticket['reports'] = [dict(r) for r in self.db.execute("SELECT * FROM reports WHERE ticket=?", (row['id'],))]
+            ticket['reports'] = [dict(r) | {'untrusted_user_report': True} for r in self.db.execute("""
+              SELECT r.*,m.question AS original_text,m.created AS received_at,m.author AS reporter_id
+              FROM reports r JOIN messages m ON m.id=r.message WHERE r.ticket=? ORDER BY m.created
+              """, (row['id'],))]
             ticket['updates'] = [dict(r) for r in self.db.execute("SELECT * FROM updates WHERE ticket=? ORDER BY id", (row['id'],))]
             result.append(ticket)
         return result
@@ -181,6 +188,8 @@ class Store:
             raise ValueError("invalid ticket status")
         if not summary.strip() or not evidence.strip():
             raise ValueError("every status update requires a summary and evidence")
+        if len(summary.encode('utf-16-le'))//2 > 1400:
+            raise ValueError('summary must fit 1400 Discord UTF-16 units; put longer details in evidence')
         with self.db:
             if not self.db.execute("SELECT 1 FROM tickets WHERE id=?", (ticket,)).fetchone():
                 raise ValueError("unknown ticket")
@@ -191,9 +200,13 @@ class Store:
     def notifications(self):
         return self.db.execute("""SELECT u.*,m.id AS report_message,m.author AS report_author
           FROM updates u JOIN messages m ON m.id=(SELECT m2.id FROM messages m2
-          WHERE m2.ticket=u.ticket ORDER BY m2.created LIMIT 1)
-          WHERE u.notified=0 ORDER BY u.id LIMIT 10""").fetchall()
+          WHERE m2.ticket=u.ticket AND m2.author=m.author ORDER BY m2.created LIMIT 1)
+          WHERE u.notified=0 AND NOT EXISTS (SELECT 1 FROM notification_deliveries d
+          WHERE d.update_id=u.id AND d.author=m.author) ORDER BY u.id,m.created LIMIT 10""").fetchall()
 
-    def notified(self, update: int):
+    def notified(self, update: int, author: str):
         with self.db:
-            self.db.execute("UPDATE updates SET notified=1 WHERE id=?", (update,))
+            self.db.execute('INSERT OR IGNORE INTO notification_deliveries VALUES(?,?)',(update,author))
+            self.db.execute("""UPDATE updates SET notified=1 WHERE id=? AND NOT EXISTS (
+              SELECT 1 FROM messages m WHERE m.ticket=updates.ticket AND NOT EXISTS (
+              SELECT 1 FROM notification_deliveries d WHERE d.update_id=updates.id AND d.author=m.author))""",(update,))

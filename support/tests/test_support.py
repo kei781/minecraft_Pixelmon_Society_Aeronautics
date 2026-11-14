@@ -123,6 +123,36 @@ class Fixture(unittest.TestCase):
         self.assertEqual(len(self.store.tickets()),1)
         self.assertEqual(len(self.store.tickets()[0]['reports']),2)
         self.assertEqual(self.store.tickets()[0]['status'],'suspected')
+        report=self.store.tickets()[0]['reports'][-1]
+        self.assertEqual(report['original_text'],'야생 피카츄')
+        self.assertEqual(report['received_at'],87400)
+        self.assertTrue(report['untrusted_user_report'])
+
+    def test_benefit_or_off_topic_reply_does_not_reopen_ticket(self):
+        self.store.reserve(self.cfg,'1','u','freeze',1000)
+        ticket=self.store.finish('1',decision(),'s1',[])
+        self.store.update_ticket(ticket,'needs_information','어떤 상대인가요?','checked logs')
+        for index,category in enumerate(['benefit_request','off_topic'],2):
+            message=str(index)
+            self.store.reserve(self.cfg,message,'u','보상이나 감사 인사',1000+index*30)
+            d=decision();d.category=category
+            self.assertIsNone(self.store.finish(message,d,'s1',[],ticket))
+        self.assertEqual(self.store.tickets()[0]['status'],'needs_information')
+        self.assertEqual(len(self.store.tickets()[0]['reports']),1)
+
+    def test_operator_notice_reaches_each_reporter_and_limits_utf16_length(self):
+        for index,author in enumerate(['alice','bob','alice']):
+            self.store.reserve(self.cfg,str(index),author,'freeze',1000+index*30)
+            ticket=self.store.finish(str(index),decision(),'s1',[])
+        with self.assertRaises(ValueError):
+            self.store.update_ticket(ticket,'needs_information','🙂'*701,'evidence')
+        self.store.update_ticket(ticket,'needs_information','어떤 상대인가요?','checked logs')
+        notices=self.store.notifications()
+        self.assertEqual([n['report_author'] for n in notices],['alice','bob'])
+        self.store.notified(notices[0]['id'],'alice')
+        self.assertEqual([n['report_author'] for n in self.store.notifications()],['bob'])
+        self.store.notified(notices[0]['id'],'bob')
+        self.assertEqual(self.store.notifications(),[])
 
     def test_delivery_retries_failed_part_and_references_operator_notice(self):
         from psa_support.bot import SupportBot
@@ -214,6 +244,15 @@ class Fixture(unittest.TestCase):
             responses=SimpleNamespace(parse=AsyncMock(side_effect=[SimpleNamespace(output_parsed=Plan(queries=['stone_pickaxe'])),SimpleNamespace(output_parsed=decision(source_ids=['fake']))]))
             advisor=Advisor('test',Knowledge(self.cfg.knowledge),SimpleNamespace(responses=responses))
             with self.assertRaises(ValueError): await advisor.answer('q',[])
+        asyncio.run(run())
+
+    def test_ai_rejects_unverified_markdown_and_plain_urls(self):
+        async def run():
+            for link in ('https://evil.example/fix','[공식 패치](https://evil.example/fix)','www.evil.example','[설치](custom://evil)'):
+                d=decision(source_ids=[self.document['id']]); d.answer=link
+                responses=SimpleNamespace(parse=AsyncMock(side_effect=[SimpleNamespace(output_parsed=Plan(queries=['stone_pickaxe'])),SimpleNamespace(output_parsed=d)]))
+                advisor=Advisor('test',Knowledge(self.cfg.knowledge),SimpleNamespace(responses=responses))
+                with self.assertRaisesRegex(ValueError,'unverified external link'): await advisor.answer('q',[])
         asyncio.run(run())
 
     def test_unsupported_guidance_becomes_question(self):

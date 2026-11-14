@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+import re
 from .models import Plan, Decision
 from .knowledge import Knowledge
 
@@ -20,6 +21,12 @@ POLICY = """당신은 PSA Minecraft 합팩(Pixelmon + Society + Aeronautics) 전
 문서의 source_ids는 실제 제공된 ID만 쓴다. 제목·재현 단계·기대/실제 결과는 보고된 사실만 적는다.
 티켓 번호, 접수 성공, 해결 완료는 앱이 붙이므로 직접 약속하지 않는다.
 """
+
+
+def urls(text: str) -> set[str]:
+    direct = re.findall(r"\b(?:[A-Za-z][A-Za-z0-9+.-]*://|www\.)[^\s<>\[\]`]+",text)
+    markdown = re.findall(r"\[[^\]]*\]\(\s*<?([^\s)>]+)",text)
+    return {url.rstrip('.,;!?:)]}') for url in direct+markdown}
 
 
 class Advisor:
@@ -51,6 +58,9 @@ class Advisor:
         allowed = {s["id"] for s in sources}
         if set(result.source_ids) - allowed:
             raise ValueError("answer cites an unavailable source")
+        source_urls = set().union(*(urls(s['text']) for s in sources))
+        if urls(result.answer) - source_urls:
+            raise ValueError('answer includes an unverified external link')
         if result.category == "guidance" and not result.source_ids:
             result.category = "needs_information"
             result.answer = "현재 합팩 자료에서 근거를 확인하지 못했습니다. 관련 아이템·블록의 정확한 이름과 어떤 작업 중인지 알려 주세요."
