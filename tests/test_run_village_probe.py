@@ -120,6 +120,39 @@ class PortRepairCheckTest(unittest.TestCase):
         self.assertFalse(outcome["results"]["physics_beside_pixelmon_machine"]["server_alive"])
 
 
+class PcResendCheckTest(unittest.TestCase):
+    class Console:
+        def __init__(self, record):
+            self.lines, self.record = [], record
+
+        def send(self, command):
+            if self.record is not None:
+                self.lines.append("[KubeJS Server/]: probe.js#24: PSA_PROBE_PC_RESEND " + json.dumps(self.record))
+
+    def check(self, record, debug_lines):
+        with tempfile.TemporaryDirectory() as folder:
+            profile = Path(folder)
+            if debug_lines is not None:
+                (profile / "logs").mkdir()
+                (profile / "logs/debug.log").write_text("\n".join(debug_lines) + "\n")
+            with patch.object(driver.time, "sleep", lambda seconds: None):
+                return driver.pc_resend_check(self.Console(record), profile)
+
+    def test_passes_only_when_the_handler_finished_and_the_class_logged_the_resend_for_that_player(self):
+        done = {"name": "PSA_PC_Probe", "handler_completed": True, "error": None}
+        line = "[Server thread/DEBUG] [PSA PC resync/]: PC sent again after login: PSA_PC_Probe"
+        self.assertTrue(self.check(done, [line])["pass"])
+        cases = {"no debug log": (done, None),
+                 "no resend line": (done, ["[Server thread/DEBUG] [other/]: unrelated"]),
+                 "resend for another player": (done, [line.replace("PSA_PC_Probe", "Someone")]),
+                 "same text from another logger": (done, [line.replace("[PSA PC resync/]", "[chat/]")]),
+                 "handler threw": (dict(done, handler_completed=False, error="boom"), [line]),
+                 "command gave no record": (None, [line])}
+        for reason, (record, lines) in cases.items():
+            with self.subTest(reason):
+                self.assertFalse(self.check(record, lines)["pass"])
+
+
 class ExitCodeTest(unittest.TestCase):
     def test_a_failed_check_fails_the_command_unless_an_unrepaired_profile_is_being_recorded(self):
         clean = {"failure": None, "stop_exit_code": 0, "checks": {"failed": []}}
@@ -186,7 +219,7 @@ class PrepareTest(unittest.TestCase):
         profile = driver.prepare(self.source, self.root / "probe", self.libraries, 25591, "1")
         self.assertEqual(self.files(self.source), before)
         scripts = sorted(path.name for path in (profile / "kubejs/server_scripts").iterdir())
-        self.assertEqual(scripts, ["psa_assembly_probe.js", "psa_probe_spec.js", "psa_village_probe.js", "society.js"])
+        self.assertEqual(scripts, ["psa_assembly_probe.js", "psa_pc_resync_probe.js", "psa_probe_spec.js", "psa_village_probe.js", "society.js"])
 
     def test_a_link_inside_a_profile_folder_is_refused_before_anything_is_written(self):
         shared = self.root / "shared"
