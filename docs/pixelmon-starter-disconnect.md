@@ -67,8 +67,9 @@ python3 tools/forge_starter_compat.py \
 입력·자체 소스·설정·클래스 해시는 `compat/pixelmon-starter-build.json`에 고정한다.
 결과 SHA256은 `351ecb0905a7f05a262a9401fe0e968402896f527e5983838ef2014641e3a3db`다.
 현재 준비·내보내기 도구는 이 JAR을 그대로 받지 않는다. 여기에
-[포팅 결함 수정 두 건](coexistence-audit.md#포팅-jar-수정)을 더한 `28e19585…`가 현재 공통 JAR이며,
-그 문서의 빌드·결합 절차에 이 결과를 `--base`로 준다.
+[포팅 결함 수정 두 건](coexistence-audit.md#포팅-jar-수정)을 더하면 `28e19585…`가 되고, 그 문서의 빌드·결합
+절차에 이 결과를 `--base`로 준다. 현재 공통 JAR은 거기에 [접속 뒤 PC 다시 보내기](pixelmon-pc-resync.md)를
+더한 `814b13eb…`다.
 별도 준비 환경에서도 원본·수정 진단 두 JAR의 정규화 빌드가 각각 같았다.
 포장 검사에 쓰는 모조 클래스 바이트는 게임으로 실행하지 않는다.
 

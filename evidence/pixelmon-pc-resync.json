@@ -1,0 +1,113 @@
+{
+ "scope": "Pixelmon PC contents not updating on the client after login: the report, what the server's files showed, the cause as traced in bytecode, the fix and how far it was checked. No game client was started.",
+ "date_utc": "2026-11-14",
+ "report": [
+  "Party full; a caught Pokemon is announced as sent to the PC",
+  "The PC screen does not show it",
+  "A party Pokemon put into the PC then shows in both places"
+ ],
+ "server_files_read_only": {
+  "when": "2026-11-14 about 09:00 UTC, world created about six hours earlier by the owner",
+  "players_with_storage": 4,
+  "stored_pokemon": 33,
+  "pairs_with_the_same_uuid": 0,
+  "pairs_with_the_same_ivs_nature_gender_growth_species_ability_ball": 0,
+  "pokemon_in_a_pc": 19,
+  "pixelmon_exceptions_or_packet_errors_in_server_logs": 0,
+  "nothing_on_the_server_was_changed": true
+ },
+ "cause": {
+  "responsible": "Pixelmon 9.2.3 itself",
+  "sequence": [
+   "PixelmonStorageManager.onPlayerLogin (PlayerLoggedInEvent, priority HIGHEST) sends ClientInitializePCPacket and one ClientSetPacket per occupied PC slot as soon as the PC is loaded",
+   "PixelmonPlayerTracker.onPlayerLogin (priority HIGH) then sends ServerConfigListPacket",
+   "On the client ServerConfigListPacket.handlePacket calls ClientStorageManager.load(), which replaces the map of known PCs with an empty one and leaves the PC object the screen draws untouched",
+   "ClientSetPacket.handlePacket finds no PC for the UUID, logs 'No storage on the client side with UUID' and drops the change; opening the PC sends no contents",
+   "A party Pokemon dropped on the slot that looks empty is moved in the client's own cache first; the server rejects the swap because the slot is occupied and resends both positions; the party position is applied, the PC position is dropped"
+  ],
+  "order_depends_on": "Whether the PC file finished loading before the tracker's handler; it differs from login to login and its frequency on the live server is not known",
+  "real_duplicate_on_the_server": "Not by this path: ServerSwapPacket and ServerTrashPacket check the UUID in the slot before changing anything. Other PC-changing packets were not traced",
+  "this_projects_patches_and_other_mods": "None touches Pixelmon's channel, its storage classes or ClientSetPacket (mixin configurations and class constant pools of every JAR in the client pack and the server profile searched)",
+  "how_established": "Three investigators (Pixelmon code path, this project's patches and other mods, public reports) and a fourth who re-read the decisive methods and found the call the first explanation missed: ServerConfigListPacket emptying the PC map",
+  "upstream": "No changelog line for this was found for Pixelmon 9.2.4 to 9.2.6 (web search summaries, not checked against the original pages)"
+ },
+ "fix": {
+  "class": "compat/forge-port/PixelmonPcResyncMixin.java",
+  "what": "At the end of PixelmonPlayerTracker.onPlayerLogin the player's PC is sent again through Pixelmon's own StorageProxy.initializePCForPlayer, on the server thread. Any exception is logged as a warning and the login continues. Each resend writes one debug line",
+  "build": {
+   "base_common_sha256": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c",
+   "tested_patch_sha256": "714109871c54e92ee7e98c929fc67855e9982429eb9bd80e7a868ce2b57c5b2f",
+   "source_sha256": {
+    "PixelmonPcResyncMixin": "ab49bb2a1506a69f1b7f7ba36cb8f4e0bcf9e181b750688179a80105748bd36e"
+   },
+   "config_sha256": "4b312f0c475f859d9f3d57c54cbf131f33a9c55b2b91a083aa4cb841a02d7a99",
+   "class_sha256": {
+    "PixelmonPcResyncMixin": "47ee3e67b2fda23957d421939d56f058bbaa7f6489460f6e65f282cb1fa86d02"
+   },
+   "target": {
+    "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "class": "com/pixelmonmod/pixelmon/listener/PixelmonPlayerTracker.class",
+    "method": "onPlayerLogin(PlayerEvent.PlayerLoggedInEvent)"
+   },
+   "scope": "Only the authored PC resend class, its mixin configuration and manifest/provenance. Port, Pixelmon and upstream code and assets and the earlier authored corrections are preserved."
+  },
+  "common_jar": {
+   "sha256": "814b13eb950b738d17526b50dc5e19bb6454c486be05b012cd4b78182a98fee3",
+   "bytes": 44471262,
+   "added": [
+    "dev/psa/pcsync/mixin/PixelmonPcResyncMixin.class",
+    "psa-pc-resync.mixins.json"
+   ],
+   "changed": [
+    "META-INF/MANIFEST.MF",
+    "PSA_PROVENANCE.txt"
+   ],
+   "entries_carried_over_unchanged": 4185,
+   "two_work_trees_gave_the_same_canonical_patch_jar": true
+  }
+ },
+ "checks": {
+  "full_game_check_on_the_new_profile": {
+   "failure": null,
+   "server_stop_exit_code": 0,
+   "checks_failed": [],
+   "pc_resend": {
+    "error": null,
+    "handler_completed": true,
+    "pass": true,
+    "resend_logged": true
+   },
+   "port_repairs_passed": [
+    "physics_beside_pixelmon_machine",
+    "redstone_contact"
+   ],
+   "assembly_sweep": {
+    "tested": 4181,
+    "duplicated": [],
+    "lost": []
+   },
+   "villages_generated_and_read_back": 10,
+   "kubejs_server_script_errors": [],
+   "crash_reports": 0,
+   "mods_list_sha256": "8d30a0b02452ecd21586a5462f14b812961a1b019db40de431adb889bf8c5551",
+   "result_file_sha256": "f21c4d36360e60253c955e3f139f3daafd20aed0ae985b4e54e65e7dff760bfb"
+  },
+  "what_pc_resend_shows": "Pixelmon's login handler, run for a server-side stand-in player without posting the login event, finished without an exception, and the new class logged that it sent that player's PC again",
+  "what_it_does_not_show": "That a real client receives the second PC and that the report's symptoms are gone",
+  "python_tests": {
+   "run": 188,
+   "passed": 182,
+   "skipped_linux_only": 6
+  }
+ },
+ "not_verified": [
+  "No real client login with the new common JAR, and no v20 client (previous common JAR) connecting to a server with the new one",
+  "The bug was not reproduced in game, before or after the fix",
+  "Whether the affected players' client logs contain 'No storage on the client side with UUID'",
+  "The same order problem in a single-player world of the pack"
+ ],
+ "found_and_left": [
+  "ServerSwapPacket's reject branch resends the second position from the first storage (storage1.get(position2))",
+  "PartyStorage.get accepts an index equal to the party length"
+ ]
+}

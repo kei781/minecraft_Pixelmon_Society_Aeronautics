@@ -4,9 +4,9 @@
 
 Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. [구성과 검증 범위](forge-candidate.md).
 
-v21은 v20과 모드 355개가 바이트 단위로 같고 두 파일만 다르다. 기차역에 연결된 우편함의 화물 복제를 막도록 [물리 조립에서 빼는 블록 목록](coexistence-audit.md#최종-리뷰-2026-11-14)이 서버와 같은 것으로 바뀌었고(싱글플레이 월드에 적용된다), 기본 키 파일에 [Pixelmon 키 여섯 줄](#기본-키-겹침)이 더해졌다. [v21 기록](../evidence/player-pack-v21-candidate.json).
+v21은 v20과 모드 354개가 바이트 단위로 같고 세 가지가 다르다. 공통 JAR에 [접속 뒤 PC를 다시 보내는 수정](pixelmon-pc-resync.md)이 들어갔고, 기차역에 연결된 우편함의 화물 복제를 막도록 [물리 조립에서 빼는 블록 목록](coexistence-audit.md#최종-리뷰-2026-11-14)이 서버와 같은 것으로 바뀌었고(싱글플레이 월드에 적용된다), 기본 키 파일에 [Pixelmon 키 여섯 줄](#기본-키-겹침)이 더해졌다. [v21 기록](../evidence/player-pack-v21-candidate.json).
 
-v20은 v19와 같은 355개 모드 구성에서 공통 JAR을 [서버 중단 결함 두 건을 고친 것](coexistence-audit.md#포팅-jar-수정)으로 바꾸고, 싱글플레이용으로 서버와 같은 [공존 보정 파일](coexistence-audit.md)을 넣었다. **운영 서버는 2026-11-13부터 v20 프로필·314개 모드·새 월드다. v20과 v21은 모드가 같아 서버 접속 조건이 같다. v19 이하의 팩은 공통 JAR이 달라 쓰지 않는다.** [반영 기록](../evidence/n100-v20-fresh-world-deployment.json).
+v20은 v19와 같은 355개 모드 구성에서 공통 JAR을 [서버 중단 결함 두 건을 고친 것](coexistence-audit.md#포팅-jar-수정)으로 바꾸고, 싱글플레이용으로 서버와 같은 [공존 보정 파일](coexistence-audit.md)을 넣었다. **운영 서버는 2026-11-13부터 v20 프로필·314개 모드·새 월드다. v20과 v21은 공통 JAR만 다르고 그 차이는 서버에서만 동작하는 클래스 하나라, 모드 ID·버전·레지스트리가 같다(서로 다른 공통 JAR끼리의 접속을 실행해 보지는 않았다). v19 이하의 팩은 공통 JAR이 달라 쓰지 않는다.** [반영 기록](../evidence/n100-v20-fresh-world-deployment.json).
 
 ## 한 번 준비하기
 
@@ -23,10 +23,10 @@ v20은 v19와 같은 355개 모드 구성에서 공통 JAR을 [서버 중단 결
 5. **Edit → Settings → Java**에서 메모리를 정한다. 16 GB 이상 PC에서는 최대 8192 MB를 첫 시작값으로 사용할 수 있다. [메모리 설정 안내](https://prismlauncher.org/wiki/help-pages/java-settings/).
 6. **Launch → Multiplayer → Add Server**에서 관리자가 별도로 전달한 서버 주소를 입력한다. 실제 사용자 서버 주소와 SSH 정보는 공개 저장소·패키지에 넣지 않았다.
 
-현재 파일(v21)은 1,137,885,050바이트이며 SHA256은 다음과 같다.
+현재 파일(v21)은 1,137,887,157바이트이며 SHA256은 다음과 같다.
 
 ```text
-c2616c622a99a37a1dbc8163f2b5c569aaa1d89ebcc77494adb6d933ebe72d0e
+90b87becb54bcaa2c7c136f484883b2472675e52554a8b81a0acc26d191b6366
 ```
 
 ```powershell
@@ -37,7 +37,7 @@ Get-FileHash ".\PSA-Forge-Full-Experimental-v21.mrpack" -Algorithm SHA256
 
 ## 실제 확인한 범위
 
-v21은 내보내기 도구의 검사(선언 파일·해시·서버와 같은 보정 파일)를 통과했고, v20 팩과 항목별로 대조해 8,007개 항목 중 네 개(가져오기 색인, 프로필 정보, 기본 키 파일, 물리 조립 제외 스크립트)만 다름을 확인했다. 가져오기·실행·접속은 Windows와 Mac 어디에서도 하지 않았다. 기본 키의 확인 범위는 [아래](#기본-키-겹침)에 적었다.
+v21은 내보내기 도구의 검사(선언 파일·해시·서버와 같은 보정 파일)를 통과했고, v20 팩과 항목별로 대조해 8,007개 항목 중 다섯 개(가져오기 색인, 프로필 정보, 공통 JAR, 기본 키 파일, 물리 조립 제외 스크립트)만 다름을 확인했다. 가져오기·실행·접속은 Windows와 Mac 어디에서도 하지 않았다. 기본 키의 확인 범위는 [아래](#기본-키-겹침)에 적었다.
 
 이하는 이전 팩의 이력이다. v20(1,137,884,479바이트, SHA256 `80febd9a8c8cc1c60e48f44f08e029b117c7e2fa10e70daf5b761646de01502c`)은 내보내기 도구의 검사와 아카이브 안의 공통 JAR·보정 스크립트 해시만 확인했다. 2026-11-13 플레이어 3명이 v20 서버에 접속했다([기록](../evidence/n100-v20-player-checks.json)). v19 이하는 이전 공통 JAR(`351ecb09…`)을 쓴다.
 
@@ -112,7 +112,7 @@ Society 쪽 키는 바꾸지 않았다.
 확인한 방법은 다음과 같고, 게임을 실행해 눌러 보지는 않았다. [기록](../evidence/player-pack-v21-candidate.json).
 
 - 팩의 모든 모드 JAR에서 키 등록을 찾아 새 키와 대조했다. 기본 키 파일에 없고 코드 기본값을 쓰는 키는
-  39개(Pixelmon 19, 포팅본 3, Society 쪽 모드 17)이며 모두 [표](../compat/client-keys/default-keys.json)에 있다.
+  40개(Pixelmon 19, 포팅본 3, Society 쪽 모드 17, 바닐라 공격 키 1)이며 모두 [표](../compat/client-keys/default-keys.json)에 있다.
 - 팩 안의 Configured Defaults 병합 코드를 꺼내 실행했다. 새 인스턴스와 게임이 설정을 저장한 적 없는
   인스턴스에는 여섯 줄이 들어가고, 게임이 설정을 저장한 인스턴스는 바뀌지 않았다. 게임은 멀티플레이
   화면을 처음 열 때와 서버에 처음 접속할 때 설정을 저장하므로, 서버에 접속해 본 인스턴스는 뒤쪽이다.
@@ -121,7 +121,7 @@ Society 쪽 키는 바꾸지 않았다.
 
 ## 개발자 재생성
 
-공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`이고(v19까지의 팩은 이전 `351ecb09…`이며 [포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)이 없다), 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. 공통 JAR은 두 단계로 다시 만든다. [스타터 보정 JAR 재생성](pixelmon-starter-disconnect.md#재생성)으로 `351ecb09…`를 만들고, 그것을 입력으로 [포팅 수정 빌드·결합](coexistence-audit.md#포팅-jar-수정)을 수행해 `28e19585…`를 얻는다. 준비 도구는 앞 단계의 JAR만으로는 입력 해시 불일치로 거부한다.
+공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `814b13eb950b738d17526b50dc5e19bb6454c486be05b012cd4b78182a98fee3`이고(v20 팩은 `28e19585…`, v19까지의 팩은 `351ecb09…`이며 [포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)이 없다), 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. 공통 JAR은 세 단계로 다시 만든다. [스타터 보정 JAR 재생성](pixelmon-starter-disconnect.md#재생성)으로 `351ecb09…`를 만들고, 그것을 입력으로 [포팅 수정 빌드·결합](coexistence-audit.md#포팅-jar-수정)을 수행해 `28e19585…`를 얻고, 다시 그것을 입력으로 [PC 다시 보내기 빌드·결합](pixelmon-pc-resync.md#빌드)을 수행해 `814b13eb…`를 얻는다. 준비 도구는 앞 단계의 JAR만으로는 입력 해시 불일치로 거부한다.
 
 ```bash
 python3 tools/export_forge_client.py \

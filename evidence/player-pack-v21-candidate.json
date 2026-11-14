@@ -1,12 +1,12 @@
 {
- "scope": "Player pack v21: what differs from v20, how the six moved Pixelmon default keys were checked, and what was not checked. No game client was started.",
+ "scope": "Player pack v21: what differs from v20, how the six moved Pixelmon default keys were checked, and what was not checked. No game client was started. The Pixelmon PC resend in the common JAR has its own record, pixelmon-pc-resync.json.",
  "date_utc": "2026-11-14",
  "requested_by": "The owner asked for a new pack after the final review reported that six Pixelmon keys act together with Society-side keys",
  "package": {
   "filename": "PSA-Forge-Full-Experimental-v21.mrpack",
-  "sha256": "c2616c622a99a37a1dbc8163f2b5c569aaa1d89ebcc77494adb6d933ebe72d0e",
-  "size": 1137885050,
-  "version_id": "psa-forge-6f7e451b4f9f",
+  "sha256": "90b87becb54bcaa2c7c136f484883b2472675e52554a8b81a0acc26d191b6366",
+  "size": 1137887157,
+  "version_id": "psa-forge-cf8a24a1381f",
   "mod_jars": 355,
   "indexed_resourcepacks": 15,
   "indexed_shaderpacks": 1,
@@ -15,9 +15,9 @@
   "full_gameplay_validated": false
  },
  "built_from": {
-  "server_profile": "Staged from merge commit 0453486f046bd3078199140155e10a400631496f with tools/stage_forge_candidate.py --mode player; byte-identical to the profile that passed the full game check in final-review-2026-11-14.json",
+  "server_profile": "Staged from this change's branch with tools/stage_forge_candidate.py --mode player. It differs from the profile checked in final-review-2026-11-14.json only in the common JAR (and the mod hash list and profile record that name it); the full game check was run again on it, see pixelmon-pc-resync.json",
   "key_table": "compat/client-keys/default-keys.json",
-  "key_table_sha256": "337bb9ec9f1474e485069a64a696d5d69c83ecf096e2d87c843693c347229f92"
+  "key_table_sha256": "bb035b25898fd3c17acd4924589d5d2b3c61a5d34f57fadb717d0de73c7aa49a"
  },
  "v20_to_v21": {
   "archive_entries": 8007,
@@ -26,14 +26,19 @@
    "modrinth.index.json",
    "overrides/configureddefaults/options.txt",
    "overrides/kubejs/server_scripts/psa_physics_immovable.js",
+   "overrides/mods/psa-aeronautics-experimental-forge-1.20.1.jar",
    "overrides/psa-forge-client-profile.json"
   ],
   "all_other_entries_sha256_equal": true,
-  "mod_jars_identical": true,
   "default_key_file_change": "Six lines added after the last key line; no other line changed",
   "default_key_file_sha256": "a1c4bc8176248e3c38389ae1b8aec3843236f0a62b1b69d5ce95c37adb320ce3",
   "physics_script_sha256": "4c9f45ed0900cc8f56ea68318b1af4d01ece521d0ffeec14f157c608b3987371",
-  "common_jar_sha256": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c"
+  "common_jar_sha256": "814b13eb950b738d17526b50dc5e19bb6454c486be05b012cd4b78182a98fee3",
+  "mod_jars_identical": 354,
+  "mod_jars_changed": [
+   "psa-aeronautics-experimental-forge-1.20.1.jar (the common JAR: one class and its mixin configuration added, see pixelmon-pc-resync.json)"
+  ],
+  "common_jar_sha256_in_v20": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c"
  },
  "moved_keys": [
   {
@@ -117,11 +122,11 @@
   }
  ],
  "verification": {
-  "reviewers": "Two independent Claude Opus agents, each given the built pack and no conclusion to confirm; the facts they reported about Scholar, Sophisticated Core, More Minecarts, Better Advanced Tooltips, libtooltips, Decorative Blocks and Kiwi were then re-read from the disassembled classes before entering the table",
+  "reviewers": "Two independent Claude Opus agents, each given the built pack and no conclusion to confirm; the facts they reported about Scholar, Sophisticated Core, More Minecarts, Better Advanced Tooltips, libtooltips, Decorative Blocks and Kiwi were then re-read from the disassembled classes before entering the table. The scan ran on the first v21 build; the default key file in the final build has the same SHA256",
   "free_key_scan": {
    "method": "Superclass of all 79,143 classes of the 355 mod JARs and 184 nested JARs read to find every KeyMapping type (38); every construction site of those types resolved to name and coded key (194 sites, plus enum and wrapper registrations traced by hand); every method in all JARs searched for the six key codes and the key-handling ones (50) read one by one; vanilla KeyboardHandler, Minecraft, Gui, KeyboardInput and Options disassembled",
-   "bindings_the_default_key_file_does_not_list": 39,
-   "of_those": "19 Pixelmon, 3 of the port, 17 of Society's own mods (Scholar 7, More Minecarts 2, libtooltips 1, Better Advanced Tooltips 2, Decorative Blocks 1, Oculus 1, Kiwi 1, Sophisticated Core 2); all are in the key table",
+   "bindings_the_default_key_file_does_not_list": 40,
+   "of_those": "19 Pixelmon, 3 of the port, 17 of Society's own mods (Scholar 7, More Minecarts 2, libtooltips 1, Better Advanced Tooltips 2, Decorative Blocks 1, Oculus 1, Kiwi 1, Sophisticated Core 2) and vanilla key.attack, whose line in Society's file is joined to the previous line and is therefore not read; all are in the key table",
    "per_key": {
     "semicolon": "No other default binding, no direct use with no screen open",
     "apostrophe": "No other default binding, no direct use with no screen open",
@@ -130,7 +135,7 @@
     "0": "No other default binding. Direct uses with no screen open, each in a mode the player turns on: vanilla F3 profiler chart selection, Supplementaries slot selection while a quiver-type item is in use, the port's Linked Typewriter while a player operates one",
     "f6": "Scholar's key.scholar.import_book has F6 as its coded default (universal context, no modifier) and no line in the default key file. Scholar reads it only in its book editing screen; Pixelmon's quest journal acts through consumeClick, which is fed only while no screen is open. No single press runs both. Forge's conflict rule marks the two as conflicting in the controls screen (read from the code, not run)"
    },
-   "first_build_finding": "The first table listed only the Pixelmon and port bindings as coded defaults, so the tool did not see Scholar's F6. The table now lists all 39 and is pinned to the mod lock; the tool accepts a target key only when the bindings on it are exactly the ones the table declares"
+   "first_build_finding": "The first table listed only the Pixelmon and port bindings as coded defaults, so the tool did not see Scholar's F6. The table now lists all 40 and is pinned to the mod lock; the tool accepts a target key only when the bindings on it are exactly the ones the table declares. An independent code review then pointed out that key.attack was missing from the list of 39; it was added"
   },
   "configured_defaults_merge": {
    "method": "The real fuzs.configureddefaults.handler.CopyDefaultsHandler.initialize(gameDir, true) from the pack's ConfiguredDefaults-v8.0.4 JAR, one JVM per case",
@@ -171,11 +176,12 @@
    ]
   },
   "tool_tests": {
-   "python_tests_run": 181,
-   "passed": 175,
+   "python_tests_run": 188,
+   "passed": 182,
    "skipped_linux_only": 6,
    "guards_removed_one_at_a_time": 22,
-   "removals_the_tests_missed": 0
+   "removals_the_tests_missed": 0,
+   "added_after_review": "A test for the modifier half of the coded-default guard"
   }
  },
  "not_verified": [

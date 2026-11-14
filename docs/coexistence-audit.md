@@ -70,7 +70,8 @@
 설정만 더한다. 나머지 4,182개 항목은 바이트 단위로 그대로다. 독립된 두 작업 트리의 빌드
 결과가 같았다. 입력·소스·클래스 해시는 [`compat/port-fix-build.json`](../compat/port-fix-build.json)에
 고정했고, 결과 공통 JAR의 SHA256은
-`28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`다.
+`28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`다. 현재 공통 JAR은 여기에
+[접속 뒤 PC 다시 보내기](pixelmon-pc-resync.md)를 더한 `814b13eb…`이고, 준비·내보내기 도구는 그것만 받는다.
 
 `--base`에는 [스타터 보정까지 반영한 공통 JAR](pixelmon-starter-disconnect.md#재생성)(`351ecb09…`)을
 준다. Gradle은 `-p`를 주면 상대 경로의 `-I`를 그 작업 트리 아래에서 찾으므로 초기화 스크립트와
