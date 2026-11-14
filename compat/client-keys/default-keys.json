@@ -1,0 +1,72 @@
+{
+  "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+  "port_sha256": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c",
+  "coded_defaults": {
+    "key.sendpokemon": "key.keyboard.r",
+    "key.nextpokemon": "key.keyboard.down",
+    "key.previouspokemon": "key.keyboard.up",
+    "key.minmaxoverlay": "key.keyboard.o",
+    "key.descend": "key.keyboard.c",
+    "key.hover": "key.keyboard.h",
+    "key.spectateBattle": "key.keyboard.y",
+    "key.questjournal": "key.keyboard.n",
+    "key.questcycle": "key.keyboard.m",
+    "key.pokemonaction": "key.keyboard.v",
+    "key.pokemonexternal": "key.keyboard.g",
+    "key.nextexternalmove": "key.keyboard.b",
+    "key.pokedex": "key.keyboard.i",
+    "key.trainercard": "key.keyboard.u",
+    "key.wiki": "key.keyboard.k",
+    "key.pcsearch": "key.keyboard.s",
+    "key.pcrename": "key.keyboard.r",
+    "key.pcwallpaper": "key.keyboard.w",
+    "key.pixelmonoptions": "key.keyboard.p",
+    "simulated.keyinfo.rotate_mode": "key.keyboard.tab",
+    "simulated.keyinfo.scroll_up": "key.keyboard.unknown",
+    "simulated.keyinfo.scroll_down": "key.keyboard.unknown"
+  },
+  "moved": [
+    {
+      "binding": "key.pokemonexternal",
+      "action": "Use the selected field move",
+      "from": "key.keyboard.g",
+      "to": "key.keyboard.semicolon",
+      "acts_together_with": ["key.curios.open.desc"]
+    },
+    {
+      "binding": "key.nextexternalmove",
+      "action": "Choose a field move",
+      "from": "key.keyboard.b",
+      "to": "key.keyboard.apostrophe",
+      "acts_together_with": ["key.journeymap.create_waypoint", "key.sophisticatedbackpacks.open_backpack"]
+    },
+    {
+      "binding": "key.minmaxoverlay",
+      "action": "Fold or unfold the Pokemon overlay",
+      "from": "key.keyboard.o",
+      "to": "key.keyboard.0",
+      "acts_together_with": ["iris.keybind.shaderPackSelection", "key.shouldersurfing.swap_shoulder"]
+    },
+    {
+      "binding": "key.questjournal",
+      "action": "Open the Pixelmon quest journal",
+      "from": "key.keyboard.n",
+      "to": "key.keyboard.f6",
+      "acts_together_with": ["key.journeymap.fullscreen_waypoints"]
+    },
+    {
+      "binding": "key.questcycle",
+      "action": "Show the next Pixelmon quest",
+      "from": "key.keyboard.m",
+      "to": "key.keyboard.f8",
+      "acts_together_with": ["key.ftbchunks.map", "simplemagnets.keys.toggle"]
+    },
+    {
+      "binding": "key.wiki",
+      "action": "Open the wiki page of the block in view",
+      "from": "key.keyboard.k",
+      "to": "key.keyboard.home",
+      "acts_together_with": ["key.puffish_skills.open"]
+    }
+  ]
+}
