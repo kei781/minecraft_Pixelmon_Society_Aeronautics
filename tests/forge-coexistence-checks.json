@@ -128,7 +128,23 @@
     "society:villager_home",
     "society:wine_keg",
     "society_trading:auto_trader",
-    "create:track_station"
+    "create:track_station",
+    "create:white_postbox",
+    "create:orange_postbox",
+    "create:magenta_postbox",
+    "create:light_blue_postbox",
+    "create:yellow_postbox",
+    "create:lime_postbox",
+    "create:pink_postbox",
+    "create:gray_postbox",
+    "create:light_gray_postbox",
+    "create:cyan_postbox",
+    "create:purple_postbox",
+    "create:blue_postbox",
+    "create:brown_postbox",
+    "create:green_postbox",
+    "create:red_postbox",
+    "create:black_postbox"
    ]
   },
   {
