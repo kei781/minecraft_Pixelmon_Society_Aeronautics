@@ -1,0 +1,6 @@
+.venv/
+*.egg-info/
+.env
+config.json
+state/
+*.db*
