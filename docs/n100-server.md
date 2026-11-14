@@ -2,7 +2,7 @@
 
 **현재 운영(2026-11-13): v20, 모드 314개, 새 월드.** 공통 JAR
 `28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`([포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)),
-[공존 보정](coexistence-audit.md) 포함. 플레이어는 v20 팩이 필요하다. 이전 v17은 정상 정지했고
+[공존 보정](coexistence-audit.md) 포함. 플레이어는 v20 또는 v21 팩이 필요하다(두 팩의 모드는 같다). 이전 v17은 정상 정지했고
 월드는 그 폴더에 그대로 있다. [반영 기록](../evidence/n100-v20-fresh-world-deployment.json).
 아래 v16·v17 문단은 그 이전의 이력이다.
 
