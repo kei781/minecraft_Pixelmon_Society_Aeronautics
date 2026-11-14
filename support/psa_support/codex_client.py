@@ -31,7 +31,7 @@ class CodexClient:
             args += ['--disable',feature]
         for setting in ('web_search="disabled"', 'skills.bundled.enabled=false',
                         'skills.include_instructions=false', 'approval_policy="never"',
-                        'model_reasoning_effort="low"', 'check_for_update_on_startup=false',
+                        'model_reasoning_effort="xhigh"', 'check_for_update_on_startup=false',
                         'feedback.enabled=false', 'analytics.enabled=false'):
             args += ['-c',setting]
         args += ['-c','developer_instructions='+json.dumps(instructions,ensure_ascii=False), '-']

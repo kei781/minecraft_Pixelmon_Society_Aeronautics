@@ -49,7 +49,8 @@ uv run psa-support --config config.json check
 uv run psa-support --config config.json run
 ```
 
-기본 제안 모델은 `gpt-6.1-sol`; ChatGPT 구독에서 사용 가능한 Codex 모델로 설정 가능하다.
+운영 문의 모델은 `gpt-6.1-sol`, 추론 수준은 `xhigh`다. 검색 계획과 최종 답변 모두 이 추론 수준을 사용한다.
+ChatGPT 구독에서 사용 가능한 Codex 모델로 설정 가능하다.
 공식 Codex CLI 0.164.0과 같은 릴리스의 code-mode 호스트를 해시 검증해 설치한다.
 일부 모델은 코드 모드 기반의 전송을 요구하므로 호스트가 필요하다. 셸 등 동작 도구 제한과
 read-only 샌드박스는 유지하며, 도구 이벤트가 있으면 답변을 거부한다. `codex login --device-auth`로 직접 로그인한다.
