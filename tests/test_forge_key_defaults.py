@@ -116,6 +116,10 @@ class DefaultKeyTest(unittest.TestCase):
         table = self.changed(lambda table: table['moved'][0].update({'from': 'key.keyboard.j'}))
         with self.assertRaisesRegex(ValueError, 'Coded default differs'):
             self.apply(table)
+        name, old = self.table['moved'][0]['binding'], self.table['moved'][0]['from']
+        table = self.changed(lambda table: table['coded_defaults'].update({name: old + ':CONTROL'}))
+        with self.assertRaisesRegex(ValueError, 'Coded default differs'):
+            self.apply(table)
         table = self.changed(lambda table: table['moved'].pop())
         with self.assertRaisesRegex(ValueError, 'Unexpected default key table'):
             self.apply(table)
