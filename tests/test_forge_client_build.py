@@ -61,7 +61,8 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.overrides={'kubejs/server_scripts/init.js':b'// fixture','shaderpacks/shader.zip':self.fixture_data['shader.zip'],
             'config/resourcepackoverrides.json':json.dumps({'schema_version':2,'default_packs':['vanilla'],
                 'pack_overrides':{}}).encode(),
-            'configureddefaults/options.txt':b'lang:en_us\nresourcePacks:["vanilla"]\n'}
+            'configureddefaults/options.txt':b'lang:en_us\nresourcePacks:["vanilla"]\n'
+                b'key_key.curios.open.desc:key.keyboard.g:NONE\nsoundCategory_master:1.0\n'}
         self.loot_original = b'{"forge:conditions":[{"type":"forge:false"}]}'
         context = patch.object(client.forge_datapack_compat, 'RESOURCE_SHA256', hashlib.sha256(self.loot_original).hexdigest())
         context.start(); self.addCleanup(context.stop)
@@ -77,9 +78,15 @@ class ForgeClientBuildTest(unittest.TestCase):
         # The full five-item batch is covered by dedicated controls and the real full-pack export.
         (self.root/'compat').mkdir()
         (self.root/'compat/item-model-aliases.json').write_text('[]')
+        self.key_table={'pixelmon_sha256':client.digest(self.pixel),'port_sha256':client.digest(self.port),
+            'coded_defaults':{'key.pokemonexternal':'key.keyboard.g'},
+            'moved':[{'binding':'key.pokemonexternal','from':'key.keyboard.g','to':'key.keyboard.semicolon',
+                'acts_together_with':['key.curios.open.desc'],'shares_new_key_with':[]}]}
+        (self.root/'compat/client-keys').mkdir()
+        self.write_key_table()
         context=patch.object(client.forge_item_model_alias, 'ADDITIONAL_ITEMS', set())
         context.start();self.addCleanup(context.stop)
-        for name,value in [('ROOT',self.root),('EXPECTED_FILES',5),('EXPECTED_SHARED',2),('EXPECTED_REPLACEMENTS',1),('EXPECTED_MODEL_OVERRIDES',1),
+        for name,value in [('ROOT',self.root),('EXPECTED_FILES',5),('EXPECTED_SHARED',2),('EXPECTED_REPLACEMENTS',1),('EXPECTED_MODEL_OVERRIDES',1),('EXPECTED_KEY_DEFAULTS',1),
                 ('PIXELMON_SHA256',client.digest(self.pixel)),('PORT_SHA256',client.digest(self.port))]:
             context=patch.object(client,name,value);context.start();self.addCleanup(context.stop)
 
@@ -103,6 +110,12 @@ class ForgeClientBuildTest(unittest.TestCase):
 
     def write_lock(self):
         (self.root/'forge-client-lock.json').write_text(json.dumps(self.lock))
+        if hasattr(self,'key_table'):self.write_key_table()
+
+    def write_key_table(self,**changed):
+        table=dict(self.key_table,mods_lock_sha256=client.digest(self.root/'forge-client-lock.json'))
+        table.update(changed)
+        (self.root/'compat/client-keys/default-keys.json').write_text(json.dumps(table))
 
     def build(self):
         return client.build(self.server,self.extras,self.society,self.output)
@@ -130,6 +143,29 @@ class ForgeClientBuildTest(unittest.TestCase):
             self.assertEqual(json.loads(z.read('overrides/kubejs/' + alias.TARGET)), {'parent': alias.PARENT})
             self.assertEqual(len(profile['item_model_aliases']), 1)
         self.assertFalse((self.server/'kubejs'/client.forge_item_model_alias.TARGET).exists())
+
+    def test_moved_pixelmon_key_is_added_to_the_default_key_file_and_recorded(self):
+        self.build()
+        with zipfile.ZipFile(self.output) as z:
+            lines=z.read('overrides/configureddefaults/options.txt').decode().splitlines()
+            profile=json.loads(z.read('overrides/psa-forge-client-profile.json'))
+        added='key_key.pokemonexternal:key.keyboard.semicolon:NONE'
+        self.assertEqual(lines[2:5],['key_key.curios.open.desc:key.keyboard.g:NONE',added,'soundCategory_master:1.0'])
+        self.assertEqual(profile['default_key_compatibility']['added'],[added])
+        self.assertEqual(profile['default_key_compatibility']['table_sha256'],
+            client.digest(self.root/'compat/client-keys/default-keys.json'))
+
+    def test_key_table_made_for_another_set_of_mod_jars_fails_before_output(self):
+        for name in ['pixelmon_sha256','port_sha256','mods_lock_sha256']:
+            with self.subTest(name):
+                self.write_key_table(**{name:'0'*64})
+                self.assert_no_export()
+        self.write_key_table()
+        self.build()
+
+    def test_moved_key_that_another_binding_already_uses_fails_before_output(self):
+        self.key_table['moved'][0]['to']='key.keyboard.g';self.write_key_table()
+        self.assert_no_export()
 
     def test_declared_coexistence_repairs_are_applied_to_the_client_and_must_match(self):
         village, loot, overlay = client.forge_village_compat, client.forge_loot_compat, client.forge_overlay_compat

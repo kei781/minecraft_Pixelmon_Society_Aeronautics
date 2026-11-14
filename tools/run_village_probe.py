@@ -26,6 +26,7 @@ import village_world
 ROOT = Path(__file__).resolve().parents[1]
 PROBE = ROOT / "tests/forge-village-probe.js"
 ASSEMBLY_PROBE = ROOT / "tests/forge-assembly-probe.js"
+PC_PROBE = ROOT / "tests/forge-pc-resync-probe.js"
 CHECKS = ROOT / "tests/forge-coexistence-checks.json"
 FORGE_ARGS = "libraries/net/minecraftforge/forge/1.20.1-47.4.20/unix_args.txt"
 WORLD = "world-village-probe"
@@ -85,6 +86,7 @@ def prepare(source, destination, libraries, port, seed, sweep_skip=()):
     (destination / "libraries").symlink_to(Path(libraries).resolve(), target_is_directory=True)
     shutil.copyfile(PROBE, destination / "kubejs/server_scripts/psa_village_probe.js")
     shutil.copyfile(ASSEMBLY_PROBE, destination / "kubejs/server_scripts/psa_assembly_probe.js")
+    shutil.copyfile(PC_PROBE, destination / "kubejs/server_scripts/psa_pc_resync_probe.js")
     # JSON is a valid script literal; the probe reads the same check list in every profile.
     spec = json.loads(CHECKS.read_text())
     # A block that brings this profile's server down when placed is left out of the assembly sweep
@@ -402,6 +404,27 @@ def probe_lines(server):
     return log.read_text(errors="replace").splitlines() if log.is_file() else server.lines
 
 
+def pc_resend_check(server, profile, pause=8):
+    """Pixelmon's login handler run for a stand-in player whose PC is already loaded
+    (tests/forge-pc-resync-probe.js). The handler must finish, and the PC resend class must have
+    written its debug line for that player; only that class uses the logger name."""
+    if server.crashed or server.process.poll() is not None:
+        return {"handler_completed": False, "error": "server not running", "resend_logged": False, "pass": False}
+    start = len(server.lines)
+    server.send("psa_probe_pc_resend")
+    time.sleep(pause)
+    record = next((json.loads(line.split("PSA_PROBE_PC_RESEND ", 1)[1]) for line in server.lines[start:]
+                   if "PSA_PROBE_PC_RESEND " in line), None)
+    log = profile / "logs/debug.log"
+    wanted = "PC sent again after login: %s" % (record or {}).get("name")
+    resent = record is not None and log.is_file() and any(
+        "[PSA PC resync/]" in line and wanted in line for line in log.read_text(errors="replace").splitlines())
+    result = {"handler_completed": bool(record and record["handler_completed"]), "error": record and record["error"],
+              "resend_logged": resent}
+    result["pass"] = result["handler_completed"] and result["resend_logged"]
+    return result
+
+
 def port_repair_checks(server, position=(8, 200, 200)):
     """Two situations in which the unrepaired port stops the server, driven from the console:
     a placed Create Redstone Contact, and a physics structure beside a Pixelmon multi-block machine.
@@ -511,6 +534,7 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
     server = Server(profile, java)
     candidate = json.loads((profile / ".psa-forge-candidate.json").read_text())
     outcome = {"probe_sha256": digest(PROBE), "assembly_probe_sha256": digest(ASSEMBLY_PROBE),
+               "pc_probe_sha256": digest(PC_PROBE),
                "mods_list_sha256": digest(profile / ".psa-mods.sha256"),
                "candidate": {key: candidate.get(key) is not None for key in (
                    "village_compatibility", "loot_compatibility", "overlay_compatibility")}}
@@ -539,6 +563,7 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
         # Last, after the save: a block that brings the server down ends only this sweep.
         outcome["assembly_inventory_sweep"], assembly_records = assembly_inventory_sweep(server, timeout)
         (profile / "assembly-probe-blocks.json").write_text(json.dumps(assembly_records, indent=1) + "\n")
+        outcome["pc_resend"] = pc_resend_check(server, profile)
         outcome["port_repairs"] = port_repair_checks(server)
     except (RuntimeError, TimeoutError) as error:
         failure = str(error)
@@ -568,6 +593,8 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
     repairs = (outcome.get("port_repairs") or {}).get("results", {})
     outcome["checks"]["failed"] += ["port_repairs:" + name for name in ("redstone_contact", "physics_beside_pixelmon_machine")
                                     if not repairs.get(name, {}).get("pass")]
+    if not (outcome.get("pc_resend") or {}).get("pass"):
+        outcome["checks"]["failed"].append("pc_resend")
     outcome["probe_records_incomplete"] = probe["incomplete"]
     outcome["checks"]["failed"] += ["probe records: " + item for item in probe["incomplete"]]
     if world_saved and failure is None and (outcome["stop_exit_code"] == 0 or server.crashed):

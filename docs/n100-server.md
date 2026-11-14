@@ -1,8 +1,9 @@
 # N100 통합 서버 운영
 
-**현재 운영(2026-11-13): v20, 모드 314개, 새 월드.** 공통 JAR
-`28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`([포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)),
-[공존 보정](coexistence-audit.md) 포함. 플레이어는 v20 팩이 필요하다. 이전 v17은 정상 정지했고
+**현재 운영(2026-11-14): v20 프로필, 모드 314개.** 공통 JAR
+`d597065c5fef2abaec1bb01c616a5c5dc0787f672b5428693f23e696c37d23e4`([포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)과
+[접속 뒤 PC 다시 보내기](pixelmon-pc-resync.md) 포함, 2026-11-14 10:21 UTC 교체, [기록](../evidence/n100-v20-pc-resync-deployment.json)),
+[공존 보정](coexistence-audit.md) 포함. 월드는 2026-11-14 03:04 UTC에 운영자가 새로 만든 것이다. 플레이어는 v20 또는 v21 팩이 필요하다(v20의 공통 JAR에는 서버에서만 동작하는 PC 다시 보내기 클래스가 없을 뿐이다. 교체 뒤 v20 팩으로 접속되는 것을 확인했다). 이전 v17은 정상 정지했고
 월드는 그 폴더에 그대로 있다. [반영 기록](../evidence/n100-v20-fresh-world-deployment.json).
 아래 v16·v17 문단은 그 이전의 이력이다.
 
@@ -62,7 +63,7 @@ python3 tools/stage_forge_candidate.py \
   --destination /path/to/new-player-profile --mode player
 ```
 
-`--port`에는 [포팅 결함 두 건을 고친 공통 JAR](coexistence-audit.md#포팅-jar-수정)(`28e19585…`)을 준다.
+`--port`에는 현재 공통 JAR(`d597065c…`)을 준다. [포팅 결함 두 건](coexistence-audit.md#포팅-jar-수정)과 [접속 뒤 PC 다시 보내기](pixelmon-pc-resync.md)까지 반영한 것이다.
 마을·전리품·레시피·물리 조립 공존 보정([마을](village-structure-compatibility.md),
 [전체 목록](coexistence-audit.md))을 함께 넣으려면 같은 명령에
 `--coexistence-fix /path/to/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-extra.jar`

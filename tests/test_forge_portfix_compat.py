@@ -132,12 +132,12 @@ class TrackedRepairTest(unittest.TestCase):
 
     @unittest.skipUnless((ROOT / "cache/research/psa-common-portfix-r1.jar").is_file()
                          and (ROOT / "cache/research/psa-port-fix-0.1-canonical.jar").is_file(), "pinned private inputs not present")
-    def test_pinned_inputs_give_the_common_jar_the_staging_tool_expects(self):
-        import stage_forge_candidate
+    def test_pinned_inputs_give_the_common_jar_the_next_step_starts_from(self):
+        next_step = json.loads((ROOT / "compat/pc-resync-build.json").read_text())
         with tempfile.TemporaryDirectory() as folder:
             receipt = compat.build(ROOT / "cache/research/psa-player-v18-staged/mods/psa-aeronautics-experimental-forge-1.20.1.jar",
                                    ROOT / "cache/research/psa-port-fix-0.1-canonical.jar", Path(folder) / "common.jar")
-        self.assertEqual(receipt["sha256"], stage_forge_candidate.PORT_SHA256)
+        self.assertEqual(receipt["sha256"], next_step["base_common_sha256"])
         self.assertEqual(receipt["sha256"], compat.digest(ROOT / "cache/research/psa-common-portfix-r1.jar"))
 
 

@@ -1,0 +1,116 @@
+{
+  "pixelmon_sha256": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+  "port_sha256": "d597065c5fef2abaec1bb01c616a5c5dc0787f672b5428693f23e696c37d23e4",
+  "mods_lock_sha256": "9a2db9267f7cc93a329bd02a351f3170287ed08952b4c4d3bf0a392af61973e7",
+  "coded_defaults": {
+    "key.attack": "key.mouse.left",
+    "key.sendpokemon": "key.keyboard.r",
+    "key.nextpokemon": "key.keyboard.down",
+    "key.previouspokemon": "key.keyboard.up",
+    "key.minmaxoverlay": "key.keyboard.o",
+    "key.descend": "key.keyboard.c",
+    "key.hover": "key.keyboard.h",
+    "key.spectateBattle": "key.keyboard.y",
+    "key.questjournal": "key.keyboard.n",
+    "key.questcycle": "key.keyboard.m",
+    "key.pokemonaction": "key.keyboard.v",
+    "key.pokemonexternal": "key.keyboard.g",
+    "key.nextexternalmove": "key.keyboard.b",
+    "key.pokedex": "key.keyboard.i",
+    "key.trainercard": "key.keyboard.u",
+    "key.wiki": "key.keyboard.k",
+    "key.pcsearch": "key.keyboard.s",
+    "key.pcrename": "key.keyboard.r",
+    "key.pcwallpaper": "key.keyboard.w",
+    "key.pixelmonoptions": "key.keyboard.p",
+    "simulated.keyinfo.rotate_mode": "key.keyboard.tab",
+    "simulated.keyinfo.scroll_up": "key.keyboard.unknown",
+    "simulated.keyinfo.scroll_down": "key.keyboard.unknown",
+    "key.scholar.toggle_book_tools": "key.keyboard.f1",
+    "key.scholar.import_book": "key.keyboard.f6",
+    "key.scholar.export_book": "key.keyboard.f7",
+    "key.scholar.insert_empty_page_left": "key.keyboard.insert:SHIFT",
+    "key.scholar.remove_page_left": "key.keyboard.delete:SHIFT",
+    "key.scholar.insert_empty_page_right": "key.keyboard.insert:ALT",
+    "key.scholar.remove_page_right": "key.keyboard.delete:ALT",
+    "Piston Pushcart Up": "key.keyboard.space",
+    "Piston Pushcart Down": "key.keyboard.left.control",
+    "key.libtooltips.expand": "key.keyboard.left.shift",
+    "key.betteradvancedtooltips.view_tags": "key.keyboard.left.shift",
+    "key.betteradvancedtooltips.view_nbt": "key.keyboard.left.alt",
+    "key.decorative_blocks.switch_item_state": "key.keyboard.unknown",
+    "iris.keybind.wireframe": "key.keyboard.unknown",
+    "key.kiwi.builders_button": "key.mouse.4",
+    "key.sophisticatedcore.transfer_to_storage": "key.keyboard.left.bracket",
+    "key.sophisticatedcore.transfer_to_inventory": "key.keyboard.right.bracket"
+  },
+  "moved": [
+    {
+      "binding": "key.pokemonexternal",
+      "action": "Use the selected field move",
+      "from": "key.keyboard.g",
+      "to": "key.keyboard.semicolon",
+      "acts_together_with": [
+        "key.curios.open.desc"
+      ],
+      "shares_new_key_with": []
+    },
+    {
+      "binding": "key.nextexternalmove",
+      "action": "Choose a field move",
+      "from": "key.keyboard.b",
+      "to": "key.keyboard.apostrophe",
+      "acts_together_with": [
+        "key.journeymap.create_waypoint",
+        "key.sophisticatedbackpacks.open_backpack"
+      ],
+      "shares_new_key_with": []
+    },
+    {
+      "binding": "key.minmaxoverlay",
+      "action": "Fold or unfold the Pokemon overlay",
+      "from": "key.keyboard.o",
+      "to": "key.keyboard.0",
+      "acts_together_with": [
+        "iris.keybind.shaderPackSelection",
+        "key.shouldersurfing.swap_shoulder"
+      ],
+      "shares_new_key_with": [],
+      "note": "No other default binding. Three situations read the 0 key directly: the F3 profiler chart while it is shown, Supplementaries while a quiver-type item is in use, and the port's Linked Typewriter while a player operates one."
+    },
+    {
+      "binding": "key.questjournal",
+      "action": "Open the Pixelmon quest journal",
+      "from": "key.keyboard.n",
+      "to": "key.keyboard.f6",
+      "acts_together_with": [
+        "key.journeymap.fullscreen_waypoints"
+      ],
+      "shares_new_key_with": [
+        "key.scholar.import_book"
+      ],
+      "note": "Scholar reads its key only inside its book editing screen and Pixelmon acts only while no screen is open, so no press runs both. The two still show as a conflict in the controls screen."
+    },
+    {
+      "binding": "key.questcycle",
+      "action": "Show the next Pixelmon quest",
+      "from": "key.keyboard.m",
+      "to": "key.keyboard.f8",
+      "acts_together_with": [
+        "key.ftbchunks.map",
+        "simplemagnets.keys.toggle"
+      ],
+      "shares_new_key_with": []
+    },
+    {
+      "binding": "key.wiki",
+      "action": "Open the wiki page of the block in view",
+      "from": "key.keyboard.k",
+      "to": "key.keyboard.home",
+      "acts_together_with": [
+        "key.puffish_skills.open"
+      ],
+      "shares_new_key_with": []
+    }
+  ]
+}

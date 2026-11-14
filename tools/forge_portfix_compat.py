@@ -28,59 +28,66 @@ EXPECTED_CONFIG = {"required": True, "minVersion": "0.8", "package": "dev.psa.po
                    "compatibilityLevel": "JAVA_17", "mixins": list(NAMES), "injectors": {"defaultRequire": 1}}
 
 
-def build(base, tested_patch, destination):
+def overlay(base, tested_patch, destination, manifest, config, sources, classes, expected_config, pinned_classes, title):
+    """Add compiled authored mixin classes and their configuration to a pinned common JAR."""
     base, tested_patch, destination = map(Path, (base, tested_patch, destination))
+    names = tuple(classes)
     if (destination.exists() or destination.is_symlink() or destination.suffix.lower() != ".jar"
             or "mods" in (part.casefold() for part in destination.resolve().parts)):
         raise ValueError("Fresh non-mods output JAR required")
-    lock = json.loads(MANIFEST.read_text())
+    lock = json.loads(manifest.read_text())
     pinned = [(base, lock["base_common_sha256"], "base_common_sha256"),
               (tested_patch, lock["tested_patch_sha256"], "tested_patch_sha256"),
-              (CONFIG, lock["config_sha256"], "config_sha256")]
-    pinned += [(SOURCES[name], lock["source_sha256"][name], "source_sha256 " + name) for name in NAMES]
+              (config, lock["config_sha256"], "config_sha256")]
+    pinned += [(sources[name], lock["source_sha256"][name], "source_sha256 " + name) for name in names]
     for path, wanted, role in pinned:
         if path.is_symlink() or not path.is_file() or digest(path) != wanted:
             raise ValueError("Pinned input differs: " + role)
-    if json.loads(CONFIG.read_bytes()) != EXPECTED_CONFIG:
-        raise ValueError("Only the two authored port repairs may be registered")
+    if json.loads(config.read_bytes()) != expected_config:
+        raise ValueError("Only the authored classes of this step may be registered")
     with zipfile.ZipFile(tested_patch) as patch:
-        names = patch.namelist()
+        entries = patch.namelist()
         compiled = {}
-        for name in NAMES:
-            if len(names) != len(set(names)) or names.count(CLASSES[name]) != 1:
+        for name in names:
+            if len(entries) != len(set(entries)) or entries.count(classes[name]) != 1:
                 raise ValueError("Unique tested repair class required")
-            compiled[name] = patch.read(CLASSES[name])
+            compiled[name] = patch.read(classes[name])
             if hashlib.sha256(compiled[name]).hexdigest() != lock["class_sha256"][name]:
                 raise ValueError("Compiled repair class differs: " + name)
-        if (patch.read(CONFIG.name) != CONFIG.read_bytes()
-                or mixin_header(patch.read("META-INF/MANIFEST.MF"))[4] != [CONFIG.name]):
+        if (patch.read(config.name) != config.read_bytes()
+                or mixin_header(patch.read("META-INF/MANIFEST.MF"))[4] != [config.name]):
             raise ValueError("Tested registration differs")
     with zipfile.ZipFile(base) as archive:
-        names = [entry.filename for entry in archive.infolist() if not entry.is_dir()]
-        if len(names) != len(set(names)) or CONFIG.name in names or any(path in names for path in CLASSES.values()):
+        entries = [entry.filename for entry in archive.infolist() if not entry.is_dir()]
+        if len(entries) != len(set(entries)) or config.name in entries or any(path in entries for path in classes.values()):
             raise ValueError("Unexpected base inventory")
-        files = {name: archive.read(name) for name in names}
-    # The repairs are written against these exact port classes; a different port needs a new look.
-    for entry, wanted in sorted(lock["port_class_sha256"].items()):
+        files = {name: archive.read(name) for name in entries}
+    # The repairs are written against these exact classes; different ones need a new look.
+    for entry, wanted in sorted(lock[pinned_classes].items() if pinned_classes else []):
         if hashlib.sha256(files.get(entry, b"")).hexdigest() != wanted:
             raise ValueError("Repaired port class differs: " + entry)
-    for name in NAMES:
-        files[CLASSES[name]] = compiled[name]
-    files[CONFIG.name] = CONFIG.read_bytes()
-    files["META-INF/MANIFEST.MF"] = append_config(files["META-INF/MANIFEST.MF"], CONFIG.name)
+    for name in names:
+        files[classes[name]] = compiled[name]
+    files[config.name] = config.read_bytes()
+    files["META-INF/MANIFEST.MF"] = append_config(files["META-INF/MANIFEST.MF"], config.name)
     provenance = {key: lock[key] for key in ("base_common_sha256", "source_sha256", "config_sha256", "class_sha256")}
-    files["PSA_PROVENANCE.txt"] += ("\nPSA authored port repairs (collision shape of foreign blocks, redstone contact ticker)\n"
-                                    + json.dumps(provenance, sort_keys=True) + "\n").encode()
-    with tempfile.TemporaryDirectory(prefix="psa-port-fix-") as folder:
+    files["PSA_PROVENANCE.txt"] += ("\n" + title + "\n" + json.dumps(provenance, sort_keys=True) + "\n").encode()
+    with tempfile.TemporaryDirectory(prefix="psa-authored-") as folder:
         raw = Path(folder) / "raw.jar"
         with zipfile.ZipFile(raw, "w") as archive:
             for name in sorted(files):
                 archive.writestr(name, files[name])
         receipt = canonical_jar(raw, destination)
-    added = sorted(CLASSES.values()) + [CONFIG.name]
+    added = sorted(classes.values()) + [config.name]
     return dict(receipt, bytes=destination.stat().st_size, added=added,
                 changed=["META-INF/MANIFEST.MF", "PSA_PROVENANCE.txt"], unchanged_entries=len(files) - len(added) - 2,
                 inputs=provenance)
+
+
+def build(base, tested_patch, destination):
+    return overlay(base, tested_patch, destination, MANIFEST, CONFIG, SOURCES, CLASSES, EXPECTED_CONFIG,
+                   "port_class_sha256",
+                   "PSA authored port repairs (collision shape of foreign blocks, redstone contact ticker)")
 
 
 if __name__ == "__main__":
