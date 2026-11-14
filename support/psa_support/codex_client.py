@@ -12,6 +12,7 @@ DISABLED_FEATURES = (
     'shell_tool', 'apps', 'plugins', 'hooks', 'browser_use', 'browser_use_external',
     'computer_use', 'multi_agent', 'view_image', 'image_generation', 'shell_snapshot',
     'skill_search', 'tool_suggest', 'workspace_dependencies', 'goals', 'sleep_tool',
+    'code_mode', 'unified_exec',
 )
 
 
@@ -66,6 +67,8 @@ class CodexClient:
                 if event.get('type') in ('error','turn.failed'):
                     raise RuntimeError('Codex turn failed')
                 item=event.get('item',{})
+                if item.get('type') == 'error':
+                    raise RuntimeError('Codex initialization or execution failure')
                 if item and item.get('type') not in ('agent_message','reasoning'):
                     raise ValueError('Unexpected tool activity in inquiry-only Codex run')
                 if event.get('type')=='item.completed' and item.get('type')=='agent_message':

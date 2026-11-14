@@ -15,8 +15,16 @@ cp -R psa_support /opt/psa-support/
 install -m 0644 pyproject.toml requirements.lock /opt/psa-support/
 /usr/bin/python3 -m venv /opt/psa-support/.venv
 /opt/psa-support/.venv/bin/python -m pip install --require-hashes -r /opt/psa-support/requirements.lock
-/opt/psa-support/.venv/bin/python -m pip install --no-deps /opt/psa-support
-chown -R root:root /opt/psa-support
+# Source import and a fixed launcher avoid an unpinned root build backend download.
+/opt/psa-support/.venv/bin/python - <<'PYLAUNCH'
+import site
+from pathlib import Path
+Path(site.getsitepackages()[0], 'psa-support.pth').write_text('/opt/psa-support\n')
+launcher = Path('/opt/psa-support/.venv/bin/psa-support')
+launcher.write_text('#!/opt/psa-support/.venv/bin/python\nfrom psa_support.cli import main\nmain()\n')
+launcher.chmod(0o755)
+PYLAUNCH
+chown -R root:psa-support /opt/psa-support
 chmod -R go-w /opt/psa-support
 install -m 0644 deploy/psa-support.service /etc/systemd/system/psa-support.service
 if [[ ! -x /opt/psa-support/bin/codex ]] || [[ $(/opt/psa-support/bin/codex --version) != 'codex-cli 0.164.0' ]]; then
@@ -32,6 +40,21 @@ with tarfile.open(fileobj=io.BytesIO(raw)) as archive:
 target=Path('/opt/psa-support/bin/codex')
 target.write_bytes(data); target.chmod(0o755)
 PYCODEX
+fi
+if [[ ! -x /opt/psa-support/bin/codex-code-mode-host ]]; then
+  /usr/bin/python3 - <<'PYHOST'
+import hashlib, io, tarfile, urllib.request
+from pathlib import Path
+name='codex-code-mode-host-x86_64-unknown-linux-musl'
+url='https://github.com/openai/codex/releases/download/rust-v0.164.0/'+name+'.tar.gz'
+raw=urllib.request.urlopen(url,timeout=120).read()
+if hashlib.sha256(raw).hexdigest()!='feade7026436baa4e82e898050c7ef82a8adbd98163dc504771275b5ef224f2f':
+    raise RuntimeError('Official Codex host artifact checksum mismatch')
+with tarfile.open(fileobj=io.BytesIO(raw)) as archive:
+    data=archive.extractfile(name).read()
+target=Path('/opt/psa-support/bin/codex-code-mode-host')
+target.write_bytes(data); target.chmod(0o755)
+PYHOST
 fi
 systemctl daemon-reload
 printf '%s\n' 'Installed, not enabled or started. Configure channel, knowledge and credentials before activation.'

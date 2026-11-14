@@ -33,6 +33,8 @@ class Store:
           id INTEGER PRIMARY KEY, ticket INTEGER NOT NULL, status TEXT NOT NULL,
           summary TEXT NOT NULL, evidence TEXT NOT NULL, created REAL NOT NULL,
           notified INTEGER NOT NULL DEFAULT 0);
+        CREATE TABLE IF NOT EXISTS reply_links (
+          message TEXT PRIMARY KEY, ticket INTEGER NOT NULL, author TEXT NOT NULL);
         CREATE INDEX IF NOT EXISTS messages_author_time ON messages(author, created);
         CREATE INDEX IF NOT EXISTS tickets_fingerprint ON tickets(fingerprint);
         """)
@@ -51,7 +53,7 @@ class Store:
         day = datetime.fromtimestamp(now, ZoneInfo("Asia/Seoul")).date().isoformat()
         with self.db:
             self.db.execute("BEGIN IMMEDIATE")
-            self.db.execute("UPDATE messages SET status='error' WHERE status='processing' AND created<?", (now-390,))
+            self._recover_processing(now-390)
             self.db.execute("DELETE FROM messages WHERE ticket IS NULL AND status IN ('sent','error') AND created<?", (now-7*86400,))
             if self.db.execute("SELECT 1 FROM messages WHERE id=?", (message,)).fetchone():
                 return "duplicate"
@@ -72,15 +74,52 @@ class Store:
         return [{"question": r["question"], "answer": json.loads(r["decision"])["answer"]}
                 for r in reversed(rows) if r["decision"]]
 
-    def finish(self, message: str, decision: Decision, snapshot: str, source_labels: list[str]):
+    def _recover_processing(self, before: float):
+        notice = '문의 처리 중 봇이 재시작되거나 응답 시간이 초과됐습니다. 답변과 티켓 접수가 완료되지 않았으니 이 메시지에 답장으로 다시 문의해 주세요.'
+        self.db.execute("UPDATE messages SET status='ready',parts=?,sent_parts=0 WHERE status='processing' AND created<?",
+                        (json.dumps([notice],ensure_ascii=False),before))
+
+    def recover_processing(self):
+        # A service instance owns all in-flight work; setup runs once before receiving messages.
+        with self.db:
+            self._recover_processing(float('inf'))
+
+    def ticket_for_reply(self, reference: str, author: str):
+        row = self.db.execute("""SELECT t.id FROM tickets t JOIN (
+          SELECT ticket,author FROM messages WHERE id=?
+          UNION ALL SELECT ticket,author FROM reply_links WHERE message=?
+        ) r ON r.ticket=t.id WHERE r.author=?
+        AND t.status IN ('suspected','investigating','needs_information') LIMIT 1""",
+                              (reference,reference,author)).fetchone()
+        return row[0] if row else None
+
+    def ticket_context(self, ticket: int, author: str):
+        rows = self.db.execute("SELECT question,decision FROM messages WHERE ticket=? AND author=? ORDER BY created DESC LIMIT 4",
+                               (ticket,author)).fetchall()
+        history = [{"question":r['question'],"answer":json.loads(r['decision'])['answer']}
+                   for r in reversed(rows) if r['decision']]
+        update = self.db.execute("SELECT summary FROM updates WHERE ticket=? ORDER BY id DESC LIMIT 1",(ticket,)).fetchone()
+        if update:
+            history.append({"question":f"PSA-{ticket:04d} 운영자 확인 요청", "answer":update['summary']})
+        return history
+
+    def link_reply(self, message: str, ticket: int, author: str):
+        with self.db:
+            self.db.execute("INSERT OR IGNORE INTO reply_links VALUES(?,?,?)",(message,ticket,author))
+
+    def finish(self, message: str, decision: Decision, snapshot: str, source_labels: list[str], related_ticket=None):
         now = time.time()
         with self.db:
             self.db.execute("BEGIN IMMEDIATE")
             row = self.db.execute("SELECT * FROM messages WHERE id=?", (message,)).fetchone()
             if row is None or row["status"] != "processing":
                 raise ValueError("message is not being processed")
-            ticket_id = None
-            if decision.category == "suspected_bug":
+            ticket_id = related_ticket
+            if ticket_id is not None:
+                if not self.db.execute("SELECT 1 FROM tickets t JOIN messages m ON m.ticket=t.id WHERE t.id=? AND m.author=? AND t.status IN ('suspected','investigating','needs_information')",(ticket_id,row['author'])).fetchone():
+                    raise ValueError('follow-up ticket is unavailable for this author')
+                self.db.execute("UPDATE tickets SET updated=?,status=CASE WHEN status='needs_information' THEN 'suspected' ELSE status END WHERE id=?",(now,ticket_id))
+            elif decision.category == "suspected_bug":
                 title = decision.title.strip() or row["question"][:100]
                 fingerprint = hashlib.sha256((snapshot+re.sub(r"\s+", "", title.lower())).encode()).hexdigest()
                 existing = self.db.execute("SELECT id FROM tickets WHERE fingerprint=? AND status IN ('suspected','investigating','needs_information') ORDER BY id LIMIT 1", (fingerprint,)).fetchone()
@@ -91,13 +130,15 @@ class Store:
                 else:
                     ticket_id = self.db.execute("INSERT INTO tickets(fingerprint,title,snapshot,details,created,updated) VALUES(?,?,?,?,?,?)",
                                                (fingerprint,title,snapshot,details,now,now)).lastrowid
+            if ticket_id is not None:
                 url = f"https://discord.com/channels/{row['guild']}/{row['channel']}/{message}"
-                self.db.execute("INSERT INTO reports VALUES(?,?,?,?)", (ticket_id,message,url,details))
+                self.db.execute("INSERT INTO reports VALUES(?,?,?,?)", (ticket_id,message,url,decision.model_dump_json()))
             text = decision.answer
             if source_labels:
                 text += "\n\n근거: " + ", ".join(source_labels[:4])
             if ticket_id is not None:
-                text += f"\n\n🔎 버그 의심 접수 **PSA-{ticket_id:04d}** · 조사 대기\n한국 시간 새벽 4시 작업 대상입니다. 해결 시점은 조사 결과에 따라 달라집니다."
+                label = '추가 정보 기록' if related_ticket is not None else '버그 의심 접수'
+                text += f"\n\n🔎 {label} **PSA-{ticket_id:04d}**\n한국 시간 새벽 4시 작업 대상입니다. 해결 시점은 조사 결과에 따라 달라집니다. 추가 정보는 이 답변에 답장해 주세요."
             # Discord counts UTF-16 units; keep chunks below 2000 even with emoji.
             parts, current, units = [], [], 0
             for char in text:
@@ -148,7 +189,10 @@ class Store:
                             (ticket,status,summary,evidence,time.time()))
 
     def notifications(self):
-        return self.db.execute("SELECT * FROM updates WHERE notified=0 ORDER BY id LIMIT 10").fetchall()
+        return self.db.execute("""SELECT u.*,m.id AS report_message,m.author AS report_author
+          FROM updates u JOIN messages m ON m.id=(SELECT m2.id FROM messages m2
+          WHERE m2.ticket=u.ticket ORDER BY m2.created LIMIT 1)
+          WHERE u.notified=0 ORDER BY u.id LIMIT 10""").fetchall()
 
     def notified(self, update: int):
         with self.db:

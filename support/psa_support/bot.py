@@ -29,6 +29,7 @@ class SupportBot(discord.Client):
         self.delivery_lock = asyncio.Lock()
 
     async def setup_hook(self):
+        self.store.recover_processing()
         self.deliver.start()
 
     async def close(self):
@@ -74,11 +75,13 @@ class SupportBot(discord.Client):
             return
         try:
             async with message.channel.typing():
-                history = self.store.history(str(message.author.id), now)
+                reference = getattr(message, 'reference', None)
+                related_ticket = self.store.ticket_for_reply(str(reference.message_id), str(message.author.id)) if reference and reference.channel_id == cfg.channel_id else None
+                history = self.store.ticket_context(related_ticket,str(message.author.id)) if related_ticket else self.store.history(str(message.author.id), now)
                 decision = await asyncio.wait_for(self.advisor.answer(question, history), timeout=330)
                 labels = [f"{self.knowledge.documents[s]['path']}:{self.knowledge.documents[s]['line']}"
                           for s in decision.source_ids]
-                self.store.finish(str(message.id), decision, self.knowledge.manifest['snapshot_id'], labels)
+                self.store.finish(str(message.id), decision, self.knowledge.manifest['snapshot_id'], labels,related_ticket)
         except Exception as exc:
             self.store.fail(str(message.id))
             # No raw questions, exception bodies, credentials, or player data in service logs.
@@ -98,22 +101,30 @@ class SupportBot(discord.Client):
                 parts = json.loads(row['parts'])
                 for part in parts[row['sent_parts']:]:
                     try:
-                        await channel.send(part, reference=discord.MessageReference(
+                        sent = await channel.send(part, reference=discord.MessageReference(
                             message_id=int(row['id']), channel_id=channel.id,
                             guild_id=channel.guild.id, fail_if_not_exists=False),
                             allowed_mentions=discord.AllowedMentions.none())
                     except discord.HTTPException:
                         break  # Persisted outbox is retried by the periodic task.
+                    if row['ticket'] is not None:
+                        self.store.link_reply(str(sent.id),row['ticket'],row['author'])
                     self.store.sent_part(row['id'])
             labels = {'investigating':'조사 중', 'needs_information':'추가 정보 필요',
                       'resolved':'해결', 'not_a_bug':'버그 아님'}
             for update in self.store.notifications():
                 # Notification text is written by the authenticated local operator CLI, never the model.
                 text = f"**PSA-{update['ticket']:04d} · {labels[update['status']]}**\n{update['summary']}"
+                if update['status']=='needs_information':
+                    text += '\n\n추가 정보는 이 메시지에 답장해 주세요. 기존 티켓에 이어서 기록합니다.'
                 try:
-                    await channel.send(text[:1800], allowed_mentions=discord.AllowedMentions.none())
+                    sent = await channel.send(text[:1800], reference=discord.MessageReference(
+                        message_id=int(update['report_message']),channel_id=channel.id,
+                        guild_id=channel.guild.id,fail_if_not_exists=False),
+                        allowed_mentions=discord.AllowedMentions.none())
                 except discord.HTTPException:
                     break
+                self.store.link_reply(str(sent.id),update['ticket'],update['report_author'])
                 self.store.notified(update['id'])
 
     @tasks.loop(seconds=15)

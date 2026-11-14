@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import AsyncMock
+from unittest.mock import AsyncMock, Mock, patch
 from psa_support.config import Config
 from psa_support.knowledge import Knowledge, document_chunks
 from psa_support.models import Decision, Plan
@@ -83,7 +83,7 @@ class Fixture(unittest.TestCase):
         self.assertEqual(self.store.reserve(self.cfg,'2','v','q',1001),'accepted')
         self.assertEqual(self.store.reserve(self.cfg,'3','w','q',1002),'busy')
         self.assertEqual(self.store.reserve(self.cfg,'3','w','q',1500),'accepted')
-        self.assertEqual(self.store.db.execute("SELECT status FROM messages WHERE id='1'").fetchone()[0],'error')
+        self.assertEqual(self.store.db.execute("SELECT status FROM messages WHERE id='1'").fetchone()[0],'ready')
         self.cfg.daily_request_limit=3
         self.assertEqual(self.store.reserve(self.cfg,'4','x','q',1600),'daily_limit')
 
@@ -93,6 +93,60 @@ class Fixture(unittest.TestCase):
         with self.assertRaises(ValueError): self.store.update_ticket(ticket,'resolved','fixed','')
         with self.assertRaises(ValueError): self.store.update_ticket(ticket,'give','give balls','evidence')
         with self.assertRaises(ValueError): self.store.update_ticket(999,'resolved','fixed','evidence')
+
+    def test_restart_notifies_interrupted_inquiry_and_frees_capacity(self):
+        self.cfg.max_parallel_requests=1
+        self.store.reserve(self.cfg,'1','u','interrupted question',1000)
+        restarted=Store(self.cfg.database)
+        restarted.recover_processing()
+        self.assertEqual(restarted.reserve(self.cfg,'2','v','new question',1001),'accepted')
+        self.assertIn('재시작',json.loads(restarted.pending()[0]['parts'])[0])
+        restarted.sent_part('1')
+        restarted.recover_processing()
+        self.assertEqual(restarted.db.execute("SELECT status FROM messages WHERE id='1'").fetchone()[0],'sent')
+        restarted.db.close()
+
+    def test_late_followup_reopens_same_ticket_and_is_author_scoped(self):
+        self.store.reserve(self.cfg,'1','u','battle freeze',1000)
+        ticket=self.store.finish('1',decision(),'s1',[])
+        self.store.update_ticket(ticket,'needs_information','어떤 상대였나요?','investigation record')
+        notice=self.store.notifications()[0]
+        self.assertEqual(notice['report_message'],'1')
+        self.store.link_reply('900',ticket,'u')
+        self.assertEqual(self.store.ticket_for_reply('900','u'),ticket)
+        self.assertIsNone(self.store.ticket_for_reply('900','other'))
+        context=self.store.ticket_context(ticket,'u')
+        self.assertEqual(context[-1]['answer'],'어떤 상대였나요?')
+        self.store.reserve(self.cfg,'2','u','야생 피카츄',1000+86400)
+        d=decision();d.category='needs_information'
+        self.assertEqual(self.store.finish('2',d,'s1',[],ticket),ticket)
+        self.assertEqual(len(self.store.tickets()),1)
+        self.assertEqual(len(self.store.tickets()[0]['reports']),2)
+        self.assertEqual(self.store.tickets()[0]['status'],'suspected')
+
+    def test_delivery_retries_failed_part_and_references_operator_notice(self):
+        from psa_support.bot import SupportBot
+        import discord
+        async def run():
+            bot=SupportBot(self.cfg,SimpleNamespace(answer=AsyncMock()))
+            bot.store.reserve(self.cfg,'1','u','freeze',1000)
+            d=decision();d.answer='x'*2500
+            ticket=bot.store.finish('1',d,'s1',[])
+            bot.store.update_ticket(ticket,'needs_information','어떤 상대인가요?','checked logs')
+            channel=Mock(spec=discord.TextChannel);channel.id=222;channel.guild=SimpleNamespace(id=111)
+            failed=discord.HTTPException(SimpleNamespace(status=503,reason='test'),'unavailable')
+            channel.send=AsyncMock(side_effect=[SimpleNamespace(id=901),failed,SimpleNamespace(id=902),SimpleNamespace(id=903)])
+            bot.get_channel=lambda _:channel
+            await bot.flush()
+            self.assertEqual(bot.store.pending()[0]['sent_parts'],1)
+            self.assertEqual(channel.send.call_args.kwargs['reference'].message_id,1)
+            self.assertEqual(bot.store.ticket_for_reply('902','u'),ticket)
+            await bot.flush()
+            self.assertEqual(bot.store.pending(),[])
+            self.assertEqual(bot.store.notifications(),[])
+            self.assertEqual(channel.send.await_count,4)
+            bot.store.db.close()
+        asyncio.run(run())
 
     def test_history_does_not_mix_players(self):
         for i,user in enumerate(['alice','bob']):
