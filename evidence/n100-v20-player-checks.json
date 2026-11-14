@@ -1,0 +1,80 @@
+{
+ "scope": "First play sessions on the N100 v20 server (new world) on 2026-11-13: what a connected player confirmed by hand, what the server showed, and what stays unconfirmed. Player names are left out.",
+ "server": {
+  "profile": "v20, 314 mods",
+  "common_sha256": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c",
+  "overlay_files_identical_to_repository": 30,
+  "checked_at_utc": "2026-11-13T18:32:29Z",
+  "running": true,
+  "crash_report_count": 0,
+  "kubejs_server_script_errors_since_start": 0
+ },
+ "sessions_utc": [
+  {
+   "player": "owner",
+   "from": "13:07:52",
+   "to": "13:22:26"
+  },
+  {
+   "player": "owner",
+   "from": "13:31:44",
+   "to": "13:53:35"
+  },
+  {
+   "player": "owner",
+   "from": "15:24:47",
+   "to": "15:27:03"
+  },
+  {
+   "player": "second player",
+   "from": "16:13:31",
+   "to": "16:38:59",
+   "advancement": "You picked a starter!"
+  },
+  {
+   "player": "third player",
+   "from": "16:19:42",
+   "to": "16:38:10",
+   "advancement": "You picked a starter!"
+  }
+ ],
+ "confirmed_by_the_owner_in_game": [
+  {
+   "check": "Pixelmon PC placed by hand",
+   "result": "placed; right-click opens the PC screen",
+   "source": "screenshot and the owner's report"
+  },
+  {
+   "check": "Create redstone contact placed by hand",
+   "result": "placed; server kept running",
+   "source": "screenshot"
+  },
+  {
+   "check": "Physics assembly right beside the placed PC",
+   "result": "assembled; the console listed two physics structures near 590 70 220 (mass 1 and 10, at rest); server kept running, no crash report",
+   "source": "console listing during the session"
+  },
+  {
+   "check": "Empty bucket on Miltank",
+   "result": "Society milk received",
+   "source": "the owner's report"
+  }
+ ],
+ "seen_in_saved_data": [
+  {
+   "check": "Carpenter invitation used",
+   "result": "the owner's saved inventory holds society:villager_home x2 with type carpenter, so the invitation handler ran; placing the home and the carpenter moving in were not observed",
+   "source": "player data file read at 2026-11-13T18:33Z while the owner was offline"
+  }
+ ],
+ "not_confirmed": [
+  "Movement or flight of an assembled structure: the test structure was planks without propulsion resting on the ground",
+  "The owner saw the assembled blocks flicker on the client; no server error accompanies it and the cause is not known",
+  "Six players at once, long sessions, a fresh Windows install of the v20 pack"
+ ],
+ "operator_mistake": "During the first session the console command `sable paused` was sent as if it were a status query. It toggles: physics were paused from 13:21:59 to 13:22:18 UTC, then switched back on.",
+ "backups": {
+  "finding": "FTB Backups logs 'No region file found for the following entity file' for the physics plot regions on every backup. The archive of 14:00 UTC was compared with the world folder: all 305 files present, including world/sublevels and the plot entity files.",
+  "conclusion": "log noise; physics structures are in the backup"
+ }
+}

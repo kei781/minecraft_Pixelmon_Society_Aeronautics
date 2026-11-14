@@ -12,6 +12,7 @@ The source profile, its world and any running server are never modified.
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -44,6 +45,16 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def linked_entry(folder):
+    """First symbolic link below `folder`, or None. A clone keeps links, and a link in the copy
+    would send the probe scripts written into it to the place the source profile shares."""
+    for base, folders, files in os.walk(folder):
+        for name in sorted(folders + files):
+            if os.path.islink(os.path.join(base, name)):
+                return os.path.relpath(os.path.join(base, name), folder)
+    return None
+
+
 def prepare(source, destination, libraries, port, seed, sweep_skip=()):
     source, destination = Path(source), Path(destination)
     if destination.exists() or destination.is_symlink():
@@ -54,10 +65,15 @@ def prepare(source, destination, libraries, port, seed, sweep_skip=()):
         raise ValueError("Pinned Forge 47.4.20 libraries required")
     if not 1024 < port < 65536 or port == 25573:
         raise ValueError("Use a separate unprivileged test port")
-    destination.mkdir(parents=True)
-    for name in ("mods", "config", "defaultconfigs", "kubejs", "patchouli_books"):
+    folders = ("mods", "config", "defaultconfigs", "kubejs", "patchouli_books")
+    for name in folders:
         if (source / name).is_symlink() or not (source / name).is_dir():
             raise ValueError("Unexpected profile layout: " + name)
+        linked = linked_entry(source / name)
+        if linked is not None:
+            raise ValueError("Profile folder holds a symbolic link: %s/%s" % (name, linked))
+    destination.mkdir(parents=True)
+    for name in folders:
         # APFS/Btrfs/XFS clone when available; a plain copy otherwise.
         clone = subprocess.run(["cp", "-cR", str(source / name), str(destination / name)],
                                capture_output=True) if sys.platform == "darwin" else None
@@ -456,6 +472,32 @@ def read_back(world, village):
     return result
 
 
+def read_back_failures(entries):
+    """What the saved world contradicts: a generated village whose start was not saved, was saved
+    with other pieces than the probe assembled, or lies in chunks that were not fully generated.
+    Piece boxes are not compared: vanilla recomputes them when a saved start is loaded."""
+    if entries is None:
+        return ["read back: not performed"]
+    failures = []
+    for entry in entries:
+        label = "%s at chunk %s" % (entry["structure"], ",".join(str(part) for part in entry["chunk"]))
+        if not entry["saved_start_found"]:
+            failures.append("read back: saved start missing, " + label)
+        elif not entry["assembly_matches_saved_start"]:
+            failures.append("read back: saved pieces differ, " + label)
+        if any(piece["chunks_not_full"] for piece in entry["pieces"]):
+            failures.append("read back: chunks not fully generated, " + label)
+    return failures
+
+
+def read_back_verdict(generated, failure, entries):
+    """The read-back failures of one run. A run that failed before any village was generated has
+    nothing to read back and fails anyway; every other run answers for its saved world."""
+    if failure is not None and not generated:
+        return []
+    return read_back_failures(entries)
+
+
 def run(profile, java, per_structure, margin, timeout, accept_eula):
     profile = Path(profile)
     if not (profile / MARKER).is_file():
@@ -543,6 +585,7 @@ def run(profile, java, per_structure, margin, timeout, accept_eula):
                 "saved_spawn_to_town_centre": round(((saved["x"] - (centre[0] + centre[3]) / 2) ** 2
                                                      + (saved["z"] - (centre[2] + centre[5]) / 2) ** 2) ** 0.5),
                 "pieces": sorted({village_world.family_of(piece[0]) for piece in start["pieces"]} - {None})}
+    outcome["checks"]["failed"] += read_back_verdict(generated, failure, outcome.get("generated"))
     (profile / "village-probe-villages.json").write_text(json.dumps(probe["villages"]) + "\n")
     (profile / "village-probe-registries.json").write_text(json.dumps(probe["registries"], sort_keys=True) + "\n")
     outcome["registry_sizes"] = {name: len(ids) for name, ids in sorted(probe["registries"].items())}

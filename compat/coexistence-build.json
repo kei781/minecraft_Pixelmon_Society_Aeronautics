@@ -35,7 +35,7 @@
     "kubejs/data/psa_coexistence/lithostitched/worldgen_modifier/pixelmon_plains_taiga_dens.json": "1b8179531ad43a68976df1d4238244c2053fa43c5af7d99da40e1c3cb585831e",
     "kubejs/data/sable/tags/blocks/silent_assembly_removal.json": "5a7da02a0addb1cb08cdb62319c4f148ca5f6f83dfc447694d1b8c73f0751ec1",
     "kubejs/server_scripts/psa_miltank_milk.js": "26c05195914adc0ec2d4557835676e8475282298f436fc15a9251492ff60d90f",
-    "kubejs/server_scripts/psa_physics_immovable.js": "4d4a7d275bc38e87453fe89ef2d3feedae6966e6470fa066b934c9a1f10a5c02",
+    "kubejs/server_scripts/psa_physics_immovable.js": "4c9f45ed0900cc8f56ea68318b1af4d01ece521d0ffeec14f157c608b3987371",
     "kubejs/server_scripts/psa_recipe_coexistence.js": "0095768d81d7057f2269f9b3a1d68fa8180499b1c748c065d4dc8c8c9cf3f09c"
   },
   "receipt": {
@@ -154,7 +154,7 @@
       },
       {
         "path": "kubejs/server_scripts/psa_physics_immovable.js",
-        "sha256": "4d4a7d275bc38e87453fe89ef2d3feedae6966e6470fa066b934c9a1f10a5c02"
+        "sha256": "4c9f45ed0900cc8f56ea68318b1af4d01ece521d0ffeec14f157c608b3987371"
       },
       {
         "path": "kubejs/server_scripts/psa_recipe_coexistence.js",

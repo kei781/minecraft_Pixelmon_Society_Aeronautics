@@ -1909,6 +1909,7 @@
  "later_changes": [
   "After this note was written, sable:silent_assembly_removal was extended from 74 to 310 ids: every block the in-game sweep (tests/forge-assembly-probe.js, evidence/assembly-inventory-sweep-baseline.json) saw duplicating its contents was added. The sweep confirmed the 48 Pixelmon gym signs and the Society blocks at run time; pixelmon:cloning_machine, fossil_display and infuser stay on the bytecode proof alone, because Pixelmon's multi-block machines cannot be placed next to the port's physics (evidence/pixelmon-multiblock-physics-crash.json).",
   "The current tag hash and preconditions are in compat/coexistence-build.json and compat/coexistence/preconditions.json; hashes of that file quoted in this note are the earlier ones.",
-  "create:track_station was added to simulated:non_movable by psa_physics_immovable.js (53 ids, log field other: 1) after the independent review: silent removal leaves its old railway-graph entry behind."
+  "create:track_station was added to simulated:non_movable by psa_physics_immovable.js (53 ids, log field other: 1) after the independent review: silent removal leaves its old railway-graph entry behind.",
+  "The 16 create:*_postbox blocks were added to simulated:non_movable by psa_physics_immovable.js (69 ids, log field other: 17) after the final review: a postbox linked to a train station is mirrored in the station's saved port list, and silent removal never takes that port out, so the next train receives the mirrored packages while the moved postbox still holds them (evidence/final-review-2026-11-14.json)."
  ]
 }

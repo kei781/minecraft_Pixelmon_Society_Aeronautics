@@ -71,9 +71,30 @@ Windows 인증 접속, 큰 번호의 탱크 수레 1000→2000→1000mB 표시�
 
 할인 표시의 새 수정은 [별도 기록](bountiful-discount-display.md)에 있다. 기존 Windows 인증 인스턴스에서 평판 30·31·564·802의 할인 40.0%, 0 복구·재열기와 일시정지 메뉴를 확인했다. 최신 Claude Opus 5.5 독립 재리뷰도 통과했다. 이전 셰이더·모델·일시정지 메뉴 보정도 포함한다. [셰이더 패킷](pixelmon-shader-compatibility.md), [모델](forge-model-compatibility.md), [메뉴 배치](pause-menu-compatibility.md).
 
+## 기본 키 겹침
+
+Pixelmon의 키는 Society가 정해 둔 기본 키와 따로 정해져 있어, v20 기본 설정에서는 아래 키를
+화면이 닫힌 상태에서 누르면 두 동작이 함께 실행된다. 기본 키 파일과 각 모드의 코드를 대조해
+확인했고 게임에서 하나씩 눌러 보지는 않았다. [기록](../evidence/final-review-2026-11-14.json).
+
+| 키 | Pixelmon 동작 | 함께 실행되는 동작 |
+| --- | --- | --- |
+| `O` | 포켓몬 오버레이 접기·펴기 | Oculus 셰이더 선택 화면. 어깨 시점에서는 좌우 전환도 |
+| `K` | 바라보는 블록의 위키 페이지를 브라우저로 열기 | Pufferfish Skills 스킬 화면 |
+| `M` | 퀘스트 표시 넘기기 | FTB Chunks 지도(초반 퀘스트로 해금된 뒤). 자석을 갖고 있으면 자석 켜고 끄기 |
+| `N` | 퀘스트 일지 | JourneyMap 웨이포인트 관리 |
+| `B` | 필드 기술 고르기 | JourneyMap 웨이포인트 만들기, Sophisticated Backpacks 배낭 열기 |
+| `G` | 필드 기술 사용 | Curios 장신구 화면 |
+| `↑` `↓` | 파티 포켓몬 선택 | 어깨 시점일 때 카메라 거리 |
+| `R` | 포켓몬 꺼내기·넣기 | 공구 벨트를 차고 있을 때 벨트 메뉴 |
+
+바꾸려면 **설정 → 조작 → 키 설정**에서 겹친 키(빨간색으로 표시된다) 중 한쪽을 다른 키로 옮긴다.
+Pixelmon 항목은 `Pixelmon` 분류에 모여 있다. `'`, `;`, `0`, `F4`, `F8`, `Home`은 기본 키 파일에서
+쓰이지 않는다.
+
 ## 개발자 재생성
 
-공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`이고(v19까지의 팩은 이전 `351ecb09…`이며 [포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)이 없다), 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. [공통 JAR 재생성](pixelmon-starter-disconnect.md)을 먼저 수행한다.
+공식 입력과 검증한 캐시가 있을 때 새 서버 프로필을 준비한 다음 내보낸다. 현재 공통 JAR 고정 SHA256은 `28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c`이고(v19까지의 팩은 이전 `351ecb09…`이며 [포팅 결함 수정](coexistence-audit.md#포팅-jar-수정)이 없다), 클라이언트 전용 메뉴 보정은 `44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9`다. 공통 JAR은 두 단계로 다시 만든다. [스타터 보정 JAR 재생성](pixelmon-starter-disconnect.md#재생성)으로 `351ecb09…`를 만들고, 그것을 입력으로 [포팅 수정 빌드·결합](coexistence-audit.md#포팅-jar-수정)을 수행해 `28e19585…`를 얻는다. 준비 도구는 앞 단계의 JAR만으로는 입력 해시 불일치로 거부한다.
 
 ```bash
 python3 tools/export_forge_client.py \
