@@ -15,15 +15,22 @@ cp -R psa_support /opt/psa-support/
 install -m 0644 pyproject.toml requirements.lock /opt/psa-support/
 /usr/bin/python3 -m venv /opt/psa-support/.venv
 /opt/psa-support/.venv/bin/python -m pip install --require-hashes -r /opt/psa-support/requirements.lock
+# Migrate the previous wheel-based installation; otherwise site-packages shadows the .pth source.
+/opt/psa-support/.venv/bin/python -m pip uninstall -y psa-discord-support
 # Source import and a fixed launcher avoid an unpinned root build backend download.
 /opt/psa-support/.venv/bin/python - <<'PYLAUNCH'
 import site
 from pathlib import Path
 Path(site.getsitepackages()[0], 'psa-support.pth').write_text('/opt/psa-support\n')
 launcher = Path('/opt/psa-support/.venv/bin/psa-support')
-launcher.write_text('#!/opt/psa-support/.venv/bin/python\nfrom psa_support.cli import main\nmain()\n')
+launcher.write_text('#!/opt/psa-support/.venv/bin/python\nimport sys\nsys.path.insert(0,"/opt/psa-support")\nfrom psa_support.cli import main\nmain()\n')
 launcher.chmod(0o755)
 PYLAUNCH
+/opt/psa-support/.venv/bin/python -I - <<'PYVERIFY'
+from pathlib import Path
+import psa_support
+assert Path(psa_support.__file__).resolve().parent == Path('/opt/psa-support/psa_support')
+PYVERIFY
 chown -R root:psa-support /opt/psa-support
 chmod -R go-w /opt/psa-support
 install -m 0644 deploy/psa-support.service /etc/systemd/system/psa-support.service
