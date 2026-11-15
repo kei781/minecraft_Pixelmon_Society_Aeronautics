@@ -76,6 +76,11 @@ def package_jar(classes, resources, output, prefix='dev/psa/pixelmonrender/', co
     return {'sha256': hashlib.sha256(output.read_bytes()).hexdigest(), 'entries': sorted(files)}
 
 
+def argfile_encoding():
+    # nl_langinfo is available on supported POSIX Python 3.9+, unlike getencoding.
+    return 'mbcs' if os.name=='nt' else (locale.nl_langinfo(locale.CODESET) or 'utf-8')
+
+
 def write_argfile(path, args):
     def quote(value):
         value=str(value).replace('\\','\\\\').replace('"','\\"')
@@ -83,7 +88,7 @@ def write_argfile(path, args):
         return '"'+value+'"'
     # JDK 17 reads argument files in the native encoding, independently of the
     # source-file -encoding flag. mbcs follows Windows ACP even in Python UTF-8 mode.
-    encoding='mbcs' if os.name=='nt' else locale.getencoding()
+    encoding=argfile_encoding()
     data=('\n'.join(quote(arg) for arg in args)+'\n').encode(encoding,errors='strict')
     Path(path).write_bytes(data)
 

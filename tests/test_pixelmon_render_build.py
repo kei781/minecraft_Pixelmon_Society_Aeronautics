@@ -1,7 +1,6 @@
 """Build/output boundary tests; opaque class fixtures are not JVM validation."""
 import hashlib
 import importlib.util
-import locale
 import os
 from pathlib import Path
 import tempfile
@@ -21,6 +20,11 @@ class PixelmonRenderBuildTest(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
+
+    def require_java17(self):
+        version=subprocess.check_output([shutil.which('javac'),'-version'],text=True).strip()
+        if not version.startswith('javac 17.'):
+            self.skipTest('Java 17 required, matching the build controller')
 
     def test_changed_or_missing_input_is_rejected(self):
         source = self.root / 'mods'
@@ -68,6 +72,7 @@ class PixelmonRenderBuildTest(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which('java') and shutil.which('javac'), 'JDK required')
     def test_java_launcher_handles_classpath_beyond_windows_command_line_limit(self):
+        self.require_java17()
         source=self.root/'LongClasspath.java'
         source.write_text('public class LongClasspath { public static void main(String[] args) {'
             'if(System.getProperty("java.class.path").length()<40000) throw new AssertionError();'
@@ -81,7 +86,8 @@ class PixelmonRenderBuildTest(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which('java') and shutil.which('javac'), 'JDK required')
     def test_argfiles_compile_and_launch_non_ascii_paths(self):
-        encoding='mbcs' if os.name=='nt' else locale.getencoding()
+        self.require_java17()
+        encoding=build.argfile_encoding()
         for name in ('한글 경로','café path'):
             try:
                 name.encode(encoding,errors='strict')

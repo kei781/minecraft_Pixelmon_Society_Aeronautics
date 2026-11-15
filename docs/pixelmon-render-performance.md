@@ -26,6 +26,8 @@ Oculus의 Pixelmon 호환 믹신은 DeformVertex.id2 읽기를 -1로 바꿔 Pixe
 
 JDK 17의 argfile은 시스템 인코딩으로 기록한다([Java 17 문서](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html)). Windows에서는 Python UTF-8 모드와 무관하게 ACP를 따르는 `mbcs`를 사용하고, 표현할 수 없는 문자는 파일 기록 전에 명시적으로 거부한다. 한국어 Windows에서 한글·공백 경로의 실제 javac/java 실행과 Python UTF-8 모드 검사를 모두 통과했다. Java 소스 파일 자체의 인코딩은 기존대로 UTF-8이다.
 
+POSIX에서는 Python 3.9에도 있는 `nl_langinfo(CODESET)`으로 인코딩을 구하며, 검사는 같은 helper를 사용한다. Java를 실제 실행하는 회귀 검사는 빌드 도구와 동일하게 JDK 17을 요구한다. CI는 저장소 최소 지원 Python 3.9와 Python 3.12에서 각각 전체 검사를 실행한다.
+
 ```text
 python tools/build_pixelmon_render.py --libraries PATH/PrismLauncher/libraries --mods PATH/instance/minecraft/mods --java-home PATH/jdk17 --output PATH/qa/PSA-Pixelmon-Render-0.1.0.jar --test
 python -m unittest discover -s tests -p test_pixelmon_render_build.py -v
