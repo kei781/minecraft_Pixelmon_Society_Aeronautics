@@ -40,7 +40,9 @@ python -m unittest discover -s tests -v
 
 Windows의 전체 기존 Python 테스트는 변경 전 LF 복제본에서도 169개 중 symlink 권한 관련 오류 17개·제외 15개가 있었다. 원본 파일을 바꾸거나 실패를 숨기지 않으며 Linux CI에서도 전체 검사를 실행한다.
 
-2026-11-16 리뷰 수정 후보 대조에서는 비유한 좌표 fallback을 포함해 확장 속성 37,100바이트가 다시 일치했다. 실제 Forge 안의 CPU 정점 처리 microbenchmark는 표본당 460,800개 정점, 워밍업 후 순서를 번갈아 7회 측정했다. 중앙값은 원본 39.1666 ms, 후보 33.0583 ms로 해당 구간 시간이 15.60% 감소했다. GPU draw와 실제 포켓몬 월드 FPS를 측정한 수치가 아니다. OFF로 다시 실행했을 때는 BufferBuilder adapter와 NormalizedFace redirect가 모두 없는 것도 확인했다. [검증 요약](../evidence/pixelmon-render-candidate.json). Linux CI는 Python 검사 175개에서 실패 0·제외 5개를 확인했다.
+2026-11-16 리뷰 수정 후보 대조에서는 비유한 좌표 fallback을 포함해 확장 속성 37,100바이트가 다시 일치했다. 실제 Forge 안의 CPU 정점 처리 microbenchmark는 표본당 460,800개 정점, 워밍업 후 순서를 번갈아 7회 측정했다. 중앙값은 원본 39.1666 ms, 후보 33.0583 ms로 해당 구간 시간이 15.60% 감소했다. GPU draw와 실제 포켓몬 월드 FPS를 측정한 수치가 아니다. OFF로 다시 실행했을 때는 BufferBuilder adapter와 NormalizedFace redirect가 모두 없는 것도 확인했다. [검증 요약](../evidence/pixelmon-render-candidate.json).
+
+코드 커밋 `096bbb8737c89439a515bd3468cd16dc28eeae65`의 [Linux CI 실행](https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/actions/runs/43731428037)에서 Python 3.9와 3.12 각각 177개 실행·제외 5개·실패/오류 0개를 확인했다. 이 실행은 명시한 코드 커밋의 검증 기록이며, 그 뒤 증거 문서만 갱신한 커밋 자체를 검사했다는 뜻은 아니다.
 
 같은 후보 JAR를 별도 QA의 실제 모드 355개 조합에도 추가해 ON/OFF를 재검사했다. 기본 설정·월드 미접속 상태에서 ON의 정점/확장 속성 대조와 OFF의 클래스 변형 부재가 모두 통과했다. 종료 시 Pixelmon Discord SDK의 `TRANSACTION_ABORTED`가 ON/OFF 양쪽에서 관측됐다. 원래 플레이 설정·월드를 복제하지 않은 로더/버퍼 대조이므로 전체 팩의 화면·FPS 승격 조건은 그대로 남는다.
 

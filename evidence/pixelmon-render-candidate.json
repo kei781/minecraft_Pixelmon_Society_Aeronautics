@@ -54,10 +54,25 @@
     }
   },
   "linux_ci": {
-    "run": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/actions/runs/43729611559",
-    "tests_run": 175,
-    "skipped": 5,
-    "failures": 0
+    "tested_commit": "096bbb8737c89439a515bd3468cd16dc28eeae65",
+    "run": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/actions/runs/43731428037",
+    "results": [
+      {
+        "python": "3.9",
+        "tests_run": 177,
+        "skipped": 5,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "python": "3.12",
+        "tests_run": 177,
+        "skipped": 5,
+        "failures": 0,
+        "errors": 0
+      }
+    ],
+    "scope": "Verified code commit; subsequent evidence-only commits do not imply this run tested themselves"
   },
   "limits": [
     "Opt-in, disabled by default",
