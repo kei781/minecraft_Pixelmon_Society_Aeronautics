@@ -16,11 +16,13 @@ Oculus의 Pixelmon 호환 믹신은 DeformVertex.id2 읽기를 -1로 바꿔 Pixe
 
 별도 클라이언트 모드의 PixelmonFaceMixin은 NormalizedFace.addFaceForRender의 완성 정점 호출 두 곳만 redirect한다. 기존 위치·애니메이션·UV·색·조명·법선 값을 그대로 받는다. 대상 BufferBuilder가 지원하는 경우에만 native stores로 기본 속성을 기록하고, 원래 nextElement 여섯 번과 endVertex를 호출한다. Oculus의 entity-ID, midpoint, tangent 및 polygon 처리와 버퍼 증설은 기존 코드가 수행한다. 다른 consumer·terrain/glyph 형식·고정 색·진행 중인 정점·지원하지 않는 버퍼에서는 원래 호출로 돌아간다.
 
-버전과 바이너리가 고정된 실험 후보이며 기본 비활성이다. `-Dpsa.pixelmon.fastVertices=true`가 명시된 별도 QA 인스턴스에서 시험한다. 사용 중인 인스턴스나 배포 팩에 자동 설치하지 않는다. 해당 속성을 제거하면 원래 경로를 사용한다. 아직 게임 FPS 향상이나 전체 팩의 시각적 동일성을 주장하지 않는다.
+빌드 입력은 고정 해시로 검사하고 실행 시 모드 버전 범위를 제한하는 실험 후보다. 실행 중인 JAR의 SHA-256을 재검사하는 구현은 아니며, 같은 버전 문자열로 수정된 바이너리는 검증 범위 밖이다. 기본 비활성이고 Mixin 플러그인이 클래스 변형 자체를 막는다. `-Dpsa.pixelmon.fastVertices=true`가 명시된 별도 QA 인스턴스에서 시험한다. 사용 중인 인스턴스나 배포 팩에 자동 설치하지 않는다. 해당 속성을 제거하고 다시 실행하면 두 대상 클래스 모두 이 후보의 변형을 받지 않는다. 아직 게임 FPS 향상이나 전체 팩의 시각적 동일성을 주장하지 않는다.
 
 ## 재현 가능한 빌드와 검사
 
 원본 Pixelmon·Oculus·Embeddium은 고정 해시로 확인하며 산출물에 포함하지 않는다. 로컬 Prism의 libraries와 mods 경로 및 Java 17 JDK를 명시한다. 출력은 기존 파일이나 mods 폴더를 가리킬 수 없다.
+
+컴파일과 Java 검사 실행은 모두 argfile을 사용한다. Minecraft 고정 client와 이 스택의 LWJGL 3.3.1·Mixin 0.8.5·Forge 47.4.20을 먼저 선택하고, 중복을 뺀 실제 classpath 전체의 상대 경로·SHA-256을 빌드 receipt에 기록한다. 나머지 공유 라이브러리 전체를 고정 버전으로 강제하는 구현은 아니므로 재현 시 receipt도 대조해야 한다.
 
 ```text
 python tools/build_pixelmon_render.py --libraries PATH/PrismLauncher/libraries --mods PATH/instance/minecraft/mods --java-home PATH/jdk17 --output PATH/qa/PSA-Pixelmon-Render-0.1.0.jar --test

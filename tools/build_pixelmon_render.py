@@ -75,11 +75,53 @@ def package_jar(classes, resources, output, prefix='dev/psa/pixelmonrender/', co
     return {'sha256': hashlib.sha256(output.read_bytes()).hexdigest(), 'entries': sorted(files)}
 
 
+def write_argfile(path, args):
+    def quote(value):
+        value=str(value).replace('\\','\\\\').replace('"','\\"')
+        value=value.replace('\n','\\n').replace('\r','\\r').replace('\t','\\t')
+        return '"'+value+'"'
+    Path(path).write_bytes(('\n'.join(quote(arg) for arg in args)+'\n').encode('utf-8'))
+
+
+def run_java(java, args, directory, **kwargs):
+    argfile=Path(directory)/'java.args'
+    write_argfile(argfile,args)
+    return subprocess.run([str(java),'@'+str(argfile)],check=True,**kwargs)
+
+
+def classpath_inventory(libraries, library_paths, mod_paths):
+    def priority(path):
+        name=path.relative_to(libraries).as_posix()
+        if name==CLIENT:
+            return 0
+        if (name.startswith('org/lwjgl/') and '/3.3.1/' in name
+                or name.startswith('org/spongepowered/mixin/0.8.5/')
+                or name.startswith('net/minecraftforge/') and '/1.20.1-47.4.20/' in name):
+            return 1
+        return 2
+    paths,receipt,seen=[],[],set()
+    groups=(('libraries',sorted(library_paths,key=priority)),('mods',mod_paths))
+    for scope,entries in groups:
+        for path in entries:
+            path=Path(path)
+            key=path.resolve()
+            if key in seen:
+                continue
+            seen.add(key); paths.append(path)
+            digest=hashlib.sha256()
+            with path.open('rb') as stream:
+                for block in iter(lambda:stream.read(1024*1024),b''):
+                    digest.update(block)
+            receipt.append({'scope':scope,'path':path.relative_to(libraries).as_posix() if scope=='libraries' else path.name,
+                            'sha256':digest.hexdigest()})
+    return paths,receipt
+
+
 def compile_java(javac, sources, classpath, destination, directory):
     args = ['-proc:none', '--release', '17', '-encoding', 'UTF-8', '-cp', classpath,
             '-d', str(destination), *(str(path) for path in sources)]
     argfile = Path(directory)/'javac.args'
-    argfile.write_text('\n'.join('"' + arg.replace('\\','/').replace('"','\\"') + '"' for arg in args), encoding='utf-8')
+    write_argfile(argfile,args)
     subprocess.run([str(javac), '@' + str(argfile)], check=True)
 
 
@@ -93,7 +135,8 @@ def build(libraries, mods, java_home, output, run_tests=False):
     version = subprocess.check_output([str(javac), '-version'], text=True).strip()
     if not version.startswith('javac 17.'):
         raise ValueError('Java 17 compiler required')
-    classpath = os.pathsep.join(str(path) for path in [client, *sorted(libraries.rglob('*.jar')), *mod_paths])
+    paths,inventory=classpath_inventory(libraries,[client,*sorted(libraries.rglob('*.jar'))],mod_paths)
+    classpath = os.pathsep.join(str(path) for path in paths)
     with tempfile.TemporaryDirectory(prefix='psa-render-build-') as directory:
         classes = Path(directory)/'classes'
         compile_java(javac, sorted(SOURCE.rglob('*.java')), classpath, classes, directory)
@@ -101,11 +144,11 @@ def build(libraries, mods, java_home, output, run_tests=False):
             tests = Path(directory)/'tests'
             compile_java(javac, [ROOT/'tests/PixelmonVertexEncodingTest.java'],
                          str(classes)+os.pathsep+classpath, tests, directory)
-            subprocess.run([str(java), '-cp', os.pathsep.join((str(tests),str(classes),classpath)),
-                            'dev.psa.pixelmonrender.PixelmonVertexEncodingTest'], check=True)
+            run_java(java,['-cp',os.pathsep.join((str(tests),str(classes),classpath)),
+                           'dev.psa.pixelmonrender.PixelmonVertexEncodingTest'],directory)
         receipt = package_jar(classes, SOURCE/'resources', output)
     return dict(receipt, compiler=version, inputs=PINS, minecraft_client_sha256=hashlib.sha256(client.read_bytes()).hexdigest(),
-                opt_in='-Dpsa.pixelmon.fastVertices=true', tests_run=run_tests)
+                opt_in='-Dpsa.pixelmon.fastVertices=true', tests_run=run_tests,classpath=inventory)
 
 
 if __name__ == '__main__':

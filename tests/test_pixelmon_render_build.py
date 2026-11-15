@@ -1,8 +1,11 @@
 """Build/output boundary tests; opaque class fixtures are not JVM validation."""
 import hashlib
 import importlib.util
+import os
 from pathlib import Path
 import tempfile
+import shutil
+import subprocess
 import unittest
 import zipfile
 
@@ -61,6 +64,38 @@ class PixelmonRenderBuildTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Non-authored'):
             build.package_jar(classes, resources, rejected)
         self.assertFalse(rejected.exists())
+
+    @unittest.skipUnless(shutil.which('java') and shutil.which('javac'), 'JDK required')
+    def test_java_launcher_handles_classpath_beyond_windows_command_line_limit(self):
+        source=self.root/'LongClasspath.java'
+        source.write_text('public class LongClasspath { public static void main(String[] args) {'
+            'if(System.getProperty("java.class.path").length()<40000) throw new AssertionError();'
+            'if(!args[0].equals("space and \\\"quote\\\"")) throw new AssertionError(args[0]);'
+            'System.out.println("LONG_CLASSPATH_PASS"); }}',encoding='utf-8')
+        subprocess.run([shutil.which('javac'),str(source)],check=True)
+        classpath=os.pathsep.join([str(self.root)]+[str(self.root/('unused_'+str(i)+'x'*80)) for i in range(500)])
+        result=build.run_java(shutil.which('java'),['-cp',classpath,'LongClasspath','space and "quote"'],self.root,
+                              capture_output=True,text=True)
+        self.assertIn('LONG_CLASSPATH_PASS',result.stdout)
+
+    def test_classpath_inventory_records_each_selected_binary_once(self):
+        libraries=self.root/'libraries';libraries.mkdir()
+        first=libraries/'first.jar';second=libraries/'second.jar';mod=self.root/'mod.jar'
+        first.write_bytes(b'first');second.write_bytes(b'second');mod.write_bytes(b'mod')
+        paths,receipt=build.classpath_inventory(libraries,[first,second,first],[mod])
+        self.assertEqual(paths,[first,second,mod])
+        self.assertEqual(receipt,[{'scope':'libraries','path':'first.jar','sha256':hashlib.sha256(b'first').hexdigest()},
+            {'scope':'libraries','path':'second.jar','sha256':hashlib.sha256(b'second').hexdigest()},
+            {'scope':'mods','path':'mod.jar','sha256':hashlib.sha256(b'mod').hexdigest()}])
+
+    def test_pinned_lwjgl_precedes_older_cached_instance_libraries(self):
+        libraries=self.root/'libraries'
+        old=libraries/'org/lwjgl/lwjgl/3.2.2/lwjgl-3.2.2.jar'
+        selected=libraries/'org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1.jar'
+        for path in (old,selected):
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(b'library fixture')
+        paths,_=build.classpath_inventory(libraries,[old,selected],[])
+        self.assertEqual(paths,[selected,old])
 
 
 if __name__ == '__main__':

@@ -2,6 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "dev.psa.pixelmonrender.mixin",
+  "plugin": "dev.psa.pixelmonrender.RenderCompatPlugin",
   "compatibilityLevel": "JAVA_17",
   "client": ["EntityBufferMixin", "PixelmonFaceMixin"],
   "injectors": {"defaultRequire": 1}

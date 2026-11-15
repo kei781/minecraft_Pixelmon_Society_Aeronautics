@@ -99,8 +99,15 @@ public final class PixelmonRenderProbe {
         CapturedRenderingState state=CapturedRenderingState.INSTANCE;
         int entity=state.getCurrentRenderedEntity(), block=state.getCurrentRenderedBlockEntity(), item=state.getCurrentRenderedItem();
         try {
-            if (!NativeEntityVertex.ENABLED) throw new AssertionError("opt-in disabled");
-            Class.forName("com.pixelmonmod.pixelmon.client.models.smd.NormalizedFace");
+            Class<?> face=Class.forName("com.pixelmonmod.pixelmon.client.models.smd.NormalizedFace");
+            if (!NativeEntityVertex.ENABLED) {
+                BufferBuilder untouched=new BufferBuilder(16);
+                if (((Object)untouched) instanceof FastEntityVertexSink)
+                    throw new AssertionError("disabled candidate added adapter interface");
+                for (var method:face.getDeclaredMethods()) if(method.getName().contains("psa$submitVertex"))
+                    throw new AssertionError("disabled candidate redirected face submission");
+                result="{\"result\":\"PASS\",\"opt_out\":true,\"buffer_adapter_absent\":true,\"face_redirect_absent\":true}";
+            } else {
             WorldRenderingSettings.INSTANCE.setUseExtendedVertexFormat(true);
             state.setCurrentEntity(32767); state.setCurrentBlockEntity(301); state.setCurrentRenderedItem(1207);
             BufferBuilder invalid=new BufferBuilder(16);
@@ -117,6 +124,7 @@ public final class PixelmonRenderProbe {
             result="{\"result\":\"PASS\",\"vertices\":700,\"attribute_bytes\":"+bytes
                     +",\"modes\":[\"TRIANGLES\",\"QUADS\"],\"buffer_growth\":true,\"nonfinite_fallback\":true,\"normalized_face_loaded\":true"
                     +(Boolean.getBoolean("psa.render.probe.benchmark")?benchmark():"")+"}";
+            }
         } catch(Throwable error) {
             error.printStackTrace();
             result="{\"result\":\"FAIL\",\"error\":\""+error.toString().replace("\\","\\\\").replace("\"","\\\"").replace("\n"," ")+"\"}";

@@ -45,6 +45,22 @@ public final class PixelmonVertexEncodingTest {
     }
 
     public static void main(String[] args) {
+        String priorFlag=System.getProperty("psa.pixelmon.fastVertices");
+        try {
+            System.clearProperty("psa.pixelmon.fastVertices");
+            RenderCompatPlugin off=new RenderCompatPlugin(); off.onLoad("ignored");
+            if(off.shouldApplyMixin("BufferBuilder","EntityBufferMixin")
+                    || off.shouldApplyMixin("NormalizedFace","PixelmonFaceMixin"))
+                throw new AssertionError("disabled candidate must not transform classes");
+            System.setProperty("psa.pixelmon.fastVertices","true");
+            RenderCompatPlugin on=new RenderCompatPlugin(); on.onLoad("ignored");
+            if(!on.shouldApplyMixin("BufferBuilder","EntityBufferMixin")
+                    || !on.shouldApplyMixin("NormalizedFace","PixelmonFaceMixin"))
+                throw new AssertionError("explicit opt-in must apply both mixins");
+        } finally {
+            if(priorFlag==null) System.clearProperty("psa.pixelmon.fastVertices");
+            else System.setProperty("psa.pixelmon.fastVertices",priorFlag);
+        }
         float[] edge = {0f,-0f,1f,-1f,0.5f,-0.5f,1.01f,-1.01f,Float.NaN,
                 Float.POSITIVE_INFINITY,Float.NEGATIVE_INFINITY,Float.MIN_VALUE,Float.MAX_VALUE};
         for (float value : edge) {
