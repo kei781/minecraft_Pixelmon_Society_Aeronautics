@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import locale
 import os
 from pathlib import Path
 import subprocess
@@ -80,7 +81,11 @@ def write_argfile(path, args):
         value=str(value).replace('\\','\\\\').replace('"','\\"')
         value=value.replace('\n','\\n').replace('\r','\\r').replace('\t','\\t')
         return '"'+value+'"'
-    Path(path).write_bytes(('\n'.join(quote(arg) for arg in args)+'\n').encode('utf-8'))
+    # JDK 17 reads argument files in the native encoding, independently of the
+    # source-file -encoding flag. mbcs follows Windows ACP even in Python UTF-8 mode.
+    encoding='mbcs' if os.name=='nt' else locale.getencoding()
+    data=('\n'.join(quote(arg) for arg in args)+'\n').encode(encoding,errors='strict')
+    Path(path).write_bytes(data)
 
 
 def run_java(java, args, directory, **kwargs):

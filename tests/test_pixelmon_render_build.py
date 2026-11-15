@@ -1,6 +1,7 @@
 """Build/output boundary tests; opaque class fixtures are not JVM validation."""
 import hashlib
 import importlib.util
+import locale
 import os
 from pathlib import Path
 import tempfile
@@ -77,6 +78,34 @@ class PixelmonRenderBuildTest(unittest.TestCase):
         result=build.run_java(shutil.which('java'),['-cp',classpath,'LongClasspath','space and "quote"'],self.root,
                               capture_output=True,text=True)
         self.assertIn('LONG_CLASSPATH_PASS',result.stdout)
+
+    @unittest.skipUnless(shutil.which('java') and shutil.which('javac'), 'JDK required')
+    def test_argfiles_compile_and_launch_non_ascii_paths(self):
+        encoding='mbcs' if os.name=='nt' else locale.getencoding()
+        for name in ('한글 경로','café path'):
+            try:
+                name.encode(encoding,errors='strict')
+                break
+            except UnicodeEncodeError:
+                continue
+        else:
+            self.skipTest('System argument encoding cannot represent a non-ASCII fixture')
+        root=self.root/name
+        root.mkdir()
+        source=root/'UnicodePath.java'
+        source.write_text('public class UnicodePath { public static void main(String[] args) {'
+            'System.out.println("UNICODE_PATH_PASS"); }}',encoding='utf-8')
+        classes=root/'classes'
+        build.compile_java(shutil.which('javac'),[source],str(root),classes,root)
+        result=build.run_java(shutil.which('java'),['-cp',str(classes),'UnicodePath'],root,
+                              capture_output=True,text=True)
+        self.assertIn('UNICODE_PATH_PASS',result.stdout)
+
+    def test_unencodable_argument_is_rejected_before_writing_argfile(self):
+        output=self.root/'invalid.args'
+        with self.assertRaises(UnicodeEncodeError):
+            build.write_argfile(output,['\ud800'])
+        self.assertFalse(output.exists())
 
     def test_classpath_inventory_records_each_selected_binary_once(self):
         libraries=self.root/'libraries';libraries.mkdir()

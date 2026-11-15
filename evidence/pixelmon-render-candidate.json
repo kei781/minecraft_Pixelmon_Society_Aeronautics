@@ -73,6 +73,30 @@
     "buffer_adapter_absent": true,
     "face_redirect_absent": true
   },
-  "build_tests": 6,
+  "full_mod_jar_combination_probe": {
+    "source_mod_jars": 355,
+    "candidate_and_probe_added": 2,
+    "configuration": "Separate QA defaults; no world joined or shader programs drawn",
+    "on_result": "PASS",
+    "on_vertices": 700,
+    "on_attribute_bytes": 37100,
+    "off_result": "PASS",
+    "off_buffer_adapter_absent": true,
+    "off_face_redirect_absent": true,
+    "shutdown_caveat": "Pixelmon Discord SDK TRANSACTION_ABORTED observed with both ON and OFF"
+  },
+  "build_tests": 8,
+  "argfile_regression": {
+    "platform": "Korean Windows, Java 17",
+    "before_fix": "javac MalformedInputException for a Korean path",
+    "after_fix": "compile and launch PASS, including Python UTF-8 mode",
+    "production_jar_sha256_unchanged": true
+  },
+  "windows_full_suite": {
+    "tests_run": 177,
+    "errors": 17,
+    "skipped": 15,
+    "error_scope": "Existing symlink privilege failures"
+  },
   "runtime_jar_sha256_rechecked": false
 }

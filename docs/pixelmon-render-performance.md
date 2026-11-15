@@ -24,6 +24,8 @@ Oculus의 Pixelmon 호환 믹신은 DeformVertex.id2 읽기를 -1로 바꿔 Pixe
 
 컴파일과 Java 검사 실행은 모두 argfile을 사용한다. Minecraft 고정 client와 이 스택의 LWJGL 3.3.1·Mixin 0.8.5·Forge 47.4.20을 먼저 선택하고, 중복을 뺀 실제 classpath 전체의 상대 경로·SHA-256을 빌드 receipt에 기록한다. 나머지 공유 라이브러리 전체를 고정 버전으로 강제하는 구현은 아니므로 재현 시 receipt도 대조해야 한다.
 
+JDK 17의 argfile은 시스템 인코딩으로 기록한다([Java 17 문서](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html)). Windows에서는 Python UTF-8 모드와 무관하게 ACP를 따르는 `mbcs`를 사용하고, 표현할 수 없는 문자는 파일 기록 전에 명시적으로 거부한다. 한국어 Windows에서 한글·공백 경로의 실제 javac/java 실행과 Python UTF-8 모드 검사를 모두 통과했다. Java 소스 파일 자체의 인코딩은 기존대로 UTF-8이다.
+
 ```text
 python tools/build_pixelmon_render.py --libraries PATH/PrismLauncher/libraries --mods PATH/instance/minecraft/mods --java-home PATH/jdk17 --output PATH/qa/PSA-Pixelmon-Render-0.1.0.jar --test
 python -m unittest discover -s tests -p test_pixelmon_render_build.py -v
@@ -37,6 +39,8 @@ python -m unittest discover -s tests -v
 Windows의 전체 기존 Python 테스트는 변경 전 LF 복제본에서도 169개 중 symlink 권한 관련 오류 17개·제외 15개가 있었다. 원본 파일을 바꾸거나 실패를 숨기지 않으며 Linux CI에서도 전체 검사를 실행한다.
 
 2026-11-16 리뷰 수정 후보 대조에서는 비유한 좌표 fallback을 포함해 확장 속성 37,100바이트가 다시 일치했다. 실제 Forge 안의 CPU 정점 처리 microbenchmark는 표본당 460,800개 정점, 워밍업 후 순서를 번갈아 7회 측정했다. 중앙값은 원본 39.1666 ms, 후보 33.0583 ms로 해당 구간 시간이 15.60% 감소했다. GPU draw와 실제 포켓몬 월드 FPS를 측정한 수치가 아니다. OFF로 다시 실행했을 때는 BufferBuilder adapter와 NormalizedFace redirect가 모두 없는 것도 확인했다. [검증 요약](../evidence/pixelmon-render-candidate.json). Linux CI는 Python 검사 175개에서 실패 0·제외 5개를 확인했다.
+
+같은 후보 JAR를 별도 QA의 실제 모드 355개 조합에도 추가해 ON/OFF를 재검사했다. 기본 설정·월드 미접속 상태에서 ON의 정점/확장 속성 대조와 OFF의 클래스 변형 부재가 모두 통과했다. 종료 시 Pixelmon Discord SDK의 `TRANSACTION_ABORTED`가 ON/OFF 양쪽에서 관측됐다. 원래 플레이 설정·월드를 복제하지 않은 로더/버퍼 대조이므로 전체 팩의 화면·FPS 승격 조건은 그대로 남는다.
 
 ## 승격 조건
 
