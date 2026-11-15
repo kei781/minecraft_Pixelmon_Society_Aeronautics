@@ -36,7 +36,7 @@ python -m unittest discover -s tests -v
 
 Windows의 전체 기존 Python 테스트는 변경 전 LF 복제본에서도 169개 중 symlink 권한 관련 오류 17개·제외 15개가 있었다. 원본 파일을 바꾸거나 실패를 숨기지 않으며 Linux CI에서도 전체 검사를 실행한다.
 
-2026-11-16 최신 후보 대조에서는 비유한 좌표 fallback을 포함해 확장 속성 37,100바이트가 다시 일치했다. 실제 Forge 안의 CPU 정점 처리 microbenchmark는 표본당 460,800개 정점, 워밍업 후 순서를 번갈아 7회 측정했다. 중앙값은 원본 38.4332 ms, 후보 32.3829 ms로 해당 구간 시간이 15.74% 감소했다. GPU draw와 실제 포켓몬 월드 FPS를 측정한 수치가 아니다. [검증 요약](../evidence/pixelmon-render-candidate.json). Linux CI는 Python 검사 172개에서 실패 0·제외 5개를 확인했다.
+2026-11-16 리뷰 수정 후보 대조에서는 비유한 좌표 fallback을 포함해 확장 속성 37,100바이트가 다시 일치했다. 실제 Forge 안의 CPU 정점 처리 microbenchmark는 표본당 460,800개 정점, 워밍업 후 순서를 번갈아 7회 측정했다. 중앙값은 원본 39.1666 ms, 후보 33.0583 ms로 해당 구간 시간이 15.60% 감소했다. GPU draw와 실제 포켓몬 월드 FPS를 측정한 수치가 아니다. OFF로 다시 실행했을 때는 BufferBuilder adapter와 NormalizedFace redirect가 모두 없는 것도 확인했다. [검증 요약](../evidence/pixelmon-render-candidate.json). Linux CI는 Python 검사 175개에서 실패 0·제외 5개를 확인했다.
 
 ## 승격 조건
 

@@ -38,8 +38,8 @@
 
 ### Task 2: reproducibility, evidence and independent PR review
 
-- [ ] Record sampled live baseline, code assumptions, test commands, bounds and remaining real-loader/FPS validation.
-- [ ] Run full existing tests and focused new tests. Windows baseline has 17 existing symlink-privilege errors; the LF clone removes the original CRLF hash failure. Run the full suite in Linux CI too.
-- [ ] Open a draft PR if real-loader or performance validation remains outstanding; link issue #21 without claiming a measured game improvement.
+- [x] Record sampled live baseline, code assumptions, test commands, bounds and remaining real-loader/FPS validation.
+- [x] Run full existing tests and focused new tests. Windows baseline has 17 existing symlink-privilege errors; the LF clone removes the original CRLF hash failure. Run the full suite in Linux CI too.
+- [x] Open a draft PR if real-loader or performance validation remains outstanding; link issue #21 without claiming a measured game improvement.
 - [ ] Review latest HEAD with independent Claude Opus, fix valid findings and repeat until no unresolved threads, recording actual model and test limits.
 - [ ] Attach PR and report issue, PR, checks and any remaining acceptance work to the user.
