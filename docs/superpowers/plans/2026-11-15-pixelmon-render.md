@@ -30,11 +30,11 @@
 
 ### Task 1: exact vertex encoding and guarded client adapter
 
-- [ ] Write a Java comparison harness using the real pinned Minecraft BufferVertexConsumer as the independent reference. Test random and boundary attributes, guard bytes and buffer rejection before writes.
-- [ ] Run it first and observe the missing encoder failure.
-- [ ] Implement NativeEntityVertex and two narrowly scoped mixins plus client metadata. Keep Iris completion hooks and original fallback.
-- [ ] Compile against local pinned libraries; run byte comparisons and a separately labeled microbenchmark.
-- [ ] Add a build controller with pinned input hashes, fresh output guards and deterministic authored-only JAR packaging; cover rejection and packaging behavior with Python tests.
+- [x] Write a Java comparison harness using the real pinned Minecraft BufferVertexConsumer as the independent reference. Test random and boundary attributes, guard bytes and buffer rejection before writes.
+- [x] Run it first and observe the missing encoder failure.
+- [x] Implement NativeEntityVertex and two narrowly scoped mixins plus client metadata. Keep Iris completion hooks and original fallback.
+- [x] Compile against local pinned libraries; run byte comparisons and a separately labeled microbenchmark.
+- [x] Add a build controller with pinned input hashes, fresh output guards and deterministic authored-only JAR packaging; cover rejection and packaging behavior with Python tests.
 
 ### Task 2: reproducibility, evidence and independent PR review
 

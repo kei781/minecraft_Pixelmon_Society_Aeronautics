@@ -1,0 +1,69 @@
+{
+  "recorded_on": "2026-11-16",
+  "timezone": "Asia/Seoul",
+  "candidate_source_commit": "7b1bfb6d026912bf19e96ad17f53ae645f8d5f2c",
+  "candidate_jar_sha256": "c7cf946c3a2d5416f2e070b106c102d684c04fd746761b8c2817ad6ee475aa88",
+  "versions": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.20",
+    "pixelmon": "9.2.3",
+    "oculus": "1.8.0",
+    "embeddium": "0.3.31+mc1.20.1"
+  },
+  "base_attribute_comparison": {
+    "cases": 10016,
+    "buffer_guards": 7,
+    "position_guards": 4,
+    "result": "PASS"
+  },
+  "real_forge_probe": {
+    "result": "PASS",
+    "vertices": 700,
+    "attribute_bytes": 37100,
+    "modes": [
+      "TRIANGLES",
+      "QUADS"
+    ],
+    "buffer_growth": true,
+    "nonfinite_fallback": true,
+    "normalized_face_loaded": true,
+    "cpu_microbenchmark": {
+      "vertices_per_sample": 460800,
+      "original_ns": [
+        41546100,
+        39136300,
+        38433200,
+        38216700,
+        38382400,
+        38116400,
+        38548700
+      ],
+      "candidate_ns": [
+        33068400,
+        34525600,
+        31855100,
+        32062200,
+        33451100,
+        31904700,
+        32382900
+      ],
+      "original_median_ns": 38433200,
+      "candidate_median_ns": 32382900,
+      "reduction_percent": 15.74
+    }
+  },
+  "linux_ci": {
+    "run": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/actions/runs/43727639363",
+    "tests_run": 172,
+    "skipped": 5,
+    "failures": 0
+  },
+  "limits": [
+    "Opt-in, disabled by default",
+    "CPU vertex submission microbenchmark only, not game FPS",
+    "Extended format enabled in isolated client; no world joined and no shader programs drawn",
+    "NormalizedFace loaded to verify injections; no full model/animation/visual A-B acceptance",
+    "No GPU skinning or new worker threads",
+    "No live installation, deployment or merge"
+  ]
+}
