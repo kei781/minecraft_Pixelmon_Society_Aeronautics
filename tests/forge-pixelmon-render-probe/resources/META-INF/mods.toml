@@ -1,0 +1,9 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="psarenderprobe"
+version="0.1.0"
+displayName="PSA isolated renderer QA"
+displayTest="IGNORE_SERVER_VERSION"
+description="Separate diagnostic. Compares original and candidate vertex output without joining or creating a world; exits only its own QA client."
