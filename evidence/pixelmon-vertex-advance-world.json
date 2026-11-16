@@ -1,0 +1,482 @@
+{
+  "issue": 21,
+  "pr": 23,
+  "date_local": "2026-11-16",
+  "timezone": "Asia/Seoul",
+  "tested_source_commit": "7d4ee7109b1e64a3809eefc7a1b0cb7b362a9687",
+  "previous_reviewed_head": "15cb06a501c6e6b0be15cb291707ba135af22521",
+  "candidate_sha256": "001c1fc367d1e437f712dc991ed0b6ea35b3d8a9b6b4411aa28116e824afe79d",
+  "configuration": {
+    "cpu": "Ryzen 7 7800X3D",
+    "gpu": "RTX 5080",
+    "java_runtime": "17.0.15",
+    "framebuffer": [
+      2091,
+      1352
+    ],
+    "view_chunks": 24,
+    "simulation_chunks": 24,
+    "vsync": false,
+    "fps_option": 260,
+    "shader": "ComplementaryReimagined_r5.6.1 + Clrwl_1.0.5.zip",
+    "shader_profile": "HIGH",
+    "original_mods": 355,
+    "authored_candidate_mods": 1,
+    "diagnostic_probe_mods": 0
+  },
+  "measurement": {
+    "seconds_per_capture": 60,
+    "warmup_at_least_seconds": 90,
+    "tool": "PresentMon 2.6.0, v1 msBetweenPresents, process-filtered largest swap chain",
+    "one_percent_low_definition": "1000 / mean slowest ceil(1% N) positive finite present intervals",
+    "gpu_scope": "Whole GPU counters, not per-process GPU execution time",
+    "stationary_pose": "Observed same position and facing before/after; no deterministic replay",
+    "frames_and_metrics_recalculated_from_raw_csv": true,
+    "jfr_separate_from_fps": true
+  },
+  "records": [
+    {
+      "label": "native-idle-1",
+      "fast_vertices": true,
+      "fast_advance": false,
+      "stationary": false,
+      "terrain_cache_aligned": false,
+      "condition": "Exploratory movement; user confirmed moving. Excluded from stationary comparison.",
+      "requested_seconds": 60,
+      "frames": 5535,
+      "runtime": [
+        "Other"
+      ],
+      "mean_fps": 92.29601864106773,
+      "median_frame_ms": 10.5147,
+      "p95_frame_ms": 15.41149,
+      "p99_frame_ms": 18.868742,
+      "one_percent_low_fps": 47.128669008961516,
+      "over_33ms_frames": 0,
+      "over_50ms_frames": 0,
+      "jfr_during_capture": false,
+      "gpu_samples": 60,
+      "gpu_mean_percent": 79.98333333333333,
+      "gpu_mean_power_w": 137.92783333333333,
+      "gpu_max_temperature_c": 63.0
+    },
+    {
+      "label": "bulk-idle-1",
+      "fast_vertices": true,
+      "fast_advance": true,
+      "stationary": true,
+      "terrain_cache_aligned": false,
+      "condition": "Stationary; initial smaller terrain cache; afternoon/dusk.",
+      "requested_seconds": 60,
+      "frames": 4843,
+      "runtime": [
+        "Other"
+      ],
+      "mean_fps": 80.73753974281638,
+      "median_frame_ms": 12.0883,
+      "p95_frame_ms": 17.087999999999997,
+      "p99_frame_ms": 20.178187999999995,
+      "one_percent_low_fps": 44.91690510057124,
+      "over_33ms_frames": 0,
+      "over_50ms_frames": 0,
+      "jfr_during_capture": false,
+      "gpu_samples": 60,
+      "gpu_mean_percent": 71.7,
+      "gpu_mean_power_w": 122.93816666666666,
+      "gpu_max_temperature_c": 49.08
+    },
+    {
+      "label": "native-idle-2",
+      "fast_vertices": true,
+      "fast_advance": false,
+      "stationary": true,
+      "terrain_cache_aligned": true,
+      "condition": "Stationary native control; reference terrain cache; night.",
+      "requested_seconds": 60,
+      "frames": 4035,
+      "runtime": [
+        "Other"
+      ],
+      "mean_fps": 67.3038564337452,
+      "median_frame_ms": 14.6358,
+      "p95_frame_ms": 20.13514,
+      "p99_frame_ms": 24.603071999999987,
+      "one_percent_low_fps": 36.747702820431,
+      "over_33ms_frames": 1,
+      "over_50ms_frames": 0,
+      "jfr_during_capture": false,
+      "gpu_samples": 60,
+      "gpu_mean_percent": 64.58333333333333,
+      "gpu_mean_power_w": 118.43233333333333,
+      "gpu_max_temperature_c": 49.98
+    },
+    {
+      "label": "native-idle-3",
+      "fast_vertices": true,
+      "fast_advance": false,
+      "stationary": true,
+      "terrain_cache_aligned": true,
+      "condition": "Stationary native repeat; same JVM/cache; night.",
+      "requested_seconds": 60,
+      "frames": 3495,
+      "runtime": [
+        "Other"
+      ],
+      "mean_fps": 58.28702557010786,
+      "median_frame_ms": 16.8197,
+      "p95_frame_ms": 22.131920000000004,
+      "p99_frame_ms": 25.626582,
+      "one_percent_low_fps": 35.81562199660427,
+      "over_33ms_frames": 1,
+      "over_50ms_frames": 0,
+      "jfr_during_capture": false,
+      "gpu_samples": 60,
+      "gpu_mean_percent": 59.6,
+      "gpu_mean_power_w": 114.13383333333333,
+      "gpu_max_temperature_c": 48.57
+    },
+    {
+      "label": "bulk-idle-2",
+      "fast_vertices": true,
+      "fast_advance": true,
+      "stationary": true,
+      "terrain_cache_aligned": true,
+      "condition": "Stationary bulk after copying the stopped native terrain cache; day.",
+      "requested_seconds": 60,
+      "frames": 3653,
+      "runtime": [
+        "Other"
+      ],
+      "mean_fps": 60.93381761056186,
+      "median_frame_ms": 16.0071,
+      "p95_frame_ms": 21.6147,
+      "p99_frame_ms": 25.654636000000004,
+      "one_percent_low_fps": 36.201273208562874,
+      "over_33ms_frames": 1,
+      "over_50ms_frames": 0,
+      "jfr_during_capture": false,
+      "gpu_samples": 60,
+      "gpu_mean_percent": 60.95,
+      "gpu_mean_power_w": 115.57883333333334,
+      "gpu_max_temperature_c": 48.96
+    },
+    {
+      "label": "bulk-idle-3",
+      "fast_vertices": true,
+      "fast_advance": true,
+      "stationary": true,
+      "terrain_cache_aligned": true,
+      "condition": "Stationary bulk repeat; same JVM/aligned cache; day.",
+      "requested_seconds": 60,
+      "frames": 3459,
+      "runtime": [
+        "Other"
+      ],
+      "mean_fps": 57.6952399915822,
+      "median_frame_ms": 16.9791,
+      "p95_frame_ms": 22.63797,
+      "p99_frame_ms": 26.820632000000003,
+      "one_percent_low_fps": 34.400208288346874,
+      "over_33ms_frames": 1,
+      "over_50ms_frames": 0,
+      "jfr_during_capture": false,
+      "gpu_samples": 60,
+      "gpu_mean_percent": 59.4,
+      "gpu_mean_power_w": 113.958,
+      "gpu_max_temperature_c": 48.8
+    }
+  ],
+  "profiles": [
+    {
+      "label": "native-path-check",
+      "scope": "Exploratory native warmup; movement occurred.",
+      "duration_seconds": 35,
+      "render_samples": 1006,
+      "advance_method_samples": 0,
+      "advance_bytecode_index_samples": {},
+      "gc_pause_max_ms": 6.0,
+      "render_leaf_methods": [
+        {
+          "method": "net.irisshaders.iris.vertices.NormalHelper.computeTangentSmooth",
+          "samples": 92,
+          "render_sample_percent": 9.15
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.handler$bjf000$iris$beforeNext",
+          "samples": 84,
+          "render_sample_percent": 8.35
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.m_5751_",
+          "samples": 56,
+          "render_sample_percent": 5.57
+        },
+        {
+          "method": "com.pixelmonmod.pixelmon.client.models.smd.NormalizedFace.redirect$ebj000$psa$submitVertex",
+          "samples": 42,
+          "render_sample_percent": 4.17
+        },
+        {
+          "method": "java.nio.DirectByteBuffer.ix",
+          "samples": 29,
+          "render_sample_percent": 2.88
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.fillExtendedData",
+          "samples": 27,
+          "render_sample_percent": 2.68
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.m_5752_",
+          "samples": 25,
+          "render_sample_percent": 2.49
+        },
+        {
+          "method": "com.pixelmonmod.pixelmon.client.models.smd.ValveStudioModel$$Lambda$56477+0x0000000806153228.1148525473.accept",
+          "samples": 21,
+          "render_sample_percent": 2.09
+        },
+        {
+          "method": "com.pixelmonmod.pixelmon.client.models.smd.SmdModel.buildVBO",
+          "samples": 19,
+          "render_sample_percent": 1.89
+        },
+        {
+          "method": "org.lwjgl.opengl.GL11C.nglDrawElements",
+          "samples": 13,
+          "render_sample_percent": 1.29
+        }
+      ]
+    },
+    {
+      "label": "bulk-path-check",
+      "scope": "Initial bulk warmup; smaller initial terrain cache.",
+      "duration_seconds": 35,
+      "render_samples": 1292,
+      "advance_method_samples": 185,
+      "advance_bytecode_index_samples": {
+        "202": 185
+      },
+      "gc_pause_max_ms": 3.85,
+      "render_leaf_methods": [
+        {
+          "method": "net.irisshaders.iris.vertices.NormalHelper.computeTangentSmooth",
+          "samples": 215,
+          "render_sample_percent": 16.64
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.psa$tryAdvanceEntityBase",
+          "samples": 185,
+          "render_sample_percent": 14.32
+        },
+        {
+          "method": "com.pixelmonmod.pixelmon.client.models.smd.Bone.applyModified",
+          "samples": 85,
+          "render_sample_percent": 6.58
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.m_5751_",
+          "samples": 42,
+          "render_sample_percent": 3.25
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.fillExtendedData",
+          "samples": 41,
+          "render_sample_percent": 3.17
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.handler$bjf000$iris$beforeNext",
+          "samples": 41,
+          "render_sample_percent": 3.17
+        },
+        {
+          "method": "org.lwjgl.opengl.GL11C.nglDrawElements",
+          "samples": 34,
+          "render_sample_percent": 2.63
+        },
+        {
+          "method": "java.util.HashMap$HashIterator.nextNode",
+          "samples": 28,
+          "render_sample_percent": 2.17
+        },
+        {
+          "method": "net.minecraft.world.level.chunk.PalettedContainer.m_63085_",
+          "samples": 20,
+          "render_sample_percent": 1.55
+        },
+        {
+          "method": "com.pixelmonmod.pixelmon.client.models.smd.SmdModel.buildVBO",
+          "samples": 18,
+          "render_sample_percent": 1.39
+        }
+      ]
+    },
+    {
+      "label": "native-fixed-path-check2",
+      "scope": "Fixed-pose native warmup.",
+      "duration_seconds": 35,
+      "render_samples": 982,
+      "advance_method_samples": 0,
+      "advance_bytecode_index_samples": {},
+      "gc_pause_max_ms": 5.6,
+      "render_leaf_methods": [
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.m_5751_",
+          "samples": 60,
+          "render_sample_percent": 6.11
+        },
+        {
+          "method": "net.irisshaders.iris.vertices.NormalHelper.computeTangentSmooth",
+          "samples": 50,
+          "render_sample_percent": 5.09
+        },
+        {
+          "method": "net.irisshaders.iris.compat.sodium.impl.vertex_format.entity_xhfp.GlyphVertexExt.endQuad",
+          "samples": 36,
+          "render_sample_percent": 3.67
+        },
+        {
+          "method": "com.pixelmonmod.pixelmon.client.models.smd.NormalizedFace.redirect$ebj000$psa$submitVertex",
+          "samples": 34,
+          "render_sample_percent": 3.46
+        },
+        {
+          "method": "it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap.find",
+          "samples": 34,
+          "render_sample_percent": 3.46
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.VertexConsumer.m_5954_",
+          "samples": 27,
+          "render_sample_percent": 2.75
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.handler$bjf000$iris$beforeNext",
+          "samples": 23,
+          "render_sample_percent": 2.34
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.psa$tryEntityVertex",
+          "samples": 22,
+          "render_sample_percent": 2.24
+        },
+        {
+          "method": "org.lwjgl.opengl.GL11C.nglDrawElements",
+          "samples": 20,
+          "render_sample_percent": 2.04
+        },
+        {
+          "method": "traben.entity_model_features.models.parts.EMFModelPartCustom$EMFCube.m_171332_",
+          "samples": 16,
+          "render_sample_percent": 1.63
+        }
+      ]
+    },
+    {
+      "label": "bulk-aligned-path-check",
+      "scope": "Fixed-pose aligned-cache bulk warmup.",
+      "duration_seconds": 35,
+      "render_samples": 887,
+      "advance_method_samples": 1,
+      "advance_bytecode_index_samples": {
+        "84": 1
+      },
+      "gc_pause_max_ms": 10.3,
+      "render_leaf_methods": [
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.handler$bjf000$iris$beforeNext",
+          "samples": 56,
+          "render_sample_percent": 6.31
+        },
+        {
+          "method": "org.lwjgl.opengl.GL11C.nglDrawElements",
+          "samples": 37,
+          "render_sample_percent": 4.17
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.fillExtendedData",
+          "samples": 27,
+          "render_sample_percent": 3.04
+        },
+        {
+          "method": "net.irisshaders.iris.vertices.NormalHelper.computeTangentSmooth",
+          "samples": 26,
+          "render_sample_percent": 2.93
+        },
+        {
+          "method": "java.util.HashMap$HashIterator.nextNode",
+          "samples": 19,
+          "render_sample_percent": 2.14
+        },
+        {
+          "method": "com.mojang.blaze3d.vertex.BufferBuilder.m_5751_",
+          "samples": 19,
+          "render_sample_percent": 2.14
+        },
+        {
+          "method": "java.nio.DirectByteBuffer.ix",
+          "samples": 16,
+          "render_sample_percent": 1.8
+        },
+        {
+          "method": "org.lwjgl.opengl.GL20C.glUseProgram",
+          "samples": 16,
+          "render_sample_percent": 1.8
+        },
+        {
+          "method": "java.lang.StringLatin1.hashCode",
+          "samples": 16,
+          "render_sample_percent": 1.8
+        },
+        {
+          "method": "net.minecraft.world.level.chunk.PalettedContainer.m_63085_",
+          "samples": 15,
+          "render_sample_percent": 1.69
+        }
+      ]
+    }
+  ],
+  "terrain_cache": {
+    "aligned_before_final_bulk_runs": true,
+    "files": 10,
+    "bytes": 1396755,
+    "source_target_content_digest_matched": true,
+    "old_bulk_cache_preserved": true,
+    "observed_geometry_counter": [
+      114,
+      3072
+    ],
+    "limit": "Bobby cache only; live entities, lighting and rebuilt GPU buffers were not frozen."
+  },
+  "path_observation": {
+    "initial_bulk_samples_at_bci202": 185,
+    "authored_bytecode_correspondence": "BCI202 reads plan.target.actual after prior cursor writes; success returns at208/209.",
+    "interpretation": "Samples support execution of the guarded cursor-update path in the initial ON diagnostic; not an invocation count or FPS gain.",
+    "aligned_bulk_sample_at_bci84": 1,
+    "sampling_limit": "Few or absent method samples cannot establish that a path is disabled."
+  },
+  "excluded_diagnostic": "native-fixed-path-check.jfr began on a login-failure screen; stopped and excluded.",
+  "observations": [
+    "First native record contains user-confirmed movement and is excluded from stationary comparison.",
+    "Same native JVM varied from67.30 to58.29FPS in successive stationary records.",
+    "Initial bulk record had different terrain cache; final bulk records follow cache alignment.",
+    "Native stationary records were at night; bulk records were in daylight. Live time/weather/entities were not controlled.",
+    "No obvious corruption observed in this common scene, HUD and a subset of models; not exhaustive visual acceptance."
+  ],
+  "conclusion": "No clear real-world FPS improvement established. Keep startup defaults OFF, PR draft and issue open.",
+  "limits": [
+    "Not a causal or statistically powered overall-FPS comparison.",
+    "Kernel timing gains do not predict full game FPS.",
+    "No matched deterministic movement comparison or exhaustive all-model/material/battle/shadow/HUD acceptance.",
+    "Raw CSV/JFR, account/server details, exact coordinates and screenshots are not published."
+  ],
+  "postchecks": {
+    "recorder_stopped": true,
+    "presentmon_processes": 0,
+    "original_unchanged": true,
+    "previous_playtest_unchanged": true,
+    "current_separate_test": "bulk ON; user may play",
+    "merged": false,
+    "original_deployment": false
+  }
+}
