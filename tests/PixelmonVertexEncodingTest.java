@@ -46,7 +46,9 @@ public final class PixelmonVertexEncodingTest {
 
     public static void main(String[] args) {
         String priorFlag=System.getProperty("psa.pixelmon.fastVertices");
+        String priorAdvance=System.getProperty("psa.pixelmon.fastAdvance");
         try {
+            System.clearProperty("psa.pixelmon.fastAdvance");
             System.clearProperty("psa.pixelmon.fastVertices");
             RenderCompatPlugin off=new RenderCompatPlugin(); off.onLoad("ignored");
             if(off.shouldApplyMixin("BufferBuilder","EntityBufferMixin")
@@ -57,9 +59,21 @@ public final class PixelmonVertexEncodingTest {
             if(!on.shouldApplyMixin("BufferBuilder","EntityBufferMixin")
                     || !on.shouldApplyMixin("NormalizedFace","PixelmonFaceMixin"))
                 throw new AssertionError("explicit opt-in must apply both mixins");
+            if(on.shouldApplyMixin("BufferBuilder","dev.psa.pixelmonrender.mixin.EntityAdvanceMixin"))
+                throw new AssertionError("advance must require its own explicit opt-in");
+            System.setProperty("psa.pixelmon.fastAdvance","true");
+            RenderCompatPlugin both=new RenderCompatPlugin(); both.onLoad("ignored");
+            if(!both.shouldApplyMixin("BufferBuilder","dev.psa.pixelmonrender.mixin.EntityAdvanceMixin"))
+                throw new AssertionError("both flags must enable advance");
+            System.clearProperty("psa.pixelmon.fastVertices");
+            RenderCompatPlugin advanceOnly=new RenderCompatPlugin(); advanceOnly.onLoad("ignored");
+            if(advanceOnly.shouldApplyMixin("BufferBuilder","dev.psa.pixelmonrender.mixin.EntityAdvanceMixin"))
+                throw new AssertionError("advance alone must not transform classes");
         } finally {
             if(priorFlag==null) System.clearProperty("psa.pixelmon.fastVertices");
             else System.setProperty("psa.pixelmon.fastVertices",priorFlag);
+            if(priorAdvance==null) System.clearProperty("psa.pixelmon.fastAdvance");
+            else System.setProperty("psa.pixelmon.fastAdvance",priorAdvance);
         }
         float[] edge = {0f,-0f,1f,-1f,0.5f,-0.5f,1.01f,-1.01f,Float.NaN,
                 Float.POSITIVE_INFINITY,Float.NEGATIVE_INFINITY,Float.MIN_VALUE,Float.MAX_VALUE};
