@@ -61,7 +61,7 @@ CPU 애니메이션의 병렬화·GPU skinning은 별도 설계가 필요하다.
 
 기존 `-Dpsa.pixelmon.fastVertices=true`와 별도로 `-Dpsa.pixelmon.fastAdvance=true`가 필요하며 재시작 후 적용된다. 두 번째 옵션이 없으면 추가 mixin과 interface가 없고 기존 정점 함수의 명령도 그대로다. 실제 합성 클래스에서 기존 r4와 새 후보의 native-only 정점 함수는 디버그 메타데이터를 제외한 opcode/operand 해시 `6ccbaf73b93130f1ffdbd6a446878fec146e4c7100c982a80a263bc96d09beba`, 코드 크기 204바이트가 일치했다.
 
-새 mixin은 현재 단계 이동 메서드가 고정 Embeddium 구현과 같은지 확인한다. 고정 Mixin 0.8.5의 priority 오름차순을 확인하고 `Integer.MAX_VALUE`로 일반적인 buffer 플러그인의 postApply 이후에 검사한다. 확인된 경우에만 authored 정점 함수의 정확한 6회 루프 앞에 세 명령을 넣어 새 이동에 성공하면 원래 `endVertex`로 간다. 다른 메서드 본문이나 예상하지 못한 authored 루프는 기존 호출을 유지하고 새 이동을 비활성화한다. 디버그 label·frame·행 번호는 해시에서 제외한다. 같은 priority에서 더 늦게 실행되는 postApply나 임의의 bytecode agent까지 보호하는 보안 경계는 아니다.
+새 mixin은 현재 단계 이동 메서드가 고정 Embeddium 구현과 같은지 확인한다. 고정 Mixin 0.8.5가 priority를 signed int 뺄셈으로 비교하므로 `1 << 30`을 사용한다. 다른 대상 mixin들의 priority가 모두 `-(1 << 30)` 초과·`1 << 30` 미만이면 양방향 비교에서 오버플로 없이 먼저 실행되며 일반적인 음수 값과 기본값 1000을 포함한다. 최대 정수 값은 음수 priority와 만나면 오버플로하므로 사용하지 않는다. 확인된 경우에만 authored 정점 함수의 정확한 6회 루프 앞에 세 명령을 넣어 새 이동에 성공하면 원래 `endVertex`로 간다. 다른 메서드 본문이나 예상하지 못한 authored 루프는 기존 호출을 유지하고 새 이동을 비활성화한다. 디버그 label·frame·행 번호는 해시에서 제외한다. `-(1 << 30)` 이하의 극단적인 priority가 섞이면 전체 정렬도 보장할 수 없다. 이 경우와 같거나 더 높은 priority의 이후 postApply, 임의의 bytecode agent는 검사 범위 밖이다.
 
 정확히 BufferBuilder인 런타임 클래스만 새 이동을 허용한다. 하위 클래스가 재정의한 단계 이동은 검사한 기본 본문과 다를 수 있으므로 기존 가상 호출을 유지한다. 실제 배열·형식·시작/도착 요소·패딩을 포함한 이동량·고정 색·진행 중인 정점·버퍼 범위를 검사한 뒤 네 커서 필드만 바꾼다. 검증한 여섯 요소와 도착 요소의 참조를 매번 확인하므로 배열의 요소가 교체되면 기존 경로로 돌아간다. Embeddium이 추가하는 필드는 Mixin 준비 단계의 shadow로 찾을 수 없어, MAIN 이후 INJECT 단계에서 생성되는 accessor로 연결한다.
 
@@ -74,8 +74,8 @@ CPU 애니메이션의 병렬화·GPU skinning은 별도 설계가 필요하다.
 
 | 실행 옵션 | 원본 중앙값 | 후보 중앙값 | 해당 구간 시간 감소 |
 |---|---:|---:|---:|
-| fastVertices + fastAdvance | 38.3738 ms | 27.3189 ms | 28.81% |
-| fastVertices만 | 35.1760 ms | 29.4736 ms | 16.21% |
+| fastVertices + fastAdvance | 35.0607 ms | 25.5207 ms | 27.21% |
+| fastVertices만 | 36.8705 ms | 31.5410 ms | 14.45% |
 
 각 행은 별도 JVM에서 그 안의 원본과 후보를 짝지어 측정했다. 행 사이의 단순 차이나 이 비율을 전체 게임 FPS 개선율로 해석하지 않는다. 초기의 짧은 워밍업 기록에서는 측정 중 속도 변화가 관측돼 최종 표에는 충분히 워밍업한 기록만 사용했다. 실제 월드의 모든 consumer·모델·재질·그림자·HUD 및 반복 FPS A/B 승격 조건은 남는다. 기본 비활성과 draft를 유지한다.
 
