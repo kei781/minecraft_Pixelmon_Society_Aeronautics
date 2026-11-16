@@ -54,7 +54,7 @@ Interfaces: `FastEntityVertexAdvance.psa$tryAdvanceEntityBase(): boolean` return
 
 Files: docs/pixelmon-render-performance.md, sanitized evidence JSON, build receipt metadata as appropriate.
 
-- [ ] Record exact candidate hash, commands, kernel results, baseline sandbox limits and unverified world/visual scope.
+- [x] Record exact candidate hash, commands, kernel results, baseline sandbox limits and unverified world/visual scope.
 - [ ] Run appropriate Python checks and full CI; inspect failures rather than hiding existing Windows symlink restrictions.
 - [ ] Push feature branch; create stacked draft PR targeting perf/pixelmon-render-pipeline, refs #21 and #22.
 - [ ] Run independent latest Claude Opus review/fixes/re-review until latest HEAD clean and all threads resolved (max 8 rounds).

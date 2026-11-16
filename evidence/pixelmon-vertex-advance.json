@@ -1,0 +1,145 @@
+{
+  "issue": 21,
+  "stacked_on_pr": 22,
+  "base_commit": "314eed34df819b2fa6612a41f31e175328f8f9c3",
+  "tested_source_commit": "0c29600871d90f13d6491de5ce88e80bc8cfa353",
+  "candidate_sha256": "ebb3c1f1ba94ff0f35e3cecdd826f4fa0f7a6997746a50d7c0ca584a85f1e0a5",
+  "probe_sha256": "be67c4eeb0c9ab4a24aee0068cb511583fadef7a2eda08c90578bbe246668c98",
+  "versions": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.20",
+    "pixelmon": "9.2.3",
+    "oculus": "1.8.0",
+    "embeddium": "0.3.31"
+  },
+  "configuration": "Isolated default QA, original 355 mod JARs plus authored candidate and probe; no world created or joined.",
+  "native_only_opcode_comparison": {
+    "Method": "psa$tryEntityVertex",
+    "CanonicalOpcodeDigest": "6ccbaf73b93130f1ffdbd6a446878fec146e4c7100c982a80a263bc96d09beba",
+    "R4MatchesR3NativeOnly": true,
+    "DebugMetadataExcluded": true,
+    "BytecodeBytes": 204
+  },
+  "records": {
+    "advance-r3-warm-on": {
+      "fast_vertices": true,
+      "fast_advance": true,
+      "result": {
+        "result": "PASS",
+        "compared_vertices": 1400,
+        "attribute_bytes": 74200,
+        "modes": [
+          "TRIANGLES",
+          "QUADS"
+        ],
+        "buffer_growth": true,
+        "nonfinite_fallback": true,
+        "normalized_face_loaded": true,
+        "mixed_submissions": true,
+        "advance_state_cases": 12,
+        "cpu_microbenchmark": {
+          "vertices_per_sample": 460800,
+          "warmup_min_seconds": 3,
+          "warmup_pairs": 93,
+          "original_ns": [
+            37781700,
+            35183500,
+            35277600,
+            35277600,
+            36784800,
+            36619400,
+            36251600
+          ],
+          "candidate_ns": [
+            27185700,
+            25480600,
+            25512700,
+            25501900,
+            26595600,
+            27213400,
+            26399600
+          ]
+        }
+      },
+      "summary": {
+        "original_median_ms": 36.2516,
+        "candidate_median_ms": 26.3996,
+        "time_reduction_percent": 27.17673150978165
+      }
+    },
+    "advance-r3-warm-legacy": {
+      "fast_vertices": true,
+      "fast_advance": false,
+      "result": {
+        "result": "PASS",
+        "compared_vertices": 1400,
+        "attribute_bytes": 74200,
+        "modes": [
+          "TRIANGLES",
+          "QUADS"
+        ],
+        "buffer_growth": true,
+        "nonfinite_fallback": true,
+        "normalized_face_loaded": true,
+        "mixed_submissions": true,
+        "advance_state_cases": 0,
+        "cpu_microbenchmark": {
+          "vertices_per_sample": 460800,
+          "warmup_min_seconds": 3,
+          "warmup_pairs": 89,
+          "original_ns": [
+            36355300,
+            36403100,
+            36411000,
+            35579000,
+            35549400,
+            35584000,
+            35627600
+          ],
+          "candidate_ns": [
+            29944800,
+            30311500,
+            29762400,
+            29325300,
+            29153400,
+            29182500,
+            29060800
+          ]
+        }
+      },
+      "summary": {
+        "original_median_ms": 35.6276,
+        "candidate_median_ms": 29.3253,
+        "time_reduction_percent": 17.689375652583962
+      }
+    },
+    "advance-r3-off": {
+      "fast_vertices": false,
+      "fast_advance": false,
+      "result": {
+        "result": "PASS",
+        "opt_out": true,
+        "buffer_adapter_absent": true,
+        "face_redirect_absent": true
+      }
+    }
+  },
+  "checks": {
+    "real_minecraft_base_encoding_cases": 10016,
+    "build_python_tests_passed": 8,
+    "full_windows_tests_run": 177,
+    "preexisting_windows_symlink_errors": 17,
+    "windows_skipped": 15,
+    "new_windows_error_names": []
+  },
+  "limits": [
+    "Experimental; default OFF; both startup flags required for bulk advance.",
+    "CPU attribute-submission microbenchmark with reused builders and precomputed inputs; not game FPS or GPU draw.",
+    "Separate JVMs have paired original controls; do not treat cross-row differences as causal FPS gains.",
+    "No real-world all-model/material/shadow/HUD acceptance for this new candidate.",
+    "Later postApply plugins or bytecode agents are outside the observed-body compatibility check.",
+    "Build inputs are hash-pinned; runtime dependency metadata checks versions, not all installed JAR hashes.",
+    "Raw class exports, compilation logs, account/server/world information are not included."
+  ],
+  "disposition": "Keep default OFF, draft PR and issue open; no original/playtest deployment or merge."
+}
