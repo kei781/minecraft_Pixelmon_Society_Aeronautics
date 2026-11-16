@@ -9,8 +9,8 @@ import net.irisshaders.iris.vertices.IrisVertexFormats;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-/** Mixin 0.8.5 orders priorities ascending; check after ordinary buffer plugins. */
-@Mixin(value=BufferBuilder.class,remap=false,priority=Integer.MAX_VALUE)
+/** Check after ordinary priorities; Mixin 0.8.5 subtracts ints (see spec for extreme bounds). */
+@Mixin(value=BufferBuilder.class,remap=false,priority=1 << 30)
 public abstract class EntityAdvanceMixin implements FastEntityVertexAdvance {
     @Shadow private ByteBuffer f_85648_;
     @Shadow private int f_85652_;
