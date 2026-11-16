@@ -33,10 +33,10 @@ Files: RenderCompatPlugin.java, new AdvanceCompatibility.java, PixelmonVertexEnc
 
 Interfaces: `AdvanceCompatibility.supports(ClassNode): boolean`; `disableUnsupported(ClassNode): void` rewrites only the authored `psa$tryAdvanceEntityBase(): boolean` to return false if unsupported.
 
-- [ ] Add the two-flag matrix to the real Java test; build --test must fail on the existing plugin.
-- [ ] Add a bytecode test against the pinned real Embeddium method, plus injected foreign-hook/missing-method rejection; run RED before implementing the guard.
-- [ ] Implement gating and the normalized structural hash guard; run Java and Python build checks GREEN.
-- [ ] Commit the tested gate, helper and tests.
+- [x] Add the two-flag matrix to the real Java test; build --test must fail on the existing plugin.
+- [x] Add a bytecode test against the pinned real Embeddium method, plus injected foreign-hook/missing-method rejection; run RED before implementing the guard.
+- [x] Implement gating and the normalized structural hash guard; run Java and Python build checks GREEN.
+- [x] Commit the tested gate, helper and tests.
 
 ### Task 2: State collapse and actual Forge invariants
 
@@ -44,11 +44,11 @@ Files: new FastEntityVertexAdvance.java, new EntityAdvanceMixin.java, EntityBuff
 
 Interfaces: `FastEntityVertexAdvance.psa$tryAdvanceEntityBase(): boolean` returns false without mutation when unsupported. EntityBufferMixin falls back to six original calls.
 
-- [ ] Extend the QA probe with real original-six-versus-candidate state comparison and opt-out checks. Run it with the old candidate and observe RED.
-- [ ] Implement validated transition planning and cursor update; register low-priority mixin; run probe GREEN with both flags.
-- [ ] Cover rejected/mixed/reused builders, TRIANGLES/QUADS extended-byte equality and growth in the probe.
-- [ ] Run the same JAR with advance OFF and all flags OFF; run alternating-order CPU microbenchmark for both enabled cases.
-- [ ] Commit implementation and probe after meaningful checks pass.
+- [x] Extend the QA probe with real original-six-versus-candidate state comparison and opt-out checks. Run it with the old candidate and observe RED.
+- [x] Implement validated transition planning and cursor update; register low-priority mixin; run probe GREEN with both flags.
+- [x] Cover rejected/mixed/reused builders, TRIANGLES/QUADS extended-byte equality and growth in the probe.
+- [x] Run the same JAR with advance OFF and all flags OFF; run alternating-order CPU microbenchmark for both enabled cases.
+- [x] Commit implementation and probe after meaningful checks pass.
 
 ### Task 3: Evidence, CI, PR and review
 

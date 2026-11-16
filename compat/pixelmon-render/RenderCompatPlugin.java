@@ -22,6 +22,6 @@ public final class RenderCompatPlugin implements IMixinConfigPlugin {
     @Override public void acceptTargets(Set<String> own, Set<String> other) { }
     @Override public void preApply(String target, ClassNode node, String mixin, IMixinInfo info) { }
     @Override public void postApply(String target, ClassNode node, String mixin, IMixinInfo info) {
-        if(mixin.endsWith("EntityAdvanceMixin"))AdvanceCompatibility.disableUnsupported(node);
+        if(mixin.endsWith("EntityAdvanceMixin"))AdvanceCompatibility.configure(node);
     }
 }
