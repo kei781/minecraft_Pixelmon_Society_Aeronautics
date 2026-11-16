@@ -453,7 +453,8 @@
     "authored_bytecode_correspondence": "BCI202 reads plan.target.actual after prior cursor writes; success returns at208/209.",
     "interpretation": "Samples support execution of the guarded cursor-update path in the initial ON diagnostic; not an invocation count or FPS gain.",
     "aligned_bulk_sample_at_bci84": 1,
-    "sampling_limit": "Few or absent method samples cannot establish that a path is disabled."
+    "aligned_bulk_successful_path_verified": false,
+    "sampling_limit": "Successful cursor-update evidence belongs only to initial ON before cache alignment. The aligned ON diagnostic has one guard-region sample at BCI84, so successful execution was not verified for the compared final records; few or absent method samples cannot establish that a path is disabled."
   },
   "excluded_diagnostic": "native-fixed-path-check.jfr began on a login-failure screen; stopped and excluded.",
   "observations": [
@@ -461,12 +462,17 @@
     "Same native JVM varied from67.30 to58.29FPS in successive stationary records.",
     "Initial bulk record had different terrain cache; final bulk records follow cache alignment.",
     "Native stationary records were at night; bulk records were in daylight. Live time/weather/entities were not controlled.",
+    "Native nextElement leaf samples were 5.57% and6.11%, far below the earlier26.03% motivation; this scene has low sensitivity to this candidate.",
+    "Same-JVM native mean FPS decreased13.4% between successive records; this uncontrolled variability obscures a potentially small effect.",
+    "Successful cursor-update execution is supported only in initial ON; it was not verified in the cache-aligned ON session used for the final comparison.",
     "No obvious corruption observed in this common scene, HUD and a subset of models; not exhaustive visual acceptance."
   ],
   "conclusion": "No clear real-world FPS improvement established. Keep startup defaults OFF, PR draft and issue open.",
   "limits": [
     "Not a causal or statistically powered overall-FPS comparison.",
     "Kernel timing gains do not predict full game FPS.",
+    "Sampling proportions are not exact CPU-time fractions or a rigorous FPS-effect upper bound; these records cannot establish that the candidate has no effect.",
+    "For a future A/B, first identify a model-dense scene where nextElement has a substantial baseline share, then retain successful-path evidence from the same JVM as each ON capture, separately from frame recording.",
     "No matched deterministic movement comparison or exhaustive all-model/material/battle/shadow/HUD acceptance.",
     "Raw CSV/JFR, account/server details, exact coordinates and screenshots are not published."
   ],
