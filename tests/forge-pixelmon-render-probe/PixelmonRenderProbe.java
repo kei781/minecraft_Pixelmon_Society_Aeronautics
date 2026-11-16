@@ -153,7 +153,7 @@ public final class PixelmonRenderProbe {
         return result;
     }
 
-    private static int compareAttributes(byte[] original, byte[] candidate) {
+    static int compareAttributes(byte[] original, byte[] candidate) {
         if (original.length != candidate.length) throw new AssertionError("vertex length differs");
         int stride=IrisVertexFormats.ENTITY.m_86020_(), checked=0;
         boolean[] padding=new boolean[stride]; int offset=0;
@@ -204,12 +204,19 @@ public final class PixelmonRenderProbe {
                 bytes+=compareAttributes(vertices(false,mode,count),vertices(true,mode,count));
                 bytes+=compareAttributes(vertices(false,mode,count),vertices(true,true,mode,count));
             }
+            String timing=Boolean.getBoolean("psa.render.probe.benchmark")?benchmark():"";
+            String subclass=(String)Class.forName("dev.psa.pixelmonrenderprobe.SubclassAdvanceProbe")
+                    .getMethod("verify").invoke(null);
+            int padding=IrisVertexFormats.ENTITY.m_86023_().stream()
+                    .filter(e->e.m_86048_()==VertexFormatElement.Usage.PADDING).mapToInt(VertexFormatElement::m_86050_).sum();
             result="{\"result\":\"PASS\",\"compared_vertices\":1400,\"attribute_bytes\":"+bytes
                     +",\"modes\":[\"TRIANGLES\",\"QUADS\"],\"buffer_growth\":true,\"nonfinite_fallback\":true,\"normalized_face_loaded\":true"
                     +",\"mixed_submissions\":true,\"advance_state_cases\":"+advanceCases
-                    +(Boolean.getBoolean("psa.render.probe.benchmark")?benchmark():"")+"}";
+                    +",\"entity_stride\":"+IrisVertexFormats.ENTITY.m_86020_()+",\"padding_bytes_per_vertex\":"+padding
+                    +timing+subclass+"}";
             }
         } catch(Throwable error) {
+            if(error instanceof InvocationTargetException && error.getCause()!=null)error=error.getCause();
             error.printStackTrace();
             result="{\"result\":\"FAIL\",\"error\":\""+error.toString().replace("\\","\\\\").replace("\"","\\\"").replace("\n"," ")+"\"}";
         } finally {

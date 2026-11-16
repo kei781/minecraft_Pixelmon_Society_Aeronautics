@@ -9,8 +9,8 @@ import net.irisshaders.iris.vertices.IrisVertexFormats;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-/** Runs after the known buffer mixins, then the plugin checks the observed nextElement body. */
-@Mixin(value=BufferBuilder.class,remap=false,priority=1)
+/** Mixin 0.8.5 orders priorities ascending; check after ordinary buffer plugins. */
+@Mixin(value=BufferBuilder.class,remap=false,priority=Integer.MAX_VALUE)
 public abstract class EntityAdvanceMixin implements FastEntityVertexAdvance {
     @Shadow private ByteBuffer f_85648_;
     @Shadow private int f_85652_;
@@ -31,7 +31,7 @@ public abstract class EntityAdvanceMixin implements FastEntityVertexAdvance {
     @Override
     public boolean psa$tryAdvanceEntityBase() {
         Object self=this;
-        if(f_85658_!=IrisVertexFormats.ENTITY || f_85656_!=0
+        if(self.getClass()!=BufferBuilder.class || f_85658_!=IrisVertexFormats.ENTITY || f_85656_!=0
                 || (f_85657_!=VertexFormat.Mode.TRIANGLES && f_85657_!=VertexFormat.Mode.QUADS)
                 || !(self instanceof ExtendedBufferBuilder sodium) || sodium.sodium$usingFixedColor()
                 || !NativeEntityVertex.canWrite(f_85648_,f_85652_,f_85658_.m_86020_()))return false;

@@ -45,7 +45,7 @@ Files: new FastEntityVertexAdvance.java, new EntityAdvanceMixin.java, EntityBuff
 Interfaces: `FastEntityVertexAdvance.psa$tryAdvanceEntityBase(): boolean` returns false without mutation when unsupported. EntityBufferMixin falls back to six original calls.
 
 - [x] Extend the QA probe with real original-six-versus-candidate state comparison and opt-out checks. Run it with the old candidate and observe RED.
-- [x] Implement validated transition planning and cursor update; register low-priority mixin; run probe GREEN with both flags.
+- [x] Implement validated transition planning and cursor update; register the mixin with a late observed-body check; run probe GREEN with both flags.
 - [x] Cover rejected/mixed/reused builders, TRIANGLES/QUADS extended-byte equality and growth in the probe.
 - [x] Run the same JAR with advance OFF and all flags OFF; run alternating-order CPU microbenchmark for both enabled cases.
 - [x] Commit implementation and probe after meaningful checks pass.
