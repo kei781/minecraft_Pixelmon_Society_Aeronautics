@@ -62,8 +62,8 @@
   ],
   "code_checks": {
     "core_unittest": {
-      "run": 201,
-      "passed": 190,
+      "run": 202,
+      "passed": 191,
       "skipped": 11,
       "failures": 0,
       "errors": 0,
@@ -89,6 +89,12 @@
       "default_and_override_flags": "passed",
       "pinned_embeddium_body_and_rejection_guards": "passed",
       "receipt": "compat/pixelmon-render-build.json"
+    },
+    "probe_compile": {
+      "all_sources_compiled_against_real_pinned_classpath": true,
+      "subclass_guard_uses_effective_startup_default": true,
+      "native_forge_probe_launched_in_this_task": false,
+      "qa_jar_excluded_from_player_pack": true
     }
   },
   "deployment": {

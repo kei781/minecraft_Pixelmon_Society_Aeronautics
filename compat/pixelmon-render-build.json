@@ -19,6 +19,7 @@
     "compat/pixelmon-render/resources/pack.mcmeta": "3cfb0918f691063ca52303412ced3f35ae66a643221f80d370e35ef9ebe2e3e7",
     "compat/pixelmon-render/resources/psa-pixelmon-render.mixins.json": "2095dda646a66ae2949c48974fca8174786732e6267f279d09b04e2901c36d8e"
   },
+  "recipe_path": "tools/build_pixelmon_render.py",
   "recipe_sha256": "6b106cbe6cab0e4837be5013ba2dfcc3bef266996458ea123fb44ac6cd21bd93",
   "input_sha256": {
     "Pixelmon-1.20.1-9.2.3-universal.jar": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",

@@ -35,7 +35,8 @@ public final class SubclassAdvanceProbe {
     }
     public static String verify() throws Exception {
         int guardCases=0;
-        if(Boolean.getBoolean("psa.pixelmon.fastAdvance")) {
+        boolean advanceEnabled=RenderCompatPlugin.advanceEnabled();
+        if(advanceEnabled) {
             CountingBuilder builder=new CountingBuilder();
             builder.m_166779_(VertexFormat.Mode.TRIANGLES,DefaultVertexFormat.f_85812_);
             List<Object> before=cursor(builder);
@@ -44,6 +45,8 @@ public final class SubclassAdvanceProbe {
             if(builder.calls!=0 || !before.equals(cursor(builder)))throw new AssertionError("Subclass rejection changed state");
             builder.m_231175_().m_231200_();guardCases++;
         }
+        if(guardCases!=(advanceEnabled?1:0))
+            throw new AssertionError("Subclass guard count does not match the effective startup setting");
         CountingBuilder original=new CountingBuilder(),candidate=new CountingBuilder();
         int checked=PixelmonRenderProbe.compareAttributes(submit(original,false),submit(candidate,true));
         if(original.calls<=0 || candidate.calls!=original.calls)
