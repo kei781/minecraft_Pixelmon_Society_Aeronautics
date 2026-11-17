@@ -4,6 +4,6 @@
   "package": "dev.psa.pixelmonrender.mixin",
   "plugin": "dev.psa.pixelmonrender.RenderCompatPlugin",
   "compatibilityLevel": "JAVA_17",
-  "client": ["EntityBufferMixin", "PixelmonFaceMixin"],
+  "client": ["EntityBufferMixin", "PixelmonFaceMixin", "EntityAdvanceMixin"],
   "injectors": {"defaultRequire": 1}
 }

@@ -152,13 +152,18 @@ def build(libraries, mods, java_home, output, run_tests=False):
         compile_java(javac, sorted(SOURCE.rglob('*.java')), classpath, classes, directory)
         if run_tests:
             tests = Path(directory)/'tests'
-            compile_java(javac, [ROOT/'tests/PixelmonVertexEncodingTest.java'],
+            compile_java(javac, [ROOT/'tests/PixelmonVertexEncodingTest.java',
+                                ROOT/'tests/PixelmonAdvanceCompatibilityTest.java'],
                          str(classes)+os.pathsep+classpath, tests, directory)
             run_java(java,['-cp',os.pathsep.join((str(tests),str(classes),classpath)),
                            'dev.psa.pixelmonrender.PixelmonVertexEncodingTest'],directory)
+            run_java(java,['-cp',os.pathsep.join((str(tests),str(classes),classpath)),
+                           'dev.psa.pixelmonrender.PixelmonAdvanceCompatibilityTest'],directory)
         receipt = package_jar(classes, SOURCE/'resources', output)
     return dict(receipt, compiler=version, inputs=PINS, minecraft_client_sha256=hashlib.sha256(client.read_bytes()).hexdigest(),
-                opt_in='-Dpsa.pixelmon.fastVertices=true', tests_run=run_tests,classpath=inventory)
+                opt_in='-Dpsa.pixelmon.fastVertices=true',
+                advance_opt_in='-Dpsa.pixelmon.fastAdvance=true', advance_requires='-Dpsa.pixelmon.fastVertices=true',
+                tests_run=run_tests,classpath=inventory)
 
 
 if __name__ == '__main__':

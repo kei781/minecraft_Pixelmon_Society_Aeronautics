@@ -34,8 +34,8 @@ public abstract class EntityBufferMixin implements FastEntityVertexSink {
         if (!NativeEntityVertex.canWrite(f_85648_,f_85652_,stride)) return false;
         NativeEntityVertex.write(f_85648_,f_85652_,x,y,z,red,green,blue,alpha,u,v,
                 overlay,light,nx,ny,nz);
-        // Advance position/color/UV0/overlay/light/normal using the original state machine.
-        // Iris's beforeNext still writes entity IDs, midpoint, tangent and updates polygon state.
+        // This six-step body stays unchanged when the separate advance mixin is disabled.
+        // Its plugin adds a guarded skip only around this loop; endVertex stays original.
         for (int element = 0; element < 6; element++) m_5751_();
         m_5752_();
         return true;
