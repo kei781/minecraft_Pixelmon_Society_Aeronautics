@@ -1,0 +1,58 @@
+{
+  "version": "0.2.0",
+  "sha256": "61ecf134a3cec353171d31eb076e650512bbf6ae6b21f92a24976b968e028997",
+  "bytes": 13154,
+  "compiler": "javac 17.0.21",
+  "independent_byte_equal": true,
+  "source_sha256": {
+    "compat/pixelmon-render/AdvanceCompatibility.java": "d8283d897bcbc30a044497f03f30b9ceb7eb6dd940a07be11e67c10d73f31e2c",
+    "compat/pixelmon-render/EntityAdvancePlan.java": "a532bc4081a08e833b67c393f6659221f09b7d5d5dced1702cb9f5f3c1ddec10",
+    "compat/pixelmon-render/FastEntityVertexAdvance.java": "bc238aba33fac4316f6244a20bac6b5108d39f2e0088444230a26e5f655e2270",
+    "compat/pixelmon-render/FastEntityVertexSink.java": "88fe40a67e311dbaf1db07c874d4bb326cedbc2ff06e32a7d9d451099eb1bae7",
+    "compat/pixelmon-render/NativeEntityVertex.java": "ab2570c9ab0b7ab2a312d400568a16b65bac0d3a737ec6213df29adb8cd45989",
+    "compat/pixelmon-render/PixelmonRenderCompat.java": "fdbf9ff694f51c7211d1a072808fa74e0ff4e098722da04e64e32ba07593849f",
+    "compat/pixelmon-render/RenderCompatPlugin.java": "225ecf07758c0f694dfa5f7deda4092706cc5c9156c38dff3b0d308196fd991f",
+    "compat/pixelmon-render/mixin/EntityAdvanceMixin.java": "76dcc86e96614dd6f3356f335f37becd502fbd69fbcafd1ae9fe2ac728dabad7",
+    "compat/pixelmon-render/mixin/EntityBufferMixin.java": "1c487b0f186b2c77c3ecdde8558c7d9382fcc34819bb4f17e70c43fde90fc0e0",
+    "compat/pixelmon-render/mixin/PixelmonFaceMixin.java": "cf06c1da42ddadf9713e118f84072dd88ecea945139047a9ad510ec6515ae778",
+    "compat/pixelmon-render/resources/META-INF/mods.toml": "bc349fdc7095b9524fb11ee7b51bb24681800e246066feb388c4dbbd3ecb550a",
+    "compat/pixelmon-render/resources/pack.mcmeta": "3cfb0918f691063ca52303412ced3f35ae66a643221f80d370e35ef9ebe2e3e7",
+    "compat/pixelmon-render/resources/psa-pixelmon-render.mixins.json": "2095dda646a66ae2949c48974fca8174786732e6267f279d09b04e2901c36d8e"
+  },
+  "recipe_sha256": "6b106cbe6cab0e4837be5013ba2dfcc3bef266996458ea123fb44ac6cd21bd93",
+  "input_sha256": {
+    "Pixelmon-1.20.1-9.2.3-universal.jar": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+    "oculus-mc1.20.1-1.8.0.jar": "0945df0cba0f62b3901dd80c3268e5311b770ece78c78037a45db12ac0425fef",
+    "embeddium-0.3.31+mc1.20.1.jar": "eed3d1325f2acc2fd4e69bb495e5ccb91d962126ac5330f0582ebc2a3daf47fb"
+  },
+  "minecraft_client_sha256": "e2e940fe7ca0a9fba5a5c11ad2cf3e2f7df91bbf51d12af22cdde7af18adc344",
+  "defaults": {
+    "vertices": true,
+    "advance": true
+  },
+  "owner_runtime_acceptance": "Owner confirmed measurements for the preceding PRs on 2026-11-17; this is user-reported acceptance, not a new Codex FPS measurement",
+  "preserved_algorithms": [
+    "NativeEntityVertex.write/finitePosition/canWrite",
+    "EntityBufferMixin",
+    "EntityAdvanceMixin",
+    "EntityAdvancePlan",
+    "AdvanceCompatibility"
+  ],
+  "scope": "Only startup defaults, shared flag lookup and release metadata changed; source targets, guarded cursor behavior, vertices, hooks, shaders, models and server/common JAR unchanged",
+  "entry_sha256": {
+    "META-INF/MANIFEST.MF": "73b7177941a5e769bccc6c34fbd4499433cc608a6aead658c9d60e7def3c3f53",
+    "META-INF/mods.toml": "bc349fdc7095b9524fb11ee7b51bb24681800e246066feb388c4dbbd3ecb550a",
+    "dev/psa/pixelmonrender/AdvanceCompatibility.class": "fb44865559df4a0c47ba13b972da25271ae220af83250b9b0f908683519cf18b",
+    "dev/psa/pixelmonrender/EntityAdvancePlan.class": "85ab6368c9c7be9b34a56848d893503f2b553b5ff04f6574b670bb0993794e2a",
+    "dev/psa/pixelmonrender/FastEntityVertexAdvance.class": "b66bda7ba3ca2e1e6969510ad08c7c88c201703ebace8d3e327ff10580642db2",
+    "dev/psa/pixelmonrender/FastEntityVertexSink.class": "093e02fd993ae9405b3c87fa147508ae8045a30f4a88e86c18b8c974d3be9989",
+    "dev/psa/pixelmonrender/NativeEntityVertex.class": "43583e1a1ffa61abf5dca4bb0e95fec9d63090892b874a40f0475ef4e5b026bb",
+    "dev/psa/pixelmonrender/PixelmonRenderCompat.class": "cf9c601e178b899a86ebd2c9a15e6a889570c4130fb173268937ab6143da9f8e",
+    "dev/psa/pixelmonrender/RenderCompatPlugin.class": "395f821ec42348ad7737658275c9bbfba2df48efb1bd09682ccce4e30bf9ef57",
+    "dev/psa/pixelmonrender/mixin/EntityAdvanceMixin.class": "46156c162467f74a39fb22fa9373273f6c9aca3b277ad402d8bac1208ca11927",
+    "dev/psa/pixelmonrender/mixin/EntityBufferMixin.class": "f8f9c9488c65ad9832df82b904e3dd41596964344b2ebb4b778788f595e31eb7",
+    "dev/psa/pixelmonrender/mixin/PixelmonFaceMixin.class": "5f4df4b0805de8f15f1cebe5feacac88108cf642c109cefc332633e241217d38",
+    "pack.mcmeta": "3cfb0918f691063ca52303412ced3f35ae66a643221f80d370e35ef9ebe2e3e7",
+    "psa-pixelmon-render.mixins.json": "2095dda646a66ae2949c48974fca8174786732e6267f279d09b04e2901c36d8e"
+  }
+}

@@ -315,6 +315,67 @@ class ForgeClientBuildTest(unittest.TestCase):
         self.assertFalse(self.output.exists())
         self.assertFalse(self.output.parent.exists())
 
+    def add_renderer_target_fixtures(self):
+        pins={'mods/Pixelmon-1.20.1-9.2.3-universal.jar':client.digest(self.pixel)}
+        for index,name in enumerate(['oculus-mc1.20.1-1.8.0.jar','embeddium-0.3.31+mc1.20.1.jar']):
+            data=self.archive_bytes({'fixture.txt':b'not executed as a game mod'})
+            source=self.extras/name;source.write_bytes(data)
+            self.files.append({'path':'mods/'+name,'kind':'mod','side':'client','project_id':30+index,
+                'file_id':40+index,'size':len(data),'hashes':self.hashes(data),'url':'https://example.test/'+name})
+            pins['mods/'+name]=client.digest(source)
+        self.write_base()
+        return pins
+
+    def test_renderer_is_client_only_and_release_is_recorded(self):
+        pins=self.add_renderer_target_fixtures()
+        renderer=self.root/'renderer-fixture.jar'
+        renderer.write_bytes(self.archive_bytes({'fixture.txt':b'packaging only; never executed'}))
+        before={p.name:p.read_bytes() for p in (self.server/'mods').iterdir()}
+        with patch.multiple(client,RENDER_PATCH_SHA256=client.digest(renderer),RENDER_TARGET_PINS=pins,
+                            EXPECTED_FILES=len(self.files)):
+            client.build(self.server,self.extras,self.society,self.output,render_fix=renderer,release='v22')
+        self.assertEqual(before,{p.name:p.read_bytes() for p in (self.server/'mods').iterdir()})
+        with zipfile.ZipFile(self.output) as archive:
+            name='mods/'+client.RENDER_PATCH_NAME
+            self.assertEqual(archive.read('overrides/'+name),renderer.read_bytes())
+            profile=json.loads(archive.read('overrides/psa-forge-client-profile.json'))
+            self.assertEqual(profile['release'],'v22')
+            self.assertTrue(profile['client_renderer_compatibility']['client_only'])
+            self.assertTrue(profile['client_renderer_compatibility']['default_vertices'])
+            self.assertTrue(profile['client_renderer_compatibility']['default_advance'])
+            self.assertEqual(profile['overrides'][name],client.digest(renderer))
+            self.assertIn('v22',json.loads(archive.read('modrinth.index.json'))['name'])
+
+    def test_relocked_changed_renderer_target_is_refused_before_output(self):
+        pins=self.add_renderer_target_fixtures();name='mods/oculus-mc1.20.1-1.8.0.jar'
+        data=self.archive_bytes({'fixture.txt':b'changed target'});(self.extras/Path(name).name).write_bytes(data)
+        entry=next(x for x in self.files if x['path']==name);entry.update(size=len(data),hashes=self.hashes(data))
+        self.write_base();renderer=self.root/'renderer-fixture.jar';renderer.write_bytes(b'not a game jar')
+        with patch.multiple(client,RENDER_PATCH_SHA256=client.digest(renderer),RENDER_TARGET_PINS=pins,
+                            EXPECTED_FILES=len(self.files)),self.assertRaisesRegex(ValueError,'renderer target'):
+            client.build(self.server,self.extras,self.society,self.output,render_fix=renderer)
+        self.assertFalse(self.output.exists());self.assertFalse(self.output.parent.exists())
+
+    def test_invalid_or_missing_renderer_is_refused_before_output(self):
+        renderer=self.root/'renderer-fixture.jar';renderer.write_bytes(b'bad input')
+        for source in [renderer,self.root/'missing.jar']:
+            with self.subTest(source=source),self.assertRaisesRegex(ValueError,'renderer compatibility'):
+                client.build(self.server,self.extras,self.society,self.output,render_fix=source)
+        self.assertFalse(self.output.exists());self.assertFalse(self.output.parent.exists())
+
+    def test_symlink_renderer_is_refused_before_output(self):
+        renderer=self.root/'renderer-fixture.jar';renderer.write_bytes(b'fixture only')
+        link=self.root/'link.jar'
+        try:
+            link.symlink_to(renderer)
+        except OSError as error:
+            if sys.platform.startswith('win') and getattr(error,'winerror',None)==1314:
+                self.skipTest('Windows symlink privilege unavailable')
+            raise
+        with patch.object(client,'RENDER_PATCH_SHA256',client.digest(renderer)),self.assertRaisesRegex(ValueError,'renderer compatibility'):
+            client.build(self.server,self.extras,self.society,self.output,render_fix=link)
+        self.assertFalse(self.output.exists());self.assertFalse(self.output.parent.exists())
+
     def test_ali_fix_is_client_only_and_preserves_other_payloads(self):
         target = self.add_ali_target_fixture()
         ali = self.root/'ali-fixture.jar'

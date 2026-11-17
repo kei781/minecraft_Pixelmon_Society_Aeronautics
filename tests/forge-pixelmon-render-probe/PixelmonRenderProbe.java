@@ -54,8 +54,8 @@ public final class PixelmonRenderProbe {
     private static int checkAdvanceState() throws Exception {
         boolean present=Arrays.stream(BufferBuilder.class.getInterfaces()).anyMatch(
                 c->c.getName().equals("dev.psa.pixelmonrender.FastEntityVertexAdvance"));
-        if(present!=Boolean.getBoolean("psa.pixelmon.fastAdvance"))
-            throw new AssertionError("advance adapter does not match explicit second opt-in");
+        if(present!=dev.psa.pixelmonrender.RenderCompatPlugin.advanceEnabled())
+            throw new AssertionError("advance adapter does not match the effective startup setting");
         if(!present)return 0;
         int cases=0;
         BufferBuilder original=new BufferBuilder(128), candidate=new BufferBuilder(128);

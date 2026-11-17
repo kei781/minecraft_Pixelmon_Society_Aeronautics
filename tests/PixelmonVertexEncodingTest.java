@@ -50,22 +50,29 @@ public final class PixelmonVertexEncodingTest {
         try {
             System.clearProperty("psa.pixelmon.fastAdvance");
             System.clearProperty("psa.pixelmon.fastVertices");
+            RenderCompatPlugin defaults=new RenderCompatPlugin(); defaults.onLoad("ignored");
+            if(!defaults.shouldApplyMixin("BufferBuilder","EntityBufferMixin")
+                    || !defaults.shouldApplyMixin("NormalizedFace","PixelmonFaceMixin")
+                    || !defaults.shouldApplyMixin("BufferBuilder","dev.psa.pixelmonrender.mixin.EntityAdvanceMixin"))
+                throw new AssertionError("release defaults must enable both tested paths");
+            System.setProperty("psa.pixelmon.fastVertices","false");
             RenderCompatPlugin off=new RenderCompatPlugin(); off.onLoad("ignored");
             if(off.shouldApplyMixin("BufferBuilder","EntityBufferMixin")
                     || off.shouldApplyMixin("NormalizedFace","PixelmonFaceMixin"))
                 throw new AssertionError("disabled candidate must not transform classes");
             System.setProperty("psa.pixelmon.fastVertices","true");
+            System.setProperty("psa.pixelmon.fastAdvance","false");
             RenderCompatPlugin on=new RenderCompatPlugin(); on.onLoad("ignored");
             if(!on.shouldApplyMixin("BufferBuilder","EntityBufferMixin")
                     || !on.shouldApplyMixin("NormalizedFace","PixelmonFaceMixin"))
                 throw new AssertionError("explicit opt-in must apply both mixins");
             if(on.shouldApplyMixin("BufferBuilder","dev.psa.pixelmonrender.mixin.EntityAdvanceMixin"))
-                throw new AssertionError("advance must require its own explicit opt-in");
+                throw new AssertionError("explicit advance disable must preserve the native-only path");
             System.setProperty("psa.pixelmon.fastAdvance","true");
             RenderCompatPlugin both=new RenderCompatPlugin(); both.onLoad("ignored");
             if(!both.shouldApplyMixin("BufferBuilder","dev.psa.pixelmonrender.mixin.EntityAdvanceMixin"))
                 throw new AssertionError("both flags must enable advance");
-            System.clearProperty("psa.pixelmon.fastVertices");
+            System.setProperty("psa.pixelmon.fastVertices","false");
             RenderCompatPlugin advanceOnly=new RenderCompatPlugin(); advanceOnly.onLoad("ignored");
             if(advanceOnly.shouldApplyMixin("BufferBuilder","dev.psa.pixelmonrender.mixin.EntityAdvanceMixin"))
                 throw new AssertionError("advance alone must not transform classes");

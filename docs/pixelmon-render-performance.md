@@ -1,5 +1,15 @@
 # Pixelmon 렌더링 성능 후보
 
+## v22 배포 — 2026-11-17
+
+운영자가 기존 PR의 실측을 완료했다고 확인해 #22·#23을 병합했다. v22는 그 구현을 클라이언트 전용 `PSA-Pixelmon-Render-Compat-0.2.0.jar`로 포함하며 정점 기록과 여섯 단계 커서 이동을 **기본 활성**으로 사용한다. 새 인스턴스에는 JVM 옵션을 따로 넣지 않는다. 서버 모드·공통 JAR·모델·셰이더와 이전 구현의 보호 검사·fallback 알고리즘은 그대로다. [빌드 대조](../compat/pixelmon-render-build.json), [배포 파일 대조](../evidence/player-pack-v22-candidate.json).
+
+전체 해제는 `-Dpsa.pixelmon.fastVertices=false`, 커서 이동만 해제하고 정점 기록은 유지하려면 `-Dpsa.pixelmon.fastAdvance=false`를 Java arguments에 넣고 다시 실행한다. 전체 해제에서는 이 모드의 클래스 변형도 적용하지 않는다. 이전 QA 인스턴스에 명시한 `false`가 남아 있으면 그 설정이 우선한다.
+
+0.2.0은 기본값·공유 옵션 조회·배포 메타데이터만 바꿨다. 실제 고정 Minecraft 인코딩10,016개와 버퍼7개·좌표4개 보호 조건, 기본 활성·명시 해제 조합을 통과했고 서로 독립된 빌드 두 개의 JAR SHA256이 일치했다. 운영자의 실측 확인을 새 숫자 벤치마크나 Codex의 v22 전체 게임 재검사로 바꾸어 기록하지 않는다.
+
+이하 기본 비활성·명시적 opt-in과 QA 전용 배포에 관한 문장은 **0.1.0 후보 당시 기록**이다. 현재 배포의 기본값과 해제 방법은 위를 따른다.
+
 [이슈 #21](https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/issues/21)의 첫 후보다. 시야·포켓몬 표시 거리·모델·애니메이션·셰이더 품질 설정을 낮추지 않는다. CPU를 더 많은 코어에 분배하거나 애니메이션을 GPU로 옮긴 구현은 아니다. 먼저 Pixelmon이 보내는 동일한 정점 데이터를 더 효율적으로 기록한다.
 
 ## 측정에서 확인한 범위

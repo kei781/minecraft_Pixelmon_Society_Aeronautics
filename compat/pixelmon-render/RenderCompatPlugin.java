@@ -10,9 +10,15 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 public final class RenderCompatPlugin implements IMixinConfigPlugin {
     private boolean enabled;
     private boolean advance;
+    public static boolean verticesEnabled() {
+        return Boolean.parseBoolean(System.getProperty("psa.pixelmon.fastVertices", "true"));
+    }
+    public static boolean advanceEnabled() {
+        return Boolean.parseBoolean(System.getProperty("psa.pixelmon.fastAdvance", "true"));
+    }
     @Override public void onLoad(String mixinPackage) {
-        enabled=Boolean.getBoolean("psa.pixelmon.fastVertices");
-        advance=Boolean.getBoolean("psa.pixelmon.fastAdvance");
+        enabled=verticesEnabled();
+        advance=advanceEnabled();
     }
     @Override public boolean shouldApplyMixin(String target, String mixin) {
         return enabled && (!mixin.endsWith("EntityAdvanceMixin") || advance);

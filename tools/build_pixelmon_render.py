@@ -1,4 +1,4 @@
-"""Build an authored-only, opt-in client renderer candidate from local pinned inputs."""
+"""Build the authored client renderer from local pinned inputs; never include upstream classes."""
 import argparse
 import hashlib
 import json
@@ -161,8 +161,9 @@ def build(libraries, mods, java_home, output, run_tests=False):
                            'dev.psa.pixelmonrender.PixelmonAdvanceCompatibilityTest'],directory)
         receipt = package_jar(classes, SOURCE/'resources', output)
     return dict(receipt, compiler=version, inputs=PINS, minecraft_client_sha256=hashlib.sha256(client.read_bytes()).hexdigest(),
-                opt_in='-Dpsa.pixelmon.fastVertices=true',
-                advance_opt_in='-Dpsa.pixelmon.fastAdvance=true', advance_requires='-Dpsa.pixelmon.fastVertices=true',
+                default_vertices=True, default_advance=True,
+                disable='-Dpsa.pixelmon.fastVertices=false',
+                disable_advance='-Dpsa.pixelmon.fastAdvance=false',
                 tests_run=run_tests,classpath=inventory)
 
 

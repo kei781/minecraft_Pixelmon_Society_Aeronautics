@@ -1,0 +1,103 @@
+{
+  "filename": "PSA-Forge-Full-Experimental-v22.mrpack",
+  "sha256": "6e40efba54709938b155f033ff5b7ba82f116d6cc50784e8c2680e8ca8de2563",
+  "size": 1137899017,
+  "version_id": "psa-forge-4576ed6e5a6c",
+  "mod_jars": 356,
+  "indexed_resourcepacks": 15,
+  "indexed_shaderpacks": 1,
+  "override_files": 8007,
+  "longest_relative_path": 108,
+  "full_gameplay_validated": false,
+  "archive_entries": 8008,
+  "profile_payload_files_verified": 8006,
+  "delta_from_v21": {
+    "added": [
+      "overrides/mods/PSA-Pixelmon-Render-Compat-0.2.0.jar"
+    ],
+    "removed": [],
+    "changed": [
+      "modrinth.index.json",
+      "overrides/psa-forge-client-profile.json"
+    ],
+    "unchanged_entries": 8005,
+    "all_355_existing_mod_jars_byte_unchanged": true
+  },
+  "minecraft": "1.20.1",
+  "forge": "47.4.20",
+  "common_jar_sha256": "d597065c5fef2abaec1bb01c616a5c5dc0787f672b5428693f23e696c37d23e4",
+  "renderer": {
+    "path": "mods/PSA-Pixelmon-Render-Compat-0.2.0.jar",
+    "sha256": "61ecf134a3cec353171d31eb076e650512bbf6ae6b21f92a24976b968e028997",
+    "client_only": true,
+    "source": "compat/pixelmon-render",
+    "default_vertices": true,
+    "default_advance": true,
+    "target_sha256": {
+      "mods/Pixelmon-1.20.1-9.2.3-universal.jar": "8f2777f5a7cd2b5fc48ac3f5531d434af4120c7d40adc9929d5a3737c404246a",
+      "mods/oculus-mc1.20.1-1.8.0.jar": "0945df0cba0f62b3901dd80c3268e5311b770ece78c78037a45db12ac0425fef",
+      "mods/embeddium-0.3.31+mc1.20.1.jar": "eed3d1325f2acc2fd4e69bb495e5ccb91d962126ac5330f0582ebc2a3daf47fb"
+    }
+  },
+  "no_personal_worlds_accounts_top_level_server_list_or_qa_probes": true,
+  "upstream_configureddefaults_server_list_byte_equal": true,
+  "initial_validation_correction": "The first broad servers.dat scan rejected the unchanged configureddefaults/servers.dat included by Society. Rechecked against the original Society archive byte-for-byte; personal top-level servers.dat remains absent.",
+  "generated_date": "2026-11-17",
+  "source_base": "329463db43400157e1793b58f1d2673dd1f4a239",
+  "previous_pack": {
+    "filename": "PSA-Forge-Full-Experimental-v21.mrpack",
+    "sha256": "c1e2866a01f770a9972f1525c76bfd26e01976a089ef20a8cc93062683bdd98c"
+  },
+  "owner_runtime_acceptance": {
+    "date": "2026-11-17",
+    "statement": "Owner confirmed that measurement of the preceding PRs was complete and requested merging them and making v22.",
+    "source": "owner message",
+    "new_numeric_fps_measurements_provided": false
+  },
+  "merged_prs": [
+    19,
+    20,
+    22,
+    23
+  ],
+  "code_checks": {
+    "core_unittest": {
+      "run": 201,
+      "passed": 190,
+      "skipped": 11,
+      "failures": 0,
+      "errors": 0,
+      "skip_scope": {
+        "linux_specific": 6,
+        "private_inputs_absent_in_isolated_checkout": 5
+      }
+    },
+    "unchanged_private_input_checks": {
+      "run": 5,
+      "passed": 5,
+      "scope": "separately run with original pinned private inputs against unchanged corresponding source"
+    },
+    "support_unittest": {
+      "run": 29,
+      "passed": 29
+    },
+    "render_build": {
+      "independent_byte_equal": true,
+      "base_encoding_inputs": 10016,
+      "buffer_guards": 7,
+      "position_guards": 4,
+      "default_and_override_flags": "passed",
+      "pinned_embeddium_body_and_rejection_guards": "passed",
+      "receipt": "compat/pixelmon-render-build.json"
+    }
+  },
+  "deployment": {
+    "client_file_created": true,
+    "server_modified_or_restarted": false
+  },
+  "limitations": [
+    "No new Codex FPS benchmark or whole-game validation was performed for this package.",
+    "The newly exported v22 archive has not been freshly imported on Windows in this task.",
+    "Owner acceptance does not supply numerical six-player load results."
+  ]
+}
