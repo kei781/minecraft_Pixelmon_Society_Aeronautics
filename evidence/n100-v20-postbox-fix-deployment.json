@@ -1,0 +1,95 @@
+{
+ "task": "Postbox fix on the N100 v20 server, removal of the two test structures",
+ "date_utc": "2026-11-14",
+ "requested_by": "The owner asked for PR #18 to be merged and for the two test physics structures beside the spawn Pokemon Center to be removed",
+ "source": {
+  "pull_request": 18,
+  "merge_commit": "0453486f046bd3078199140155e10a400631496f",
+  "merged_at_utc": "2026-11-14T02:07:53Z"
+ },
+ "test_structures": {
+  "before": {
+   "command": "sable info @e",
+   "at_utc": "02:08:37",
+   "found": 2,
+   "structures": [
+    {
+     "position": [
+      590.2,
+      70.6,
+      221.6
+     ],
+     "mass": 9.0
+    },
+    {
+     "position": [
+      590.5,
+      69.5,
+      220.5
+     ],
+     "mass": 1.0
+    }
+   ],
+   "note": "Both stood where the owner assembled them on 2026-11-13 (the larger one was recorded with mass 10 that day); the server held no other structure"
+  },
+  "removed": {
+   "command": "sable remove @e",
+   "at_utc": "02:09:04",
+   "console": "Removed 2 sub-levels"
+  },
+  "after": {
+   "command": "sable info @e",
+   "at_utc": "02:09:07",
+   "console": "No sub-levels found"
+  },
+  "players_online_at_the_time": 2,
+  "after_restart": {
+   "at_utc": "02:24:06",
+   "console": "No sub-levels found"
+  }
+ },
+ "files_replaced": {
+  "at_utc": "02:17",
+  "from": "A profile staged from the merged commit with tools/stage_forge_candidate.py; it is byte-identical to the profile that passed the full game check recorded in final-review-2026-11-14.json",
+  "files": [
+   {
+    "path": "kubejs/server_scripts/psa_physics_immovable.js",
+    "sha256_before": "4d4a7d275bc38e87453fe89ef2d3feedae6966e6470fa066b934c9a1f10a5c02",
+    "sha256_after": "4c9f45ed0900cc8f56ea68318b1af4d01ece521d0ffeec14f157c608b3987371"
+   },
+   {
+    "path": ".psa-forge-candidate.json",
+    "sha256_before": "4bcfb543c04730e1b1281e1e30454ce77ed20c1d6a647ec9b8f94d2abf23410d",
+    "sha256_after": "5a3f625a7113f5523cfe58e00588aeae1858e16b54eb8f57941ca157f19a862e",
+    "what_changed": "Only the recorded hash of the script above"
+   }
+  ],
+  "replaced_copies_kept_in": ".psa-replaced-20261114/ inside the server folder",
+  "rest_of_profile": "kubejs, mods, patchouli_books and defaultconfigs on the server compared by checksum with the staged profile: no difference, no extra file"
+ },
+ "restart": {
+  "players_online_before_stop": 0,
+  "stopped_with_server_control_at_utc": "02:21:56",
+  "done_line_at_utc": "02:23:53",
+  "done_line": "Done (2.779s)! For help, type \"help\"",
+  "script_log_line": "PSA_PHYSICS_IMMOVABLE {\"tag\":\"simulated:non_movable\",\"requested\":69.0,\"mirrored\":52.0,\"other\":17.0,\"society_global_read\":true,\"only_in_society_global\":[],\"rejected\":[]}",
+  "kubejs_server_log_errors": 0,
+  "crash_report_count": 0,
+  "native_tps_overall_line": "Overall: Mean tick time: 4.197 ms. Mean TPS: 20.000",
+  "startup_error_lines": {
+   "previous_start": 477,
+   "this_start": 475,
+   "difference": "Two minecraft/HangingEntity lines of the first start are gone; no logger has more lines than before"
+  },
+  "console_log_sha256_at_check": "7ca1b81d6cb2f2c41f6ae0014f36669eab916d46c42abb2df545da9edf2b7e04"
+ },
+ "world": {
+  "same_world_kept": true,
+  "size_after": "138M",
+  "last_backup_before_the_restart": "2026-11-14_2-0-0.zip, written 02:00:03 UTC"
+ },
+ "not_verified": [
+  "No player has tried to assemble a postbox on this server; the assembler leaving it behind is shown only by the loaded tag and the disposable-world check",
+  "Nobody was online after the restart when this was written"
+ ]
+}

@@ -17,12 +17,14 @@ from export_client import safe_path, add_zip_file, data_bytes
 from stage_forge_candidate import PORT_SHA256, PIXELMON_SHA256, digest
 import forge_model_pack
 import forge_item_model_alias
+import forge_key_defaults
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_FILES = 367
 EXPECTED_SHARED = 311
 EXPECTED_REPLACEMENTS = 68
 EXPECTED_MODEL_OVERRIDES = 17
+EXPECTED_KEY_DEFAULTS = 6
 MENU_PATCH_NAME = "PSA-Client-Menu-Compat-1.1.jar"
 MENU_PATCH_SHA256 = "44cacaa5794d6ff581f8b8d4e877942187d28843c30d4d05395f91b6bbd1d9f9"
 ALI_PATCH_NAME = "PSA-ALI-Client-Compat-0.1.jar"
@@ -217,6 +219,8 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vani
     model_data, model_receipt = forge_model_pack.build(
         server / "mods/psa-aeronautics-experimental-forge-1.20.1.jar", PORT_SHA256, EXPECTED_MODEL_OVERRIDES)
     forge_model_pack.enable(overrides, model_data)
+    default_keys = forge_key_defaults.apply(overrides, ROOT / "compat/client-keys/default-keys.json",
+                                            PIXELMON_SHA256, PORT_SHA256, digest(lock_path), EXPECTED_KEY_DEFAULTS)
     payload = dict(overrides)
     for name in set(payload) & set(files):
         if data_bytes(payload[name]) != data_bytes(files[name]):
@@ -241,6 +245,7 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vani
                                                    for item in lock.get("client_overrides", [])],
                 "port_sha256": PORT_SHA256, "overrides": checks}
     metadata["forge_model_compatibility"] = model_receipt
+    metadata["default_key_compatibility"] = default_keys
     metadata["global_loot_modifier_compatibility"] = loot_list_compatibility
     metadata["server_datapack_sync_compatibility"] = server_datapack_module
     metadata.update(coexistence)

@@ -1,0 +1,34 @@
+[Unit]
+Description=PSA Discord support (one channel, no game control)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=psa-support
+Group=psa-support
+WorkingDirectory=/opt/psa-support
+EnvironmentFile=/etc/psa-support.env
+ExecStart=/opt/psa-support/.venv/bin/psa-support --config /etc/psa-support.json run
+Restart=on-failure
+RestartSec=15
+UMask=0077
+StateDirectory=psa-support
+StateDirectoryMode=0700
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+ReadWritePaths=/var/lib/psa-support
+MemoryMax=512M
+CPUQuota=50%
+
+[Install]
+WantedBy=multi-user.target

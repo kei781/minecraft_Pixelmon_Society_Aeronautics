@@ -1,0 +1,193 @@
+{
+ "scope": "Player pack v21: what differs from v20, how the six moved Pixelmon default keys were checked, and what was not checked. No game client was started. The Pixelmon PC resend in the common JAR has its own record, pixelmon-pc-resync.json.",
+ "date_utc": "2026-11-14",
+ "requested_by": "The owner asked for a new pack after the final review reported that six Pixelmon keys act together with Society-side keys",
+ "package": {
+  "filename": "PSA-Forge-Full-Experimental-v21.mrpack",
+  "sha256": "c1e2866a01f770a9972f1525c76bfd26e01976a089ef20a8cc93062683bdd98c",
+  "size": 1137886845,
+  "version_id": "psa-forge-ee0f9508a98f",
+  "mod_jars": 355,
+  "indexed_resourcepacks": 15,
+  "indexed_shaderpacks": 1,
+  "override_files": 8006,
+  "longest_relative_path": 108,
+  "full_gameplay_validated": false
+ },
+ "built_from": {
+  "server_profile": "Staged from this change's branch with tools/stage_forge_candidate.py --mode player. It differs from the profile checked in final-review-2026-11-14.json only in the common JAR (and the mod hash list and profile record that name it); the full game check was run again on it, see pixelmon-pc-resync.json",
+  "key_table": "compat/client-keys/default-keys.json",
+  "key_table_sha256": "d75e19d8a08f31f545353653646fbc489dad26c227494c5606fa3259fd0eb839"
+ },
+ "v20_to_v21": {
+  "archive_entries": 8007,
+  "entries_only_in_one_pack": [],
+  "changed_entries": [
+   "modrinth.index.json",
+   "overrides/configureddefaults/options.txt",
+   "overrides/kubejs/server_scripts/psa_physics_immovable.js",
+   "overrides/mods/psa-aeronautics-experimental-forge-1.20.1.jar",
+   "overrides/psa-forge-client-profile.json"
+  ],
+  "all_other_entries_sha256_equal": true,
+  "default_key_file_change": "Six lines added after the last key line; no other line changed",
+  "default_key_file_sha256": "a1c4bc8176248e3c38389ae1b8aec3843236f0a62b1b69d5ce95c37adb320ce3",
+  "physics_script_sha256": "4c9f45ed0900cc8f56ea68318b1af4d01ece521d0ffeec14f157c608b3987371",
+  "common_jar_sha256": "d597065c5fef2abaec1bb01c616a5c5dc0787f672b5428693f23e696c37d23e4",
+  "mod_jars_identical": 354,
+  "mod_jars_changed": [
+   "psa-aeronautics-experimental-forge-1.20.1.jar (the common JAR: one class and its mixin configuration added, see pixelmon-pc-resync.json)"
+  ],
+  "common_jar_sha256_in_v20": "28e1958563c4c313bbbf42448b15594c2cc8a3ca7a7f8d1ac5b7f47426f36c1c"
+ },
+ "moved_keys": [
+  {
+   "binding": "key.pokemonexternal",
+   "action": "Use the selected field move",
+   "from": "key.keyboard.g",
+   "to": "key.keyboard.semicolon",
+   "society_bindings_on_the_old_key": [
+    "key.curios.open.desc"
+   ],
+   "other_default_bindings_on_the_new_key": []
+  },
+  {
+   "binding": "key.nextexternalmove",
+   "action": "Choose a field move",
+   "from": "key.keyboard.b",
+   "to": "key.keyboard.apostrophe",
+   "society_bindings_on_the_old_key": [
+    "key.journeymap.create_waypoint",
+    "key.sophisticatedbackpacks.open_backpack"
+   ],
+   "other_default_bindings_on_the_new_key": []
+  },
+  {
+   "binding": "key.minmaxoverlay",
+   "action": "Fold or unfold the Pokemon overlay",
+   "from": "key.keyboard.o",
+   "to": "key.keyboard.0",
+   "society_bindings_on_the_old_key": [
+    "iris.keybind.shaderPackSelection",
+    "key.shouldersurfing.swap_shoulder"
+   ],
+   "other_default_bindings_on_the_new_key": [],
+   "note": "No other default binding. Three situations read the 0 key directly: the F3 profiler chart while it is shown, Supplementaries while a quiver-type item is in use, and the port's Linked Typewriter while a player operates one."
+  },
+  {
+   "binding": "key.questjournal",
+   "action": "Open the Pixelmon quest journal",
+   "from": "key.keyboard.n",
+   "to": "key.keyboard.f6",
+   "society_bindings_on_the_old_key": [
+    "key.journeymap.fullscreen_waypoints"
+   ],
+   "other_default_bindings_on_the_new_key": [
+    "key.scholar.import_book"
+   ],
+   "note": "Scholar reads its key only inside its book editing screen and Pixelmon acts only while no screen is open, so no press runs both. The two still show as a conflict in the controls screen."
+  },
+  {
+   "binding": "key.questcycle",
+   "action": "Show the next Pixelmon quest",
+   "from": "key.keyboard.m",
+   "to": "key.keyboard.f8",
+   "society_bindings_on_the_old_key": [
+    "key.ftbchunks.map",
+    "simplemagnets.keys.toggle"
+   ],
+   "other_default_bindings_on_the_new_key": []
+  },
+  {
+   "binding": "key.wiki",
+   "action": "Open the wiki page of the block in view",
+   "from": "key.keyboard.k",
+   "to": "key.keyboard.home",
+   "society_bindings_on_the_old_key": [
+    "key.puffish_skills.open"
+   ],
+   "other_default_bindings_on_the_new_key": []
+  }
+ ],
+ "left_as_they_are": [
+  {
+   "keys": "Up / Down",
+   "pixelmon": "key.previouspokemon / key.nextpokemon",
+   "also_acts": "Shoulder Surfing camera distance, only in the shoulder view"
+  },
+  {
+   "keys": "R",
+   "pixelmon": "key.sendpokemon",
+   "also_acts": "Tool Belt menu, only while a belt is worn"
+  }
+ ],
+ "verification": {
+  "reviewers": "Two independent Claude Opus agents, each given the built pack and no conclusion to confirm; the facts they reported about Scholar, Sophisticated Core, More Minecarts, Better Advanced Tooltips, libtooltips, Decorative Blocks and Kiwi were then re-read from the disassembled classes before entering the table. The scan ran on the first v21 build; the default key file in the final build has the same SHA256",
+  "free_key_scan": {
+   "method": "Superclass of all 79,143 classes of the 355 mod JARs and 184 nested JARs read to find every KeyMapping type (38); every construction site of those types resolved to name and coded key (194 sites, plus enum and wrapper registrations traced by hand); every method in all JARs searched for the six key codes and the key-handling ones (50) read one by one; vanilla KeyboardHandler, Minecraft, Gui, KeyboardInput and Options disassembled",
+   "bindings_the_default_key_file_does_not_list": 40,
+   "of_those": "19 Pixelmon, 3 of the port, 17 of Society's own mods (Scholar 7, More Minecarts 2, libtooltips 1, Better Advanced Tooltips 2, Decorative Blocks 1, Oculus 1, Kiwi 1, Sophisticated Core 2) and vanilla key.attack, whose line in Society's file is joined to the previous line and is therefore not read; all are in the key table",
+   "per_key": {
+    "semicolon": "No other default binding, no direct use with no screen open",
+    "apostrophe": "No other default binding, no direct use with no screen open",
+    "f8": "No other default binding, no direct use with no screen open",
+    "home": "No other default binding; the only direct uses are cursor movement inside text fields of screens",
+    "0": "No other default binding. Direct uses with no screen open, each in a mode the player turns on: vanilla F3 profiler chart selection, Supplementaries slot selection while a quiver-type item is in use, the port's Linked Typewriter while a player operates one",
+    "f6": "Scholar's key.scholar.import_book has F6 as its coded default (universal context, no modifier) and no line in the default key file. Scholar reads it only in its book editing screen; Pixelmon's quest journal acts through consumeClick, which is fed only while no screen is open. No single press runs both. Forge's conflict rule marks the two as conflicting in the controls screen (read from the code, not run)"
+   },
+   "first_build_finding": "The first table listed only the Pixelmon and port bindings as coded defaults, so the tool did not see Scholar's F6. The table now lists all 40 and is pinned to the mod lock; the tool accepts a target key only when the bindings on it are exactly the ones the table declares. An independent code review then pointed out that key.attack was missing from the list of 39; it was added"
+  },
+  "configured_defaults_merge": {
+   "method": "The real fuzs.configureddefaults.handler.CopyDefaultsHandler.initialize(gameDir, true) from the pack's ConfiguredDefaults-v8.0.4 JAR, one JVM per case",
+   "cases": [
+    {
+     "case": "New v21 instance, no options.txt",
+     "result": "options.txt equals the v21 default key file; the six lines are present"
+    },
+    {
+     "case": "v20 instance whose options.txt the game has saved (Pixelmon keys written at their old keys)",
+     "result": "File not rewritten; the six new defaults have no effect"
+    },
+    {
+     "case": "v20 instance whose options.txt the game never saved",
+     "result": "File rewritten with exactly the six lines appended"
+    },
+    {
+     "case": "New v20 instance for comparison",
+     "result": "No Pixelmon key line; the coded defaults G, B, O, N, M, K apply"
+    }
+   ],
+   "when_the_game_first_saves": "Read from the client classes: among others on first opening Multiplayer (the warning screen) and on the first server join. A player who has joined the server therefore has a saved file"
+  },
+  "forge_side": {
+   "method": "Disassembly of Options, ClientModLoader, ForgeHooksClient and Minecraft from the Forge 47.4.20 client JAR; the real InputConstants and KeyModifier classes run standalone",
+   "findings": [
+    "Key lines of mod bindings are read by Options.load(true) from ClientModLoader.finishModLoading, after RegisterKeyMappingsEvent",
+    "A value such as key.keyboard.home:NONE is split at the colon and parsed with KeyModifier.valueFromString and InputConstants.getKey; the game itself writes no :NONE suffix and reads both forms",
+    "The six names resolve to key codes 59, 39, 48, 295, 297, 268",
+    "An unknown key name would throw and stop the rest of the options from loading; the tool only accepts names from the game's own list"
+   ]
+  },
+  "pixelmon_side": {
+   "method": "Pixelmon 9.2.3 bytecode from the pack",
+   "findings": [
+    "All six actions run from the binding itself (consumeClick); no hard-coded key code for them. DebugKeyBindings compares O and K only while F3 is held, for its debug toggles",
+    "Key hints Pixelmon draws use the bound key's display name; no hint text in en_us or ko_kr names one of the six letters"
+   ]
+  },
+  "tool_tests": {
+   "python_tests_run": 189,
+   "passed": 183,
+   "skipped_linux_only": 6,
+   "guards_removed_one_at_a_time": 22,
+   "removals_the_tests_missed": 0,
+   "added_after_review": "A test for the modifier half of the coded-default guard"
+  }
+ },
+ "not_verified": [
+  "No client was started with v21: the import, the six keys in play, the controls screen and the display names of ; and ' on other keyboard layouts are unconfirmed",
+  "Whether both listeners really act on the old shared keys was traced in bytecode during the final review and never pressed in game",
+  "Key handling that never uses the key code as a constant (read from a config file at run time), scancode-based handling and controller mappings are outside the scan",
+  "The unmoved Pixelmon keys C, H, P, U, V, Y share a plain key with Society bindings that the final review judged gated or inert, and S, R, W of the PC screen are read only inside that screen; none of this was looked at again here"
+ ]
+}
