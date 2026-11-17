@@ -1,0 +1,168 @@
+{
+  "issue": 21,
+  "stacked_on_pr": 22,
+  "base_commit": "314eed34df819b2fa6612a41f31e175328f8f9c3",
+  "tested_source_commit": "7d4ee7109b1e64a3809eefc7a1b0cb7b362a9687",
+  "candidate_sha256": "001c1fc367d1e437f712dc991ed0b6ea35b3d8a9b6b4411aa28116e824afe79d",
+  "probe_sha256": "ff8874c025731696e9312dcd0a43b31f33a0310596aeed34c91fb2e67e0fabf0",
+  "versions": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.20",
+    "pixelmon": "9.2.3",
+    "oculus": "1.8.0",
+    "embeddium": "0.3.31"
+  },
+  "configuration": "Isolated default QA, original 355 mod JARs plus authored candidate and probe; no world created or joined.",
+  "review_regressions": {
+    "old_candidate_subclass_probe": {
+      "result": "FAIL",
+      "error": "java.lang.AssertionError: BufferBuilder subclass must retain its virtual nextElement calls"
+    },
+    "fix": "Use priority 1 << 30 after ordinary postApply callbacks, avoiding overflow against ordinary negative values; reject BufferBuilder subclasses before bulk cursor writes."
+  },
+  "native_only_opcode_comparison": {
+    "Method": "psa$tryEntityVertex",
+    "CanonicalOpcodeDigest": "6ccbaf73b93130f1ffdbd6a446878fec146e4c7100c982a80a263bc96d09beba",
+    "R4MatchesR3NativeOnly": true,
+    "DebugMetadataExcluded": true,
+    "BytecodeBytes": 204
+  },
+  "review_fix_method_comparison": {
+    "NextElementSHA256": "16a50068319d2d689abbd758c25abebe62aeedf8a6e9bf2e9f50adc72feee9ef",
+    "NativeOnlyWriterSHA256": "6ccbaf73b93130f1ffdbd6a446878fec146e4c7100c982a80a263bc96d09beba",
+    "BothMatch": true
+  },
+  "records": {
+    "review2-on": {
+      "fast_vertices": true,
+      "fast_advance": true,
+      "result": {
+        "result": "PASS",
+        "compared_vertices": 1400,
+        "attribute_bytes": 74200,
+        "modes": [
+          "TRIANGLES",
+          "QUADS"
+        ],
+        "buffer_growth": true,
+        "nonfinite_fallback": true,
+        "normalized_face_loaded": true,
+        "mixed_submissions": true,
+        "advance_state_cases": 12,
+        "entity_stride": 56,
+        "padding_bytes_per_vertex": 3,
+        "cpu_microbenchmark": {
+          "vertices_per_sample": 460800,
+          "warmup_min_seconds": 3,
+          "warmup_pairs": 96,
+          "original_ns": [
+            34953800,
+            35060700,
+            35049400,
+            34908100,
+            35452900,
+            37698300,
+            40928100
+          ],
+          "candidate_ns": [
+            25403100,
+            25520700,
+            25519800,
+            25403100,
+            25872600,
+            27031900,
+            28861800
+          ]
+        },
+        "subclass_guard_cases": 1,
+        "subclass_override_calls": 54,
+        "subclass_attribute_bytes": 318
+      },
+      "summary": {
+        "original_median_ms": 35.0607,
+        "candidate_median_ms": 25.5207,
+        "time_reduction_percent": 27.20995302432637
+      }
+    },
+    "review2-legacy": {
+      "fast_vertices": true,
+      "fast_advance": false,
+      "result": {
+        "result": "PASS",
+        "compared_vertices": 1400,
+        "attribute_bytes": 74200,
+        "modes": [
+          "TRIANGLES",
+          "QUADS"
+        ],
+        "buffer_growth": true,
+        "nonfinite_fallback": true,
+        "normalized_face_loaded": true,
+        "mixed_submissions": true,
+        "advance_state_cases": 0,
+        "entity_stride": 56,
+        "padding_bytes_per_vertex": 3,
+        "cpu_microbenchmark": {
+          "vertices_per_sample": 460800,
+          "warmup_min_seconds": 3,
+          "warmup_pairs": 87,
+          "original_ns": [
+            36155200,
+            36867900,
+            36143300,
+            36870500,
+            41551000,
+            37689900,
+            37283900
+          ],
+          "candidate_ns": [
+            30902400,
+            31596300,
+            32341700,
+            31541000,
+            30882200,
+            30464500,
+            32811500
+          ]
+        },
+        "subclass_guard_cases": 0,
+        "subclass_override_calls": 54,
+        "subclass_attribute_bytes": 318
+      },
+      "summary": {
+        "original_median_ms": 36.8705,
+        "candidate_median_ms": 31.541,
+        "time_reduction_percent": 14.454645312648317
+      }
+    },
+    "review2-off": {
+      "fast_vertices": false,
+      "fast_advance": false,
+      "result": {
+        "result": "PASS",
+        "opt_out": true,
+        "buffer_adapter_absent": true,
+        "face_redirect_absent": true
+      }
+    }
+  },
+  "checks": {
+    "real_minecraft_base_encoding_cases": 10016,
+    "build_python_tests_passed": 8,
+    "windows_full_suite_head": "f617627d1cdec12cd8d2efe28fa9def6ed271630",
+    "full_windows_tests_run": 177,
+    "preexisting_windows_symlink_errors": 17,
+    "windows_skipped": 15,
+    "new_windows_error_names": []
+  },
+  "limits": [
+    "Experimental; default OFF; both startup flags required for bulk advance.",
+    "CPU attribute-submission microbenchmark with reused builders and precomputed inputs; not game FPS or GPU draw.",
+    "Separate JVMs have paired original controls; do not treat cross-row differences as causal FPS gains.",
+    "No real-world all-model/material/shadow/HUD acceptance for this new candidate.",
+    "Priority-order guarantee requires other target mixins strictly between -(1 << 30) and 1 << 30. Extreme negative priorities can invalidate the overall sort order; equal/higher priority callbacks and bytecode agents are outside the check.",
+    "Build inputs are hash-pinned; runtime dependency metadata checks versions, not all installed JAR hashes.",
+    "Raw class exports, compilation logs, account/server/world information are not included."
+  ],
+  "disposition": "Keep default OFF, draft PR and issue open; no original/playtest deployment or merge."
+}

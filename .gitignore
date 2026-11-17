@@ -15,3 +15,4 @@ evidence/*-bytecode.txt
 evidence/*-mods.toml
 *.log
 __pycache__/
+.superpowers/

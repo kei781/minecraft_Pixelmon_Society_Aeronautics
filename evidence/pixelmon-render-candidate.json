@@ -1,0 +1,117 @@
+{
+  "recorded_on": "2026-11-16",
+  "timezone": "Asia/Seoul",
+  "candidate_source_commit": "b45354be77dac736811fa8bfbdea9903362e89c5",
+  "candidate_jar_sha256": "983d4062551a8359a5bd76c8e53a66efb98cdbd1218cb0c245b6e7c3a2ac3eec",
+  "versions": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.20",
+    "pixelmon": "9.2.3",
+    "oculus": "1.8.0",
+    "embeddium": "0.3.31+mc1.20.1"
+  },
+  "base_attribute_comparison": {
+    "cases": 10016,
+    "buffer_guards": 7,
+    "position_guards": 4,
+    "result": "PASS",
+    "mixin_gate_cases": 4
+  },
+  "real_forge_probe": {
+    "result": "PASS",
+    "vertices": 700,
+    "attribute_bytes": 37100,
+    "modes": [
+      "TRIANGLES",
+      "QUADS"
+    ],
+    "buffer_growth": true,
+    "nonfinite_fallback": true,
+    "normalized_face_loaded": true,
+    "cpu_microbenchmark": {
+      "vertices_per_sample": 460800,
+      "original_ns": [
+        39625600,
+        40373200,
+        38304600,
+        39166600,
+        39361100,
+        36019500,
+        38802700
+      ],
+      "candidate_ns": [
+        33769100,
+        33049100,
+        35666800,
+        33358500,
+        30296400,
+        31402600,
+        33058300
+      ],
+      "original_median_ns": 39166600,
+      "candidate_median_ns": 33058300,
+      "reduction_percent": 15.6
+    }
+  },
+  "linux_ci": {
+    "tested_commit": "096bbb8737c89439a515bd3468cd16dc28eeae65",
+    "run": "https://github.com/kei781/minecraft_Pixelmon_Society_Aeronautics/actions/runs/43731428037",
+    "results": [
+      {
+        "python": "3.9",
+        "tests_run": 177,
+        "skipped": 5,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "python": "3.12",
+        "tests_run": 177,
+        "skipped": 5,
+        "failures": 0,
+        "errors": 0
+      }
+    ],
+    "scope": "Verified code commit; subsequent evidence-only commits do not imply this run tested themselves"
+  },
+  "limits": [
+    "Opt-in, disabled by default",
+    "CPU vertex submission microbenchmark only, not game FPS",
+    "Extended format enabled in isolated client; no world joined and no shader programs drawn",
+    "NormalizedFace loaded to verify injections; no full model/animation/visual A-B acceptance",
+    "No GPU skinning or new worker threads",
+    "No live installation, deployment or merge"
+  ],
+  "real_forge_opt_out": {
+    "result": "PASS",
+    "opt_out": true,
+    "buffer_adapter_absent": true,
+    "face_redirect_absent": true
+  },
+  "full_mod_jar_combination_probe": {
+    "source_mod_jars": 355,
+    "candidate_and_probe_added": 2,
+    "configuration": "Separate QA defaults; no world joined or shader programs drawn",
+    "on_result": "PASS",
+    "on_vertices": 700,
+    "on_attribute_bytes": 37100,
+    "off_result": "PASS",
+    "off_buffer_adapter_absent": true,
+    "off_face_redirect_absent": true,
+    "shutdown_caveat": "Pixelmon Discord SDK TRANSACTION_ABORTED observed with both ON and OFF"
+  },
+  "build_tests": 8,
+  "argfile_regression": {
+    "platform": "Korean Windows, Java 17",
+    "before_fix": "javac MalformedInputException for a Korean path",
+    "after_fix": "compile and launch PASS, including Python UTF-8 mode",
+    "production_jar_sha256_unchanged": true
+  },
+  "windows_full_suite": {
+    "tests_run": 177,
+    "errors": 17,
+    "skipped": 15,
+    "error_scope": "Existing symlink privilege failures"
+  },
+  "runtime_jar_sha256_rechecked": false
+}
