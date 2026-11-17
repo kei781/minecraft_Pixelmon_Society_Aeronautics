@@ -1,0 +1,12 @@
+{
+  "guild_id": "REPLACE_WITH_SERVER_ID",
+  "channel_id": "REPLACE_WITH_SUPPORT_CHANNEL_ID",
+  "model": "gpt-6.1-sol",
+  "database": "state/support.db",
+  "knowledge": "state/knowledge.json",
+  "daily_request_limit": 200,
+  "user_cooldown_seconds": 20,
+  "max_parallel_requests": 1,
+  "codex_bin": "/opt/psa-support/bin/codex",
+  "codex_home": "/var/lib/psa-support/codex-auth"
+}
