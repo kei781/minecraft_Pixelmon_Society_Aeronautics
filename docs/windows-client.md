@@ -1,12 +1,12 @@
 # Windows 플레이어 설치
 
-현재 시험 후보는 **`PSA-Forge-Full-Experimental-v21.mrpack`**이다. 세 프로젝트, 모드 JAR 355개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. v21은 아직 누구도 가져오거나 실행해 보지 않았다.
+현재 시험 후보는 **`PSA-Forge-Full-Experimental-v22.mrpack`**이다. 세 프로젝트, 모드 JAR 356개, 리소스팩·셰이더·Society 설정을 담은 약 1.14 GB 파일이다. 모드를 개별 설치할 필요는 없다. 개인용 산출물이며 GitHub 릴리스에 공개 업로드하지 않았다. 운영자가 기존 PR의 실측 완료를 확인한 뒤 만든 파일이며, 이 새 파일 자체의 Windows 가져오기는 별도 확인하지 않았다.
 
 Minecraft 1.20.1 / Forge 47.4.20 / Society 정식 4.1.5A / Pixelmon 9.2.3 베타 / Aeronautics 1.3.0 비공식 Forge 포팅본을 사용한다. [구성과 검증 범위](forge-candidate.md).
 
-v21은 v20과 모드 354개가 바이트 단위로 같고 세 가지가 다르다. 공통 JAR에 [접속 뒤 PC를 다시 보내는 수정](pixelmon-pc-resync.md)이 들어갔고, 기차역에 연결된 우편함의 화물 복제를 막도록 [물리 조립에서 빼는 블록 목록](coexistence-audit.md#최종-리뷰-2026-11-14)이 서버와 같은 것으로 바뀌었고(싱글플레이 월드에 적용된다), 기본 키 파일에 [Pixelmon 키 여섯 줄](#기본-키-겹침)이 더해졌다. [v21 기록](../evidence/player-pack-v21-candidate.json).
+v22는 v21과 기존 모드355개가 같고 렌더 최적화 모드 하나만 추가했다. 공통 JAR과 서버 프로필은 이번 작업에서 바꾸지 않았다. v21은 v20과 모드 354개가 바이트 단위로 같고 세 가지가 다르다. 공통 JAR에 [접속 뒤 PC를 다시 보내는 수정](pixelmon-pc-resync.md)이 들어갔고, 기차역에 연결된 우편함의 화물 복제를 막도록 [물리 조립에서 빼는 블록 목록](coexistence-audit.md#최종-리뷰-2026-11-14)이 서버와 같은 것으로 바뀌었고(싱글플레이 월드에 적용된다), 기본 키 파일에 [Pixelmon 키 여섯 줄](#기본-키-겹침)이 더해졌다. [v21 기록](../evidence/player-pack-v21-candidate.json).
 
-v20은 v19와 같은 355개 모드 구성에서 공통 JAR을 [서버 중단 결함 두 건을 고친 것](coexistence-audit.md#포팅-jar-수정)으로 바꾸고, 싱글플레이용으로 서버와 같은 [공존 보정 파일](coexistence-audit.md)을 넣었다. **운영 서버는 2026-11-13부터 v20 프로필·314개 모드·새 월드다. v20과 v21의 공통 JAR 차이는 서버 쪽에서만 동작하는 클래스 하나와 그 믹신 설정뿐이고, 나머지 차이(물리 조립 제외 스크립트·기본 키 파일)는 접속과 무관해서 모드 ID·버전·레지스트리가 같다(v20 팩으로 새 공통 JAR의 운영 서버에 접속되는 것은 2026-11-14에 확인했다. v21 팩의 접속은 아직 해 보지 않았다). v19 이하의 팩은 공통 JAR이 달라 쓰지 않는다.** [반영 기록](../evidence/n100-v20-fresh-world-deployment.json).
+v20은 v19와 같은 355개 모드 구성에서 공통 JAR을 [서버 중단 결함 두 건을 고친 것](coexistence-audit.md#포팅-jar-수정)으로 바꾸고, 싱글플레이용으로 서버와 같은 [공존 보정 파일](coexistence-audit.md)을 넣었다. **운영 서버는 2026-11-13부터 v20 프로필·314개 모드·새 월드다. v20과 v21의 공통 JAR 차이는 서버 쪽에서만 동작하는 클래스 하나와 그 믹신 설정뿐이고, 나머지 차이(물리 조립 제외 스크립트·기본 키 파일)는 접속과 무관해서 모드 ID·버전·레지스트리가 같다(v20 팩으로 새 공통 JAR의 운영 서버에 접속되는 것은 2026-11-14에 확인했다. v21 팩의 접속은 이 문단을 기록한 당시 확인하지 않았다). v19 이하의 팩은 공통 JAR이 달라 쓰지 않는다.** [반영 기록](../evidence/n100-v20-fresh-world-deployment.json).
 
 ## 한 번 준비하기
 
@@ -16,26 +16,32 @@ v20은 v19와 같은 355개 모드 구성에서 공통 JAR을 [서버 중단 결
 
 ## 파일 하나 가져오기
 
-1. 전달받은 v21 파일을 저장한다. 이전 인스턴스는 보존하고 새 인스턴스로 가져온다.
+1. 전달받은 v22 파일을 저장한다. 이전 인스턴스는 보존하고 새 인스턴스로 가져온다.
 2. **Add Instance → Import → 파일 선택 → OK**를 누른다. [공식 가져오기 안내](https://prismlauncher.org/wiki/getting-started/download-modpacks/).
 3. 외부 모드 확인창이 나오면 파일을 관리자에게서 받았는지, 아래 SHA256과 일치하는지 확인한 뒤 신뢰 체크를 하고 진행한다.
 4. Minecraft **1.20.1**, Forge **47.4.20**인지 확인한다. 첫 설치에는 Minecraft·로더·Java 다운로드용 인터넷이 필요하다.
 5. **Edit → Settings → Java**에서 메모리를 정한다. 16 GB 이상 PC에서는 최대 8192 MB를 첫 시작값으로 사용할 수 있다. [메모리 설정 안내](https://prismlauncher.org/wiki/help-pages/java-settings/).
 6. **Launch → Multiplayer → Add Server**에서 관리자가 별도로 전달한 서버 주소를 입력한다. 실제 사용자 서버 주소와 SSH 정보는 공개 저장소·패키지에 넣지 않았다.
 
-현재 파일(v21)은 1,137,886,845바이트이며 SHA256은 다음과 같다.
+현재 파일(v22)은 1,137,899,017바이트이며 SHA256은 다음과 같다.
 
 ```text
-c1e2866a01f770a9972f1525c76bfd26e01976a089ef20a8cc93062683bdd98c
+6e40efba54709938b155f033ff5b7ba82f116d6cc50784e8c2680e8ca8de2563
 ```
 
 ```powershell
-Get-FileHash ".\PSA-Forge-Full-Experimental-v21.mrpack" -Algorithm SHA256
+Get-FileHash ".\PSA-Forge-Full-Experimental-v22.mrpack" -Algorithm SHA256
 ```
 
 설치 경로와 인스턴스 이름은 짧게 쓴다. 가장 긴 상대 경로는 108자다.
 
 ## 실제 확인한 범위
+
+v22는 v21과 아카이브의 모든 파일을 SHA256으로 대조했다. 클라이언트 전용 `PSA-Pixelmon-Render-Compat-0.2.0.jar` 하나가 추가됐고, 가져오기 색인·프로필 정보만 바뀌었다. 기존 모드355개와 나머지 설정·리소스는 모두 같다. 프로필에 기록된 파일8,006개의 해시를 확인했으며 QA 모드·개인 월드·계정·개인 서버 목록은 없다. Society 원본에 포함된 `configureddefaults/servers.dat`는 원본과 동일하다. [v22 기록](../evidence/player-pack-v22-candidate.json).
+
+렌더 최적화는 새 인스턴스에서 기본 활성이다. 별도 JVM 옵션을 넣을 필요가 없다. 전체 해제는 Java arguments에 `-Dpsa.pixelmon.fastVertices=false`, 커서 이동 최적화만 해제하려면 `-Dpsa.pixelmon.fastAdvance=false`를 넣고 게임을 다시 실행한다. [적용 범위와 이전 측정](pixelmon-render-performance.md).
+
+2026-11-17 운영자가 PR들의 실측을 완료했다고 보고했다. 이 보고와 이번 코드·패키지 검사를 구분하며, Codex가 새 v22 파일의 Windows 가져오기·게임 FPS·6인 부하를 새로 측정한 것으로 기록하지 않는다. 아래 문단은 각 버전 제작 당시의 이력이다.
 
 v21은 내보내기 도구의 검사(선언 파일·해시·서버와 같은 보정 파일)를 통과했고, v20 팩과 항목별로 대조해 8,007개 항목 중 다섯 개(가져오기 색인, 프로필 정보, 공통 JAR, 기본 키 파일, 물리 조립 제외 스크립트)만 다름을 확인했다. 가져오기·실행·접속은 Windows와 Mac 어디에서도 하지 않았다. 기본 키의 확인 범위는 [아래](#기본-키-겹침)에 적었다.
 

@@ -7,7 +7,7 @@ import org.lwjgl.system.MemoryUtil;
 
 /** Exact NEW_ENTITY base attributes. The caller retains Iris's completion hooks. */
 public final class NativeEntityVertex {
-    public static final boolean ENABLED = Boolean.getBoolean("psa.pixelmon.fastVertices");
+    public static final boolean ENABLED = RenderCompatPlugin.verticesEnabled();
     private NativeEntityVertex() { }
 
     public static boolean finitePosition(float x, float y, float z) {

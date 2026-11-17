@@ -1,11 +1,13 @@
 """Build/output boundary tests; opaque class fixtures are not JVM validation."""
 import hashlib
 import importlib.util
+import json
 import os
 from pathlib import Path
 import tempfile
 import shutil
 import subprocess
+import sys
 import unittest
 import zipfile
 
@@ -13,6 +15,8 @@ SCRIPT = Path(__file__).resolve().parents[1] / 'tools/build_pixelmon_render.py'
 spec = importlib.util.spec_from_file_location('render_build', SCRIPT)
 build = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(build)
+sys.path.insert(0, str(SCRIPT.parent))
+import export_forge_client as client
 
 
 class PixelmonRenderBuildTest(unittest.TestCase):
@@ -20,6 +24,24 @@ class PixelmonRenderBuildTest(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
+
+    def test_tracked_release_receipt_matches_sources_recipe_and_exporter(self):
+        root = SCRIPT.parent.parent
+        receipt = json.loads((root/'compat/pixelmon-render-build.json').read_text())
+        sources = sorted(build.SOURCE.rglob('*.java')) + sorted(
+            path for path in (build.SOURCE/'resources').rglob('*') if path.is_file())
+        self.assertEqual(receipt['source_sha256'], {
+            path.relative_to(root).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in sources})
+        self.assertEqual(receipt['recipe_path'], SCRIPT.relative_to(root).as_posix())
+        self.assertEqual(receipt['recipe_sha256'], hashlib.sha256(SCRIPT.read_bytes()).hexdigest())
+        self.assertEqual(receipt['sha256'], client.RENDER_PATCH_SHA256)
+        self.assertEqual(receipt['input_sha256'], build.PINS)
+        self.assertEqual({'mods/'+name: value for name, value in receipt['input_sha256'].items()},
+                         client.RENDER_TARGET_PINS)
+        self.assertEqual(receipt['minecraft_client_sha256'], build.CLIENT_SHA256)
+        self.assertEqual(receipt['defaults'], {'vertices': True, 'advance': True})
+        self.assertIn(receipt['version'], client.RENDER_PATCH_NAME)
 
     def require_java17(self):
         version=subprocess.check_output([shutil.which('javac'),'-version'],text=True).strip()

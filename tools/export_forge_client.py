@@ -31,6 +31,13 @@ ALI_PATCH_NAME = "PSA-ALI-Client-Compat-0.1.jar"
 ALI_PATCH_SHA256 = "0b05990106c46a19aa1c84a91553e14d7e387bc7de2924c9e4b5d02df45c5055"
 ALI_TARGET_PATH = "mods/AdvancedLootInfo-forge-1.20.1-1.12.0.jar"
 ALI_TARGET_SHA256 = "6a0b368a0c19476ce1c6e73ecd923855e5ef45834077dea1ae0ca94820ce8eb8"
+RENDER_PATCH_NAME = "PSA-Pixelmon-Render-Compat-0.2.0.jar"
+RENDER_PATCH_SHA256 = "61ecf134a3cec353171d31eb076e650512bbf6ae6b21f92a24976b968e028997"
+RENDER_TARGET_PINS = {
+    "mods/Pixelmon-1.20.1-9.2.3-universal.jar": PIXELMON_SHA256,
+    "mods/oculus-mc1.20.1-1.8.0.jar": "0945df0cba0f62b3901dd80c3268e5311b770ece78c78037a45db12ac0425fef",
+    "mods/embeddium-0.3.31+mc1.20.1.jar": "eed3d1325f2acc2fd4e69bb495e5ccb91d962126ac5330f0582ebc2a3daf47fb",
+}
 OVERRIDE_FOLDERS = {"config", "configureddefaults", "defaultconfigs", "kubejs", "patchouli_books", "resourcepacks", "shaderpacks"}
 
 
@@ -99,7 +106,8 @@ def apply_client_overrides(files, lock, extras):
         files[name] = source
 
 
-def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vanilla_data=None):
+def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vanilla_data=None,
+          render_fix=None, release=None):
     server, extras, society_zip, output = map(Path, [server, extras, society_zip, output])
     if output.exists() or output.is_symlink() or output.suffix.lower() != ".mrpack":
         raise ValueError("A fresh .mrpack output is required")
@@ -113,6 +121,11 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vani
         if (ali_fix.is_symlink() or ali_fix.parent.is_symlink() or not ali_fix.is_file()
                 or digest(ali_fix) != ALI_PATCH_SHA256):
             raise ValueError("Client ALI compatibility hash mismatch")
+    if render_fix is not None:
+        render_fix = Path(render_fix)
+        if (render_fix.is_symlink() or render_fix.parent.is_symlink() or not render_fix.is_file()
+                or digest(render_fix) != RENDER_PATCH_SHA256):
+            raise ValueError("Client renderer compatibility hash mismatch")
     if not (server / ".psa-forge-candidate.json").is_file():
         raise ValueError("An owned full candidate is required")
     server_profile = json.loads((server / ".psa-forge-candidate.json").read_text())
@@ -164,6 +177,15 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vani
         if name in files:
             raise ValueError("Duplicate client ALI compatibility mod")
         files[name] = ali_fix
+    if render_fix is not None:
+        for target, wanted in RENDER_TARGET_PINS.items():
+            source = files.get(target)
+            if source is None or digest(source) != wanted:
+                raise ValueError("Pinned client renderer target missing or incompatible: " + target)
+        name = "mods/" + RENDER_PATCH_NAME
+        if name in files:
+            raise ValueError("Duplicate client renderer compatibility mod")
+        files[name] = render_fix
     with zipfile.ZipFile(society_zip) as archive:
         manifest = json.loads(archive.read("manifest.json"))
         if {(f["projectID"], f["fileID"]) for f in manifest["files"]} != {(f["project_id"], f["file_id"]) for f in lock["files"]}:
@@ -259,10 +281,18 @@ def build(server, extras, society_zip, output, menu_fix=None, ali_fix=None, vani
             "path": "mods/" + ALI_PATCH_NAME, "sha256": ALI_PATCH_SHA256,
             "client_only": True, "source": "compat/ali-client",
             "target_ali_sha256": ALI_TARGET_SHA256}
+    if render_fix is not None:
+        metadata["client_renderer_compatibility"] = {
+            "path": "mods/" + RENDER_PATCH_NAME, "sha256": RENDER_PATCH_SHA256,
+            "client_only": True, "source": "compat/pixelmon-render",
+            "default_vertices": True, "default_advance": True,
+            "target_sha256": RENDER_TARGET_PINS}
+    if release is not None:
+        metadata["release"] = release
     fingerprint = hashlib.sha256(json.dumps(metadata, sort_keys=True).encode()).hexdigest()
     payload["psa-forge-client-profile.json"] = (json.dumps(metadata, indent=2) + "\n").encode()
     index = {"formatVersion": 1, "game": "minecraft", "versionId": "psa-forge-" + fingerprint[:12],
-             "name": "PSA - Society + Pixelmon + Aeronautics (Experimental)",
+             "name": "PSA - Society + Pixelmon + Aeronautics (Experimental)" + (" " + release if release else ""),
              "summary": "All three projects included; gameplay validation is ongoing.",
              "dependencies": {"minecraft": lock["minecraft"], "forge": lock["forge"]}, "files": []}
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -291,8 +321,10 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--menu-fix", type=Path, help="Pinned client-only menu and discount display compatibility JAR")
     parser.add_argument("--ali-fix", type=Path, help="Pinned client-only ALI empty-tooltip compatibility JAR")
+    parser.add_argument("--render-fix", type=Path, help="Pinned client-only renderer compatibility JAR")
+    parser.add_argument("--release", help="Player-facing release name, e.g. v22")
     parser.add_argument("--vanilla-data", type=Path,
                         help="Pinned vanilla data JAR; required when the server profile carries merged loot tables")
     args = parser.parse_args()
     print(json.dumps(build(args.server, args.extras, args.society_client, args.output, args.menu_fix, args.ali_fix,
-                           args.vanilla_data), indent=2))
+                           args.vanilla_data, args.render_fix, args.release), indent=2))
